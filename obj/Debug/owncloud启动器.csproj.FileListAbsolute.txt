@@ -49,7 +49,6 @@ E:\projects\custom_cloud\obj\Debug\custom_cloud.exe
 E:\projects\custom_cloud\obj\Debug\custom_cloud.pdb
 E:\projects\custom_cloud\bin\Debug\custom_cloud.exe
 E:\projects\custom_cloud\bin\Debug\custom_cloud.pdb
-E:\projects\custom_cloud\bin\Debug\byn\custom_cloud.resources.dll
 E:\projects\custom_cloud\bin\Debug\Newtonsoft.Json.Net35.dll
 E:\projects\custom_cloud\bin\Debug\RestSharp.dll
 E:\projects\custom_cloud\bin\Debug\Newtonsoft.Json.Net35.xml
@@ -57,7 +56,6 @@ E:\projects\custom_cloud\bin\Debug\RestSharp.pdb
 E:\projects\custom_cloud\bin\Debug\RestSharp.xml
 E:\projects\custom_cloud\obj\Debug\owncloud启动器.csprojResolveAssemblyReference.cache
 E:\projects\custom_cloud\obj\Debug\custom_cloud.CloudDiskForm.resources
-E:\projects\custom_cloud\obj\Debug\custom_cloud.Form_main.resources
 E:\projects\custom_cloud\obj\Debug\custom_cloud.Form2.resources
 E:\projects\custom_cloud\obj\Debug\custom_cloud.LoadingForm.resources
 E:\projects\custom_cloud\obj\Debug\custom_cloud.MainWindow.resources
@@ -67,6 +65,5 @@ E:\projects\custom_cloud\obj\Debug\custom_cloud.SettingPrimaryForm.resources
 E:\projects\custom_cloud\obj\Debug\custom_cloud.SettingSyncForm.resources
 E:\projects\custom_cloud\obj\Debug\custom_cloud.ShareForm.resources
 E:\projects\custom_cloud\obj\Debug\custom_cloud.SyncForm.resources
-E:\projects\custom_cloud\obj\Debug\custom_cloud.Form_main.byn.resources
 E:\projects\custom_cloud\obj\Debug\owncloud启动器.csproj.GenerateResource.Cache
-E:\projects\custom_cloud\obj\Debug\byn\custom_cloud.resources.dll
+E:\projects\custom_cloud\obj\Debug\custom_cloud.subSettingForm.SettingSkinForm.resources

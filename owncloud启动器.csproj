@@ -63,12 +63,6 @@
     <Compile Include="codeClass\CodeAnalysis.cs" />
     <Compile Include="configClass\ErrorCode.cs" />
     <Compile Include="fileSystemClass\FileTree.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +107,12 @@
     <Compile Include="subSettingForm\SettingPrimaryForm.Designer.cs">
       <DependentUpon>SettingPrimaryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="subSettingForm\SettingSkinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subSettingForm\SettingSkinForm.Designer.cs">
+      <DependentUpon>SettingSkinForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="subSettingForm\SettingSyncForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,12 +135,6 @@
     <Compile Include="userClass\UserLocalInfo.cs" />
     <EmbeddedResource Include="subMainForm\CloudDiskForm.resx">
       <DependentUpon>CloudDiskForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.byn.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -166,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="subSettingForm\SettingPrimaryForm.resx">
       <DependentUpon>SettingPrimaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subSettingForm\SettingSkinForm.resx">
+      <DependentUpon>SettingSkinForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="subSettingForm\SettingSyncForm.resx">
       <DependentUpon>SettingSyncForm.cs</DependentUpon>

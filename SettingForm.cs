@@ -1,4 +1,5 @@
-﻿using System;
+﻿using custom_cloud.subSettingForm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace custom_cloud
         Point offset;
         SettingPrimaryForm settingPrimaryForm = new SettingPrimaryForm();
         SettingSyncForm settingSyncForm = new SettingSyncForm();
+        SettingSkinForm settingSkinForm = new SettingSkinForm();
         public bool isFirstUse = false;
         public bool ButtonCancel_Enable
         {
@@ -57,8 +59,10 @@ namespace custom_cloud
             //settingPrimaryForm = new SettingPrimaryForm();
             settingPrimaryForm.TopLevel = false;
             settingSyncForm.TopLevel = false;
+            settingSkinForm.TopLevel = false;
             panel_form.Controls.Add(settingPrimaryForm);
             panel_form.Controls.Add(settingSyncForm);
+            panel_form.Controls.Add(settingSkinForm);
             settingPrimaryForm.Show();
 
             label_error.Visible = false;
@@ -70,12 +74,20 @@ namespace custom_cloud
             if (obj.Equals(toolStripMenuItem_primary))
             {
                 settingSyncForm.Hide();
+                settingSkinForm.Hide();
                 settingPrimaryForm.Show();
             }
             if (obj.Equals(toolStripMenuItem_transfer))
             {
                 settingPrimaryForm.Hide();
+                settingSkinForm.Hide();
                 settingSyncForm.Show();
+            }
+            if (obj.Equals(toolStripMenuItem_skin))
+            {
+                settingPrimaryForm.Hide();
+                settingSyncForm.Hide();
+                settingSkinForm.Show();
             }
         }
         void button_MouseEnterEvent(object obj, EventArgs ea)

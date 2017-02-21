@@ -138,6 +138,7 @@
             this.toolStripMenuItem_skin.Name = "toolStripMenuItem_skin";
             this.toolStripMenuItem_skin.Size = new System.Drawing.Size(120, 30);
             this.toolStripMenuItem_skin.Text = "外观";
+            this.toolStripMenuItem_skin.Click += new System.EventHandler(this.btn_formChoose_Event);
             // 
             // panel_form
             // 
