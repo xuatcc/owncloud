@@ -301,6 +301,8 @@ namespace custom_cloud
         void setFirstConfig()
         {
             
+
+            /* 自定义测试 */
             SettingForm sf = new SettingForm();
             sf.ButtonCancel_Enable = false;
             sf.setBtnExit();
@@ -308,6 +310,10 @@ namespace custom_cloud
             sf.startSetting();
             DialogResult dialogResult = sf.ShowDialog();
             if (dialogResult == DialogResult.OK) { }
+            /* 初始化文件显示界面 */
+            MyConfig.ConfigFile configFile = MyConfig.readConfig();
+            if (configFile == null) return;
+            
         }
         /// <summary>
         /// 检查是否是第一次使用
