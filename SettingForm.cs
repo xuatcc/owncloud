@@ -47,6 +47,11 @@ namespace custom_cloud
                     configFile.TableSync[MyConfig.ConfigFile.Sync.KEY_SERVER_URI].ToString();
             if (configFile.TableSync.ContainsKey(MyConfig.ConfigFile.Sync.KEY_SERVER_PORT)) settingSyncForm.Port = 
                     configFile.TableSync[MyConfig.ConfigFile.Sync.KEY_SERVER_PORT].ToString();
+
+            if (configFile.TableSkin.ContainsKey(MyConfig.ConfigFile.Skin.KEY_LARGE_ICON_SIZE))settingSkinForm.SizeLargeIcon =
+                    int.Parse(configFile.TableSkin[MyConfig.ConfigFile.Skin.KEY_LARGE_ICON_SIZE].ToString());
+            if (configFile.TableSkin.ContainsKey(MyConfig.ConfigFile.Skin.KEY_SMALL_ICON_SIZE)) settingSkinForm.SizeSmallIcon = 
+                    int.Parse(configFile.TableSkin[MyConfig.ConfigFile.Skin.KEY_SMALL_ICON_SIZE].ToString());
         }
         void initializeWidget()
         {
@@ -155,7 +160,18 @@ namespace custom_cloud
                 /* 是否自动同步 */
                 configFile.createOrModifyItem(MyConfig.ConfigFile.TABLE_NAME_SYNC, 
                     MyConfig.ConfigFile.Sync.KEY_AUTO_SYNC, settingSyncForm.isAutoSync);
+
+                /* 保存外观 */
+                /* 大图标大小 */
+                configFile.createOrModifyItem(MyConfig.ConfigFile.TABLE_NAME_SKIN,
+                    MyConfig.ConfigFile.Skin.KEY_LARGE_ICON_SIZE, settingSkinForm.SizeLargeIcon);
+                /* 小图标大小 */
+                configFile.createOrModifyItem(MyConfig.ConfigFile.TABLE_NAME_SKIN,
+                    MyConfig.ConfigFile.Skin.KEY_SMALL_ICON_SIZE, settingSkinForm.SizeSmallIcon);
+
                 MyConfig.saveConfig(MyConfig.CONFIG_FILE_PATH, configFile);
+
+                
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

@@ -40,7 +40,8 @@ namespace custom_cloud
         }
         void initializeWidget()
         {
-            /* 载入默认窗体 */
+            
+
             cloudDiskForm.TopLevel = false;
             shareForm.TopLevel = false;
             syncForm.TopLevel = false;
@@ -163,6 +164,11 @@ namespace custom_cloud
             pictureBox_buttonMaximize.Visible = true;
             this.WindowState = FormWindowState.Normal;
         }
+        /// <summary>
+        /// 设置按钮按下事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox_buttonSetting_Click(object sender, EventArgs e)
         {
             settingForm = new SettingForm();
@@ -170,6 +176,17 @@ namespace custom_cloud
             //settingForm.Parent = this;
             settingForm.startSetting();
             DialogResult dialogResult = settingForm.ShowDialog();
+            if (dialogResult.Equals(DialogResult.OK))
+            {
+                
+                cloudDiskForm = new CloudDiskForm();
+                cloudDiskForm.TopLevel = false;
+                panel_mainForm.Controls.RemoveByKey(cloudDiskForm.Name);
+                panel_mainForm.Controls.Add(cloudDiskForm);
+                cloudDiskForm.Show();
+                
+                
+            }
             //settingForm.Show();
             //this.Enabled = false;
         }

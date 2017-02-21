@@ -11,6 +11,29 @@ namespace custom_cloud.subSettingForm
 {
     public partial class SettingSkinForm : Form
     {
+        /// <summary>
+        /// 大图标尺寸
+        /// </summary>
+        public int SizeLargeIcon
+        {
+            get
+            {
+                return int.Parse(numericUpDown_iconSizeLarge.Value.ToString());
+            }
+            set
+            {
+                numericUpDown_iconSizeLarge.Value = value;
+            }
+        }
+        /// <summary>
+        /// 小图标尺寸
+        /// </summary>
+        public int SizeSmallIcon
+        {
+            get { return int.Parse(numericUpDown_iconSizeSmall.Value.ToString()); }
+            set { numericUpDown_iconSizeSmall.Value = value; }
+        }
+
         public SettingSkinForm()
         {
             InitializeComponent();

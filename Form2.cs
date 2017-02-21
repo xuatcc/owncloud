@@ -313,7 +313,11 @@ namespace custom_cloud
             /* 初始化文件显示界面 */
             MyConfig.ConfigFile configFile = MyConfig.readConfig();
             if (configFile == null) return;
-            
+
+            /* 初始化文件显示方式 */
+            configFile.createOrModifyItem(MyConfig.ConfigFile.TABLE_NAME_SKIN, MyConfig.ConfigFile.Skin.KEY_FILE_VIEW, View.LargeIcon);
+
+            MyConfig.saveConfig(configFile);
         }
         /// <summary>
         /// 检查是否是第一次使用

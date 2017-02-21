@@ -392,7 +392,8 @@ namespace custom_cloud
                 /// <summary>
                 /// 图标大小
                 /// </summary>
-                public const string KEY_ICON_SIZE = "KEY_ICON_SIZE";
+                public const string KEY_LARGE_ICON_SIZE = "KEY_LARGE_ICON_SIZE";
+                public const string KEY_SMALL_ICON_SIZE = "KEY_SMALL_ICON_SIZE";
                 /// <summary>
                 /// 文件显示方式
                 /// </summary>

@@ -58,12 +58,25 @@ namespace custom_cloud
         }
         void initializeConfig()
         {
+            MyConfig.ConfigFile configFile = MyConfig.readConfig();
             /* 加载文件图标配置 */
             LargeIconDict = MyConfig.getLargeFileIconDictionary();
             SmallIconDict = MyConfig.getSmallFileIconDictionary();
+            /* 加载图标大小配置 */
+            int largeIconSize = 100;
+            int smallIconSize = 16;
+            if (configFile.TableSkin.ContainsKey(MyConfig.ConfigFile.Skin.KEY_LARGE_ICON_SIZE)) largeIconSize = 
+                    int.Parse(configFile.TableSkin[MyConfig.ConfigFile.Skin.KEY_LARGE_ICON_SIZE].ToString());
+            if (configFile.TableSkin.ContainsKey(MyConfig.ConfigFile.Skin.KEY_SMALL_ICON_SIZE)) smallIconSize = 
+                    int.Parse(configFile.TableSkin[MyConfig.ConfigFile.Skin.KEY_SMALL_ICON_SIZE].ToString());
+            /* 设置图标 */
+            imageList_large.ImageSize = new Size(largeIconSize, largeIconSize);
+            imageList_small.ImageSize = new Size(smallIconSize, smallIconSize);
 
-            imageList_large.ImageSize = new Size(100, 100);
-            imageList_small.ImageSize = new Size(16, 16);
+            /* 加载文件显示视图 */
+            if (configFile.TableSkin.ContainsKey(MyConfig.ConfigFile.Skin.KEY_FILE_VIEW)) FileView = 
+                    (View)int.Parse(configFile.TableSkin[MyConfig.ConfigFile.Skin.KEY_FILE_VIEW].ToString());
+
             /* 进入同步目录 */
             File_Tree = new FileTree(SyncPath);
             CurrentPath = File_Tree.RootDirectory.FullName;
@@ -85,17 +98,87 @@ namespace custom_cloud
 
             /* 测试部分 */
             Sort_Rule = MyConfig.SortRule.ByName;
-            FileView = View.LargeIcon;
-            FileView = View.Tile;
+            //FileView = View.LargeIcon;
+            //FileView = View.Tile;
+            /* 文件显示视图 */
+            setViewMode();
             listView_explorer.ContextMenuStrip = contextMenuStrip_listRightClick;
-            toolStripMenuItem_listContextRightClickView_largeIcon.Checked = true;
+            //toolStripMenuItem_listContextRightClickView_largeIcon.Checked = true;
             //toolStripMenuItem_listContextRightClickNewFolder.Visible = false;
+            //listView_explorer.Items.Clear();
             addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
             /* 测试部分 */
             /* 选项菜单不可见 */
             setVisibleOfItemRightClickMenu(false);
             listView_explorer.LargeImageList = imageList_large;
             listView_explorer.SmallImageList = imageList_small;
+        }
+        /// <summary>
+        /// 设置显示模式
+        /// </summary>
+        void setViewMode()
+        {
+            switch (FileView)
+            {
+                case View.LargeIcon:
+                    toolStripMenuItem_listContextRightClickView_detail.Checked = false;
+                    toolStripMenuItem_listContextRightClickView_largeIcon.Checked = true;
+                    toolStripMenuItem_listContextRightClickView_smallIcon.Checked = false;
+                    break;
+                case View.SmallIcon:
+                    toolStripMenuItem_listContextRightClickView_detail.Checked = false;
+                    toolStripMenuItem_listContextRightClickView_largeIcon.Checked = false;
+                    toolStripMenuItem_listContextRightClickView_smallIcon.Checked = true;
+                    break;
+                case View.List:
+                    toolStripMenuItem_listContextRightClickView_detail.Checked = true;
+                    toolStripMenuItem_listContextRightClickView_largeIcon.Checked = false;
+                    toolStripMenuItem_listContextRightClickView_smallIcon.Checked = false;
+                    break;
+            }
+        }
+        /// <summary>
+        /// 保存本窗体特有的配置
+        /// </summary>
+        void saveConfig()
+        {
+            MyConfig.ConfigFile configFile = MyConfig.readConfig();
+            configFile.createOrModifyItem(MyConfig.ConfigFile.TABLE_NAME_SKIN, 
+                MyConfig.ConfigFile.Skin.KEY_FILE_VIEW, FileView);
+            MyConfig.saveConfig(configFile);
+        }
+        /// <summary>
+        /// 修改显示模式
+        /// </summary>
+        /// <param name="obj"></param>
+        void modifyViewMode(object obj)
+        {
+            if (obj.Equals(toolStripMenuItem_listContextRightClickView_largeIcon))
+            {
+                toolStripMenuItem_listContextRightClickView_detail.Checked = false;
+                toolStripMenuItem_listContextRightClickView_largeIcon.Checked = true;
+                toolStripMenuItem_listContextRightClickView_smallIcon.Checked = false;
+                FileView = View.LargeIcon;
+                setViewMode();
+            }
+            if (obj.Equals(toolStripMenuItem_listContextRightClickView_smallIcon))
+            {
+                toolStripMenuItem_listContextRightClickView_detail.Checked = false;
+                toolStripMenuItem_listContextRightClickView_largeIcon.Checked = false;
+                toolStripMenuItem_listContextRightClickView_smallIcon.Checked = true;
+                FileView = View.SmallIcon;
+                setViewMode();
+            }
+            if (obj.Equals(toolStripMenuItem_listContextRightClickView_detail))
+            {
+                toolStripMenuItem_listContextRightClickView_detail.Checked = true;
+                toolStripMenuItem_listContextRightClickView_largeIcon.Checked = false;
+                toolStripMenuItem_listContextRightClickView_smallIcon.Checked = false;
+                FileView = View.List;
+                setViewMode();
+            }
+            saveConfig();
+            addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
         }
 
         private void pictureBox_buttonBack_MouseEnter(object sender, EventArgs e)
@@ -332,6 +415,13 @@ namespace custom_cloud
             if (obj.Equals(toolStripMenuItem_listRightClick_item_export)) item_ExportFiles();
             if (obj.Equals(toolStripMenuItem_listContextRightClick_importFolder)) item_ImportFolder();
             if (obj.Equals(toolStripMenuItem_listRightClick_Item_open)) item_Open(null, null);
+
+            if (obj.Equals(toolStripMenuItem_listContextRightClickView_largeIcon))
+                modifyViewMode(toolStripMenuItem_listContextRightClickView_largeIcon);
+            if (obj.Equals(toolStripMenuItem_listContextRightClickView_smallIcon))
+                modifyViewMode(toolStripMenuItem_listContextRightClickView_smallIcon);
+            if (obj.Equals(toolStripMenuItem_listContextRightClickView_detail))
+                modifyViewMode(toolStripMenuItem_listContextRightClickView_detail);
         }
         /* 各种详细事件 */
         /// <summary>
