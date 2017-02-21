@@ -389,7 +389,14 @@ namespace custom_cloud
             /* 静态子类，用于设置表键值 */
             public static class Skin
             {
-
+                /// <summary>
+                /// 图标大小
+                /// </summary>
+                public const string KEY_ICON_SIZE = "KEY_ICON_SIZE";
+                /// <summary>
+                /// 文件显示方式
+                /// </summary>
+                public const string KEY_FILE_VIEW = "KEY_FILE_VIEW";
             }
             public static class Sync
             {

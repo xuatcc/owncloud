@@ -37,7 +37,7 @@
             this.menuStrip_function = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem_primary = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_transfer = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_notification = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_skin = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_form = new System.Windows.Forms.Panel();
             this.button_confirm = new System.Windows.Forms.Button();
             this.button_cancel = new System.Windows.Forms.Button();
@@ -108,11 +108,11 @@
             this.menuStrip_function.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem_primary,
             this.toolStripMenuItem_transfer,
-            this.toolStripMenuItem_notification});
+            this.toolStripMenuItem_skin});
             this.menuStrip_function.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip_function.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_function.Name = "menuStrip_function";
-            this.menuStrip_function.Size = new System.Drawing.Size(130, 96);
+            this.menuStrip_function.Size = new System.Drawing.Size(130, 115);
             this.menuStrip_function.TabIndex = 0;
             this.menuStrip_function.Text = "设置";
             // 
@@ -132,12 +132,12 @@
             this.toolStripMenuItem_transfer.Text = "同步";
             this.toolStripMenuItem_transfer.Click += new System.EventHandler(this.btn_formChoose_Event);
             // 
-            // toolStripMenuItem_notification
+            // toolStripMenuItem_skin
             // 
-            this.toolStripMenuItem_notification.AutoSize = false;
-            this.toolStripMenuItem_notification.Name = "toolStripMenuItem_notification";
-            this.toolStripMenuItem_notification.Size = new System.Drawing.Size(120, 30);
-            this.toolStripMenuItem_notification.Text = "提醒";
+            this.toolStripMenuItem_skin.AutoSize = false;
+            this.toolStripMenuItem_skin.Name = "toolStripMenuItem_skin";
+            this.toolStripMenuItem_skin.Size = new System.Drawing.Size(120, 30);
+            this.toolStripMenuItem_skin.Text = "外观";
             // 
             // panel_form
             // 
@@ -235,7 +235,7 @@
         private System.Windows.Forms.MenuStrip menuStrip_function;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_primary;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_transfer;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_notification;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_skin;
         private System.Windows.Forms.Label label_error;
     }
 }

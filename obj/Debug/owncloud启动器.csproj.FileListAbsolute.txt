@@ -44,3 +44,6 @@ E:\项目\custom_cloud\obj\Debug\custom_cloud.SettingForm.resources
 E:\项目\custom_cloud\obj\Debug\custom_cloud.SettingPrimaryForm.resources
 E:\项目\custom_cloud\obj\Debug\custom_cloud.SettingSyncForm.resources
 E:\项目\custom_cloud\obj\Debug\custom_cloud.LoadingForm.resources
+E:\projects\custom_cloud\bin\Debug\custom_cloud.exe.config
+E:\projects\custom_cloud\obj\Debug\custom_cloud.exe
+E:\projects\custom_cloud\obj\Debug\custom_cloud.pdb
