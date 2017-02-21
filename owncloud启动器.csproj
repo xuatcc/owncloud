@@ -108,16 +108,16 @@
     <Compile Include="SettingForm.Designer.cs">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SettingPrimaryForm.cs">
+    <Compile Include="subSettingForm\SettingPrimaryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SettingPrimaryForm.Designer.cs">
+    <Compile Include="subSettingForm\SettingPrimaryForm.Designer.cs">
       <DependentUpon>SettingPrimaryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SettingSyncForm.cs">
+    <Compile Include="subSettingForm\SettingSyncForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SettingSyncForm.Designer.cs">
+    <Compile Include="subSettingForm\SettingSyncForm.Designer.cs">
       <DependentUpon>SettingSyncForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ShareForm.cs">
@@ -165,10 +165,10 @@
     <EmbeddedResource Include="SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SettingPrimaryForm.resx">
+    <EmbeddedResource Include="subSettingForm\SettingPrimaryForm.resx">
       <DependentUpon>SettingPrimaryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SettingSyncForm.resx">
+    <EmbeddedResource Include="subSettingForm\SettingSyncForm.resx">
       <DependentUpon>SettingSyncForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShareForm.resx">
