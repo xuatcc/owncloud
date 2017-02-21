@@ -178,10 +178,21 @@ namespace custom_cloud
             DialogResult dialogResult = settingForm.ShowDialog();
             if (dialogResult.Equals(DialogResult.OK))
             {
-                
+                /* 临时保存工作目录，防止回退 */
+                string tempPath = cloudDiskForm.Current_Path;
+                Stack<string> backStack = cloudDiskForm.BackStack;
+                Stack<string> forwardStack = cloudDiskForm.ForwardStack;
+
+
                 cloudDiskForm = new CloudDiskForm();
                 cloudDiskForm.TopLevel = false;
                 panel_mainForm.Controls.RemoveByKey(cloudDiskForm.Name);
+
+                cloudDiskForm.BackStack = backStack;
+                cloudDiskForm.ForwardStack = forwardStack;
+                cloudDiskForm.Current_Path = tempPath;
+
+
                 panel_mainForm.Controls.Add(cloudDiskForm);
                 cloudDiskForm.Show();
                 

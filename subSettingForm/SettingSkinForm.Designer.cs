@@ -61,6 +61,16 @@
             // numericUpDown_iconSizeLarge
             // 
             this.numericUpDown_iconSizeLarge.Location = new System.Drawing.Point(190, 28);
+            this.numericUpDown_iconSizeLarge.Maximum = new decimal(new int[] {
+            256,
+            0,
+            0,
+            0});
+            this.numericUpDown_iconSizeLarge.Minimum = new decimal(new int[] {
+            48,
+            0,
+            0,
+            0});
             this.numericUpDown_iconSizeLarge.Name = "numericUpDown_iconSizeLarge";
             this.numericUpDown_iconSizeLarge.Size = new System.Drawing.Size(40, 21);
             this.numericUpDown_iconSizeLarge.TabIndex = 3;
@@ -100,6 +110,16 @@
             // numericUpDown_iconSizeSmall
             // 
             this.numericUpDown_iconSizeSmall.Location = new System.Drawing.Point(190, 48);
+            this.numericUpDown_iconSizeSmall.Maximum = new decimal(new int[] {
+            48,
+            0,
+            0,
+            0});
+            this.numericUpDown_iconSizeSmall.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.numericUpDown_iconSizeSmall.Name = "numericUpDown_iconSizeSmall";
             this.numericUpDown_iconSizeSmall.Size = new System.Drawing.Size(40, 21);
             this.numericUpDown_iconSizeSmall.TabIndex = 7;

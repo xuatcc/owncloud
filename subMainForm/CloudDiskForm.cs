@@ -21,6 +21,60 @@ namespace custom_cloud
         FileTree File_Tree;
         string CurrentPath;
         /// <summary>
+        /// 获取当前工作目录
+        /// </summary>
+        public string Current_Path
+        {
+            get
+            {
+                return CurrentPath;
+            }
+            set
+            {
+                CurrentPath = value;
+                //initializeConfig();
+                initializeWidget();
+            }
+        }
+        /// <summary>
+        /// 获取或设置当前路径栈
+        /// </summary>
+        public Stack<string> BackStack
+        {
+            get
+            {
+                return StackBackDirectory;
+            }
+            set
+            {
+                StackBackDirectory = value;
+                if (StackBackDirectory.Count > 0)
+                {
+                    pictureBox_buttonBack.Enabled = true;
+                    pictureBox_buttonBack.Image = Properties.Resources.arrow_back_deep_blue;
+                }
+            }
+        }
+        /// <summary>
+        /// 获取或设置前进栈
+        /// </summary>
+        public Stack<string> ForwardStack
+        {
+            get
+            {
+                return StackForwardDirectory;
+            }
+            set
+            {
+                StackForwardDirectory = value;
+                if (StackForwardDirectory.Count > 0)
+                {
+                    pictureBox_buttonForward.Enabled = true;
+                    pictureBox_buttonForward.Image = Properties.Resources.arrow_forward_deep_blue;
+                }
+            }
+        }
+        /// <summary>
         /// 后退目录栈
         /// </summary>
         Stack<string> StackBackDirectory = new Stack<string>();
