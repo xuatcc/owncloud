@@ -83,6 +83,18 @@ namespace custom_cloud
         /// </summary>
         Stack<string> StackForwardDirectory = new Stack<string>();
         /// <summary>
+        /// 复制文件原地址队列
+        /// </summary>
+        Queue<string> QueueCopyDirectory = new Queue<string>();
+        /// <summary>
+        /// 复制文件属性队列
+        /// </summary>
+        Queue<string> QueueCopyAttribute = new Queue<string>();
+        /// <summary>
+        /// 判断执行的是剪切还是复制
+        /// </summary>
+        bool CutTrue_CopyFalse = false;
+        /// <summary>
         /// 文件图标字典
         /// </summary>
         Dictionary<string, Image> LargeIconDict = new Dictionary<string, Image>();
@@ -477,6 +489,8 @@ namespace custom_cloud
             if (obj.Equals(toolStripMenuItem_listContextRightClick_importFolder)) item_ImportFolder();
             if (obj.Equals(toolStripMenuItem_listRightClick_Item_open)) item_Open(null, null);
             //if (obj.Equals(toolStripMenuItem_listContextRightClick_openMethod)) item_openMethod();
+            if (obj.Equals(toolStripMenuItem_listContextRightClick_paste)) items_Paste();
+            if (obj.Equals(toolStripMenuItem_listRightClick_item_copy)) items_Copy();
 
             if (obj.Equals(toolStripMenuItem_listContextRightClickView_largeIcon))
                 modifyViewMode(toolStripMenuItem_listContextRightClickView_largeIcon);
@@ -718,6 +732,46 @@ namespace custom_cloud
                 pictureBox_buttonForward.Image = Properties.Resources.function_arrow_gray_forward_button;
             }
             
+        }
+        /// <summary>
+        /// 复制多份文件
+        /// </summary>
+        void items_Copy()
+        {
+            QueueCopyDirectory = new Queue<string>();
+            for(int i = 0; i < listView_explorer.SelectedItems.Count; i++)
+            {
+                QueueCopyDirectory.Enqueue(Current_Path + "/" + listView_explorer.SelectedItems[i].Text);
+                QueueCopyAttribute.Enqueue(listView_explorer.SelectedItems[i].Name);
+            }
+            toolStripMenuItem_listContextRightClick_paste.Enabled = true;
+            CutTrue_CopyFalse = false;
+        }
+        /// <summary>
+        /// 粘贴多份文件
+        /// </summary>
+        void items_Paste()
+        {
+            string fileName;
+            string attribute;
+            while (QueueCopyDirectory.Count > 0)
+            {
+                fileName = QueueCopyDirectory.Dequeue();
+                attribute = QueueCopyAttribute.Dequeue();
+                /* 判断是文件还是文件夹 */
+                if (attribute.Equals(FileTree.FOLDER_IDENTIFY_NAME))
+                {
+                    if(!CutTrue_CopyFalse)FileTree.copyDirectory(fileName, CurrentPath + "/" + Path.GetFileName(fileName));
+                }
+                else if (attribute.Equals(FileTree.FILE_IDENTIFY_NAME))
+                {
+                    if(!CutTrue_CopyFalse)FileTree.copyFile(fileName, CurrentPath + "/" + Path.GetFileName(fileName));
+                }
+            }
+            toolStripMenuItem_listContextRightClick_paste.Enabled = false;
+            /* 更新文件树 */
+            File_Tree.updateTree(CurrentPath);
+            addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
         }
         /// <summary>
         /// 当文件有变更时发送的事件（ 废弃这个方法，太敏感了）
