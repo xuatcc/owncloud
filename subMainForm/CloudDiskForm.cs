@@ -330,8 +330,8 @@ namespace custom_cloud
             //listView_explorer.ListViewItemSorter = new ListViewItemComparerByName();
             foreach(FileTree file_tree in fileTree.SubTree.Values)
             {
-                imageList_large.Images.Add(LargeFolderIcon);
-                imageList_small.Images.Add(SmallFolderIcon);
+                imageList_large.Images.Add(Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, LargeFolderIcon));
+                imageList_small.Images.Add(Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallFolderIcon));
                 listView_explorer.Items.Add(file_tree.RootDirectory.Name);
                 listView_explorer.Items[listView_explorer.Items.Count - 1].ImageIndex = listView_explorer.Items.Count - 1;
                 listView_explorer.Items[listView_explorer.Items.Count - 1].Name = FileTree.FOLDER_IDENTIFY_NAME;
@@ -346,11 +346,11 @@ namespace custom_cloud
                     Image image = Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, Image.FromFile(treeFileInfo.Fileinfo.FullName));
                     imageList_large.Images.Add(image);
                 }
-                else if (LargeIconDict.ContainsKey(treeFileInfo.ExtendName)) imageList_large.Images.Add(LargeIconDict[treeFileInfo.ExtendName]);
-                else imageList_large.Images.Add(LargeDefaultFileIcon);
+                else if (LargeIconDict.ContainsKey(treeFileInfo.ExtendName)) imageList_large.Images.Add(Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, LargeIconDict[treeFileInfo.ExtendName]));
+                else imageList_large.Images.Add(Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, LargeDefaultFileIcon));
 
-                if (SmallIconDict.ContainsKey(treeFileInfo.ExtendName)) imageList_small.Images.Add(SmallIconDict[treeFileInfo.ExtendName]);
-                else imageList_small.Images.Add(SmallDefaultFileIcon);
+                if (SmallIconDict.ContainsKey(treeFileInfo.ExtendName)) imageList_small.Images.Add(Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallIconDict[treeFileInfo.ExtendName]));
+                else imageList_small.Images.Add(Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallDefaultFileIcon));
 
                 listView_explorer.Items.Add(treeFileInfo.Fileinfo.Name);
                 listView_explorer.Items[listView_explorer.Items.Count - 1].ImageIndex = listView_explorer.Items.Count - 1;
