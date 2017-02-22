@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace custom_cloud
 {
-    public partial class Form2 : Form
+    public partial class Form_Login : Form
     {
         MainWindow mw;
         UserInfo User_Info = new UserInfo();
@@ -27,7 +27,7 @@ namespace custom_cloud
         string Password;
         int serverPort;
         NetHelper netHelper;
-        public Form2()
+        public Form_Login()
         {
             InitializeComponent();
             initializeConfig();
@@ -338,7 +338,7 @@ namespace custom_cloud
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Form2_KeyDown(object sender, KeyEventArgs e)
+        private void Form_Login_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.Equals(Keys.Enter)) btn_login_Click(this, null);
         }

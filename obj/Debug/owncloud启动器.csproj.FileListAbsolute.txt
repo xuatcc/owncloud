@@ -70,9 +70,7 @@ E:\projects\custom_cloud\obj\Debug\custom_cloud.subSettingForm.SettingSkinForm.r
 E:\projects\VS2015\custom_cloud\bin\Debug\custom_cloud.exe.config
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.exe
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.pdb
-E:\projects\VS2015\custom_cloud\obj\Debug\owncloud启动器.csprojResolveAssemblyReference.cache
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.CloudDiskForm.resources
-E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.Form2.resources
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.LoadingForm.resources
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.MainWindow.resources
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.Properties.Resources.resources
@@ -85,6 +83,4 @@ E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.SyncForm.resources
 E:\projects\VS2015\custom_cloud\obj\Debug\owncloud启动器.csproj.GenerateResource.Cache
 E:\projects\VS2015\custom_cloud\bin\Debug\custom_cloud.exe
 E:\projects\VS2015\custom_cloud\bin\Debug\custom_cloud.pdb
-E:\projects\VS2015\custom_cloud\bin\Debug\Newtonsoft.Json.Net35.xml
-E:\projects\VS2015\custom_cloud\bin\Debug\RestSharp.pdb
-E:\projects\VS2015\custom_cloud\bin\Debug\RestSharp.xml
+E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.Form_Login.resources

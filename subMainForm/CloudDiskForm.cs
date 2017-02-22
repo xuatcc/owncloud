@@ -413,13 +413,14 @@ namespace custom_cloud
             toolStripMenuItem_listRightClick_item_rename.Visible = visible;
             toolStripMenuItem_listRightClick_item_share.Visible = visible;
             toolStripMenuItem_listRightClick_item_attribute.Visible=visible;
+            //toolStripMenuItem_listContextRightClick_openMethod.Visible = visible;
 
             toolStripMenuItem_share.Enabled = visible;
             toolStripMenuItem_delete.Enabled = visible;
             toolStripMenuItem_export.Enabled = visible;
         }
         /// <summary>
-        /// 不选中时发送的事件
+        /// 选中项目发生改变时的事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -434,9 +435,15 @@ namespace custom_cloud
                     toolStripMenuItem_listRightClick_Item_open.Visible = false;
                     //toolStripMenuItem_listRightClick_item_openMethod.Visible = false;
                     toolStripMenuItem_listRightClick_item_attribute.Visible = false;
+                    //toolStripMenuItem_listContextRightClick_openMethod.Visible = false;
                 }
-                
-                
+                /* 如果选中项目是一个文件夹，那么不能够选择打开方式 */
+                else if (listView_explorer.SelectedItems.Count == 1 && 
+                    listView_explorer.SelectedItems[0].Name.Equals(FileTree.FOLDER_IDENTIFY_NAME))
+                {
+                    //toolStripMenuItem_listContextRightClick_openMethod.Visible = false;
+                }
+
             }
             else
             {
@@ -469,6 +476,7 @@ namespace custom_cloud
             if (obj.Equals(toolStripMenuItem_listRightClick_item_export)) item_ExportFiles();
             if (obj.Equals(toolStripMenuItem_listContextRightClick_importFolder)) item_ImportFolder();
             if (obj.Equals(toolStripMenuItem_listRightClick_Item_open)) item_Open(null, null);
+            //if (obj.Equals(toolStripMenuItem_listContextRightClick_openMethod)) item_openMethod();
 
             if (obj.Equals(toolStripMenuItem_listContextRightClickView_largeIcon))
                 modifyViewMode(toolStripMenuItem_listContextRightClickView_largeIcon);
@@ -642,6 +650,28 @@ namespace custom_cloud
                     }
                 }
             }
+        }
+        /// <summary>
+        /// 选择打开方式，暂时废弃这个方法
+        /// </summary>
+        void item_openMethod()
+        {
+            string fileName = listView_explorer.SelectedItems[0].Text;
+            /* 调用系统调用选择打开方式 */
+            Process proc = new Process();
+            //proc.EnableRaisingEvents = false;
+            //proc.
+            //proc.StartInfo.FileName = "rundll32.exe";
+            //proc.StartInfo.Arguments = "shell32,OpenAs_RunDLL " + filePath;
+            proc.StartInfo.FileName = "cmd.exe";
+            proc.StartInfo.RedirectStandardInput = true;//重定向输入
+            proc.StartInfo.UseShellExecute = false;
+            proc.StartInfo.CreateNoWindow = true;
+            proc.Start();
+            //proc.StandardInput.WriteLine("cd " + CurrentPath + "\n");
+            //proc.StandardInput.Flush();
+            proc.StandardInput.WriteLine("rundll32.exe shell32,OpenAs_RunDLL " + fileName + "\n");
+            proc.StandardInput.Flush();
         }
         /// <summary>
         /// 返回前一目录

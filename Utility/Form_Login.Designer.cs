@@ -1,6 +1,6 @@
 ﻿namespace custom_cloud
 {
-    partial class Form2
+    partial class Form_Login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login));
             this.comboBox_user = new System.Windows.Forms.ComboBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.button_login = new System.Windows.Forms.Button();
@@ -260,7 +260,7 @@
             this.pictureBox_buttonClose.MouseEnter += new System.EventHandler(this.btn_Any_MouseEnter);
             this.pictureBox_buttonClose.MouseLeave += new System.EventHandler(this.btn_Any_MouseLeave);
             // 
-            // Form2
+            // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,9 +272,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
-            this.Name = "Form2";
+            this.Name = "Form_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form2_KeyDown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_Login_KeyDown);
             this.panel_loginPanel.ResumeLayout(false);
             this.panel_loginPanel.PerformLayout();
             this.panel_password.ResumeLayout(false);
