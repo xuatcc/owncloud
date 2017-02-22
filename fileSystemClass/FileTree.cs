@@ -158,6 +158,26 @@ namespace custom_cloud
             return newFileName;
         }
         /// <summary>
+        /// 移动文件
+        /// </summary>
+        public static string moveFile(string source, string destination)
+        {
+            if (!File.Exists(source)) return null;
+            string newFileName = destination;
+            int counter = 0;
+
+            //防止重名
+            while (File.Exists(newFileName))
+            {
+                ++counter;
+                newFileName = Path.GetDirectoryName(destination) + "/" + Path.GetFileNameWithoutExtension(destination) + "_" +
+                    counter.ToString() + "." + Path.GetExtension(destination);
+                //string a = "";
+            }
+            File.Move(source, newFileName);
+            return newFileName;
+        }
+        /// <summary>
         /// 复制文件夹
         /// </summary>
         /// <param name="source"></param>
@@ -190,6 +210,43 @@ namespace custom_cloud
             foreach(FileInfo fi in fileInfo)
             {
                 copyFile(fi.FullName, newFolderName + "/" + fi.Name);
+            }
+            return newFolderName;
+        }
+        /// <summary>
+        /// 移动文件夹
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="destination"></param>
+        /// <returns></returns>
+        public static string moveDirectory(string source, string destination)
+        {
+            if (!Directory.Exists(source)) return null;
+            /* 遍历source目录下文件夹 */
+            DirectoryInfo directoryInfo = new DirectoryInfo(source);
+            DirectoryInfo[] directoryInfos = directoryInfo.GetDirectories();
+            string newFolderName = destination;
+            if (newFolderName.Equals(source)) return newFolderName;
+            /* 防止重名 */
+            int counter = 0;
+            while (Directory.Exists(newFolderName))
+            {
+                ++counter;
+                newFolderName = Path.GetDirectoryName(destination) + "/" + Path.GetFileNameWithoutExtension(destination) + "_" +
+                    counter.ToString();
+                //string a = "";
+            }
+            Directory.Move(source, newFolderName);
+            /* 递归 */
+            foreach (DirectoryInfo di in directoryInfos)
+            {
+                moveDirectory(di.FullName, newFolderName + "/" + di.Name);
+            }
+            /* 复制本目录文件 */
+            FileInfo[] fileInfo = directoryInfo.GetFiles();
+            foreach (FileInfo fi in fileInfo)
+            {
+                moveFile(fi.FullName, newFolderName + "/" + fi.Name);
             }
             return newFolderName;
         }

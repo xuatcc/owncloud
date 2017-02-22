@@ -754,6 +754,7 @@ namespace custom_cloud
         {
             string fileName;
             string attribute;
+            string newName = "";
             while (QueueCopyDirectory.Count > 0)
             {
                 fileName = QueueCopyDirectory.Dequeue();
@@ -761,12 +762,35 @@ namespace custom_cloud
                 /* 判断是文件还是文件夹 */
                 if (attribute.Equals(FileTree.FOLDER_IDENTIFY_NAME))
                 {
-                    if(!CutTrue_CopyFalse)FileTree.copyDirectory(fileName, CurrentPath + "/" + Path.GetFileName(fileName));
+                    if (!CutTrue_CopyFalse)
+                    {
+                        newName = FileTree.copyDirectory(fileName, CurrentPath + "/" + Path.GetFileName(fileName));
+                    }
+                    for (int i = 0; i < listView_explorer.Items.Count; i++)
+                    {
+                        if(Directory.Exists(newName) && listView_explorer.Items[i].Equals(Path.GetFileName(newName)))
+                        {
+                            listView_explorer.Items[i].Selected = true;
+                            break;
+                        }
+                    }
                 }
                 else if (attribute.Equals(FileTree.FILE_IDENTIFY_NAME))
                 {
-                    if(!CutTrue_CopyFalse)FileTree.copyFile(fileName, CurrentPath + "/" + Path.GetFileName(fileName));
+                    if (!CutTrue_CopyFalse)
+                    {
+                        newName = FileTree.copyFile(fileName, CurrentPath + "/" + Path.GetFileName(fileName));
+                    }
+                    for (int i = 0; i < listView_explorer.Items.Count; i++)
+                    {
+                        if (File.Exists(newName) && listView_explorer.Items[i].Equals(Path.GetFileName(newName)))
+                        {
+                            listView_explorer.Items[i].Selected = true;
+                            break;
+                        }
+                    }
                 }
+                
             }
             toolStripMenuItem_listContextRightClick_paste.Enabled = false;
             /* 更新文件树 */
