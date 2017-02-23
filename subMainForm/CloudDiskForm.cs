@@ -426,7 +426,38 @@ namespace custom_cloud
                 listView_explorer.Items[index].Selected = true;
             }
         }
-        
+        /// <summary>
+        /// 改动某个项目
+        /// </summary>
+        /// <param name="index"></param>
+        void modifyListViewItems(int index, string filePath)
+        {
+            if (index < 0) return;
+            if (index >= listView_explorer.Items.Count) return;
+            string extendName = Path.GetExtension(filePath);
+            string name = listView_explorer.Items[index].Name;
+            /* 如果是文件 */
+            if (name.Equals(FileTree.FILE_IDENTIFY_NAME))
+            {
+                /* 大图标注意判断文件是否为图片 */
+                if (CodeAnalysis.IsImage(filePath))
+                {
+                    Image image = Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, Image.FromFile(filePath));
+                    imageList_large.Images.Add(image);
+                }
+                else if (LargeIconDict.ContainsKey(extendName)) imageList_large.Images[index] = (Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, LargeIconDict[extendName]));
+                else imageList_large.Images[index] = (Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, LargeDefaultFileIcon));
+
+                if (SmallIconDict.ContainsKey(extendName)) imageList_small.Images[index] = (Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallIconDict[extendName]));
+                else imageList_small.Images[index] = (Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallDefaultFileIcon));
+            }
+            /* 如果是文件夹 */
+            else if (name.Equals(FileTree.FOLDER_IDENTIFY_NAME))
+            {
+                imageList_large.Images[index] = (Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, LargeFolderIcon));
+                imageList_small.Images[index] = (Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallFolderIcon));
+            }
+        }
         /// <summary>
         /// 文件树测试
         /// </summary>
@@ -949,11 +980,13 @@ namespace custom_cloud
                 FileTree.moveDirectory(CurrentPath + "/" + itemOldName, CurrentPath + "/" + newText);
             }
             File_Tree.updateTree(CurrentPath);
+            /* 更新该项目 */
+            modifyListViewItems(index, CurrentPath + "/" + newText);
             /* 删除原来的项目 */
-            listView_explorer.Items.RemoveAt(index);
-            imageList_large.Images.RemoveAt(index);
-            imageList_small.Images.RemoveAt(index);
-            addItemToListView(CurrentPath + "/" + newText, name);
+            //listView_explorer.Items.RemoveAt(index);
+            //imageList_large.Images.RemoveAt(index);
+            //imageList_small.Images.RemoveAt(index);
+            //addItemToListView(CurrentPath + "/" + newText, name);
         }
         /// <summary>
         /// 项目名称编辑前发生的事件
