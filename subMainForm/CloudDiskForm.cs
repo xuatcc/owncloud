@@ -111,6 +111,9 @@ namespace custom_cloud
         /// 排序规则
         /// </summary>
         MyConfig.SortRule Sort_Rule;
+        ListViewItemComparerByName LVIC_BN = new ListViewItemComparerByName();
+        ListViewItemComparerByTime LVIC_BT = new ListViewItemComparerByTime();
+        ListViewItemComparerBySize LVIC_BS = new ListViewItemComparerBySize();
         /// <summary>
         /// 文件视图
         /// </summary>
@@ -150,6 +153,7 @@ namespace custom_cloud
             /* 加载排序方式 */
             if (configFile.TableSkin.ContainsKey(MyConfig.ConfigFile.Skin.KEY_FILE_SORT_RULE))
                 Sort_Rule = (MyConfig.SortRule)int.Parse(configFile.TableSkin[MyConfig.ConfigFile.Skin.KEY_FILE_SORT_RULE].ToString());
+           
             /* 进入同步目录 */
             File_Tree = new FileTree(SyncPath);
             CurrentPath = File_Tree.RootDirectory.FullName;
@@ -170,7 +174,7 @@ namespace custom_cloud
             pictureBox_buttonRefresh.BackColor = Color.Transparent;
 
             /* 测试部分 */
-            Sort_Rule = MyConfig.SortRule.ByName;
+            //Sort_Rule = MyConfig.SortRule.ByName;
             //FileView = View.LargeIcon;
             //FileView = View.Tile;
             /* 文件显示视图 */
@@ -185,8 +189,8 @@ namespace custom_cloud
             setVisibleOfItemRightClickMenu(false);
             listView_explorer.LargeImageList = imageList_large;
             listView_explorer.SmallImageList = imageList_small;
-            //listView_explorer.ListViewItemSorter = new ListViewItemComparerByName();
-            listView_explorer.ListViewItemSorter = new ListViewItemComparerByTime();
+            updateSorterPath();
+            updateSortRule();
             listView_explorer.LabelEdit = true;
         }
         /// <summary>
@@ -333,15 +337,10 @@ namespace custom_cloud
             /* 加载图标列表 */
             imageList_large.Images.Clear();
             imageList_small.Images.Clear();
-            
-            switch (sortRule)
-            {
-                case MyConfig.SortRule.ByName:
-                    updateListViewItemsByName(fileTree);
-                    break;
-            }
+
+            updateListViewItems(fileTree);
         }
-        void updateListViewItemsByName(FileTree fileTree)
+        void updateListViewItems(FileTree fileTree)
         {
             /* 按名字排序 */
             //listView_explorer.ListViewItemSorter = new ListViewItemComparerByName();
@@ -387,31 +386,133 @@ namespace custom_cloud
         /// </summary>
         public class ListViewItemComparerByName : IComparer
         {
-            private int col;
-            public int Compare(object x, object y)
-            {
-                int returnVal = -1;
-                returnVal = String.Compare(((ListViewItem)x).SubItems[col].Text,
-                ((ListViewItem)y).SubItems[col].Text);
-                return returnVal;
-            }
-        }
-        /// <summary>
-        /// 按大小排序接口
-        /// </summary>
-        public class ListViewItemComparerByTime : IComparer
-        {
-            public string path_1;
-            public string path_2;
+            public string CurrentPath;
             public int Compare(object x, object y)
             {
                 int returnVal = -1;
                 /* 分4种情况 */
                 ListViewItem lvi_1 = (ListViewItem)x;
                 ListViewItem lvi_2 = (ListViewItem)y;
+
+                if (lvi_1.Name.Contains(FileTree.FILE_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FILE_IDENTIFY_NAME))
+                {
+                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    returnVal = string.Compare(lvi_1.Text, lvi_2.Text);
+                }
+                else if (lvi_1.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FILE_IDENTIFY_NAME))
+                {
+                    if (!Directory.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    returnVal = -1;
+                }
+                else if (lvi_1.Name.Contains(FileTree.FILE_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME))
+                {
+                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!Directory.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    returnVal = 1;
+                }
+                else if (lvi_1.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME))
+                {
+                    if (!Directory.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!Directory.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    returnVal = string.Compare(lvi_1.Text, lvi_2.Text);
+                }
+                return returnVal;
+            }
+        }
+        /// <summary>
+        /// 按时间排序接口
+        /// </summary>
+        public class ListViewItemComparerByTime : IComparer
+        {
+            public string CurrentPath;
+            public int Compare(object x, object y)
+            {
+                int returnVal = -1;
+                /* 分4种情况 */
+                ListViewItem lvi_1 = (ListViewItem)x;
+                ListViewItem lvi_2 = (ListViewItem)y;
+                
                 if(lvi_1.Name.Contains(FileTree.FILE_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FILE_IDENTIFY_NAME))
                 {
-                    
+                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    FileTree.TreeFileInfo tfi_1 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_1.Text);
+                    FileTree.TreeFileInfo tfi_2 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_2.Text);
+                    returnVal = -(int)(tfi_1.ModifyTime - tfi_2.ModifyTime);
+                }
+                else if (lvi_1.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FILE_IDENTIFY_NAME))
+                {
+                    if (!Directory.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    FileTree ft_1 = new FileTree(CurrentPath + "/" + lvi_1.Text);
+                    FileTree.TreeFileInfo tfi_2 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_2.Text);
+                    returnVal = -(int)(ft_1.ModifyTime + MyConfig.RefFutureTimeDouble - tfi_2.ModifyTime);
+                }
+                else if (lvi_1.Name.Contains(FileTree.FILE_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME))
+                {
+                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!Directory.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    FileTree.TreeFileInfo tfi_1 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_1.Text);
+                    FileTree ft_2 = new FileTree(CurrentPath + "/" + lvi_2.Text);
+                    returnVal = -(int)(tfi_1.ModifyTime - (ft_2.ModifyTime + MyConfig.RefFutureTimeDouble));
+                }
+                else if (lvi_1.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME))
+                {
+                    if (!Directory.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!Directory.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    FileTree ft_1 = new FileTree(CurrentPath + "/" + lvi_1.Text);
+                    FileTree ft_2 = new FileTree(CurrentPath + "/" + lvi_2.Text);
+                    returnVal = -(int)(ft_1.ModifyTime - ft_2.ModifyTime);
+                }
+                return returnVal;
+            }
+        }
+        /// <summary>
+        /// 按大小排序接口
+        /// </summary>
+        public class ListViewItemComparerBySize : IComparer
+        {
+            public string CurrentPath;
+            public int Compare(object x, object y)
+            {
+                int returnVal = -1;
+                /* 分4种情况 */
+                ListViewItem lvi_1 = (ListViewItem)x;
+                ListViewItem lvi_2 = (ListViewItem)y;
+
+                if (lvi_1.Name.Contains(FileTree.FILE_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FILE_IDENTIFY_NAME))
+                {
+                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    FileTree.TreeFileInfo tfi_1 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_1.Text);
+                    FileTree.TreeFileInfo tfi_2 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_2.Text);
+                    returnVal = tfi_1.Fileinfo.Length > tfi_2.Fileinfo.Length ? -1 : 1;
+                }
+                else if (lvi_1.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FILE_IDENTIFY_NAME))
+                {
+                    if (!Directory.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    //FileTree ft_1 = new FileTree(CurrentPath + "/" + lvi_1.Text);
+                    //FileTree.TreeFileInfo tfi_2 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_2.Text);
+                    returnVal = -1;
+                }
+                else if (lvi_1.Name.Contains(FileTree.FILE_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME))
+                {
+                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!Directory.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    //FileTree.TreeFileInfo tfi_1 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_1.Text);
+                    //FileTree ft_2 = new FileTree(CurrentPath + "/" + lvi_2.Text);
+                    returnVal = 1;
+                }
+                else if (lvi_1.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME))
+                {
+                    if (!Directory.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!Directory.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    FileTree ft_1 = new FileTree(CurrentPath + "/" + lvi_1.Text);
+                    FileTree ft_2 = new FileTree(CurrentPath + "/" + lvi_2.Text);
+                    returnVal = ft_1.getByteLength() > ft_2.getByteLength() ? -1 : 1;
                 }
                 return returnVal;
             }
@@ -595,6 +696,9 @@ namespace custom_cloud
             if (obj.Equals(toolStripMenuItem_listRightClick_item_copy)) items_Copy();
             if (obj.Equals(toolStripMenuItem_listRightClick_item_cut)) items_Cut();
             if (obj.Equals(toolStripMenuItem_listRightClick_item_rename)) item_Rename();
+            if (obj.Equals(toolStripMenuItem_listContextRightClickSortRule_byName)) list_Sort(obj);
+            if (obj.Equals(toolStripMenuItem_listContextRightClickSortRule_bySize)) list_Sort(obj);
+            if (obj.Equals(toolStripMenuItem_listContextRightClickSortRule_byTime)) list_Sort(obj);
 
             if (obj.Equals(toolStripMenuItem_listContextRightClickView_largeIcon))
                 modifyViewMode(toolStripMenuItem_listContextRightClickView_largeIcon);
@@ -752,6 +856,8 @@ namespace custom_cloud
                         StackBackDirectory.Push(CurrentPath);
 
                         CurrentPath += ("/" + listView_explorer.Items[i].Text);
+                        
+
                         string a = CurrentPath;
                         string b = "";
                         File_Tree.updateTree(CurrentPath);
@@ -763,7 +869,7 @@ namespace custom_cloud
                         pictureBox_buttonForward.Enabled = false;
                         pictureBox_buttonForward.Image = Properties.Resources.function_arrow_gray_forward_button;
 
-                        
+                        updateSorterPath();
                         /* 应该使上方的navigation同步变化，先不做 */
                         break;
                     }
@@ -771,6 +877,8 @@ namespace custom_cloud
                     {
                         Process.Start(CurrentPath + "/" + listView_explorer.Items[i].Text);
                         listView_explorer.Items[i].Focused = false;
+
+                        updateSorterPath();
                         break;
                     }
                 }
@@ -809,6 +917,8 @@ namespace custom_cloud
 
             StackForwardDirectory.Push(CurrentPath);
             CurrentPath = StackBackDirectory.Pop();
+            
+
             File_Tree.updateTree(CurrentPath);
             updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
             /* 调整按钮可用性 */
@@ -820,7 +930,7 @@ namespace custom_cloud
             pictureBox_buttonForward.Enabled = true;
             pictureBox_buttonForward.Image = Properties.Resources.arrow_forward_deep_blue;
 
-            
+            updateSorterPath();
         }
         /// <summary>
         /// 目录前进
@@ -835,6 +945,8 @@ namespace custom_cloud
             pictureBox_buttonBack.Enabled = true;
             pictureBox_buttonBack.Image = Properties.Resources.arrow_back_deep_blue;
             CurrentPath = StackForwardDirectory.Pop();
+            
+
             File_Tree.updateTree(CurrentPath);
             updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
             if (StackForwardDirectory.Count < 1)
@@ -842,7 +954,7 @@ namespace custom_cloud
                 pictureBox_buttonForward.Enabled = false;
                 pictureBox_buttonForward.Image = Properties.Resources.function_arrow_gray_forward_button;
             }
-            
+            updateSorterPath();
         }
         /// <summary>
         /// 复制多份文件（夹）
@@ -962,7 +1074,20 @@ namespace custom_cloud
             if (listView_explorer.SelectedItems.Count != 1) return;
             listView_explorer.SelectedItems[0].BeginEdit();
         }
-        
+        /// <summary>
+        /// 排序事件
+        /// </summary>
+        /// <param name="sender"></param>
+        void list_Sort(object sender)
+        {
+            if (sender.Equals(toolStripMenuItem_listContextRightClickSortRule_byName))
+                Sort_Rule = MyConfig.SortRule.ByName;
+            else if (sender.Equals(toolStripMenuItem_listContextRightClickSortRule_bySize))
+                Sort_Rule = MyConfig.SortRule.BySize;
+            else if (sender.Equals(toolStripMenuItem_listContextRightClickSortRule_byTime))
+                Sort_Rule = MyConfig.SortRule.ByTime;
+            updateSortRule();
+        }
         /// <summary>
         /// 当文件有变更时发送的事件（ 废弃这个方法，太敏感了）
         /// </summary>
@@ -1030,6 +1155,48 @@ namespace custom_cloud
         private void listView_explorer_BeforeLabelEdit(object sender, LabelEditEventArgs e)
         {
             itemOldName = listView_explorer.Items[e.Item].Text;
+        }
+        /// <summary>
+        /// 更新排序器的路径
+        /// </summary>
+        void updateSorterPath()
+        {
+            
+            LVIC_BN.CurrentPath = CurrentPath;
+            LVIC_BT.CurrentPath = CurrentPath;
+            LVIC_BS.CurrentPath = CurrentPath;
+            updateSortRule();
+        }
+        /// <summary>
+        /// 更新排序规则
+        /// </summary>
+        void updateSortRule()
+        {
+            switch (Sort_Rule)
+            {
+                case MyConfig.SortRule.ByName:
+                    listView_explorer.ListViewItemSorter = LVIC_BN;
+                    toolStripMenuItem_listContextRightClickSortRule_byName.Checked = true;
+                    toolStripMenuItem_listContextRightClickSortRule_bySize.Checked = false;
+                    toolStripMenuItem_listContextRightClickSortRule_byTime.Checked = false;
+                    break;
+                case MyConfig.SortRule.ByTime:
+                    listView_explorer.ListViewItemSorter = LVIC_BT;
+                    toolStripMenuItem_listContextRightClickSortRule_byName.Checked = false;
+                    toolStripMenuItem_listContextRightClickSortRule_byTime.Checked = true;
+                    toolStripMenuItem_listContextRightClickSortRule_bySize.Checked = false;
+                    break;
+                case MyConfig.SortRule.BySize:
+                    listView_explorer.ListViewItemSorter = LVIC_BS;
+                    toolStripMenuItem_listContextRightClickSortRule_byName.Checked = false;
+                    toolStripMenuItem_listContextRightClickSortRule_byTime.Checked = false;
+                    toolStripMenuItem_listContextRightClickSortRule_bySize.Checked = true;
+                    break;
+            }
+            /* 保存排序信息 */
+            MyConfig.ConfigFile configFile = MyConfig.readConfig();
+            configFile.createOrModifyItem(MyConfig.ConfigFile.TABLE_NAME_SKIN, MyConfig.ConfigFile.Skin.KEY_FILE_SORT_RULE, Sort_Rule);
+            MyConfig.saveConfig(configFile);
         }
     }
 }

@@ -37,6 +37,8 @@ namespace custom_cloud
         /// 参考时间
         /// </summary>
         public static DateTime RefTime = Convert.ToDateTime("1900-1-1 00:00:00");
+        public static DateTime RefFutureTime = Convert.ToDateTime("2050-1-1 00:00:00");
+        public static double RefFutureTimeDouble = RefFutureTime.Subtract(RefFutureTime).TotalSeconds;
         /// <summary>
         /// 文件排序规则
         /// </summary>
