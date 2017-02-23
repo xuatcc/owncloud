@@ -172,7 +172,7 @@ namespace custom_cloud
             //toolStripMenuItem_listContextRightClickView_largeIcon.Checked = true;
             //toolStripMenuItem_listContextRightClickNewFolder.Visible = false;
             //listView_explorer.Items.Clear();
-            addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
             /* 测试部分 */
             /* 选项菜单不可见 */
             setVisibleOfItemRightClickMenu(false);
@@ -244,7 +244,7 @@ namespace custom_cloud
                 setViewMode();
             }
             saveConfig();
-            addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
         }
 
         private void pictureBox_buttonBack_MouseEnter(object sender, EventArgs e)
@@ -313,7 +313,7 @@ namespace custom_cloud
         /// <summary>
         /// 向listview里添加项目
         /// </summary>
-        void addItemsToListView(View view, FileTree fileTree, MyConfig.SortRule sortRule)
+        void updateListViewItems(View view, FileTree fileTree, MyConfig.SortRule sortRule)
         {
             if (fileTree == null) return;
             /* 设置显示方式 */
@@ -327,11 +327,11 @@ namespace custom_cloud
             switch (sortRule)
             {
                 case MyConfig.SortRule.ByName:
-                    addItemsToListViewByName(fileTree);
+                    updateListViewItemsByName(fileTree);
                     break;
             }
         }
-        void addItemsToListViewByName(FileTree fileTree)
+        void updateListViewItemsByName(FileTree fileTree)
         {
             /* 按名字排序 */
             //listView_explorer.ListViewItemSorter = new ListViewItemComparerByName();
@@ -512,7 +512,7 @@ namespace custom_cloud
                     File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(openFileDialog_main.FileName));
                 //更新文件树
                 File_Tree.updateTree(CurrentPath);
-                addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
                 for(int i = 0; i < listView_explorer.Items.Count; i++)
                 {
                     if (listView_explorer.Items[i].Text.Equals(Path.GetFileName(newFileName)) && 
@@ -536,7 +536,7 @@ namespace custom_cloud
                     File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(folderBrowserDialog_main.SelectedPath));
                 //更新文件树
                 File_Tree.updateTree(CurrentPath);
-                addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
                 for (int i = 0; i < listView_explorer.Items.Count; i++)
                 {
                     if (listView_explorer.Items[i].Text.Equals(Path.GetFileName(newFolderName)) && 
@@ -593,7 +593,7 @@ namespace custom_cloud
             }
             //更新文件树
             File_Tree.updateTree(CurrentPath);
-            addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
         }
         /// <summary>
         /// 新建文件夹
@@ -602,7 +602,7 @@ namespace custom_cloud
         {
             string newFolderName = FileTree.createFolder(CurrentPath);
             File_Tree.updateTree(CurrentPath);
-            addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
             for(int i = 0; i < listView_explorer.Items.Count; i++)
             {
                 /* 判断是否是文件夹 */
@@ -620,7 +620,7 @@ namespace custom_cloud
         void list_Refresh()
         {
             File_Tree.updateTree(CurrentPath);
-            addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
         }
         /// <summary>
         /// 打开文件（夹）
@@ -644,7 +644,7 @@ namespace custom_cloud
                         string a = CurrentPath;
                         string b = "";
                         File_Tree.updateTree(CurrentPath);
-                        addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                        updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
 
                         /* 调整可返回值 */
                         pictureBox_buttonBack.Enabled = true;
@@ -699,7 +699,7 @@ namespace custom_cloud
             StackForwardDirectory.Push(CurrentPath);
             CurrentPath = StackBackDirectory.Pop();
             File_Tree.updateTree(CurrentPath);
-            addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
             /* 调整按钮可用性 */
             if (StackBackDirectory.Count < 1)
             {
@@ -725,7 +725,7 @@ namespace custom_cloud
             pictureBox_buttonBack.Image = Properties.Resources.arrow_back_deep_blue;
             CurrentPath = StackForwardDirectory.Pop();
             File_Tree.updateTree(CurrentPath);
-            addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
             if (StackForwardDirectory.Count < 1)
             {
                 pictureBox_buttonForward.Enabled = false;
@@ -795,7 +795,7 @@ namespace custom_cloud
             toolStripMenuItem_listContextRightClick_paste.Enabled = false;
             /* 更新文件树 */
             File_Tree.updateTree(CurrentPath);
-            addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
         }
         /// <summary>
         /// 当文件有变更时发送的事件（ 废弃这个方法，太敏感了）
@@ -809,7 +809,7 @@ namespace custom_cloud
             FileTree temp = File_Tree;
             //temp = File_Tree.getTargetTree(CurrentPath);
             //var temp2 = listView_explorer;
-            addItemsToListView(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
             var temp2 = listView_explorer;
             string a = "";
             //Thread.Sleep(100);
