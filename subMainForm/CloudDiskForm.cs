@@ -388,6 +388,7 @@ namespace custom_cloud
                 return returnVal;
             }
         }
+        void addItem
         
         /// <summary>
         /// 文件树测试
