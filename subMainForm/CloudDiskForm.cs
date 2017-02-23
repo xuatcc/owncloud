@@ -95,6 +95,10 @@ namespace custom_cloud
         /// </summary>
         bool CutTrue_CopyFalse = false;
         /// <summary>
+        /// 辅助重命名，用于记录项目的旧名称
+        /// </summary>
+        string itemOldName = "";
+        /// <summary>
         /// 文件图标字典
         /// </summary>
         Dictionary<string, Image> LargeIconDict = new Dictionary<string, Image>();
@@ -179,6 +183,7 @@ namespace custom_cloud
             listView_explorer.LargeImageList = imageList_large;
             listView_explorer.SmallImageList = imageList_small;
             //listView_explorer.ListViewItemSorter = new ListViewItemComparerByName();
+            listView_explorer.LabelEdit = true;
         }
         /// <summary>
         /// 设置显示模式
@@ -481,6 +486,7 @@ namespace custom_cloud
                     //toolStripMenuItem_listRightClick_item_openMethod.Visible = false;
                     toolStripMenuItem_listRightClick_item_attribute.Visible = false;
                     //toolStripMenuItem_listContextRightClick_openMethod.Visible = false;
+                    toolStripMenuItem_listRightClick_item_rename.Visible = false;
                 }
                 /* 如果选中项目是一个文件夹，那么不能够选择打开方式 */
                 else if (listView_explorer.SelectedItems.Count == 1 && 
@@ -525,6 +531,7 @@ namespace custom_cloud
             if (obj.Equals(toolStripMenuItem_listContextRightClick_paste)) items_Paste();
             if (obj.Equals(toolStripMenuItem_listRightClick_item_copy)) items_Copy();
             if (obj.Equals(toolStripMenuItem_listRightClick_item_cut)) items_Cut();
+            if (obj.Equals(toolStripMenuItem_listRightClick_item_rename)) item_Rename();
 
             if (obj.Equals(toolStripMenuItem_listContextRightClickView_largeIcon))
                 modifyViewMode(toolStripMenuItem_listContextRightClickView_largeIcon);
@@ -883,6 +890,15 @@ namespace custom_cloud
             //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
         }
         /// <summary>
+        /// 文件（夹）重命名
+        /// </summary>
+        void item_Rename()
+        {
+            if (listView_explorer.SelectedItems.Count != 1) return;
+            listView_explorer.SelectedItems[0].BeginEdit();
+        }
+        
+        /// <summary>
         /// 当文件有变更时发送的事件（ 废弃这个方法，太敏感了）
         /// </summary>
         /// <param name="sender"></param>
@@ -910,6 +926,43 @@ namespace custom_cloud
             {
                 listView_explorer.SelectedItems[i].Selected = false;
             }
+        }
+        /// <summary>
+        /// 项目名称发生改变后的事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listView_explorer_AfterLabelEdit(object sender, LabelEditEventArgs e)
+        {
+            int index = e.Item;
+            string name = listView_explorer.Items[index].Name;
+            string newText = e.Label;
+            if (newText == null) return;
+            if (newText.Equals(itemOldName)) return;
+            
+            if (name.Equals(FileTree.FILE_IDENTIFY_NAME))
+            {
+                FileTree.moveFile(CurrentPath + "/" + itemOldName, CurrentPath + "/" + newText);
+            }
+            else if (name.Equals(FileTree.FOLDER_IDENTIFY_NAME))
+            {
+                FileTree.moveDirectory(CurrentPath + "/" + itemOldName, CurrentPath + "/" + newText);
+            }
+            File_Tree.updateTree(CurrentPath);
+            /* 删除原来的项目 */
+            listView_explorer.Items.RemoveAt(index);
+            imageList_large.Images.RemoveAt(index);
+            imageList_small.Images.RemoveAt(index);
+            addItemToListView(CurrentPath + "/" + newText, name);
+        }
+        /// <summary>
+        /// 项目名称编辑前发生的事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listView_explorer_BeforeLabelEdit(object sender, LabelEditEventArgs e)
+        {
+            itemOldName = listView_explorer.Items[e.Item].Text;
         }
     }
 }

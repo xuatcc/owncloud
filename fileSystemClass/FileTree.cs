@@ -236,18 +236,20 @@ namespace custom_cloud
                     counter.ToString();
                 //string a = "";
             }
+            /* 复制本目录文件 */
+            FileInfo[] fileInfo = directoryInfo.GetFiles();
             Directory.Move(source, newFolderName);
+            foreach (FileInfo fi in fileInfo)
+            {
+                moveFile(fi.FullName, newFolderName + "/" + fi.Name);
+            }
+            
             /* 递归 */
             foreach (DirectoryInfo di in directoryInfos)
             {
                 moveDirectory(di.FullName, newFolderName + "/" + di.Name);
             }
-            /* 复制本目录文件 */
-            FileInfo[] fileInfo = directoryInfo.GetFiles();
-            foreach (FileInfo fi in fileInfo)
-            {
-                moveFile(fi.FullName, newFolderName + "/" + fi.Name);
-            }
+            
             return newFolderName;
         }
         /// <summary>

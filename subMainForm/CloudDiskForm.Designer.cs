@@ -314,6 +314,8 @@
             this.listView_explorer.Size = new System.Drawing.Size(824, 472);
             this.listView_explorer.TabIndex = 3;
             this.listView_explorer.UseCompatibleStateImageBehavior = false;
+            this.listView_explorer.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.listView_explorer_AfterLabelEdit);
+            this.listView_explorer.BeforeLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.listView_explorer_BeforeLabelEdit);
             this.listView_explorer.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView_explorer_ItemSelectionChanged);
             this.listView_explorer.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.item_Open);
             // 
