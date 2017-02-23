@@ -316,6 +316,8 @@ namespace custom_cloud
 
             /* 初始化文件显示方式 */
             configFile.createOrModifyItem(MyConfig.ConfigFile.TABLE_NAME_SKIN, MyConfig.ConfigFile.Skin.KEY_FILE_VIEW, View.LargeIcon);
+            /* 初始化文件排列方式 */
+            configFile.createOrModifyItem(MyConfig.ConfigFile.TABLE_NAME_SKIN, MyConfig.ConfigFile.Skin.KEY_FILE_SORT_RULE, MyConfig.SortRule.ByName);
 
             MyConfig.saveConfig(configFile);
         }

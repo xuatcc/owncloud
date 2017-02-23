@@ -34,6 +34,10 @@ namespace custom_cloud
         public static UTF8Encoding ENCODE;
         public static Color SelectedColor = Color.FromArgb(Convert.ToInt32("e93da5fc", 16));
         /// <summary>
+        /// 参考时间
+        /// </summary>
+        public static DateTime RefTime = Convert.ToDateTime("1900-1-1 00:00:00");
+        /// <summary>
         /// 文件排序规则
         /// </summary>
         public enum SortRule
@@ -325,6 +329,16 @@ namespace custom_cloud
             return iconDict;
         }
         /// <summary>
+        /// 生成表单键名称的唯一方法
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static string getListKeyName(string name, string text)
+        {
+            return name + "_+_" + text;
+        }
+        /// <summary>
         /// 配置文件
         /// </summary>
         public class ConfigFile
@@ -398,6 +412,7 @@ namespace custom_cloud
                 /// 文件显示方式
                 /// </summary>
                 public const string KEY_FILE_VIEW = "KEY_FILE_VIEW";
+                public const string KEY_FILE_SORT_RULE = "KEY_FILE_SORT_RULE";
             }
             public static class Sync
             {

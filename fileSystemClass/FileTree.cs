@@ -18,6 +18,16 @@ namespace custom_cloud
         public Dictionary<string, FileTree> SubTree = new Dictionary<string, FileTree>();
         public FileTree Parent;
         /// <summary>
+        /// 目录修改时间
+        /// </summary>
+        public double ModifyTime
+        {
+            get
+            {
+                return RootDirectory.LastWriteTime.Subtract(MyConfig.RefTime).TotalSeconds;
+            }
+        }
+        /// <summary>
         /// 文件夹是否为空
         /// </summary>
         public bool isEmpty
@@ -49,6 +59,7 @@ namespace custom_cloud
         }
         void initializeTree(string root_directory)
         {
+            //ModifyTime = DateTime.Now.Subtract(MyConfig.RefTime).TotalSeconds;
             RootDirectory = new DirectoryInfo(root_directory);
             CurrentDirectoryFileList = new Dictionary<string, TreeFileInfo>();
             SubTree = new Dictionary<string, FileTree>();
@@ -130,11 +141,11 @@ namespace custom_cloud
         /// <summary>
         /// 文件夹类名
         /// </summary>
-        public static string FOLDER_IDENTIFY_NAME = "FOLDER";
+        public static string FOLDER_IDENTIFY_NAME = "FOLDER~!@#$%^&*++";
         /// <summary>
         /// 文件类名
         /// </summary>
-        public static string FILE_IDENTIFY_NAME = "FILE";
+        public static string FILE_IDENTIFY_NAME = "FILE*&^%$#@!~++";
         /// <summary>
         /// 复制文件
         /// </summary>
@@ -151,7 +162,7 @@ namespace custom_cloud
             {
                 ++counter;
                 newFileName = Path.GetDirectoryName(destination) + "/" + Path.GetFileNameWithoutExtension(destination)+ "_" +
-                    counter.ToString() + "." + Path.GetExtension(destination);
+                    counter.ToString() + Path.GetExtension(destination);
                 //string a = "";
             }
             File.Copy(source, newFileName);
@@ -165,13 +176,13 @@ namespace custom_cloud
             if (!File.Exists(source)) return null;
             string newFileName = destination;
             int counter = 0;
-
+            if (source.Equals(destination)) return newFileName;
             //防止重名
             while (File.Exists(newFileName))
             {
                 ++counter;
                 newFileName = Path.GetDirectoryName(destination) + "/" + Path.GetFileNameWithoutExtension(destination) + "_" +
-                    counter.ToString() + "." + Path.GetExtension(destination);
+                    counter.ToString() + Path.GetExtension(destination);
                 //string a = "";
             }
             File.Move(source, newFileName);
@@ -313,6 +324,16 @@ namespace custom_cloud
             public TreeFileInfo(string full_name)
             {
                 Fileinfo = new FileInfo(full_name);
+            }
+            /// <summary>
+            /// 修改时间
+            /// </summary>
+            public double ModifyTime
+            {
+                get
+                {
+                    return Fileinfo.LastWriteTime.Subtract(MyConfig.RefTime).TotalSeconds;
+                }
             }
         }
     }
