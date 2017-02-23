@@ -178,6 +178,7 @@ namespace custom_cloud
             setVisibleOfItemRightClickMenu(false);
             listView_explorer.LargeImageList = imageList_large;
             listView_explorer.SmallImageList = imageList_small;
+            //listView_explorer.ListViewItemSorter = new ListViewItemComparerByName();
         }
         /// <summary>
         /// 设置显示模式
@@ -319,7 +320,7 @@ namespace custom_cloud
             /* 设置显示方式 */
             listView_explorer.Items.Clear();
             listView_explorer.View = view;
-            listView_explorer.ListViewItemSorter = null;
+            //listView_explorer.ListViewItemSorter = null;
             /* 加载图标列表 */
             imageList_large.Images.Clear();
             imageList_small.Images.Clear();
@@ -368,11 +369,7 @@ namespace custom_cloud
                 listView_explorer.Items[listView_explorer.Items.Count - 1].ImageIndex = listView_explorer.Items.Count - 1;
                 listView_explorer.Items[listView_explorer.Items.Count - 1].Name = FileTree.FILE_IDENTIFY_NAME;
             }
-            //listView_explorer.ListViewItemSorter = new ListViewItemComparerByName();
-            //listView_explorer.Sort();
-            /* 手动排序 */
-            //listView_explorer.Sort();
-            //listView_explorer.Sorting = SortOrder.Ascending;
+            
         }
         /// <summary>
         /// 按名字排序接口
@@ -388,7 +385,42 @@ namespace custom_cloud
                 return returnVal;
             }
         }
-        void addItem
+        /// <summary>
+        /// 向listView里添加新项目
+        /// </summary>
+        /// <param name="text">项目路径</param>
+        /// <param name="name">属性，区别添加的是文件还是文件夹</param>
+        void addItemToListView(string path, string name)
+        {
+            string text = Path.GetFileName(path);
+            listView_explorer.Items.Add(text);
+            int index = listView_explorer.Items.Count - 1;
+            listView_explorer.Items[index].Name = name;
+            string extendName = Path.GetExtension(text);
+            if (name.Equals(FileTree.FILE_IDENTIFY_NAME))
+            {
+                /* 大图标注意判断文件是否为图片 */
+                if (CodeAnalysis.IsImage(path))
+                {
+                    Image image = Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, Image.FromFile(path));
+                    imageList_large.Images.Add(image);
+                }
+                else if (LargeIconDict.ContainsKey(extendName)) imageList_large.Images.Add(Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, LargeIconDict[extendName]));
+                else imageList_large.Images.Add(Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, LargeDefaultFileIcon));
+
+                if (SmallIconDict.ContainsKey(extendName)) imageList_small.Images.Add(Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallIconDict[extendName]));
+                else imageList_small.Images.Add(Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallDefaultFileIcon));
+                listView_explorer.Items[index].ImageIndex = index;
+                listView_explorer.Items[index].Selected = true;
+            }
+            else if (name.Equals(FileTree.FOLDER_IDENTIFY_NAME))
+            {
+                imageList_large.Images.Add(Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, LargeFolderIcon));
+                imageList_small.Images.Add(Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallFolderIcon));
+                listView_explorer.Items[index].ImageIndex = index;
+                listView_explorer.Items[index].Selected = true;
+            }
+        }
         
         /// <summary>
         /// 文件树测试
@@ -492,6 +524,7 @@ namespace custom_cloud
             //if (obj.Equals(toolStripMenuItem_listContextRightClick_openMethod)) item_openMethod();
             if (obj.Equals(toolStripMenuItem_listContextRightClick_paste)) items_Paste();
             if (obj.Equals(toolStripMenuItem_listRightClick_item_copy)) items_Copy();
+            if (obj.Equals(toolStripMenuItem_listRightClick_item_cut)) items_Cut();
 
             if (obj.Equals(toolStripMenuItem_listContextRightClickView_largeIcon))
                 modifyViewMode(toolStripMenuItem_listContextRightClickView_largeIcon);
@@ -513,7 +546,9 @@ namespace custom_cloud
                     File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(openFileDialog_main.FileName));
                 //更新文件树
                 File_Tree.updateTree(CurrentPath);
-                updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                addItemToListView(newFileName, FileTree.FILE_IDENTIFY_NAME);
+                /*
                 for(int i = 0; i < listView_explorer.Items.Count; i++)
                 {
                     if (listView_explorer.Items[i].Text.Equals(Path.GetFileName(newFileName)) && 
@@ -523,6 +558,7 @@ namespace custom_cloud
                         break;
                     }
                 }
+                */
                 /* 启动同步 */
             }
         }
@@ -537,7 +573,9 @@ namespace custom_cloud
                     File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(folderBrowserDialog_main.SelectedPath));
                 //更新文件树
                 File_Tree.updateTree(CurrentPath);
-                updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                addItemToListView(newFolderName, FileTree.FOLDER_IDENTIFY_NAME);
+                /*
                 for (int i = 0; i < listView_explorer.Items.Count; i++)
                 {
                     if (listView_explorer.Items[i].Text.Equals(Path.GetFileName(newFolderName)) && 
@@ -547,6 +585,7 @@ namespace custom_cloud
                         break;
                     }
                 }
+                */
                 /* 启动同步 */
             }
         }
@@ -603,7 +642,8 @@ namespace custom_cloud
         {
             string newFolderName = FileTree.createFolder(CurrentPath);
             File_Tree.updateTree(CurrentPath);
-            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            addItemToListView(newFolderName, FileTree.FOLDER_IDENTIFY_NAME);
             for(int i = 0; i < listView_explorer.Items.Count; i++)
             {
                 /* 判断是否是文件夹 */
@@ -735,7 +775,7 @@ namespace custom_cloud
             
         }
         /// <summary>
-        /// 复制多份文件
+        /// 复制多份文件（夹）
         /// </summary>
         void items_Copy()
         {
@@ -747,6 +787,20 @@ namespace custom_cloud
             }
             toolStripMenuItem_listContextRightClick_paste.Enabled = true;
             CutTrue_CopyFalse = false;
+        }
+        /// <summary>
+        /// 剪切多份文件（夹)
+        /// </summary>
+        void items_Cut()
+        {
+            QueueCopyDirectory = new Queue<string>();
+            for (int i = 0; i < listView_explorer.SelectedItems.Count; i++)
+            {
+                QueueCopyDirectory.Enqueue(Current_Path + "/" + listView_explorer.SelectedItems[i].Text);
+                QueueCopyAttribute.Enqueue(listView_explorer.SelectedItems[i].Name);
+            }
+            toolStripMenuItem_listContextRightClick_paste.Enabled = true;
+            CutTrue_CopyFalse = true;
         }
         /// <summary>
         /// 粘贴多份文件
@@ -767,14 +821,26 @@ namespace custom_cloud
                     {
                         newName = FileTree.copyDirectory(fileName, CurrentPath + "/" + Path.GetFileName(fileName));
                     }
-                    for (int i = 0; i < listView_explorer.Items.Count; i++)
+                    else
                     {
-                        if(Directory.Exists(newName) && listView_explorer.Items[i].Equals(Path.GetFileName(newName)))
+                        /* 如果是剪切的话，删除原有项目 */
+                        for (int i = 0; i < listView_explorer.Items.Count; i++)
                         {
-                            listView_explorer.Items[i].Selected = true;
-                            break;
+                            if (Directory.Exists(fileName) && listView_explorer.Items[i].Text.Equals(Path.GetFileName(fileName)))
+                            {
+                                listView_explorer.Items[i].Remove();
+                                imageList_large.Images.RemoveAt(i);
+                                imageList_small.Images.RemoveAt(i);
+                                break;
+                            }
                         }
+                        newName = FileTree.moveDirectory(fileName, CurrentPath + "/" + Path.GetFileName(fileName));
                     }
+                    
+                    addItemToListView(newName, FileTree.FOLDER_IDENTIFY_NAME);
+                    /*
+                    
+                    */
                 }
                 else if (attribute.Equals(FileTree.FILE_IDENTIFY_NAME))
                 {
@@ -782,6 +848,23 @@ namespace custom_cloud
                     {
                         newName = FileTree.copyFile(fileName, CurrentPath + "/" + Path.GetFileName(fileName));
                     }
+                    else
+                    {
+                        /* 删除原有项目 */
+                        for (int i = 0; i < listView_explorer.Items.Count; i++)
+                        {
+                            if (File.Exists(fileName) && listView_explorer.Items[i].Text.Equals(Path.GetFileName(fileName)))
+                            {
+                                listView_explorer.Items[i].Remove();
+                                imageList_large.Images.RemoveAt(i);
+                                imageList_small.Images.RemoveAt(i);
+                                break;
+                            }
+                        }
+                        newName = FileTree.moveFile(fileName, CurrentPath + "/" + Path.GetFileName(fileName));
+                    }
+                    addItemToListView(newName, FileTree.FILE_IDENTIFY_NAME);
+                    /*
                     for (int i = 0; i < listView_explorer.Items.Count; i++)
                     {
                         if (File.Exists(newName) && listView_explorer.Items[i].Equals(Path.GetFileName(newName)))
@@ -790,13 +873,14 @@ namespace custom_cloud
                             break;
                         }
                     }
+                    */
                 }
                 
             }
             toolStripMenuItem_listContextRightClick_paste.Enabled = false;
             /* 更新文件树 */
-            File_Tree.updateTree(CurrentPath);
-            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            //File_Tree.updateTree(CurrentPath);
+            //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
         }
         /// <summary>
         /// 当文件有变更时发送的事件（ 废弃这个方法，太敏感了）
