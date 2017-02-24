@@ -78,6 +78,12 @@
     <Compile Include="codeClass\CodeAnalysis.cs" />
     <Compile Include="configClass\ErrorCode.cs" />
     <Compile Include="fileSystemClass\FileTree.cs" />
+    <Compile Include="subMainForm\UserModifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subMainForm\UserModifyForm.Designer.cs">
+      <DependentUpon>UserModifyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utility\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="subMainForm\CloudDiskForm.resx">
       <DependentUpon>CloudDiskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subMainForm\UserModifyForm.resx">
+      <DependentUpon>UserModifyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utility\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>

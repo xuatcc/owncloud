@@ -128,6 +128,10 @@ namespace custom_cloud
         /// 删除问询界面
         /// </summary>
         DeleteFileDialog deleteFileDialog = new DeleteFileDialog();
+        /// <summary>
+        /// 文件属性界面
+        /// </summary>
+        FileAttributeDialog fileAttributeDialog = new FileAttributeDialog();
         public CloudDiskForm()
         {
             InitializeComponent();
@@ -197,6 +201,7 @@ namespace custom_cloud
             listView_explorer.SmallImageList = imageList_small;
             updateSorterPath();
             updateSortRule();
+            sortBySortRule();
             listView_explorer.LabelEdit = true;
         }
         /// <summary>
@@ -604,7 +609,6 @@ namespace custom_cloud
             
             //File_Tree.updateTree("./icon/");
             var temp = File_Tree;
-            string a = "";
         }
         /// <summary>
         /// 设置一部分菜单项是否可见
@@ -705,6 +709,7 @@ namespace custom_cloud
             if (obj.Equals(toolStripMenuItem_listContextRightClickSortRule_byName)) list_Sort(obj);
             if (obj.Equals(toolStripMenuItem_listContextRightClickSortRule_bySize)) list_Sort(obj);
             if (obj.Equals(toolStripMenuItem_listContextRightClickSortRule_byTime)) list_Sort(obj);
+            if (obj.Equals(toolStripMenuItem_listRightClick_item_attribute)) item_ShowAttribute();
 
             if (obj.Equals(toolStripMenuItem_listContextRightClickView_largeIcon))
                 modifyViewMode(toolStripMenuItem_listContextRightClickView_largeIcon);
@@ -862,7 +867,6 @@ namespace custom_cloud
                         
 
                         string a = CurrentPath;
-                        string b = "";
                         File_Tree.updateTree(CurrentPath);
                         updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
 
@@ -873,7 +877,7 @@ namespace custom_cloud
                         pictureBox_buttonForward.Image = Properties.Resources.function_arrow_gray_forward_button;
 
                         updateSorterPath();
-                        updateSortRule();
+                        sortBySortRule();
                         /* 应该使上方的navigation同步变化，先不做 */
                         break;
                     }
@@ -883,7 +887,7 @@ namespace custom_cloud
                         listView_explorer.Items[i].Focused = false;
 
                         updateSorterPath();
-                        updateSortRule();
+                        sortBySortRule();
                         break;
                     }
                 }
@@ -936,7 +940,7 @@ namespace custom_cloud
             pictureBox_buttonForward.Image = Properties.Resources.arrow_forward_deep_blue;
 
             updateSorterPath();
-            updateSortRule();
+            sortBySortRule();
         }
         /// <summary>
         /// 目录前进
@@ -961,7 +965,7 @@ namespace custom_cloud
                 pictureBox_buttonForward.Image = Properties.Resources.function_arrow_gray_forward_button;
             }
             updateSorterPath();
-            updateSortRule();
+            sortBySortRule();
         }
         /// <summary>
         /// 复制多份文件（夹）
@@ -1082,6 +1086,27 @@ namespace custom_cloud
             listView_explorer.SelectedItems[0].BeginEdit();
         }
         /// <summary>
+        /// 显示文件（夹）的属性
+        /// </summary>
+        void item_ShowAttribute()
+        {
+            if (listView_explorer.SelectedItems.Count != 1) return;
+            /* 判断是文件还是文件夹 */
+            string text = listView_explorer.SelectedItems[0].Text;
+            string name = listView_explorer.SelectedItems[0].Name;
+            if (name.Contains(FileTree.FOLDER_IDENTIFY_NAME))
+            {
+                FileTree fileTree = File_Tree.getTargetTree(CurrentPath + "/" + text);
+                fileAttributeDialog.setLabelValue(fileTree.RootDirectory.Name, CodeAnalysis.converSizeToString(fileTree.getByteLength()), fileTree.RootDirectory.CreationTime.ToString(), "unsync");
+            }
+            else if (name.Contains(FileTree.FILE_IDENTIFY_NAME))
+            {
+                FileTree.TreeFileInfo treeFileInfo = File_Tree.getTargetTree(CurrentPath).CurrentDirectoryFileList[text];
+                fileAttributeDialog.setLabelValue(treeFileInfo.Fileinfo.Name, CodeAnalysis.converSizeToString(treeFileInfo.Fileinfo.Length), treeFileInfo.Fileinfo.CreationTime.ToString(), "unsync");
+            }
+            fileAttributeDialog.ShowDialog();
+        }
+        /// <summary>
         /// 排序事件
         /// </summary>
         /// <param name="sender"></param>
@@ -1094,6 +1119,15 @@ namespace custom_cloud
             else if (sender.Equals(toolStripMenuItem_listContextRightClickSortRule_byTime))
                 Sort_Rule = MyConfig.SortRule.ByTime;
             updateSortRule();
+            //sortBySortRule();
+        }
+        /// <summary>
+        /// 根据排序规则自动排序
+        /// </summary>
+        /// <param name="sender"></param>
+        void sortBySortRule()
+        {
+            listView_explorer.Sort();
         }
         /// <summary>
         /// 当文件有变更时发送的事件（ 废弃这个方法，太敏感了）
@@ -1148,11 +1182,8 @@ namespace custom_cloud
             File_Tree.updateTree(CurrentPath);
             /* 更新该项目 */
             modifyListViewItems(index, CurrentPath + "/" + newText);
-            /* 删除原来的项目 */
-            //listView_explorer.Items.RemoveAt(index);
-            //imageList_large.Images.RemoveAt(index);
-            //imageList_small.Images.RemoveAt(index);
-            //addItemToListView(CurrentPath + "/" + newText, name);
+            /* 重新排序 */
+            sortBySortRule();
         }
         /// <summary>
         /// 项目名称编辑前发生的事件

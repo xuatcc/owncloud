@@ -192,25 +192,25 @@ namespace custom_cloud
             // B
             if (temp_result < 1)
             {
-                result = byteLength.ToString() + " B";
+                result = byteLength.ToString("f0") + " B";
                 return result;
             }
             // KB
             if (temp_result / dot < 1)
             {
-                result = temp_result.ToString() + " KB";
+                result = temp_result.ToString("f2") + " KB";
                 return result;
             }
             // MB
             temp_result /= dot;
             if (temp_result / dot < 1)
             {
-                result = temp_result.ToString() + " MB";
+                result = temp_result.ToString("f2") + " MB";
                 return result;
             }
             // GB
             temp_result /= dot;
-            result = temp_result.ToString() + " GB";
+            result = temp_result.ToString("f2") + " GB";
             return result;
         }
         /// 判断文件是否为图片

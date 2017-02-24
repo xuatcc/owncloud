@@ -87,3 +87,4 @@ E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.Form_Login.resources
 E:\projects\VS2015\custom_cloud\obj\Debug\owncloud启动器.csprojResolveAssemblyReference.cache
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.dialog.DeleteFileDialog.resources
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.dialog.FileAttributeDialog.resources
+E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.subMainForm.UserModifyForm.resources
