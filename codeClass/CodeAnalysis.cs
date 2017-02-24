@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+    *@by Benquicki
+    *@in XJTU
+    *@in 2016.3
+*/
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;

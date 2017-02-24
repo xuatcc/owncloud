@@ -1,4 +1,9 @@
-﻿using custom_cloud.cmdClass;
+﻿/*
+    *@by Benquicki
+    *@in XJTU
+    *@in 2017.2
+*/
+using custom_cloud.cmdClass;
 using custom_cloud.dialog;
 using System;
 using System.Collections;

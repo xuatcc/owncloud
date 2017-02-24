@@ -1,4 +1,9 @@
-﻿using custom_cloud.subSettingForm;
+﻿/*
+    *@by Benquicki
+    *@in XJTU
+    *@in 2017.2
+*/
+using custom_cloud.subSettingForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
