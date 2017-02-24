@@ -1,4 +1,5 @@
 ﻿using custom_cloud.cmdClass;
+using custom_cloud.dialog;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -123,6 +124,10 @@ namespace custom_cloud
         /// 同步目录
         /// </summary>
         public string SyncPath = "./test/";
+        /// <summary>
+        /// 删除问询界面
+        /// </summary>
+        DeleteFileDialog deleteFileDialog = new DeleteFileDialog();
         public CloudDiskForm()
         {
             InitializeComponent();
@@ -727,7 +732,7 @@ namespace custom_cloud
                     //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
                     addItemToListView(newFileName, FileTree.FILE_IDENTIFY_NAME);
                     /* 加密 */
-                    CMDComand.ecryptFile(newFileName, newFileName);
+                    //CMDComand.ecryptFile(newFileName, newFileName);
                     /* 启动同步 */
                 }
             }
@@ -788,6 +793,8 @@ namespace custom_cloud
         /// </summary>
         void item_Delete()
         {
+            deleteFileDialog = new DeleteFileDialog();
+            if (deleteFileDialog.ShowDialog() != DialogResult.OK) return;
             string fileName;
             for (int i = 0; i < listView_explorer.SelectedItems.Count; i++)
             {
