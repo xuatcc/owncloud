@@ -40,6 +40,22 @@ namespace custom_cloud
         public static DateTime RefFutureTime = Convert.ToDateTime("2050-1-1 00:00:00");
         public static double RefFutureTimeDouble = RefFutureTime.Subtract(RefFutureTime).TotalSeconds;
         /// <summary>
+        /// 加密模块的位置
+        /// </summary>
+        public static string PATH_FILE_ENCRYPTION = @"./tool/openssl.exe";
+        /// <summary>
+        /// 辅助工具包的位置
+        /// </summary>
+        public static string PATH_TOOL = @"./tool/";
+        /// <summary>
+        /// 文件加密密码
+        /// </summary>
+        public static string PASSWORD_FILE_ENCRYPTION = "custom_cloud";
+        /// <summary>
+        /// 加密后文件的扩展名
+        /// </summary>
+        public static string EXTEND_NAME_ENCRYP_FILE = ".ssl";
+        /// <summary>
         /// 文件排序规则
         /// </summary>
         public enum SortRule

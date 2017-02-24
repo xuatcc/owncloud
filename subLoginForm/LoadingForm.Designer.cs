@@ -82,11 +82,10 @@
             this.Controls.Add(this.label_status);
             this.Controls.Add(this.button_cancelLogin);
             this.Controls.Add(this.pictureBox_wait);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoadingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoadingForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_wait)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

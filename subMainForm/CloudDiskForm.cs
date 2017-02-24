@@ -1,4 +1,5 @@
-﻿using System;
+﻿using custom_cloud.cmdClass;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -715,25 +716,20 @@ namespace custom_cloud
         {
             if (openFileDialog_main.ShowDialog() == DialogResult.OK)
             {
-                //这期间需要加密，这里先不加
-                string newFileName = FileTree.copyFile(openFileDialog_main.FileName,
-                    File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(openFileDialog_main.FileName));
-                //更新文件树
-                File_Tree.updateTree(CurrentPath);
-                //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
-                addItemToListView(newFileName, FileTree.FILE_IDENTIFY_NAME);
-                /*
-                for(int i = 0; i < listView_explorer.Items.Count; i++)
+                string[] fileNames = openFileDialog_main.FileNames;
+                for (int i = 0; i < fileNames.Length; i++)
                 {
-                    if (listView_explorer.Items[i].Text.Equals(Path.GetFileName(newFileName)) && 
-                        File.Exists(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(newFileName)))
-                    {
-                        listView_explorer.Items[i].Selected = true;
-                        break;
-                    }
+                    ////这期间需要加密，这里先不加
+                    string newFileName = FileTree.copyFile(openFileDialog_main.FileName,
+                        File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(fileNames[i]));
+                    //更新文件树
+                    File_Tree.updateTree(CurrentPath);
+                    //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                    addItemToListView(newFileName, FileTree.FILE_IDENTIFY_NAME);
+                    /* 加密 */
+                    CMDComand.ecryptFile(newFileName, newFileName);
+                    /* 启动同步 */
                 }
-                */
-                /* 启动同步 */
             }
         }
         /// <summary>
@@ -870,6 +866,7 @@ namespace custom_cloud
                         pictureBox_buttonForward.Image = Properties.Resources.function_arrow_gray_forward_button;
 
                         updateSorterPath();
+                        updateSortRule();
                         /* 应该使上方的navigation同步变化，先不做 */
                         break;
                     }
@@ -879,6 +876,7 @@ namespace custom_cloud
                         listView_explorer.Items[i].Focused = false;
 
                         updateSorterPath();
+                        updateSortRule();
                         break;
                     }
                 }
@@ -931,6 +929,7 @@ namespace custom_cloud
             pictureBox_buttonForward.Image = Properties.Resources.arrow_forward_deep_blue;
 
             updateSorterPath();
+            updateSortRule();
         }
         /// <summary>
         /// 目录前进
@@ -955,6 +954,7 @@ namespace custom_cloud
                 pictureBox_buttonForward.Image = Properties.Resources.function_arrow_gray_forward_button;
             }
             updateSorterPath();
+            updateSortRule();
         }
         /// <summary>
         /// 复制多份文件（夹）

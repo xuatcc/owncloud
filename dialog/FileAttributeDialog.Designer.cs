@@ -1,6 +1,6 @@
 ﻿namespace custom_cloud.dialog
 {
-    partial class DeleteFileDialog
+    partial class FileAttributeDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // DeleteFileDialog
+            // FileAttributeDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 161);
+            this.ClientSize = new System.Drawing.Size(284, 261);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "DeleteFileDialog";
+            this.Name = "FileAttributeDialog";
+            this.Text = "属性";
             this.ResumeLayout(false);
 
         }

@@ -506,6 +506,10 @@
             this.toolStripMenuItem_listRightClick_item_attribute.Text = "属性";
             this.toolStripMenuItem_listRightClick_item_attribute.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
+            // openFileDialog_main
+            // 
+            this.openFileDialog_main.Multiselect = true;
+            // 
             // fileSystemWatcher_main
             // 
             this.fileSystemWatcher_main.EnableRaisingEvents = true;
