@@ -1,0 +1,1025 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>custom_cloud: OCC::AbstractNetworkJob类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="cloudDisk.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">custom_cloud
+   &#160;<span id="projectnumber">beta 1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_o_c_c.html">OCC</a></li><li class="navelem"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html">AbstractNetworkJob</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="class_o_c_c_1_1_abstract_network_job-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">OCC::AbstractNetworkJob类 参考<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group__libsync.html">The sync library</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The <a class="el" href="class_o_c_c_1_1_abstract_network_job.html" title="The AbstractNetworkJob class ">AbstractNetworkJob</a> class  
+ <a href="class_o_c_c_1_1_abstract_network_job.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a>&gt;</code></p>
+<div class="dynheader">
+类 OCC::AbstractNetworkJob 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_o_c_c_1_1_abstract_network_job.png" usemap="#OCC::AbstractNetworkJob_map" alt=""/>
+  <map id="OCC::AbstractNetworkJob_map" name="OCC::AbstractNetworkJob_map">
+<area href="class_o_c_c_1_1_delete_job.html" title="The DeleteJob class " alt="OCC::DeleteJob" shape="rect" coords="0,112,160,136"/>
+<area href="class_o_c_c_1_1_g_e_t_file_job.html" title="The GETFileJob class " alt="OCC::GETFileJob" shape="rect" coords="170,112,330,136"/>
+<area href="class_o_c_c_1_1_move_job.html" title="The MoveJob class " alt="OCC::MoveJob" shape="rect" coords="340,112,500,136"/>
+<area href="class_o_c_c_1_1_poll_job.html" title="This job implements the asynchronous PUT " alt="OCC::PollJob" shape="rect" coords="510,112,670,136"/>
+<area href="class_o_c_c_1_1_p_u_t_file_job.html" title="The PUTFileJob class " alt="OCC::PUTFileJob" shape="rect" coords="680,112,840,136"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:ae278929d9b46b8e705d044938c172ae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#ae278929d9b46b8e705d044938c172ae9">setTimeout</a> (qint64 <a class="el" href="utility_8cpp.html#a1be2dbfd71764ac5ccdfe9183a80ed6f">msec</a>)</td></tr>
+<tr class="separator:ae278929d9b46b8e705d044938c172ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40ad0e833d89ebe39dc6b45c6ee4971b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a40ad0e833d89ebe39dc6b45c6ee4971b">resetTimeout</a> ()</td></tr>
+<tr class="separator:a40ad0e833d89ebe39dc6b45c6ee4971b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:ad474d13905dbb6431e40d8de701aae8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#ad474d13905dbb6431e40d8de701aae8e">networkError</a> (QNetworkReply *<a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a38ee84a458ae0792e5bc01e57a59259b">reply</a>)</td></tr>
+<tr class="separator:ad474d13905dbb6431e40d8de701aae8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67cafd60451812c108d46c02c1f1d1a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a67cafd60451812c108d46c02c1f1d1a2">networkActivity</a> ()</td></tr>
+<tr class="separator:a67cafd60451812c108d46c02c1f1d1a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a04e6dd9d09247f2856f9e878bc29cd65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a04e6dd9d09247f2856f9e878bc29cd65">AbstractNetworkJob</a> (<a class="el" href="namespace_o_c_c.html#a848616aedb9188e223c6b9867757fe69">AccountPtr</a> <a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a469c9d8212a338ad07d1efa1a94f784d">account</a>, const QString &amp;<a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a8ed2423a454ec861c20f6900f5591ef7">path</a>, QObject *parent=0)</td></tr>
+<tr class="separator:a04e6dd9d09247f2856f9e878bc29cd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7939e5ec97f275539b30998ab5591a2e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a7939e5ec97f275539b30998ab5591a2e">~AbstractNetworkJob</a> ()</td></tr>
+<tr class="separator:a7939e5ec97f275539b30998ab5591a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256f1b6b5d6f6252e83b3602743da64a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a256f1b6b5d6f6252e83b3602743da64a">start</a> ()</td></tr>
+<tr class="separator:a256f1b6b5d6f6252e83b3602743da64a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a469c9d8212a338ad07d1efa1a94f784d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_c_c.html#a848616aedb9188e223c6b9867757fe69">AccountPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a469c9d8212a338ad07d1efa1a94f784d">account</a> () const</td></tr>
+<tr class="separator:a469c9d8212a338ad07d1efa1a94f784d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace0365f8b9c829bfb7a021810f359cef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#ace0365f8b9c829bfb7a021810f359cef">setPath</a> (const QString &amp;<a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a8ed2423a454ec861c20f6900f5591ef7">path</a>)</td></tr>
+<tr class="separator:ace0365f8b9c829bfb7a021810f359cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ed2423a454ec861c20f6900f5591ef7"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a8ed2423a454ec861c20f6900f5591ef7">path</a> () const</td></tr>
+<tr class="separator:a8ed2423a454ec861c20f6900f5591ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cb752aaa56ecdae68aa5955ff4ee26d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a3cb752aaa56ecdae68aa5955ff4ee26d">setReply</a> (QNetworkReply *<a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a38ee84a458ae0792e5bc01e57a59259b">reply</a>)</td></tr>
+<tr class="separator:a3cb752aaa56ecdae68aa5955ff4ee26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38ee84a458ae0792e5bc01e57a59259b"><td class="memItemLeft" align="right" valign="top">QNetworkReply *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a38ee84a458ae0792e5bc01e57a59259b">reply</a> () const</td></tr>
+<tr class="separator:a38ee84a458ae0792e5bc01e57a59259b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710716b5bbc614afdeab868dd4221a8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a710716b5bbc614afdeab868dd4221a8c">setIgnoreCredentialFailure</a> (bool ignore)</td></tr>
+<tr class="separator:a710716b5bbc614afdeab868dd4221a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e48bf66638ad148b7185a24f85ffbd5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a6e48bf66638ad148b7185a24f85ffbd5">ignoreCredentialFailure</a> () const</td></tr>
+<tr class="separator:a6e48bf66638ad148b7185a24f85ffbd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76b4100e0d1ddf7c9d96fd23ba9c6462"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a76b4100e0d1ddf7c9d96fd23ba9c6462">responseTimestamp</a> ()</td></tr>
+<tr class="separator:a76b4100e0d1ddf7c9d96fd23ba9c6462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a100683873781f0a715e4b34ab7cc8d16"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a100683873781f0a715e4b34ab7cc8d16">duration</a> ()</td></tr>
+<tr class="separator:a100683873781f0a715e4b34ab7cc8d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ac8f4ffd873d4e26eb5caacaebaeda3"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a6ac8f4ffd873d4e26eb5caacaebaeda3">timeoutMsec</a> ()</td></tr>
+<tr class="separator:a6ac8f4ffd873d4e26eb5caacaebaeda3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a9672b89c5b77fbd67ad2a00b85ae1df2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a9672b89c5b77fbd67ad2a00b85ae1df2">setupConnections</a> (QNetworkReply *<a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a38ee84a458ae0792e5bc01e57a59259b">reply</a>)</td></tr>
+<tr class="separator:a9672b89c5b77fbd67ad2a00b85ae1df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c0f7fcc4db68299f376aeb7573bf207"><td class="memItemLeft" align="right" valign="top">QNetworkReply *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a5c0f7fcc4db68299f376aeb7573bf207">davRequest</a> (const QByteArray &amp;verb, const QString &amp;relPath, QNetworkRequest req=QNetworkRequest(), QIODevice *data=0)</td></tr>
+<tr class="separator:a5c0f7fcc4db68299f376aeb7573bf207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3110a1a51bb94c92449d758e0f9285bd"><td class="memItemLeft" align="right" valign="top">QNetworkReply *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a3110a1a51bb94c92449d758e0f9285bd">davRequest</a> (const QByteArray &amp;verb, const QUrl &amp;url, QNetworkRequest req=QNetworkRequest(), QIODevice *data=0)</td></tr>
+<tr class="separator:a3110a1a51bb94c92449d758e0f9285bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2385aca6cd2090383403ec154b663806"><td class="memItemLeft" align="right" valign="top">QNetworkReply *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a2385aca6cd2090383403ec154b663806">getRequest</a> (const QString &amp;relPath)</td></tr>
+<tr class="separator:a2385aca6cd2090383403ec154b663806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a439fa1b129d82b4f9cd5c3913738ed85"><td class="memItemLeft" align="right" valign="top">QNetworkReply *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a439fa1b129d82b4f9cd5c3913738ed85">getRequest</a> (const QUrl &amp;url)</td></tr>
+<tr class="separator:a439fa1b129d82b4f9cd5c3913738ed85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacbf0ebfb042d9ec34694cbdcca00b8"><td class="memItemLeft" align="right" valign="top">QNetworkReply *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#aaacbf0ebfb042d9ec34694cbdcca00b8">headRequest</a> (const QString &amp;relPath)</td></tr>
+<tr class="separator:aaacbf0ebfb042d9ec34694cbdcca00b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79faba21de3d7176233b63d986ab52f7"><td class="memItemLeft" align="right" valign="top">QNetworkReply *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a79faba21de3d7176233b63d986ab52f7">headRequest</a> (const QUrl &amp;url)</td></tr>
+<tr class="separator:a79faba21de3d7176233b63d986ab52f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1d23aa2b82cf666a6f629863f487a92"><td class="memItemLeft" align="right" valign="top">QNetworkReply *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#ab1d23aa2b82cf666a6f629863f487a92">deleteRequest</a> (const QUrl &amp;url)</td></tr>
+<tr class="separator:ab1d23aa2b82cf666a6f629863f487a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad58fa4ab85f5c3a4dff1fd6e406b64a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#ad58fa4ab85f5c3a4dff1fd6e406b64a0">maxRedirects</a> () const</td></tr>
+<tr class="separator:ad58fa4ab85f5c3a4dff1fd6e406b64a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af811f7299d7e526678a8758f2e7102d2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#af811f7299d7e526678a8758f2e7102d2">finished</a> ()=0</td></tr>
+<tr class="separator:af811f7299d7e526678a8758f2e7102d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a135fa86efd55fdcd58d0c28c70ac12d1"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a135fa86efd55fdcd58d0c28c70ac12d1">_responseTimestamp</a></td></tr>
+<tr class="separator:a135fa86efd55fdcd58d0c28c70ac12d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a21a8d9ea34db5b052f4b8fa295bf9f"><td class="memItemLeft" align="right" valign="top">QElapsedTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a3a21a8d9ea34db5b052f4b8fa295bf9f">_durationTimer</a></td></tr>
+<tr class="separator:a3a21a8d9ea34db5b052f4b8fa295bf9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac092a093062518c8f1cc4748d8e6ac2f"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#ac092a093062518c8f1cc4748d8e6ac2f">_duration</a></td></tr>
+<tr class="separator:ac092a093062518c8f1cc4748d8e6ac2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af29695f2d78215243f9db1e91a8302a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#af29695f2d78215243f9db1e91a8302a5">_timedout</a></td></tr>
+<tr class="separator:af29695f2d78215243f9db1e91a8302a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b69131b751618f6147a68f55c116ed7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a2b69131b751618f6147a68f55c116ed7">_followRedirects</a></td></tr>
+<tr class="separator:a2b69131b751618f6147a68f55c116ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5495f569442f06ad0ea646d9002d0525"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_c_c.html#a848616aedb9188e223c6b9867757fe69">AccountPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_abstract_network_job.html#a5495f569442f06ad0ea646d9002d0525">_account</a></td></tr>
+<tr class="separator:a5495f569442f06ad0ea646d9002d0525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>The <a class="el" href="class_o_c_c_1_1_abstract_network_job.html" title="The AbstractNetworkJob class ">AbstractNetworkJob</a> class </p>
+
+<p class="definition">在文件 <a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a> 第 <a class="el" href="abstractnetworkjob_8h_source.html#l00038">38</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a04e6dd9d09247f2856f9e878bc29cd65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04e6dd9d09247f2856f9e878bc29cd65">&#9670;&nbsp;</a></span>AbstractNetworkJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">OCC::AbstractNetworkJob::AbstractNetworkJob </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_o_c_c.html#a848616aedb9188e223c6b9867757fe69">AccountPtr</a>&#160;</td>
+          <td class="paramname"><em>account</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7939e5ec97f275539b30998ab5591a2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7939e5ec97f275539b30998ab5591a2e">&#9670;&nbsp;</a></span>~AbstractNetworkJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual OCC::AbstractNetworkJob::~AbstractNetworkJob </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a469c9d8212a338ad07d1efa1a94f784d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a469c9d8212a338ad07d1efa1a94f784d">&#9670;&nbsp;</a></span>account()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_o_c_c.html#a848616aedb9188e223c6b9867757fe69">AccountPtr</a> OCC::AbstractNetworkJob::account </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a> 第 <a class="el" href="abstractnetworkjob_8h_source.html#l00046">46</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5c0f7fcc4db68299f376aeb7573bf207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c0f7fcc4db68299f376aeb7573bf207">&#9670;&nbsp;</a></span>davRequest() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkReply* OCC::AbstractNetworkJob::davRequest </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;&#160;</td>
+          <td class="paramname"><em>verb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>relPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QNetworkRequest&#160;</td>
+          <td class="paramname"><em>req</em> = <code>QNetworkRequest()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QIODevice *&#160;</td>
+          <td class="paramname"><em>data</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3110a1a51bb94c92449d758e0f9285bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3110a1a51bb94c92449d758e0f9285bd">&#9670;&nbsp;</a></span>davRequest() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkReply* OCC::AbstractNetworkJob::davRequest </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;&#160;</td>
+          <td class="paramname"><em>verb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QUrl &amp;&#160;</td>
+          <td class="paramname"><em>url</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QNetworkRequest&#160;</td>
+          <td class="paramname"><em>req</em> = <code>QNetworkRequest()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QIODevice *&#160;</td>
+          <td class="paramname"><em>data</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab1d23aa2b82cf666a6f629863f487a92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1d23aa2b82cf666a6f629863f487a92">&#9670;&nbsp;</a></span>deleteRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkReply* OCC::AbstractNetworkJob::deleteRequest </td>
+          <td>(</td>
+          <td class="paramtype">const QUrl &amp;&#160;</td>
+          <td class="paramname"><em>url</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a100683873781f0a715e4b34ab7cc8d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a100683873781f0a715e4b34ab7cc8d16">&#9670;&nbsp;</a></span>duration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">quint64 OCC::AbstractNetworkJob::duration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af811f7299d7e526678a8758f2e7102d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af811f7299d7e526678a8758f2e7102d2">&#9670;&nbsp;</a></span>finished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool OCC::AbstractNetworkJob::finished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_o_c_c_1_1_poll_job.html#a06b39d3adf1ff0cccadfc3ca74be81d0">OCC::PollJob</a>, <a class="el" href="class_o_c_c_1_1_p_u_t_file_job.html#aeca049817cfb255d038f4bc7faf0a204">OCC::PUTFileJob</a>, <a class="el" href="class_o_c_c_1_1_g_e_t_file_job.html#a41e95ff131e8009d6cd8c2d063eeb7c0">OCC::GETFileJob</a>, <a class="el" href="class_o_c_c_1_1_move_job.html#a2cea82684a6f32d91245b8e974f516dd">OCC::MoveJob</a> , 以及 <a class="el" href="class_o_c_c_1_1_delete_job.html#a5776804580c1eee33e5bf72a614a49f1">OCC::DeleteJob</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a2385aca6cd2090383403ec154b663806"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2385aca6cd2090383403ec154b663806">&#9670;&nbsp;</a></span>getRequest() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkReply* OCC::AbstractNetworkJob::getRequest </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>relPath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a439fa1b129d82b4f9cd5c3913738ed85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a439fa1b129d82b4f9cd5c3913738ed85">&#9670;&nbsp;</a></span>getRequest() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkReply* OCC::AbstractNetworkJob::getRequest </td>
+          <td>(</td>
+          <td class="paramtype">const QUrl &amp;&#160;</td>
+          <td class="paramname"><em>url</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaacbf0ebfb042d9ec34694cbdcca00b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaacbf0ebfb042d9ec34694cbdcca00b8">&#9670;&nbsp;</a></span>headRequest() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkReply* OCC::AbstractNetworkJob::headRequest </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>relPath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a79faba21de3d7176233b63d986ab52f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79faba21de3d7176233b63d986ab52f7">&#9670;&nbsp;</a></span>headRequest() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkReply* OCC::AbstractNetworkJob::headRequest </td>
+          <td>(</td>
+          <td class="paramtype">const QUrl &amp;&#160;</td>
+          <td class="paramname"><em>url</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e48bf66638ad148b7185a24f85ffbd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e48bf66638ad148b7185a24f85ffbd5">&#9670;&nbsp;</a></span>ignoreCredentialFailure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OCC::AbstractNetworkJob::ignoreCredentialFailure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a> 第 <a class="el" href="abstractnetworkjob_8h_source.html#l00055">55</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad58fa4ab85f5c3a4dff1fd6e406b64a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad58fa4ab85f5c3a4dff1fd6e406b64a0">&#9670;&nbsp;</a></span>maxRedirects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OCC::AbstractNetworkJob::maxRedirects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a> 第 <a class="el" href="abstractnetworkjob_8h_source.html#l00082">82</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a67cafd60451812c108d46c02c1f1d1a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67cafd60451812c108d46c02c1f1d1a2">&#9670;&nbsp;</a></span>networkActivity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::AbstractNetworkJob::networkActivity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad474d13905dbb6431e40d8de701aae8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad474d13905dbb6431e40d8de701aae8e">&#9670;&nbsp;</a></span>networkError</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::AbstractNetworkJob::networkError </td>
+          <td>(</td>
+          <td class="paramtype">QNetworkReply *&#160;</td>
+          <td class="paramname"><em>reply</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ed2423a454ec861c20f6900f5591ef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ed2423a454ec861c20f6900f5591ef7">&#9670;&nbsp;</a></span>path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString OCC::AbstractNetworkJob::path </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a> 第 <a class="el" href="abstractnetworkjob_8h_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a38ee84a458ae0792e5bc01e57a59259b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38ee84a458ae0792e5bc01e57a59259b">&#9670;&nbsp;</a></span>reply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QNetworkReply* OCC::AbstractNetworkJob::reply </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a> 第 <a class="el" href="abstractnetworkjob_8h_source.html#l00052">52</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a40ad0e833d89ebe39dc6b45c6ee4971b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ad0e833d89ebe39dc6b45c6ee4971b">&#9670;&nbsp;</a></span>resetTimeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::AbstractNetworkJob::resetTimeout </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76b4100e0d1ddf7c9d96fd23ba9c6462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76b4100e0d1ddf7c9d96fd23ba9c6462">&#9670;&nbsp;</a></span>responseTimestamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray OCC::AbstractNetworkJob::responseTimestamp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a710716b5bbc614afdeab868dd4221a8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a710716b5bbc614afdeab868dd4221a8c">&#9670;&nbsp;</a></span>setIgnoreCredentialFailure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::AbstractNetworkJob::setIgnoreCredentialFailure </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ignore</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace0365f8b9c829bfb7a021810f359cef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace0365f8b9c829bfb7a021810f359cef">&#9670;&nbsp;</a></span>setPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::AbstractNetworkJob::setPath </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3cb752aaa56ecdae68aa5955ff4ee26d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cb752aaa56ecdae68aa5955ff4ee26d">&#9670;&nbsp;</a></span>setReply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::AbstractNetworkJob::setReply </td>
+          <td>(</td>
+          <td class="paramtype">QNetworkReply *&#160;</td>
+          <td class="paramname"><em>reply</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae278929d9b46b8e705d044938c172ae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae278929d9b46b8e705d044938c172ae9">&#9670;&nbsp;</a></span>setTimeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::AbstractNetworkJob::setTimeout </td>
+          <td>(</td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>msec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9672b89c5b77fbd67ad2a00b85ae1df2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9672b89c5b77fbd67ad2a00b85ae1df2">&#9670;&nbsp;</a></span>setupConnections()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::AbstractNetworkJob::setupConnections </td>
+          <td>(</td>
+          <td class="paramtype">QNetworkReply *&#160;</td>
+          <td class="paramname"><em>reply</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a256f1b6b5d6f6252e83b3602743da64a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a256f1b6b5d6f6252e83b3602743da64a">&#9670;&nbsp;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void OCC::AbstractNetworkJob::start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>被 <a class="el" href="class_o_c_c_1_1_poll_job.html#a5d11e738f6759ecce57ebeb79cd5c9ac">OCC::PollJob</a>, <a class="el" href="class_o_c_c_1_1_p_u_t_file_job.html#aae253a07a04a91cc89e2a4c97d86b3f8">OCC::PUTFileJob</a>, <a class="el" href="class_o_c_c_1_1_g_e_t_file_job.html#a82c449dd18bb5ba12e611d0447662cdb">OCC::GETFileJob</a>, <a class="el" href="class_o_c_c_1_1_move_job.html#a0f963be47342b15bed2d961f743d0984">OCC::MoveJob</a> , 以及 <a class="el" href="class_o_c_c_1_1_delete_job.html#a48875d9957b8186fdf8ae59b77cd4195">OCC::DeleteJob</a> 重载.</p>
+
+</div>
+</div>
+<a id="a6ac8f4ffd873d4e26eb5caacaebaeda3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ac8f4ffd873d4e26eb5caacaebaeda3">&#9670;&nbsp;</a></span>timeoutMsec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint64 OCC::AbstractNetworkJob::timeoutMsec </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a> 第 <a class="el" href="abstractnetworkjob_8h_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a5495f569442f06ad0ea646d9002d0525"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5495f569442f06ad0ea646d9002d0525">&#9670;&nbsp;</a></span>_account</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_o_c_c.html#a848616aedb9188e223c6b9867757fe69">AccountPtr</a> OCC::AbstractNetworkJob::_account</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a> 第 <a class="el" href="abstractnetworkjob_8h_source.html#l00098">98</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac092a093062518c8f1cc4748d8e6ac2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac092a093062518c8f1cc4748d8e6ac2f">&#9670;&nbsp;</a></span>_duration</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">quint64 OCC::AbstractNetworkJob::_duration</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a> 第 <a class="el" href="abstractnetworkjob_8h_source.html#l00086">86</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3a21a8d9ea34db5b052f4b8fa295bf9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a21a8d9ea34db5b052f4b8fa295bf9f">&#9670;&nbsp;</a></span>_durationTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QElapsedTimer OCC::AbstractNetworkJob::_durationTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a> 第 <a class="el" href="abstractnetworkjob_8h_source.html#l00085">85</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2b69131b751618f6147a68f55c116ed7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b69131b751618f6147a68f55c116ed7">&#9670;&nbsp;</a></span>_followRedirects</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OCC::AbstractNetworkJob::_followRedirects</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a> 第 <a class="el" href="abstractnetworkjob_8h_source.html#l00091">91</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a135fa86efd55fdcd58d0c28c70ac12d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a135fa86efd55fdcd58d0c28c70ac12d1">&#9670;&nbsp;</a></span>_responseTimestamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray OCC::AbstractNetworkJob::_responseTimestamp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a> 第 <a class="el" href="abstractnetworkjob_8h_source.html#l00084">84</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af29695f2d78215243f9db1e91a8302a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af29695f2d78215243f9db1e91a8302a5">&#9670;&nbsp;</a></span>_timedout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OCC::AbstractNetworkJob::_timedout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a> 第 <a class="el" href="abstractnetworkjob_8h_source.html#l00087">87</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="abstractnetworkjob_8h_source.html">abstractnetworkjob.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

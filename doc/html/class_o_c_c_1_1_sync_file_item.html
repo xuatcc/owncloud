@@ -1,0 +1,983 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>custom_cloud: OCC::SyncFileItem类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="cloudDisk.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">custom_cloud
+   &#160;<span id="projectnumber">beta 1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_o_c_c.html">OCC</a></li><li class="navelem"><a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="class_o_c_c_1_1_sync_file_item-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">OCC::SyncFileItem类 参考<div class="ingroups"><a class="el" href="group__libsync.html">The sync library</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The <a class="el" href="class_o_c_c_1_1_sync_file_item.html" title="The SyncFileItem class ">SyncFileItem</a> class  
+ <a href="class_o_c_c_1_1_sync_file_item.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:ad6db6c9821da051d0c790fb50603922b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#ad6db6c9821da051d0c790fb50603922b">Direction</a> { <a class="el" href="class_o_c_c_1_1_sync_file_item.html#ad6db6c9821da051d0c790fb50603922bac484dd612f0c79c95f35ff8f6dd0e6d8">None</a> = 0, 
+<a class="el" href="class_o_c_c_1_1_sync_file_item.html#ad6db6c9821da051d0c790fb50603922ba42097bff769b901e6e8d540d3b731b3d">Up</a>, 
+<a class="el" href="class_o_c_c_1_1_sync_file_item.html#ad6db6c9821da051d0c790fb50603922ba00f5e7e5529e77cdfd86825235ae248d">Down</a>
+ }</td></tr>
+<tr class="separator:ad6db6c9821da051d0c790fb50603922b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6dda85439b3566dc79a922c11dee754"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#ae6dda85439b3566dc79a922c11dee754">Type</a> { <a class="el" href="class_o_c_c_1_1_sync_file_item.html#ae6dda85439b3566dc79a922c11dee754ab74ea4777cee75b62eda42d5a638190f">UnknownType</a> = 0, 
+<a class="el" href="class_o_c_c_1_1_sync_file_item.html#ae6dda85439b3566dc79a922c11dee754aef1b538c3435a4423d96d7f262368c6d">File</a> = CSYNC_FTW_TYPE_FILE, 
+<a class="el" href="class_o_c_c_1_1_sync_file_item.html#ae6dda85439b3566dc79a922c11dee754a5b5d06e0f11e0244ef25e91bbabeae39">Directory</a> = CSYNC_FTW_TYPE_DIR, 
+<a class="el" href="class_o_c_c_1_1_sync_file_item.html#ae6dda85439b3566dc79a922c11dee754a6e94f40aae4b54f82d2b9510cd3ee220">SoftLink</a> = CSYNC_FTW_TYPE_SLINK
+ }</td></tr>
+<tr class="separator:ae6dda85439b3566dc79a922c11dee754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a149ade86eddd9661587bfbc9bcbca408"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408">Status</a> { <br />
+&#160;&#160;<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408a1eb4358635a761566dc0a905cc846c90">NoStatus</a>, 
+<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408a4886e3de3c84433c5fe34ce444fdb1ae">FatalError</a>, 
+<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408a353097a1d8c4584b3001448161105d18">NormalError</a>, 
+<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408ab1b53a7981c8f26a989b84611147dc26">SoftError</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408afae1770f38dce166a6b9d0421481dead">Success</a>, 
+<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408ae8c47ef20502cc71ee772658feb4a07c">Conflict</a>, 
+<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408a25e0730a3f84fa2b29e3724643918a78">FileIgnored</a>, 
+<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408a5ca7af4a60d9aa4b46183e41cf554094">Restoration</a>
+<br />
+ }</td></tr>
+<tr class="separator:a149ade86eddd9661587bfbc9bcbca408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ac2d467cf5f79e65f440597884ee4d78f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#ac2d467cf5f79e65f440597884ee4d78f">SyncFileItem</a> ()</td></tr>
+<tr class="separator:ac2d467cf5f79e65f440597884ee4d78f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6760b5f7a7624fa7b75070e3e5eab55d"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a6760b5f7a7624fa7b75070e3e5eab55d">destination</a> () const</td></tr>
+<tr class="separator:a6760b5f7a7624fa7b75070e3e5eab55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50e53014c5068af9e613649cf5e08f5e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a50e53014c5068af9e613649cf5e08f5e">isEmpty</a> () const</td></tr>
+<tr class="separator:a50e53014c5068af9e613649cf5e08f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9605a8ff213a000a039122801575ea33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a9605a8ff213a000a039122801575ea33">hasErrorStatus</a> () const</td></tr>
+<tr class="separator:a9605a8ff213a000a039122801575ea33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a300444506fb80b86bfcb075f72905a01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#ae6dda85439b3566dc79a922c11dee754">Type</a> _type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a300444506fb80b86bfcb075f72905a01">BITFIELD</a> (3)</td></tr>
+<tr class="separator:a300444506fb80b86bfcb075f72905a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c687adf113ff7cc15d81b914266cbbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#ad6db6c9821da051d0c790fb50603922b">Direction</a> _direction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a9c687adf113ff7cc15d81b914266cbbd">BITFIELD</a> (3)</td></tr>
+<tr class="separator:a9c687adf113ff7cc15d81b914266cbbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd4cb1d7b3523792bdaa7563b2e88db7"><td class="memItemLeft" align="right" valign="top">bool _isDirectory&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#abd4cb1d7b3523792bdaa7563b2e88db7">BITFIELD</a> (1)</td></tr>
+<tr class="separator:abd4cb1d7b3523792bdaa7563b2e88db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1115f09ecc0bba3a76b018fc52a1b6e7"><td class="memItemLeft" align="right" valign="top">bool _serverHasIgnoredFiles&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a1115f09ecc0bba3a76b018fc52a1b6e7">BITFIELD</a> (1)</td></tr>
+<tr class="separator:a1115f09ecc0bba3a76b018fc52a1b6e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a197653561a9ae15f991eedc7296b166f"><td class="memItemLeft" align="right" valign="top">bool _hasBlacklistEntry&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a197653561a9ae15f991eedc7296b166f">BITFIELD</a> (1)</td></tr>
+<tr class="separator:a197653561a9ae15f991eedc7296b166f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98651c89e864147d021b2078d8399c53"><td class="memItemLeft" align="right" valign="top">bool _errorMayBeBlacklisted&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a98651c89e864147d021b2078d8399c53">BITFIELD</a> (1)</td></tr>
+<tr class="separator:a98651c89e864147d021b2078d8399c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b2c255ae9d806b6fa36dc5bfddc97c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408">Status</a> _status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a0b2c255ae9d806b6fa36dc5bfddc97c8">BITFIELD</a> (4)</td></tr>
+<tr class="separator:a0b2c255ae9d806b6fa36dc5bfddc97c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9589dd81e18b0f0bacce19674feb308e"><td class="memItemLeft" align="right" valign="top">bool _isRestoration&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a9589dd81e18b0f0bacce19674feb308e">BITFIELD</a> (1)</td></tr>
+<tr class="separator:a9589dd81e18b0f0bacce19674feb308e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a170f6cc70d34740e855907b8be8db5a5"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a170f6cc70d34740e855907b8be8db5a5">_file</a></td></tr>
+<tr class="separator:a170f6cc70d34740e855907b8be8db5a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1477b5d5a4ed10601be559f3ab5c5bbb"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a1477b5d5a4ed10601be559f3ab5c5bbb">_renameTarget</a></td></tr>
+<tr class="separator:a1477b5d5a4ed10601be559f3ab5c5bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae61906e1b9cbb1fd2249078360d041e2"><td class="memItemLeft" align="right" valign="top">quint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#ae61906e1b9cbb1fd2249078360d041e2">_httpErrorCode</a></td></tr>
+<tr class="separator:ae61906e1b9cbb1fd2249078360d041e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b99b37f1f92f1f2ee85dcc20ab36fcf"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a9b99b37f1f92f1f2ee85dcc20ab36fcf">_errorString</a></td></tr>
+<tr class="separator:a9b99b37f1f92f1f2ee85dcc20ab36fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af674b8f74a6bf05d18d74165b75a7bae"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#af674b8f74a6bf05d18d74165b75a7bae">_responseTimeStamp</a></td></tr>
+<tr class="separator:af674b8f74a6bf05d18d74165b75a7bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ebf132e4eaa63eef7240b54275d222c"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a4ebf132e4eaa63eef7240b54275d222c">_requestDuration</a></td></tr>
+<tr class="separator:a4ebf132e4eaa63eef7240b54275d222c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba64206e59dcf5d053875d2692d3bb21"><td class="memItemLeft" align="right" valign="top">quint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#aba64206e59dcf5d053875d2692d3bb21">_affectedItems</a></td></tr>
+<tr class="separator:aba64206e59dcf5d053875d2692d3bb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeba56d35b3fb3f2b109c4389e67f179"><td class="memItemLeft" align="right" valign="top">csync_instructions_e&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#afeba56d35b3fb3f2b109c4389e67f179">_instruction</a></td></tr>
+<tr class="separator:afeba56d35b3fb3f2b109c4389e67f179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a1df24ca1b9f0e8d121225d042d8c5"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a91a1df24ca1b9f0e8d121225d042d8c5">_originalFile</a></td></tr>
+<tr class="separator:a91a1df24ca1b9f0e8d121225d042d8c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a900721b9ac04021aee2cc69e03d5840b"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a900721b9ac04021aee2cc69e03d5840b">_modtime</a></td></tr>
+<tr class="separator:a900721b9ac04021aee2cc69e03d5840b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd0a1a1e591ba7b3f86808ac156903a4"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#afd0a1a1e591ba7b3f86808ac156903a4">_etag</a></td></tr>
+<tr class="separator:afd0a1a1e591ba7b3f86808ac156903a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53664d84166d3e6bd8e1d334b6f2a355"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a53664d84166d3e6bd8e1d334b6f2a355">_size</a></td></tr>
+<tr class="separator:a53664d84166d3e6bd8e1d334b6f2a355"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f1c70ee750eeaf8a4015a5f51c0f27"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a41f1c70ee750eeaf8a4015a5f51c0f27">_inode</a></td></tr>
+<tr class="separator:a41f1c70ee750eeaf8a4015a5f51c0f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39c091685bafa9d4a80e16ed0271115e"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a39c091685bafa9d4a80e16ed0271115e">_fileId</a></td></tr>
+<tr class="separator:a39c091685bafa9d4a80e16ed0271115e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13341ce5c91089af058b8b50843338fb"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a13341ce5c91089af058b8b50843338fb">_remotePerm</a></td></tr>
+<tr class="separator:a13341ce5c91089af058b8b50843338fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30fe28c094c422f44801babd8e63deec"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a30fe28c094c422f44801babd8e63deec">_contentChecksum</a></td></tr>
+<tr class="separator:a30fe28c094c422f44801babd8e63deec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e5df1284e1585f9ad6fc1f38b32f272"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a4e5df1284e1585f9ad6fc1f38b32f272">_contentChecksumType</a></td></tr>
+<tr class="separator:a4e5df1284e1585f9ad6fc1f38b32f272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8119d1b7defae85c2d9405c38c25ec11"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a8119d1b7defae85c2d9405c38c25ec11">_directDownloadUrl</a></td></tr>
+<tr class="separator:a8119d1b7defae85c2d9405c38c25ec11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5e81ae32b653c030445b9f8e1fdcae5"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#aa5e81ae32b653c030445b9f8e1fdcae5">_directDownloadCookies</a></td></tr>
+<tr class="separator:aa5e81ae32b653c030445b9f8e1fdcae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ce17b41b823e489e5e6bbf651b5f1c2"><td class="memItemLeft" >struct {</td></tr>
+<tr class="memitem:ac9f3bf9f8d2e2bd3f6041a1e0307454c"><td class="memItemLeft" >&#160;&#160;&#160;quint64&#160;&#160;&#160;<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a53664d84166d3e6bd8e1d334b6f2a355">_size</a></td></tr>
+<tr class="separator:ac9f3bf9f8d2e2bd3f6041a1e0307454c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef7dba5329d72ac6cf7f80f74a21b10f"><td class="memItemLeft" >&#160;&#160;&#160;time_t&#160;&#160;&#160;<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a900721b9ac04021aee2cc69e03d5840b">_modtime</a></td></tr>
+<tr class="separator:aef7dba5329d72ac6cf7f80f74a21b10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a128ef54f043317a5c45b0187a39f80a9"><td class="memItemLeft" >&#160;&#160;&#160;QByteArray&#160;&#160;&#160;<a class="el" href="class_o_c_c_1_1_sync_file_item.html#afd0a1a1e591ba7b3f86808ac156903a4">_etag</a></td></tr>
+<tr class="separator:a128ef54f043317a5c45b0187a39f80a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac80dcda94f6f9adb8dcfe830a566c394"><td class="memItemLeft" >&#160;&#160;&#160;QByteArray&#160;&#160;&#160;<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a39c091685bafa9d4a80e16ed0271115e">_fileId</a></td></tr>
+<tr class="separator:ac80dcda94f6f9adb8dcfe830a566c394"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ff1204049475885b2db39b02e21e5f"><td class="memItemLeft" >&#160;&#160;&#160;quint64&#160;&#160;&#160;<a class="el" href="class_o_c_c_1_1_sync_file_item.html#ada676cd317af2a37aa40a8c4b96a7dcc">_other_size</a></td></tr>
+<tr class="separator:a12ff1204049475885b2db39b02e21e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a92b7128f9543ecb54543d2746aa06b"><td class="memItemLeft" >&#160;&#160;&#160;time_t&#160;&#160;&#160;<a class="el" href="class_o_c_c_1_1_sync_file_item.html#ade922396965a8a23e7502ac053d29196">_other_modtime</a></td></tr>
+<tr class="separator:a1a92b7128f9543ecb54543d2746aa06b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd17e4e9277faaef62e53a0b4a2e1ba"><td class="memItemLeft" >&#160;&#160;&#160;QByteArray&#160;&#160;&#160;<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a19b25141360821eca16bf016c75d9315">_other_etag</a></td></tr>
+<tr class="separator:a6cd17e4e9277faaef62e53a0b4a2e1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accd40f9efdf32c3e295756ec13e3f417"><td class="memItemLeft" >&#160;&#160;&#160;QByteArray&#160;&#160;&#160;<a class="el" href="class_o_c_c_1_1_sync_file_item.html#ae5a3588c7244ea4899e27aa727dc6f03">_other_fileId</a></td></tr>
+<tr class="separator:accd40f9efdf32c3e295756ec13e3f417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ce17b41b823e489e5e6bbf651b5f1c2"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a4ce17b41b823e489e5e6bbf651b5f1c2">log</a></td></tr>
+<tr class="separator:a4ce17b41b823e489e5e6bbf651b5f1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:a6c22b37e5da92ad2e7655c43fce5f335"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a6c22b37e5da92ad2e7655c43fce5f335">operator==</a> (const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;item1, const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;item2)</td></tr>
+<tr class="separator:a6c22b37e5da92ad2e7655c43fce5f335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5604437c536b0d80a805371dd6560739"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a5604437c536b0d80a805371dd6560739">operator&lt;</a> (const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;item1, const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;item2)</td></tr>
+<tr class="separator:a5604437c536b0d80a805371dd6560739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>The <a class="el" href="class_o_c_c_1_1_sync_file_item.html" title="The SyncFileItem class ">SyncFileItem</a> class </p>
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00040">40</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="ad6db6c9821da051d0c790fb50603922b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6db6c9821da051d0c790fb50603922b">&#9670;&nbsp;</a></span>Direction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_o_c_c_1_1_sync_file_item.html#ad6db6c9821da051d0c790fb50603922b">OCC::SyncFileItem::Direction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ad6db6c9821da051d0c790fb50603922bac484dd612f0c79c95f35ff8f6dd0e6d8"></a>None&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad6db6c9821da051d0c790fb50603922ba42097bff769b901e6e8d540d3b731b3d"></a>Up&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ad6db6c9821da051d0c790fb50603922ba00f5e7e5529e77cdfd86825235ae248d"></a>Down&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00042">42</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a149ade86eddd9661587bfbc9bcbca408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a149ade86eddd9661587bfbc9bcbca408">&#9670;&nbsp;</a></span>Status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408">OCC::SyncFileItem::Status</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a149ade86eddd9661587bfbc9bcbca408a1eb4358635a761566dc0a905cc846c90"></a>NoStatus&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a149ade86eddd9661587bfbc9bcbca408a4886e3de3c84433c5fe34ce444fdb1ae"></a>FatalError&#160;</td><td class="fielddoc"><p>Error that causes the sync to stop </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a149ade86eddd9661587bfbc9bcbca408a353097a1d8c4584b3001448161105d18"></a>NormalError&#160;</td><td class="fielddoc"><p>Error attached to a particular file </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a149ade86eddd9661587bfbc9bcbca408ab1b53a7981c8f26a989b84611147dc26"></a>SoftError&#160;</td><td class="fielddoc"><p>More like an information </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a149ade86eddd9661587bfbc9bcbca408afae1770f38dce166a6b9d0421481dead"></a>Success&#160;</td><td class="fielddoc"><p>The file was properly synced </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a149ade86eddd9661587bfbc9bcbca408ae8c47ef20502cc71ee772658feb4a07c"></a>Conflict&#160;</td><td class="fielddoc"><p>The file was properly synced, but a conflict was created </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a149ade86eddd9661587bfbc9bcbca408a25e0730a3f84fa2b29e3724643918a78"></a>FileIgnored&#160;</td><td class="fielddoc"><p>The file is in the ignored list (or blacklisted with no retries left) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a149ade86eddd9661587bfbc9bcbca408a5ca7af4a60d9aa4b46183e41cf554094"></a>Restoration&#160;</td><td class="fielddoc"><p>The file was restored because what should have been done was not allowed </p>
+</td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00054">54</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae6dda85439b3566dc79a922c11dee754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6dda85439b3566dc79a922c11dee754">&#9670;&nbsp;</a></span>Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_o_c_c_1_1_sync_file_item.html#ae6dda85439b3566dc79a922c11dee754">OCC::SyncFileItem::Type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ae6dda85439b3566dc79a922c11dee754ab74ea4777cee75b62eda42d5a638190f"></a>UnknownType&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6dda85439b3566dc79a922c11dee754aef1b538c3435a4423d96d7f262368c6d"></a>File&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6dda85439b3566dc79a922c11dee754a5b5d06e0f11e0244ef25e91bbabeae39"></a>Directory&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6dda85439b3566dc79a922c11dee754a6e94f40aae4b54f82d2b9510cd3ee220"></a>SoftLink&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00047">47</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ac2d467cf5f79e65f440597884ee4d78f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d467cf5f79e65f440597884ee4d78f">&#9670;&nbsp;</a></span>SyncFileItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OCC::SyncFileItem::SyncFileItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00067">67</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a300444506fb80b86bfcb075f72905a01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a300444506fb80b86bfcb075f72905a01">&#9670;&nbsp;</a></span>BITFIELD() <span class="overload">[1/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#ae6dda85439b3566dc79a922c11dee754">Type</a> _type OCC::SyncFileItem::BITFIELD </td>
+          <td>(</td>
+          <td class="paramtype">3&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c687adf113ff7cc15d81b914266cbbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c687adf113ff7cc15d81b914266cbbd">&#9670;&nbsp;</a></span>BITFIELD() <span class="overload">[2/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#ad6db6c9821da051d0c790fb50603922b">Direction</a> _direction OCC::SyncFileItem::BITFIELD </td>
+          <td>(</td>
+          <td class="paramtype">3&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd4cb1d7b3523792bdaa7563b2e88db7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd4cb1d7b3523792bdaa7563b2e88db7">&#9670;&nbsp;</a></span>BITFIELD() <span class="overload">[3/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _isDirectory OCC::SyncFileItem::BITFIELD </td>
+          <td>(</td>
+          <td class="paramtype">1&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1115f09ecc0bba3a76b018fc52a1b6e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1115f09ecc0bba3a76b018fc52a1b6e7">&#9670;&nbsp;</a></span>BITFIELD() <span class="overload">[4/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _serverHasIgnoredFiles OCC::SyncFileItem::BITFIELD </td>
+          <td>(</td>
+          <td class="paramtype">1&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a197653561a9ae15f991eedc7296b166f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a197653561a9ae15f991eedc7296b166f">&#9670;&nbsp;</a></span>BITFIELD() <span class="overload">[5/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _hasBlacklistEntry OCC::SyncFileItem::BITFIELD </td>
+          <td>(</td>
+          <td class="paramtype">1&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Whether there's an entry in the blacklist table. Note: that entry may have retries left, so this can be true without the status being FileIgnored. </p>
+
+</div>
+</div>
+<a id="a98651c89e864147d021b2078d8399c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98651c89e864147d021b2078d8399c53">&#9670;&nbsp;</a></span>BITFIELD() <span class="overload">[6/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _errorMayBeBlacklisted OCC::SyncFileItem::BITFIELD </td>
+          <td>(</td>
+          <td class="paramtype">1&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If true and NormalError, this error may be blacklisted</p>
+<p>Note that non-local errors (httpErrorCode!=0) may also be blacklisted independently of this flag. </p>
+
+</div>
+</div>
+<a id="a0b2c255ae9d806b6fa36dc5bfddc97c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b2c255ae9d806b6fa36dc5bfddc97c8">&#9670;&nbsp;</a></span>BITFIELD() <span class="overload">[7/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408">Status</a> _status OCC::SyncFileItem::BITFIELD </td>
+          <td>(</td>
+          <td class="paramtype">4&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9589dd81e18b0f0bacce19674feb308e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9589dd81e18b0f0bacce19674feb308e">&#9670;&nbsp;</a></span>BITFIELD() <span class="overload">[8/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _isRestoration OCC::SyncFileItem::BITFIELD </td>
+          <td>(</td>
+          <td class="paramtype">1&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6760b5f7a7624fa7b75070e3e5eab55d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6760b5f7a7624fa7b75070e3e5eab55d">&#9670;&nbsp;</a></span>destination()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString OCC::SyncFileItem::destination </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00111">111</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9605a8ff213a000a039122801575ea33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9605a8ff213a000a039122801575ea33">&#9670;&nbsp;</a></span>hasErrorStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OCC::SyncFileItem::hasErrorStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>True if the item had any kind of error.</p>
+<p>Used for deciding whether an item belongs to the protocol or the issues list on the activity page and for checking whether an item should be announced in the notification message. </p>
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00129">129</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a50e53014c5068af9e613649cf5e08f5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50e53014c5068af9e613649cf5e08f5e">&#9670;&nbsp;</a></span>isEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OCC::SyncFileItem::isEmpty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00118">118</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a id="a5604437c536b0d80a805371dd6560739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5604437c536b0d80a805371dd6560739">&#9670;&nbsp;</a></span>operator<</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;&#160;</td>
+          <td class="paramname"><em>item1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;&#160;</td>
+          <td class="paramname"><em>item2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00080">80</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6c22b37e5da92ad2e7655c43fce5f335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c22b37e5da92ad2e7655c43fce5f335">&#9670;&nbsp;</a></span>operator==</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;&#160;</td>
+          <td class="paramname"><em>item1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;&#160;</td>
+          <td class="paramname"><em>item2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00076">76</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aba64206e59dcf5d053875d2692d3bb21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba64206e59dcf5d053875d2692d3bb21">&#9670;&nbsp;</a></span>_affectedItems</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">quint32 OCC::SyncFileItem::_affectedItems</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00164">164</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a30fe28c094c422f44801babd8e63deec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30fe28c094c422f44801babd8e63deec">&#9670;&nbsp;</a></span>_contentChecksum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray OCC::SyncFileItem::_contentChecksum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00176">176</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4e5df1284e1585f9ad6fc1f38b32f272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e5df1284e1585f9ad6fc1f38b32f272">&#9670;&nbsp;</a></span>_contentChecksumType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray OCC::SyncFileItem::_contentChecksumType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00177">177</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa5e81ae32b653c030445b9f8e1fdcae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5e81ae32b653c030445b9f8e1fdcae5">&#9670;&nbsp;</a></span>_directDownloadCookies</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString OCC::SyncFileItem::_directDownloadCookies</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00179">179</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8119d1b7defae85c2d9405c38c25ec11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8119d1b7defae85c2d9405c38c25ec11">&#9670;&nbsp;</a></span>_directDownloadUrl</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString OCC::SyncFileItem::_directDownloadUrl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00178">178</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9b99b37f1f92f1f2ee85dcc20ab36fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b99b37f1f92f1f2ee85dcc20ab36fcf">&#9670;&nbsp;</a></span>_errorString</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString OCC::SyncFileItem::_errorString</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00161">161</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afd0a1a1e591ba7b3f86808ac156903a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd0a1a1e591ba7b3f86808ac156903a4">&#9670;&nbsp;</a></span>_etag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray OCC::SyncFileItem::_etag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00171">171</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a170f6cc70d34740e855907b8be8db5a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a170f6cc70d34740e855907b8be8db5a5">&#9670;&nbsp;</a></span>_file</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString OCC::SyncFileItem::_file</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00138">138</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a39c091685bafa9d4a80e16ed0271115e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c091685bafa9d4a80e16ed0271115e">&#9670;&nbsp;</a></span>_fileId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray OCC::SyncFileItem::_fileId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00174">174</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae61906e1b9cbb1fd2249078360d041e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae61906e1b9cbb1fd2249078360d041e2">&#9670;&nbsp;</a></span>_httpErrorCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">quint16 OCC::SyncFileItem::_httpErrorCode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00160">160</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a41f1c70ee750eeaf8a4015a5f51c0f27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f1c70ee750eeaf8a4015a5f51c0f27">&#9670;&nbsp;</a></span>_inode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">quint64 OCC::SyncFileItem::_inode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00173">173</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afeba56d35b3fb3f2b109c4389e67f179"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeba56d35b3fb3f2b109c4389e67f179">&#9670;&nbsp;</a></span>_instruction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">csync_instructions_e OCC::SyncFileItem::_instruction</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00168">168</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a900721b9ac04021aee2cc69e03d5840b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a900721b9ac04021aee2cc69e03d5840b">&#9670;&nbsp;</a></span>_modtime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t OCC::SyncFileItem::_modtime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00170">170</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a91a1df24ca1b9f0e8d121225d042d8c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91a1df24ca1b9f0e8d121225d042d8c5">&#9670;&nbsp;</a></span>_originalFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString OCC::SyncFileItem::_originalFile</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00169">169</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a19b25141360821eca16bf016c75d9315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19b25141360821eca16bf016c75d9315">&#9670;&nbsp;</a></span>_other_etag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray OCC::SyncFileItem::_other_etag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00188">188</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae5a3588c7244ea4899e27aa727dc6f03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5a3588c7244ea4899e27aa727dc6f03">&#9670;&nbsp;</a></span>_other_fileId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray OCC::SyncFileItem::_other_fileId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00189">189</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ade922396965a8a23e7502ac053d29196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade922396965a8a23e7502ac053d29196">&#9670;&nbsp;</a></span>_other_modtime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">time_t OCC::SyncFileItem::_other_modtime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00187">187</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ada676cd317af2a37aa40a8c4b96a7dcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada676cd317af2a37aa40a8c4b96a7dcc">&#9670;&nbsp;</a></span>_other_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">quint64 OCC::SyncFileItem::_other_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00186">186</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a13341ce5c91089af058b8b50843338fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13341ce5c91089af058b8b50843338fb">&#9670;&nbsp;</a></span>_remotePerm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray OCC::SyncFileItem::_remotePerm</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00175">175</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1477b5d5a4ed10601be559f3ab5c5bbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1477b5d5a4ed10601be559f3ab5c5bbb">&#9670;&nbsp;</a></span>_renameTarget</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString OCC::SyncFileItem::_renameTarget</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00139">139</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4ebf132e4eaa63eef7240b54275d222c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ebf132e4eaa63eef7240b54275d222c">&#9670;&nbsp;</a></span>_requestDuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">quint64 OCC::SyncFileItem::_requestDuration</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00163">163</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af674b8f74a6bf05d18d74165b75a7bae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af674b8f74a6bf05d18d74165b75a7bae">&#9670;&nbsp;</a></span>_responseTimeStamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray OCC::SyncFileItem::_responseTimeStamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00162">162</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a53664d84166d3e6bd8e1d334b6f2a355"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53664d84166d3e6bd8e1d334b6f2a355">&#9670;&nbsp;</a></span>_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">quint64 OCC::SyncFileItem::_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a> 第 <a class="el" href="syncfileitem_8h_source.html#l00172">172</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4ce17b41b823e489e5e6bbf651b5f1c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ce17b41b823e489e5e6bbf651b5f1c2">&#9670;&nbsp;</a></span>log</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }   OCC::SyncFileItem::log</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="syncfileitem_8h_source.html">syncfileitem.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

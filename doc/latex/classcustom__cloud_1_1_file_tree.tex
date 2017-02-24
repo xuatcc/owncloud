@@ -1,0 +1,409 @@
+\hypertarget{classcustom__cloud_1_1_file_tree}{}\section{custom\+\_\+cloud.\+File\+Tree类 参考}
+\label{classcustom__cloud_1_1_file_tree}\index{custom\+\_\+cloud.\+File\+Tree@{custom\+\_\+cloud.\+File\+Tree}}
+
+
+文件树，便于管理文件  
+
+
+\subsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcustom__cloud_1_1_file_tree_1_1_tree_file_info}{Tree\+File\+Info}
+\begin{DoxyCompactList}\small\item\em 自定义文件类，用于配合主\+List\+View显示文件 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcustom__cloud_1_1_file_tree_aad8223b6a616724c65459a65c466ed9c}{File\+Tree} (string root\+\_\+directory)
+\item 
+long \hyperlink{classcustom__cloud_1_1_file_tree_aac5bb07be6a4f8b47c66cc5670384b10}{get\+Byte\+Length} ()
+\begin{DoxyCompactList}\small\item\em 获取文件夹大小 \end{DoxyCompactList}\item 
+Stack$<$ string $>$ \hyperlink{classcustom__cloud_1_1_file_tree_a7c6226e3837b7aba681b49cb3d104fad}{get\+Path\+Block} (string path)
+\begin{DoxyCompactList}\small\item\em 获取路径块 \end{DoxyCompactList}\item 
+\hyperlink{classcustom__cloud_1_1_file_tree}{File\+Tree} \hyperlink{classcustom__cloud_1_1_file_tree_adededfbaf277559b9bd7c01a9da81caf}{get\+Target\+Tree} (string directory\+Path)
+\begin{DoxyCompactList}\small\item\em 获得指定的子树 \end{DoxyCompactList}\item 
+void \hyperlink{classcustom__cloud_1_1_file_tree_a15e1a46477dd1f518c167fae8d9e4e3a}{update\+Tree} (string directory\+Path)
+\begin{DoxyCompactList}\small\item\em 更新文件树 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{classcustom__cloud_1_1_file_tree_ab0da00e712692d0422c972b20dd3e214}{copy\+File} (string source, string destination)
+\begin{DoxyCompactList}\small\item\em 复制文件 \end{DoxyCompactList}\item 
+static string \hyperlink{classcustom__cloud_1_1_file_tree_ac36e502bbb41d66b40d0ee2d6f291e33}{move\+File} (string source, string destination)
+\begin{DoxyCompactList}\small\item\em 移动文件 \end{DoxyCompactList}\item 
+static string \hyperlink{classcustom__cloud_1_1_file_tree_a240dc4bf56ff3db7b5be500f9e0c72f0}{copy\+Directory} (string source, string destination)
+\begin{DoxyCompactList}\small\item\em 复制文件夹 \end{DoxyCompactList}\item 
+static string \hyperlink{classcustom__cloud_1_1_file_tree_a42f07545063f1300dafcc59005edd9e1}{move\+Directory} (string source, string destination)
+\begin{DoxyCompactList}\small\item\em 移动文件夹 \end{DoxyCompactList}\item 
+static void \hyperlink{classcustom__cloud_1_1_file_tree_ac14fe3a408f761bd71ebcde7d3605053}{delete\+Directory} (string path)
+\begin{DoxyCompactList}\small\item\em 删除目录 \end{DoxyCompactList}\item 
+static string \hyperlink{classcustom__cloud_1_1_file_tree_ade3ba6237741e061490d01a70d6dd163}{create\+Folder} (string path)
+\begin{DoxyCompactList}\small\item\em 新建文件夹 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+Directory\+Info \hyperlink{classcustom__cloud_1_1_file_tree_a9d128e90b1322df9b7eb7b054021ef63}{Root\+Directory}
+\item 
+Dictionary$<$ string, \hyperlink{classcustom__cloud_1_1_file_tree_1_1_tree_file_info}{Tree\+File\+Info} $>$ \hyperlink{classcustom__cloud_1_1_file_tree_a045fe31bf5ba0f592d24b784fb215a00}{Current\+Directory\+File\+List} = new Dictionary$<$string, \hyperlink{classcustom__cloud_1_1_file_tree_1_1_tree_file_info}{Tree\+File\+Info}$>$()
+\item 
+Dictionary$<$ string, \hyperlink{classcustom__cloud_1_1_file_tree}{File\+Tree} $>$ \hyperlink{classcustom__cloud_1_1_file_tree_a1be62d0d5cf1e81f75e00d4ad3b6d127}{Sub\+Tree} = new Dictionary$<$string, \hyperlink{classcustom__cloud_1_1_file_tree}{File\+Tree}$>$()
+\item 
+\hyperlink{classcustom__cloud_1_1_file_tree}{File\+Tree} \hyperlink{classcustom__cloud_1_1_file_tree_ad36aaec6c06ae1d76617f1353d979159}{Parent}
+\end{DoxyCompactItemize}
+\subsection*{静态 Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{classcustom__cloud_1_1_file_tree_afe3147788fbe68099fe169c365c593ad}{F\+O\+L\+D\+E\+R\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME} = \char`\"{}F\+O\+L\+D\+E\+R$\sim$!@\#\$\%$^\wedge$\&$\ast$++\char`\"{}
+\begin{DoxyCompactList}\small\item\em 文件夹类名 \end{DoxyCompactList}\item 
+static string \hyperlink{classcustom__cloud_1_1_file_tree_aa2ff1d4def348ca6bf1da97babd3db73}{F\+I\+L\+E\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME} = \char`\"{}F\+I\+LE$\ast$\&$^\wedge$\%\$\#@!$\sim$++\char`\"{}
+\begin{DoxyCompactList}\small\item\em 文件类名 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{属性}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classcustom__cloud_1_1_file_tree_a4483b47b27bbca29ce30e468a19249ee}{Modify\+Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 目录修改时间 \end{DoxyCompactList}\item 
+bool \hyperlink{classcustom__cloud_1_1_file_tree_a45fd4d4acc48287782484c4867920190}{is\+Empty}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 文件夹是否为空 \end{DoxyCompactList}\item 
+long \hyperlink{classcustom__cloud_1_1_file_tree_af59f027e29edbc3d32bd8c109607247d}{File\+Byte}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+文件树，便于管理文件 
+
+
+
+在文件 File\+Tree.\+cs 第 19 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_aad8223b6a616724c65459a65c466ed9c}\label{classcustom__cloud_1_1_file_tree_aad8223b6a616724c65459a65c466ed9c}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!File\+Tree@{File\+Tree}}
+\index{File\+Tree@{File\+Tree}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{File\+Tree()}{FileTree()}}
+{\footnotesize\ttfamily custom\+\_\+cloud.\+File\+Tree.\+File\+Tree (\begin{DoxyParamCaption}\item[{string}]{root\+\_\+directory }\end{DoxyParamCaption})}
+
+
+
+在文件 File\+Tree.\+cs 第 61 行定义.
+
+
+
+\subsection{成员函数说明}
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_a240dc4bf56ff3db7b5be500f9e0c72f0}\label{classcustom__cloud_1_1_file_tree_a240dc4bf56ff3db7b5be500f9e0c72f0}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!copy\+Directory@{copy\+Directory}}
+\index{copy\+Directory@{copy\+Directory}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{copy\+Directory()}{copyDirectory()}}
+{\footnotesize\ttfamily static string custom\+\_\+cloud.\+File\+Tree.\+copy\+Directory (\begin{DoxyParamCaption}\item[{string}]{source,  }\item[{string}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+复制文件夹 
+
+
+\begin{DoxyParams}{参数}
+{\em source} & \\
+\hline
+{\em destination} & \\
+\hline
+{\em sycn\+Path} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 File\+Tree.\+cs 第 202 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_ab0da00e712692d0422c972b20dd3e214}\label{classcustom__cloud_1_1_file_tree_ab0da00e712692d0422c972b20dd3e214}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!copy\+File@{copy\+File}}
+\index{copy\+File@{copy\+File}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{copy\+File()}{copyFile()}}
+{\footnotesize\ttfamily static string custom\+\_\+cloud.\+File\+Tree.\+copy\+File (\begin{DoxyParamCaption}\item[{string}]{source,  }\item[{string}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+复制文件 
+
+
+\begin{DoxyParams}{参数}
+{\em source} & \\
+\hline
+{\em destination} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 File\+Tree.\+cs 第 159 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_ade3ba6237741e061490d01a70d6dd163}\label{classcustom__cloud_1_1_file_tree_ade3ba6237741e061490d01a70d6dd163}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!create\+Folder@{create\+Folder}}
+\index{create\+Folder@{create\+Folder}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{create\+Folder()}{createFolder()}}
+{\footnotesize\ttfamily static string custom\+\_\+cloud.\+File\+Tree.\+create\+Folder (\begin{DoxyParamCaption}\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+新建文件夹 
+
+
+\begin{DoxyParams}{参数}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 File\+Tree.\+cs 第 298 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_ac14fe3a408f761bd71ebcde7d3605053}\label{classcustom__cloud_1_1_file_tree_ac14fe3a408f761bd71ebcde7d3605053}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!delete\+Directory@{delete\+Directory}}
+\index{delete\+Directory@{delete\+Directory}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{delete\+Directory()}{deleteDirectory()}}
+{\footnotesize\ttfamily static void custom\+\_\+cloud.\+File\+Tree.\+delete\+Directory (\begin{DoxyParamCaption}\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+删除目录 
+
+
+\begin{DoxyParams}{参数}
+{\em directory} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 File\+Tree.\+cs 第 275 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_aac5bb07be6a4f8b47c66cc5670384b10}\label{classcustom__cloud_1_1_file_tree_aac5bb07be6a4f8b47c66cc5670384b10}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!get\+Byte\+Length@{get\+Byte\+Length}}
+\index{get\+Byte\+Length@{get\+Byte\+Length}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{get\+Byte\+Length()}{getByteLength()}}
+{\footnotesize\ttfamily long custom\+\_\+cloud.\+File\+Tree.\+get\+Byte\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+获取文件夹大小 
+
+\begin{DoxyReturn}{返回}
+
+\end{DoxyReturn}
+
+
+在文件 File\+Tree.\+cs 第 88 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_a7c6226e3837b7aba681b49cb3d104fad}\label{classcustom__cloud_1_1_file_tree_a7c6226e3837b7aba681b49cb3d104fad}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!get\+Path\+Block@{get\+Path\+Block}}
+\index{get\+Path\+Block@{get\+Path\+Block}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{get\+Path\+Block()}{getPathBlock()}}
+{\footnotesize\ttfamily Stack$<$string$>$ custom\+\_\+cloud.\+File\+Tree.\+get\+Path\+Block (\begin{DoxyParamCaption}\item[{string}]{path }\end{DoxyParamCaption})}
+
+
+
+获取路径块 
+
+
+\begin{DoxyParams}{参数}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+
+\end{DoxyReturn}
+
+
+在文件 File\+Tree.\+cs 第 102 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_adededfbaf277559b9bd7c01a9da81caf}\label{classcustom__cloud_1_1_file_tree_adededfbaf277559b9bd7c01a9da81caf}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!get\+Target\+Tree@{get\+Target\+Tree}}
+\index{get\+Target\+Tree@{get\+Target\+Tree}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{get\+Target\+Tree()}{getTargetTree()}}
+{\footnotesize\ttfamily \hyperlink{classcustom__cloud_1_1_file_tree}{File\+Tree} custom\+\_\+cloud.\+File\+Tree.\+get\+Target\+Tree (\begin{DoxyParamCaption}\item[{string}]{directory\+Path }\end{DoxyParamCaption})}
+
+
+
+获得指定的子树 
+
+
+\begin{DoxyParams}{参数}
+{\em directory\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+
+\end{DoxyReturn}
+
+
+在文件 File\+Tree.\+cs 第 121 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_a42f07545063f1300dafcc59005edd9e1}\label{classcustom__cloud_1_1_file_tree_a42f07545063f1300dafcc59005edd9e1}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!move\+Directory@{move\+Directory}}
+\index{move\+Directory@{move\+Directory}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{move\+Directory()}{moveDirectory()}}
+{\footnotesize\ttfamily static string custom\+\_\+cloud.\+File\+Tree.\+move\+Directory (\begin{DoxyParamCaption}\item[{string}]{source,  }\item[{string}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+移动文件夹 
+
+
+\begin{DoxyParams}{参数}
+{\em source} & \\
+\hline
+{\em destination} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+
+\end{DoxyReturn}
+
+
+在文件 File\+Tree.\+cs 第 238 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_ac36e502bbb41d66b40d0ee2d6f291e33}\label{classcustom__cloud_1_1_file_tree_ac36e502bbb41d66b40d0ee2d6f291e33}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!move\+File@{move\+File}}
+\index{move\+File@{move\+File}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{move\+File()}{moveFile()}}
+{\footnotesize\ttfamily static string custom\+\_\+cloud.\+File\+Tree.\+move\+File (\begin{DoxyParamCaption}\item[{string}]{source,  }\item[{string}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+移动文件 
+
+
+
+在文件 File\+Tree.\+cs 第 179 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_a15e1a46477dd1f518c167fae8d9e4e3a}\label{classcustom__cloud_1_1_file_tree_a15e1a46477dd1f518c167fae8d9e4e3a}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!update\+Tree@{update\+Tree}}
+\index{update\+Tree@{update\+Tree}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{update\+Tree()}{updateTree()}}
+{\footnotesize\ttfamily void custom\+\_\+cloud.\+File\+Tree.\+update\+Tree (\begin{DoxyParamCaption}\item[{string}]{directory\+Path }\end{DoxyParamCaption})}
+
+
+
+更新文件树 
+
+
+\begin{DoxyParams}{参数}
+{\em directory\+\_\+paths} & \\
+\hline
+\end{DoxyParams}
+
+
+在文件 File\+Tree.\+cs 第 135 行定义.
+
+
+
+\subsection{类成员变量说明}
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_a045fe31bf5ba0f592d24b784fb215a00}\label{classcustom__cloud_1_1_file_tree_a045fe31bf5ba0f592d24b784fb215a00}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!Current\+Directory\+File\+List@{Current\+Directory\+File\+List}}
+\index{Current\+Directory\+File\+List@{Current\+Directory\+File\+List}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{Current\+Directory\+File\+List}{CurrentDirectoryFileList}}
+{\footnotesize\ttfamily Dictionary$<$string, \hyperlink{classcustom__cloud_1_1_file_tree_1_1_tree_file_info}{Tree\+File\+Info}$>$ custom\+\_\+cloud.\+File\+Tree.\+Current\+Directory\+File\+List = new Dictionary$<$string, \hyperlink{classcustom__cloud_1_1_file_tree_1_1_tree_file_info}{Tree\+File\+Info}$>$()}
+
+
+
+在文件 File\+Tree.\+cs 第 22 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_aa2ff1d4def348ca6bf1da97babd3db73}\label{classcustom__cloud_1_1_file_tree_aa2ff1d4def348ca6bf1da97babd3db73}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!F\+I\+L\+E\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME@{F\+I\+L\+E\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME}}
+\index{F\+I\+L\+E\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME@{F\+I\+L\+E\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{F\+I\+L\+E\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME}{FILE\_IDENTIFY\_NAME}}
+{\footnotesize\ttfamily string custom\+\_\+cloud.\+File\+Tree.\+F\+I\+L\+E\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME = \char`\"{}F\+I\+LE$\ast$\&$^\wedge$\%\$\#@!$\sim$++\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+文件类名 
+
+
+
+在文件 File\+Tree.\+cs 第 153 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_afe3147788fbe68099fe169c365c593ad}\label{classcustom__cloud_1_1_file_tree_afe3147788fbe68099fe169c365c593ad}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!F\+O\+L\+D\+E\+R\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME@{F\+O\+L\+D\+E\+R\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME}}
+\index{F\+O\+L\+D\+E\+R\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME@{F\+O\+L\+D\+E\+R\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{F\+O\+L\+D\+E\+R\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME}{FOLDER\_IDENTIFY\_NAME}}
+{\footnotesize\ttfamily string custom\+\_\+cloud.\+File\+Tree.\+F\+O\+L\+D\+E\+R\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+N\+A\+ME = \char`\"{}F\+O\+L\+D\+E\+R$\sim$!@\#\$\%$^\wedge$\&$\ast$++\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+文件夹类名 
+
+
+
+在文件 File\+Tree.\+cs 第 149 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_ad36aaec6c06ae1d76617f1353d979159}\label{classcustom__cloud_1_1_file_tree_ad36aaec6c06ae1d76617f1353d979159}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!Parent@{Parent}}
+\index{Parent@{Parent}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{Parent}{Parent}}
+{\footnotesize\ttfamily \hyperlink{classcustom__cloud_1_1_file_tree}{File\+Tree} custom\+\_\+cloud.\+File\+Tree.\+Parent}
+
+
+
+在文件 File\+Tree.\+cs 第 24 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_a9d128e90b1322df9b7eb7b054021ef63}\label{classcustom__cloud_1_1_file_tree_a9d128e90b1322df9b7eb7b054021ef63}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!Root\+Directory@{Root\+Directory}}
+\index{Root\+Directory@{Root\+Directory}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{Root\+Directory}{RootDirectory}}
+{\footnotesize\ttfamily Directory\+Info custom\+\_\+cloud.\+File\+Tree.\+Root\+Directory}
+
+
+
+在文件 File\+Tree.\+cs 第 21 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_a1be62d0d5cf1e81f75e00d4ad3b6d127}\label{classcustom__cloud_1_1_file_tree_a1be62d0d5cf1e81f75e00d4ad3b6d127}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!Sub\+Tree@{Sub\+Tree}}
+\index{Sub\+Tree@{Sub\+Tree}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{Sub\+Tree}{SubTree}}
+{\footnotesize\ttfamily Dictionary$<$string, \hyperlink{classcustom__cloud_1_1_file_tree}{File\+Tree}$>$ custom\+\_\+cloud.\+File\+Tree.\+Sub\+Tree = new Dictionary$<$string, \hyperlink{classcustom__cloud_1_1_file_tree}{File\+Tree}$>$()}
+
+
+
+在文件 File\+Tree.\+cs 第 23 行定义.
+
+
+
+\subsection{属性说明}
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_af59f027e29edbc3d32bd8c109607247d}\label{classcustom__cloud_1_1_file_tree_af59f027e29edbc3d32bd8c109607247d}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!File\+Byte@{File\+Byte}}
+\index{File\+Byte@{File\+Byte}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{File\+Byte}{FileByte}}
+{\footnotesize\ttfamily long custom\+\_\+cloud.\+File\+Tree.\+File\+Byte\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+在文件 File\+Tree.\+cs 第 49 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_a45fd4d4acc48287782484c4867920190}\label{classcustom__cloud_1_1_file_tree_a45fd4d4acc48287782484c4867920190}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{is\+Empty}{isEmpty}}
+{\footnotesize\ttfamily bool custom\+\_\+cloud.\+File\+Tree.\+is\+Empty\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+文件夹是否为空 
+
+
+
+在文件 File\+Tree.\+cs 第 39 行定义.
+
+\mbox{\Hypertarget{classcustom__cloud_1_1_file_tree_a4483b47b27bbca29ce30e468a19249ee}\label{classcustom__cloud_1_1_file_tree_a4483b47b27bbca29ce30e468a19249ee}} 
+\index{custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}!Modify\+Time@{Modify\+Time}}
+\index{Modify\+Time@{Modify\+Time}!custom\+\_\+cloud\+::\+File\+Tree@{custom\+\_\+cloud\+::\+File\+Tree}}
+\subsubsection{\texorpdfstring{Modify\+Time}{ModifyTime}}
+{\footnotesize\ttfamily double custom\+\_\+cloud.\+File\+Tree.\+Modify\+Time\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+目录修改时间 
+
+
+
+在文件 File\+Tree.\+cs 第 29 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+file\+System\+Class/\hyperlink{_file_tree_8cs}{File\+Tree.\+cs}\end{DoxyCompactItemize}

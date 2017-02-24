@@ -1,0 +1,292 @@
+\hypertarget{class_o_c_c_1_1_propagate_upload_file_common}{}\section{O\+CC\+:\+:Propagate\+Upload\+File\+Common类 参考}
+\label{class_o_c_c_1_1_propagate_upload_file_common}\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+
+
+The \hyperlink{class_o_c_c_1_1_propagate_upload_file_common}{Propagate\+Upload\+File\+Common} class is the code common between all chunking algorithms
+
+State Machine\+:  
+
+
+
+
+{\ttfamily \#include $<$propagateupload.\+h$>$}
+
+类 O\+CC\+:\+:Propagate\+Upload\+File\+Common 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_o_c_c_1_1_propagate_upload_file_common}
+\end{center}
+\end{figure}
+\subsection*{Public 槽}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a0ee3717cefa23025198d907abe224407}{abort} () Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+void \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a7f4708c023e93387f7815624fd3d9cdd}{slot\+Job\+Destroyed} (Q\+Object $\ast$job)
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a2d14665339c7b4d0cdc8f9ff8c45fa66}{Propagate\+Upload\+File\+Common} (\hyperlink{class_o_c_c_1_1_owncloud_propagator}{Owncloud\+Propagator} $\ast$propagator, const \hyperlink{namespace_o_c_c_acb6b0db82893659fbd0c98d3c5b8e2b8}{Sync\+File\+Item\+Ptr} \&item)
+\item 
+void \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a93895c48e6b9bbf7798e8527213abcd9}{set\+Delete\+Existing} (bool enabled)
+\item 
+void \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a588514bbae3f7655a7b9dba85fb6af62}{start} () Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+bool \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a1701db58050bde4a96816d7da7ad0430}{is\+Likely\+Finished\+Quickly} () Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+virtual void \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a7df70722c1bc35b534d7cd1829abe8f5}{do\+Start\+Upload} ()=0
+\item 
+void \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_ae4261f390df2d2ed73a16f0e4fcf71aa}{start\+Poll\+Job} (const Q\+String \&path)
+\item 
+void \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_af7ccc7680c669f640ecd3bd40ee5e834}{finalize} ()
+\item 
+void \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a713ee758b6e2ee3a0573a355cb96192f}{abort\+With\+Error} (\hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408}{Sync\+File\+Item\+::\+Status} status, const Q\+String \&error)
+\end{DoxyCompactItemize}
+\subsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a70de38935ddd7eabe60ae08df6e880c4}{headers} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Elapsed\+Timer \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a379cada64a1c9d01bbafb4eb6da7b664}{\+\_\+duration}
+\item 
+Q\+Vector$<$ \hyperlink{class_o_c_c_1_1_abstract_network_job}{Abstract\+Network\+Job} $\ast$ $>$ \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a5f420b4fe9de4c2a3e75152b677a3a72}{\+\_\+jobs}
+\item 
+bool \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_ad43eabcb37e4bf34f089c216dd01a497}{\+\_\+finished}
+\begin{DoxyCompactList}\small\item\em network jobs that are currently in transit \end{DoxyCompactList}\item 
+bool \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_ab2ce724d452db757662815a3d8df55c6}{\+\_\+delete\+Existing}
+\begin{DoxyCompactList}\small\item\em Tells that all the jobs have been finished \end{DoxyCompactList}\item 
+\hyperlink{class_o_c_c_1_1_utility_1_1_stop_watch}{Utility\+::\+Stop\+Watch} \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_aef794dc6461625030a6ca261a983ad13}{\+\_\+stop\+Watch}
+\item 
+Q\+Byte\+Array \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a33f403366131890e5160902fa8a8301e}{\+\_\+transmission\+Checksum}
+\item 
+Q\+Byte\+Array \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_ae880676e923ae4844a453e990cb8a189}{\+\_\+transmission\+Checksum\+Type}
+\end{DoxyCompactItemize}
+\subsection*{额外继承的成员函数}
+
+
+\subsection{详细描述}
+The \hyperlink{class_o_c_c_1_1_propagate_upload_file_common}{Propagate\+Upload\+File\+Common} class is the code common between all chunking algorithms
+
+State Machine\+: 
+
++---$>$ \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a588514bbae3f7655a7b9dba85fb6af62}{start()} --$>$ (delete job) -\/-\/-\/-\/---+ $\vert$ $\vert$ +--$>$ slot\+Compute\+Content\+Checksum() $<$---+ $\vert$ v slot\+Compute\+Transmission\+Checksum() $\vert$ v slot\+Start\+Upload() -\/$>$ \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a7df70722c1bc35b534d7cd1829abe8f5}{do\+Start\+Upload()} v \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_af7ccc7680c669f640ecd3bd40ee5e834}{finalize()} or \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_a713ee758b6e2ee3a0573a355cb96192f}{abort\+With\+Error()} or \hyperlink{class_o_c_c_1_1_propagate_upload_file_common_ae4261f390df2d2ed73a16f0e4fcf71aa}{start\+Poll\+Job()} 
+
+在文件 propagateupload.\+h 第 182 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_a2d14665339c7b4d0cdc8f9ff8c45fa66}\label{class_o_c_c_1_1_propagate_upload_file_common_a2d14665339c7b4d0cdc8f9ff8c45fa66}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!Propagate\+Upload\+File\+Common@{Propagate\+Upload\+File\+Common}}
+\index{Propagate\+Upload\+File\+Common@{Propagate\+Upload\+File\+Common}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{Propagate\+Upload\+File\+Common()}{PropagateUploadFileCommon()}}
+{\footnotesize\ttfamily O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::\+Propagate\+Upload\+File\+Common (\begin{DoxyParamCaption}\item[{\hyperlink{class_o_c_c_1_1_owncloud_propagator}{Owncloud\+Propagator} $\ast$}]{propagator,  }\item[{const \hyperlink{namespace_o_c_c_acb6b0db82893659fbd0c98d3c5b8e2b8}{Sync\+File\+Item\+Ptr} \&}]{item }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+h 第 199 行定义.
+
+
+
+\subsection{成员函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_a0ee3717cefa23025198d907abe224407}\label{class_o_c_c_1_1_propagate_upload_file_common_a0ee3717cefa23025198d907abe224407}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!abort@{abort}}
+\index{abort@{abort}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{abort}{abort}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::abort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+在文件 propagateupload.\+cpp 第 501 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_a713ee758b6e2ee3a0573a355cb96192f}\label{class_o_c_c_1_1_propagate_upload_file_common_a713ee758b6e2ee3a0573a355cb96192f}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!abort\+With\+Error@{abort\+With\+Error}}
+\index{abort\+With\+Error@{abort\+With\+Error}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{abort\+With\+Error()}{abortWithError()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::abort\+With\+Error (\begin{DoxyParamCaption}\item[{\hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408}{Sync\+File\+Item\+::\+Status}}]{status,  }\item[{const Q\+String \&}]{error }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+cpp 第 512 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_a7df70722c1bc35b534d7cd1829abe8f5}\label{class_o_c_c_1_1_propagate_upload_file_common_a7df70722c1bc35b534d7cd1829abe8f5}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!do\+Start\+Upload@{do\+Start\+Upload}}
+\index{do\+Start\+Upload@{do\+Start\+Upload}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{do\+Start\+Upload()}{doStartUpload()}}
+{\footnotesize\ttfamily virtual void O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::do\+Start\+Upload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \hyperlink{class_o_c_c_1_1_propagate_upload_file_n_g_ae601085b44092a20f669a91dadb13e8d}{O\+C\+C\+::\+Propagate\+Upload\+File\+NG} , 以及 \hyperlink{class_o_c_c_1_1_propagate_upload_file_v1_ae868275c2eda03e0e6f83b1e9b8b5e54}{O\+C\+C\+::\+Propagate\+Upload\+File\+V1} 内被实现.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_af7ccc7680c669f640ecd3bd40ee5e834}\label{class_o_c_c_1_1_propagate_upload_file_common_af7ccc7680c669f640ecd3bd40ee5e834}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!finalize@{finalize}}
+\index{finalize@{finalize}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{finalize()}{finalize()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::finalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+cpp 第 549 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_a70de38935ddd7eabe60ae08df6e880c4}\label{class_o_c_c_1_1_propagate_upload_file_common_a70de38935ddd7eabe60ae08df6e880c4}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!headers@{headers}}
+\index{headers@{headers}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{headers()}{headers()}}
+{\footnotesize\ttfamily Q\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::headers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 propagateupload.\+cpp 第 519 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_a1701db58050bde4a96816d7da7ad0430}\label{class_o_c_c_1_1_propagate_upload_file_common_a1701db58050bde4a96816d7da7ad0430}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!is\+Likely\+Finished\+Quickly@{is\+Likely\+Finished\+Quickly}}
+\index{is\+Likely\+Finished\+Quickly@{is\+Likely\+Finished\+Quickly}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{is\+Likely\+Finished\+Quickly()}{isLikelyFinishedQuickly()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::is\+Likely\+Finished\+Quickly (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+For \char`\"{}small\char`\"{} jobs 
+
+重载 \hyperlink{class_o_c_c_1_1_propagator_job_a1272ff804d4daf4798f08af6f654944d}{O\+C\+C\+::\+Propagator\+Job} .
+
+
+
+在文件 propagateupload.\+h 第 212 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_a93895c48e6b9bbf7798e8527213abcd9}\label{class_o_c_c_1_1_propagate_upload_file_common_a93895c48e6b9bbf7798e8527213abcd9}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!set\+Delete\+Existing@{set\+Delete\+Existing}}
+\index{set\+Delete\+Existing@{set\+Delete\+Existing}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{set\+Delete\+Existing()}{setDeleteExisting()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::set\+Delete\+Existing (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+Whether an existing entity with the same name may be deleted before the upload.
+
+Default\+: false. 
+
+在文件 propagateupload.\+cpp 第 188 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_a7f4708c023e93387f7815624fd3d9cdd}\label{class_o_c_c_1_1_propagate_upload_file_common_a7f4708c023e93387f7815624fd3d9cdd}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!slot\+Job\+Destroyed@{slot\+Job\+Destroyed}}
+\index{slot\+Job\+Destroyed@{slot\+Job\+Destroyed}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{slot\+Job\+Destroyed}{slotJobDestroyed}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::slot\+Job\+Destroyed (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{job }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+在文件 propagateupload.\+cpp 第 496 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_a588514bbae3f7655a7b9dba85fb6af62}\label{class_o_c_c_1_1_propagate_upload_file_common_a588514bbae3f7655a7b9dba85fb6af62}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!start@{start}}
+\index{start@{start}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+实现了 \hyperlink{class_o_c_c_1_1_propagate_item_job_a97e7a37e51ad1696f6590dd52080f10a}{O\+C\+C\+::\+Propagate\+Item\+Job}.
+
+
+
+在文件 propagateupload.\+cpp 第 194 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_ae4261f390df2d2ed73a16f0e4fcf71aa}\label{class_o_c_c_1_1_propagate_upload_file_common_ae4261f390df2d2ed73a16f0e4fcf71aa}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!start\+Poll\+Job@{start\+Poll\+Job}}
+\index{start\+Poll\+Job@{start\+Poll\+Job}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{start\+Poll\+Job()}{startPollJob()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::start\+Poll\+Job (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{path }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+cpp 第 465 行定义.
+
+
+
+\subsection{类成员变量说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_ab2ce724d452db757662815a3d8df55c6}\label{class_o_c_c_1_1_propagate_upload_file_common_ab2ce724d452db757662815a3d8df55c6}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!\+\_\+delete\+Existing@{\+\_\+delete\+Existing}}
+\index{\+\_\+delete\+Existing@{\+\_\+delete\+Existing}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{\+\_\+delete\+Existing}{\_deleteExisting}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::\+\_\+delete\+Existing\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tells that all the jobs have been finished 
+
+
+
+在文件 propagateupload.\+h 第 189 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_a379cada64a1c9d01bbafb4eb6da7b664}\label{class_o_c_c_1_1_propagate_upload_file_common_a379cada64a1c9d01bbafb4eb6da7b664}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!\+\_\+duration@{\+\_\+duration}}
+\index{\+\_\+duration@{\+\_\+duration}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{\+\_\+duration}{\_duration}}
+{\footnotesize\ttfamily Q\+Elapsed\+Timer O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::\+\_\+duration\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 propagateupload.\+h 第 186 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_ad43eabcb37e4bf34f089c216dd01a497}\label{class_o_c_c_1_1_propagate_upload_file_common_ad43eabcb37e4bf34f089c216dd01a497}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!\+\_\+finished@{\+\_\+finished}}
+\index{\+\_\+finished@{\+\_\+finished}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{\+\_\+finished}{\_finished}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::\+\_\+finished\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+network jobs that are currently in transit 
+
+
+
+在文件 propagateupload.\+h 第 188 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_a5f420b4fe9de4c2a3e75152b677a3a72}\label{class_o_c_c_1_1_propagate_upload_file_common_a5f420b4fe9de4c2a3e75152b677a3a72}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!\+\_\+jobs@{\+\_\+jobs}}
+\index{\+\_\+jobs@{\+\_\+jobs}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{\+\_\+jobs}{\_jobs}}
+{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{class_o_c_c_1_1_abstract_network_job}{Abstract\+Network\+Job}$\ast$$>$ O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::\+\_\+jobs\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 propagateupload.\+h 第 187 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_aef794dc6461625030a6ca261a983ad13}\label{class_o_c_c_1_1_propagate_upload_file_common_aef794dc6461625030a6ca261a983ad13}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!\+\_\+stop\+Watch@{\+\_\+stop\+Watch}}
+\index{\+\_\+stop\+Watch@{\+\_\+stop\+Watch}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{\+\_\+stop\+Watch}{\_stopWatch}}
+{\footnotesize\ttfamily \hyperlink{class_o_c_c_1_1_utility_1_1_stop_watch}{Utility\+::\+Stop\+Watch} O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::\+\_\+stop\+Watch\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 propagateupload.\+h 第 192 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_a33f403366131890e5160902fa8a8301e}\label{class_o_c_c_1_1_propagate_upload_file_common_a33f403366131890e5160902fa8a8301e}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!\+\_\+transmission\+Checksum@{\+\_\+transmission\+Checksum}}
+\index{\+\_\+transmission\+Checksum@{\+\_\+transmission\+Checksum}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{\+\_\+transmission\+Checksum}{\_transmissionChecksum}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::\+\_\+transmission\+Checksum\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 propagateupload.\+h 第 194 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_propagate_upload_file_common_ae880676e923ae4844a453e990cb8a189}\label{class_o_c_c_1_1_propagate_upload_file_common_ae880676e923ae4844a453e990cb8a189}} 
+\index{O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}!\+\_\+transmission\+Checksum\+Type@{\+\_\+transmission\+Checksum\+Type}}
+\index{\+\_\+transmission\+Checksum\+Type@{\+\_\+transmission\+Checksum\+Type}!O\+C\+C\+::\+Propagate\+Upload\+File\+Common@{O\+C\+C\+::\+Propagate\+Upload\+File\+Common}}
+\subsubsection{\texorpdfstring{\+\_\+transmission\+Checksum\+Type}{\_transmissionChecksumType}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+Propagate\+Upload\+File\+Common\+::\+\_\+transmission\+Checksum\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 propagateupload.\+h 第 195 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{propagateupload_8h}{propagateupload.\+h}\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{propagateupload_8cpp}{propagateupload.\+cpp}\end{DoxyCompactItemize}

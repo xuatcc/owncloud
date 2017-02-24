@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>custom_cloud: dialog/DeleteFileDialog.cs 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="cloudDisk.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">custom_cloud
+   &#160;<span id="projectnumber">beta 1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3b472af544f5243cd271ccd0b2453ccc.html">dialog</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">DeleteFileDialog.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_delete_file_dialog_8cs.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">    *@by Benquicki</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">    *@in XJTU</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">    *@in 2017.2</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*/</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Collections.Generic;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.ComponentModel;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Data;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Drawing;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Linq;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Text;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Windows.Forms;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespacecustom__cloud_1_1dialog.html">   15</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecustom__cloud.html">custom_cloud</a>.dialog</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classcustom__cloud_1_1dialog_1_1_delete_file_dialog.html">   17</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code" href="classcustom__cloud_1_1dialog_1_1_delete_file_dialog.html">DeleteFileDialog</a> : Form</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classcustom__cloud_1_1dialog_1_1_delete_file_dialog.html#aaddc84f5129322954a51824bf3a6f71a">   19</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classcustom__cloud_1_1dialog_1_1_delete_file_dialog.html#aaddc84f5129322954a51824bf3a6f71a">DeleteFileDialog</a>()</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            InitializeComponent();</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            initializeWidget();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> initializeWidget()</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            label1.Parent = <span class="keyword">this</span>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            label1.BackColor = Color.Transparent;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> btn_MouseEnter_Event(<span class="keywordtype">object</span> obj, EventArgs ea)</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">if</span> (obj.Equals(button_confirm)) button_confirm.Image = Properties.Resources.enter;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            if (obj.Equals(button_cancel)) button_cancel.Image = Properties.Resources.enter;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> btn_MouseLeave_Event(<span class="keywordtype">object</span> obj, EventArgs ea)</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (obj.Equals(button_confirm)) button_confirm.Image = Properties.Resources.down;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            if (obj.Equals(button_cancel)) button_cancel.Image = Properties.Resources.down;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> btn_MouseDown_Event(<span class="keywordtype">object</span> obj, MouseEventArgs ea)</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (obj.Equals(button_confirm)) button_confirm.Image = Properties.Resources.down;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            if (obj.Equals(button_cancel)) button_cancel.Image = Properties.Resources.down;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">void</span> btn_MouseUp_Event(<span class="keywordtype">object</span> obj, MouseEventArgs ea)</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span> (obj.Equals(button_confirm)) button_confirm.Image = Properties.Resources.enter;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            if (obj.Equals(button_cancel)) button_cancel.Image = Properties.Resources.enter;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> btn_Click_Event(<span class="keywordtype">object</span> obj, EventArgs ea)</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span> (obj.Equals(button_confirm))</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                this.DialogResult = DialogResult.OK;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                this.Close();</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">if</span> (obj.Equals(button_cancel))</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            {</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                this.DialogResult = DialogResult.Cancel;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                this.Close();</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div><div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
+<div class="ttc" id="classcustom__cloud_1_1dialog_1_1_delete_file_dialog_html_aaddc84f5129322954a51824bf3a6f71a"><div class="ttname"><a href="classcustom__cloud_1_1dialog_1_1_delete_file_dialog.html#aaddc84f5129322954a51824bf3a6f71a">custom_cloud.dialog.DeleteFileDialog.DeleteFileDialog</a></div><div class="ttdeci">DeleteFileDialog()</div><div class="ttdef"><b>Definition:</b> <a href="_delete_file_dialog_8cs_source.html#l00019">DeleteFileDialog.cs:19</a></div></div>
+<div class="ttc" id="classcustom__cloud_1_1dialog_1_1_delete_file_dialog_html"><div class="ttname"><a href="classcustom__cloud_1_1dialog_1_1_delete_file_dialog.html">custom_cloud.dialog.DeleteFileDialog</a></div><div class="ttdef"><b>Definition:</b> <a href="_delete_file_dialog_8cs_source.html#l00017">DeleteFileDialog.cs:17</a></div></div>
+<div class="ttc" id="namespacecustom__cloud_html"><div class="ttname"><a href="namespacecustom__cloud.html">custom_cloud</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

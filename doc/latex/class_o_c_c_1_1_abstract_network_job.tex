@@ -1,0 +1,373 @@
+\hypertarget{class_o_c_c_1_1_abstract_network_job}{}\section{O\+CC\+:\+:Abstract\+Network\+Job类 参考}
+\label{class_o_c_c_1_1_abstract_network_job}\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+
+
+The \hyperlink{class_o_c_c_1_1_abstract_network_job}{Abstract\+Network\+Job} class  
+
+
+
+
+{\ttfamily \#include $<$abstractnetworkjob.\+h$>$}
+
+类 O\+CC\+:\+:Abstract\+Network\+Job 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_o_c_c_1_1_abstract_network_job}
+\end{center}
+\end{figure}
+\subsection*{Public 槽}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_o_c_c_1_1_abstract_network_job_ae278929d9b46b8e705d044938c172ae9}{set\+Timeout} (qint64 \hyperlink{utility_8cpp_a1be2dbfd71764ac5ccdfe9183a80ed6f}{msec})
+\item 
+void \hyperlink{class_o_c_c_1_1_abstract_network_job_a40ad0e833d89ebe39dc6b45c6ee4971b}{reset\+Timeout} ()
+\end{DoxyCompactItemize}
+\subsection*{信号}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_o_c_c_1_1_abstract_network_job_ad474d13905dbb6431e40d8de701aae8e}{network\+Error} (Q\+Network\+Reply $\ast$\hyperlink{class_o_c_c_1_1_abstract_network_job_a38ee84a458ae0792e5bc01e57a59259b}{reply})
+\item 
+void \hyperlink{class_o_c_c_1_1_abstract_network_job_a67cafd60451812c108d46c02c1f1d1a2}{network\+Activity} ()
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_o_c_c_1_1_abstract_network_job_a04e6dd9d09247f2856f9e878bc29cd65}{Abstract\+Network\+Job} (\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr} \hyperlink{class_o_c_c_1_1_abstract_network_job_a469c9d8212a338ad07d1efa1a94f784d}{account}, const Q\+String \&\hyperlink{class_o_c_c_1_1_abstract_network_job_a8ed2423a454ec861c20f6900f5591ef7}{path}, Q\+Object $\ast$parent=0)
+\item 
+virtual \hyperlink{class_o_c_c_1_1_abstract_network_job_a7939e5ec97f275539b30998ab5591a2e}{$\sim$\+Abstract\+Network\+Job} ()
+\item 
+virtual void \hyperlink{class_o_c_c_1_1_abstract_network_job_a256f1b6b5d6f6252e83b3602743da64a}{start} ()
+\item 
+\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr} \hyperlink{class_o_c_c_1_1_abstract_network_job_a469c9d8212a338ad07d1efa1a94f784d}{account} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_abstract_network_job_ace0365f8b9c829bfb7a021810f359cef}{set\+Path} (const Q\+String \&\hyperlink{class_o_c_c_1_1_abstract_network_job_a8ed2423a454ec861c20f6900f5591ef7}{path})
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_abstract_network_job_a8ed2423a454ec861c20f6900f5591ef7}{path} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_abstract_network_job_a3cb752aaa56ecdae68aa5955ff4ee26d}{set\+Reply} (Q\+Network\+Reply $\ast$\hyperlink{class_o_c_c_1_1_abstract_network_job_a38ee84a458ae0792e5bc01e57a59259b}{reply})
+\item 
+Q\+Network\+Reply $\ast$ \hyperlink{class_o_c_c_1_1_abstract_network_job_a38ee84a458ae0792e5bc01e57a59259b}{reply} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_abstract_network_job_a710716b5bbc614afdeab868dd4221a8c}{set\+Ignore\+Credential\+Failure} (bool ignore)
+\item 
+bool \hyperlink{class_o_c_c_1_1_abstract_network_job_a6e48bf66638ad148b7185a24f85ffbd5}{ignore\+Credential\+Failure} () const
+\item 
+Q\+Byte\+Array \hyperlink{class_o_c_c_1_1_abstract_network_job_a76b4100e0d1ddf7c9d96fd23ba9c6462}{response\+Timestamp} ()
+\item 
+quint64 \hyperlink{class_o_c_c_1_1_abstract_network_job_a100683873781f0a715e4b34ab7cc8d16}{duration} ()
+\item 
+qint64 \hyperlink{class_o_c_c_1_1_abstract_network_job_a6ac8f4ffd873d4e26eb5caacaebaeda3}{timeout\+Msec} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_o_c_c_1_1_abstract_network_job_a9672b89c5b77fbd67ad2a00b85ae1df2}{setup\+Connections} (Q\+Network\+Reply $\ast$\hyperlink{class_o_c_c_1_1_abstract_network_job_a38ee84a458ae0792e5bc01e57a59259b}{reply})
+\item 
+Q\+Network\+Reply $\ast$ \hyperlink{class_o_c_c_1_1_abstract_network_job_a5c0f7fcc4db68299f376aeb7573bf207}{dav\+Request} (const Q\+Byte\+Array \&verb, const Q\+String \&rel\+Path, Q\+Network\+Request req=Q\+Network\+Request(), Q\+I\+O\+Device $\ast$data=0)
+\item 
+Q\+Network\+Reply $\ast$ \hyperlink{class_o_c_c_1_1_abstract_network_job_a3110a1a51bb94c92449d758e0f9285bd}{dav\+Request} (const Q\+Byte\+Array \&verb, const Q\+Url \&url, Q\+Network\+Request req=Q\+Network\+Request(), Q\+I\+O\+Device $\ast$data=0)
+\item 
+Q\+Network\+Reply $\ast$ \hyperlink{class_o_c_c_1_1_abstract_network_job_a2385aca6cd2090383403ec154b663806}{get\+Request} (const Q\+String \&rel\+Path)
+\item 
+Q\+Network\+Reply $\ast$ \hyperlink{class_o_c_c_1_1_abstract_network_job_a439fa1b129d82b4f9cd5c3913738ed85}{get\+Request} (const Q\+Url \&url)
+\item 
+Q\+Network\+Reply $\ast$ \hyperlink{class_o_c_c_1_1_abstract_network_job_aaacbf0ebfb042d9ec34694cbdcca00b8}{head\+Request} (const Q\+String \&rel\+Path)
+\item 
+Q\+Network\+Reply $\ast$ \hyperlink{class_o_c_c_1_1_abstract_network_job_a79faba21de3d7176233b63d986ab52f7}{head\+Request} (const Q\+Url \&url)
+\item 
+Q\+Network\+Reply $\ast$ \hyperlink{class_o_c_c_1_1_abstract_network_job_ab1d23aa2b82cf666a6f629863f487a92}{delete\+Request} (const Q\+Url \&url)
+\item 
+int \hyperlink{class_o_c_c_1_1_abstract_network_job_ad58fa4ab85f5c3a4dff1fd6e406b64a0}{max\+Redirects} () const
+\item 
+virtual bool \hyperlink{class_o_c_c_1_1_abstract_network_job_af811f7299d7e526678a8758f2e7102d2}{finished} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Byte\+Array \hyperlink{class_o_c_c_1_1_abstract_network_job_a135fa86efd55fdcd58d0c28c70ac12d1}{\+\_\+response\+Timestamp}
+\item 
+Q\+Elapsed\+Timer \hyperlink{class_o_c_c_1_1_abstract_network_job_a3a21a8d9ea34db5b052f4b8fa295bf9f}{\+\_\+duration\+Timer}
+\item 
+quint64 \hyperlink{class_o_c_c_1_1_abstract_network_job_ac092a093062518c8f1cc4748d8e6ac2f}{\+\_\+duration}
+\item 
+bool \hyperlink{class_o_c_c_1_1_abstract_network_job_af29695f2d78215243f9db1e91a8302a5}{\+\_\+timedout}
+\item 
+bool \hyperlink{class_o_c_c_1_1_abstract_network_job_a2b69131b751618f6147a68f55c116ed7}{\+\_\+follow\+Redirects}
+\item 
+\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr} \hyperlink{class_o_c_c_1_1_abstract_network_job_a5495f569442f06ad0ea646d9002d0525}{\+\_\+account}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+The \hyperlink{class_o_c_c_1_1_abstract_network_job}{Abstract\+Network\+Job} class 
+
+在文件 abstractnetworkjob.\+h 第 38 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a04e6dd9d09247f2856f9e878bc29cd65}\label{class_o_c_c_1_1_abstract_network_job_a04e6dd9d09247f2856f9e878bc29cd65}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!Abstract\+Network\+Job@{Abstract\+Network\+Job}}
+\index{Abstract\+Network\+Job@{Abstract\+Network\+Job}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{Abstract\+Network\+Job()}{AbstractNetworkJob()}}
+{\footnotesize\ttfamily O\+C\+C\+::\+Abstract\+Network\+Job\+::\+Abstract\+Network\+Job (\begin{DoxyParamCaption}\item[{\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr}}]{account,  }\item[{const Q\+String \&}]{path,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a7939e5ec97f275539b30998ab5591a2e}\label{class_o_c_c_1_1_abstract_network_job_a7939e5ec97f275539b30998ab5591a2e}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!````~Abstract\+Network\+Job@{$\sim$\+Abstract\+Network\+Job}}
+\index{````~Abstract\+Network\+Job@{$\sim$\+Abstract\+Network\+Job}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{$\sim$\+Abstract\+Network\+Job()}{~AbstractNetworkJob()}}
+{\footnotesize\ttfamily virtual O\+C\+C\+::\+Abstract\+Network\+Job\+::$\sim$\+Abstract\+Network\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{成员函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a469c9d8212a338ad07d1efa1a94f784d}\label{class_o_c_c_1_1_abstract_network_job_a469c9d8212a338ad07d1efa1a94f784d}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!account@{account}}
+\index{account@{account}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{account()}{account()}}
+{\footnotesize\ttfamily \hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr} O\+C\+C\+::\+Abstract\+Network\+Job\+::account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 abstractnetworkjob.\+h 第 46 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a5c0f7fcc4db68299f376aeb7573bf207}\label{class_o_c_c_1_1_abstract_network_job_a5c0f7fcc4db68299f376aeb7573bf207}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!dav\+Request@{dav\+Request}}
+\index{dav\+Request@{dav\+Request}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{dav\+Request()}{davRequest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Q\+Network\+Reply$\ast$ O\+C\+C\+::\+Abstract\+Network\+Job\+::dav\+Request (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{verb,  }\item[{const Q\+String \&}]{rel\+Path,  }\item[{Q\+Network\+Request}]{req = {\ttfamily QNetworkRequest()},  }\item[{Q\+I\+O\+Device $\ast$}]{data = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a3110a1a51bb94c92449d758e0f9285bd}\label{class_o_c_c_1_1_abstract_network_job_a3110a1a51bb94c92449d758e0f9285bd}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!dav\+Request@{dav\+Request}}
+\index{dav\+Request@{dav\+Request}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{dav\+Request()}{davRequest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Q\+Network\+Reply$\ast$ O\+C\+C\+::\+Abstract\+Network\+Job\+::dav\+Request (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{verb,  }\item[{const Q\+Url \&}]{url,  }\item[{Q\+Network\+Request}]{req = {\ttfamily QNetworkRequest()},  }\item[{Q\+I\+O\+Device $\ast$}]{data = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_ab1d23aa2b82cf666a6f629863f487a92}\label{class_o_c_c_1_1_abstract_network_job_ab1d23aa2b82cf666a6f629863f487a92}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!delete\+Request@{delete\+Request}}
+\index{delete\+Request@{delete\+Request}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{delete\+Request()}{deleteRequest()}}
+{\footnotesize\ttfamily Q\+Network\+Reply$\ast$ O\+C\+C\+::\+Abstract\+Network\+Job\+::delete\+Request (\begin{DoxyParamCaption}\item[{const Q\+Url \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a100683873781f0a715e4b34ab7cc8d16}\label{class_o_c_c_1_1_abstract_network_job_a100683873781f0a715e4b34ab7cc8d16}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!duration@{duration}}
+\index{duration@{duration}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{duration()}{duration()}}
+{\footnotesize\ttfamily quint64 O\+C\+C\+::\+Abstract\+Network\+Job\+::duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_af811f7299d7e526678a8758f2e7102d2}\label{class_o_c_c_1_1_abstract_network_job_af811f7299d7e526678a8758f2e7102d2}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!finished@{finished}}
+\index{finished@{finished}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{finished()}{finished()}}
+{\footnotesize\ttfamily virtual bool O\+C\+C\+::\+Abstract\+Network\+Job\+::finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+在 \hyperlink{class_o_c_c_1_1_poll_job_a06b39d3adf1ff0cccadfc3ca74be81d0}{O\+C\+C\+::\+Poll\+Job}, \hyperlink{class_o_c_c_1_1_p_u_t_file_job_aeca049817cfb255d038f4bc7faf0a204}{O\+C\+C\+::\+P\+U\+T\+File\+Job}, \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a41e95ff131e8009d6cd8c2d063eeb7c0}{O\+C\+C\+::\+G\+E\+T\+File\+Job}, \hyperlink{class_o_c_c_1_1_move_job_a2cea82684a6f32d91245b8e974f516dd}{O\+C\+C\+::\+Move\+Job} , 以及 \hyperlink{class_o_c_c_1_1_delete_job_a5776804580c1eee33e5bf72a614a49f1}{O\+C\+C\+::\+Delete\+Job} 内被实现.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a2385aca6cd2090383403ec154b663806}\label{class_o_c_c_1_1_abstract_network_job_a2385aca6cd2090383403ec154b663806}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!get\+Request@{get\+Request}}
+\index{get\+Request@{get\+Request}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{get\+Request()}{getRequest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Q\+Network\+Reply$\ast$ O\+C\+C\+::\+Abstract\+Network\+Job\+::get\+Request (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{rel\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a439fa1b129d82b4f9cd5c3913738ed85}\label{class_o_c_c_1_1_abstract_network_job_a439fa1b129d82b4f9cd5c3913738ed85}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!get\+Request@{get\+Request}}
+\index{get\+Request@{get\+Request}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{get\+Request()}{getRequest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Q\+Network\+Reply$\ast$ O\+C\+C\+::\+Abstract\+Network\+Job\+::get\+Request (\begin{DoxyParamCaption}\item[{const Q\+Url \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_aaacbf0ebfb042d9ec34694cbdcca00b8}\label{class_o_c_c_1_1_abstract_network_job_aaacbf0ebfb042d9ec34694cbdcca00b8}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!head\+Request@{head\+Request}}
+\index{head\+Request@{head\+Request}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{head\+Request()}{headRequest()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Q\+Network\+Reply$\ast$ O\+C\+C\+::\+Abstract\+Network\+Job\+::head\+Request (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{rel\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a79faba21de3d7176233b63d986ab52f7}\label{class_o_c_c_1_1_abstract_network_job_a79faba21de3d7176233b63d986ab52f7}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!head\+Request@{head\+Request}}
+\index{head\+Request@{head\+Request}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{head\+Request()}{headRequest()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Q\+Network\+Reply$\ast$ O\+C\+C\+::\+Abstract\+Network\+Job\+::head\+Request (\begin{DoxyParamCaption}\item[{const Q\+Url \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a6e48bf66638ad148b7185a24f85ffbd5}\label{class_o_c_c_1_1_abstract_network_job_a6e48bf66638ad148b7185a24f85ffbd5}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!ignore\+Credential\+Failure@{ignore\+Credential\+Failure}}
+\index{ignore\+Credential\+Failure@{ignore\+Credential\+Failure}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{ignore\+Credential\+Failure()}{ignoreCredentialFailure()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Abstract\+Network\+Job\+::ignore\+Credential\+Failure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 abstractnetworkjob.\+h 第 55 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_ad58fa4ab85f5c3a4dff1fd6e406b64a0}\label{class_o_c_c_1_1_abstract_network_job_ad58fa4ab85f5c3a4dff1fd6e406b64a0}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!max\+Redirects@{max\+Redirects}}
+\index{max\+Redirects@{max\+Redirects}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{max\+Redirects()}{maxRedirects()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Abstract\+Network\+Job\+::max\+Redirects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 abstractnetworkjob.\+h 第 82 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a67cafd60451812c108d46c02c1f1d1a2}\label{class_o_c_c_1_1_abstract_network_job_a67cafd60451812c108d46c02c1f1d1a2}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!network\+Activity@{network\+Activity}}
+\index{network\+Activity@{network\+Activity}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{network\+Activity}{networkActivity}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Abstract\+Network\+Job\+::network\+Activity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_ad474d13905dbb6431e40d8de701aae8e}\label{class_o_c_c_1_1_abstract_network_job_ad474d13905dbb6431e40d8de701aae8e}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!network\+Error@{network\+Error}}
+\index{network\+Error@{network\+Error}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{network\+Error}{networkError}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Abstract\+Network\+Job\+::network\+Error (\begin{DoxyParamCaption}\item[{Q\+Network\+Reply $\ast$}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a8ed2423a454ec861c20f6900f5591ef7}\label{class_o_c_c_1_1_abstract_network_job_a8ed2423a454ec861c20f6900f5591ef7}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!path@{path}}
+\index{path@{path}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{path()}{path()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Abstract\+Network\+Job\+::path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 abstractnetworkjob.\+h 第 49 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a38ee84a458ae0792e5bc01e57a59259b}\label{class_o_c_c_1_1_abstract_network_job_a38ee84a458ae0792e5bc01e57a59259b}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!reply@{reply}}
+\index{reply@{reply}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{reply()}{reply()}}
+{\footnotesize\ttfamily Q\+Network\+Reply$\ast$ O\+C\+C\+::\+Abstract\+Network\+Job\+::reply (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 abstractnetworkjob.\+h 第 52 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a40ad0e833d89ebe39dc6b45c6ee4971b}\label{class_o_c_c_1_1_abstract_network_job_a40ad0e833d89ebe39dc6b45c6ee4971b}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!reset\+Timeout@{reset\+Timeout}}
+\index{reset\+Timeout@{reset\+Timeout}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{reset\+Timeout}{resetTimeout}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Abstract\+Network\+Job\+::reset\+Timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a76b4100e0d1ddf7c9d96fd23ba9c6462}\label{class_o_c_c_1_1_abstract_network_job_a76b4100e0d1ddf7c9d96fd23ba9c6462}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!response\+Timestamp@{response\+Timestamp}}
+\index{response\+Timestamp@{response\+Timestamp}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{response\+Timestamp()}{responseTimestamp()}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+Abstract\+Network\+Job\+::response\+Timestamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a710716b5bbc614afdeab868dd4221a8c}\label{class_o_c_c_1_1_abstract_network_job_a710716b5bbc614afdeab868dd4221a8c}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!set\+Ignore\+Credential\+Failure@{set\+Ignore\+Credential\+Failure}}
+\index{set\+Ignore\+Credential\+Failure@{set\+Ignore\+Credential\+Failure}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{set\+Ignore\+Credential\+Failure()}{setIgnoreCredentialFailure()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Abstract\+Network\+Job\+::set\+Ignore\+Credential\+Failure (\begin{DoxyParamCaption}\item[{bool}]{ignore }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_ace0365f8b9c829bfb7a021810f359cef}\label{class_o_c_c_1_1_abstract_network_job_ace0365f8b9c829bfb7a021810f359cef}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!set\+Path@{set\+Path}}
+\index{set\+Path@{set\+Path}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{set\+Path()}{setPath()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Abstract\+Network\+Job\+::set\+Path (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a3cb752aaa56ecdae68aa5955ff4ee26d}\label{class_o_c_c_1_1_abstract_network_job_a3cb752aaa56ecdae68aa5955ff4ee26d}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!set\+Reply@{set\+Reply}}
+\index{set\+Reply@{set\+Reply}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{set\+Reply()}{setReply()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Abstract\+Network\+Job\+::set\+Reply (\begin{DoxyParamCaption}\item[{Q\+Network\+Reply $\ast$}]{reply }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_ae278929d9b46b8e705d044938c172ae9}\label{class_o_c_c_1_1_abstract_network_job_ae278929d9b46b8e705d044938c172ae9}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!set\+Timeout@{set\+Timeout}}
+\index{set\+Timeout@{set\+Timeout}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{set\+Timeout}{setTimeout}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Abstract\+Network\+Job\+::set\+Timeout (\begin{DoxyParamCaption}\item[{qint64}]{msec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a9672b89c5b77fbd67ad2a00b85ae1df2}\label{class_o_c_c_1_1_abstract_network_job_a9672b89c5b77fbd67ad2a00b85ae1df2}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!setup\+Connections@{setup\+Connections}}
+\index{setup\+Connections@{setup\+Connections}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{setup\+Connections()}{setupConnections()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Abstract\+Network\+Job\+::setup\+Connections (\begin{DoxyParamCaption}\item[{Q\+Network\+Reply $\ast$}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a256f1b6b5d6f6252e83b3602743da64a}\label{class_o_c_c_1_1_abstract_network_job_a256f1b6b5d6f6252e83b3602743da64a}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!start@{start}}
+\index{start@{start}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily virtual void O\+C\+C\+::\+Abstract\+Network\+Job\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+被 \hyperlink{class_o_c_c_1_1_poll_job_a5d11e738f6759ecce57ebeb79cd5c9ac}{O\+C\+C\+::\+Poll\+Job}, \hyperlink{class_o_c_c_1_1_p_u_t_file_job_aae253a07a04a91cc89e2a4c97d86b3f8}{O\+C\+C\+::\+P\+U\+T\+File\+Job}, \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a82c449dd18bb5ba12e611d0447662cdb}{O\+C\+C\+::\+G\+E\+T\+File\+Job}, \hyperlink{class_o_c_c_1_1_move_job_a0f963be47342b15bed2d961f743d0984}{O\+C\+C\+::\+Move\+Job} , 以及 \hyperlink{class_o_c_c_1_1_delete_job_a48875d9957b8186fdf8ae59b77cd4195}{O\+C\+C\+::\+Delete\+Job} 重载.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a6ac8f4ffd873d4e26eb5caacaebaeda3}\label{class_o_c_c_1_1_abstract_network_job_a6ac8f4ffd873d4e26eb5caacaebaeda3}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!timeout\+Msec@{timeout\+Msec}}
+\index{timeout\+Msec@{timeout\+Msec}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{timeout\+Msec()}{timeoutMsec()}}
+{\footnotesize\ttfamily qint64 O\+C\+C\+::\+Abstract\+Network\+Job\+::timeout\+Msec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 abstractnetworkjob.\+h 第 60 行定义.
+
+
+
+\subsection{类成员变量说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a5495f569442f06ad0ea646d9002d0525}\label{class_o_c_c_1_1_abstract_network_job_a5495f569442f06ad0ea646d9002d0525}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!\+\_\+account@{\+\_\+account}}
+\index{\+\_\+account@{\+\_\+account}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{\+\_\+account}{\_account}}
+{\footnotesize\ttfamily \hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr} O\+C\+C\+::\+Abstract\+Network\+Job\+::\+\_\+account\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 abstractnetworkjob.\+h 第 98 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_ac092a093062518c8f1cc4748d8e6ac2f}\label{class_o_c_c_1_1_abstract_network_job_ac092a093062518c8f1cc4748d8e6ac2f}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!\+\_\+duration@{\+\_\+duration}}
+\index{\+\_\+duration@{\+\_\+duration}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{\+\_\+duration}{\_duration}}
+{\footnotesize\ttfamily quint64 O\+C\+C\+::\+Abstract\+Network\+Job\+::\+\_\+duration\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 abstractnetworkjob.\+h 第 86 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a3a21a8d9ea34db5b052f4b8fa295bf9f}\label{class_o_c_c_1_1_abstract_network_job_a3a21a8d9ea34db5b052f4b8fa295bf9f}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!\+\_\+duration\+Timer@{\+\_\+duration\+Timer}}
+\index{\+\_\+duration\+Timer@{\+\_\+duration\+Timer}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{\+\_\+duration\+Timer}{\_durationTimer}}
+{\footnotesize\ttfamily Q\+Elapsed\+Timer O\+C\+C\+::\+Abstract\+Network\+Job\+::\+\_\+duration\+Timer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 abstractnetworkjob.\+h 第 85 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a2b69131b751618f6147a68f55c116ed7}\label{class_o_c_c_1_1_abstract_network_job_a2b69131b751618f6147a68f55c116ed7}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!\+\_\+follow\+Redirects@{\+\_\+follow\+Redirects}}
+\index{\+\_\+follow\+Redirects@{\+\_\+follow\+Redirects}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{\+\_\+follow\+Redirects}{\_followRedirects}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Abstract\+Network\+Job\+::\+\_\+follow\+Redirects\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 abstractnetworkjob.\+h 第 91 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_a135fa86efd55fdcd58d0c28c70ac12d1}\label{class_o_c_c_1_1_abstract_network_job_a135fa86efd55fdcd58d0c28c70ac12d1}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!\+\_\+response\+Timestamp@{\+\_\+response\+Timestamp}}
+\index{\+\_\+response\+Timestamp@{\+\_\+response\+Timestamp}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{\+\_\+response\+Timestamp}{\_responseTimestamp}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+Abstract\+Network\+Job\+::\+\_\+response\+Timestamp\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 abstractnetworkjob.\+h 第 84 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_abstract_network_job_af29695f2d78215243f9db1e91a8302a5}\label{class_o_c_c_1_1_abstract_network_job_af29695f2d78215243f9db1e91a8302a5}} 
+\index{O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}!\+\_\+timedout@{\+\_\+timedout}}
+\index{\+\_\+timedout@{\+\_\+timedout}!O\+C\+C\+::\+Abstract\+Network\+Job@{O\+C\+C\+::\+Abstract\+Network\+Job}}
+\subsubsection{\texorpdfstring{\+\_\+timedout}{\_timedout}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Abstract\+Network\+Job\+::\+\_\+timedout\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 abstractnetworkjob.\+h 第 87 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{abstractnetworkjob_8h}{abstractnetworkjob.\+h}\end{DoxyCompactItemize}

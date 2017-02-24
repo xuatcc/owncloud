@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>custom_cloud: OCC::PropagateItemJob类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="cloudDisk.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">custom_cloud
+   &#160;<span id="projectnumber">beta 1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_o_c_c.html">OCC</a></li><li class="navelem"><a class="el" href="class_o_c_c_1_1_propagate_item_job.html">PropagateItemJob</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pro-slots">Protected 槽</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="class_o_c_c_1_1_propagate_item_job-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">OCC::PropagateItemJob类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="owncloudpropagator_8h_source.html">owncloudpropagator.h</a>&gt;</code></p>
+<div class="dynheader">
+类 OCC::PropagateItemJob 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_o_c_c_1_1_propagate_item_job.png" usemap="#OCC::PropagateItemJob_map" alt=""/>
+  <map id="OCC::PropagateItemJob_map" name="OCC::PropagateItemJob_map">
+<area href="class_o_c_c_1_1_propagator_job.html" title="the base class of propagator jobs " alt="OCC::PropagatorJob" shape="rect" coords="0,56,212,80"/>
+<area href="class_o_c_c_1_1_propagate_download_file.html" title="The PropagateDownloadFile class " alt="OCC::PropagateDownloadFile" shape="rect" coords="222,168,434,192"/>
+<area href="class_o_c_c_1_1_propagate_ignore_job.html" title="Dummy job that just mark it as completed and ignored " alt="OCC::PropagateIgnoreJob" shape="rect" coords="222,224,434,248"/>
+<area href="class_o_c_c_1_1_propagate_local_mkdir.html" title="The PropagateLocalMkdir class " alt="OCC::PropagateLocalMkdir" shape="rect" coords="222,280,434,304"/>
+<area href="class_o_c_c_1_1_propagate_local_remove.html" title="Declaration of the other propagation jobs " alt="OCC::PropagateLocalRemove" shape="rect" coords="222,336,434,360"/>
+<area href="class_o_c_c_1_1_propagate_local_rename.html" title="The PropagateLocalRename class " alt="OCC::PropagateLocalRename" shape="rect" coords="222,392,434,416"/>
+<area href="class_o_c_c_1_1_propagate_remote_delete.html" title="The PropagateRemoteDelete class " alt="OCC::PropagateRemoteDelete" shape="rect" coords="222,448,434,472"/>
+<area href="class_o_c_c_1_1_propagate_remote_mkdir.html" title="The PropagateRemoteMkdir class " alt="OCC::PropagateRemoteMkdir" shape="rect" coords="222,504,434,528"/>
+<area href="class_o_c_c_1_1_propagate_remote_move.html" title="The PropagateRemoteMove class " alt="OCC::PropagateRemoteMove" shape="rect" coords="222,560,434,584"/>
+<area href="class_o_c_c_1_1_propagate_upload_file_common.html" title="The PropagateUploadFileCommon class is the code common between all chunking algorithmsState Machine: ..." alt="OCC::PropagateUploadFileCommon" shape="rect" coords="222,616,434,640"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:a97e7a37e51ad1696f6590dd52080f10a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagate_item_job.html#a97e7a37e51ad1696f6590dd52080f10a">start</a> ()=0</td></tr>
+<tr class="separator:a97e7a37e51ad1696f6590dd52080f10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_slots_class_o_c_c_1_1_propagator_job"><td colspan="2" onclick="javascript:toggleInherit('pub_slots_class_o_c_c_1_1_propagator_job')"><img src="closed.png" alt="-"/>&#160;Public 槽 继承自 <a class="el" href="class_o_c_c_1_1_propagator_job.html">OCC::PropagatorJob</a></td></tr>
+<tr class="memitem:a0d33573c817a705179a87db936b8dcb4 inherit pub_slots_class_o_c_c_1_1_propagator_job"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagator_job.html#a0d33573c817a705179a87db936b8dcb4">abort</a> ()</td></tr>
+<tr class="separator:a0d33573c817a705179a87db936b8dcb4 inherit pub_slots_class_o_c_c_1_1_propagator_job"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a256ca79c551c1a3cb2a2d3a5308d6a88"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagate_item_job.html#a256ca79c551c1a3cb2a2d3a5308d6a88">PropagateItemJob</a> (<a class="el" href="class_o_c_c_1_1_owncloud_propagator.html">OwncloudPropagator</a> *propagator, const <a class="el" href="namespace_o_c_c.html#acb6b0db82893659fbd0c98d3c5b8e2b8">SyncFileItemPtr</a> &amp;item)</td></tr>
+<tr class="separator:a256ca79c551c1a3cb2a2d3a5308d6a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc930944b34bb37f2a11d7b2bf3ab94"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagate_item_job.html#adbc930944b34bb37f2a11d7b2bf3ab94">scheduleNextJob</a> () Q_DECL_OVERRIDE</td></tr>
+<tr class="separator:adbc930944b34bb37f2a11d7b2bf3ab94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_o_c_c_1_1_propagator_job"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_o_c_c_1_1_propagator_job')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="class_o_c_c_1_1_propagator_job.html">OCC::PropagatorJob</a></td></tr>
+<tr class="memitem:a360692a84fc7736eb1b9d68d2d265bf7 inherit pub_methods_class_o_c_c_1_1_propagator_job"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagator_job.html#a360692a84fc7736eb1b9d68d2d265bf7">PropagatorJob</a> (<a class="el" href="class_o_c_c_1_1_owncloud_propagator.html">OwncloudPropagator</a> *propagator)</td></tr>
+<tr class="separator:a360692a84fc7736eb1b9d68d2d265bf7 inherit pub_methods_class_o_c_c_1_1_propagator_job"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55105e001d55177f8ccf01acecc5e637 inherit pub_methods_class_o_c_c_1_1_propagator_job"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_c_c_1_1_propagator_job.html#a2527eb0e2b598fc260a2d6449689c156">JobParallelism</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagator_job.html#a55105e001d55177f8ccf01acecc5e637">parallelism</a> ()</td></tr>
+<tr class="separator:a55105e001d55177f8ccf01acecc5e637 inherit pub_methods_class_o_c_c_1_1_propagator_job"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1272ff804d4daf4798f08af6f654944d inherit pub_methods_class_o_c_c_1_1_propagator_job"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagator_job.html#a1272ff804d4daf4798f08af6f654944d">isLikelyFinishedQuickly</a> ()</td></tr>
+<tr class="separator:a1272ff804d4daf4798f08af6f654944d inherit pub_methods_class_o_c_c_1_1_propagator_job"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bc39b8adaf93fd29668b768e1e7b20d inherit pub_methods_class_o_c_c_1_1_propagator_job"><td class="memItemLeft" align="right" valign="top">virtual qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagator_job.html#a7bc39b8adaf93fd29668b768e1e7b20d">committedDiskSpace</a> () const</td></tr>
+<tr class="separator:a7bc39b8adaf93fd29668b768e1e7b20d inherit pub_methods_class_o_c_c_1_1_propagator_job"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a3ea41be5747457782c94342f22a5857d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_o_c_c.html#acb6b0db82893659fbd0c98d3c5b8e2b8">SyncFileItemPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagate_item_job.html#a3ea41be5747457782c94342f22a5857d">_item</a></td></tr>
+<tr class="separator:a3ea41be5747457782c94342f22a5857d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_o_c_c_1_1_propagator_job"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_o_c_c_1_1_propagator_job')"><img src="closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="class_o_c_c_1_1_propagator_job.html">OCC::PropagatorJob</a></td></tr>
+<tr class="memitem:aea25494dc656a1185a8b9f1edff69668 inherit pub_attribs_class_o_c_c_1_1_propagator_job"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_c_c_1_1_propagator_job.html#afe241af4af083af8c00b0c88c921fa32">JobState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagator_job.html#aea25494dc656a1185a8b9f1edff69668">_state</a></td></tr>
+<tr class="separator:aea25494dc656a1185a8b9f1edff69668 inherit pub_attribs_class_o_c_c_1_1_propagator_job"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-slots"></a>
+Protected 槽</h2></td></tr>
+<tr class="memitem:a3f4983a7f077d7ed7f5ccf1145c5d340"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagate_item_job.html#a3f4983a7f077d7ed7f5ccf1145c5d340">slotRestoreJobCompleted</a> (const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;)</td></tr>
+<tr class="separator:a3f4983a7f077d7ed7f5ccf1145c5d340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a0b9d2d0dca6a2ea928346e9615c9da74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagate_item_job.html#a0b9d2d0dca6a2ea928346e9615c9da74">done</a> (<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408">SyncFileItem::Status</a> status, const QString &amp;errorString=QString())</td></tr>
+<tr class="separator:a0b9d2d0dca6a2ea928346e9615c9da74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be9643bf431843358a19ec23239a04b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagate_item_job.html#a1be9643bf431843358a19ec23239a04b">checkForProblemsWithShared</a> (int httpStatusCode, const QString &amp;msg)</td></tr>
+<tr class="separator:a1be9643bf431843358a19ec23239a04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac87c3a80a55803c1d54f95c31ab8c4d2"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagate_item_job.html#ac87c3a80a55803c1d54f95c31ab8c4d2">restoreJobMsg</a> () const</td></tr>
+<tr class="separator:ac87c3a80a55803c1d54f95c31ab8c4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a535f51adf1f8cdd17f5f365bd9929c95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagate_item_job.html#a535f51adf1f8cdd17f5f365bd9929c95">setRestoreJobMsg</a> (const QString &amp;msg=QString())</td></tr>
+<tr class="separator:a535f51adf1f8cdd17f5f365bd9929c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pub_types_class_o_c_c_1_1_propagator_job"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_o_c_c_1_1_propagator_job')"><img src="closed.png" alt="-"/>&#160;Public 类型 继承自 <a class="el" href="class_o_c_c_1_1_propagator_job.html">OCC::PropagatorJob</a></td></tr>
+<tr class="memitem:afe241af4af083af8c00b0c88c921fa32 inherit pub_types_class_o_c_c_1_1_propagator_job"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagator_job.html#afe241af4af083af8c00b0c88c921fa32">JobState</a> { <a class="el" href="class_o_c_c_1_1_propagator_job.html#afe241af4af083af8c00b0c88c921fa32a0d4fd4f8ff5ae07441a0c0057ee99b1a">NotYetStarted</a>, 
+<a class="el" href="class_o_c_c_1_1_propagator_job.html#afe241af4af083af8c00b0c88c921fa32a094c0f80cf1a02e513afa0e06fdfaedd">Running</a>, 
+<a class="el" href="class_o_c_c_1_1_propagator_job.html#afe241af4af083af8c00b0c88c921fa32a307154fbbcf9e51090fc11dba98b2217">Finished</a>
+ }</td></tr>
+<tr class="separator:afe241af4af083af8c00b0c88c921fa32 inherit pub_types_class_o_c_c_1_1_propagator_job"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2527eb0e2b598fc260a2d6449689c156 inherit pub_types_class_o_c_c_1_1_propagator_job"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagator_job.html#a2527eb0e2b598fc260a2d6449689c156">JobParallelism</a> { <a class="el" href="class_o_c_c_1_1_propagator_job.html#a2527eb0e2b598fc260a2d6449689c156a6bc740c15c0662e4bc4f5a9c0764afd0">FullParallelism</a>, 
+<a class="el" href="class_o_c_c_1_1_propagator_job.html#a2527eb0e2b598fc260a2d6449689c156ae8c082ed729153442fea29ebc1f14215">WaitForFinished</a>, 
+<a class="el" href="class_o_c_c_1_1_propagator_job.html#a2527eb0e2b598fc260a2d6449689c156af1af1d03a808923db8aa3c25f91145fd">WaitForFinishedInParentDirectory</a>
+ }</td></tr>
+<tr class="separator:a2527eb0e2b598fc260a2d6449689c156 inherit pub_types_class_o_c_c_1_1_propagator_job"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header signals_class_o_c_c_1_1_propagator_job"><td colspan="2" onclick="javascript:toggleInherit('signals_class_o_c_c_1_1_propagator_job')"><img src="closed.png" alt="-"/>&#160;信号 继承自 <a class="el" href="class_o_c_c_1_1_propagator_job.html">OCC::PropagatorJob</a></td></tr>
+<tr class="memitem:a79edbc2126a62878e64c85289b6b847f inherit signals_class_o_c_c_1_1_propagator_job"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagator_job.html#a79edbc2126a62878e64c85289b6b847f">finished</a> (<a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408">SyncFileItem::Status</a>)</td></tr>
+<tr class="separator:a79edbc2126a62878e64c85289b6b847f inherit signals_class_o_c_c_1_1_propagator_job"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee4dac27675315a4b0116c0056e2f564 inherit signals_class_o_c_c_1_1_propagator_job"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagator_job.html#aee4dac27675315a4b0116c0056e2f564">itemCompleted</a> (const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;, const <a class="el" href="class_o_c_c_1_1_propagator_job.html">PropagatorJob</a> &amp;)</td></tr>
+<tr class="separator:aee4dac27675315a4b0116c0056e2f564 inherit signals_class_o_c_c_1_1_propagator_job"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e3be5aab321b6bfa4a82253f33ac1c6 inherit signals_class_o_c_c_1_1_propagator_job"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagator_job.html#a8e3be5aab321b6bfa4a82253f33ac1c6">ready</a> ()</td></tr>
+<tr class="separator:a8e3be5aab321b6bfa4a82253f33ac1c6 inherit signals_class_o_c_c_1_1_propagator_job"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35dd6d6cd14b4ddbf0b2528508a07804 inherit signals_class_o_c_c_1_1_propagator_job"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagator_job.html#a35dd6d6cd14b4ddbf0b2528508a07804">progress</a> (const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;item, quint64 bytes)</td></tr>
+<tr class="separator:a35dd6d6cd14b4ddbf0b2528508a07804 inherit signals_class_o_c_c_1_1_propagator_job"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_o_c_c_1_1_propagator_job"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_o_c_c_1_1_propagator_job')"><img src="closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="class_o_c_c_1_1_propagator_job.html">OCC::PropagatorJob</a></td></tr>
+<tr class="memitem:adcbb5f2a95f6370a5af6378ca2b8b67c inherit pro_attribs_class_o_c_c_1_1_propagator_job"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_c_c_1_1_owncloud_propagator.html">OwncloudPropagator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_propagator_job.html#adcbb5f2a95f6370a5af6378ca2b8b67c">_propagator</a></td></tr>
+<tr class="separator:adcbb5f2a95f6370a5af6378ca2b8b67c inherit pro_attribs_class_o_c_c_1_1_propagator_job"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="owncloudpropagator_8h_source.html">owncloudpropagator.h</a> 第 <a class="el" href="owncloudpropagator_8h_source.html#l00135">135</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a256ca79c551c1a3cb2a2d3a5308d6a88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a256ca79c551c1a3cb2a2d3a5308d6a88">&#9670;&nbsp;</a></span>PropagateItemJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OCC::PropagateItemJob::PropagateItemJob </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_o_c_c_1_1_owncloud_propagator.html">OwncloudPropagator</a> *&#160;</td>
+          <td class="paramname"><em>propagator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespace_o_c_c.html#acb6b0db82893659fbd0c98d3c5b8e2b8">SyncFileItemPtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>item</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="owncloudpropagator_8h_source.html">owncloudpropagator.h</a> 第 <a class="el" href="owncloudpropagator_8h_source.html#l00161">161</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a1be9643bf431843358a19ec23239a04b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be9643bf431843358a19ec23239a04b">&#9670;&nbsp;</a></span>checkForProblemsWithShared()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OCC::PropagateItemJob::checkForProblemsWithShared </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>httpStatusCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>For delete or remove, check that we are not removing from a shared directory. If we are, try to restore the file</p>
+<p>Return true if the problem is handled. </p>
+
+<p class="definition">在文件 <a class="el" href="owncloudpropagator_8cpp_source.html">owncloudpropagator.cpp</a> 第 <a class="el" href="owncloudpropagator_8cpp_source.html#l00186">186</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0b9d2d0dca6a2ea928346e9615c9da74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b9d2d0dca6a2ea928346e9615c9da74">&#9670;&nbsp;</a></span>done()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::PropagateItemJob::done </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408">SyncFileItem::Status</a>&#160;</td>
+          <td class="paramname"><em>status</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>errorString</em> = <code>QString()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="owncloudpropagator_8cpp_source.html">owncloudpropagator.cpp</a> 第 <a class="el" href="owncloudpropagator_8cpp_source.html#l00123">123</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac87c3a80a55803c1d54f95c31ab8c4d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac87c3a80a55803c1d54f95c31ab8c4d2">&#9670;&nbsp;</a></span>restoreJobMsg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString OCC::PropagateItemJob::restoreJobMsg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="owncloudpropagator_8h_source.html">owncloudpropagator.h</a> 第 <a class="el" href="owncloudpropagator_8h_source.html#l00146">146</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adbc930944b34bb37f2a11d7b2bf3ab94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbc930944b34bb37f2a11d7b2bf3ab94">&#9670;&nbsp;</a></span>scheduleNextJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OCC::PropagateItemJob::scheduleNextJob </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Starts this job, or a new subjob returns true if a job was started. </p>
+
+<p>实现了 <a class="el" href="class_o_c_c_1_1_propagator_job.html#a344574482155de72f164883b56f4ebf3">OCC::PropagatorJob</a>.</p>
+
+<p class="definition">在文件 <a class="el" href="owncloudpropagator_8h_source.html">owncloudpropagator.h</a> 第 <a class="el" href="owncloudpropagator_8h_source.html#l00164">164</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a535f51adf1f8cdd17f5f365bd9929c95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a535f51adf1f8cdd17f5f365bd9929c95">&#9670;&nbsp;</a></span>setRestoreJobMsg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::PropagateItemJob::setRestoreJobMsg </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>msg</em> = <code>QString()</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="owncloudpropagator_8h_source.html">owncloudpropagator.h</a> 第 <a class="el" href="owncloudpropagator_8h_source.html#l00149">149</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3f4983a7f077d7ed7f5ccf1145c5d340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f4983a7f077d7ed7f5ccf1145c5d340">&#9670;&nbsp;</a></span>slotRestoreJobCompleted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::PropagateItemJob::slotRestoreJobCompleted </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="owncloudpropagator_8cpp_source.html">owncloudpropagator.cpp</a> 第 <a class="el" href="owncloudpropagator_8cpp_source.html#l00234">234</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a97e7a37e51ad1696f6590dd52080f10a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97e7a37e51ad1696f6590dd52080f10a">&#9670;&nbsp;</a></span>start</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void OCC::PropagateItemJob::start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_o_c_c_1_1_propagate_ignore_job.html#ab4b6fd1aeabf3279ac136719dc3cf6fb">OCC::PropagateIgnoreJob</a>, <a class="el" href="class_o_c_c_1_1_propagate_upload_file_common.html#a588514bbae3f7655a7b9dba85fb6af62">OCC::PropagateUploadFileCommon</a>, <a class="el" href="class_o_c_c_1_1_propagate_download_file.html#ade2a2624bf1c87f82d032d1d60790352">OCC::PropagateDownloadFile</a>, <a class="el" href="class_o_c_c_1_1_propagate_local_rename.html#a9c4741f660f381d80ca02fa886b4aec2">OCC::PropagateLocalRename</a>, <a class="el" href="class_o_c_c_1_1_propagate_local_mkdir.html#abfc04efdcf2e09708c31531c2527a767">OCC::PropagateLocalMkdir</a>, <a class="el" href="class_o_c_c_1_1_propagate_remote_move.html#a2cd9e57f880e1e408c27fad40cdeaf70">OCC::PropagateRemoteMove</a>, <a class="el" href="class_o_c_c_1_1_propagate_remote_delete.html#afa9cfbdf647e648209af60ef224216b9">OCC::PropagateRemoteDelete</a>, <a class="el" href="class_o_c_c_1_1_propagate_local_remove.html#af810729c9c8ca5d51d1ad019d27f6909">OCC::PropagateLocalRemove</a> , 以及 <a class="el" href="class_o_c_c_1_1_propagate_remote_mkdir.html#a9bc9722b6554147bdb84d65effe15dee">OCC::PropagateRemoteMkdir</a> 内被实现.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a3ea41be5747457782c94342f22a5857d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ea41be5747457782c94342f22a5857d">&#9670;&nbsp;</a></span>_item</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_o_c_c.html#acb6b0db82893659fbd0c98d3c5b8e2b8">SyncFileItemPtr</a> OCC::PropagateItemJob::_item</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="owncloudpropagator_8h_source.html">owncloudpropagator.h</a> 第 <a class="el" href="owncloudpropagator_8h_source.html#l00173">173</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="owncloudpropagator_8h_source.html">owncloudpropagator.h</a></li>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="owncloudpropagator_8cpp_source.html">owncloudpropagator.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

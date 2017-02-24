@@ -1,0 +1,89 @@
+\hypertarget{utility_8h}{}\section{bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/utility.h 文件参考}
+\label{utility_8h}\index{bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/utility.\+h@{bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/utility.\+h}}
+{\ttfamily \#include \char`\"{}owncloudlib.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Q\+String$>$}\newline
+{\ttfamily \#include $<$Q\+Byte\+Array$>$}\newline
+{\ttfamily \#include $<$Q\+Date\+Time$>$}\newline
+{\ttfamily \#include $<$Q\+Elapsed\+Timer$>$}\newline
+{\ttfamily \#include $<$Q\+Map$>$}\newline
+{\ttfamily \#include $<$Q\+Url$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+\subsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_o_c_c_1_1_utility_1_1_stop_watch}{O\+C\+C\+::\+Utility\+::\+Stop\+Watch}
+\end{DoxyCompactItemize}
+\subsection*{命名空间}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_o_c_c}{O\+CC}
+\item 
+ \hyperlink{namespace_o_c_c_1_1_utility}{O\+C\+C\+::\+Utility}
+\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{namespace_o_c_c_1_1_utility_a2a5852559fec33206166584c0bdc0827}{O\+C\+C\+::\+Utility\+::sleep} (int sec)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{namespace_o_c_c_1_1_utility_ac9cc640e21cdc30773dcdf9eaa01904d}{O\+C\+C\+::\+Utility\+::usleep} (int usec)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT Q\+String \hyperlink{namespace_o_c_c_1_1_utility_a2a3ee3aad7e4c551758f0bceb7c76172}{O\+C\+C\+::\+Utility\+::format\+Fingerprint} (const Q\+Byte\+Array \&, bool colon\+Separated=true)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{namespace_o_c_c_1_1_utility_adaea063f9fc0245cd9611c76a0ef38e6}{O\+C\+C\+::\+Utility\+::setup\+Fav\+Link} (const Q\+String \&folder)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{namespace_o_c_c_1_1_utility_a7f843bb280e0e8485149094c9ffbee48}{O\+C\+C\+::\+Utility\+::write\+Random\+File} (const Q\+String \&fname, int size=-\/1)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT Q\+String \hyperlink{namespace_o_c_c_1_1_utility_a9b789ccc2cc363c3adcbd7cde466375c}{O\+C\+C\+::\+Utility\+::octets\+To\+String} (qint64 octets)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT Q\+Byte\+Array \hyperlink{namespace_o_c_c_1_1_utility_a4beaff7073bfbd75da5f761b8c02c1ab}{O\+C\+C\+::\+Utility\+::user\+Agent\+String} ()
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{namespace_o_c_c_1_1_utility_a4db4f042cee5710dad04f70193992740}{O\+C\+C\+::\+Utility\+::has\+Launch\+On\+Startup} (const Q\+String \&app\+Name)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{namespace_o_c_c_1_1_utility_a65ed1f8867bc2161160f62bf07b5fed0}{O\+C\+C\+::\+Utility\+::set\+Launch\+On\+Startup} (const Q\+String \&app\+Name, const Q\+String \&gui\+Name, bool launch)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT qint64 \hyperlink{namespace_o_c_c_1_1_utility_a0b8741e91bdc3b0209d75c3627308b89}{O\+C\+C\+::\+Utility\+::free\+Disk\+Space} (const Q\+String \&path)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT Q\+String \hyperlink{namespace_o_c_c_1_1_utility_a36c3adb4288666fda8760edea6283405}{O\+C\+C\+::\+Utility\+::compact\+Format\+Double} (double value, int prec, const Q\+String \&unit=Q\+String\+::null)
+\begin{DoxyCompactList}\small\item\em compact\+Format\+Double -\/ formats a double value human readable. \end{DoxyCompactList}\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT Q\+String \hyperlink{namespace_o_c_c_1_1_utility_ad74fc97794d5c89900c6ecb1c59d96cb}{O\+C\+C\+::\+Utility\+::escape} (const Q\+String \&)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT Q\+Date\+Time \hyperlink{namespace_o_c_c_1_1_utility_ae1f64aa75b5c3214e140c84b83d7da45}{O\+C\+C\+::\+Utility\+::q\+Date\+Time\+From\+Time\+\_\+t} (qint64 t)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT qint64 \hyperlink{namespace_o_c_c_1_1_utility_a28fbfd6b74659e670ebab0c6b955d4b0}{O\+C\+C\+::\+Utility\+::q\+Date\+Time\+To\+Time\+\_\+t} (const Q\+Date\+Time \&t)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT Q\+String \hyperlink{namespace_o_c_c_1_1_utility_adda2449d3e0697cd65366b2e0c2ab4d4}{O\+C\+C\+::\+Utility\+::duration\+To\+Descriptive\+String1} (quint64 msecs)
+\begin{DoxyCompactList}\small\item\em Convert milliseconds duration to human readable string. \end{DoxyCompactList}\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT Q\+String \hyperlink{namespace_o_c_c_1_1_utility_a6ce540b22225886d8598b42d01358edb}{O\+C\+C\+::\+Utility\+::duration\+To\+Descriptive\+String2} (quint64 msecs)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{namespace_o_c_c_1_1_utility_a56e1ad347247954a1cadec8c17ea412d}{O\+C\+C\+::\+Utility\+::has\+Dark\+Systray} ()
+\begin{DoxyCompactList}\small\item\em has\+Dark\+Systray -\/ determines whether the systray is dark or light. \end{DoxyCompactList}\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{namespace_o_c_c_1_1_utility_ac7e88241e296a0e17d9e49ab1eff78d9}{O\+C\+C\+::\+Utility\+::is\+Windows} ()
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{namespace_o_c_c_1_1_utility_aa51a4651f7e6560f028061f65aeb694b}{O\+C\+C\+::\+Utility\+::is\+Mac} ()
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{namespace_o_c_c_1_1_utility_a694df7846351c718fd8ff5caf943fda8}{O\+C\+C\+::\+Utility\+::is\+Unix} ()
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{namespace_o_c_c_1_1_utility_afc1774f88e908263fa577879b7cb1587}{O\+C\+C\+::\+Utility\+::is\+Linux} ()
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{namespace_o_c_c_1_1_utility_a663aa43ebb0a38ddc1c814ce7644d0d1}{O\+C\+C\+::\+Utility\+::is\+B\+SD} ()
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT Q\+String \hyperlink{namespace_o_c_c_1_1_utility_a2cc733459fb0ffa43ceb1ef459bb1e9a}{O\+C\+C\+::\+Utility\+::platform\+Name} ()
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{namespace_o_c_c_1_1_utility_aecc25c7e7b37a8be13da47b4f550a9e0}{O\+C\+C\+::\+Utility\+::crash} ()
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{namespace_o_c_c_1_1_utility_aa60741b25d0d624446071c1e201935ad}{O\+C\+C\+::\+Utility\+::fs\+Case\+Preserving} ()
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{namespace_o_c_c_1_1_utility_ac400f2a768d0f1a725507b63ffcce87f}{O\+C\+C\+::\+Utility\+::file\+Names\+Equal} (const Q\+String \&fn1, const Q\+String \&fn2)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT Q\+Byte\+Array \hyperlink{namespace_o_c_c_1_1_utility_ad31c8a3553f6f1591bb3856ea80edf11}{O\+C\+C\+::\+Utility\+::version\+Of\+Installed\+Binary} (const Q\+String \&command=Q\+String())
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT Q\+String \hyperlink{namespace_o_c_c_1_1_utility_ab26315e68b8661afbe7c12de107cc7be}{O\+C\+C\+::\+Utility\+::file\+Name\+For\+Gui\+Use} (const Q\+String \&f\+Name)
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT Q\+String \hyperlink{namespace_o_c_c_1_1_utility_a10bd34d4993a7d659c3cafdc9144cbdd}{O\+C\+C\+::\+Utility\+::time\+Ago\+In\+Words} (const Q\+Date\+Time \&dt, const Q\+Date\+Time \&from=Q\+Date\+Time())
+\begin{DoxyCompactList}\small\item\em time\+Ago\+In\+Words -\/ human readable time span \end{DoxyCompactList}\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{namespace_o_c_c_1_1_utility_a4c3a05eded7862ce624511132325d0b3}{O\+C\+C\+::\+Utility\+::sort\+Filenames} (Q\+String\+List \&file\+Names)
+\begin{DoxyCompactList}\small\item\em Sort a Q\+String\+List in a way that\textquotesingle{}s appropriate for filenames \end{DoxyCompactList}\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT Q\+Url \hyperlink{namespace_o_c_c_1_1_utility_a3032e9927bf9de22576b940b1770008d}{O\+C\+C\+::\+Utility\+::concat\+Url\+Path} (const Q\+Url \&url, const Q\+String \&concat\+Path, const Q\+List$<$ Q\+Pair$<$ Q\+String, Q\+String $>$ $>$ \&query\+Items=(Q\+List$<$ Q\+Pair$<$ Q\+String, Q\+String $>$$>$()))
+\item 
+O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT std\+::unique\+\_\+ptr$<$ Q\+Settings $>$ \hyperlink{namespace_o_c_c_1_1_utility_a769298bacfd2ba51ce868cf9bc62741f}{O\+C\+C\+::\+Utility\+::settings\+With\+Group} (const Q\+String \&group, Q\+Object $\ast$parent=0)
+\end{DoxyCompactItemize}

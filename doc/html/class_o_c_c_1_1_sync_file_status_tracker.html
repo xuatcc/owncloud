@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>custom_cloud: OCC::SyncFileStatusTracker类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="cloudDisk.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">custom_cloud
+   &#160;<span id="projectnumber">beta 1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_o_c_c.html">OCC</a></li><li class="navelem"><a class="el" href="class_o_c_c_1_1_sync_file_status_tracker.html">SyncFileStatusTracker</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="class_o_c_c_1_1_sync_file_status_tracker-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">OCC::SyncFileStatusTracker类 参考<div class="ingroups"><a class="el" href="group__libsync.html">The sync library</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Takes care of tracking the status of individual files as they go through the <a class="el" href="class_o_c_c_1_1_sync_engine.html" title="The SyncEngine class ">SyncEngine</a>, to be reported as overlay icons in the shell.  
+ <a href="class_o_c_c_1_1_sync_file_status_tracker.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="syncfilestatustracker_8h_source.html">syncfilestatustracker.h</a>&gt;</code></p>
+<div class="dynheader">
+类 OCC::SyncFileStatusTracker 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_o_c_c_1_1_sync_file_status_tracker.png" usemap="#OCC::SyncFileStatusTracker_map" alt=""/>
+  <map id="OCC::SyncFileStatusTracker_map" name="OCC::SyncFileStatusTracker_map">
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:a4df2b8af03afa1d50e78a297f3e66be6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_status_tracker.html#a4df2b8af03afa1d50e78a297f3e66be6">slotPathTouched</a> (const QString &amp;fileName)</td></tr>
+<tr class="separator:a4df2b8af03afa1d50e78a297f3e66be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a7ef7a0b3f3771ef113f10fbd42f22726"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_status_tracker.html#a7ef7a0b3f3771ef113f10fbd42f22726">fileStatusChanged</a> (const QString &amp;systemFileName, <a class="el" href="class_o_c_c_1_1_sync_file_status.html">SyncFileStatus</a> <a class="el" href="class_o_c_c_1_1_sync_file_status_tracker.html#a89d86ea92cbc17fefcdfe68cfd4f5f5c">fileStatus</a>)</td></tr>
+<tr class="separator:a7ef7a0b3f3771ef113f10fbd42f22726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a4450c5ca65b8b807428b9437a48c2dbb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_status_tracker.html#a4450c5ca65b8b807428b9437a48c2dbb">SyncFileStatusTracker</a> (<a class="el" href="class_o_c_c_1_1_sync_engine.html">SyncEngine</a> *syncEngine)</td></tr>
+<tr class="separator:a4450c5ca65b8b807428b9437a48c2dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89d86ea92cbc17fefcdfe68cfd4f5f5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_c_c_1_1_sync_file_status.html">SyncFileStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_sync_file_status_tracker.html#a89d86ea92cbc17fefcdfe68cfd4f5f5c">fileStatus</a> (const QString &amp;relativePath)</td></tr>
+<tr class="separator:a89d86ea92cbc17fefcdfe68cfd4f5f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Takes care of tracking the status of individual files as they go through the <a class="el" href="class_o_c_c_1_1_sync_engine.html" title="The SyncEngine class ">SyncEngine</a>, to be reported as overlay icons in the shell. </p>
+
+<p class="definition">在文件 <a class="el" href="syncfilestatustracker_8h_source.html">syncfilestatustracker.h</a> 第 <a class="el" href="syncfilestatustracker_8h_source.html#l00034">34</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a4450c5ca65b8b807428b9437a48c2dbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4450c5ca65b8b807428b9437a48c2dbb">&#9670;&nbsp;</a></span>SyncFileStatusTracker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">OCC::SyncFileStatusTracker::SyncFileStatusTracker </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_o_c_c_1_1_sync_engine.html">SyncEngine</a> *&#160;</td>
+          <td class="paramname"><em>syncEngine</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfilestatustracker_8cpp_source.html">syncfilestatustracker.cpp</a> 第 <a class="el" href="syncfilestatustracker_8cpp_source.html#l00075">75</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a89d86ea92cbc17fefcdfe68cfd4f5f5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d86ea92cbc17fefcdfe68cfd4f5f5c">&#9670;&nbsp;</a></span>fileStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_o_c_c_1_1_sync_file_status.html">SyncFileStatus</a> OCC::SyncFileStatusTracker::fileStatus </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>relativePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfilestatustracker_8cpp_source.html">syncfilestatustracker.cpp</a> 第 <a class="el" href="syncfilestatustracker_8cpp_source.html#l00087">87</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7ef7a0b3f3771ef113f10fbd42f22726"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ef7a0b3f3771ef113f10fbd42f22726">&#9670;&nbsp;</a></span>fileStatusChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::SyncFileStatusTracker::fileStatusChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>systemFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_o_c_c_1_1_sync_file_status.html">SyncFileStatus</a>&#160;</td>
+          <td class="paramname"><em>fileStatus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4df2b8af03afa1d50e78a297f3e66be6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df2b8af03afa1d50e78a297f3e66be6">&#9670;&nbsp;</a></span>slotPathTouched</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::SyncFileStatusTracker::slotPathTouched </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="syncfilestatustracker_8cpp_source.html">syncfilestatustracker.cpp</a> 第 <a class="el" href="syncfilestatustracker_8cpp_source.html#l00121">121</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="syncfilestatustracker_8h_source.html">syncfilestatustracker.h</a></li>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="syncfilestatustracker_8cpp_source.html">syncfilestatustracker.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

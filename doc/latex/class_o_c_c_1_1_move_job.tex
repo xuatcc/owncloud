@@ -1,0 +1,131 @@
+\hypertarget{class_o_c_c_1_1_move_job}{}\section{O\+CC\+:\+:Move\+Job类 参考}
+\label{class_o_c_c_1_1_move_job}\index{O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}}
+
+
+The \hyperlink{class_o_c_c_1_1_move_job}{Move\+Job} class  
+
+
+
+
+{\ttfamily \#include $<$propagateremotemove.\+h$>$}
+
+类 O\+CC\+:\+:Move\+Job 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_o_c_c_1_1_move_job}
+\end{center}
+\end{figure}
+\subsection*{信号}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_o_c_c_1_1_move_job_aa43a14cadfe36d5ce2f4c9954be557a5}{finished\+Signal} ()
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_o_c_c_1_1_move_job_a21b1a5d10fd1b6edff573d716c3eaef3}{Move\+Job} (\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr} \hyperlink{class_o_c_c_1_1_abstract_network_job_a469c9d8212a338ad07d1efa1a94f784d}{account}, const Q\+String \&\hyperlink{class_o_c_c_1_1_abstract_network_job_a8ed2423a454ec861c20f6900f5591ef7}{path}, const Q\+String \&destination, Q\+Object $\ast$parent=0)
+\item 
+\hyperlink{class_o_c_c_1_1_move_job_a49524ca05a8c6e8ffc4518aec27a2b01}{Move\+Job} (\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr} \hyperlink{class_o_c_c_1_1_abstract_network_job_a469c9d8212a338ad07d1efa1a94f784d}{account}, const Q\+Url \&url, const Q\+String \&destination, Q\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \+\_\+extra\+Headers, Q\+Object $\ast$parent=0)
+\item 
+void \hyperlink{class_o_c_c_1_1_move_job_a0f963be47342b15bed2d961f743d0984}{start} () Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+bool \hyperlink{class_o_c_c_1_1_move_job_a2cea82684a6f32d91245b8e974f516dd}{finished} () Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_move_job_aa935a13a2c6d5007f17fb9cd2e172144}{error\+String} ()
+\item 
+bool \hyperlink{class_o_c_c_1_1_move_job_ae8d108c5175b52a3b2c913172dcfdd08}{timed\+Out} ()
+\end{DoxyCompactItemize}
+\subsection*{额外继承的成员函数}
+
+
+\subsection{详细描述}
+The \hyperlink{class_o_c_c_1_1_move_job}{Move\+Job} class 
+
+在文件 propagateremotemove.\+h 第 25 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_move_job_a21b1a5d10fd1b6edff573d716c3eaef3}\label{class_o_c_c_1_1_move_job_a21b1a5d10fd1b6edff573d716c3eaef3}} 
+\index{O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}!Move\+Job@{Move\+Job}}
+\index{Move\+Job@{Move\+Job}!O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}}
+\subsubsection{\texorpdfstring{Move\+Job()}{MoveJob()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily O\+C\+C\+::\+Move\+Job\+::\+Move\+Job (\begin{DoxyParamCaption}\item[{\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr}}]{account,  }\item[{const Q\+String \&}]{path,  }\item[{const Q\+String \&}]{destination,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+在文件 propagateremotemove.\+cpp 第 27 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_move_job_a49524ca05a8c6e8ffc4518aec27a2b01}\label{class_o_c_c_1_1_move_job_a49524ca05a8c6e8ffc4518aec27a2b01}} 
+\index{O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}!Move\+Job@{Move\+Job}}
+\index{Move\+Job@{Move\+Job}!O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}}
+\subsubsection{\texorpdfstring{Move\+Job()}{MoveJob()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily O\+C\+C\+::\+Move\+Job\+::\+Move\+Job (\begin{DoxyParamCaption}\item[{\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr}}]{account,  }\item[{const Q\+Url \&}]{url,  }\item[{const Q\+String \&}]{destination,  }\item[{Q\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$}]{\+\_\+extra\+Headers,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+在文件 propagateremotemove.\+cpp 第 32 行定义.
+
+
+
+\subsection{成员函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_move_job_aa935a13a2c6d5007f17fb9cd2e172144}\label{class_o_c_c_1_1_move_job_aa935a13a2c6d5007f17fb9cd2e172144}} 
+\index{O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}!error\+String@{error\+String}}
+\index{error\+String@{error\+String}!O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}}
+\subsubsection{\texorpdfstring{error\+String()}{errorString()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Move\+Job\+::error\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateremotemove.\+cpp 第 55 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_move_job_a2cea82684a6f32d91245b8e974f516dd}\label{class_o_c_c_1_1_move_job_a2cea82684a6f32d91245b8e974f516dd}} 
+\index{O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}!finished@{finished}}
+\index{finished@{finished}!O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}}
+\subsubsection{\texorpdfstring{finished()}{finished()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Move\+Job\+::finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+实现了 \hyperlink{class_o_c_c_1_1_abstract_network_job_af811f7299d7e526678a8758f2e7102d2}{O\+C\+C\+::\+Abstract\+Network\+Job}.
+
+
+
+在文件 propagateremotemove.\+cpp 第 66 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_move_job_aa43a14cadfe36d5ce2f4c9954be557a5}\label{class_o_c_c_1_1_move_job_aa43a14cadfe36d5ce2f4c9954be557a5}} 
+\index{O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}!finished\+Signal@{finished\+Signal}}
+\index{finished\+Signal@{finished\+Signal}!O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}}
+\subsubsection{\texorpdfstring{finished\+Signal}{finishedSignal}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Move\+Job\+::finished\+Signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_move_job_a0f963be47342b15bed2d961f743d0984}\label{class_o_c_c_1_1_move_job_a0f963be47342b15bed2d961f743d0984}} 
+\index{O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}!start@{start}}
+\index{start@{start}!O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Move\+Job\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+重载 \hyperlink{class_o_c_c_1_1_abstract_network_job_a256f1b6b5d6f6252e83b3602743da64a}{O\+C\+C\+::\+Abstract\+Network\+Job} .
+
+
+
+在文件 propagateremotemove.\+cpp 第 38 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_move_job_ae8d108c5175b52a3b2c913172dcfdd08}\label{class_o_c_c_1_1_move_job_ae8d108c5175b52a3b2c913172dcfdd08}} 
+\index{O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}!timed\+Out@{timed\+Out}}
+\index{timed\+Out@{timed\+Out}!O\+C\+C\+::\+Move\+Job@{O\+C\+C\+::\+Move\+Job}}
+\subsubsection{\texorpdfstring{timed\+Out()}{timedOut()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Move\+Job\+::timed\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateremotemove.\+h 第 39 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{propagateremotemove_8h}{propagateremotemove.\+h}\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{propagateremotemove_8cpp}{propagateremotemove.\+cpp}\end{DoxyCompactItemize}

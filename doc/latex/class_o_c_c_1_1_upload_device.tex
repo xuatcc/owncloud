@@ -1,0 +1,263 @@
+\hypertarget{class_o_c_c_1_1_upload_device}{}\section{O\+CC\+:\+:Upload\+Device类 参考}
+\label{class_o_c_c_1_1_upload_device}\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+
+
+The \hyperlink{class_o_c_c_1_1_upload_device}{Upload\+Device} class  
+
+
+
+
+{\ttfamily \#include $<$propagateupload.\+h$>$}
+
+类 O\+CC\+:\+:Upload\+Device 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_o_c_c_1_1_upload_device}
+\end{center}
+\end{figure}
+\subsection*{信号}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_o_c_c_1_1_upload_device_a9799bf9895901f26f26d6032e900df11}{was\+Reset} ()
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_o_c_c_1_1_upload_device_adcb30f5e9e2572dae1a5b8fb33f18b6b}{Upload\+Device} (\hyperlink{class_o_c_c_1_1_bandwidth_manager}{Bandwidth\+Manager} $\ast$bwm)
+\item 
+\hyperlink{class_o_c_c_1_1_upload_device_a28fdfc6160d2f096fb657742368b0054}{$\sim$\+Upload\+Device} ()
+\item 
+bool \hyperlink{class_o_c_c_1_1_upload_device_ab5020fa1b5d32d7e4b80573adb21db72}{prepare\+And\+Open} (const Q\+String \&file\+Name, qint64 start, qint64 \hyperlink{class_o_c_c_1_1_upload_device_a57a932984aa5882d829251720a8445e0}{size})
+\item 
+qint64 \hyperlink{class_o_c_c_1_1_upload_device_a23b5299ca1b3774ec634d2367f9961bb}{write\+Data} (const char $\ast$, qint64) Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+qint64 \hyperlink{class_o_c_c_1_1_upload_device_a9dd03b989cf05cfe03c9c56c5cc1213d}{read\+Data} (char $\ast$data, qint64 maxlen) Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+bool \hyperlink{class_o_c_c_1_1_upload_device_aeac798906622f0fb1dcb821d161f2abc}{at\+End} () const Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+qint64 \hyperlink{class_o_c_c_1_1_upload_device_a57a932984aa5882d829251720a8445e0}{size} () const Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+qint64 \hyperlink{class_o_c_c_1_1_upload_device_a3deba7611e8133aac3d03d61ad4eae2c}{bytes\+Available} () const Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+bool \hyperlink{class_o_c_c_1_1_upload_device_a2f4f0ad62142f46ed15e9966adb7ca35}{is\+Sequential} () const Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+bool \hyperlink{class_o_c_c_1_1_upload_device_a966ab3a0165321a5ebd04db0cb300c72}{seek} (qint64 pos) Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+void \hyperlink{class_o_c_c_1_1_upload_device_a3a401fc06327e59d5e49baf517035f45}{set\+Bandwidth\+Limited} (bool)
+\item 
+bool \hyperlink{class_o_c_c_1_1_upload_device_a7edc37d150e57de929f2a8d19a041d56}{is\+Bandwidth\+Limited} ()
+\item 
+void \hyperlink{class_o_c_c_1_1_upload_device_a80e877e6572384b2eaf17ffa5016e059}{set\+Choked} (bool)
+\item 
+bool \hyperlink{class_o_c_c_1_1_upload_device_a26dc26a22ec7ca5d7dc3a9e0f14808a8}{is\+Choked} ()
+\item 
+void \hyperlink{class_o_c_c_1_1_upload_device_a9025767357fbea7bcae2d3543b95c17a}{give\+Bandwidth\+Quota} (qint64 bwq)
+\end{DoxyCompactItemize}
+\subsection*{Protected 槽}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_o_c_c_1_1_upload_device_a9ed332ee5b50c7841801b9ca882b5bf8}{slot\+Job\+Upload\+Progress} (qint64 sent, qint64 t)
+\end{DoxyCompactItemize}
+\subsection*{友元}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_o_c_c_1_1_upload_device_af9c19747d2fb900e49cbed2d3650a35b}{Bandwidth\+Manager}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+The \hyperlink{class_o_c_c_1_1_upload_device}{Upload\+Device} class 
+
+在文件 propagateupload.\+h 第 31 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_adcb30f5e9e2572dae1a5b8fb33f18b6b}\label{class_o_c_c_1_1_upload_device_adcb30f5e9e2572dae1a5b8fb33f18b6b}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!Upload\+Device@{Upload\+Device}}
+\index{Upload\+Device@{Upload\+Device}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{Upload\+Device()}{UploadDevice()}}
+{\footnotesize\ttfamily O\+C\+C\+::\+Upload\+Device\+::\+Upload\+Device (\begin{DoxyParamCaption}\item[{\hyperlink{class_o_c_c_1_1_bandwidth_manager}{Bandwidth\+Manager} $\ast$}]{bwm }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+cpp 第 330 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a28fdfc6160d2f096fb657742368b0054}\label{class_o_c_c_1_1_upload_device_a28fdfc6160d2f096fb657742368b0054}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!````~Upload\+Device@{$\sim$\+Upload\+Device}}
+\index{````~Upload\+Device@{$\sim$\+Upload\+Device}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{$\sim$\+Upload\+Device()}{~UploadDevice()}}
+{\footnotesize\ttfamily O\+C\+C\+::\+Upload\+Device\+::$\sim$\+Upload\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+cpp 第 341 行定义.
+
+
+
+\subsection{成员函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_aeac798906622f0fb1dcb821d161f2abc}\label{class_o_c_c_1_1_upload_device_aeac798906622f0fb1dcb821d161f2abc}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!at\+End@{at\+End}}
+\index{at\+End@{at\+End}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{at\+End()}{atEnd()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Upload\+Device\+::at\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 propagateupload.\+cpp 第 414 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a3deba7611e8133aac3d03d61ad4eae2c}\label{class_o_c_c_1_1_upload_device_a3deba7611e8133aac3d03d61ad4eae2c}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!bytes\+Available@{bytes\+Available}}
+\index{bytes\+Available@{bytes\+Available}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{bytes\+Available()}{bytesAvailable()}}
+{\footnotesize\ttfamily qint64 O\+C\+C\+::\+Upload\+Device\+::bytes\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 propagateupload.\+cpp 第 423 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a9025767357fbea7bcae2d3543b95c17a}\label{class_o_c_c_1_1_upload_device_a9025767357fbea7bcae2d3543b95c17a}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!give\+Bandwidth\+Quota@{give\+Bandwidth\+Quota}}
+\index{give\+Bandwidth\+Quota@{give\+Bandwidth\+Quota}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{give\+Bandwidth\+Quota()}{giveBandwidthQuota()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Upload\+Device\+::give\+Bandwidth\+Quota (\begin{DoxyParamCaption}\item[{qint64}]{bwq }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+cpp 第 446 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a7edc37d150e57de929f2a8d19a041d56}\label{class_o_c_c_1_1_upload_device_a7edc37d150e57de929f2a8d19a041d56}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!is\+Bandwidth\+Limited@{is\+Bandwidth\+Limited}}
+\index{is\+Bandwidth\+Limited@{is\+Bandwidth\+Limited}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{is\+Bandwidth\+Limited()}{isBandwidthLimited()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Upload\+Device\+::is\+Bandwidth\+Limited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+h 第 53 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a26dc26a22ec7ca5d7dc3a9e0f14808a8}\label{class_o_c_c_1_1_upload_device_a26dc26a22ec7ca5d7dc3a9e0f14808a8}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!is\+Choked@{is\+Choked}}
+\index{is\+Choked@{is\+Choked}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{is\+Choked()}{isChoked()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Upload\+Device\+::is\+Choked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+h 第 55 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a2f4f0ad62142f46ed15e9966adb7ca35}\label{class_o_c_c_1_1_upload_device_a2f4f0ad62142f46ed15e9966adb7ca35}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!is\+Sequential@{is\+Sequential}}
+\index{is\+Sequential@{is\+Sequential}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{is\+Sequential()}{isSequential()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Upload\+Device\+::is\+Sequential (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 propagateupload.\+cpp 第 431 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_ab5020fa1b5d32d7e4b80573adb21db72}\label{class_o_c_c_1_1_upload_device_ab5020fa1b5d32d7e4b80573adb21db72}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!prepare\+And\+Open@{prepare\+And\+Open}}
+\index{prepare\+And\+Open@{prepare\+And\+Open}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{prepare\+And\+Open()}{prepareAndOpen()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Upload\+Device\+::prepare\+And\+Open (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name,  }\item[{qint64}]{start,  }\item[{qint64}]{size }\end{DoxyParamCaption})}
+
+Reads the data from the file and opens the device 
+
+在文件 propagateupload.\+cpp 第 347 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a9dd03b989cf05cfe03c9c56c5cc1213d}\label{class_o_c_c_1_1_upload_device_a9dd03b989cf05cfe03c9c56c5cc1213d}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!read\+Data@{read\+Data}}
+\index{read\+Data@{read\+Data}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{read\+Data()}{readData()}}
+{\footnotesize\ttfamily qint64 O\+C\+C\+::\+Upload\+Device\+::read\+Data (\begin{DoxyParamCaption}\item[{char $\ast$}]{data,  }\item[{qint64}]{maxlen }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+cpp 第 376 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a966ab3a0165321a5ebd04db0cb300c72}\label{class_o_c_c_1_1_upload_device_a966ab3a0165321a5ebd04db0cb300c72}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!seek@{seek}}
+\index{seek@{seek}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{seek()}{seek()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Upload\+Device\+::seek (\begin{DoxyParamCaption}\item[{qint64}]{pos }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+cpp 第 435 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a3a401fc06327e59d5e49baf517035f45}\label{class_o_c_c_1_1_upload_device_a3a401fc06327e59d5e49baf517035f45}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!set\+Bandwidth\+Limited@{set\+Bandwidth\+Limited}}
+\index{set\+Bandwidth\+Limited@{set\+Bandwidth\+Limited}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{set\+Bandwidth\+Limited()}{setBandwidthLimited()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Upload\+Device\+::set\+Bandwidth\+Limited (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+cpp 第 453 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a80e877e6572384b2eaf17ffa5016e059}\label{class_o_c_c_1_1_upload_device_a80e877e6572384b2eaf17ffa5016e059}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!set\+Choked@{set\+Choked}}
+\index{set\+Choked@{set\+Choked}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{set\+Choked()}{setChoked()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Upload\+Device\+::set\+Choked (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+cpp 第 458 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a57a932984aa5882d829251720a8445e0}\label{class_o_c_c_1_1_upload_device_a57a932984aa5882d829251720a8445e0}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!size@{size}}
+\index{size@{size}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily qint64 O\+C\+C\+::\+Upload\+Device\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 propagateupload.\+cpp 第 418 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a9ed332ee5b50c7841801b9ca882b5bf8}\label{class_o_c_c_1_1_upload_device_a9ed332ee5b50c7841801b9ca882b5bf8}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!slot\+Job\+Upload\+Progress@{slot\+Job\+Upload\+Progress}}
+\index{slot\+Job\+Upload\+Progress@{slot\+Job\+Upload\+Progress}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{slot\+Job\+Upload\+Progress}{slotJobUploadProgress}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Upload\+Device\+::slot\+Job\+Upload\+Progress (\begin{DoxyParamCaption}\item[{qint64}]{sent,  }\item[{qint64}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}
+
+
+
+在文件 propagateupload.\+cpp 第 405 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a9799bf9895901f26f26d6032e900df11}\label{class_o_c_c_1_1_upload_device_a9799bf9895901f26f26d6032e900df11}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!was\+Reset@{was\+Reset}}
+\index{was\+Reset@{was\+Reset}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{was\+Reset}{wasReset}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Upload\+Device\+::was\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_a23b5299ca1b3774ec634d2367f9961bb}\label{class_o_c_c_1_1_upload_device_a23b5299ca1b3774ec634d2367f9961bb}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!write\+Data@{write\+Data}}
+\index{write\+Data@{write\+Data}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{write\+Data()}{writeData()}}
+{\footnotesize\ttfamily qint64 O\+C\+C\+::\+Upload\+Device\+::write\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{qint64}]{ }\end{DoxyParamCaption})}
+
+
+
+在文件 propagateupload.\+cpp 第 371 行定义.
+
+
+
+\subsection{友元及相关函数文档}
+\mbox{\Hypertarget{class_o_c_c_1_1_upload_device_af9c19747d2fb900e49cbed2d3650a35b}\label{class_o_c_c_1_1_upload_device_af9c19747d2fb900e49cbed2d3650a35b}} 
+\index{O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}!Bandwidth\+Manager@{Bandwidth\+Manager}}
+\index{Bandwidth\+Manager@{Bandwidth\+Manager}!O\+C\+C\+::\+Upload\+Device@{O\+C\+C\+::\+Upload\+Device}}
+\subsubsection{\texorpdfstring{Bandwidth\+Manager}{BandwidthManager}}
+{\footnotesize\ttfamily friend class \hyperlink{class_o_c_c_1_1_bandwidth_manager}{Bandwidth\+Manager}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+在文件 propagateupload.\+h 第 76 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{propagateupload_8h}{propagateupload.\+h}\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{propagateupload_8cpp}{propagateupload.\+cpp}\end{DoxyCompactItemize}

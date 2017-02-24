@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>custom_cloud: bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/filesystem.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="cloudDisk.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">custom_cloud
+   &#160;<span id="projectnumber">beta 1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_2ea30aa2956a8db99dd22aa5e597f384.html">bin</a></li><li class="navelem"><a class="el" href="dir_68323fab176bfe54037497825ea333b7.html">Debug</a></li><li class="navelem"><a class="el" href="dir_afadbdb0d604d0d22a8010832dff3c61.html">test</a></li><li class="navelem"><a class="el" href="dir_256aa8edf46cb4fcaa9a29b7f3573a58.html">电信学院</a></li><li class="navelem"><a class="el" href="dir_18797cbe5f25b44a71d6e80cf0f67158.html">项目1</a></li><li class="navelem"><a class="el" href="dir_98ddbcc3e8c52c992baf60b9c88f60d6.html">原版客户端重点查看文件</a></li><li class="navelem"><a class="el" href="dir_60de4f1fe23b9bd67e2c9cc91aab828c.html">libsync</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">filesystem.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;config.h&quot;</code><br />
+<code>#include &lt;QString&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;QCryptographicHash&gt;</code><br />
+<code>#include &lt;QFileInfo&gt;</code><br />
+<code>#include &lt;owncloudlib.h&gt;</code><br />
+</div>
+<p><a href="filesystem_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespace_o_c_c"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c.html">OCC</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_o_c_c_1_1_file_system"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html">OCC::FileSystem</a></td></tr>
+<tr class="memdesc:namespace_o_c_c_1_1_file_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">This file contains file system helper <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a975974e9353410f28c9c2f280119174b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a975974e9353410f28c9c2f280119174b">OCC::FileSystem::fileEquals</a> (const QString &amp;fn1, const QString &amp;fn2)</td></tr>
+<tr class="memdesc:a975974e9353410f28c9c2f280119174b"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two files with given filename and return true if they have the same content  <a href="namespace_o_c_c_1_1_file_system.html#a975974e9353410f28c9c2f280119174b">更多...</a><br /></td></tr>
+<tr class="separator:a975974e9353410f28c9c2f280119174b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c843b229f6b4c70bd2b4369d7856db4"><td class="memItemLeft" align="right" valign="top">void OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a7c843b229f6b4c70bd2b4369d7856db4">OCC::FileSystem::setFileHidden</a> (const QString &amp;filename, bool hidden)</td></tr>
+<tr class="memdesc:a7c843b229f6b4c70bd2b4369d7856db4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark the file as hidden (only has effects on windows)  <a href="namespace_o_c_c_1_1_file_system.html#a7c843b229f6b4c70bd2b4369d7856db4">更多...</a><br /></td></tr>
+<tr class="separator:a7c843b229f6b4c70bd2b4369d7856db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a875f747aa9ad5b52ab5270aab7d52d46"><td class="memItemLeft" align="right" valign="top">void OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a875f747aa9ad5b52ab5270aab7d52d46">OCC::FileSystem::setFileReadOnly</a> (const QString &amp;filename, bool readonly)</td></tr>
+<tr class="memdesc:a875f747aa9ad5b52ab5270aab7d52d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the file as read-only.  <a href="namespace_o_c_c_1_1_file_system.html#a875f747aa9ad5b52ab5270aab7d52d46">更多...</a><br /></td></tr>
+<tr class="separator:a875f747aa9ad5b52ab5270aab7d52d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8be889e4d12b3e9d5e27f454e4c55a71"><td class="memItemLeft" align="right" valign="top">void OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a8be889e4d12b3e9d5e27f454e4c55a71">OCC::FileSystem::setFileReadOnlyWeak</a> (const QString &amp;filename, bool readonly)</td></tr>
+<tr class="memdesc:a8be889e4d12b3e9d5e27f454e4c55a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the file as read-only.  <a href="namespace_o_c_c_1_1_file_system.html#a8be889e4d12b3e9d5e27f454e4c55a71">更多...</a><br /></td></tr>
+<tr class="separator:a8be889e4d12b3e9d5e27f454e4c55a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e58f0f7b6dab23f3dc1778b86bc2c6b"><td class="memItemLeft" align="right" valign="top">void OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a5e58f0f7b6dab23f3dc1778b86bc2c6b">OCC::FileSystem::setFolderMinimumPermissions</a> (const QString &amp;filename)</td></tr>
+<tr class="memdesc:a5e58f0f7b6dab23f3dc1778b86bc2c6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to set permissions so that other users on the local machine can not go into the folder.  <a href="namespace_o_c_c_1_1_file_system.html#a5e58f0f7b6dab23f3dc1778b86bc2c6b">更多...</a><br /></td></tr>
+<tr class="separator:a5e58f0f7b6dab23f3dc1778b86bc2c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e7eb587b2d6502e9d4b46746afb4b1"><td class="memItemLeft" align="right" valign="top">QString OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a71e7eb587b2d6502e9d4b46746afb4b1">OCC::FileSystem::longWinPath</a> (const QString &amp;inpath)</td></tr>
+<tr class="separator:a71e7eb587b2d6502e9d4b46746afb4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9610837b3c96d1a689cd016b2ccb8fc4"><td class="memItemLeft" align="right" valign="top">time_t OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a9610837b3c96d1a689cd016b2ccb8fc4">OCC::FileSystem::getModTime</a> (const QString &amp;filename)</td></tr>
+<tr class="memdesc:a9610837b3c96d1a689cd016b2ccb8fc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the mtime for a filepath  <a href="namespace_o_c_c_1_1_file_system.html#a9610837b3c96d1a689cd016b2ccb8fc4">更多...</a><br /></td></tr>
+<tr class="separator:a9610837b3c96d1a689cd016b2ccb8fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f35d1664358d204ec7357adfa91f7da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a1f35d1664358d204ec7357adfa91f7da">OCC::FileSystem::setModTime</a> (const QString &amp;filename, time_t modTime)</td></tr>
+<tr class="separator:a1f35d1664358d204ec7357adfa91f7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da1655cd64b4fdd14eb745c05162fb8"><td class="memItemLeft" align="right" valign="top">qint64 OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a9da1655cd64b4fdd14eb745c05162fb8">OCC::FileSystem::getSize</a> (const QString &amp;filename)</td></tr>
+<tr class="memdesc:a9da1655cd64b4fdd14eb745c05162fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size for a file  <a href="namespace_o_c_c_1_1_file_system.html#a9da1655cd64b4fdd14eb745c05162fb8">更多...</a><br /></td></tr>
+<tr class="separator:a9da1655cd64b4fdd14eb745c05162fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667715e37de108acf2f298f3da489456"><td class="memItemLeft" align="right" valign="top">bool OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a667715e37de108acf2f298f3da489456">OCC::FileSystem::fileExists</a> (const QString &amp;filename, const QFileInfo &amp;=QFileInfo())</td></tr>
+<tr class="memdesc:a667715e37de108acf2f298f3da489456"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a file exists.  <a href="namespace_o_c_c_1_1_file_system.html#a667715e37de108acf2f298f3da489456">更多...</a><br /></td></tr>
+<tr class="separator:a667715e37de108acf2f298f3da489456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aecdf1d35430c2d0e9b8c6d274c71dc"><td class="memItemLeft" align="right" valign="top">bool OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a8aecdf1d35430c2d0e9b8c6d274c71dc">OCC::FileSystem::rename</a> (const QString &amp;originFileName, const QString &amp;destinationFileName, QString *errorString=NULL)</td></tr>
+<tr class="memdesc:a8aecdf1d35430c2d0e9b8c6d274c71dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rename the file <em>originFileName</em> to <em>destinationFileName</em>.  <a href="namespace_o_c_c_1_1_file_system.html#a8aecdf1d35430c2d0e9b8c6d274c71dc">更多...</a><br /></td></tr>
+<tr class="separator:a8aecdf1d35430c2d0e9b8c6d274c71dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadc87cf3e494c9a930ecf856cc4f77d3"><td class="memItemLeft" align="right" valign="top">bool OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#aadc87cf3e494c9a930ecf856cc4f77d3">OCC::FileSystem::fileChanged</a> (const QString &amp;fileName, qint64 previousSize, time_t previousMtime)</td></tr>
+<tr class="memdesc:aadc87cf3e494c9a930ecf856cc4f77d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <em>fileName</em> has changed given previous size and mtime  <a href="namespace_o_c_c_1_1_file_system.html#aadc87cf3e494c9a930ecf856cc4f77d3">更多...</a><br /></td></tr>
+<tr class="separator:aadc87cf3e494c9a930ecf856cc4f77d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9301722279d55a31f6e6df8a534b06ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a9301722279d55a31f6e6df8a534b06ec">OCC::FileSystem::verifyFileUnchanged</a> (const QString &amp;fileName, qint64 previousSize, time_t previousMtime)</td></tr>
+<tr class="memdesc:a9301722279d55a31f6e6df8a534b06ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like !fileChanged() but with verbose logging if the file <em>did</em> change.  <a href="namespace_o_c_c_1_1_file_system.html#a9301722279d55a31f6e6df8a534b06ec">更多...</a><br /></td></tr>
+<tr class="separator:a9301722279d55a31f6e6df8a534b06ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54dd5dc2b7a3c50220a3e2a38697bd6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a54dd5dc2b7a3c50220a3e2a38697bd6f">OCC::FileSystem::renameReplace</a> (const QString &amp;originFileName, const QString &amp;destinationFileName, qint64 destinationSize, time_t destinationMtime, QString *errorString)</td></tr>
+<tr class="memdesc:a54dd5dc2b7a3c50220a3e2a38697bd6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">renames a file, overriding the target if it exists  <a href="namespace_o_c_c_1_1_file_system.html#a54dd5dc2b7a3c50220a3e2a38697bd6f">更多...</a><br /></td></tr>
+<tr class="separator:a54dd5dc2b7a3c50220a3e2a38697bd6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad04aec9abd9b4602dc0bddba125c320c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#ad04aec9abd9b4602dc0bddba125c320c">OCC::FileSystem::uncheckedRenameReplace</a> (const QString &amp;originFileName, const QString &amp;destinationFileName, QString *errorString)</td></tr>
+<tr class="separator:ad04aec9abd9b4602dc0bddba125c320c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b2aefeca6606b462584cab952edcbc1"><td class="memItemLeft" align="right" valign="top">bool OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a9b2aefeca6606b462584cab952edcbc1">OCC::FileSystem::remove</a> (const QString &amp;fileName, QString *errorString=0)</td></tr>
+<tr class="separator:a9b2aefeca6606b462584cab952edcbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74cbbe123be7666a93799a28d8eb7546"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a74cbbe123be7666a93799a28d8eb7546">OCC::FileSystem::openAndSeekFileSharedRead</a> (QFile *file, QString *error, qint64 seek)</td></tr>
+<tr class="separator:a74cbbe123be7666a93799a28d8eb7546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a055cc8e503b643fbc00a678461b6c61b"><td class="memItemLeft" align="right" valign="top">QByteArray OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a055cc8e503b643fbc00a678461b6c61b">OCC::FileSystem::calcMd5</a> (const QString &amp;fileName)</td></tr>
+<tr class="separator:a055cc8e503b643fbc00a678461b6c61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375c2432148acc82cde481782216558d"><td class="memItemLeft" align="right" valign="top">QByteArray OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a375c2432148acc82cde481782216558d">OCC::FileSystem::calcSha1</a> (const QString &amp;fileName)</td></tr>
+<tr class="separator:a375c2432148acc82cde481782216558d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256b42d497859d2117c151f6a88145fa"><td class="memItemLeft" align="right" valign="top">QString OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#a256b42d497859d2117c151f6a88145fa">OCC::FileSystem::makeConflictFileName</a> (const QString &amp;fn, const QDateTime &amp;dt)</td></tr>
+<tr class="separator:a256b42d497859d2117c151f6a88145fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add336ce16ac7bb1cf6ac6cb3c77b44ec"><td class="memItemLeft" align="right" valign="top">bool OWNCLOUDSYNC_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_c_c_1_1_file_system.html#add336ce16ac7bb1cf6ac6cb3c77b44ec">OCC::FileSystem::isFileLocked</a> (const QString &amp;fileName)</td></tr>
+<tr class="separator:add336ce16ac7bb1cf6ac6cb3c77b44ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

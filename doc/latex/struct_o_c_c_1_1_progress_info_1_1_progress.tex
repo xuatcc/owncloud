@@ -1,0 +1,94 @@
+\hypertarget{struct_o_c_c_1_1_progress_info_1_1_progress}{}\section{O\+CC\+:\+:Progress\+Info\+:\+:Progress结构体 参考}
+\label{struct_o_c_c_1_1_progress_info_1_1_progress}\index{O\+C\+C\+::\+Progress\+Info\+::\+Progress@{O\+C\+C\+::\+Progress\+Info\+::\+Progress}}
+
+
+{\ttfamily \#include $<$progressdispatcher.\+h$>$}
+
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_o_c_c_1_1_progress_info_1_1_progress_a88efb02ee28aef4b1124e246df7170e4}{Progress} ()
+\item 
+\hyperlink{struct_o_c_c_1_1_progress_info_1_1_estimates}{Estimates} \hyperlink{struct_o_c_c_1_1_progress_info_1_1_progress_af08d5c60250a1db3c81bcd7cc87b8302}{estimates} () const
+\item 
+quint64 \hyperlink{struct_o_c_c_1_1_progress_info_1_1_progress_a9565761ed6d6f5d0aa3e7860860add9a}{completed} () const
+\item 
+quint64 \hyperlink{struct_o_c_c_1_1_progress_info_1_1_progress_af016f32a2745121bd670f4ccfe0634da}{remaining} () const
+\end{DoxyCompactItemize}
+\subsection*{友元}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{struct_o_c_c_1_1_progress_info_1_1_progress_a51d41a36b682a90c6cdabc1facdf78fa}{Progress\+Info}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+Holds the current state of something making progress and maintains an estimate of the current progress per second. 
+
+在文件 progressdispatcher.\+h 第 103 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\mbox{\Hypertarget{struct_o_c_c_1_1_progress_info_1_1_progress_a88efb02ee28aef4b1124e246df7170e4}\label{struct_o_c_c_1_1_progress_info_1_1_progress_a88efb02ee28aef4b1124e246df7170e4}} 
+\index{O\+C\+C\+::\+Progress\+Info\+::\+Progress@{O\+C\+C\+::\+Progress\+Info\+::\+Progress}!Progress@{Progress}}
+\index{Progress@{Progress}!O\+C\+C\+::\+Progress\+Info\+::\+Progress@{O\+C\+C\+::\+Progress\+Info\+::\+Progress}}
+\subsubsection{\texorpdfstring{Progress()}{Progress()}}
+{\footnotesize\ttfamily O\+C\+C\+::\+Progress\+Info\+::\+Progress\+::\+Progress (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 progressdispatcher.\+h 第 105 行定义.
+
+
+
+\subsection{成员函数说明}
+\mbox{\Hypertarget{struct_o_c_c_1_1_progress_info_1_1_progress_a9565761ed6d6f5d0aa3e7860860add9a}\label{struct_o_c_c_1_1_progress_info_1_1_progress_a9565761ed6d6f5d0aa3e7860860add9a}} 
+\index{O\+C\+C\+::\+Progress\+Info\+::\+Progress@{O\+C\+C\+::\+Progress\+Info\+::\+Progress}!completed@{completed}}
+\index{completed@{completed}!O\+C\+C\+::\+Progress\+Info\+::\+Progress@{O\+C\+C\+::\+Progress\+Info\+::\+Progress}}
+\subsubsection{\texorpdfstring{completed()}{completed()}}
+{\footnotesize\ttfamily quint64 O\+C\+C\+::\+Progress\+Info\+::\+Progress\+::completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 progressdispatcher.\+cpp 第 373 行定义.
+
+\mbox{\Hypertarget{struct_o_c_c_1_1_progress_info_1_1_progress_af08d5c60250a1db3c81bcd7cc87b8302}\label{struct_o_c_c_1_1_progress_info_1_1_progress_af08d5c60250a1db3c81bcd7cc87b8302}} 
+\index{O\+C\+C\+::\+Progress\+Info\+::\+Progress@{O\+C\+C\+::\+Progress\+Info\+::\+Progress}!estimates@{estimates}}
+\index{estimates@{estimates}!O\+C\+C\+::\+Progress\+Info\+::\+Progress@{O\+C\+C\+::\+Progress\+Info\+::\+Progress}}
+\subsubsection{\texorpdfstring{estimates()}{estimates()}}
+{\footnotesize\ttfamily \hyperlink{struct_o_c_c_1_1_progress_info_1_1_estimates}{Progress\+Info\+::\+Estimates} O\+C\+C\+::\+Progress\+Info\+::\+Progress\+::estimates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the estimates about progress per second and eta. 
+
+在文件 progressdispatcher.\+cpp 第 361 行定义.
+
+\mbox{\Hypertarget{struct_o_c_c_1_1_progress_info_1_1_progress_af016f32a2745121bd670f4ccfe0634da}\label{struct_o_c_c_1_1_progress_info_1_1_progress_af016f32a2745121bd670f4ccfe0634da}} 
+\index{O\+C\+C\+::\+Progress\+Info\+::\+Progress@{O\+C\+C\+::\+Progress\+Info\+::\+Progress}!remaining@{remaining}}
+\index{remaining@{remaining}!O\+C\+C\+::\+Progress\+Info\+::\+Progress@{O\+C\+C\+::\+Progress\+Info\+::\+Progress}}
+\subsubsection{\texorpdfstring{remaining()}{remaining()}}
+{\footnotesize\ttfamily quint64 O\+C\+C\+::\+Progress\+Info\+::\+Progress\+::remaining (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 progressdispatcher.\+cpp 第 378 行定义.
+
+
+
+\subsection{友元及相关函数文档}
+\mbox{\Hypertarget{struct_o_c_c_1_1_progress_info_1_1_progress_a51d41a36b682a90c6cdabc1facdf78fa}\label{struct_o_c_c_1_1_progress_info_1_1_progress_a51d41a36b682a90c6cdabc1facdf78fa}} 
+\index{O\+C\+C\+::\+Progress\+Info\+::\+Progress@{O\+C\+C\+::\+Progress\+Info\+::\+Progress}!Progress\+Info@{Progress\+Info}}
+\index{Progress\+Info@{Progress\+Info}!O\+C\+C\+::\+Progress\+Info\+::\+Progress@{O\+C\+C\+::\+Progress\+Info\+::\+Progress}}
+\subsubsection{\texorpdfstring{Progress\+Info}{ProgressInfo}}
+{\footnotesize\ttfamily friend class \hyperlink{class_o_c_c_1_1_progress_info}{Progress\+Info}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+在文件 progressdispatcher.\+h 第 144 行定义.
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{progressdispatcher_8h}{progressdispatcher.\+h}\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{progressdispatcher_8cpp}{progressdispatcher.\+cpp}\end{DoxyCompactItemize}

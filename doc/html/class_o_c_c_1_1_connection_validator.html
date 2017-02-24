@@ -1,0 +1,643 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>custom_cloud: OCC::ConnectionValidator类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="cloudDisk.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">custom_cloud
+   &#160;<span id="projectnumber">beta 1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_o_c_c.html">OCC</a></li><li class="navelem"><a class="el" href="class_o_c_c_1_1_connection_validator.html">ConnectionValidator</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pro-slots">Protected 槽</a> &#124;
+<a href="class_o_c_c_1_1_connection_validator-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">OCC::ConnectionValidator类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="connectionvalidator_8h_source.html">connectionvalidator.h</a>&gt;</code></p>
+<div class="dynheader">
+类 OCC::ConnectionValidator 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_o_c_c_1_1_connection_validator.png" usemap="#OCC::ConnectionValidator_map" alt=""/>
+  <map id="OCC::ConnectionValidator_map" name="OCC::ConnectionValidator_map">
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a8f1192e5d8ff687dbf93faf38af67f8b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8b">Status</a> { <br />
+&#160;&#160;<a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8ba00582fe33012894056a28bf25c37d323">Undefined</a>, 
+<a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8ba368890d7d9fcd3e0f15d20dbc7365c45">Connected</a>, 
+<a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8badc7d2d8d424b26253d5c06593ecc351a">NotConfigured</a>, 
+<a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8badc8a3cca96a4655fa6171d619da64468">ServerVersionMismatch</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8ba9c8f9547a3d243a2380778f8f2695a90">CredentialsMissingOrWrong</a>, 
+<a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8bac46732e09112cbcf21b2516f40eb9545">StatusNotFound</a>, 
+<a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8bab0b52d5d61655df4c715f3812a6a6495">UserCanceledCredentials</a>, 
+<a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8bae783b288e74b28b13f450276ff7247ef">ServiceUnavailable</a>, 
+<br />
+&#160;&#160;<a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8bac2e23ff790d840eb991a12cd3f766382">Timeout</a>
+<br />
+ }</td></tr>
+<tr class="separator:a8f1192e5d8ff687dbf93faf38af67f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a641b1de72c72fe6d9132f5a8a9857eb5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="class_o_c_c_1_1_connection_validator.html#a641b1de72c72fe6d9132f5a8a9857eb5adaea5cd1ca3bd0fb9b2d3d86556972d0">DefaultCallingIntervalMsec</a> = 32 * 1000
+ }</td></tr>
+<tr class="separator:a641b1de72c72fe6d9132f5a8a9857eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:a89040a2500c82686d6e584eda2efd6e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#a89040a2500c82686d6e584eda2efd6e1">checkServerAndAuth</a> ()</td></tr>
+<tr class="memdesc:a89040a2500c82686d6e584eda2efd6e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the server and the authentication.  <a href="#a89040a2500c82686d6e584eda2efd6e1">更多...</a><br /></td></tr>
+<tr class="separator:a89040a2500c82686d6e584eda2efd6e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a502723c398e1656d4dd221eab152bd40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#a502723c398e1656d4dd221eab152bd40">systemProxyLookupDone</a> (const QNetworkProxy &amp;proxy)</td></tr>
+<tr class="separator:a502723c398e1656d4dd221eab152bd40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e8fe23c791f7b16be5ab0d93be3e26d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#a3e8fe23c791f7b16be5ab0d93be3e26d">checkAuthentication</a> ()</td></tr>
+<tr class="memdesc:a3e8fe23c791f7b16be5ab0d93be3e26d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks authentication only.  <a href="#a3e8fe23c791f7b16be5ab0d93be3e26d">更多...</a><br /></td></tr>
+<tr class="separator:a3e8fe23c791f7b16be5ab0d93be3e26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a5d88b8ad31fa61ce5f16a9ac0f005ff3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#a5d88b8ad31fa61ce5f16a9ac0f005ff3">connectionResult</a> (<a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8b">ConnectionValidator::Status</a> status, QStringList errors)</td></tr>
+<tr class="separator:a5d88b8ad31fa61ce5f16a9ac0f005ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a3c8ad64d60196900ad4bbd9d33557f06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#a3c8ad64d60196900ad4bbd9d33557f06">ConnectionValidator</a> (<a class="el" href="namespace_o_c_c.html#a848616aedb9188e223c6b9867757fe69">AccountPtr</a> account, QObject *parent=0)</td></tr>
+<tr class="separator:a3c8ad64d60196900ad4bbd9d33557f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:adbdebbfce49fb93c8752896eaf144617"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#adbdebbfce49fb93c8752896eaf144617">statusString</a> (<a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8b">Status</a>)</td></tr>
+<tr class="separator:adbdebbfce49fb93c8752896eaf144617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-slots"></a>
+Protected 槽</h2></td></tr>
+<tr class="memitem:ab476680918dd038e6165c1aa8ba6e83b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#ab476680918dd038e6165c1aa8ba6e83b">slotCheckServerAndAuth</a> ()</td></tr>
+<tr class="separator:ab476680918dd038e6165c1aa8ba6e83b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a453ed6ba3c6e443351206d678b05cc6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#a453ed6ba3c6e443351206d678b05cc6d">slotStatusFound</a> (const QUrl &amp;url, const QVariantMap &amp;info)</td></tr>
+<tr class="separator:a453ed6ba3c6e443351206d678b05cc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae178ff61a965a319459e70e1cdadd8bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#ae178ff61a965a319459e70e1cdadd8bb">slotNoStatusFound</a> (QNetworkReply *reply)</td></tr>
+<tr class="separator:ae178ff61a965a319459e70e1cdadd8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65fc93790b5f9dd642cf47dc5d3062d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#a65fc93790b5f9dd642cf47dc5d3062d2">slotJobTimeout</a> (const QUrl &amp;url)</td></tr>
+<tr class="separator:a65fc93790b5f9dd642cf47dc5d3062d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ccc64e4984f4573df3d341e3fa3c6fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#a1ccc64e4984f4573df3d341e3fa3c6fd">slotAuthFailed</a> (QNetworkReply *reply)</td></tr>
+<tr class="separator:a1ccc64e4984f4573df3d341e3fa3c6fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bd5df8536fafb783091a50bdd10207b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#a5bd5df8536fafb783091a50bdd10207b">slotAuthSuccess</a> ()</td></tr>
+<tr class="separator:a5bd5df8536fafb783091a50bdd10207b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb3b198498e66c3070fadba550052d9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#adb3b198498e66c3070fadba550052d9c">slotCapabilitiesRecieved</a> (const QVariantMap &amp;)</td></tr>
+<tr class="separator:adb3b198498e66c3070fadba550052d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1466f15e5893c34e68c29aad2cc65a57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_connection_validator.html#a1466f15e5893c34e68c29aad2cc65a57">slotUserFetched</a> (const QVariantMap &amp;)</td></tr>
+<tr class="separator:a1466f15e5893c34e68c29aad2cc65a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>This is a job-like class to check that the server is up and that we are connected. There are two entry points: checkServerAndAuth and checkAuthentication checkAuthentication is the quick version that only does the propfind while checkServerAndAuth is doing the 4 calls.</p>
+<p>We cannot use the capabilites call to test the login and the password because of <a href="https://github.com/owncloud/core/issues/12930">https://github.com/owncloud/core/issues/12930</a></p>
+<p>Here follows the state machine</p>
+<div class="fragment"><div class="line">---&gt; checkServerAndAuth  (check status.php)</div><div class="line">       Will asynchronously check for system proxy (if using system proxy)</div><div class="line">       And then invoke slotCheckServerAndAuth</div><div class="line">       CheckServerJob</div><div class="line">       |</div><div class="line">       +-&gt; slotNoStatusFound --&gt; X</div><div class="line">       |</div><div class="line">       +-&gt; slotJobTimeout --&gt; X</div><div class="line">       |</div><div class="line">       +-&gt; slotStatusFound --+--&gt; X (if credentials are still missing)</div><div class="line">                             |</div><div class="line"> +---------------------------+</div><div class="line"> |</div><div class="line">-+-&gt; checkAuthentication (PROPFIND on root)</div><div class="line">       PropfindJob</div><div class="line">       |</div><div class="line">       +-&gt; slotAuthFailed --&gt; X</div><div class="line">       |</div><div class="line">       +-&gt; slotAuthSuccess --+--&gt; X (depending if coming from checkServerAndAuth or not)</div><div class="line">                             |</div><div class="line"> +---------------------------+</div><div class="line"> |</div><div class="line"> +-&gt; checkServerCapabilities (cloud/capabilities)</div><div class="line">       JsonApiJob</div><div class="line">       |</div><div class="line">       +-&gt; slotCapabilitiesRecieved -+</div><div class="line">                                     |</div><div class="line"> +-----------------------------------+</div><div class="line"> |</div><div class="line"> +-&gt; fetchUser</div><div class="line">       PropfindJob</div><div class="line">       |</div><div class="line">       +-&gt; slotUserFetched --&gt; X</div></div><!-- fragment --> 
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8h_source.html">connectionvalidator.h</a> 第 <a class="el" href="connectionvalidator_8h_source.html#l00075">75</a> 行定义.</p>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a641b1de72c72fe6d9132f5a8a9857eb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a641b1de72c72fe6d9132f5a8a9857eb5">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a641b1de72c72fe6d9132f5a8a9857eb5adaea5cd1ca3bd0fb9b2d3d86556972d0"></a>DefaultCallingIntervalMsec&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8h_source.html">connectionvalidator.h</a> 第 <a class="el" href="connectionvalidator_8h_source.html#l00097">97</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8f1192e5d8ff687dbf93faf38af67f8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f1192e5d8ff687dbf93faf38af67f8b">&#9670;&nbsp;</a></span>Status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8b">OCC::ConnectionValidator::Status</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a8f1192e5d8ff687dbf93faf38af67f8ba00582fe33012894056a28bf25c37d323"></a>Undefined&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8f1192e5d8ff687dbf93faf38af67f8ba368890d7d9fcd3e0f15d20dbc7365c45"></a>Connected&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8f1192e5d8ff687dbf93faf38af67f8badc7d2d8d424b26253d5c06593ecc351a"></a>NotConfigured&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8f1192e5d8ff687dbf93faf38af67f8badc8a3cca96a4655fa6171d619da64468"></a>ServerVersionMismatch&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8f1192e5d8ff687dbf93faf38af67f8ba9c8f9547a3d243a2380778f8f2695a90"></a>CredentialsMissingOrWrong&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8f1192e5d8ff687dbf93faf38af67f8bac46732e09112cbcf21b2516f40eb9545"></a>StatusNotFound&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8f1192e5d8ff687dbf93faf38af67f8bab0b52d5d61655df4c715f3812a6a6495"></a>UserCanceledCredentials&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8f1192e5d8ff687dbf93faf38af67f8bae783b288e74b28b13f450276ff7247ef"></a>ServiceUnavailable&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8f1192e5d8ff687dbf93faf38af67f8bac2e23ff790d840eb991a12cd3f766382"></a>Timeout&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8h_source.html">connectionvalidator.h</a> 第 <a class="el" href="connectionvalidator_8h_source.html#l00081">81</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a3c8ad64d60196900ad4bbd9d33557f06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c8ad64d60196900ad4bbd9d33557f06">&#9670;&nbsp;</a></span>ConnectionValidator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">OCC::ConnectionValidator::ConnectionValidator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_o_c_c.html#a848616aedb9188e223c6b9867757fe69">AccountPtr</a>&#160;</td>
+          <td class="paramname"><em>account</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a> 第 <a class="el" href="connectionvalidator_8cpp_source.html#l00031">31</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a3e8fe23c791f7b16be5ab0d93be3e26d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e8fe23c791f7b16be5ab0d93be3e26d">&#9670;&nbsp;</a></span>checkAuthentication</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ConnectionValidator::checkAuthentication </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks authentication only. </p>
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a> 第 <a class="el" href="connectionvalidator_8cpp_source.html#l00166">166</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a89040a2500c82686d6e584eda2efd6e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89040a2500c82686d6e584eda2efd6e1">&#9670;&nbsp;</a></span>checkServerAndAuth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ConnectionValidator::checkServerAndAuth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks the server and the authentication. </p>
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a> 第 <a class="el" href="connectionvalidator_8cpp_source.html#l00063">63</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5d88b8ad31fa61ce5f16a9ac0f005ff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d88b8ad31fa61ce5f16a9ac0f005ff3">&#9670;&nbsp;</a></span>connectionResult</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ConnectionValidator::connectionResult </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8b">ConnectionValidator::Status</a>&#160;</td>
+          <td class="paramname"><em>status</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QStringList&#160;</td>
+          <td class="paramname"><em>errors</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ccc64e4984f4573df3d341e3fa3c6fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ccc64e4984f4573df3d341e3fa3c6fd">&#9670;&nbsp;</a></span>slotAuthFailed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ConnectionValidator::slotAuthFailed </td>
+          <td>(</td>
+          <td class="paramtype">QNetworkReply *&#160;</td>
+          <td class="paramname"><em>reply</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a> 第 <a class="el" href="connectionvalidator_8cpp_source.html#l00185">185</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5bd5df8536fafb783091a50bdd10207b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bd5df8536fafb783091a50bdd10207b">&#9670;&nbsp;</a></span>slotAuthSuccess</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ConnectionValidator::slotAuthSuccess </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a> 第 <a class="el" href="connectionvalidator_8cpp_source.html#l00210">210</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adb3b198498e66c3070fadba550052d9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb3b198498e66c3070fadba550052d9c">&#9670;&nbsp;</a></span>slotCapabilitiesRecieved</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ConnectionValidator::slotCapabilitiesRecieved </td>
+          <td>(</td>
+          <td class="paramtype">const QVariantMap &amp;&#160;</td>
+          <td class="paramname"><em>json</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a> 第 <a class="el" href="connectionvalidator_8cpp_source.html#l00228">228</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab476680918dd038e6165c1aa8ba6e83b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab476680918dd038e6165c1aa8ba6e83b">&#9670;&nbsp;</a></span>slotCheckServerAndAuth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ConnectionValidator::slotCheckServerAndAuth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a> 第 <a class="el" href="connectionvalidator_8cpp_source.html#l00104">104</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a65fc93790b5f9dd642cf47dc5d3062d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65fc93790b5f9dd642cf47dc5d3062d2">&#9670;&nbsp;</a></span>slotJobTimeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ConnectionValidator::slotJobTimeout </td>
+          <td>(</td>
+          <td class="paramtype">const QUrl &amp;&#160;</td>
+          <td class="paramname"><em>url</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a> 第 <a class="el" href="connectionvalidator_8cpp_source.html#l00157">157</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae178ff61a965a319459e70e1cdadd8bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae178ff61a965a319459e70e1cdadd8bb">&#9670;&nbsp;</a></span>slotNoStatusFound</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ConnectionValidator::slotNoStatusFound </td>
+          <td>(</td>
+          <td class="paramtype">QNetworkReply *&#160;</td>
+          <td class="paramname"><em>reply</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a> 第 <a class="el" href="connectionvalidator_8cpp_source.html#l00145">145</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a453ed6ba3c6e443351206d678b05cc6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a453ed6ba3c6e443351206d678b05cc6d">&#9670;&nbsp;</a></span>slotStatusFound</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ConnectionValidator::slotStatusFound </td>
+          <td>(</td>
+          <td class="paramtype">const QUrl &amp;&#160;</td>
+          <td class="paramname"><em>url</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVariantMap &amp;&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a> 第 <a class="el" href="connectionvalidator_8cpp_source.html#l00115">115</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1466f15e5893c34e68c29aad2cc65a57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1466f15e5893c34e68c29aad2cc65a57">&#9670;&nbsp;</a></span>slotUserFetched</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ConnectionValidator::slotUserFetched </td>
+          <td>(</td>
+          <td class="paramtype">const QVariantMap &amp;&#160;</td>
+          <td class="paramname"><em>json</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a> 第 <a class="el" href="connectionvalidator_8cpp_source.html#l00245">245</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adbdebbfce49fb93c8752896eaf144617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbdebbfce49fb93c8752896eaf144617">&#9670;&nbsp;</a></span>statusString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString OCC::ConnectionValidator::statusString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8b">Status</a>&#160;</td>
+          <td class="paramname"><em>stat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a> 第 <a class="el" href="connectionvalidator_8cpp_source.html#l00038">38</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a502723c398e1656d4dd221eab152bd40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a502723c398e1656d4dd221eab152bd40">&#9670;&nbsp;</a></span>systemProxyLookupDone</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ConnectionValidator::systemProxyLookupDone </td>
+          <td>(</td>
+          <td class="paramtype">const QNetworkProxy &amp;&#160;</td>
+          <td class="paramname"><em>proxy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a> 第 <a class="el" href="connectionvalidator_8cpp_source.html#l00087">87</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="connectionvalidator_8h_source.html">connectionvalidator.h</a></li>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="connectionvalidator_8cpp_source.html">connectionvalidator.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

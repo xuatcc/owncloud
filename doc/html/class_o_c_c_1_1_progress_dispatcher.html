@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>custom_cloud: OCC::ProgressDispatcher类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="cloudDisk.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">custom_cloud
+   &#160;<span id="projectnumber">beta 1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_o_c_c.html">OCC</a></li><li class="navelem"><a class="el" href="class_o_c_c_1_1_progress_dispatcher.html">ProgressDispatcher</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="class_o_c_c_1_1_progress_dispatcher-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">OCC::ProgressDispatcher类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="progressdispatcher_8h_source.html">progressdispatcher.h</a>&gt;</code></p>
+<div class="dynheader">
+类 OCC::ProgressDispatcher 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_o_c_c_1_1_progress_dispatcher.png" usemap="#OCC::ProgressDispatcher_map" alt=""/>
+  <map id="OCC::ProgressDispatcher_map" name="OCC::ProgressDispatcher_map">
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a1ac2bda280b4f931fc4549ec6c5443ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_progress_dispatcher.html#a1ac2bda280b4f931fc4549ec6c5443ab">progressInfo</a> (const QString &amp;folder, const <a class="el" href="class_o_c_c_1_1_progress_info.html">ProgressInfo</a> &amp;progress)</td></tr>
+<tr class="memdesc:a1ac2bda280b4f931fc4549ec6c5443ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals the progress of data transmission.  <a href="#a1ac2bda280b4f931fc4549ec6c5443ab">更多...</a><br /></td></tr>
+<tr class="separator:a1ac2bda280b4f931fc4549ec6c5443ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4be47980c06beb15d8486d0b1214859b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_progress_dispatcher.html#a4be47980c06beb15d8486d0b1214859b">itemCompleted</a> (const QString &amp;folder, const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;item, const <a class="el" href="class_o_c_c_1_1_propagator_job.html">PropagatorJob</a> &amp;job)</td></tr>
+<tr class="memdesc:a4be47980c06beb15d8486d0b1214859b"><td class="mdescLeft">&#160;</td><td class="mdescRight">: the item was completed by a job  <a href="#a4be47980c06beb15d8486d0b1214859b">更多...</a><br /></td></tr>
+<tr class="separator:a4be47980c06beb15d8486d0b1214859b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a6c35947d6acd2f6a5d1c1f46a187c454"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_progress_dispatcher.html#a6c35947d6acd2f6a5d1c1f46a187c454">~ProgressDispatcher</a> ()</td></tr>
+<tr class="separator:a6c35947d6acd2f6a5d1c1f46a187c454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a6dd53f3687102876817946fe6c545cd7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_o_c_c_1_1_progress_dispatcher.html">ProgressDispatcher</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_progress_dispatcher.html#a6dd53f3687102876817946fe6c545cd7">instance</a> ()</td></tr>
+<tr class="separator:a6dd53f3687102876817946fe6c545cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a1e9186b2859781affd95561a9a09e2fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_progress_dispatcher.html#a1e9186b2859781affd95561a9a09e2fa">setProgressInfo</a> (const QString &amp;folder, const <a class="el" href="class_o_c_c_1_1_progress_info.html">ProgressInfo</a> &amp;progress)</td></tr>
+<tr class="separator:a1e9186b2859781affd95561a9a09e2fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:a636accac57b57b9e90b136a583297044"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_progress_dispatcher.html#a636accac57b57b9e90b136a583297044">Folder</a></td></tr>
+<tr class="separator:a636accac57b57b9e90b136a583297044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="progressdispatcher_8h_source.html">progressdispatcher.h</a> 第 <a class="el" href="progressdispatcher_8h_source.html#l00234">234</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a6c35947d6acd2f6a5d1c1f46a187c454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c35947d6acd2f6a5d1c1f46a187c454">&#9670;&nbsp;</a></span>~ProgressDispatcher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OCC::ProgressDispatcher::~ProgressDispatcher </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="progressdispatcher_8cpp_source.html">progressdispatcher.cpp</a> 第 <a class="el" href="progressdispatcher_8cpp_source.html#l00118">118</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a6dd53f3687102876817946fe6c545cd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dd53f3687102876817946fe6c545cd7">&#9670;&nbsp;</a></span>instance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_o_c_c_1_1_progress_dispatcher.html">ProgressDispatcher</a> * OCC::ProgressDispatcher::instance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="progressdispatcher_8cpp_source.html">progressdispatcher.cpp</a> 第 <a class="el" href="progressdispatcher_8cpp_source.html#l00105">105</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4be47980c06beb15d8486d0b1214859b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4be47980c06beb15d8486d0b1214859b">&#9670;&nbsp;</a></span>itemCompleted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ProgressDispatcher::itemCompleted </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>folder</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_o_c_c_1_1_sync_file_item.html">SyncFileItem</a> &amp;&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_o_c_c_1_1_propagator_job.html">PropagatorJob</a> &amp;&#160;</td>
+          <td class="paramname"><em>job</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>: the item was completed by a job </p>
+
+</div>
+</div>
+<a id="a1ac2bda280b4f931fc4549ec6c5443ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ac2bda280b4f931fc4549ec6c5443ab">&#9670;&nbsp;</a></span>progressInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ProgressDispatcher::progressInfo </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>folder</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_o_c_c_1_1_progress_info.html">ProgressInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>progress</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signals the progress of data transmission. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">folder</td><td>The folder which is being processed </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">progress</td><td>A struct with all progress info. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1e9186b2859781affd95561a9a09e2fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e9186b2859781affd95561a9a09e2fa">&#9670;&nbsp;</a></span>setProgressInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::ProgressDispatcher::setProgressInfo </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>folder</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_o_c_c_1_1_progress_info.html">ProgressInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>progress</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="progressdispatcher_8cpp_source.html">progressdispatcher.cpp</a> 第 <a class="el" href="progressdispatcher_8cpp_source.html#l00123">123</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a id="a636accac57b57b9e90b136a583297044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a636accac57b57b9e90b136a583297044">&#9670;&nbsp;</a></span>Folder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class Folder</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="progressdispatcher_8h_source.html">progressdispatcher.h</a> 第 <a class="el" href="progressdispatcher_8h_source.html#l00238">238</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="progressdispatcher_8h_source.html">progressdispatcher.h</a></li>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="progressdispatcher_8cpp_source.html">progressdispatcher.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

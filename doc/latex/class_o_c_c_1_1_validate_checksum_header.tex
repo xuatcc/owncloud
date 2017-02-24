@@ -1,0 +1,79 @@
+\hypertarget{class_o_c_c_1_1_validate_checksum_header}{}\section{O\+CC\+:\+:Validate\+Checksum\+Header类 参考}
+\label{class_o_c_c_1_1_validate_checksum_header}\index{O\+C\+C\+::\+Validate\+Checksum\+Header@{O\+C\+C\+::\+Validate\+Checksum\+Header}}
+
+
+{\ttfamily \#include $<$checksums.\+h$>$}
+
+类 O\+CC\+:\+:Validate\+Checksum\+Header 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_o_c_c_1_1_validate_checksum_header}
+\end{center}
+\end{figure}
+\subsection*{信号}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_o_c_c_1_1_validate_checksum_header_a94b124915bc14e309142b7ebb15a292d}{validated} (const Q\+Byte\+Array \&checksum\+Type, const Q\+Byte\+Array \&checksum)
+\item 
+void \hyperlink{class_o_c_c_1_1_validate_checksum_header_a5de3509bf48fabd8f5c2ee130b13b7d7}{validation\+Failed} (const Q\+String \&err\+Msg)
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_o_c_c_1_1_validate_checksum_header_abd3865ec71e5d30d56f48bde20e337e2}{Validate\+Checksum\+Header} (Q\+Object $\ast$parent=0)
+\item 
+void \hyperlink{class_o_c_c_1_1_validate_checksum_header_a0100eb8ff9c87c770660d15e69a92ead}{start} (const Q\+String \&file\+Path, const Q\+Byte\+Array \&checksum\+Header)
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+Checks whether a file\textquotesingle{}s checksum matches the expected value. 
+
+在文件 checksums.\+h 第 87 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_validate_checksum_header_abd3865ec71e5d30d56f48bde20e337e2}\label{class_o_c_c_1_1_validate_checksum_header_abd3865ec71e5d30d56f48bde20e337e2}} 
+\index{O\+C\+C\+::\+Validate\+Checksum\+Header@{O\+C\+C\+::\+Validate\+Checksum\+Header}!Validate\+Checksum\+Header@{Validate\+Checksum\+Header}}
+\index{Validate\+Checksum\+Header@{Validate\+Checksum\+Header}!O\+C\+C\+::\+Validate\+Checksum\+Header@{O\+C\+C\+::\+Validate\+Checksum\+Header}}
+\subsubsection{\texorpdfstring{Validate\+Checksum\+Header()}{ValidateChecksumHeader()}}
+{\footnotesize\ttfamily O\+C\+C\+::\+Validate\+Checksum\+Header\+::\+Validate\+Checksum\+Header (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+在文件 checksums.\+cpp 第 174 行定义.
+
+
+
+\subsection{成员函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_validate_checksum_header_a0100eb8ff9c87c770660d15e69a92ead}\label{class_o_c_c_1_1_validate_checksum_header_a0100eb8ff9c87c770660d15e69a92ead}} 
+\index{O\+C\+C\+::\+Validate\+Checksum\+Header@{O\+C\+C\+::\+Validate\+Checksum\+Header}!start@{start}}
+\index{start@{start}!O\+C\+C\+::\+Validate\+Checksum\+Header@{O\+C\+C\+::\+Validate\+Checksum\+Header}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Validate\+Checksum\+Header\+::start (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Path,  }\item[{const Q\+Byte\+Array \&}]{checksum\+Header }\end{DoxyParamCaption})}
+
+Check a file\textquotesingle{}s actual checksum against the provided checksum\+Header
+
+If no checksum is there, or if a correct checksum is there, the signal \hyperlink{class_o_c_c_1_1_validate_checksum_header_a94b124915bc14e309142b7ebb15a292d}{validated()} will be emitted. In case of any kind of error, the signal \hyperlink{class_o_c_c_1_1_validate_checksum_header_a5de3509bf48fabd8f5c2ee130b13b7d7}{validation\+Failed()} will be emitted. 
+
+在文件 checksums.\+cpp 第 179 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_validate_checksum_header_a94b124915bc14e309142b7ebb15a292d}\label{class_o_c_c_1_1_validate_checksum_header_a94b124915bc14e309142b7ebb15a292d}} 
+\index{O\+C\+C\+::\+Validate\+Checksum\+Header@{O\+C\+C\+::\+Validate\+Checksum\+Header}!validated@{validated}}
+\index{validated@{validated}!O\+C\+C\+::\+Validate\+Checksum\+Header@{O\+C\+C\+::\+Validate\+Checksum\+Header}}
+\subsubsection{\texorpdfstring{validated}{validated}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Validate\+Checksum\+Header\+::validated (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{checksum\+Type,  }\item[{const Q\+Byte\+Array \&}]{checksum }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_validate_checksum_header_a5de3509bf48fabd8f5c2ee130b13b7d7}\label{class_o_c_c_1_1_validate_checksum_header_a5de3509bf48fabd8f5c2ee130b13b7d7}} 
+\index{O\+C\+C\+::\+Validate\+Checksum\+Header@{O\+C\+C\+::\+Validate\+Checksum\+Header}!validation\+Failed@{validation\+Failed}}
+\index{validation\+Failed@{validation\+Failed}!O\+C\+C\+::\+Validate\+Checksum\+Header@{O\+C\+C\+::\+Validate\+Checksum\+Header}}
+\subsubsection{\texorpdfstring{validation\+Failed}{validationFailed}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Validate\+Checksum\+Header\+::validation\+Failed (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{err\+Msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{checksums_8h}{checksums.\+h}\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{checksums_8cpp}{checksums.\+cpp}\end{DoxyCompactItemize}

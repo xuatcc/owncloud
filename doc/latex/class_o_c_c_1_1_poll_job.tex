@@ -1,0 +1,131 @@
+\hypertarget{class_o_c_c_1_1_poll_job}{}\section{O\+CC\+:\+:Poll\+Job类 参考}
+\label{class_o_c_c_1_1_poll_job}\index{O\+C\+C\+::\+Poll\+Job@{O\+C\+C\+::\+Poll\+Job}}
+
+
+This job implements the asynchronous P\+UT  
+
+
+
+
+{\ttfamily \#include $<$propagateupload.\+h$>$}
+
+类 O\+CC\+:\+:Poll\+Job 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_o_c_c_1_1_poll_job}
+\end{center}
+\end{figure}
+\subsection*{信号}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_o_c_c_1_1_poll_job_a0a0f03597b751b591bbadba48c5a738e}{finished\+Signal} ()
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_o_c_c_1_1_poll_job_adca9f0109f3ecec23b7abd3af0d1d290}{Poll\+Job} (\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr} \hyperlink{class_o_c_c_1_1_abstract_network_job_a469c9d8212a338ad07d1efa1a94f784d}{account}, const Q\+String \&\hyperlink{class_o_c_c_1_1_abstract_network_job_a8ed2423a454ec861c20f6900f5591ef7}{path}, const \hyperlink{namespace_o_c_c_acb6b0db82893659fbd0c98d3c5b8e2b8}{Sync\+File\+Item\+Ptr} \&item, \hyperlink{class_o_c_c_1_1_sync_journal_db}{Sync\+Journal\+Db} $\ast$journal, const Q\+String \&local\+Path, Q\+Object $\ast$parent)
+\item 
+void \hyperlink{class_o_c_c_1_1_poll_job_a5d11e738f6759ecce57ebeb79cd5c9ac}{start} () Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+bool \hyperlink{class_o_c_c_1_1_poll_job_a06b39d3adf1ff0cccadfc3ca74be81d0}{finished} () Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+void \hyperlink{class_o_c_c_1_1_poll_job_a0dea33409ec87632839862ef1c228fd6}{slot\+Timeout} () Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\end{DoxyCompactItemize}
+\subsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_o_c_c_acb6b0db82893659fbd0c98d3c5b8e2b8}{Sync\+File\+Item\+Ptr} \hyperlink{class_o_c_c_1_1_poll_job_a7b1fed343646c920b2e0508ccc476e4b}{\+\_\+item}
+\end{DoxyCompactItemize}
+\subsection*{额外继承的成员函数}
+
+
+\subsection{详细描述}
+This job implements the asynchronous P\+UT 
+
+If the server replies to a P\+UT with a O\+C-\/\+Finish-\/\+Poll url, we will query this url until the server replies with an etag. \href{https://github.com/owncloud/core/issues/12097}{\tt https\+://github.\+com/owncloud/core/issues/12097} 
+
+在文件 propagateupload.\+h 第 138 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_poll_job_adca9f0109f3ecec23b7abd3af0d1d290}\label{class_o_c_c_1_1_poll_job_adca9f0109f3ecec23b7abd3af0d1d290}} 
+\index{O\+C\+C\+::\+Poll\+Job@{O\+C\+C\+::\+Poll\+Job}!Poll\+Job@{Poll\+Job}}
+\index{Poll\+Job@{Poll\+Job}!O\+C\+C\+::\+Poll\+Job@{O\+C\+C\+::\+Poll\+Job}}
+\subsubsection{\texorpdfstring{Poll\+Job()}{PollJob()}}
+{\footnotesize\ttfamily O\+C\+C\+::\+Poll\+Job\+::\+Poll\+Job (\begin{DoxyParamCaption}\item[{\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr}}]{account,  }\item[{const Q\+String \&}]{path,  }\item[{const \hyperlink{namespace_o_c_c_acb6b0db82893659fbd0c98d3c5b8e2b8}{Sync\+File\+Item\+Ptr} \&}]{item,  }\item[{\hyperlink{class_o_c_c_1_1_sync_journal_db}{Sync\+Journal\+Db} $\ast$}]{journal,  }\item[{const Q\+String \&}]{local\+Path,  }\item[{Q\+Object $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+在文件 propagateupload.\+h 第 145 行定义.
+
+
+
+\subsection{成员函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_poll_job_a06b39d3adf1ff0cccadfc3ca74be81d0}\label{class_o_c_c_1_1_poll_job_a06b39d3adf1ff0cccadfc3ca74be81d0}} 
+\index{O\+C\+C\+::\+Poll\+Job@{O\+C\+C\+::\+Poll\+Job}!finished@{finished}}
+\index{finished@{finished}!O\+C\+C\+::\+Poll\+Job@{O\+C\+C\+::\+Poll\+Job}}
+\subsubsection{\texorpdfstring{finished()}{finished()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Poll\+Job\+::finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+实现了 \hyperlink{class_o_c_c_1_1_abstract_network_job_af811f7299d7e526678a8758f2e7102d2}{O\+C\+C\+::\+Abstract\+Network\+Job}.
+
+
+
+在文件 propagateupload.\+cpp 第 127 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_poll_job_a0a0f03597b751b591bbadba48c5a738e}\label{class_o_c_c_1_1_poll_job_a0a0f03597b751b591bbadba48c5a738e}} 
+\index{O\+C\+C\+::\+Poll\+Job@{O\+C\+C\+::\+Poll\+Job}!finished\+Signal@{finished\+Signal}}
+\index{finished\+Signal@{finished\+Signal}!O\+C\+C\+::\+Poll\+Job@{O\+C\+C\+::\+Poll\+Job}}
+\subsubsection{\texorpdfstring{finished\+Signal}{finishedSignal}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Poll\+Job\+::finished\+Signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_poll_job_a0dea33409ec87632839862ef1c228fd6}\label{class_o_c_c_1_1_poll_job_a0dea33409ec87632839862ef1c228fd6}} 
+\index{O\+C\+C\+::\+Poll\+Job@{O\+C\+C\+::\+Poll\+Job}!slot\+Timeout@{slot\+Timeout}}
+\index{slot\+Timeout@{slot\+Timeout}!O\+C\+C\+::\+Poll\+Job@{O\+C\+C\+::\+Poll\+Job}}
+\subsubsection{\texorpdfstring{slot\+Timeout()}{slotTimeout()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Poll\+Job\+::slot\+Timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+重载 \hyperlink{class_o_c_c_1_1_abstract_network_job}{O\+C\+C\+::\+Abstract\+Network\+Job} .
+
+
+
+在文件 propagateupload.\+h 第 151 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_poll_job_a5d11e738f6759ecce57ebeb79cd5c9ac}\label{class_o_c_c_1_1_poll_job_a5d11e738f6759ecce57ebeb79cd5c9ac}} 
+\index{O\+C\+C\+::\+Poll\+Job@{O\+C\+C\+::\+Poll\+Job}!start@{start}}
+\index{start@{start}!O\+C\+C\+::\+Poll\+Job@{O\+C\+C\+::\+Poll\+Job}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Poll\+Job\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+重载 \hyperlink{class_o_c_c_1_1_abstract_network_job_a256f1b6b5d6f6252e83b3602743da64a}{O\+C\+C\+::\+Abstract\+Network\+Job} .
+
+
+
+在文件 propagateupload.\+cpp 第 115 行定义.
+
+
+
+\subsection{类成员变量说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_poll_job_a7b1fed343646c920b2e0508ccc476e4b}\label{class_o_c_c_1_1_poll_job_a7b1fed343646c920b2e0508ccc476e4b}} 
+\index{O\+C\+C\+::\+Poll\+Job@{O\+C\+C\+::\+Poll\+Job}!\+\_\+item@{\+\_\+item}}
+\index{\+\_\+item@{\+\_\+item}!O\+C\+C\+::\+Poll\+Job@{O\+C\+C\+::\+Poll\+Job}}
+\subsubsection{\texorpdfstring{\+\_\+item}{\_item}}
+{\footnotesize\ttfamily \hyperlink{namespace_o_c_c_acb6b0db82893659fbd0c98d3c5b8e2b8}{Sync\+File\+Item\+Ptr} O\+C\+C\+::\+Poll\+Job\+::\+\_\+item}
+
+
+
+在文件 propagateupload.\+h 第 143 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{propagateupload_8h}{propagateupload.\+h}\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{propagateupload_8cpp}{propagateupload.\+cpp}\end{DoxyCompactItemize}

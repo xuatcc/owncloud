@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>custom_cloud: OCC::DiscoveryJob类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="cloudDisk.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">custom_cloud
+   &#160;<span id="projectnumber">beta 1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_o_c_c.html">OCC</a></li><li class="navelem"><a class="el" href="class_o_c_c_1_1_discovery_job.html">DiscoveryJob</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="class_o_c_c_1_1_discovery_job-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">OCC::DiscoveryJob类 参考<div class="ingroups"><a class="el" href="group__libsync.html">The sync library</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The <a class="el" href="class_o_c_c_1_1_discovery_job.html" title="The DiscoveryJob class ">DiscoveryJob</a> class  
+ <a href="class_o_c_c_1_1_discovery_job.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="discoveryphase_8h_source.html">discoveryphase.h</a>&gt;</code></p>
+<div class="dynheader">
+类 OCC::DiscoveryJob 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_o_c_c_1_1_discovery_job.png" usemap="#OCC::DiscoveryJob_map" alt=""/>
+  <map id="OCC::DiscoveryJob_map" name="OCC::DiscoveryJob_map">
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a19720e2f4b466f5ddf111459beabe5c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_discovery_job.html#a19720e2f4b466f5ddf111459beabe5c4">finished</a> (int result)</td></tr>
+<tr class="separator:a19720e2f4b466f5ddf111459beabe5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07901d17505529ca7cb1a5e225989f13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_discovery_job.html#a07901d17505529ca7cb1a5e225989f13">folderDiscovered</a> (bool local, QString folderUrl)</td></tr>
+<tr class="separator:a07901d17505529ca7cb1a5e225989f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78632645c29d5cd8a00721a850b33ec1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_discovery_job.html#a78632645c29d5cd8a00721a850b33ec1">doOpendirSignal</a> (QString url, <a class="el" href="struct_o_c_c_1_1_discovery_directory_result.html">DiscoveryDirectoryResult</a> *)</td></tr>
+<tr class="separator:a78632645c29d5cd8a00721a850b33ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ad6add45ad5f9f8d4712db09a4ff79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_discovery_job.html#aa5ad6add45ad5f9f8d4712db09a4ff79">doGetSizeSignal</a> (const QString &amp;path, qint64 *result)</td></tr>
+<tr class="separator:aa5ad6add45ad5f9f8d4712db09a4ff79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c8ebc45eea450b8a3335f939d6b9788"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_discovery_job.html#a7c8ebc45eea450b8a3335f939d6b9788">newBigFolder</a> (const QString &amp;folder)</td></tr>
+<tr class="separator:a7c8ebc45eea450b8a3335f939d6b9788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aa76b2b611b06516e17bd1ee1f55e4af9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_discovery_job.html#aa76b2b611b06516e17bd1ee1f55e4af9">DiscoveryJob</a> (CSYNC *ctx, QObject *parent=0)</td></tr>
+<tr class="separator:aa76b2b611b06516e17bd1ee1f55e4af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd33ce4e53ad4d05333f56923a2e052"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_discovery_job.html#a6cd33ce4e53ad4d05333f56923a2e052">start</a> ()</td></tr>
+<tr class="separator:a6cd33ce4e53ad4d05333f56923a2e052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:afe69916308e0cb461568408e33283f47"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_discovery_job.html#afe69916308e0cb461568408e33283f47">_selectiveSyncBlackList</a></td></tr>
+<tr class="separator:afe69916308e0cb461568408e33283f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af96bb82dc99b68055bb0f985ae10cdcd"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_discovery_job.html#af96bb82dc99b68055bb0f985ae10cdcd">_selectiveSyncWhiteList</a></td></tr>
+<tr class="separator:af96bb82dc99b68055bb0f985ae10cdcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a530386caf4312005f713c39fbe7b7bd7"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_discovery_job.html#a530386caf4312005f713c39fbe7b7bd7">_newBigFolderSizeLimit</a></td></tr>
+<tr class="separator:a530386caf4312005f713c39fbe7b7bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:acc5cac7c80f418cb21aaf62c81f80fae"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_discovery_job.html#acc5cac7c80f418cb21aaf62c81f80fae">DiscoveryMainThread</a></td></tr>
+<tr class="separator:acc5cac7c80f418cb21aaf62c81f80fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>The <a class="el" href="class_o_c_c_1_1_discovery_job.html" title="The DiscoveryJob class ">DiscoveryJob</a> class </p>
+<p>Lives in the other thread, deletes itself in !start() </p>
+
+<p class="definition">在文件 <a class="el" href="discoveryphase_8h_source.html">discoveryphase.h</a> 第 <a class="el" href="discoveryphase_8h_source.html#l00164">164</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aa76b2b611b06516e17bd1ee1f55e4af9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa76b2b611b06516e17bd1ee1f55e4af9">&#9670;&nbsp;</a></span>DiscoveryJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">OCC::DiscoveryJob::DiscoveryJob </td>
+          <td>(</td>
+          <td class="paramtype">CSYNC *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="discoveryphase_8h_source.html">discoveryphase.h</a> 第 <a class="el" href="discoveryphase_8h_source.html#l00199">199</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aa5ad6add45ad5f9f8d4712db09a4ff79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ad6add45ad5f9f8d4712db09a4ff79">&#9670;&nbsp;</a></span>doGetSizeSignal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::DiscoveryJob::doGetSizeSignal </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64 *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a78632645c29d5cd8a00721a850b33ec1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78632645c29d5cd8a00721a850b33ec1">&#9670;&nbsp;</a></span>doOpendirSignal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::DiscoveryJob::doOpendirSignal </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>url</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_o_c_c_1_1_discovery_directory_result.html">DiscoveryDirectoryResult</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a19720e2f4b466f5ddf111459beabe5c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19720e2f4b466f5ddf111459beabe5c4">&#9670;&nbsp;</a></span>finished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::DiscoveryJob::finished </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07901d17505529ca7cb1a5e225989f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07901d17505529ca7cb1a5e225989f13">&#9670;&nbsp;</a></span>folderDiscovered</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::DiscoveryJob::folderDiscovered </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>local</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>folderUrl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c8ebc45eea450b8a3335f939d6b9788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c8ebc45eea450b8a3335f939d6b9788">&#9670;&nbsp;</a></span>newBigFolder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::DiscoveryJob::newBigFolder </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>folder</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6cd33ce4e53ad4d05333f56923a2e052"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd33ce4e53ad4d05333f56923a2e052">&#9670;&nbsp;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OCC::DiscoveryJob::start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="discoveryphase_8cpp_source.html">discoveryphase.cpp</a> 第 <a class="el" href="discoveryphase_8cpp_source.html#l00644">644</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a id="acc5cac7c80f418cb21aaf62c81f80fae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc5cac7c80f418cb21aaf62c81f80fae">&#9670;&nbsp;</a></span>DiscoveryMainThread</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_o_c_c_1_1_discovery_main_thread.html">DiscoveryMainThread</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="discoveryphase_8h_source.html">discoveryphase.h</a> 第 <a class="el" href="discoveryphase_8h_source.html#l00166">166</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a530386caf4312005f713c39fbe7b7bd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a530386caf4312005f713c39fbe7b7bd7">&#9670;&nbsp;</a></span>_newBigFolderSizeLimit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint64 OCC::DiscoveryJob::_newBigFolderSizeLimit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="discoveryphase_8h_source.html">discoveryphase.h</a> 第 <a class="el" href="discoveryphase_8h_source.html#l00210">210</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afe69916308e0cb461568408e33283f47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe69916308e0cb461568408e33283f47">&#9670;&nbsp;</a></span>_selectiveSyncBlackList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList OCC::DiscoveryJob::_selectiveSyncBlackList</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="discoveryphase_8h_source.html">discoveryphase.h</a> 第 <a class="el" href="discoveryphase_8h_source.html#l00208">208</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af96bb82dc99b68055bb0f985ae10cdcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af96bb82dc99b68055bb0f985ae10cdcd">&#9670;&nbsp;</a></span>_selectiveSyncWhiteList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList OCC::DiscoveryJob::_selectiveSyncWhiteList</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="discoveryphase_8h_source.html">discoveryphase.h</a> 第 <a class="el" href="discoveryphase_8h_source.html#l00209">209</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="discoveryphase_8h_source.html">discoveryphase.h</a></li>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="discoveryphase_8cpp_source.html">discoveryphase.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

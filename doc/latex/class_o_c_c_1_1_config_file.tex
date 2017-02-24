@@ -1,0 +1,789 @@
+\hypertarget{class_o_c_c_1_1_config_file}{}\section{O\+CC\+:\+:Config\+File类 参考}
+\label{class_o_c_c_1_1_config_file}\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+
+
+The \hyperlink{class_o_c_c_1_1_config_file}{Config\+File} class  
+
+
+
+
+{\ttfamily \#include $<$configfile.\+h$>$}
+
+\subsection*{Public 类型}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_o_c_c_1_1_config_file_ab571084ce59ba92b0ce4079460b7c869}{Scope} \{ \hyperlink{class_o_c_c_1_1_config_file_ab571084ce59ba92b0ce4079460b7c869a850e942974c8d22118753d5664eb49e9}{User\+Scope}, 
+\hyperlink{class_o_c_c_1_1_config_file_ab571084ce59ba92b0ce4079460b7c869a12de32b0994f72b53e55960986774918}{System\+Scope}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_o_c_c_1_1_config_file_aacaf7c5765f599dee90023312f3f60ea}{Config\+File} ()
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_config_file_a23a25cd3acabea98021d41cbe71614dc}{config\+Path} () const
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_config_file_af8df64f46d6b49040e27c43eee4659f6}{config\+Path\+With\+App\+Name} () const
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_config_file_aa3ef945d9e167b852570576593730fcc}{config\+File} () const
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_config_file_a01f021637a0819006fb8a10245bd1b0c}{exclude\+File} (\hyperlink{class_o_c_c_1_1_config_file_ab571084ce59ba92b0ce4079460b7c869}{Scope} scope) const
+\item 
+bool \hyperlink{class_o_c_c_1_1_config_file_ae019a54ab94ac86ec5fcba3f64fc13d9}{exists} ()
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_config_file_a7e76c0a3faff2b37e3eea63ebb6efb57}{default\+Connection} () const
+\item 
+Q\+Byte\+Array \hyperlink{class_o_c_c_1_1_config_file_a460fe71a801d90b23212aa611fd1fb92}{ca\+Certs} ()
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_ab36ea9d3137bb883215a6121c113f8b8}{set\+Ca\+Certs} (const Q\+Byte\+Array \&)
+\item 
+bool \hyperlink{class_o_c_c_1_1_config_file_a11bcbbd4a7817ed1a5a64b3407c4f41b}{password\+Storage\+Allowed} (const Q\+String \&connection=Q\+String\+::null)
+\item 
+int \hyperlink{class_o_c_c_1_1_config_file_ab4b56c7489cba88f67c4e71561622195}{max\+Log\+Lines} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_acc10e077dd13c033795e68da8c8e833d}{set\+Max\+Log\+Lines} (int)
+\item 
+int \hyperlink{class_o_c_c_1_1_config_file_a10e0a6dc0b064464d4286e760e57debb}{remote\+Poll\+Interval} (const Q\+String \&connection=Q\+String()) const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_a418dbb27d41fb2c3c9c920f429ea5b57}{set\+Remote\+Poll\+Interval} (int interval, const Q\+String \&connection=Q\+String())
+\item 
+quint64 \hyperlink{class_o_c_c_1_1_config_file_a04836d83e2f6a8a752f2a0e5e23c140f}{notification\+Refresh\+Interval} (const Q\+String \&connection=Q\+String()) const
+\item 
+quint64 \hyperlink{class_o_c_c_1_1_config_file_a7e4c8fcfe936a291b78fb411dd08075c}{force\+Sync\+Interval} (const Q\+String \&connection=Q\+String()) const
+\item 
+bool \hyperlink{class_o_c_c_1_1_config_file_a512878a73347e2a9dab8ede1794017d7}{mono\+Icons} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_acd50d4c2adddf82d31f00f93377737fd}{set\+Mono\+Icons} (bool)
+\item 
+bool \hyperlink{class_o_c_c_1_1_config_file_ae5c533f08ad48250a0b41f368c95e2bb}{prompt\+Delete\+Files} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_a51cd58394a5b0c134ba2e1eaa00bd991}{set\+Prompt\+Delete\+Files} (bool \hyperlink{class_o_c_c_1_1_config_file_ae5c533f08ad48250a0b41f368c95e2bb}{prompt\+Delete\+Files})
+\item 
+bool \hyperlink{class_o_c_c_1_1_config_file_ab3d85f4bc38a77e8b48efd08040fc1c3}{crash\+Reporter} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_ad90a0e5ab03758bcc9a3ca2eda09c993}{set\+Crash\+Reporter} (bool enabled)
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_a19b06f02130802695ebf578f343dbf9a}{set\+Proxy\+Type} (int \hyperlink{class_o_c_c_1_1_config_file_af866cb0cd9f304dac04af1c7885f9b0e}{proxy\+Type}, const Q\+String \&host=Q\+String(), int port=0, bool needs\+Auth=false, const Q\+String \&user=Q\+String(), const Q\+String \&pass=Q\+String())
+\item 
+int \hyperlink{class_o_c_c_1_1_config_file_af866cb0cd9f304dac04af1c7885f9b0e}{proxy\+Type} () const
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_config_file_a0e6b727423c449608755549c560806ca}{proxy\+Host\+Name} () const
+\item 
+int \hyperlink{class_o_c_c_1_1_config_file_a26b2547432bb6c4753509dd52ce96c3d}{proxy\+Port} () const
+\item 
+bool \hyperlink{class_o_c_c_1_1_config_file_a462999b0a8fee20678d87575b1962489}{proxy\+Needs\+Auth} () const
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_config_file_a7a99c01b20e0af9bbc878541c4edc41b}{proxy\+User} () const
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_config_file_a28f1c55f9d8c183075936055bbeadb4b}{proxy\+Password} () const
+\item 
+int \hyperlink{class_o_c_c_1_1_config_file_a448af0807e52e830d4964481054b2e97}{use\+Upload\+Limit} () const
+\item 
+int \hyperlink{class_o_c_c_1_1_config_file_a08c88fb88637d43c1f26945057fc7ed3}{use\+Download\+Limit} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_ae2c9c8aedf58603117741c6fb57f73be}{set\+Use\+Upload\+Limit} (int)
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_a4e2e992fdd9d9a0888920d9a903fa0a9}{set\+Use\+Download\+Limit} (int)
+\item 
+int \hyperlink{class_o_c_c_1_1_config_file_a6aa3c9110938a7c986ffccadfbbd4e77}{upload\+Limit} () const
+\item 
+int \hyperlink{class_o_c_c_1_1_config_file_a06569c093c116eb187791d9f3a63fb75}{download\+Limit} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_af2f80bed9cf14242986ea8d9275617b7}{set\+Upload\+Limit} (int kbytes)
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_a5bdc547541af13d0aa75564881f3c558}{set\+Download\+Limit} (int kbytes)
+\item 
+Q\+Pair$<$ bool, quint64 $>$ \hyperlink{class_o_c_c_1_1_config_file_a43b6b028681c10e738472cb86b386b1e}{new\+Big\+Folder\+Size\+Limit} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_a08627662f108b24dfb9cad7234adc289}{set\+New\+Big\+Folder\+Size\+Limit} (bool is\+Checked, quint64 mbytes)
+\item 
+bool \hyperlink{class_o_c_c_1_1_config_file_aedf98a5dab35cf6fc5d8232445c9e562}{optional\+Desktop\+Notifications} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_a8fad94a84f8e74536b6369de250fa7ca}{set\+Optional\+Desktop\+Notifications} (bool show)
+\item 
+int \hyperlink{class_o_c_c_1_1_config_file_af928f35bde0a2f088dbfa56bebe5aae4}{timeout} () const
+\item 
+quint64 \hyperlink{class_o_c_c_1_1_config_file_a53a466f9bb98b7bb5f6a4a8fff44489f}{chunk\+Size} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_a82d9bef1bf904bb17f7f59607395195f}{save\+Geometry} (Q\+Widget $\ast$w)
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_a99af813ce61add8d2b12c79d02193702}{restore\+Geometry} (Q\+Widget $\ast$w)
+\item 
+int \hyperlink{class_o_c_c_1_1_config_file_a79f34a30c08064553a51800be2f61a2b}{update\+Check\+Interval} (const Q\+String \&connection=Q\+String()) const
+\item 
+bool \hyperlink{class_o_c_c_1_1_config_file_a165eec00336677288fcc0404a16d9d25}{skip\+Update\+Check} (const Q\+String \&connection=Q\+String()) const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_afa2f591112905b759f48a11a20cea0c6}{set\+Skip\+Update\+Check} (bool, const Q\+String \&)
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_aab60cd329aec85749b0a499a332e7a0a}{save\+Geometry\+Header} (Q\+Header\+View $\ast$header)
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_aa9e866883f8414b98e777abe581674f4}{restore\+Geometry\+Header} (Q\+Header\+View $\ast$header)
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_config_file_a0ee4e4eb052bc33073704aa3b1f56b3c}{certificate\+Path} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_ac4924de88edf7c59d48f1168d7a1ef16}{set\+Certificate\+Path} (const Q\+String \&c\+Path)
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_config_file_aa86c9825fc9a40f149762c6181b31557}{certificate\+Passwd} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_add2b35215f9c6953fdf0751f2d328b49}{set\+Certificate\+Passwd} (const Q\+String \&c\+Passwd)
+\end{DoxyCompactItemize}
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+String \hyperlink{class_o_c_c_1_1_config_file_a37807874bbe3793ad448db5ec4ba212d}{exclude\+File\+From\+System} ()
+\item 
+static bool \hyperlink{class_o_c_c_1_1_config_file_a082513579908483abcffecae0a143c88}{set\+Conf\+Dir} (const Q\+String \&value)
+\end{DoxyCompactItemize}
+\subsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Variant \hyperlink{class_o_c_c_1_1_config_file_ab8458ef4cde677e7d08c95291a15c00d}{get\+Policy\+Setting} (const Q\+String \&policy, const Q\+Variant \&default\+Value=Q\+Variant()) const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_a0e1558affc0349e785270dfd04b49a89}{store\+Data} (const Q\+String \&group, const Q\+String \&key, const Q\+Variant \&value)
+\item 
+Q\+Variant \hyperlink{class_o_c_c_1_1_config_file_a578b6354af7268fcf3f552574d848cbd}{retrieve\+Data} (const Q\+String \&group, const Q\+String \&key) const
+\item 
+void \hyperlink{class_o_c_c_1_1_config_file_a24117f4ec9d4387901c0222478fe6584}{remove\+Data} (const Q\+String \&group, const Q\+String \&key)
+\item 
+bool \hyperlink{class_o_c_c_1_1_config_file_ae2c5b31e20035ccca6df56a83234d788}{data\+Exists} (const Q\+String \&group, const Q\+String \&key) const
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+The \hyperlink{class_o_c_c_1_1_config_file}{Config\+File} class 
+
+在文件 configfile.\+h 第 34 行定义.
+
+
+
+\subsection{成员枚举类型说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_ab571084ce59ba92b0ce4079460b7c869}\label{class_o_c_c_1_1_config_file_ab571084ce59ba92b0ce4079460b7c869}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!Scope@{Scope}}
+\index{Scope@{Scope}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{Scope}{Scope}}
+{\footnotesize\ttfamily enum \hyperlink{class_o_c_c_1_1_config_file_ab571084ce59ba92b0ce4079460b7c869}{O\+C\+C\+::\+Config\+File\+::\+Scope}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{User\+Scope@{User\+Scope}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!User\+Scope@{User\+Scope}}}\mbox{\Hypertarget{class_o_c_c_1_1_config_file_ab571084ce59ba92b0ce4079460b7c869a850e942974c8d22118753d5664eb49e9}\label{class_o_c_c_1_1_config_file_ab571084ce59ba92b0ce4079460b7c869a850e942974c8d22118753d5664eb49e9}} 
+User\+Scope&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{System\+Scope@{System\+Scope}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!System\+Scope@{System\+Scope}}}\mbox{\Hypertarget{class_o_c_c_1_1_config_file_ab571084ce59ba92b0ce4079460b7c869a12de32b0994f72b53e55960986774918}\label{class_o_c_c_1_1_config_file_ab571084ce59ba92b0ce4079460b7c869a12de32b0994f72b53e55960986774918}} 
+System\+Scope&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+在文件 configfile.\+h 第 39 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_aacaf7c5765f599dee90023312f3f60ea}\label{class_o_c_c_1_1_config_file_aacaf7c5765f599dee90023312f3f60ea}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!Config\+File@{Config\+File}}
+\index{Config\+File@{Config\+File}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{Config\+File()}{ConfigFile()}}
+{\footnotesize\ttfamily O\+C\+C\+::\+Config\+File\+::\+Config\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 78 行定义.
+
+
+
+\subsection{成员函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a460fe71a801d90b23212aa611fd1fb92}\label{class_o_c_c_1_1_config_file_a460fe71a801d90b23212aa611fd1fb92}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!ca\+Certs@{ca\+Certs}}
+\index{ca\+Certs@{ca\+Certs}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{ca\+Certs()}{caCerts()}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+Config\+File\+::ca\+Certs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_aa86c9825fc9a40f149762c6181b31557}\label{class_o_c_c_1_1_config_file_aa86c9825fc9a40f149762c6181b31557}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!certificate\+Passwd@{certificate\+Passwd}}
+\index{certificate\+Passwd@{certificate\+Passwd}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{certificate\+Passwd()}{certificatePasswd()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Config\+File\+::certificate\+Passwd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 652 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a0ee4e4eb052bc33073704aa3b1f56b3c}\label{class_o_c_c_1_1_config_file_a0ee4e4eb052bc33073704aa3b1f56b3c}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!certificate\+Path@{certificate\+Path}}
+\index{certificate\+Path@{certificate\+Path}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{certificate\+Path()}{certificatePath()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Config\+File\+::certificate\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 640 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a53a466f9bb98b7bb5f6a4a8fff44489f}\label{class_o_c_c_1_1_config_file_a53a466f9bb98b7bb5f6a4a8fff44489f}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!chunk\+Size@{chunk\+Size}}
+\index{chunk\+Size@{chunk\+Size}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{chunk\+Size()}{chunkSize()}}
+{\footnotesize\ttfamily quint64 O\+C\+C\+::\+Config\+File\+::chunk\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 125 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_aa3ef945d9e167b852570576593730fcc}\label{class_o_c_c_1_1_config_file_aa3ef945d9e167b852570576593730fcc}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!config\+File@{config\+File}}
+\index{config\+File@{config\+File}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{config\+File()}{configFile()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Config\+File\+::config\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 277 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a23a25cd3acabea98021d41cbe71614dc}\label{class_o_c_c_1_1_config_file_a23a25cd3acabea98021d41cbe71614dc}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!config\+Path@{config\+Path}}
+\index{config\+Path@{config\+Path}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{config\+Path()}{configPath()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Config\+File\+::config\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 202 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_af8df64f46d6b49040e27c43eee4659f6}\label{class_o_c_c_1_1_config_file_af8df64f46d6b49040e27c43eee4659f6}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!config\+Path\+With\+App\+Name@{config\+Path\+With\+App\+Name}}
+\index{config\+Path\+With\+App\+Name@{config\+Path\+With\+App\+Name}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{config\+Path\+With\+App\+Name()}{configPathWithAppName()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Config\+File\+::config\+Path\+With\+App\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 217 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_ab3d85f4bc38a77e8b48efd08040fc1c3}\label{class_o_c_c_1_1_config_file_ab3d85f4bc38a77e8b48efd08040fc1c3}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!crash\+Reporter@{crash\+Reporter}}
+\index{crash\+Reporter@{crash\+Reporter}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{crash\+Reporter()}{crashReporter()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Config\+File\+::crash\+Reporter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 628 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_ae2c5b31e20035ccca6df56a83234d788}\label{class_o_c_c_1_1_config_file_ae2c5b31e20035ccca6df56a83234d788}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!data\+Exists@{data\+Exists}}
+\index{data\+Exists@{data\+Exists}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{data\+Exists()}{dataExists()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Config\+File\+::data\+Exists (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{group,  }\item[{const Q\+String \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 configfile.\+cpp 第 321 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a7e76c0a3faff2b37e3eea63ebb6efb57}\label{class_o_c_c_1_1_config_file_a7e76c0a3faff2b37e3eea63ebb6efb57}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!default\+Connection@{default\+Connection}}
+\index{default\+Connection@{default\+Connection}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{default\+Connection()}{defaultConnection()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Config\+File\+::default\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 288 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a06569c093c116eb187791d9f3a63fb75}\label{class_o_c_c_1_1_config_file_a06569c093c116eb187791d9f3a63fb75}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!download\+Limit@{download\+Limit}}
+\index{download\+Limit@{download\+Limit}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{download\+Limit()}{downloadLimit()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Config\+File\+::download\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 570 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a01f021637a0819006fb8a10245bd1b0c}\label{class_o_c_c_1_1_config_file_a01f021637a0819006fb8a10245bd1b0c}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!exclude\+File@{exclude\+File}}
+\index{exclude\+File@{exclude\+File}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{exclude\+File()}{excludeFile()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Config\+File\+::exclude\+File (\begin{DoxyParamCaption}\item[{\hyperlink{class_o_c_c_1_1_config_file_ab571084ce59ba92b0ce4079460b7c869}{Scope}}]{scope }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 225 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a37807874bbe3793ad448db5ec4ba212d}\label{class_o_c_c_1_1_config_file_a37807874bbe3793ad448db5ec4ba212d}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!exclude\+File\+From\+System@{exclude\+File\+From\+System}}
+\index{exclude\+File\+From\+System@{exclude\+File\+From\+System}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{exclude\+File\+From\+System()}{excludeFileFromSystem()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Config\+File\+::exclude\+File\+From\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+在文件 configfile.\+cpp 第 251 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_ae019a54ab94ac86ec5fcba3f64fc13d9}\label{class_o_c_c_1_1_config_file_ae019a54ab94ac86ec5fcba3f64fc13d9}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!exists@{exists}}
+\index{exists@{exists}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Config\+File\+::exists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 282 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a7e4c8fcfe936a291b78fb411dd08075c}\label{class_o_c_c_1_1_config_file_a7e4c8fcfe936a291b78fb411dd08075c}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!force\+Sync\+Interval@{force\+Sync\+Interval}}
+\index{force\+Sync\+Interval@{force\+Sync\+Interval}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{force\+Sync\+Interval()}{forceSyncInterval()}}
+{\footnotesize\ttfamily quint64 O\+C\+C\+::\+Config\+File\+::force\+Sync\+Interval (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{connection = {\ttfamily QString()} }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 361 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_ab8458ef4cde677e7d08c95291a15c00d}\label{class_o_c_c_1_1_config_file_ab8458ef4cde677e7d08c95291a15c00d}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!get\+Policy\+Setting@{get\+Policy\+Setting}}
+\index{get\+Policy\+Setting@{get\+Policy\+Setting}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{get\+Policy\+Setting()}{getPolicySetting()}}
+{\footnotesize\ttfamily Q\+Variant O\+C\+C\+::\+Config\+File\+::get\+Policy\+Setting (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{policy,  }\item[{const Q\+Variant \&}]{default\+Value = {\ttfamily QVariant()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 configfile.\+cpp 第 181 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_ab4b56c7489cba88f67c4e71561622195}\label{class_o_c_c_1_1_config_file_ab4b56c7489cba88f67c4e71561622195}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!max\+Log\+Lines@{max\+Log\+Lines}}
+\index{max\+Log\+Lines@{max\+Log\+Lines}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{max\+Log\+Lines()}{maxLogLines()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Config\+File\+::max\+Log\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 438 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a512878a73347e2a9dab8ede1794017d7}\label{class_o_c_c_1_1_config_file_a512878a73347e2a9dab8ede1794017d7}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!mono\+Icons@{mono\+Icons}}
+\index{mono\+Icons@{mono\+Icons}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{mono\+Icons()}{monoIcons()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Config\+File\+::mono\+Icons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 611 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a43b6b028681c10e738472cb86b386b1e}\label{class_o_c_c_1_1_config_file_a43b6b028681c10e738472cb86b386b1e}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!new\+Big\+Folder\+Size\+Limit@{new\+Big\+Folder\+Size\+Limit}}
+\index{new\+Big\+Folder\+Size\+Limit@{new\+Big\+Folder\+Size\+Limit}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{new\+Big\+Folder\+Size\+Limit()}{newBigFolderSizeLimit()}}
+{\footnotesize\ttfamily Q\+Pair$<$ bool, quint64 $>$ O\+C\+C\+::\+Config\+File\+::new\+Big\+Folder\+Size\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{[}checked, size in MB\mbox{]} 
+
+在文件 configfile.\+cpp 第 585 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a04836d83e2f6a8a752f2a0e5e23c140f}\label{class_o_c_c_1_1_config_file_a04836d83e2f6a8a752f2a0e5e23c140f}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!notification\+Refresh\+Interval@{notification\+Refresh\+Interval}}
+\index{notification\+Refresh\+Interval@{notification\+Refresh\+Interval}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{notification\+Refresh\+Interval()}{notificationRefreshInterval()}}
+{\footnotesize\ttfamily quint64 O\+C\+C\+::\+Config\+File\+::notification\+Refresh\+Interval (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{connection = {\ttfamily QString()} }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 379 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_aedf98a5dab35cf6fc5d8232445c9e562}\label{class_o_c_c_1_1_config_file_aedf98a5dab35cf6fc5d8232445c9e562}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!optional\+Desktop\+Notifications@{optional\+Desktop\+Notifications}}
+\index{optional\+Desktop\+Notifications@{optional\+Desktop\+Notifications}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{optional\+Desktop\+Notifications()}{optionalDesktopNotifications()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Config\+File\+::optional\+Desktop\+Notifications (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 113 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a11bcbbd4a7817ed1a5a64b3407c4f41b}\label{class_o_c_c_1_1_config_file_a11bcbbd4a7817ed1a5a64b3407c4f41b}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!password\+Storage\+Allowed@{password\+Storage\+Allowed}}
+\index{password\+Storage\+Allowed@{password\+Storage\+Allowed}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{password\+Storage\+Allowed()}{passwordStorageAllowed()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Config\+File\+::password\+Storage\+Allowed (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{connection = {\ttfamily QString\+:\+:null} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_ae5c533f08ad48250a0b41f368c95e2bb}\label{class_o_c_c_1_1_config_file_ae5c533f08ad48250a0b41f368c95e2bb}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!prompt\+Delete\+Files@{prompt\+Delete\+Files}}
+\index{prompt\+Delete\+Files@{prompt\+Delete\+Files}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{prompt\+Delete\+Files()}{promptDeleteFiles()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Config\+File\+::prompt\+Delete\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 599 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a0e6b727423c449608755549c560806ca}\label{class_o_c_c_1_1_config_file_a0e6b727423c449608755549c560806ca}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!proxy\+Host\+Name@{proxy\+Host\+Name}}
+\index{proxy\+Host\+Name@{proxy\+Host\+Name}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{proxy\+Host\+Name()}{proxyHostName()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Config\+File\+::proxy\+Host\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 519 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a462999b0a8fee20678d87575b1962489}\label{class_o_c_c_1_1_config_file_a462999b0a8fee20678d87575b1962489}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!proxy\+Needs\+Auth@{proxy\+Needs\+Auth}}
+\index{proxy\+Needs\+Auth@{proxy\+Needs\+Auth}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{proxy\+Needs\+Auth()}{proxyNeedsAuth()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Config\+File\+::proxy\+Needs\+Auth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 529 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a28f1c55f9d8c183075936055bbeadb4b}\label{class_o_c_c_1_1_config_file_a28f1c55f9d8c183075936055bbeadb4b}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!proxy\+Password@{proxy\+Password}}
+\index{proxy\+Password@{proxy\+Password}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{proxy\+Password()}{proxyPassword()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Config\+File\+::proxy\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 539 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a26b2547432bb6c4753509dd52ce96c3d}\label{class_o_c_c_1_1_config_file_a26b2547432bb6c4753509dd52ce96c3d}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!proxy\+Port@{proxy\+Port}}
+\index{proxy\+Port@{proxy\+Port}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{proxy\+Port()}{proxyPort()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Config\+File\+::proxy\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 524 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_af866cb0cd9f304dac04af1c7885f9b0e}\label{class_o_c_c_1_1_config_file_af866cb0cd9f304dac04af1c7885f9b0e}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!proxy\+Type@{proxy\+Type}}
+\index{proxy\+Type@{proxy\+Type}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{proxy\+Type()}{proxyType()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Config\+File\+::proxy\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 511 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a7a99c01b20e0af9bbc878541c4edc41b}\label{class_o_c_c_1_1_config_file_a7a99c01b20e0af9bbc878541c4edc41b}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!proxy\+User@{proxy\+User}}
+\index{proxy\+User@{proxy\+User}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{proxy\+User()}{proxyUser()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Config\+File\+::proxy\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 534 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a10e0a6dc0b064464d4286e760e57debb}\label{class_o_c_c_1_1_config_file_a10e0a6dc0b064464d4286e760e57debb}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!remote\+Poll\+Interval@{remote\+Poll\+Interval}}
+\index{remote\+Poll\+Interval@{remote\+Poll\+Interval}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{remote\+Poll\+Interval()}{remotePollInterval()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Config\+File\+::remote\+Poll\+Interval (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{connection = {\ttfamily QString()} }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 330 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a24117f4ec9d4387901c0222478fe6584}\label{class_o_c_c_1_1_config_file_a24117f4ec9d4387901c0222478fe6584}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!remove\+Data@{remove\+Data}}
+\index{remove\+Data@{remove\+Data}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{remove\+Data()}{removeData()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::remove\+Data (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{group,  }\item[{const Q\+String \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 configfile.\+cpp 第 312 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a99af813ce61add8d2b12c79d02193702}\label{class_o_c_c_1_1_config_file_a99af813ce61add8d2b12c79d02193702}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!restore\+Geometry@{restore\+Geometry}}
+\index{restore\+Geometry@{restore\+Geometry}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{restore\+Geometry()}{restoreGeometry()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::restore\+Geometry (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{w }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 149 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_aa9e866883f8414b98e777abe581674f4}\label{class_o_c_c_1_1_config_file_aa9e866883f8414b98e777abe581674f4}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!restore\+Geometry\+Header@{restore\+Geometry\+Header}}
+\index{restore\+Geometry\+Header@{restore\+Geometry\+Header}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{restore\+Geometry\+Header()}{restoreGeometryHeader()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::restore\+Geometry\+Header (\begin{DoxyParamCaption}\item[{Q\+Header\+View $\ast$}]{header }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 169 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a578b6354af7268fcf3f552574d848cbd}\label{class_o_c_c_1_1_config_file_a578b6354af7268fcf3f552574d848cbd}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!retrieve\+Data@{retrieve\+Data}}
+\index{retrieve\+Data@{retrieve\+Data}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{retrieve\+Data()}{retrieveData()}}
+{\footnotesize\ttfamily Q\+Variant O\+C\+C\+::\+Config\+File\+::retrieve\+Data (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{group,  }\item[{const Q\+String \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 configfile.\+cpp 第 303 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a82d9bef1bf904bb17f7f59607395195f}\label{class_o_c_c_1_1_config_file_a82d9bef1bf904bb17f7f59607395195f}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!save\+Geometry@{save\+Geometry}}
+\index{save\+Geometry@{save\+Geometry}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{save\+Geometry()}{saveGeometry()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::save\+Geometry (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{w }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 138 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_aab60cd329aec85749b0a499a332e7a0a}\label{class_o_c_c_1_1_config_file_aab60cd329aec85749b0a499a332e7a0a}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!save\+Geometry\+Header@{save\+Geometry\+Header}}
+\index{save\+Geometry\+Header@{save\+Geometry\+Header}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{save\+Geometry\+Header()}{saveGeometryHeader()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::save\+Geometry\+Header (\begin{DoxyParamCaption}\item[{Q\+Header\+View $\ast$}]{header }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 156 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_ab36ea9d3137bb883215a6121c113f8b8}\label{class_o_c_c_1_1_config_file_ab36ea9d3137bb883215a6121c113f8b8}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Ca\+Certs@{set\+Ca\+Certs}}
+\index{set\+Ca\+Certs@{set\+Ca\+Certs}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Ca\+Certs()}{setCaCerts()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Ca\+Certs (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_add2b35215f9c6953fdf0751f2d328b49}\label{class_o_c_c_1_1_config_file_add2b35215f9c6953fdf0751f2d328b49}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Certificate\+Passwd@{set\+Certificate\+Passwd}}
+\index{set\+Certificate\+Passwd@{set\+Certificate\+Passwd}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Certificate\+Passwd()}{setCertificatePasswd()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Certificate\+Passwd (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{c\+Passwd }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 657 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_ac4924de88edf7c59d48f1168d7a1ef16}\label{class_o_c_c_1_1_config_file_ac4924de88edf7c59d48f1168d7a1ef16}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Certificate\+Path@{set\+Certificate\+Path}}
+\index{set\+Certificate\+Path@{set\+Certificate\+Path}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Certificate\+Path()}{setCertificatePath()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Certificate\+Path (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{c\+Path }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 645 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a082513579908483abcffecae0a143c88}\label{class_o_c_c_1_1_config_file_a082513579908483abcffecae0a143c88}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Conf\+Dir@{set\+Conf\+Dir}}
+\index{set\+Conf\+Dir@{set\+Conf\+Dir}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Conf\+Dir()}{setConfDir()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Config\+File\+::set\+Conf\+Dir (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+在文件 configfile.\+cpp 第 94 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_ad90a0e5ab03758bcc9a3ca2eda09c993}\label{class_o_c_c_1_1_config_file_ad90a0e5ab03758bcc9a3ca2eda09c993}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Crash\+Reporter@{set\+Crash\+Reporter}}
+\index{set\+Crash\+Reporter@{set\+Crash\+Reporter}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Crash\+Reporter()}{setCrashReporter()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Crash\+Reporter (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 634 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a5bdc547541af13d0aa75564881f3c558}\label{class_o_c_c_1_1_config_file_a5bdc547541af13d0aa75564881f3c558}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Download\+Limit@{set\+Download\+Limit}}
+\index{set\+Download\+Limit@{set\+Download\+Limit}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Download\+Limit()}{setDownloadLimit()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Download\+Limit (\begin{DoxyParamCaption}\item[{int}]{kbytes }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 580 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_acc10e077dd13c033795e68da8c8e833d}\label{class_o_c_c_1_1_config_file_acc10e077dd13c033795e68da8c8e833d}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Max\+Log\+Lines@{set\+Max\+Log\+Lines}}
+\index{set\+Max\+Log\+Lines@{set\+Max\+Log\+Lines}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Max\+Log\+Lines()}{setMaxLogLines()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Max\+Log\+Lines (\begin{DoxyParamCaption}\item[{int}]{lines }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 444 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_acd50d4c2adddf82d31f00f93377737fd}\label{class_o_c_c_1_1_config_file_acd50d4c2adddf82d31f00f93377737fd}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Mono\+Icons@{set\+Mono\+Icons}}
+\index{set\+Mono\+Icons@{set\+Mono\+Icons}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Mono\+Icons()}{setMonoIcons()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Mono\+Icons (\begin{DoxyParamCaption}\item[{bool}]{use\+Mono\+Icons }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 622 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a08627662f108b24dfb9cad7234adc289}\label{class_o_c_c_1_1_config_file_a08627662f108b24dfb9cad7234adc289}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+New\+Big\+Folder\+Size\+Limit@{set\+New\+Big\+Folder\+Size\+Limit}}
+\index{set\+New\+Big\+Folder\+Size\+Limit@{set\+New\+Big\+Folder\+Size\+Limit}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+New\+Big\+Folder\+Size\+Limit()}{setNewBigFolderSizeLimit()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+New\+Big\+Folder\+Size\+Limit (\begin{DoxyParamCaption}\item[{bool}]{is\+Checked,  }\item[{quint64}]{mbytes }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 593 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a8fad94a84f8e74536b6369de250fa7ca}\label{class_o_c_c_1_1_config_file_a8fad94a84f8e74536b6369de250fa7ca}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Optional\+Desktop\+Notifications@{set\+Optional\+Desktop\+Notifications}}
+\index{set\+Optional\+Desktop\+Notifications@{set\+Optional\+Desktop\+Notifications}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Optional\+Desktop\+Notifications()}{setOptionalDesktopNotifications()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Optional\+Desktop\+Notifications (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 131 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a51cd58394a5b0c134ba2e1eaa00bd991}\label{class_o_c_c_1_1_config_file_a51cd58394a5b0c134ba2e1eaa00bd991}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Prompt\+Delete\+Files@{set\+Prompt\+Delete\+Files}}
+\index{set\+Prompt\+Delete\+Files@{set\+Prompt\+Delete\+Files}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Prompt\+Delete\+Files()}{setPromptDeleteFiles()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Prompt\+Delete\+Files (\begin{DoxyParamCaption}\item[{bool}]{prompt\+Delete\+Files }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 605 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a19b06f02130802695ebf578f343dbf9a}\label{class_o_c_c_1_1_config_file_a19b06f02130802695ebf578f343dbf9a}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Proxy\+Type@{set\+Proxy\+Type}}
+\index{set\+Proxy\+Type@{set\+Proxy\+Type}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Proxy\+Type()}{setProxyType()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Proxy\+Type (\begin{DoxyParamCaption}\item[{int}]{proxy\+Type,  }\item[{const Q\+String \&}]{host = {\ttfamily QString()},  }\item[{int}]{port = {\ttfamily 0},  }\item[{bool}]{needs\+Auth = {\ttfamily false},  }\item[{const Q\+String \&}]{user = {\ttfamily QString()},  }\item[{const Q\+String \&}]{pass = {\ttfamily QString()} }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 451 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a418dbb27d41fb2c3c9c920f429ea5b57}\label{class_o_c_c_1_1_config_file_a418dbb27d41fb2c3c9c920f429ea5b57}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Remote\+Poll\+Interval@{set\+Remote\+Poll\+Interval}}
+\index{set\+Remote\+Poll\+Interval@{set\+Remote\+Poll\+Interval}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Remote\+Poll\+Interval()}{setRemotePollInterval()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Remote\+Poll\+Interval (\begin{DoxyParamCaption}\item[{int}]{interval,  }\item[{const Q\+String \&}]{connection = {\ttfamily QString()} }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 346 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_afa2f591112905b759f48a11a20cea0c6}\label{class_o_c_c_1_1_config_file_afa2f591112905b759f48a11a20cea0c6}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Skip\+Update\+Check@{set\+Skip\+Update\+Check}}
+\index{set\+Skip\+Update\+Check@{set\+Skip\+Update\+Check}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Skip\+Update\+Check()}{setSkipUpdateCheck()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Skip\+Update\+Check (\begin{DoxyParamCaption}\item[{bool}]{skip,  }\item[{const Q\+String \&}]{connection }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 425 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_af2f80bed9cf14242986ea8d9275617b7}\label{class_o_c_c_1_1_config_file_af2f80bed9cf14242986ea8d9275617b7}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Upload\+Limit@{set\+Upload\+Limit}}
+\index{set\+Upload\+Limit@{set\+Upload\+Limit}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Upload\+Limit()}{setUploadLimit()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Upload\+Limit (\begin{DoxyParamCaption}\item[{int}]{kbytes }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 575 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a4e2e992fdd9d9a0888920d9a903fa0a9}\label{class_o_c_c_1_1_config_file_a4e2e992fdd9d9a0888920d9a903fa0a9}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Use\+Download\+Limit@{set\+Use\+Download\+Limit}}
+\index{set\+Use\+Download\+Limit@{set\+Use\+Download\+Limit}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Use\+Download\+Limit()}{setUseDownloadLimit()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Use\+Download\+Limit (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 560 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_ae2c9c8aedf58603117741c6fb57f73be}\label{class_o_c_c_1_1_config_file_ae2c9c8aedf58603117741c6fb57f73be}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!set\+Use\+Upload\+Limit@{set\+Use\+Upload\+Limit}}
+\index{set\+Use\+Upload\+Limit@{set\+Use\+Upload\+Limit}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{set\+Use\+Upload\+Limit()}{setUseUploadLimit()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::set\+Use\+Upload\+Limit (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})}
+
+
+
+在文件 configfile.\+cpp 第 555 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a165eec00336677288fcc0404a16d9d25}\label{class_o_c_c_1_1_config_file_a165eec00336677288fcc0404a16d9d25}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!skip\+Update\+Check@{skip\+Update\+Check}}
+\index{skip\+Update\+Check@{skip\+Update\+Check}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{skip\+Update\+Check()}{skipUpdateCheck()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Config\+File\+::skip\+Update\+Check (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{connection = {\ttfamily QString()} }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 413 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a0e1558affc0349e785270dfd04b49a89}\label{class_o_c_c_1_1_config_file_a0e1558affc0349e785270dfd04b49a89}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!store\+Data@{store\+Data}}
+\index{store\+Data@{store\+Data}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{store\+Data()}{storeData()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Config\+File\+::store\+Data (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{group,  }\item[{const Q\+String \&}]{key,  }\item[{const Q\+Variant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 configfile.\+cpp 第 293 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_af928f35bde0a2f088dbfa56bebe5aae4}\label{class_o_c_c_1_1_config_file_af928f35bde0a2f088dbfa56bebe5aae4}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!timeout@{timeout}}
+\index{timeout@{timeout}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{timeout()}{timeout()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Config\+File\+::timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 119 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a79f34a30c08064553a51800be2f61a2b}\label{class_o_c_c_1_1_config_file_a79f34a30c08064553a51800be2f61a2b}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!update\+Check\+Interval@{update\+Check\+Interval}}
+\index{update\+Check\+Interval@{update\+Check\+Interval}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{update\+Check\+Interval()}{updateCheckInterval()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Config\+File\+::update\+Check\+Interval (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{connection = {\ttfamily QString()} }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 395 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a6aa3c9110938a7c986ffccadfbbd4e77}\label{class_o_c_c_1_1_config_file_a6aa3c9110938a7c986ffccadfbbd4e77}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!upload\+Limit@{upload\+Limit}}
+\index{upload\+Limit@{upload\+Limit}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{upload\+Limit()}{uploadLimit()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Config\+File\+::upload\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+in kbyte/s 
+
+在文件 configfile.\+cpp 第 565 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a08c88fb88637d43c1f26945057fc7ed3}\label{class_o_c_c_1_1_config_file_a08c88fb88637d43c1f26945057fc7ed3}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!use\+Download\+Limit@{use\+Download\+Limit}}
+\index{use\+Download\+Limit@{use\+Download\+Limit}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{use\+Download\+Limit()}{useDownloadLimit()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Config\+File\+::use\+Download\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 configfile.\+cpp 第 550 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_config_file_a448af0807e52e830d4964481054b2e97}\label{class_o_c_c_1_1_config_file_a448af0807e52e830d4964481054b2e97}} 
+\index{O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}!use\+Upload\+Limit@{use\+Upload\+Limit}}
+\index{use\+Upload\+Limit@{use\+Upload\+Limit}!O\+C\+C\+::\+Config\+File@{O\+C\+C\+::\+Config\+File}}
+\subsubsection{\texorpdfstring{use\+Upload\+Limit()}{useUploadLimit()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Config\+File\+::use\+Upload\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+0\+: no limit, 1\+: manual, $>$0\+: automatic 
+
+在文件 configfile.\+cpp 第 545 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{configfile_8h}{configfile.\+h}\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{configfile_8cpp}{configfile.\+cpp}\end{DoxyCompactItemize}

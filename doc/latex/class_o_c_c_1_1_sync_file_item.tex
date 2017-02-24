@@ -1,0 +1,597 @@
+\hypertarget{class_o_c_c_1_1_sync_file_item}{}\section{O\+CC\+:\+:Sync\+File\+Item类 参考}
+\label{class_o_c_c_1_1_sync_file_item}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+
+
+The \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} class  
+
+
+
+
+{\ttfamily \#include $<$syncfileitem.\+h$>$}
+
+\subsection*{Public 类型}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922b}{Direction} \{ \hyperlink{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922bac484dd612f0c79c95f35ff8f6dd0e6d8}{None} = 0, 
+\hyperlink{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922ba42097bff769b901e6e8d540d3b731b3d}{Up}, 
+\hyperlink{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922ba00f5e7e5529e77cdfd86825235ae248d}{Down}
+ \}
+\item 
+enum \hyperlink{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754}{Type} \{ \hyperlink{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754ab74ea4777cee75b62eda42d5a638190f}{Unknown\+Type} = 0, 
+\hyperlink{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754aef1b538c3435a4423d96d7f262368c6d}{File} = C\+S\+Y\+N\+C\+\_\+\+F\+T\+W\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+I\+LE, 
+\hyperlink{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754a5b5d06e0f11e0244ef25e91bbabeae39}{Directory} = C\+S\+Y\+N\+C\+\_\+\+F\+T\+W\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+IR, 
+\hyperlink{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754a6e94f40aae4b54f82d2b9510cd3ee220}{Soft\+Link} = C\+S\+Y\+N\+C\+\_\+\+F\+T\+W\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+L\+I\+NK
+ \}
+\item 
+enum \hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408}{Status} \{ \newline
+\hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a1eb4358635a761566dc0a905cc846c90}{No\+Status}, 
+\hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a4886e3de3c84433c5fe34ce444fdb1ae}{Fatal\+Error}, 
+\hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a353097a1d8c4584b3001448161105d18}{Normal\+Error}, 
+\hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408ab1b53a7981c8f26a989b84611147dc26}{Soft\+Error}, 
+\newline
+\hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408afae1770f38dce166a6b9d0421481dead}{Success}, 
+\hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408ae8c47ef20502cc71ee772658feb4a07c}{Conflict}, 
+\hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a25e0730a3f84fa2b29e3724643918a78}{File\+Ignored}, 
+\hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a5ca7af4a60d9aa4b46183e41cf554094}{Restoration}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_o_c_c_1_1_sync_file_item_ac2d467cf5f79e65f440597884ee4d78f}{Sync\+File\+Item} ()
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_sync_file_item_a6760b5f7a7624fa7b75070e3e5eab55d}{destination} () const
+\item 
+bool \hyperlink{class_o_c_c_1_1_sync_file_item_a50e53014c5068af9e613649cf5e08f5e}{is\+Empty} () const
+\item 
+bool \hyperlink{class_o_c_c_1_1_sync_file_item_a9605a8ff213a000a039122801575ea33}{has\+Error\+Status} () const
+\item 
+\hyperlink{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754}{Type} \+\_\+type \hyperlink{class_o_c_c_1_1_sync_file_item_a300444506fb80b86bfcb075f72905a01}{B\+I\+T\+F\+I\+E\+LD} (3)
+\item 
+\hyperlink{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922b}{Direction} \+\_\+direction \hyperlink{class_o_c_c_1_1_sync_file_item_a9c687adf113ff7cc15d81b914266cbbd}{B\+I\+T\+F\+I\+E\+LD} (3)
+\item 
+bool \+\_\+is\+Directory \hyperlink{class_o_c_c_1_1_sync_file_item_abd4cb1d7b3523792bdaa7563b2e88db7}{B\+I\+T\+F\+I\+E\+LD} (1)
+\item 
+bool \+\_\+server\+Has\+Ignored\+Files \hyperlink{class_o_c_c_1_1_sync_file_item_a1115f09ecc0bba3a76b018fc52a1b6e7}{B\+I\+T\+F\+I\+E\+LD} (1)
+\item 
+bool \+\_\+has\+Blacklist\+Entry \hyperlink{class_o_c_c_1_1_sync_file_item_a197653561a9ae15f991eedc7296b166f}{B\+I\+T\+F\+I\+E\+LD} (1)
+\item 
+bool \+\_\+error\+May\+Be\+Blacklisted \hyperlink{class_o_c_c_1_1_sync_file_item_a98651c89e864147d021b2078d8399c53}{B\+I\+T\+F\+I\+E\+LD} (1)
+\item 
+\hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408}{Status} \+\_\+status \hyperlink{class_o_c_c_1_1_sync_file_item_a0b2c255ae9d806b6fa36dc5bfddc97c8}{B\+I\+T\+F\+I\+E\+LD} (4)
+\item 
+bool \+\_\+is\+Restoration \hyperlink{class_o_c_c_1_1_sync_file_item_a9589dd81e18b0f0bacce19674feb308e}{B\+I\+T\+F\+I\+E\+LD} (1)
+\end{DoxyCompactItemize}
+\subsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_sync_file_item_a170f6cc70d34740e855907b8be8db5a5}{\+\_\+file}
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_sync_file_item_a1477b5d5a4ed10601be559f3ab5c5bbb}{\+\_\+rename\+Target}
+\item 
+quint16 \hyperlink{class_o_c_c_1_1_sync_file_item_ae61906e1b9cbb1fd2249078360d041e2}{\+\_\+http\+Error\+Code}
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_sync_file_item_a9b99b37f1f92f1f2ee85dcc20ab36fcf}{\+\_\+error\+String}
+\item 
+Q\+Byte\+Array \hyperlink{class_o_c_c_1_1_sync_file_item_af674b8f74a6bf05d18d74165b75a7bae}{\+\_\+response\+Time\+Stamp}
+\item 
+quint64 \hyperlink{class_o_c_c_1_1_sync_file_item_a4ebf132e4eaa63eef7240b54275d222c}{\+\_\+request\+Duration}
+\item 
+quint32 \hyperlink{class_o_c_c_1_1_sync_file_item_aba64206e59dcf5d053875d2692d3bb21}{\+\_\+affected\+Items}
+\item 
+csync\+\_\+instructions\+\_\+e \hyperlink{class_o_c_c_1_1_sync_file_item_afeba56d35b3fb3f2b109c4389e67f179}{\+\_\+instruction}
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_sync_file_item_a91a1df24ca1b9f0e8d121225d042d8c5}{\+\_\+original\+File}
+\item 
+time\+\_\+t \hyperlink{class_o_c_c_1_1_sync_file_item_a900721b9ac04021aee2cc69e03d5840b}{\+\_\+modtime}
+\item 
+Q\+Byte\+Array \hyperlink{class_o_c_c_1_1_sync_file_item_afd0a1a1e591ba7b3f86808ac156903a4}{\+\_\+etag}
+\item 
+quint64 \hyperlink{class_o_c_c_1_1_sync_file_item_a53664d84166d3e6bd8e1d334b6f2a355}{\+\_\+size}
+\item 
+quint64 \hyperlink{class_o_c_c_1_1_sync_file_item_a41f1c70ee750eeaf8a4015a5f51c0f27}{\+\_\+inode}
+\item 
+Q\+Byte\+Array \hyperlink{class_o_c_c_1_1_sync_file_item_a39c091685bafa9d4a80e16ed0271115e}{\+\_\+file\+Id}
+\item 
+Q\+Byte\+Array \hyperlink{class_o_c_c_1_1_sync_file_item_a13341ce5c91089af058b8b50843338fb}{\+\_\+remote\+Perm}
+\item 
+Q\+Byte\+Array \hyperlink{class_o_c_c_1_1_sync_file_item_a30fe28c094c422f44801babd8e63deec}{\+\_\+content\+Checksum}
+\item 
+Q\+Byte\+Array \hyperlink{class_o_c_c_1_1_sync_file_item_a4e5df1284e1585f9ad6fc1f38b32f272}{\+\_\+content\+Checksum\+Type}
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_sync_file_item_a8119d1b7defae85c2d9405c38c25ec11}{\+\_\+direct\+Download\+Url}
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_sync_file_item_aa5e81ae32b653c030445b9f8e1fdcae5}{\+\_\+direct\+Download\+Cookies}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>quint64 \hyperlink{class_o_c_c_1_1_sync_file_item_a53664d84166d3e6bd8e1d334b6f2a355}{\_size}\\
+\>time\_t \hyperlink{class_o_c_c_1_1_sync_file_item_a900721b9ac04021aee2cc69e03d5840b}{\_modtime}\\
+\>QByteArray \hyperlink{class_o_c_c_1_1_sync_file_item_afd0a1a1e591ba7b3f86808ac156903a4}{\_etag}\\
+\>QByteArray \hyperlink{class_o_c_c_1_1_sync_file_item_a39c091685bafa9d4a80e16ed0271115e}{\_fileId}\\
+\>quint64 \hyperlink{class_o_c_c_1_1_sync_file_item_ada676cd317af2a37aa40a8c4b96a7dcc}{\_other\_size}\\
+\>time\_t \hyperlink{class_o_c_c_1_1_sync_file_item_ade922396965a8a23e7502ac053d29196}{\_other\_modtime}\\
+\>QByteArray \hyperlink{class_o_c_c_1_1_sync_file_item_a19b25141360821eca16bf016c75d9315}{\_other\_etag}\\
+\>QByteArray \hyperlink{class_o_c_c_1_1_sync_file_item_ae5a3588c7244ea4899e27aa727dc6f03}{\_other\_fileId}\\
+\} \hyperlink{class_o_c_c_1_1_sync_file_item_a4ce17b41b823e489e5e6bbf651b5f1c2}{log}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+\subsection*{友元}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_o_c_c_1_1_sync_file_item_a6c22b37e5da92ad2e7655c43fce5f335}{operator==} (const \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} \&item1, const \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} \&item2)
+\item 
+bool \hyperlink{class_o_c_c_1_1_sync_file_item_a5604437c536b0d80a805371dd6560739}{operator$<$} (const \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} \&item1, const \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} \&item2)
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+The \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} class 
+
+在文件 syncfileitem.\+h 第 40 行定义.
+
+
+
+\subsection{成员枚举类型说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922b}\label{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922b}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Direction@{Direction}}
+\index{Direction@{Direction}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily enum \hyperlink{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922b}{O\+C\+C\+::\+Sync\+File\+Item\+::\+Direction}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!None@{None}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922bac484dd612f0c79c95f35ff8f6dd0e6d8}\label{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922bac484dd612f0c79c95f35ff8f6dd0e6d8}} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Up@{Up}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Up@{Up}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922ba42097bff769b901e6e8d540d3b731b3d}\label{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922ba42097bff769b901e6e8d540d3b731b3d}} 
+Up&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Down@{Down}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Down@{Down}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922ba00f5e7e5529e77cdfd86825235ae248d}\label{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922ba00f5e7e5529e77cdfd86825235ae248d}} 
+Down&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+在文件 syncfileitem.\+h 第 42 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408}\label{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Status@{Status}}
+\index{Status@{Status}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408}{O\+C\+C\+::\+Sync\+File\+Item\+::\+Status}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{No\+Status@{No\+Status}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!No\+Status@{No\+Status}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a1eb4358635a761566dc0a905cc846c90}\label{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a1eb4358635a761566dc0a905cc846c90}} 
+No\+Status&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fatal\+Error@{Fatal\+Error}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Fatal\+Error@{Fatal\+Error}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a4886e3de3c84433c5fe34ce444fdb1ae}\label{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a4886e3de3c84433c5fe34ce444fdb1ae}} 
+Fatal\+Error&Error that causes the sync to stop \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Normal\+Error@{Normal\+Error}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Normal\+Error@{Normal\+Error}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a353097a1d8c4584b3001448161105d18}\label{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a353097a1d8c4584b3001448161105d18}} 
+Normal\+Error&Error attached to a particular file \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Soft\+Error@{Soft\+Error}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Soft\+Error@{Soft\+Error}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408ab1b53a7981c8f26a989b84611147dc26}\label{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408ab1b53a7981c8f26a989b84611147dc26}} 
+Soft\+Error&More like an information \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Success@{Success}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Success@{Success}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408afae1770f38dce166a6b9d0421481dead}\label{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408afae1770f38dce166a6b9d0421481dead}} 
+Success&The file was properly synced \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Conflict@{Conflict}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Conflict@{Conflict}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408ae8c47ef20502cc71ee772658feb4a07c}\label{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408ae8c47ef20502cc71ee772658feb4a07c}} 
+Conflict&The file was properly synced, but a conflict was created \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{File\+Ignored@{File\+Ignored}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!File\+Ignored@{File\+Ignored}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a25e0730a3f84fa2b29e3724643918a78}\label{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a25e0730a3f84fa2b29e3724643918a78}} 
+File\+Ignored&The file is in the ignored list (or blacklisted with no retries left) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Restoration@{Restoration}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Restoration@{Restoration}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a5ca7af4a60d9aa4b46183e41cf554094}\label{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408a5ca7af4a60d9aa4b46183e41cf554094}} 
+Restoration&The file was restored because what should have been done was not allowed \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+在文件 syncfileitem.\+h 第 54 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754}\label{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Type@{Type}}
+\index{Type@{Type}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \hyperlink{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754}{O\+C\+C\+::\+Sync\+File\+Item\+::\+Type}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown\+Type@{Unknown\+Type}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Unknown\+Type@{Unknown\+Type}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754ab74ea4777cee75b62eda42d5a638190f}\label{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754ab74ea4777cee75b62eda42d5a638190f}} 
+Unknown\+Type&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{File@{File}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!File@{File}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754aef1b538c3435a4423d96d7f262368c6d}\label{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754aef1b538c3435a4423d96d7f262368c6d}} 
+File&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Directory@{Directory}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Directory@{Directory}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754a5b5d06e0f11e0244ef25e91bbabeae39}\label{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754a5b5d06e0f11e0244ef25e91bbabeae39}} 
+Directory&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Soft\+Link@{Soft\+Link}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Soft\+Link@{Soft\+Link}}}\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754a6e94f40aae4b54f82d2b9510cd3ee220}\label{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754a6e94f40aae4b54f82d2b9510cd3ee220}} 
+Soft\+Link&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+在文件 syncfileitem.\+h 第 47 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ac2d467cf5f79e65f440597884ee4d78f}\label{class_o_c_c_1_1_sync_file_item_ac2d467cf5f79e65f440597884ee4d78f}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!Sync\+File\+Item@{Sync\+File\+Item}}
+\index{Sync\+File\+Item@{Sync\+File\+Item}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{Sync\+File\+Item()}{SyncFileItem()}}
+{\footnotesize\ttfamily O\+C\+C\+::\+Sync\+File\+Item\+::\+Sync\+File\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 syncfileitem.\+h 第 67 行定义.
+
+
+
+\subsection{成员函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a300444506fb80b86bfcb075f72905a01}\label{class_o_c_c_1_1_sync_file_item_a300444506fb80b86bfcb075f72905a01}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}}
+\index{B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{B\+I\+T\+F\+I\+E\+L\+D()}{BITFIELD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily \hyperlink{class_o_c_c_1_1_sync_file_item_ae6dda85439b3566dc79a922c11dee754}{Type} \+\_\+type O\+C\+C\+::\+Sync\+File\+Item\+::\+B\+I\+T\+F\+I\+E\+LD (\begin{DoxyParamCaption}\item[{3}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a9c687adf113ff7cc15d81b914266cbbd}\label{class_o_c_c_1_1_sync_file_item_a9c687adf113ff7cc15d81b914266cbbd}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}}
+\index{B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{B\+I\+T\+F\+I\+E\+L\+D()}{BITFIELD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily \hyperlink{class_o_c_c_1_1_sync_file_item_ad6db6c9821da051d0c790fb50603922b}{Direction} \+\_\+direction O\+C\+C\+::\+Sync\+File\+Item\+::\+B\+I\+T\+F\+I\+E\+LD (\begin{DoxyParamCaption}\item[{3}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_abd4cb1d7b3523792bdaa7563b2e88db7}\label{class_o_c_c_1_1_sync_file_item_abd4cb1d7b3523792bdaa7563b2e88db7}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}}
+\index{B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{B\+I\+T\+F\+I\+E\+L\+D()}{BITFIELD()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily bool \+\_\+is\+Directory O\+C\+C\+::\+Sync\+File\+Item\+::\+B\+I\+T\+F\+I\+E\+LD (\begin{DoxyParamCaption}\item[{1}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a1115f09ecc0bba3a76b018fc52a1b6e7}\label{class_o_c_c_1_1_sync_file_item_a1115f09ecc0bba3a76b018fc52a1b6e7}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}}
+\index{B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{B\+I\+T\+F\+I\+E\+L\+D()}{BITFIELD()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily bool \+\_\+server\+Has\+Ignored\+Files O\+C\+C\+::\+Sync\+File\+Item\+::\+B\+I\+T\+F\+I\+E\+LD (\begin{DoxyParamCaption}\item[{1}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a197653561a9ae15f991eedc7296b166f}\label{class_o_c_c_1_1_sync_file_item_a197653561a9ae15f991eedc7296b166f}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}}
+\index{B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{B\+I\+T\+F\+I\+E\+L\+D()}{BITFIELD()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily bool \+\_\+has\+Blacklist\+Entry O\+C\+C\+::\+Sync\+File\+Item\+::\+B\+I\+T\+F\+I\+E\+LD (\begin{DoxyParamCaption}\item[{1}]{ }\end{DoxyParamCaption})}
+
+Whether there\textquotesingle{}s an entry in the blacklist table. Note\+: that entry may have retries left, so this can be true without the status being File\+Ignored. \mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a98651c89e864147d021b2078d8399c53}\label{class_o_c_c_1_1_sync_file_item_a98651c89e864147d021b2078d8399c53}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}}
+\index{B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{B\+I\+T\+F\+I\+E\+L\+D()}{BITFIELD()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily bool \+\_\+error\+May\+Be\+Blacklisted O\+C\+C\+::\+Sync\+File\+Item\+::\+B\+I\+T\+F\+I\+E\+LD (\begin{DoxyParamCaption}\item[{1}]{ }\end{DoxyParamCaption})}
+
+If true and Normal\+Error, this error may be blacklisted
+
+Note that non-\/local errors (http\+Error\+Code!=0) may also be blacklisted independently of this flag. \mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a0b2c255ae9d806b6fa36dc5bfddc97c8}\label{class_o_c_c_1_1_sync_file_item_a0b2c255ae9d806b6fa36dc5bfddc97c8}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}}
+\index{B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{B\+I\+T\+F\+I\+E\+L\+D()}{BITFIELD()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily \hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408}{Status} \+\_\+status O\+C\+C\+::\+Sync\+File\+Item\+::\+B\+I\+T\+F\+I\+E\+LD (\begin{DoxyParamCaption}\item[{4}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a9589dd81e18b0f0bacce19674feb308e}\label{class_o_c_c_1_1_sync_file_item_a9589dd81e18b0f0bacce19674feb308e}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}}
+\index{B\+I\+T\+F\+I\+E\+LD@{B\+I\+T\+F\+I\+E\+LD}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{B\+I\+T\+F\+I\+E\+L\+D()}{BITFIELD()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily bool \+\_\+is\+Restoration O\+C\+C\+::\+Sync\+File\+Item\+::\+B\+I\+T\+F\+I\+E\+LD (\begin{DoxyParamCaption}\item[{1}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a6760b5f7a7624fa7b75070e3e5eab55d}\label{class_o_c_c_1_1_sync_file_item_a6760b5f7a7624fa7b75070e3e5eab55d}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!destination@{destination}}
+\index{destination@{destination}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{destination()}{destination()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Sync\+File\+Item\+::destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 syncfileitem.\+h 第 111 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a9605a8ff213a000a039122801575ea33}\label{class_o_c_c_1_1_sync_file_item_a9605a8ff213a000a039122801575ea33}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!has\+Error\+Status@{has\+Error\+Status}}
+\index{has\+Error\+Status@{has\+Error\+Status}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{has\+Error\+Status()}{hasErrorStatus()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Sync\+File\+Item\+::has\+Error\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+True if the item had any kind of error.
+
+Used for deciding whether an item belongs to the protocol or the issues list on the activity page and for checking whether an item should be announced in the notification message. 
+
+在文件 syncfileitem.\+h 第 129 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a50e53014c5068af9e613649cf5e08f5e}\label{class_o_c_c_1_1_sync_file_item_a50e53014c5068af9e613649cf5e08f5e}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Sync\+File\+Item\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 syncfileitem.\+h 第 118 行定义.
+
+
+
+\subsection{友元及相关函数文档}
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a5604437c536b0d80a805371dd6560739}\label{class_o_c_c_1_1_sync_file_item_a5604437c536b0d80a805371dd6560739}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{operator$<$}{operator<}}
+{\footnotesize\ttfamily bool operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} \&}]{item1,  }\item[{const \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} \&}]{item2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+在文件 syncfileitem.\+h 第 80 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a6c22b37e5da92ad2e7655c43fce5f335}\label{class_o_c_c_1_1_sync_file_item_a6c22b37e5da92ad2e7655c43fce5f335}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!operator==@{operator==}}
+\index{operator==@{operator==}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} \&}]{item1,  }\item[{const \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} \&}]{item2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+在文件 syncfileitem.\+h 第 76 行定义.
+
+
+
+\subsection{类成员变量说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_aba64206e59dcf5d053875d2692d3bb21}\label{class_o_c_c_1_1_sync_file_item_aba64206e59dcf5d053875d2692d3bb21}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+affected\+Items@{\+\_\+affected\+Items}}
+\index{\+\_\+affected\+Items@{\+\_\+affected\+Items}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+affected\+Items}{\_affectedItems}}
+{\footnotesize\ttfamily quint32 O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+affected\+Items}
+
+
+
+在文件 syncfileitem.\+h 第 164 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a30fe28c094c422f44801babd8e63deec}\label{class_o_c_c_1_1_sync_file_item_a30fe28c094c422f44801babd8e63deec}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+content\+Checksum@{\+\_\+content\+Checksum}}
+\index{\+\_\+content\+Checksum@{\+\_\+content\+Checksum}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+content\+Checksum}{\_contentChecksum}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+content\+Checksum}
+
+
+
+在文件 syncfileitem.\+h 第 176 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a4e5df1284e1585f9ad6fc1f38b32f272}\label{class_o_c_c_1_1_sync_file_item_a4e5df1284e1585f9ad6fc1f38b32f272}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+content\+Checksum\+Type@{\+\_\+content\+Checksum\+Type}}
+\index{\+\_\+content\+Checksum\+Type@{\+\_\+content\+Checksum\+Type}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+content\+Checksum\+Type}{\_contentChecksumType}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+content\+Checksum\+Type}
+
+
+
+在文件 syncfileitem.\+h 第 177 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_aa5e81ae32b653c030445b9f8e1fdcae5}\label{class_o_c_c_1_1_sync_file_item_aa5e81ae32b653c030445b9f8e1fdcae5}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+direct\+Download\+Cookies@{\+\_\+direct\+Download\+Cookies}}
+\index{\+\_\+direct\+Download\+Cookies@{\+\_\+direct\+Download\+Cookies}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+direct\+Download\+Cookies}{\_directDownloadCookies}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+direct\+Download\+Cookies}
+
+
+
+在文件 syncfileitem.\+h 第 179 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a8119d1b7defae85c2d9405c38c25ec11}\label{class_o_c_c_1_1_sync_file_item_a8119d1b7defae85c2d9405c38c25ec11}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+direct\+Download\+Url@{\+\_\+direct\+Download\+Url}}
+\index{\+\_\+direct\+Download\+Url@{\+\_\+direct\+Download\+Url}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+direct\+Download\+Url}{\_directDownloadUrl}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+direct\+Download\+Url}
+
+
+
+在文件 syncfileitem.\+h 第 178 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a9b99b37f1f92f1f2ee85dcc20ab36fcf}\label{class_o_c_c_1_1_sync_file_item_a9b99b37f1f92f1f2ee85dcc20ab36fcf}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+error\+String@{\+\_\+error\+String}}
+\index{\+\_\+error\+String@{\+\_\+error\+String}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+error\+String}{\_errorString}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+error\+String}
+
+
+
+在文件 syncfileitem.\+h 第 161 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_afd0a1a1e591ba7b3f86808ac156903a4}\label{class_o_c_c_1_1_sync_file_item_afd0a1a1e591ba7b3f86808ac156903a4}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+etag@{\+\_\+etag}}
+\index{\+\_\+etag@{\+\_\+etag}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+etag}{\_etag}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+etag}
+
+
+
+在文件 syncfileitem.\+h 第 171 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a170f6cc70d34740e855907b8be8db5a5}\label{class_o_c_c_1_1_sync_file_item_a170f6cc70d34740e855907b8be8db5a5}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+file@{\+\_\+file}}
+\index{\+\_\+file@{\+\_\+file}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+file}{\_file}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+file}
+
+
+
+在文件 syncfileitem.\+h 第 138 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a39c091685bafa9d4a80e16ed0271115e}\label{class_o_c_c_1_1_sync_file_item_a39c091685bafa9d4a80e16ed0271115e}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+file\+Id@{\+\_\+file\+Id}}
+\index{\+\_\+file\+Id@{\+\_\+file\+Id}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+file\+Id}{\_fileId}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+file\+Id}
+
+
+
+在文件 syncfileitem.\+h 第 174 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ae61906e1b9cbb1fd2249078360d041e2}\label{class_o_c_c_1_1_sync_file_item_ae61906e1b9cbb1fd2249078360d041e2}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+http\+Error\+Code@{\+\_\+http\+Error\+Code}}
+\index{\+\_\+http\+Error\+Code@{\+\_\+http\+Error\+Code}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+http\+Error\+Code}{\_httpErrorCode}}
+{\footnotesize\ttfamily quint16 O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+http\+Error\+Code}
+
+
+
+在文件 syncfileitem.\+h 第 160 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a41f1c70ee750eeaf8a4015a5f51c0f27}\label{class_o_c_c_1_1_sync_file_item_a41f1c70ee750eeaf8a4015a5f51c0f27}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+inode@{\+\_\+inode}}
+\index{\+\_\+inode@{\+\_\+inode}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+inode}{\_inode}}
+{\footnotesize\ttfamily quint64 O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+inode}
+
+
+
+在文件 syncfileitem.\+h 第 173 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_afeba56d35b3fb3f2b109c4389e67f179}\label{class_o_c_c_1_1_sync_file_item_afeba56d35b3fb3f2b109c4389e67f179}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+instruction@{\+\_\+instruction}}
+\index{\+\_\+instruction@{\+\_\+instruction}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+instruction}{\_instruction}}
+{\footnotesize\ttfamily csync\+\_\+instructions\+\_\+e O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+instruction}
+
+
+
+在文件 syncfileitem.\+h 第 168 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a900721b9ac04021aee2cc69e03d5840b}\label{class_o_c_c_1_1_sync_file_item_a900721b9ac04021aee2cc69e03d5840b}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+modtime@{\+\_\+modtime}}
+\index{\+\_\+modtime@{\+\_\+modtime}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+modtime}{\_modtime}}
+{\footnotesize\ttfamily time\+\_\+t O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+modtime}
+
+
+
+在文件 syncfileitem.\+h 第 170 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a91a1df24ca1b9f0e8d121225d042d8c5}\label{class_o_c_c_1_1_sync_file_item_a91a1df24ca1b9f0e8d121225d042d8c5}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+original\+File@{\+\_\+original\+File}}
+\index{\+\_\+original\+File@{\+\_\+original\+File}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+original\+File}{\_originalFile}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+original\+File}
+
+
+
+在文件 syncfileitem.\+h 第 169 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a19b25141360821eca16bf016c75d9315}\label{class_o_c_c_1_1_sync_file_item_a19b25141360821eca16bf016c75d9315}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+other\+\_\+etag@{\+\_\+other\+\_\+etag}}
+\index{\+\_\+other\+\_\+etag@{\+\_\+other\+\_\+etag}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+other\+\_\+etag}{\_other\_etag}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+other\+\_\+etag}
+
+
+
+在文件 syncfileitem.\+h 第 188 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ae5a3588c7244ea4899e27aa727dc6f03}\label{class_o_c_c_1_1_sync_file_item_ae5a3588c7244ea4899e27aa727dc6f03}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+other\+\_\+file\+Id@{\+\_\+other\+\_\+file\+Id}}
+\index{\+\_\+other\+\_\+file\+Id@{\+\_\+other\+\_\+file\+Id}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+other\+\_\+file\+Id}{\_other\_fileId}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+other\+\_\+file\+Id}
+
+
+
+在文件 syncfileitem.\+h 第 189 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ade922396965a8a23e7502ac053d29196}\label{class_o_c_c_1_1_sync_file_item_ade922396965a8a23e7502ac053d29196}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+other\+\_\+modtime@{\+\_\+other\+\_\+modtime}}
+\index{\+\_\+other\+\_\+modtime@{\+\_\+other\+\_\+modtime}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+other\+\_\+modtime}{\_other\_modtime}}
+{\footnotesize\ttfamily time\+\_\+t O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+other\+\_\+modtime}
+
+
+
+在文件 syncfileitem.\+h 第 187 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_ada676cd317af2a37aa40a8c4b96a7dcc}\label{class_o_c_c_1_1_sync_file_item_ada676cd317af2a37aa40a8c4b96a7dcc}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+other\+\_\+size@{\+\_\+other\+\_\+size}}
+\index{\+\_\+other\+\_\+size@{\+\_\+other\+\_\+size}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+other\+\_\+size}{\_other\_size}}
+{\footnotesize\ttfamily quint64 O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+other\+\_\+size}
+
+
+
+在文件 syncfileitem.\+h 第 186 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a13341ce5c91089af058b8b50843338fb}\label{class_o_c_c_1_1_sync_file_item_a13341ce5c91089af058b8b50843338fb}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+remote\+Perm@{\+\_\+remote\+Perm}}
+\index{\+\_\+remote\+Perm@{\+\_\+remote\+Perm}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+remote\+Perm}{\_remotePerm}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+remote\+Perm}
+
+
+
+在文件 syncfileitem.\+h 第 175 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a1477b5d5a4ed10601be559f3ab5c5bbb}\label{class_o_c_c_1_1_sync_file_item_a1477b5d5a4ed10601be559f3ab5c5bbb}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+rename\+Target@{\+\_\+rename\+Target}}
+\index{\+\_\+rename\+Target@{\+\_\+rename\+Target}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+rename\+Target}{\_renameTarget}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+rename\+Target}
+
+
+
+在文件 syncfileitem.\+h 第 139 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a4ebf132e4eaa63eef7240b54275d222c}\label{class_o_c_c_1_1_sync_file_item_a4ebf132e4eaa63eef7240b54275d222c}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+request\+Duration@{\+\_\+request\+Duration}}
+\index{\+\_\+request\+Duration@{\+\_\+request\+Duration}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+request\+Duration}{\_requestDuration}}
+{\footnotesize\ttfamily quint64 O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+request\+Duration}
+
+
+
+在文件 syncfileitem.\+h 第 163 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_af674b8f74a6bf05d18d74165b75a7bae}\label{class_o_c_c_1_1_sync_file_item_af674b8f74a6bf05d18d74165b75a7bae}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+response\+Time\+Stamp@{\+\_\+response\+Time\+Stamp}}
+\index{\+\_\+response\+Time\+Stamp@{\+\_\+response\+Time\+Stamp}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+response\+Time\+Stamp}{\_responseTimeStamp}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+response\+Time\+Stamp}
+
+
+
+在文件 syncfileitem.\+h 第 162 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a53664d84166d3e6bd8e1d334b6f2a355}\label{class_o_c_c_1_1_sync_file_item_a53664d84166d3e6bd8e1d334b6f2a355}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!\+\_\+size@{\+\_\+size}}
+\index{\+\_\+size@{\+\_\+size}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{\+\_\+size}{\_size}}
+{\footnotesize\ttfamily quint64 O\+C\+C\+::\+Sync\+File\+Item\+::\+\_\+size}
+
+
+
+在文件 syncfileitem.\+h 第 172 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_sync_file_item_a4ce17b41b823e489e5e6bbf651b5f1c2}\label{class_o_c_c_1_1_sync_file_item_a4ce17b41b823e489e5e6bbf651b5f1c2}} 
+\index{O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}!log@{log}}
+\index{log@{log}!O\+C\+C\+::\+Sync\+File\+Item@{O\+C\+C\+::\+Sync\+File\+Item}}
+\subsubsection{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily struct \{ ... \}   O\+C\+C\+::\+Sync\+File\+Item\+::log}
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{syncfileitem_8h}{syncfileitem.\+h}\end{DoxyCompactItemize}

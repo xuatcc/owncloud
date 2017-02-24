@@ -1,0 +1,399 @@
+\hypertarget{class_o_c_c_1_1_owncloud_propagator}{}\section{O\+CC\+:\+:Owncloud\+Propagator类 参考}
+\label{class_o_c_c_1_1_owncloud_propagator}\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+
+
+{\ttfamily \#include $<$owncloudpropagator.\+h$>$}
+
+类 O\+CC\+:\+:Owncloud\+Propagator 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_o_c_c_1_1_owncloud_propagator}
+\end{center}
+\end{figure}
+\subsection*{Public 类型}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33be}{Disk\+Space\+Result} \{ \hyperlink{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33bea4e6bb75b6ebc03a4a384fa1b716ee8ce}{Disk\+Space\+Ok}, 
+\hyperlink{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33bea1bc74581e8d4a57fb8b69c3a49bff517}{Disk\+Space\+Failure}, 
+\hyperlink{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33beaa06a8d32e6dd3930dfc075f6cfa97d83}{Disk\+Space\+Critical}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{信号}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_o_c_c_1_1_owncloud_propagator_aa73d79b989e4cf52c66f0f0a3842cc14}{item\+Completed} (const \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} \&, const \hyperlink{class_o_c_c_1_1_propagator_job}{Propagator\+Job} \&)
+\item 
+void \hyperlink{class_o_c_c_1_1_owncloud_propagator_aa83ba6b612d6f37e9be97cd03805f1b4}{progress} (const \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} \&, quint64 bytes)
+\item 
+void \hyperlink{class_o_c_c_1_1_owncloud_propagator_a212fb87896e4797565cbe78ea3caebbf}{finished} (bool success)
+\item 
+void \hyperlink{class_o_c_c_1_1_owncloud_propagator_ac5efffe29f914985d15d7724a02ea4dd}{seen\+Locked\+File} (const Q\+String \&file\+Name)
+\item 
+void \hyperlink{class_o_c_c_1_1_owncloud_propagator_a167aa8a8e70143acb11e5eeebe7c8036}{touched\+File} (const Q\+String \&file\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_o_c_c_1_1_owncloud_propagator_a76d1b5d61995a2a2f5a886ede463d2da}{Owncloud\+Propagator} (\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr} \hyperlink{class_o_c_c_1_1_owncloud_propagator_a1bb27ec3d83c2030eba874f0e07cb2d2}{account}, const Q\+String \&local\+Dir, const Q\+String \&remote\+Folder, \hyperlink{class_o_c_c_1_1_sync_journal_db}{Sync\+Journal\+Db} $\ast$progress\+Db)
+\item 
+\hyperlink{class_o_c_c_1_1_owncloud_propagator_a838d69319f20a48b445e4231faa71296}{$\sim$\+Owncloud\+Propagator} ()
+\item 
+void \hyperlink{class_o_c_c_1_1_owncloud_propagator_ab5d32d3f9452e6ff1aafd3e2868a5fa6}{start} (const \hyperlink{namespace_o_c_c_af407f0fdf0476e0bfce478be3d0e441e}{Sync\+File\+Item\+Vector} \&\+\_\+synced\+Items)
+\item 
+int \hyperlink{class_o_c_c_1_1_owncloud_propagator_af29504f51670252ebe0b6d5890e48378}{maximum\+Active\+Job} ()
+\item 
+int \hyperlink{class_o_c_c_1_1_owncloud_propagator_a584e31a3eaf4f38b49a50dc06ac17d1e}{hard\+Maximum\+Active\+Job} ()
+\item 
+bool \hyperlink{class_o_c_c_1_1_owncloud_propagator_aae9c81644e3b7a5633436c62abba92c3}{is\+In\+Shared\+Directory} (const Q\+String \&file)
+\item 
+bool \hyperlink{class_o_c_c_1_1_owncloud_propagator_a788e9ca335f086bca57798bf637cadb6}{local\+File\+Name\+Clash} (const Q\+String \&relfile)
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_owncloud_propagator_ae94f1cb02a462cab7fc47aad378b1d8e}{get\+File\+Path} (const Q\+String \&tmp\+\_\+file\+\_\+name) const
+\item 
+void \hyperlink{class_o_c_c_1_1_owncloud_propagator_ae7fa9ddba35fbae1f8fbcb54d1a6863a}{abort} ()
+\item 
+\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr} \hyperlink{class_o_c_c_1_1_owncloud_propagator_a1bb27ec3d83c2030eba874f0e07cb2d2}{account} () const
+\item 
+\hyperlink{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33be}{Disk\+Space\+Result} \hyperlink{class_o_c_c_1_1_owncloud_propagator_aeb9531d91dbde54327384fa14dc72ac9}{disk\+Space\+Check} () const
+\end{DoxyCompactItemize}
+\subsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{class_o_c_c_1_1_owncloud_propagator_a3e27712c81f88179dcdcd94e1a8e4431}{http\+Timeout} ()
+\item 
+static quint64 \hyperlink{class_o_c_c_1_1_owncloud_propagator_a3932867fca1b6e8c53ec5387c69708a4}{chunk\+Size} ()
+\end{DoxyCompactItemize}
+\subsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+const Q\+String \hyperlink{class_o_c_c_1_1_owncloud_propagator_ab36bd049c56d4e5e76a9fcbbdf2d7230}{\+\_\+local\+Dir}
+\item 
+const Q\+String \hyperlink{class_o_c_c_1_1_owncloud_propagator_af1db4c1fcff6c012e372de47c1814b12}{\+\_\+remote\+Folder}
+\item 
+\hyperlink{class_o_c_c_1_1_sync_journal_db}{Sync\+Journal\+Db} $\ast$const \hyperlink{class_o_c_c_1_1_owncloud_propagator_add49de94586382a0f18ecf417dc389f8}{\+\_\+journal}
+\item 
+bool \hyperlink{class_o_c_c_1_1_owncloud_propagator_a9cde1633042a8343d0fede4589fc09f7}{\+\_\+finished\+Emited}
+\item 
+Q\+Atomic\+Int \hyperlink{class_o_c_c_1_1_owncloud_propagator_abe6e16eae30c09e6a40f309aaec85766}{\+\_\+download\+Limit}
+\item 
+Q\+Atomic\+Int \hyperlink{class_o_c_c_1_1_owncloud_propagator_a5d180311654080414fd82638ad64467d}{\+\_\+upload\+Limit}
+\item 
+\hyperlink{class_o_c_c_1_1_bandwidth_manager}{Bandwidth\+Manager} \hyperlink{class_o_c_c_1_1_owncloud_propagator_a9fd7eb3234acf295e37c94414fca0867}{\+\_\+bandwidth\+Manager}
+\item 
+Q\+Atomic\+Int \hyperlink{class_o_c_c_1_1_owncloud_propagator_a492f3a3d5faea06844955209aa0a70c1}{\+\_\+abort\+Requested}
+\item 
+Q\+List$<$ \hyperlink{class_o_c_c_1_1_propagate_item_job}{Propagate\+Item\+Job} $\ast$ $>$ \hyperlink{class_o_c_c_1_1_owncloud_propagator_a5f04bef49c8ac2fb7b4f2fddbc022219}{\+\_\+active\+Job\+List}
+\item 
+bool \hyperlink{class_o_c_c_1_1_owncloud_propagator_abefc3d008a6bab7e5d22c8d03066b6f5}{\+\_\+another\+Sync\+Needed}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+
+
+在文件 owncloudpropagator.\+h 第 262 行定义.
+
+
+
+\subsection{成员枚举类型说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33be}\label{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33be}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!Disk\+Space\+Result@{Disk\+Space\+Result}}
+\index{Disk\+Space\+Result@{Disk\+Space\+Result}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{Disk\+Space\+Result}{DiskSpaceResult}}
+{\footnotesize\ttfamily enum \hyperlink{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33be}{O\+C\+C\+::\+Owncloud\+Propagator\+::\+Disk\+Space\+Result}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Disk\+Space\+Ok@{Disk\+Space\+Ok}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!Disk\+Space\+Ok@{Disk\+Space\+Ok}}}\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33bea4e6bb75b6ebc03a4a384fa1b716ee8ce}\label{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33bea4e6bb75b6ebc03a4a384fa1b716ee8ce}} 
+Disk\+Space\+Ok&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Disk\+Space\+Failure@{Disk\+Space\+Failure}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!Disk\+Space\+Failure@{Disk\+Space\+Failure}}}\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33bea1bc74581e8d4a57fb8b69c3a49bff517}\label{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33bea1bc74581e8d4a57fb8b69c3a49bff517}} 
+Disk\+Space\+Failure&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Disk\+Space\+Critical@{Disk\+Space\+Critical}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!Disk\+Space\+Critical@{Disk\+Space\+Critical}}}\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33beaa06a8d32e6dd3930dfc075f6cfa97d83}\label{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33beaa06a8d32e6dd3930dfc075f6cfa97d83}} 
+Disk\+Space\+Critical&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+在文件 owncloudpropagator.\+h 第 333 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a76d1b5d61995a2a2f5a886ede463d2da}\label{class_o_c_c_1_1_owncloud_propagator_a76d1b5d61995a2a2f5a886ede463d2da}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!Owncloud\+Propagator@{Owncloud\+Propagator}}
+\index{Owncloud\+Propagator@{Owncloud\+Propagator}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{Owncloud\+Propagator()}{OwncloudPropagator()}}
+{\footnotesize\ttfamily O\+C\+C\+::\+Owncloud\+Propagator\+::\+Owncloud\+Propagator (\begin{DoxyParamCaption}\item[{\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr}}]{account,  }\item[{const Q\+String \&}]{local\+Dir,  }\item[{const Q\+String \&}]{remote\+Folder,  }\item[{\hyperlink{class_o_c_c_1_1_sync_journal_db}{Sync\+Journal\+Db} $\ast$}]{progress\+Db }\end{DoxyParamCaption})}
+
+
+
+在文件 owncloudpropagator.\+h 第 277 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a838d69319f20a48b445e4231faa71296}\label{class_o_c_c_1_1_owncloud_propagator_a838d69319f20a48b445e4231faa71296}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!````~Owncloud\+Propagator@{$\sim$\+Owncloud\+Propagator}}
+\index{````~Owncloud\+Propagator@{$\sim$\+Owncloud\+Propagator}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{$\sim$\+Owncloud\+Propagator()}{~OwncloudPropagator()}}
+{\footnotesize\ttfamily O\+C\+C\+::\+Owncloud\+Propagator\+::$\sim$\+Owncloud\+Propagator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 owncloudpropagator.\+cpp 第 71 行定义.
+
+
+
+\subsection{成员函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_ae7fa9ddba35fbae1f8fbcb54d1a6863a}\label{class_o_c_c_1_1_owncloud_propagator_ae7fa9ddba35fbae1f8fbcb54d1a6863a}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!abort@{abort}}
+\index{abort@{abort}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{abort()}{abort()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Owncloud\+Propagator\+::abort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 owncloudpropagator.\+h 第 317 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a1bb27ec3d83c2030eba874f0e07cb2d2}\label{class_o_c_c_1_1_owncloud_propagator_a1bb27ec3d83c2030eba874f0e07cb2d2}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!account@{account}}
+\index{account@{account}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{account()}{account()}}
+{\footnotesize\ttfamily \hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr} O\+C\+C\+::\+Owncloud\+Propagator\+::account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 owncloudpropagator.\+cpp 第 552 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a3932867fca1b6e8c53ec5387c69708a4}\label{class_o_c_c_1_1_owncloud_propagator_a3932867fca1b6e8c53ec5387c69708a4}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!chunk\+Size@{chunk\+Size}}
+\index{chunk\+Size@{chunk\+Size}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{chunk\+Size()}{chunkSize()}}
+{\footnotesize\ttfamily quint64 O\+C\+C\+::\+Owncloud\+Propagator\+::chunk\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns the size of chunks in bytes 
+
+在文件 owncloudpropagator.\+cpp 第 449 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_aeb9531d91dbde54327384fa14dc72ac9}\label{class_o_c_c_1_1_owncloud_propagator_aeb9531d91dbde54327384fa14dc72ac9}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!disk\+Space\+Check@{disk\+Space\+Check}}
+\index{disk\+Space\+Check@{disk\+Space\+Check}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{disk\+Space\+Check()}{diskSpaceCheck()}}
+{\footnotesize\ttfamily \hyperlink{class_o_c_c_1_1_owncloud_propagator_ae2cce7b4bd60db44bf8e2b77a11e33be}{Owncloud\+Propagator\+::\+Disk\+Space\+Result} O\+C\+C\+::\+Owncloud\+Propagator\+::disk\+Space\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Checks whether there\textquotesingle{}s enough disk space available to complete all jobs that are currently running. 
+
+在文件 owncloudpropagator.\+cpp 第 557 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a212fb87896e4797565cbe78ea3caebbf}\label{class_o_c_c_1_1_owncloud_propagator_a212fb87896e4797565cbe78ea3caebbf}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!finished@{finished}}
+\index{finished@{finished}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{finished}{finished}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Owncloud\+Propagator\+::finished (\begin{DoxyParamCaption}\item[{bool}]{success }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_ae94f1cb02a462cab7fc47aad378b1d8e}\label{class_o_c_c_1_1_owncloud_propagator_ae94f1cb02a462cab7fc47aad378b1d8e}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!get\+File\+Path@{get\+File\+Path}}
+\index{get\+File\+Path@{get\+File\+Path}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{get\+File\+Path()}{getFilePath()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+Owncloud\+Propagator\+::get\+File\+Path (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{tmp\+\_\+file\+\_\+name }\end{DoxyParamCaption}) const}
+
+
+
+在文件 owncloudpropagator.\+cpp 第 516 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a584e31a3eaf4f38b49a50dc06ac17d1e}\label{class_o_c_c_1_1_owncloud_propagator_a584e31a3eaf4f38b49a50dc06ac17d1e}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!hard\+Maximum\+Active\+Job@{hard\+Maximum\+Active\+Job}}
+\index{hard\+Maximum\+Active\+Job@{hard\+Maximum\+Active\+Job}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{hard\+Maximum\+Active\+Job()}{hardMaximumActiveJob()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Owncloud\+Propagator\+::hard\+Maximum\+Active\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 owncloudpropagator.\+cpp 第 90 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a3e27712c81f88179dcdcd94e1a8e4431}\label{class_o_c_c_1_1_owncloud_propagator_a3e27712c81f88179dcdcd94e1a8e4431}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!http\+Timeout@{http\+Timeout}}
+\index{http\+Timeout@{http\+Timeout}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{http\+Timeout()}{httpTimeout()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Owncloud\+Propagator\+::http\+Timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+在文件 owncloudpropagator.\+cpp 第 435 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_aae9c81644e3b7a5633436c62abba92c3}\label{class_o_c_c_1_1_owncloud_propagator_aae9c81644e3b7a5633436c62abba92c3}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!is\+In\+Shared\+Directory@{is\+In\+Shared\+Directory}}
+\index{is\+In\+Shared\+Directory@{is\+In\+Shared\+Directory}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{is\+In\+Shared\+Directory()}{isInSharedDirectory()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Owncloud\+Propagator\+::is\+In\+Shared\+Directory (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file }\end{DoxyParamCaption})}
+
+
+
+在文件 owncloudpropagator.\+cpp 第 420 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_aa73d79b989e4cf52c66f0f0a3842cc14}\label{class_o_c_c_1_1_owncloud_propagator_aa73d79b989e4cf52c66f0f0a3842cc14}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!item\+Completed@{item\+Completed}}
+\index{item\+Completed@{item\+Completed}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{item\+Completed}{itemCompleted}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Owncloud\+Propagator\+::item\+Completed (\begin{DoxyParamCaption}\item[{const \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} \&}]{,  }\item[{const \hyperlink{class_o_c_c_1_1_propagator_job}{Propagator\+Job} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a788e9ca335f086bca57798bf637cadb6}\label{class_o_c_c_1_1_owncloud_propagator_a788e9ca335f086bca57798bf637cadb6}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!local\+File\+Name\+Clash@{local\+File\+Name\+Clash}}
+\index{local\+File\+Name\+Clash@{local\+File\+Name\+Clash}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{local\+File\+Name\+Clash()}{localFileNameClash()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Owncloud\+Propagator\+::local\+File\+Name\+Clash (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{relfile }\end{DoxyParamCaption})}
+
+
+
+在文件 owncloudpropagator.\+cpp 第 463 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_af29504f51670252ebe0b6d5890e48378}\label{class_o_c_c_1_1_owncloud_propagator_af29504f51670252ebe0b6d5890e48378}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!maximum\+Active\+Job@{maximum\+Active\+Job}}
+\index{maximum\+Active\+Job@{maximum\+Active\+Job}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{maximum\+Active\+Job()}{maximumActiveJob()}}
+{\footnotesize\ttfamily int O\+C\+C\+::\+Owncloud\+Propagator\+::maximum\+Active\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 owncloudpropagator.\+cpp 第 75 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_aa83ba6b612d6f37e9be97cd03805f1b4}\label{class_o_c_c_1_1_owncloud_propagator_aa83ba6b612d6f37e9be97cd03805f1b4}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!progress@{progress}}
+\index{progress@{progress}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{progress}{progress}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Owncloud\+Propagator\+::progress (\begin{DoxyParamCaption}\item[{const \hyperlink{class_o_c_c_1_1_sync_file_item}{Sync\+File\+Item} \&}]{,  }\item[{quint64}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_ac5efffe29f914985d15d7724a02ea4dd}\label{class_o_c_c_1_1_owncloud_propagator_ac5efffe29f914985d15d7724a02ea4dd}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!seen\+Locked\+File@{seen\+Locked\+File}}
+\index{seen\+Locked\+File@{seen\+Locked\+File}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{seen\+Locked\+File}{seenLockedFile}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Owncloud\+Propagator\+::seen\+Locked\+File (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Emitted when propagation has problems with a locked file. \mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_ab5d32d3f9452e6ff1aafd3e2868a5fa6}\label{class_o_c_c_1_1_owncloud_propagator_ab5d32d3f9452e6ff1aafd3e2868a5fa6}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!start@{start}}
+\index{start@{start}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Owncloud\+Propagator\+::start (\begin{DoxyParamCaption}\item[{const \hyperlink{namespace_o_c_c_af407f0fdf0476e0bfce478be3d0e441e}{Sync\+File\+Item\+Vector} \&}]{\+\_\+synced\+Items }\end{DoxyParamCaption})}
+
+
+
+在文件 owncloudpropagator.\+cpp 第 302 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a167aa8a8e70143acb11e5eeebe7c8036}\label{class_o_c_c_1_1_owncloud_propagator_a167aa8a8e70143acb11e5eeebe7c8036}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!touched\+File@{touched\+File}}
+\index{touched\+File@{touched\+File}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{touched\+File}{touchedFile}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+Owncloud\+Propagator\+::touched\+File (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Emitted when propagation touches a file.
+
+Used to track our own file modifications such that notifications from the file watcher about these can be ignored. 
+
+\subsection{类成员变量说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a492f3a3d5faea06844955209aa0a70c1}\label{class_o_c_c_1_1_owncloud_propagator_a492f3a3d5faea06844955209aa0a70c1}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!\+\_\+abort\+Requested@{\+\_\+abort\+Requested}}
+\index{\+\_\+abort\+Requested@{\+\_\+abort\+Requested}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{\+\_\+abort\+Requested}{\_abortRequested}}
+{\footnotesize\ttfamily Q\+Atomic\+Int O\+C\+C\+::\+Owncloud\+Propagator\+::\+\_\+abort\+Requested}
+
+
+
+在文件 owncloudpropagator.\+h 第 296 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a5f04bef49c8ac2fb7b4f2fddbc022219}\label{class_o_c_c_1_1_owncloud_propagator_a5f04bef49c8ac2fb7b4f2fddbc022219}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!\+\_\+active\+Job\+List@{\+\_\+active\+Job\+List}}
+\index{\+\_\+active\+Job\+List@{\+\_\+active\+Job\+List}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{\+\_\+active\+Job\+List}{\_activeJobList}}
+{\footnotesize\ttfamily Q\+List$<$\hyperlink{class_o_c_c_1_1_propagate_item_job}{Propagate\+Item\+Job}$\ast$$>$ O\+C\+C\+::\+Owncloud\+Propagator\+::\+\_\+active\+Job\+List}
+
+The list of currently active jobs. This list contains the jobs that are currently using ressources and is used purely to know how many jobs there is currently running for the scheduler. Jobs add themself to the list when they do an assynchronous operation. Jobs can be several time on the list (example, when several chunks are uploaded in parallel) 
+
+在文件 owncloudpropagator.\+h 第 304 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_abefc3d008a6bab7e5d22c8d03066b6f5}\label{class_o_c_c_1_1_owncloud_propagator_abefc3d008a6bab7e5d22c8d03066b6f5}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!\+\_\+another\+Sync\+Needed@{\+\_\+another\+Sync\+Needed}}
+\index{\+\_\+another\+Sync\+Needed@{\+\_\+another\+Sync\+Needed}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{\+\_\+another\+Sync\+Needed}{\_anotherSyncNeeded}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Owncloud\+Propagator\+::\+\_\+another\+Sync\+Needed}
+
+We detected that another sync is required after this one 
+
+在文件 owncloudpropagator.\+h 第 307 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a9fd7eb3234acf295e37c94414fca0867}\label{class_o_c_c_1_1_owncloud_propagator_a9fd7eb3234acf295e37c94414fca0867}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!\+\_\+bandwidth\+Manager@{\+\_\+bandwidth\+Manager}}
+\index{\+\_\+bandwidth\+Manager@{\+\_\+bandwidth\+Manager}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{\+\_\+bandwidth\+Manager}{\_bandwidthManager}}
+{\footnotesize\ttfamily \hyperlink{class_o_c_c_1_1_bandwidth_manager}{Bandwidth\+Manager} O\+C\+C\+::\+Owncloud\+Propagator\+::\+\_\+bandwidth\+Manager}
+
+
+
+在文件 owncloudpropagator.\+h 第 294 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_abe6e16eae30c09e6a40f309aaec85766}\label{class_o_c_c_1_1_owncloud_propagator_abe6e16eae30c09e6a40f309aaec85766}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!\+\_\+download\+Limit@{\+\_\+download\+Limit}}
+\index{\+\_\+download\+Limit@{\+\_\+download\+Limit}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{\+\_\+download\+Limit}{\_downloadLimit}}
+{\footnotesize\ttfamily Q\+Atomic\+Int O\+C\+C\+::\+Owncloud\+Propagator\+::\+\_\+download\+Limit}
+
+
+
+在文件 owncloudpropagator.\+h 第 292 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a9cde1633042a8343d0fede4589fc09f7}\label{class_o_c_c_1_1_owncloud_propagator_a9cde1633042a8343d0fede4589fc09f7}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!\+\_\+finished\+Emited@{\+\_\+finished\+Emited}}
+\index{\+\_\+finished\+Emited@{\+\_\+finished\+Emited}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{\+\_\+finished\+Emited}{\_finishedEmited}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+Owncloud\+Propagator\+::\+\_\+finished\+Emited}
+
+
+
+在文件 owncloudpropagator.\+h 第 273 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_add49de94586382a0f18ecf417dc389f8}\label{class_o_c_c_1_1_owncloud_propagator_add49de94586382a0f18ecf417dc389f8}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!\+\_\+journal@{\+\_\+journal}}
+\index{\+\_\+journal@{\+\_\+journal}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{\+\_\+journal}{\_journal}}
+{\footnotesize\ttfamily \hyperlink{class_o_c_c_1_1_sync_journal_db}{Sync\+Journal\+Db}$\ast$ const O\+C\+C\+::\+Owncloud\+Propagator\+::\+\_\+journal}
+
+
+
+在文件 owncloudpropagator.\+h 第 272 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_ab36bd049c56d4e5e76a9fcbbdf2d7230}\label{class_o_c_c_1_1_owncloud_propagator_ab36bd049c56d4e5e76a9fcbbdf2d7230}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!\+\_\+local\+Dir@{\+\_\+local\+Dir}}
+\index{\+\_\+local\+Dir@{\+\_\+local\+Dir}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{\+\_\+local\+Dir}{\_localDir}}
+{\footnotesize\ttfamily const Q\+String O\+C\+C\+::\+Owncloud\+Propagator\+::\+\_\+local\+Dir}
+
+
+
+在文件 owncloudpropagator.\+h 第 269 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_af1db4c1fcff6c012e372de47c1814b12}\label{class_o_c_c_1_1_owncloud_propagator_af1db4c1fcff6c012e372de47c1814b12}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!\+\_\+remote\+Folder@{\+\_\+remote\+Folder}}
+\index{\+\_\+remote\+Folder@{\+\_\+remote\+Folder}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{\+\_\+remote\+Folder}{\_remoteFolder}}
+{\footnotesize\ttfamily const Q\+String O\+C\+C\+::\+Owncloud\+Propagator\+::\+\_\+remote\+Folder}
+
+
+
+在文件 owncloudpropagator.\+h 第 270 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_owncloud_propagator_a5d180311654080414fd82638ad64467d}\label{class_o_c_c_1_1_owncloud_propagator_a5d180311654080414fd82638ad64467d}} 
+\index{O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}!\+\_\+upload\+Limit@{\+\_\+upload\+Limit}}
+\index{\+\_\+upload\+Limit@{\+\_\+upload\+Limit}!O\+C\+C\+::\+Owncloud\+Propagator@{O\+C\+C\+::\+Owncloud\+Propagator}}
+\subsubsection{\texorpdfstring{\+\_\+upload\+Limit}{\_uploadLimit}}
+{\footnotesize\ttfamily Q\+Atomic\+Int O\+C\+C\+::\+Owncloud\+Propagator\+::\+\_\+upload\+Limit}
+
+
+
+在文件 owncloudpropagator.\+h 第 293 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{owncloudpropagator_8h}{owncloudpropagator.\+h}\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{owncloudpropagator_8cpp}{owncloudpropagator.\+cpp}\end{DoxyCompactItemize}

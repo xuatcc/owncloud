@@ -1,0 +1,287 @@
+\hypertarget{class_o_c_c_1_1_g_e_t_file_job}{}\section{O\+CC\+:\+:G\+E\+T\+File\+Job类 参考}
+\label{class_o_c_c_1_1_g_e_t_file_job}\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+
+
+The \hyperlink{class_o_c_c_1_1_g_e_t_file_job}{G\+E\+T\+File\+Job} class  
+
+
+
+
+{\ttfamily \#include $<$propagatedownload.\+h$>$}
+
+类 O\+CC\+:\+:G\+E\+T\+File\+Job 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_o_c_c_1_1_g_e_t_file_job}
+\end{center}
+\end{figure}
+\subsection*{信号}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a7d6682c99cf34159a8f545cbb29c5ea6}{finished\+Signal} ()
+\item 
+void \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a4db78893031cc5b4859dd3dd72c36f56}{download\+Progress} (qint64, qint64)
+\end{DoxyCompactItemize}
+\subsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_o_c_c_1_1_g_e_t_file_job_aeffc1ce2c51ba5160fef7dc37821915c}{G\+E\+T\+File\+Job} (\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr} \hyperlink{class_o_c_c_1_1_abstract_network_job_a469c9d8212a338ad07d1efa1a94f784d}{account}, const Q\+String \&\hyperlink{class_o_c_c_1_1_abstract_network_job_a8ed2423a454ec861c20f6900f5591ef7}{path}, Q\+File $\ast$device, const Q\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \&headers, const Q\+Byte\+Array \&expected\+Etag\+For\+Resume, quint64 \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a6b3c228a09b07ebcb6c72fb2f49c86ca}{resume\+Start}, Q\+Object $\ast$parent=0)
+\item 
+\hyperlink{class_o_c_c_1_1_g_e_t_file_job_a9fe65b419f36288b844d91f398137b20}{G\+E\+T\+File\+Job} (\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr} \hyperlink{class_o_c_c_1_1_abstract_network_job_a469c9d8212a338ad07d1efa1a94f784d}{account}, const Q\+Url \&url, Q\+File $\ast$device, const Q\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \&headers, const Q\+Byte\+Array \&expected\+Etag\+For\+Resume, quint64 \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a6b3c228a09b07ebcb6c72fb2f49c86ca}{resume\+Start}, Q\+Object $\ast$parent=0)
+\item 
+virtual \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a1d714f159e0649f6983e75438d56d776}{$\sim$\+G\+E\+T\+File\+Job} ()
+\item 
+virtual void \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a82c449dd18bb5ba12e611d0447662cdb}{start} () Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+virtual bool \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a41e95ff131e8009d6cd8c2d063eeb7c0}{finished} () Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+void \hyperlink{class_o_c_c_1_1_g_e_t_file_job_aafe5cf21c3b8365fdbf82890b5a84ce8}{set\+Bandwidth\+Manager} (\hyperlink{class_o_c_c_1_1_bandwidth_manager}{Bandwidth\+Manager} $\ast$bwm)
+\item 
+void \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a032d6ada72eeb90405f185cd5d4fc60a}{set\+Choked} (bool c)
+\item 
+void \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a000921888d1afcd2856427457dc15f6f}{set\+Bandwidth\+Limited} (bool b)
+\item 
+void \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a074cd41e4e1d4a40971cb440ed5f4c1a}{give\+Bandwidth\+Quota} (qint64 q)
+\item 
+qint64 \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a953b2d542dc57ed4c3999bcaf6d2c7a2}{current\+Download\+Position} ()
+\item 
+Q\+String \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a3ceb7cee2cf75c168baab212381f2026}{error\+String} () const
+\item 
+void \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a5e87919c53eb17a7d9a3fd40b43a37cc}{set\+Error\+String} (const Q\+String \&s)
+\item 
+\hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408}{Sync\+File\+Item\+::\+Status} \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a35a26844eff92a8ac92f450b22a908c4}{error\+Status} ()
+\item 
+void \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a9c37afdba1e10d6aaabd3f862aa0755d}{set\+Error\+Status} (const \hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408}{Sync\+File\+Item\+::\+Status} \&s)
+\item 
+virtual void \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a40e9d2ce9e97ab97a71895ee9ed0a063}{slot\+Timeout} () Q\+\_\+\+D\+E\+C\+L\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+Q\+Byte\+Array \& \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a8c503e198129ae64dd40fa60d74dd7c3}{etag} ()
+\item 
+quint64 \hyperlink{class_o_c_c_1_1_g_e_t_file_job_a6b3c228a09b07ebcb6c72fb2f49c86ca}{resume\+Start} ()
+\item 
+time\+\_\+t \hyperlink{class_o_c_c_1_1_g_e_t_file_job_ad9f7d91356e7e3fb74c3f4fede6ffde8}{last\+Modified} ()
+\end{DoxyCompactItemize}
+\subsection*{额外继承的成员函数}
+
+
+\subsection{详细描述}
+The \hyperlink{class_o_c_c_1_1_g_e_t_file_job}{G\+E\+T\+File\+Job} class 
+
+在文件 propagatedownload.\+h 第 28 行定义.
+
+
+
+\subsection{构造及析构函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_aeffc1ce2c51ba5160fef7dc37821915c}\label{class_o_c_c_1_1_g_e_t_file_job_aeffc1ce2c51ba5160fef7dc37821915c}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!G\+E\+T\+File\+Job@{G\+E\+T\+File\+Job}}
+\index{G\+E\+T\+File\+Job@{G\+E\+T\+File\+Job}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{G\+E\+T\+File\+Job()}{GETFileJob()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily O\+C\+C\+::\+G\+E\+T\+File\+Job\+::\+G\+E\+T\+File\+Job (\begin{DoxyParamCaption}\item[{\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr}}]{account,  }\item[{const Q\+String \&}]{path,  }\item[{Q\+File $\ast$}]{device,  }\item[{const Q\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \&}]{headers,  }\item[{const Q\+Byte\+Array \&}]{expected\+Etag\+For\+Resume,  }\item[{quint64}]{resume\+Start,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+在文件 propagatedownload.\+cpp 第 65 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a9fe65b419f36288b844d91f398137b20}\label{class_o_c_c_1_1_g_e_t_file_job_a9fe65b419f36288b844d91f398137b20}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!G\+E\+T\+File\+Job@{G\+E\+T\+File\+Job}}
+\index{G\+E\+T\+File\+Job@{G\+E\+T\+File\+Job}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{G\+E\+T\+File\+Job()}{GETFileJob()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily O\+C\+C\+::\+G\+E\+T\+File\+Job\+::\+G\+E\+T\+File\+Job (\begin{DoxyParamCaption}\item[{\hyperlink{namespace_o_c_c_a848616aedb9188e223c6b9867757fe69}{Account\+Ptr}}]{account,  }\item[{const Q\+Url \&}]{url,  }\item[{Q\+File $\ast$}]{device,  }\item[{const Q\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \&}]{headers,  }\item[{const Q\+Byte\+Array \&}]{expected\+Etag\+For\+Resume,  }\item[{quint64}]{resume\+Start,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+在文件 propagatedownload.\+cpp 第 76 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a1d714f159e0649f6983e75438d56d776}\label{class_o_c_c_1_1_g_e_t_file_job_a1d714f159e0649f6983e75438d56d776}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!````~G\+E\+T\+File\+Job@{$\sim$\+G\+E\+T\+File\+Job}}
+\index{````~G\+E\+T\+File\+Job@{$\sim$\+G\+E\+T\+File\+Job}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{$\sim$\+G\+E\+T\+File\+Job()}{~GETFileJob()}}
+{\footnotesize\ttfamily virtual O\+C\+C\+::\+G\+E\+T\+File\+Job\+::$\sim$\+G\+E\+T\+File\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+在文件 propagatedownload.\+h 第 54 行定义.
+
+
+
+\subsection{成员函数说明}
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a953b2d542dc57ed4c3999bcaf6d2c7a2}\label{class_o_c_c_1_1_g_e_t_file_job_a953b2d542dc57ed4c3999bcaf6d2c7a2}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!current\+Download\+Position@{current\+Download\+Position}}
+\index{current\+Download\+Position@{current\+Download\+Position}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{current\+Download\+Position()}{currentDownloadPosition()}}
+{\footnotesize\ttfamily qint64 O\+C\+C\+::\+G\+E\+T\+File\+Job\+::current\+Download\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 propagatedownload.\+cpp 第 224 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a4db78893031cc5b4859dd3dd72c36f56}\label{class_o_c_c_1_1_g_e_t_file_job_a4db78893031cc5b4859dd3dd72c36f56}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!download\+Progress@{download\+Progress}}
+\index{download\+Progress@{download\+Progress}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{download\+Progress}{downloadProgress}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+G\+E\+T\+File\+Job\+::download\+Progress (\begin{DoxyParamCaption}\item[{qint64}]{,  }\item[{qint64}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a35a26844eff92a8ac92f450b22a908c4}\label{class_o_c_c_1_1_g_e_t_file_job_a35a26844eff92a8ac92f450b22a908c4}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!error\+Status@{error\+Status}}
+\index{error\+Status@{error\+Status}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{error\+Status()}{errorStatus()}}
+{\footnotesize\ttfamily \hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408}{Sync\+File\+Item\+::\+Status} O\+C\+C\+::\+G\+E\+T\+File\+Job\+::error\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 propagatedownload.\+h 第 87 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a3ceb7cee2cf75c168baab212381f2026}\label{class_o_c_c_1_1_g_e_t_file_job_a3ceb7cee2cf75c168baab212381f2026}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!error\+String@{error\+String}}
+\index{error\+String@{error\+String}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{error\+String()}{errorString()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+G\+E\+T\+File\+Job\+::error\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+在文件 propagatedownload.\+cpp 第 300 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a8c503e198129ae64dd40fa60d74dd7c3}\label{class_o_c_c_1_1_g_e_t_file_job_a8c503e198129ae64dd40fa60d74dd7c3}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!etag@{etag}}
+\index{etag@{etag}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{etag()}{etag()}}
+{\footnotesize\ttfamily Q\+Byte\+Array\& O\+C\+C\+::\+G\+E\+T\+File\+Job\+::etag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 propagatedownload.\+h 第 92 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a41e95ff131e8009d6cd8c2d063eeb7c0}\label{class_o_c_c_1_1_g_e_t_file_job_a41e95ff131e8009d6cd8c2d063eeb7c0}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!finished@{finished}}
+\index{finished@{finished}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{finished()}{finished()}}
+{\footnotesize\ttfamily virtual bool O\+C\+C\+::\+G\+E\+T\+File\+Job\+::finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+实现了 \hyperlink{class_o_c_c_1_1_abstract_network_job_af811f7299d7e526678a8758f2e7102d2}{O\+C\+C\+::\+Abstract\+Network\+Job}.
+
+
+
+在文件 propagatedownload.\+h 第 61 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a7d6682c99cf34159a8f545cbb29c5ea6}\label{class_o_c_c_1_1_g_e_t_file_job_a7d6682c99cf34159a8f545cbb29c5ea6}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!finished\+Signal@{finished\+Signal}}
+\index{finished\+Signal@{finished\+Signal}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{finished\+Signal}{finishedSignal}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+G\+E\+T\+File\+Job\+::finished\+Signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a074cd41e4e1d4a40971cb440ed5f4c1a}\label{class_o_c_c_1_1_g_e_t_file_job_a074cd41e4e1d4a40971cb440ed5f4c1a}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!give\+Bandwidth\+Quota@{give\+Bandwidth\+Quota}}
+\index{give\+Bandwidth\+Quota@{give\+Bandwidth\+Quota}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{give\+Bandwidth\+Quota()}{giveBandwidthQuota()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+G\+E\+T\+File\+Job\+::give\+Bandwidth\+Quota (\begin{DoxyParamCaption}\item[{qint64}]{q }\end{DoxyParamCaption})}
+
+
+
+在文件 propagatedownload.\+cpp 第 217 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_ad9f7d91356e7e3fb74c3f4fede6ffde8}\label{class_o_c_c_1_1_g_e_t_file_job_ad9f7d91356e7e3fb74c3f4fede6ffde8}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!last\+Modified@{last\+Modified}}
+\index{last\+Modified@{last\+Modified}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{last\+Modified()}{lastModified()}}
+{\footnotesize\ttfamily time\+\_\+t O\+C\+C\+::\+G\+E\+T\+File\+Job\+::last\+Modified (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 propagatedownload.\+h 第 94 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a6b3c228a09b07ebcb6c72fb2f49c86ca}\label{class_o_c_c_1_1_g_e_t_file_job_a6b3c228a09b07ebcb6c72fb2f49c86ca}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!resume\+Start@{resume\+Start}}
+\index{resume\+Start@{resume\+Start}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{resume\+Start()}{resumeStart()}}
+{\footnotesize\ttfamily quint64 O\+C\+C\+::\+G\+E\+T\+File\+Job\+::resume\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+在文件 propagatedownload.\+h 第 93 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a000921888d1afcd2856427457dc15f6f}\label{class_o_c_c_1_1_g_e_t_file_job_a000921888d1afcd2856427457dc15f6f}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!set\+Bandwidth\+Limited@{set\+Bandwidth\+Limited}}
+\index{set\+Bandwidth\+Limited@{set\+Bandwidth\+Limited}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{set\+Bandwidth\+Limited()}{setBandwidthLimited()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+G\+E\+T\+File\+Job\+::set\+Bandwidth\+Limited (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})}
+
+
+
+在文件 propagatedownload.\+cpp 第 211 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_aafe5cf21c3b8365fdbf82890b5a84ce8}\label{class_o_c_c_1_1_g_e_t_file_job_aafe5cf21c3b8365fdbf82890b5a84ce8}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!set\+Bandwidth\+Manager@{set\+Bandwidth\+Manager}}
+\index{set\+Bandwidth\+Manager@{set\+Bandwidth\+Manager}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{set\+Bandwidth\+Manager()}{setBandwidthManager()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+G\+E\+T\+File\+Job\+::set\+Bandwidth\+Manager (\begin{DoxyParamCaption}\item[{\hyperlink{class_o_c_c_1_1_bandwidth_manager}{Bandwidth\+Manager} $\ast$}]{bwm }\end{DoxyParamCaption})}
+
+
+
+在文件 propagatedownload.\+cpp 第 200 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a032d6ada72eeb90405f185cd5d4fc60a}\label{class_o_c_c_1_1_g_e_t_file_job_a032d6ada72eeb90405f185cd5d4fc60a}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!set\+Choked@{set\+Choked}}
+\index{set\+Choked@{set\+Choked}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{set\+Choked()}{setChoked()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+G\+E\+T\+File\+Job\+::set\+Choked (\begin{DoxyParamCaption}\item[{bool}]{c }\end{DoxyParamCaption})}
+
+
+
+在文件 propagatedownload.\+cpp 第 205 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a9c37afdba1e10d6aaabd3f862aa0755d}\label{class_o_c_c_1_1_g_e_t_file_job_a9c37afdba1e10d6aaabd3f862aa0755d}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!set\+Error\+Status@{set\+Error\+Status}}
+\index{set\+Error\+Status@{set\+Error\+Status}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{set\+Error\+Status()}{setErrorStatus()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+G\+E\+T\+File\+Job\+::set\+Error\+Status (\begin{DoxyParamCaption}\item[{const \hyperlink{class_o_c_c_1_1_sync_file_item_a149ade86eddd9661587bfbc9bcbca408}{Sync\+File\+Item\+::\+Status} \&}]{s }\end{DoxyParamCaption})}
+
+
+
+在文件 propagatedownload.\+h 第 88 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a5e87919c53eb17a7d9a3fd40b43a37cc}\label{class_o_c_c_1_1_g_e_t_file_job_a5e87919c53eb17a7d9a3fd40b43a37cc}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!set\+Error\+String@{set\+Error\+String}}
+\index{set\+Error\+String@{set\+Error\+String}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{set\+Error\+String()}{setErrorString()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+G\+E\+T\+File\+Job\+::set\+Error\+String (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{s }\end{DoxyParamCaption})}
+
+
+
+在文件 propagatedownload.\+h 第 85 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a40e9d2ce9e97ab97a71895ee9ed0a063}\label{class_o_c_c_1_1_g_e_t_file_job_a40e9d2ce9e97ab97a71895ee9ed0a063}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!slot\+Timeout@{slot\+Timeout}}
+\index{slot\+Timeout@{slot\+Timeout}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{slot\+Timeout()}{slotTimeout()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+G\+E\+T\+File\+Job\+::slot\+Timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+重载 \hyperlink{class_o_c_c_1_1_abstract_network_job}{O\+C\+C\+::\+Abstract\+Network\+Job} .
+
+
+
+在文件 propagatedownload.\+cpp 第 290 行定义.
+
+\mbox{\Hypertarget{class_o_c_c_1_1_g_e_t_file_job_a82c449dd18bb5ba12e611d0447662cdb}\label{class_o_c_c_1_1_g_e_t_file_job_a82c449dd18bb5ba12e611d0447662cdb}} 
+\index{O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}!start@{start}}
+\index{start@{start}!O\+C\+C\+::\+G\+E\+T\+File\+Job@{O\+C\+C\+::\+G\+E\+T\+File\+Job}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+G\+E\+T\+File\+Job\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+重载 \hyperlink{class_o_c_c_1_1_abstract_network_job_a256f1b6b5d6f6252e83b3602743da64a}{O\+C\+C\+::\+Abstract\+Network\+Job} .
+
+
+
+在文件 propagatedownload.\+cpp 第 89 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{propagatedownload_8h}{propagatedownload.\+h}\item 
+bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/\hyperlink{propagatedownload_8cpp}{propagatedownload.\+cpp}\end{DoxyCompactItemize}

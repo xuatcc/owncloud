@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>custom_cloud: OCC::CSyncChecksumHook类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="cloudDisk.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">custom_cloud
+   &#160;<span id="projectnumber">beta 1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_o_c_c.html">OCC</a></li><li class="navelem"><a class="el" href="class_o_c_c_1_1_c_sync_checksum_hook.html">CSyncChecksumHook</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="class_o_c_c_1_1_c_sync_checksum_hook-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">OCC::CSyncChecksumHook类 参考<div class="ingroups"><a class="el" href="group__libsync.html">The sync library</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="checksums_8h_source.html">checksums.h</a>&gt;</code></p>
+<div class="dynheader">
+类 OCC::CSyncChecksumHook 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_o_c_c_1_1_c_sync_checksum_hook.png" usemap="#OCC::CSyncChecksumHook_map" alt=""/>
+  <map id="OCC::CSyncChecksumHook_map" name="OCC::CSyncChecksumHook_map">
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae118e2305f558a50e338fdab9a51b78b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_c_sync_checksum_hook.html#ae118e2305f558a50e338fdab9a51b78b">CSyncChecksumHook</a> (<a class="el" href="class_o_c_c_1_1_sync_journal_db.html">SyncJournalDb</a> *journal)</td></tr>
+<tr class="separator:ae118e2305f558a50e338fdab9a51b78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac956b58fe2ddbbbcdd6a8844445595e3"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_c_sync_checksum_hook.html#ac956b58fe2ddbbbcdd6a8844445595e3">compute</a> (const QString &amp;path, int checksumTypeId)</td></tr>
+<tr class="separator:ac956b58fe2ddbbbcdd6a8844445595e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a960fe2cee59b5f4dc19ea89aa726ac3e"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_c_c_1_1_c_sync_checksum_hook.html#a960fe2cee59b5f4dc19ea89aa726ac3e">hook</a> (const char *path, uint32_t checksumTypeId, void *this_obj)</td></tr>
+<tr class="separator:a960fe2cee59b5f4dc19ea89aa726ac3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Hooks checksum computations into csync. </p>
+
+<p class="definition">在文件 <a class="el" href="checksums_8h_source.html">checksums.h</a> 第 <a class="el" href="checksums_8h_source.html#l00118">118</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ae118e2305f558a50e338fdab9a51b78b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae118e2305f558a50e338fdab9a51b78b">&#9670;&nbsp;</a></span>CSyncChecksumHook()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">OCC::CSyncChecksumHook::CSyncChecksumHook </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_o_c_c_1_1_sync_journal_db.html">SyncJournalDb</a> *&#160;</td>
+          <td class="paramname"><em>journal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="checksums_8cpp_source.html">checksums.cpp</a> 第 <a class="el" href="checksums_8cpp_source.html#l00215">215</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ac956b58fe2ddbbbcdd6a8844445595e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac956b58fe2ddbbbcdd6a8844445595e3">&#9670;&nbsp;</a></span>compute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray OCC::CSyncChecksumHook::compute </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>checksumTypeId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="checksums_8cpp_source.html">checksums.cpp</a> 第 <a class="el" href="checksums_8cpp_source.html#l00234">234</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a960fe2cee59b5f4dc19ea89aa726ac3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a960fe2cee59b5f4dc19ea89aa726ac3e">&#9670;&nbsp;</a></span>hook()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * OCC::CSyncChecksumHook::hook </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>checksumTypeId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>this_obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the checksum value for <em>path</em> for the given <em>checksumTypeId</em>.</p>
+<p>Called from csync, where a instance of <a class="el" href="class_o_c_c_1_1_c_sync_checksum_hook.html">CSyncChecksumHook</a> has to be set as userdata. The return value will be owned by csync. </p>
+
+<p class="definition">在文件 <a class="el" href="checksums_8cpp_source.html">checksums.cpp</a> 第 <a class="el" href="checksums_8cpp_source.html#l00220">220</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="checksums_8h_source.html">checksums.h</a></li>
+<li>bin/Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/<a class="el" href="checksums_8cpp_source.html">checksums.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

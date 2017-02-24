@@ -1,0 +1,329 @@
+\hypertarget{namespace_o_c_c_1_1_file_system}{}\section{O\+CC\+:\+:File\+System 命名空间参考}
+\label{namespace_o_c_c_1_1_file_system}\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+
+
+This file contains file system helper  
+
+
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{namespace_o_c_c_1_1_file_system_a975974e9353410f28c9c2f280119174b}{file\+Equals} (const Q\+String \&fn1, const Q\+String \&fn2)
+\begin{DoxyCompactList}\small\item\em compare two files with given filename and return true if they have the same content \end{DoxyCompactList}\item 
+void O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_a7c843b229f6b4c70bd2b4369d7856db4}{set\+File\+Hidden} (const Q\+String \&filename, bool hidden)
+\begin{DoxyCompactList}\small\item\em Mark the file as hidden (only has effects on windows) \end{DoxyCompactList}\item 
+void O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_a875f747aa9ad5b52ab5270aab7d52d46}{set\+File\+Read\+Only} (const Q\+String \&filename, bool readonly)
+\begin{DoxyCompactList}\small\item\em Marks the file as read-\/only. \end{DoxyCompactList}\item 
+void O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_a8be889e4d12b3e9d5e27f454e4c55a71}{set\+File\+Read\+Only\+Weak} (const Q\+String \&filename, bool readonly)
+\begin{DoxyCompactList}\small\item\em Marks the file as read-\/only. \end{DoxyCompactList}\item 
+void O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_a5e58f0f7b6dab23f3dc1778b86bc2c6b}{set\+Folder\+Minimum\+Permissions} (const Q\+String \&filename)
+\begin{DoxyCompactList}\small\item\em Try to set permissions so that other users on the local machine can not go into the folder. \end{DoxyCompactList}\item 
+Q\+String O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_a71e7eb587b2d6502e9d4b46746afb4b1}{long\+Win\+Path} (const Q\+String \&inpath)
+\item 
+time\+\_\+t O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_a9610837b3c96d1a689cd016b2ccb8fc4}{get\+Mod\+Time} (const Q\+String \&filename)
+\begin{DoxyCompactList}\small\item\em Get the mtime for a filepath \end{DoxyCompactList}\item 
+bool \hyperlink{namespace_o_c_c_1_1_file_system_a1f35d1664358d204ec7357adfa91f7da}{set\+Mod\+Time} (const Q\+String \&filename, time\+\_\+t mod\+Time)
+\item 
+qint64 O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_a9da1655cd64b4fdd14eb745c05162fb8}{get\+Size} (const Q\+String \&filename)
+\begin{DoxyCompactList}\small\item\em Get the size for a file \end{DoxyCompactList}\item 
+bool O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_a667715e37de108acf2f298f3da489456}{file\+Exists} (const Q\+String \&filename, const Q\+File\+Info \&=Q\+File\+Info())
+\begin{DoxyCompactList}\small\item\em Checks whether a file exists. \end{DoxyCompactList}\item 
+bool O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_a8aecdf1d35430c2d0e9b8c6d274c71dc}{rename} (const Q\+String \&origin\+File\+Name, const Q\+String \&destination\+File\+Name, Q\+String $\ast$error\+String=N\+U\+LL)
+\begin{DoxyCompactList}\small\item\em Rename the file {\itshape origin\+File\+Name} to {\itshape destination\+File\+Name}. \end{DoxyCompactList}\item 
+bool O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_aadc87cf3e494c9a930ecf856cc4f77d3}{file\+Changed} (const Q\+String \&file\+Name, qint64 previous\+Size, time\+\_\+t previous\+Mtime)
+\begin{DoxyCompactList}\small\item\em Check if {\itshape file\+Name} has changed given previous size and mtime \end{DoxyCompactList}\item 
+bool \hyperlink{namespace_o_c_c_1_1_file_system_a9301722279d55a31f6e6df8a534b06ec}{verify\+File\+Unchanged} (const Q\+String \&file\+Name, qint64 previous\+Size, time\+\_\+t previous\+Mtime)
+\begin{DoxyCompactList}\small\item\em Like !file\+Changed() but with verbose logging if the file {\itshape did} change. \end{DoxyCompactList}\item 
+bool \hyperlink{namespace_o_c_c_1_1_file_system_a54dd5dc2b7a3c50220a3e2a38697bd6f}{rename\+Replace} (const Q\+String \&origin\+File\+Name, const Q\+String \&destination\+File\+Name, qint64 destination\+Size, time\+\_\+t destination\+Mtime, Q\+String $\ast$error\+String)
+\begin{DoxyCompactList}\small\item\em renames a file, overriding the target if it exists \end{DoxyCompactList}\item 
+bool \hyperlink{namespace_o_c_c_1_1_file_system_ad04aec9abd9b4602dc0bddba125c320c}{unchecked\+Rename\+Replace} (const Q\+String \&origin\+File\+Name, const Q\+String \&destination\+File\+Name, Q\+String $\ast$error\+String)
+\item 
+bool O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_a9b2aefeca6606b462584cab952edcbc1}{remove} (const Q\+String \&file\+Name, Q\+String $\ast$error\+String=0)
+\item 
+bool \hyperlink{namespace_o_c_c_1_1_file_system_a74cbbe123be7666a93799a28d8eb7546}{open\+And\+Seek\+File\+Shared\+Read} (Q\+File $\ast$file, Q\+String $\ast$error, qint64 seek)
+\item 
+Q\+Byte\+Array O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_a055cc8e503b643fbc00a678461b6c61b}{calc\+Md5} (const Q\+String \&file\+Name)
+\item 
+Q\+Byte\+Array O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_a375c2432148acc82cde481782216558d}{calc\+Sha1} (const Q\+String \&file\+Name)
+\item 
+Q\+String O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_a256b42d497859d2117c151f6a88145fa}{make\+Conflict\+File\+Name} (const Q\+String \&fn, const Q\+Date\+Time \&dt)
+\item 
+bool O\+W\+N\+C\+L\+O\+U\+D\+S\+Y\+N\+C\+\_\+\+E\+X\+P\+O\+RT \hyperlink{namespace_o_c_c_1_1_file_system_add336ce16ac7bb1cf6ac6cb3c77b44ec}{is\+File\+Locked} (const Q\+String \&file\+Name)
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+This file contains file system helper 
+
+\subsection{函数说明}
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a055cc8e503b643fbc00a678461b6c61b}\label{namespace_o_c_c_1_1_file_system_a055cc8e503b643fbc00a678461b6c61b}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!calc\+Md5@{calc\+Md5}}
+\index{calc\+Md5@{calc\+Md5}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{calc\+Md5()}{calcMd5()}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+File\+System\+::calc\+Md5 (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+在文件 filesystem.\+cpp 第 535 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a375c2432148acc82cde481782216558d}\label{namespace_o_c_c_1_1_file_system_a375c2432148acc82cde481782216558d}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!calc\+Sha1@{calc\+Sha1}}
+\index{calc\+Sha1@{calc\+Sha1}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{calc\+Sha1()}{calcSha1()}}
+{\footnotesize\ttfamily Q\+Byte\+Array O\+C\+C\+::\+File\+System\+::calc\+Sha1 (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+在文件 filesystem.\+cpp 第 540 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_aadc87cf3e494c9a930ecf856cc4f77d3}\label{namespace_o_c_c_1_1_file_system_aadc87cf3e494c9a930ecf856cc4f77d3}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!file\+Changed@{file\+Changed}}
+\index{file\+Changed@{file\+Changed}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{file\+Changed()}{fileChanged()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+File\+System\+::file\+Changed (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name,  }\item[{qint64}]{previous\+Size,  }\item[{time\+\_\+t}]{previous\+Mtime }\end{DoxyParamCaption})}
+
+
+
+Check if {\itshape file\+Name} has changed given previous size and mtime 
+
+Nonexisting files are covered through mtime\+: they have an mtime of -\/1.
+
+\begin{DoxyReturn}{返回}
+true if the file\textquotesingle{}s mtime or size are not what is expected. 
+\end{DoxyReturn}
+
+
+在文件 filesystem.\+cpp 第 254 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a975974e9353410f28c9c2f280119174b}\label{namespace_o_c_c_1_1_file_system_a975974e9353410f28c9c2f280119174b}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!file\+Equals@{file\+Equals}}
+\index{file\+Equals@{file\+Equals}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{file\+Equals()}{fileEquals()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+File\+System\+::file\+Equals (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{fn1,  }\item[{const Q\+String \&}]{fn2 }\end{DoxyParamCaption})}
+
+
+
+compare two files with given filename and return true if they have the same content 
+
+
+
+在文件 filesystem.\+cpp 第 63 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a667715e37de108acf2f298f3da489456}\label{namespace_o_c_c_1_1_file_system_a667715e37de108acf2f298f3da489456}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!file\+Exists@{file\+Exists}}
+\index{file\+Exists@{file\+Exists}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{file\+Exists()}{fileExists()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+File\+System\+::file\+Exists (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{filename,  }\item[{const Q\+File\+Info \&}]{file\+Info = {\ttfamily QFileInfo()} }\end{DoxyParamCaption})}
+
+
+
+Checks whether a file exists. 
+
+Use this over Q\+File\+Info\+::exists() and Q\+File\+::exists() to avoid bugs with lnk files, see above. 
+
+在文件 filesystem.\+cpp 第 470 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a9610837b3c96d1a689cd016b2ccb8fc4}\label{namespace_o_c_c_1_1_file_system_a9610837b3c96d1a689cd016b2ccb8fc4}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!get\+Mod\+Time@{get\+Mod\+Time}}
+\index{get\+Mod\+Time@{get\+Mod\+Time}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{get\+Mod\+Time()}{getModTime()}}
+{\footnotesize\ttfamily time\+\_\+t O\+C\+C\+::\+File\+System\+::get\+Mod\+Time (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Get the mtime for a filepath 
+
+Use this over Q\+File\+Info\+::last\+Modified() to avoid timezone related bugs. See owncloud/core\#9781 for details. 
+
+在文件 filesystem.\+cpp 第 173 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a9da1655cd64b4fdd14eb745c05162fb8}\label{namespace_o_c_c_1_1_file_system_a9da1655cd64b4fdd14eb745c05162fb8}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!get\+Size@{get\+Size}}
+\index{get\+Size@{get\+Size}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{get\+Size()}{getSize()}}
+{\footnotesize\ttfamily qint64 O\+C\+C\+::\+File\+System\+::get\+Size (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Get the size for a file 
+
+Use this over Q\+File\+Info\+::size() to avoid bugs with lnk files on Windows. See \href{https://bugreports.qt.io/browse/QTBUG-24831}{\tt https\+://bugreports.\+qt.\+io/browse/\+Q\+T\+B\+U\+G-\/24831}. 
+
+在文件 filesystem.\+cpp 第 443 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_add336ce16ac7bb1cf6ac6cb3c77b44ec}\label{namespace_o_c_c_1_1_file_system_add336ce16ac7bb1cf6ac6cb3c77b44ec}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!is\+File\+Locked@{is\+File\+Locked}}
+\index{is\+File\+Locked@{is\+File\+Locked}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{is\+File\+Locked()}{isFileLocked()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+File\+System\+::is\+File\+Locked (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name }\end{DoxyParamCaption})}
+
+Returns true when a file is locked. (Windows only) 
+
+在文件 filesystem.\+cpp 第 606 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a71e7eb587b2d6502e9d4b46746afb4b1}\label{namespace_o_c_c_1_1_file_system_a71e7eb587b2d6502e9d4b46746afb4b1}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!long\+Win\+Path@{long\+Win\+Path}}
+\index{long\+Win\+Path@{long\+Win\+Path}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{long\+Win\+Path()}{longWinPath()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+File\+System\+::long\+Win\+Path (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{inpath }\end{DoxyParamCaption})}
+
+convert a \char`\"{}normal\char`\"{} windows path into a path that can be 32k chars long. 
+
+在文件 filesystem.\+cpp 第 53 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a256b42d497859d2117c151f6a88145fa}\label{namespace_o_c_c_1_1_file_system_a256b42d497859d2117c151f6a88145fa}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!make\+Conflict\+File\+Name@{make\+Conflict\+File\+Name}}
+\index{make\+Conflict\+File\+Name@{make\+Conflict\+File\+Name}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{make\+Conflict\+File\+Name()}{makeConflictFileName()}}
+{\footnotesize\ttfamily Q\+String O\+C\+C\+::\+File\+System\+::make\+Conflict\+File\+Name (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{fn,  }\item[{const Q\+Date\+Time \&}]{dt }\end{DoxyParamCaption})}
+
+Returns a file name based on {\itshape fn} that\textquotesingle{}s suitable for a conflict. 
+
+在文件 filesystem.\+cpp 第 566 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a74cbbe123be7666a93799a28d8eb7546}\label{namespace_o_c_c_1_1_file_system_a74cbbe123be7666a93799a28d8eb7546}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!open\+And\+Seek\+File\+Shared\+Read@{open\+And\+Seek\+File\+Shared\+Read}}
+\index{open\+And\+Seek\+File\+Shared\+Read@{open\+And\+Seek\+File\+Shared\+Read}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{open\+And\+Seek\+File\+Shared\+Read()}{openAndSeekFileSharedRead()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+File\+System\+::open\+And\+Seek\+File\+Shared\+Read (\begin{DoxyParamCaption}\item[{Q\+File $\ast$}]{file,  }\item[{Q\+String $\ast$}]{error,  }\item[{qint64}]{seek }\end{DoxyParamCaption})}
+
+Replacement for Q\+File\+::open(\+Read\+Only) followed by a seek(). This version sets a more permissive sharing mode on Windows.
+
+Warning\+: The resulting file may have an empty file\+Name and be unsuitable for use with Q\+File\+Info! Calling seek() on the Q\+File with $>$32bit signed values will fail! 
+
+在文件 filesystem.\+cpp 第 354 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a9b2aefeca6606b462584cab952edcbc1}\label{namespace_o_c_c_1_1_file_system_a9b2aefeca6606b462584cab952edcbc1}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!remove@{remove}}
+\index{remove@{remove}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+File\+System\+::remove (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name,  }\item[{Q\+String $\ast$}]{error\+String = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Removes a file.
+
+Equivalent to \hyperlink{namespace_o_c_c_1_1_file_system_a9b2aefeca6606b462584cab952edcbc1}{Q\+File\+::remove()}, except on Windows, where it will also successfully remove read-\/only files. 
+
+在文件 filesystem.\+cpp 第 587 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a8aecdf1d35430c2d0e9b8c6d274c71dc}\label{namespace_o_c_c_1_1_file_system_a8aecdf1d35430c2d0e9b8c6d274c71dc}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!rename@{rename}}
+\index{rename@{rename}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{rename()}{rename()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+File\+System\+::rename (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{origin\+File\+Name,  }\item[{const Q\+String \&}]{destination\+File\+Name,  }\item[{Q\+String $\ast$}]{error\+String = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+Rename the file {\itshape origin\+File\+Name} to {\itshape destination\+File\+Name}. 
+
+It behaves as \hyperlink{namespace_o_c_c_1_1_file_system_a8aecdf1d35430c2d0e9b8c6d274c71dc}{Q\+File\+::rename()} but handles .lnk files correctly on Windows. 
+
+在文件 filesystem.\+cpp 第 210 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a54dd5dc2b7a3c50220a3e2a38697bd6f}\label{namespace_o_c_c_1_1_file_system_a54dd5dc2b7a3c50220a3e2a38697bd6f}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!rename\+Replace@{rename\+Replace}}
+\index{rename\+Replace@{rename\+Replace}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{rename\+Replace()}{renameReplace()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+File\+System\+::rename\+Replace (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{origin\+File\+Name,  }\item[{const Q\+String \&}]{destination\+File\+Name,  }\item[{qint64}]{destination\+Size,  }\item[{time\+\_\+t}]{destination\+Mtime,  }\item[{Q\+String $\ast$}]{error\+String }\end{DoxyParamCaption})}
+
+
+
+renames a file, overriding the target if it exists 
+
+Rename the file {\itshape origin\+File\+Name} to {\itshape destination\+File\+Name}, and overwrite the destination if it already exists -\/ as long as the destination file has the expected {\itshape destination\+Size} and {\itshape destination\+Mtime}.
+
+If the destination file does not exist, the given size and mtime are ignored. 
+
+在文件 filesystem.\+cpp 第 277 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a7c843b229f6b4c70bd2b4369d7856db4}\label{namespace_o_c_c_1_1_file_system_a7c843b229f6b4c70bd2b4369d7856db4}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!set\+File\+Hidden@{set\+File\+Hidden}}
+\index{set\+File\+Hidden@{set\+File\+Hidden}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{set\+File\+Hidden()}{setFileHidden()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+File\+System\+::set\+File\+Hidden (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{filename,  }\item[{bool}]{hidden }\end{DoxyParamCaption})}
+
+
+
+Mark the file as hidden (only has effects on windows) 
+
+
+
+在文件 filesystem.\+cpp 第 96 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a875f747aa9ad5b52ab5270aab7d52d46}\label{namespace_o_c_c_1_1_file_system_a875f747aa9ad5b52ab5270aab7d52d46}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!set\+File\+Read\+Only@{set\+File\+Read\+Only}}
+\index{set\+File\+Read\+Only@{set\+File\+Read\+Only}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{set\+File\+Read\+Only()}{setFileReadOnly()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+File\+System\+::set\+File\+Read\+Only (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{filename,  }\item[{bool}]{readonly }\end{DoxyParamCaption})}
+
+
+
+Marks the file as read-\/only. 
+
+On linux this either revokes all \textquotesingle{}w\textquotesingle{} permissions or restores permissions according to the umask. 
+
+在文件 filesystem.\+cpp 第 133 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a8be889e4d12b3e9d5e27f454e4c55a71}\label{namespace_o_c_c_1_1_file_system_a8be889e4d12b3e9d5e27f454e4c55a71}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!set\+File\+Read\+Only\+Weak@{set\+File\+Read\+Only\+Weak}}
+\index{set\+File\+Read\+Only\+Weak@{set\+File\+Read\+Only\+Weak}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{set\+File\+Read\+Only\+Weak()}{setFileReadOnlyWeak()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+File\+System\+::set\+File\+Read\+Only\+Weak (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{filename,  }\item[{bool}]{readonly }\end{DoxyParamCaption})}
+
+
+
+Marks the file as read-\/only. 
+
+It\textquotesingle{}s like \hyperlink{namespace_o_c_c_1_1_file_system_a875f747aa9ad5b52ab5270aab7d52d46}{set\+File\+Read\+Only()}, but weaker\+: if readonly is false and the user already has write permissions, no change to the permissions is made.
+
+This means that it will preserve explicitly set rw-\/r--r-- permissions even when the umask is 0002. (\hyperlink{namespace_o_c_c_1_1_file_system_a875f747aa9ad5b52ab5270aab7d52d46}{set\+File\+Read\+Only()} would adjust to rw-\/rw-\/r--) 
+
+在文件 filesystem.\+cpp 第 161 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a5e58f0f7b6dab23f3dc1778b86bc2c6b}\label{namespace_o_c_c_1_1_file_system_a5e58f0f7b6dab23f3dc1778b86bc2c6b}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!set\+Folder\+Minimum\+Permissions@{set\+Folder\+Minimum\+Permissions}}
+\index{set\+Folder\+Minimum\+Permissions@{set\+Folder\+Minimum\+Permissions}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{set\+Folder\+Minimum\+Permissions()}{setFolderMinimumPermissions()}}
+{\footnotesize\ttfamily void O\+C\+C\+::\+File\+System\+::set\+Folder\+Minimum\+Permissions (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Try to set permissions so that other users on the local machine can not go into the folder. 
+
+
+
+在文件 filesystem.\+cpp 第 149 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a1f35d1664358d204ec7357adfa91f7da}\label{namespace_o_c_c_1_1_file_system_a1f35d1664358d204ec7357adfa91f7da}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!set\+Mod\+Time@{set\+Mod\+Time}}
+\index{set\+Mod\+Time@{set\+Mod\+Time}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{set\+Mod\+Time()}{setModTime()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+File\+System\+::set\+Mod\+Time (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{filename,  }\item[{time\+\_\+t}]{mod\+Time }\end{DoxyParamCaption})}
+
+
+
+在文件 filesystem.\+cpp 第 189 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_ad04aec9abd9b4602dc0bddba125c320c}\label{namespace_o_c_c_1_1_file_system_ad04aec9abd9b4602dc0bddba125c320c}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!unchecked\+Rename\+Replace@{unchecked\+Rename\+Replace}}
+\index{unchecked\+Rename\+Replace@{unchecked\+Rename\+Replace}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{unchecked\+Rename\+Replace()}{uncheckedRenameReplace()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+File\+System\+::unchecked\+Rename\+Replace (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{origin\+File\+Name,  }\item[{const Q\+String \&}]{destination\+File\+Name,  }\item[{Q\+String $\ast$}]{error\+String }\end{DoxyParamCaption})}
+
+Rename the file {\itshape origin\+File\+Name} to {\itshape destination\+File\+Name}, and overwrite the destination if it already exists -\/ without extra checks. 
+
+在文件 filesystem.\+cpp 第 295 行定义.
+
+\mbox{\Hypertarget{namespace_o_c_c_1_1_file_system_a9301722279d55a31f6e6df8a534b06ec}\label{namespace_o_c_c_1_1_file_system_a9301722279d55a31f6e6df8a534b06ec}} 
+\index{O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}!verify\+File\+Unchanged@{verify\+File\+Unchanged}}
+\index{verify\+File\+Unchanged@{verify\+File\+Unchanged}!O\+C\+C\+::\+File\+System@{O\+C\+C\+::\+File\+System}}
+\subsubsection{\texorpdfstring{verify\+File\+Unchanged()}{verifyFileUnchanged()}}
+{\footnotesize\ttfamily bool O\+C\+C\+::\+File\+System\+::verify\+File\+Unchanged (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name,  }\item[{qint64}]{previous\+Size,  }\item[{time\+\_\+t}]{previous\+Mtime }\end{DoxyParamCaption})}
+
+
+
+Like !file\+Changed() but with verbose logging if the file {\itshape did} change. 
+
+
+
+在文件 filesystem.\+cpp 第 262 行定义.
+

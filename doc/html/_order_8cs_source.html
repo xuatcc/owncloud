@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>custom_cloud: configClass/Order.cs 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="cloudDisk.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">custom_cloud
+   &#160;<span id="projectnumber">beta 1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d34eb8aee23261702399afa39a243747.html">configClass</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Order.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_order_8cs.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Collections;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Collections.Generic;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Linq;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Text;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecustom__cloud.html">custom_cloud</a></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classcustom__cloud_1_1_order.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classcustom__cloud_1_1_order.html">Order</a></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classcustom__cloud_1_1_order.html#aa921c37a11f452a3eb706cbc98eadd47">   14</a></span>&#160;        <span class="keyword">public</span> Dictionary&lt;string, string&gt; <a class="code" href="classcustom__cloud_1_1_order.html#aa921c37a11f452a3eb706cbc98eadd47">OrderCodes</a> = <span class="keyword">new</span> Dictionary&lt;string, string&gt;();</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">string</span> ORDER_LOGIN = <span class="stringliteral">&quot;ORDER_LOGIN&quot;</span>;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">string</span> ORDER_REGISTER = <span class="stringliteral">&quot;ORDER_REGISTER&quot;</span>;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">string</span> ORDER_CHECK_STATUS = <span class="stringliteral">&quot;ORDER_CHECK_STATUS&quot;</span>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">string</span> ORDER_LOG_OUT = <span class="stringliteral">&quot;ORDER_LOG_OUT&quot;</span>;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classcustom__cloud_1_1_order.html#a042ce67931003622dce36c5d9393c636">   19</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classcustom__cloud_1_1_order.html#a042ce67931003622dce36c5d9393c636">FLAG_START</a> = <span class="stringliteral">&quot;FLAG_START&quot;</span>;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classcustom__cloud_1_1_order.html#a5d43ee5b82c48ca0030a37fa0aae9806">   20</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classcustom__cloud_1_1_order.html#a5d43ee5b82c48ca0030a37fa0aae9806">FLAG_STOP</a> = <span class="stringliteral">&quot;FLAG_STOP&quot;</span>;</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classcustom__cloud_1_1_order.html#acca1d452af0bceb48ef82a9aad8d25ff">   21</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="classcustom__cloud_1_1_order.html#acca1d452af0bceb48ef82a9aad8d25ff">Order</a>()</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            OrderCodes.Add(<span class="stringliteral">&quot;login&quot;</span>, ORDER_LOGIN);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            OrderCodes.Add(<span class="stringliteral">&quot;register&quot;</span>, ORDER_REGISTER);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            OrderCodes.Add(<span class="stringliteral">&quot;check_status&quot;</span>, ORDER_CHECK_STATUS);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            OrderCodes.Add(<span class="stringliteral">&quot;log_out&quot;</span>, ORDER_LOG_OUT);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">string</span> order_code;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="classcustom__cloud_1_1_order.html#afea2b9669cfbec3d1c98aa7db6ffaa49">OrderCode</a></div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classcustom__cloud_1_1_order.html#afea2b9669cfbec3d1c98aa7db6ffaa49">   30</a></span>&#160;        {</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> order_code; }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keyword">set</span> { order_code = value; }</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div><div class="ttc" id="classcustom__cloud_1_1_order_html_acca1d452af0bceb48ef82a9aad8d25ff"><div class="ttname"><a href="classcustom__cloud_1_1_order.html#acca1d452af0bceb48ef82a9aad8d25ff">custom_cloud.Order.Order</a></div><div class="ttdeci">Order()</div><div class="ttdef"><b>Definition:</b> <a href="_order_8cs_source.html#l00021">Order.cs:21</a></div></div>
+<div class="ttc" id="classcustom__cloud_1_1_order_html"><div class="ttname"><a href="classcustom__cloud_1_1_order.html">custom_cloud.Order</a></div><div class="ttdoc">请求类 </div><div class="ttdef"><b>Definition:</b> <a href="_order_8cs_source.html#l00012">Order.cs:12</a></div></div>
+<div class="ttc" id="classcustom__cloud_1_1_order_html_aa921c37a11f452a3eb706cbc98eadd47"><div class="ttname"><a href="classcustom__cloud_1_1_order.html#aa921c37a11f452a3eb706cbc98eadd47">custom_cloud.Order.OrderCodes</a></div><div class="ttdeci">Dictionary&lt; string, string &gt; OrderCodes</div><div class="ttdef"><b>Definition:</b> <a href="_order_8cs_source.html#l00014">Order.cs:14</a></div></div>
+<div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
+<div class="ttc" id="classcustom__cloud_1_1_order_html_a5d43ee5b82c48ca0030a37fa0aae9806"><div class="ttname"><a href="classcustom__cloud_1_1_order.html#a5d43ee5b82c48ca0030a37fa0aae9806">custom_cloud.Order.FLAG_STOP</a></div><div class="ttdeci">const string FLAG_STOP</div><div class="ttdef"><b>Definition:</b> <a href="_order_8cs_source.html#l00020">Order.cs:20</a></div></div>
+<div class="ttc" id="classcustom__cloud_1_1_order_html_a042ce67931003622dce36c5d9393c636"><div class="ttname"><a href="classcustom__cloud_1_1_order.html#a042ce67931003622dce36c5d9393c636">custom_cloud.Order.FLAG_START</a></div><div class="ttdeci">const string FLAG_START</div><div class="ttdef"><b>Definition:</b> <a href="_order_8cs_source.html#l00019">Order.cs:19</a></div></div>
+<div class="ttc" id="classcustom__cloud_1_1_order_html_afea2b9669cfbec3d1c98aa7db6ffaa49"><div class="ttname"><a href="classcustom__cloud_1_1_order.html#afea2b9669cfbec3d1c98aa7db6ffaa49">custom_cloud.Order.OrderCode</a></div><div class="ttdeci">string OrderCode</div><div class="ttdef"><b>Definition:</b> <a href="_order_8cs_source.html#l00030">Order.cs:30</a></div></div>
+<div class="ttc" id="namespacecustom__cloud_html"><div class="ttname"><a href="namespacecustom__cloud.html">custom_cloud</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

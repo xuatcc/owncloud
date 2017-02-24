@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>custom_cloud: IOClass/Reporter.cs 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="cloudDisk.ico"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">custom_cloud
+   &#160;<span id="projectnumber">beta 1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3e26b01065ce601b228ac51400daff26.html">IOClass</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Reporter.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_i_o_class_2_reporter_8cs.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Collections.Generic;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.IO;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Linq;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Text;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecustom__cloud.html">custom_cloud</a></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classcustom__cloud_1_1_reporter.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classcustom__cloud_1_1_reporter.html">Reporter</a></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classcustom__cloud_1_1_reporter.html#a999ad2f96c992d72ff43590256d3a3f7">   11</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classcustom__cloud_1_1_reporter.html#a999ad2f96c992d72ff43590256d3a3f7">BUG_REPORT_LOG_PATH</a> = <span class="stringliteral">@&quot;./log/bug_report.log&quot;</span>;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classcustom__cloud_1_1_reporter.html#ab44d30e36526c47f21889d4df1e3851b">   16</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcustom__cloud_1_1_reporter.html#ab44d30e36526c47f21889d4df1e3851b">reportBug</a>(<span class="keywordtype">string</span> content)</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            StreamWriter bugWriter = <span class="keyword">new</span> StreamWriter(BUG_REPORT_LOG_PATH, <span class="keyword">true</span>, Encoding.Default);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            bugWriter.WriteLine(DateTime.Now.ToString(), <span class="keyword">true</span>, Encoding.Default);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            bugWriter.Write(content, <span class="keyword">true</span>, Encoding.Default);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            bugWriter.WriteLine(<span class="stringliteral">&quot;&quot;</span>, <span class="keyword">true</span>, Encoding.Default);<span class="comment">// 换行</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            bugWriter.Close();</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classcustom__cloud_1_1_reporter.html#ae1c917d6f0e059b068b5c6c0e0436293">   29</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcustom__cloud_1_1_reporter.html#ae1c917d6f0e059b068b5c6c0e0436293">writeLog</a>(<span class="keywordtype">string</span> path, <span class="keywordtype">string</span> content)</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            StreamWriter logWriter = <span class="keyword">new</span> StreamWriter(path, <span class="keyword">true</span>, Encoding.Default);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordtype">string</span> date = DateTime.Now.ToString();</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            logWriter.WriteLine(date);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            logWriter.Write(content);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            logWriter.WriteLine(<span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            logWriter.Close();</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div><div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
+<div class="ttc" id="classcustom__cloud_1_1_reporter_html_a999ad2f96c992d72ff43590256d3a3f7"><div class="ttname"><a href="classcustom__cloud_1_1_reporter.html#a999ad2f96c992d72ff43590256d3a3f7">custom_cloud.Reporter.BUG_REPORT_LOG_PATH</a></div><div class="ttdeci">const string BUG_REPORT_LOG_PATH</div><div class="ttdef"><b>Definition:</b> <a href="_i_o_class_2_reporter_8cs_source.html#l00011">Reporter.cs:11</a></div></div>
+<div class="ttc" id="classcustom__cloud_1_1_reporter_html_ae1c917d6f0e059b068b5c6c0e0436293"><div class="ttname"><a href="classcustom__cloud_1_1_reporter.html#ae1c917d6f0e059b068b5c6c0e0436293">custom_cloud.Reporter.writeLog</a></div><div class="ttdeci">static void writeLog(string path, string content)</div><div class="ttdoc">记录日志 </div><div class="ttdef"><b>Definition:</b> <a href="_i_o_class_2_reporter_8cs_source.html#l00029">Reporter.cs:29</a></div></div>
+<div class="ttc" id="classcustom__cloud_1_1_reporter_html"><div class="ttname"><a href="classcustom__cloud_1_1_reporter.html">custom_cloud.Reporter</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_o_class_2_reporter_8cs_source.html#l00009">Reporter.cs:9</a></div></div>
+<div class="ttc" id="namespacecustom__cloud_html"><div class="ttname"><a href="namespacecustom__cloud.html">custom_cloud</a></div></div>
+<div class="ttc" id="classcustom__cloud_1_1_reporter_html_ab44d30e36526c47f21889d4df1e3851b"><div class="ttname"><a href="classcustom__cloud_1_1_reporter.html#ab44d30e36526c47f21889d4df1e3851b">custom_cloud.Reporter.reportBug</a></div><div class="ttdeci">static void reportBug(string content)</div><div class="ttdoc">将异常信息输出到&quot;./log/&quot;目录下，正式发布时应取消这个功能 </div><div class="ttdef"><b>Definition:</b> <a href="_i_o_class_2_reporter_8cs_source.html#l00016">Reporter.cs:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

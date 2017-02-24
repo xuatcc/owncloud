@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['selectivesyncblacklist',['SelectiveSyncBlackList',['../class_o_c_c_1_1_sync_journal_db.html#ad028daa35155c92ce2e3863602f9feeba98dd47e8a926a0f583bad94b8ed14d8e',1,'OCC::SyncJournalDb']]],
+  ['selectivesyncundecidedlist',['SelectiveSyncUndecidedList',['../class_o_c_c_1_1_sync_journal_db.html#ad028daa35155c92ce2e3863602f9feeba524d06fd4067567f5469b24e5b2dc5ec',1,'OCC::SyncJournalDb']]],
+  ['selectivesyncwhitelist',['SelectiveSyncWhiteList',['../class_o_c_c_1_1_sync_journal_db.html#ad028daa35155c92ce2e3863602f9feeba941c6950705cde6618226bfbfceab05f',1,'OCC::SyncJournalDb']]],
+  ['serverversionmismatch',['ServerVersionMismatch',['../class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8badc8a3cca96a4655fa6171d619da64468',1,'OCC::ConnectionValidator']]],
+  ['serviceunavailable',['ServiceUnavailable',['../class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8bae783b288e74b28b13f450276ff7247ef',1,'OCC::ConnectionValidator']]],
+  ['setuperror',['SetupError',['../class_o_c_c_1_1_sync_result.html#a4f4487ea8c462f2ec90c43bce6df1d1eaa13ef1d07e22fbf1b31079005747e229',1,'OCC::SyncResult']]],
+  ['softerror',['SoftError',['../class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408ab1b53a7981c8f26a989b84611147dc26',1,'OCC::SyncFileItem']]],
+  ['softlink',['SoftLink',['../class_o_c_c_1_1_sync_file_item.html#ae6dda85439b3566dc79a922c11dee754a6e94f40aae4b54f82d2b9510cd3ee220',1,'OCC::SyncFileItem']]],
+  ['statuserror',['StatusError',['../class_o_c_c_1_1_sync_file_status.html#a036555392003d8becbbf4d18d49c358bacc4fc86a51520edfdc3f92db48ab13de',1,'OCC::SyncFileStatus']]],
+  ['statusnone',['StatusNone',['../class_o_c_c_1_1_sync_file_status.html#a036555392003d8becbbf4d18d49c358bab0960233ccd823c6874d7fdbe8eaa11d',1,'OCC::SyncFileStatus']]],
+  ['statusnotfound',['StatusNotFound',['../class_o_c_c_1_1_connection_validator.html#a8f1192e5d8ff687dbf93faf38af67f8bac46732e09112cbcf21b2516f40eb9545',1,'OCC::ConnectionValidator']]],
+  ['statussync',['StatusSync',['../class_o_c_c_1_1_sync_file_status.html#a036555392003d8becbbf4d18d49c358ba2bd08cb2c724dd61d2196a3c43153829',1,'OCC::SyncFileStatus']]],
+  ['statusuptodate',['StatusUpToDate',['../class_o_c_c_1_1_sync_file_status.html#a036555392003d8becbbf4d18d49c358ba9760fe879d0436ec6bd1008d46a9d936',1,'OCC::SyncFileStatus']]],
+  ['statuswarning',['StatusWarning',['../class_o_c_c_1_1_sync_file_status.html#a036555392003d8becbbf4d18d49c358baef4de648db70c7abf8efdb444f06efb8',1,'OCC::SyncFileStatus']]],
+  ['success',['Success',['../class_o_c_c_1_1_sync_file_item.html#a149ade86eddd9661587bfbc9bcbca408afae1770f38dce166a6b9d0421481dead',1,'OCC::SyncFileItem::Success()'],['../class_o_c_c_1_1_sync_result.html#a4f4487ea8c462f2ec90c43bce6df1d1ead68646f256b87883bb3bc10986704ba1',1,'OCC::SyncResult::Success()']]],
+  ['syncabortrequested',['SyncAbortRequested',['../class_o_c_c_1_1_sync_result.html#a4f4487ea8c462f2ec90c43bce6df1d1ea3901c58d1bd40a8742ee216bbec62851',1,'OCC::SyncResult']]],
+  ['syncprepare',['SyncPrepare',['../class_o_c_c_1_1_sync_result.html#a4f4487ea8c462f2ec90c43bce6df1d1eaf4754d5894372cbab99a3f1e1ded22f9',1,'OCC::SyncResult']]],
+  ['syncrunning',['SyncRunning',['../class_o_c_c_1_1_sync_result.html#a4f4487ea8c462f2ec90c43bce6df1d1ea5b7cb62071ac0fe8cf7fe8a0df896315',1,'OCC::SyncResult']]],
+  ['systemscope',['SystemScope',['../class_o_c_c_1_1_config_file.html#ab571084ce59ba92b0ce4079460b7c869a12de32b0994f72b53e55960986774918',1,'OCC::ConfigFile']]]
+];

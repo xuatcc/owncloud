@@ -1,0 +1,42 @@
+\hypertarget{owncloudpropagator_8h}{}\section{bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/owncloudpropagator.h 文件参考}
+\label{owncloudpropagator_8h}\index{bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/owncloudpropagator.\+h@{bin/\+Debug/test/电信学院/项目1/原版客户端重点查看文件/libsync/owncloudpropagator.\+h}}
+{\ttfamily \#include $<$Q\+Hash$>$}\newline
+{\ttfamily \#include $<$Q\+Object$>$}\newline
+{\ttfamily \#include $<$Q\+Map$>$}\newline
+{\ttfamily \#include $<$Q\+Linked\+List$>$}\newline
+{\ttfamily \#include $<$Q\+Elapsed\+Timer$>$}\newline
+{\ttfamily \#include $<$Q\+Timer$>$}\newline
+{\ttfamily \#include $<$Q\+Pointer$>$}\newline
+{\ttfamily \#include $<$Q\+I\+O\+Device$>$}\newline
+{\ttfamily \#include $<$Q\+Mutex$>$}\newline
+{\ttfamily \#include \char`\"{}syncfileitem.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}syncjournaldb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bandwidthmanager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}accountfwd.\+h\char`\"{}}\newline
+\subsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_o_c_c_1_1_propagator_job}{O\+C\+C\+::\+Propagator\+Job}
+\begin{DoxyCompactList}\small\item\em the base class of propagator jobs \end{DoxyCompactList}\item 
+class \hyperlink{class_o_c_c_1_1_propagate_item_job}{O\+C\+C\+::\+Propagate\+Item\+Job}
+\item 
+class \hyperlink{class_o_c_c_1_1_propagate_directory}{O\+C\+C\+::\+Propagate\+Directory}
+\begin{DoxyCompactList}\small\item\em Propagate a directory, and all its sub entries. \end{DoxyCompactList}\item 
+class \hyperlink{class_o_c_c_1_1_propagate_ignore_job}{O\+C\+C\+::\+Propagate\+Ignore\+Job}
+\begin{DoxyCompactList}\small\item\em Dummy job that just mark it as completed and ignored \end{DoxyCompactList}\item 
+class \hyperlink{class_o_c_c_1_1_owncloud_propagator}{O\+C\+C\+::\+Owncloud\+Propagator}
+\item 
+class \hyperlink{class_o_c_c_1_1_cleanup_polls_job}{O\+C\+C\+::\+Cleanup\+Polls\+Job}
+\begin{DoxyCompactList}\small\item\em Job that wait for all the poll jobs to be completed \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{命名空间}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_o_c_c}{O\+CC}
+\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+qint64 \hyperlink{namespace_o_c_c_a445860e1fc706b08d73845acc1dac5dd}{O\+C\+C\+::critical\+Free\+Space\+Limit} ()
+\item 
+qint64 \hyperlink{namespace_o_c_c_a1b835a945f7c6d134c20ac26267111fd}{O\+C\+C\+::free\+Space\+Limit} ()
+\end{DoxyCompactItemize}
