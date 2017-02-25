@@ -22,6 +22,11 @@ namespace custom_cloud
         public Dictionary<string, TreeFileInfo> CurrentDirectoryFileList = new Dictionary<string, TreeFileInfo>();
         public Dictionary<string, FileTree> SubTree = new Dictionary<string, FileTree>();
         public FileTree Parent;
+        public string Key;
+        /// <summary>
+        /// 记录展开状态
+        /// </summary>
+        public bool isExpand = false;
         /// <summary>
         /// 目录修改时间
         /// </summary>

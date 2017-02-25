@@ -182,6 +182,8 @@ namespace custom_cloud
                 string tempPath = cloudDiskForm.Current_Path;
                 Stack<string> backStack = cloudDiskForm.BackStack;
                 Stack<string> forwardStack = cloudDiskForm.ForwardStack;
+                cloudDiskForm.updateFileTree();
+                FileTree fileTree = cloudDiskForm.File_Tree;
 
 
                 cloudDiskForm = new CloudDiskForm();
@@ -191,16 +193,19 @@ namespace custom_cloud
                 cloudDiskForm.BackStack = backStack;
                 cloudDiskForm.ForwardStack = forwardStack;
                 cloudDiskForm.Current_Path = tempPath;
+                
 
 
                 panel_mainForm.Controls.Add(cloudDiskForm);
                 cloudDiskForm.Show();
-                
-                
+                /* 还原目录树的展开状态 */
+                cloudDiskForm.File_Tree = fileTree;
+                cloudDiskForm.updateDirectoryTree();
             }
             //settingForm.Show();
             //this.Enabled = false;
         }
+        
         /// <summary>
         /// 鼠标移到关闭按钮上改变颜色
         /// </summary>

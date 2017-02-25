@@ -25,10 +25,11 @@ namespace custom_cloud
         /// <summary>
         /// 文件树
         /// </summary>
-        FileTree File_Tree;
+        public FileTree File_Tree;
+        
         string CurrentPath;
         /// <summary>
-        /// 获取当前工作目录
+        /// 获取当前工作目录，设置该变量时还可以刷新窗体的控件
         /// </summary>
         public string Current_Path
         {
@@ -137,6 +138,11 @@ namespace custom_cloud
         /// 文件属性界面
         /// </summary>
         FileAttributeDialog fileAttributeDialog = new FileAttributeDialog();
+        public TreeView Tree_View
+        {
+            get { return treeView_directoryTree; }
+            set { treeView_directoryTree = value; }
+        }
         public CloudDiskForm()
         {
             InitializeComponent();
@@ -160,6 +166,7 @@ namespace custom_cloud
             /* 设置图标 */
             imageList_large.ImageSize = new Size(largeIconSize, largeIconSize);
             imageList_small.ImageSize = new Size(smallIconSize, smallIconSize);
+            imageList_treeView.ImageSize = new Size(smallIconSize, smallIconSize);
 
             /* 加载文件显示视图 */
             if (configFile.TableSkin.ContainsKey(MyConfig.ConfigFile.Skin.KEY_FILE_VIEW)) FileView = 
@@ -195,11 +202,13 @@ namespace custom_cloud
             /* 文件显示视图 */
             setViewMode();
             listView_explorer.ContextMenuStrip = contextMenuStrip_listRightClick;
-            //toolStripMenuItem_listContextRightClickView_largeIcon.Checked = true;
-            //toolStripMenuItem_listContextRightClickNewFolder.Visible = false;
-            //listView_explorer.Items.Clear();
+
+            //checkTreeNodeExpandStatus(File_Tree, treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)]);
             updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            //updateDirectoryTree();
+
             /* 测试部分 */
+            updateDirectoryTree();
             /* 选项菜单不可见 */
             setVisibleOfItemRightClickMenu(false);
             listView_explorer.LargeImageList = imageList_large;
@@ -274,7 +283,10 @@ namespace custom_cloud
                 setViewMode();
             }
             saveConfig();
+
+            //checkTreeNodeExpandStatus(File_Tree, treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)]);
             updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            //updateDirectoryTree();
         }
 
         private void pictureBox_buttonBack_MouseEnter(object sender, EventArgs e)
@@ -354,7 +366,27 @@ namespace custom_cloud
             imageList_large.Images.Clear();
             imageList_small.Images.Clear();
 
+            //checkTreeNodeExpandStatus(File_Tree, treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)]);
             updateListViewItems(fileTree);
+            updateDirectoryTree();
+        }
+        /// <summary>
+        /// 向listview里添加项目，但不更新文件树
+        /// </summary>
+        void updateListViewItemsWithoutTreeUpdate(View view, FileTree fileTree, MyConfig.SortRule sortRule)
+        {
+            if (fileTree == null) return;
+            /* 设置显示方式 */
+            listView_explorer.Items.Clear();
+            listView_explorer.View = view;
+            //listView_explorer.ListViewItemSorter = null;
+            /* 加载图标列表 */
+            imageList_large.Images.Clear();
+            imageList_small.Images.Clear();
+
+            //checkTreeNodeExpandStatus(File_Tree, treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)]);
+            updateListViewItems(fileTree);
+            //updateDirectoryTree();
         }
         void updateListViewItems(FileTree fileTree)
         {
@@ -738,7 +770,7 @@ namespace custom_cloud
                     string newFileName = FileTree.copyFile(openFileDialog_main.FileName,
                         File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(fileNames[i]));
                     //更新文件树
-                    File_Tree.updateTree(CurrentPath);
+                    updateFileTree();
                     //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
                     addItemToListView(newFileName, FileTree.FILE_IDENTIFY_NAME);
                     /* 加密 */
@@ -757,20 +789,11 @@ namespace custom_cloud
                 string newFolderName = FileTree.copyDirectory(folderBrowserDialog_main.SelectedPath, 
                     File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(folderBrowserDialog_main.SelectedPath));
                 //更新文件树
-                File_Tree.updateTree(CurrentPath);
+                updateFileTree();
                 //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
                 addItemToListView(newFolderName, FileTree.FOLDER_IDENTIFY_NAME);
-                /*
-                for (int i = 0; i < listView_explorer.Items.Count; i++)
-                {
-                    if (listView_explorer.Items[i].Text.Equals(Path.GetFileName(newFolderName)) && 
-                        Directory.Exists(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(newFolderName)))
-                    {
-                        listView_explorer.Items[i].Selected = true;
-                        break;
-                    }
-                }
-                */
+
+                updateDirectoryTree();
                 /* 启动同步 */
             }
         }
@@ -819,8 +842,13 @@ namespace custom_cloud
                 }
             }
             //更新文件树
-            File_Tree.updateTree(CurrentPath);
+            //checkTreeNodeExpandStatus(File_Tree, treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)]);
+
+            updateFileTree();
             updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+
+            updateDirectoryTree();
+            //updateDirectoryTree();
         }
         /// <summary>
         /// 新建文件夹
@@ -828,7 +856,7 @@ namespace custom_cloud
         void list_NewFolder()
         {
             string newFolderName = FileTree.createFolder(CurrentPath);
-            File_Tree.updateTree(CurrentPath);
+            updateFileTree();
             //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
             addItemToListView(newFolderName, FileTree.FOLDER_IDENTIFY_NAME);
             for(int i = 0; i < listView_explorer.Items.Count; i++)
@@ -841,13 +869,14 @@ namespace custom_cloud
                     break;
                 }
             }
+            updateDirectoryTree();
         }
         /// <summary>
         /// 刷新界面
         /// </summary>
         void list_Refresh()
         {
-            File_Tree.updateTree(CurrentPath);
+            updateFileTree();
             updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
         }
         /// <summary>
@@ -872,7 +901,7 @@ namespace custom_cloud
                         
 
                         string a = CurrentPath;
-                        File_Tree.updateTree(CurrentPath);
+                        updateFileTree();
                         updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
 
                         /* 调整可返回值 */
@@ -933,7 +962,7 @@ namespace custom_cloud
             CurrentPath = StackBackDirectory.Pop();
             
 
-            File_Tree.updateTree(CurrentPath);
+            updateFileTree();
             updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
             /* 调整按钮可用性 */
             if (StackBackDirectory.Count < 1)
@@ -962,7 +991,7 @@ namespace custom_cloud
             CurrentPath = StackForwardDirectory.Pop();
             
 
-            File_Tree.updateTree(CurrentPath);
+            updateFileTree();
             updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
             if (StackForwardDirectory.Count < 1)
             {
@@ -1079,7 +1108,7 @@ namespace custom_cloud
             }
             toolStripMenuItem_listContextRightClick_paste.Enabled = false;
             /* 更新文件树 */
-            //File_Tree.updateTree(CurrentPath);
+            //updateFileTree();
             //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
         }
         /// <summary>
@@ -1142,7 +1171,7 @@ namespace custom_cloud
         private void fileSystemWatcher_main_Changed(object sender, FileSystemEventArgs e)
         {
             /*
-            File_Tree.updateTree(CurrentPath);
+            updateFileTree();
             FileTree temp = File_Tree;
             //temp = File_Tree.getTargetTree(CurrentPath);
             //var temp2 = listView_explorer;
@@ -1184,7 +1213,7 @@ namespace custom_cloud
             {
                 FileTree.moveDirectory(CurrentPath + "/" + itemOldName, CurrentPath + "/" + newText);
             }
-            File_Tree.updateTree(CurrentPath);
+            updateFileTree();
             /* 更新该项目 */
             modifyListViewItems(index, CurrentPath + "/" + newText);
             /* 重新排序 */
@@ -1240,6 +1269,108 @@ namespace custom_cloud
             MyConfig.ConfigFile configFile = MyConfig.readConfig();
             configFile.createOrModifyItem(MyConfig.ConfigFile.TABLE_NAME_SKIN, MyConfig.ConfigFile.Skin.KEY_FILE_SORT_RULE, Sort_Rule);
             MyConfig.saveConfig(configFile);
+        }
+        /// <summary>
+        /// 更新目录树
+        /// </summary>
+        public void updateDirectoryTree()
+        {
+            /* 清除原有节点 */
+            treeView_directoryTree.Nodes.Clear();
+            imageList_treeView.Images.Clear();
+            /* 先添加根节点 */
+            treeView_directoryTree.Nodes.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName),
+                "Home", MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName));
+            imageList_treeView.Images.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName),
+                SmallFolderIcon);
+            //if(File_Tree.isExpand) treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)].Expand();
+            //else treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)].Collapse();
+            /* 测试代码 */
+            //treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)].Expand();
+            /* 递归子目录 */
+            foreach (FileTree ft in File_Tree.SubTree.Values)
+            {
+                recursiveAddItemToDirectoryTree(ft, 
+                    treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)]);
+            }
+            /* 展开树节点 */
+            expandTreeNodeByExpandStatus(File_Tree, 
+                treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)]);
+        }
+        /// <summary>
+        /// 用递归的方法向treeview中添加项目
+        /// </summary>
+        /// <param name="fileTree"></param>
+        void recursiveAddItemToDirectoryTree(FileTree fileTree, TreeNode treeNode)
+        {
+            /* 添加新节点 */
+            treeNode.Nodes.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, fileTree.RootDirectory.FullName),
+                fileTree.RootDirectory.Name, MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, fileTree.RootDirectory.FullName));
+            imageList_treeView.Images.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, fileTree.RootDirectory.FullName),
+                SmallFolderIcon);
+            //if (fileTree.isExpand) treeNode.Expand();
+            //else treeNode.Collapse();
+            /* 递归子目录 */
+            foreach(FileTree  ft in fileTree.SubTree.Values)
+            {
+                recursiveAddItemToDirectoryTree(ft, 
+                    treeNode.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, fileTree.RootDirectory.FullName)]);
+            }
+        }
+        /// <summary>
+        /// 展开树节点
+        /// </summary>
+        /// <param name="fileTree"></param>
+        /// <param name="treeNode"></param>
+        void expandTreeNodeByExpandStatus(FileTree fileTree, TreeNode treeNode)
+        {
+            if (treeNode == null) return;
+            if (fileTree.isExpand) treeNode.Expand();
+            foreach (FileTree ft in fileTree.SubTree.Values)
+            {
+                expandTreeNodeByExpandStatus(ft,
+                    treeNode.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, ft.RootDirectory.FullName)]);
+            }
+        }
+        /// <summary>
+        /// 递归检查树节点展开状态
+        /// </summary>
+        void checkTreeNodeExpandStatus(FileTree fileTree, TreeNode treeNode)
+        {
+            if (treeNode == null) return;
+            fileTree.isExpand = treeNode.IsExpanded;
+            fileTree.Key = treeNode.Name;
+            foreach(FileTree ft in fileTree.SubTree.Values)
+            {
+                checkTreeNodeExpandStatus(ft, 
+                    treeNode.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, ft.RootDirectory.FullName)]);
+            }
+        }
+        /// <summary>
+        /// 更新文件树
+        /// </summary>
+        public void updateFileTree()
+        {
+            File_Tree.updateTree(CurrentPath);
+            checkTreeNodeExpandStatus(File_Tree, treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)]);
+        }
+
+        /// <summary>
+        /// 目录树上的节点被单击时发生的事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void treeView_directoryTree_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            int pathIndex = e.Node.Name.IndexOf(MyConfig.STRING_SEPERATER) + MyConfig.STRING_SEPERATER.Length;
+            /* 截取得到文件路径 */
+            string path = e.Node.Name.Substring(pathIndex, e.Node.Name.Length - pathIndex);
+            CurrentPath = path;
+            /* 更新 */
+            //updateFileTree();
+            File_Tree.updateTree(CurrentPath);
+            updateListViewItemsWithoutTreeUpdate(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            //updateDirectoryTree();
         }
     }
 }

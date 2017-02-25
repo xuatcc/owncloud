@@ -359,8 +359,12 @@ namespace custom_cloud
         /// <returns></returns>
         public static string getListKeyName(string name, string text)
         {
-            return name + "_+_" + text;
+            return name + STRING_SEPERATER+ text;
         }
+        /// <summary>
+        /// 键与名的分隔字符串
+        /// </summary>
+        public static string STRING_SEPERATER = "_+_";
         /// <summary>
         /// 配置文件
         /// </summary>

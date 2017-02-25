@@ -41,14 +41,8 @@
             this.pictureBox_buttonForward = new System.Windows.Forms.PictureBox();
             this.pictureBox_buttonBack = new System.Windows.Forms.PictureBox();
             this.panel_fileFilter = new System.Windows.Forms.Panel();
-            this.menuStrip_fileFilter = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem_allFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_fileImage = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_fileDocument = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_fileVideo = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_fileMusic = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_fileApp = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_fileOthers = new System.Windows.Forms.ToolStripMenuItem();
+            this.treeView_directoryTree = new System.Windows.Forms.TreeView();
+            this.imageList_treeView = new System.Windows.Forms.ImageList(this.components);
             this.listView_explorer = new System.Windows.Forms.ListView();
             this.imageList_large = new System.Windows.Forms.ImageList(this.components);
             this.imageList_small = new System.Windows.Forms.ImageList(this.components);
@@ -84,7 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonForward)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonBack)).BeginInit();
             this.panel_fileFilter.SuspendLayout();
-            this.menuStrip_fileFilter.SuspendLayout();
             this.contextMenuStrip_listRightClick.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher_main)).BeginInit();
             this.SuspendLayout();
@@ -218,92 +211,28 @@
             // panel_fileFilter
             // 
             this.panel_fileFilter.BackgroundImage = global::custom_cloud.Properties.Resources.backgroud_form;
-            this.panel_fileFilter.Controls.Add(this.menuStrip_fileFilter);
+            this.panel_fileFilter.Controls.Add(this.treeView_directoryTree);
             this.panel_fileFilter.Location = new System.Drawing.Point(0, 30);
             this.panel_fileFilter.Name = "panel_fileFilter";
             this.panel_fileFilter.Size = new System.Drawing.Size(200, 502);
             this.panel_fileFilter.TabIndex = 2;
             // 
-            // menuStrip_fileFilter
+            // treeView_directoryTree
             // 
-            this.menuStrip_fileFilter.BackgroundImage = global::custom_cloud.Properties.Resources.backgroud_form;
-            this.menuStrip_fileFilter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem_allFile,
-            this.toolStripMenuItem_fileImage,
-            this.toolStripMenuItem_fileDocument,
-            this.toolStripMenuItem_fileVideo,
-            this.toolStripMenuItem_fileMusic,
-            this.toolStripMenuItem_fileApp,
-            this.toolStripMenuItem_fileOthers});
-            this.menuStrip_fileFilter.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.menuStrip_fileFilter.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip_fileFilter.Name = "menuStrip_fileFilter";
-            this.menuStrip_fileFilter.Size = new System.Drawing.Size(200, 216);
-            this.menuStrip_fileFilter.TabIndex = 0;
-            this.menuStrip_fileFilter.Text = "文件类型";
+            this.treeView_directoryTree.ImageIndex = 0;
+            this.treeView_directoryTree.ImageList = this.imageList_treeView;
+            this.treeView_directoryTree.Location = new System.Drawing.Point(10, 10);
+            this.treeView_directoryTree.Name = "treeView_directoryTree";
+            this.treeView_directoryTree.SelectedImageIndex = 0;
+            this.treeView_directoryTree.Size = new System.Drawing.Size(180, 482);
+            this.treeView_directoryTree.TabIndex = 0;
+            this.treeView_directoryTree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView_directoryTree_NodeMouseClick);
             // 
-            // toolStripMenuItem_allFile
+            // imageList_treeView
             // 
-            this.toolStripMenuItem_allFile.AutoSize = false;
-            this.toolStripMenuItem_allFile.Image = global::custom_cloud.Properties.Resources.backgroud_blue1;
-            this.toolStripMenuItem_allFile.Name = "toolStripMenuItem_allFile";
-            this.toolStripMenuItem_allFile.Size = new System.Drawing.Size(193, 30);
-            this.toolStripMenuItem_allFile.Text = "所有文件";
-            this.toolStripMenuItem_allFile.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // toolStripMenuItem_fileImage
-            // 
-            this.toolStripMenuItem_fileImage.AutoSize = false;
-            this.toolStripMenuItem_fileImage.Image = global::custom_cloud.Properties.Resources.backgroud_blue1;
-            this.toolStripMenuItem_fileImage.Name = "toolStripMenuItem_fileImage";
-            this.toolStripMenuItem_fileImage.Size = new System.Drawing.Size(193, 30);
-            this.toolStripMenuItem_fileImage.Text = "图片　　";
-            this.toolStripMenuItem_fileImage.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // toolStripMenuItem_fileDocument
-            // 
-            this.toolStripMenuItem_fileDocument.AutoSize = false;
-            this.toolStripMenuItem_fileDocument.Image = global::custom_cloud.Properties.Resources.backgroud_blue1;
-            this.toolStripMenuItem_fileDocument.Name = "toolStripMenuItem_fileDocument";
-            this.toolStripMenuItem_fileDocument.Size = new System.Drawing.Size(193, 30);
-            this.toolStripMenuItem_fileDocument.Text = "文档　　";
-            this.toolStripMenuItem_fileDocument.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // toolStripMenuItem_fileVideo
-            // 
-            this.toolStripMenuItem_fileVideo.AutoSize = false;
-            this.toolStripMenuItem_fileVideo.Image = global::custom_cloud.Properties.Resources.backgroud_blue1;
-            this.toolStripMenuItem_fileVideo.Name = "toolStripMenuItem_fileVideo";
-            this.toolStripMenuItem_fileVideo.Size = new System.Drawing.Size(193, 30);
-            this.toolStripMenuItem_fileVideo.Text = "视频　　";
-            this.toolStripMenuItem_fileVideo.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // toolStripMenuItem_fileMusic
-            // 
-            this.toolStripMenuItem_fileMusic.AutoSize = false;
-            this.toolStripMenuItem_fileMusic.Image = global::custom_cloud.Properties.Resources.backgroud_blue1;
-            this.toolStripMenuItem_fileMusic.Name = "toolStripMenuItem_fileMusic";
-            this.toolStripMenuItem_fileMusic.Size = new System.Drawing.Size(193, 30);
-            this.toolStripMenuItem_fileMusic.Text = "音乐　　";
-            this.toolStripMenuItem_fileMusic.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // toolStripMenuItem_fileApp
-            // 
-            this.toolStripMenuItem_fileApp.AutoSize = false;
-            this.toolStripMenuItem_fileApp.Image = global::custom_cloud.Properties.Resources.backgroud_blue1;
-            this.toolStripMenuItem_fileApp.Name = "toolStripMenuItem_fileApp";
-            this.toolStripMenuItem_fileApp.Size = new System.Drawing.Size(193, 30);
-            this.toolStripMenuItem_fileApp.Text = "应用　　";
-            this.toolStripMenuItem_fileApp.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // toolStripMenuItem_fileOthers
-            // 
-            this.toolStripMenuItem_fileOthers.AutoSize = false;
-            this.toolStripMenuItem_fileOthers.Image = global::custom_cloud.Properties.Resources.backgroud_blue1;
-            this.toolStripMenuItem_fileOthers.Name = "toolStripMenuItem_fileOthers";
-            this.toolStripMenuItem_fileOthers.Size = new System.Drawing.Size(193, 30);
-            this.toolStripMenuItem_fileOthers.Text = "其他　　";
-            this.toolStripMenuItem_fileOthers.Click += new System.EventHandler(this.menuItem_Click_Event);
+            this.imageList_treeView.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList_treeView.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList_treeView.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // listView_explorer
             // 
@@ -538,9 +467,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonForward)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonBack)).EndInit();
             this.panel_fileFilter.ResumeLayout(false);
-            this.panel_fileFilter.PerformLayout();
-            this.menuStrip_fileFilter.ResumeLayout(false);
-            this.menuStrip_fileFilter.PerformLayout();
             this.contextMenuStrip_listRightClick.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher_main)).EndInit();
             this.ResumeLayout(false);
@@ -560,14 +486,6 @@
         private System.Windows.Forms.PictureBox pictureBox_buttonForward;
         private System.Windows.Forms.PictureBox pictureBox_buttonRefresh;
         private System.Windows.Forms.Panel panel_fileFilter;
-        private System.Windows.Forms.MenuStrip menuStrip_fileFilter;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_allFile;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_fileImage;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_fileDocument;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_fileVideo;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_fileMusic;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_fileApp;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_fileOthers;
         private System.Windows.Forms.ListView listView_explorer;
         private System.Windows.Forms.ImageList imageList_large;
         private System.Windows.Forms.ImageList imageList_small;
@@ -598,5 +516,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_title_importFolder;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_listContextRightClick_paste;
         private System.IO.FileSystemWatcher fileSystemWatcher_main;
+        private System.Windows.Forms.TreeView treeView_directoryTree;
+        private System.Windows.Forms.ImageList imageList_treeView;
     }
 }
