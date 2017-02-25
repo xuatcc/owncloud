@@ -147,7 +147,7 @@
             // 
             // pictureBox_buttonShare
             // 
-            this.pictureBox_buttonShare.Image = global::custom_cloud.Properties.Resources.function_share_button;
+            this.pictureBox_buttonShare.Image = global::custom_cloud.Properties.Resources.share_2;
             this.pictureBox_buttonShare.Location = new System.Drawing.Point(337, 3);
             this.pictureBox_buttonShare.Name = "pictureBox_buttonShare";
             this.pictureBox_buttonShare.Size = new System.Drawing.Size(94, 94);
@@ -160,7 +160,7 @@
             // pictureBox_buttonSelectDisk
             // 
             this.pictureBox_buttonSelectDisk.BackColor = System.Drawing.Color.Blue;
-            this.pictureBox_buttonSelectDisk.Image = global::custom_cloud.Properties.Resources.function_Disk_button;
+            this.pictureBox_buttonSelectDisk.Image = global::custom_cloud.Properties.Resources.cloudDisk2;
             this.pictureBox_buttonSelectDisk.Location = new System.Drawing.Point(243, 3);
             this.pictureBox_buttonSelectDisk.Name = "pictureBox_buttonSelectDisk";
             this.pictureBox_buttonSelectDisk.Size = new System.Drawing.Size(94, 94);

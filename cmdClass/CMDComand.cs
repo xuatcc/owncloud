@@ -54,18 +54,17 @@ namespace custom_cloud.cmdClass
             /* 执行语句 */
             string sslComand = "openssl.exe enc -e -aes-128-cbc";
             sslComand += (" -k " + MyConfig.PASSWORD_FILE_ENCRYPTION + " -in " + fileSource + " -out " + fileTarget + "\n");
-            /* 调用系统调用选择打开方式 */
-            Process proc = new Process();
+            /* 加密 */
+            Process proc = new Process();// 新建进程
             proc.StartInfo.FileName = "cmd.exe";
-            proc.StartInfo.RedirectStandardInput = true;//重定向输入
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.CreateNoWindow = true;
+            proc.StartInfo.RedirectStandardInput = true;// 重定向输入
+            proc.StartInfo.UseShellExecute = false;// 禁用Windows终端
+            proc.StartInfo.CreateNoWindow = true;// 关闭窗口
             proc.Start();
-            //变换地址
-            proc.StandardInput.WriteLine("cd " + MyConfig.PATH_TOOL);
-            proc.StandardInput.Flush();
-            proc.StandardInput.WriteLine(sslComand);
-            proc.StandardInput.Flush();
+            proc.StandardInput.WriteLine("cd " + MyConfig.PATH_TOOL);// 转至SSL目录下
+            proc.StandardInput.Flush();// 执行命令
+            proc.StandardInput.WriteLine(sslComand);// 写入SSL命令
+            proc.StandardInput.Flush();// 执行命令
         }
         /// <summary>
         /// 解密文件

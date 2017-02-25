@@ -174,7 +174,7 @@ namespace custom_cloud
             */
             /* 测试主窗体 */
             
-            User_Info.UserName = "小黄";
+            User_Info.UserName = "User Name";
             MyConfig.writeUserTrack(comboBox_user.Text);
             navigateToMainWindow(User_Info);
             
