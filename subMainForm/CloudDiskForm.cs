@@ -45,6 +45,10 @@ namespace custom_cloud
             }
         }
         /// <summary>
+        /// 当前加密文件存放根目录
+        /// </summary>
+        string SyncPathEcryption;
+        /// <summary>
         /// 获取或设置当前路径栈
         /// </summary>
         public Stack<string> BackStack
@@ -395,7 +399,6 @@ namespace custom_cloud
            
             var temp = listView_explorer;
             var temp2 = imageList_large;
-            /* 排序方式 */
             //listView_explorer.ListViewItemSorter = new ListViewItemComparerByName();
             foreach(FileTree file_tree in fileTree.SubTree.Values)
             {
@@ -766,15 +769,15 @@ namespace custom_cloud
                 string[] fileNames = openFileDialog_main.FileNames;
                 for (int i = 0; i < fileNames.Length; i++)
                 {
-                    ////这期间需要加密，这里先不加
                     string newFileName = FileTree.copyFile(openFileDialog_main.FileName,
                         File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(fileNames[i]));
+                    /* 加密 */
+                    MessageBox.Show(CMDComand.encryptFile(newFileName, newFileName));
                     //更新文件树
                     updateFileTree();
                     //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
                     addItemToListView(newFileName, FileTree.FILE_IDENTIFY_NAME);
-                    /* 加密 */
-                    //CMDComand.ecryptFile(newFileName, newFileName);
+                    
                     /* 启动同步 */
                 }
             }
@@ -915,9 +918,13 @@ namespace custom_cloud
                         /* 应该使上方的navigation同步变化，先不做 */
                         break;
                     }
-                    else if (File.Exists(CurrentPath + "/" + listView_explorer.Items[i].Text))
+                    else if (File.Exists(CurrentPath + "/" + listView_explorer.Items[i].Text + MyConfig.EXTEND_NAME_ENCRYP_FILE))
                     {
-                        Process.Start(CurrentPath + "/" + listView_explorer.Items[i].Text);
+                        ;
+                        //Process.Start(CurrentPath + "/" + listView_explorer.Items[i].Text);
+                        string fileName = CMDComand.discryptFile(CurrentPath + "/" + listView_explorer.Items[i].Text + MyConfig.EXTEND_NAME_ENCRYP_FILE, MyConfig.PATH_FILE_BUFFER + listView_explorer.Items[i].Text);
+                        //while (!File.Exists(fileName)) Application.DoEvents();
+                        Process.Start(Path.GetFullPath(fileName));
                         listView_explorer.Items[i].Focused = false;
 
                         updateSorterPath();

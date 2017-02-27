@@ -61,6 +61,15 @@ namespace custom_cloud
         /// </summary>
         public static string EXTEND_NAME_ENCRYP_FILE = ".ssl";
         /// <summary>
+        /// 同步工具的位置
+        /// </summary>
+        public static string PATH_SYNC_TOOL = @"./tool/sync.exe";
+        /// <summary>
+        /// 加密工具的位置
+        /// </summary>
+        public static string PATH_ECRYTION = @"./tool/openssl.exe";
+        public static string PATH_FILE_BUFFER = @"./file_buffer/";
+        /// <summary>
         /// 文件排序规则
         /// </summary>
         public enum SortRule
