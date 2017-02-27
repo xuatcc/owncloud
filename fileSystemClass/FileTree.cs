@@ -318,7 +318,24 @@ namespace custom_cloud
         /// </summary>
         public class TreeFileInfo
         {
+            /// <summary>
+            /// 文件信息
+            /// </summary>
             public FileInfo Fileinfo;
+            /// <summary>
+            /// 非加密文件名
+            /// </summary>
+            public string FileName
+            {
+                get
+                {
+                    return Path.GetFileNameWithoutExtension(Fileinfo.Name);
+                }
+            }
+            public string FilePath
+            {
+                get { return Path.GetDirectoryName(Fileinfo.FullName) + "/" + Path.GetFileNameWithoutExtension(Fileinfo.Name); }
+            }
             /// <summary>
             /// 图标
             /// </summary>
@@ -328,7 +345,7 @@ namespace custom_cloud
             /// </summary>
             public string ExtendName
             {
-                get { return Path.GetExtension(Fileinfo.Name); }
+                get { return Path.GetExtension(Path.GetFileNameWithoutExtension(Fileinfo.Name)); }
             }
             public TreeFileInfo() { }
             public TreeFileInfo(string full_name)

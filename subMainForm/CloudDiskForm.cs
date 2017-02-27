@@ -414,11 +414,11 @@ namespace custom_cloud
             //listView_explorer.Sort();
             foreach (FileTree.TreeFileInfo treeFileInfo in fileTree.CurrentDirectoryFileList.Values)
             {
-                string fileName = treeFileInfo.Fileinfo.Name;
+                string fileName = treeFileInfo.FileName;
                 /* 大图标注意判断文件是否为图片 */
-                if (CodeAnalysis.IsImage(treeFileInfo.Fileinfo.FullName))
+                if (CodeAnalysis.IsImage(treeFileInfo.FilePath))
                 {
-                    Image image = Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, Image.FromFile(treeFileInfo.Fileinfo.FullName));
+                    Image image = Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, Image.FromFile(treeFileInfo.FilePath));
                     imageList_large.Images.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), image);
                 }
                 else if (LargeIconDict.ContainsKey(treeFileInfo.ExtendName)) imageList_large.Images.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, LargeIconDict[treeFileInfo.ExtendName]));
@@ -427,7 +427,7 @@ namespace custom_cloud
                 if (SmallIconDict.ContainsKey(treeFileInfo.ExtendName)) imageList_small.Images.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallIconDict[treeFileInfo.ExtendName]));
                 else imageList_small.Images.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallDefaultFileIcon));
 
-                listView_explorer.Items.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), treeFileInfo.Fileinfo.Name, MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName));
+                listView_explorer.Items.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), fileName, MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName));
                 //listView_explorer.Items[MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName)].Name = FileTree.FILE_IDENTIFY_NAME;
             }
             
@@ -843,6 +843,7 @@ namespace custom_cloud
                 {
                     FileTree.deleteDirectory(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName);
                 }
+                //listView_explorer.SelectedItems[i].Selected = false;
             }
             //更新文件树
             //checkTreeNodeExpandStatus(File_Tree, treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)]);
@@ -851,6 +852,9 @@ namespace custom_cloud
             updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
 
             updateDirectoryTree();
+
+            setVisibleOfItemRightClickMenu(false);
+            setVisibleOfRightClickMenu(true);
             //updateDirectoryTree();
         }
         /// <summary>
