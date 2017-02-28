@@ -27,8 +27,22 @@ namespace custom_cloud
         /// 文件树
         /// </summary>
         public FileTree File_Tree;
-        
+        /// <summary>
+        /// 同步线程
+        /// </summary>
+        Thread ThreadSync;
+        /// <summary>
+        /// 当前目录
+        /// </summary>
         string CurrentPath;
+        /// <summary>
+        /// 用户信息
+        /// </summary>
+        UserInfo User_Info = new UserInfo();
+        /// <summary>
+        /// 用户本地信息
+        /// </summary>
+        UserLocalInfo User_LocalInfo = new UserLocalInfo();
         /// <summary>
         /// 获取当前工作目录，设置该变量时还可以刷新窗体的控件
         /// </summary>
@@ -48,7 +62,7 @@ namespace custom_cloud
         /// <summary>
         /// 当前加密文件存放根目录
         /// </summary>
-        string SyncPathEcryption;
+        //string SyncPathEcryption;
         /// <summary>
         /// 获取或设置当前路径栈
         /// </summary>
@@ -213,6 +227,11 @@ namespace custom_cloud
             //updateDirectoryTree();
 
             /* 测试部分 */
+            User_Info.UserID = "Doge";
+            User_Info.Password = "xjtu2017";
+            User_LocalInfo.SyncPath = SyncPath;
+            User_Info.ServerURI = "http://192.168.204.130/helo";
+            /* 测试部分 */
             updateDirectoryTree();
             /* 选项菜单不可见 */
             setVisibleOfItemRightClickMenu(false);
@@ -222,6 +241,10 @@ namespace custom_cloud
             updateSortRule();
             sortBySortRule();
             listView_explorer.LabelEdit = true;
+
+            /* 启动同步线程 */
+            ThreadSync = new Thread(threadSync);
+            ThreadSync.Start();
         }
         /// <summary>
         /// 设置显示模式
@@ -1380,6 +1403,33 @@ namespace custom_cloud
             File_Tree.updateTree(CurrentPath);
             updateListViewItemsWithoutTreeUpdate(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
             //updateDirectoryTree();
+        }
+        /// <summary>
+        /// 同步线程方法
+        /// </summary>
+        void threadSync()
+        {
+            while (true)
+            {
+                try
+                {
+                    CMDComand.syncDirectory(User_LocalInfo.SyncPath, User_Info.UserID, User_Info.Password, User_Info.ServerURI);
+                }
+                catch(Exception e)
+                {
+                    Reporter.reportBug(e.ToString());
+                }
+            }
+        }
+        /// <summary>
+        /// 窗体关闭时的事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CloudDiskForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (ThreadSync != null) ThreadSync.Abort();
+            /* 这块以后还要做托盘 */
         }
     }
 }

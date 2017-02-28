@@ -459,6 +459,7 @@
             this.MainMenuStrip = this.menuStrip_cloudDisk;
             this.Name = "CloudDiskForm";
             this.Text = "CloudDiskForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CloudDiskForm_FormClosing);
             this.SizeChanged += new System.EventHandler(this.CloudDiskForm_SizeChanged);
             this.menuStrip_cloudDisk.ResumeLayout(false);
             this.menuStrip_cloudDisk.PerformLayout();

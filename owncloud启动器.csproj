@@ -81,6 +81,7 @@
     <Compile Include="loadingForm\LoadEncryption.Designer.cs">
       <DependentUpon>LoadEncryption.cs</DependentUpon>
     </Compile>
+    <Compile Include="netClass\SyncStatus.cs" />
     <Compile Include="subMainForm\CloudDiskForm.cs">
       <SubType>Form</SubType>
     </Compile>
