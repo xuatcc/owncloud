@@ -773,10 +773,10 @@ namespace custom_cloud
                 updateFileTree();
                 //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
                 LoadEncryption loadEncryption = new LoadEncryption();
-                loadEncryption.Show();
-                Queue<string> newFileNames = loadEncryption.importItem(fileNames, File_Tree, CurrentPath);
-                loadEncryption.Close();
-                while (newFileNames.Count > 0) addItemToListView(newFileNames.Dequeue(), FileTree.FILE_IDENTIFY_NAME);
+                loadEncryption.importItem(fileNames, CurrentPath);
+                loadEncryption.ShowDialog();
+                //while (newFileNames.Count > 0) addItemToListView(newFileNames.Dequeue(), FileTree.FILE_IDENTIFY_NAME);
+                updateListViewItems(FileView, File_Tree, Sort_Rule);
             }
         }
         /// <summary>
@@ -787,14 +787,14 @@ namespace custom_cloud
             if (folderBrowserDialog_main.ShowDialog() == DialogResult.OK)
             {
                 LoadEncryption loadEncryption = new LoadEncryption();
-                loadEncryption.Show();
-                string newFolderName = loadEncryption.importFolder(folderBrowserDialog_main.SelectedPath,
-                    File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(folderBrowserDialog_main.SelectedPath));
-                loadEncryption.Close();
+                //loadEncryption.Show();
+                loadEncryption.importFolder(folderBrowserDialog_main.SelectedPath,
+                    CurrentPath + "/" + Path.GetFileName(folderBrowserDialog_main.SelectedPath));
+                loadEncryption.ShowDialog();
                 //更新文件树
                 updateFileTree();
-                //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
-                addItemToListView(newFolderName, FileTree.FOLDER_IDENTIFY_NAME);
+                updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                //addItemToListView(newFolderName, FileTree.FOLDER_IDENTIFY_NAME);
 
                 updateDirectoryTree();
                 /* 启动同步 */

@@ -83,6 +83,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "LoadEncryption";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoadEncryption_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_wait)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -7,12 +7,18 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace custom_cloud.loadingForm
 {
     public partial class LoadEncryption : Form
     {
+        Thread ThreadImport;
+        string[] ItemsPath;
+        string CurrentPath;
+        string Source;
+        string Target;
         public LoadEncryption()
         {
             InitializeComponent();
@@ -28,7 +34,11 @@ namespace custom_cloud.loadingForm
         /// <param name="ea"></param>
         void btn_Click_Event(object sender, EventArgs ea)
         {
-
+            if (sender.Equals(button_cancelImport))
+            {
+                if (ThreadImport != null) ThreadImport.Abort();
+                this.Close();
+            }
         }
         /// <summary>
         /// 鼠标进入事件
@@ -73,20 +83,35 @@ namespace custom_cloud.loadingForm
         /// <param name="fileTree"></param>
         /// <param name="currentPath"></param>
         /// <returns></returns>
-        public Queue<string> importItem(string[] itemsPath, FileTree fileTree, string currentPath)
+        public void importItem(string[] itemsPath, string currentPath)
         {
-            string[] fileNames = itemsPath;
-            Queue<string> newFileNames = new Queue<string>();
-            for (int i = 0; i < fileNames.Length; i++)
+            ItemsPath= itemsPath;
+            CurrentPath = currentPath;
+            ThreadImport = new Thread(threadImportItems);
+            ThreadImport.Start();
+        }
+        /// <summary>
+        /// 导入文件线程
+        /// </summary>
+        void threadImportItems()
+        {
+            try
             {
-                string newFileName = FileTree.copyFile(fileNames[i],
-                    fileTree.getTargetTree(currentPath).RootDirectory.FullName + "/" + Path.GetFileName(fileNames[i]));
-                /* 加密 */
-                CMDComand.encryptFile(newFileName, newFileName);
-                newFileNames.Enqueue(newFileName);
-                Application.DoEvents();
+                string newFileName;
+                for (int i = 0; i < ItemsPath.Length; i++)
+                {
+                    newFileName = FileTree.copyFile(ItemsPath[i],
+                       CurrentPath + "/" + Path.GetFileName(ItemsPath[i]));
+                    /* 加密 */
+                    CMDComand.encryptFile(newFileName, newFileName);
+                }
+                MethodInvoker methodInvoker = new MethodInvoker(closeForm);
+                BeginInvoke(methodInvoker);
             }
-            return newFileNames;
+            catch (Exception e)
+            {
+                Reporter.reportBug(e.ToString());
+            }
         }
         /// <summary>
         /// 导入文件夹
@@ -94,9 +119,36 @@ namespace custom_cloud.loadingForm
         /// <param name="source"></param>
         /// <param name="target"></param>
         /// <returns></returns>
-        public string importFolder(string source, string target)
+        public void importFolder(string source, string target)
         {
-            return FileTree.copyDirectory(source, target);
+            Source = source;
+            Target = target;
+            ThreadImport = new Thread(threadImportFolder);
+            ThreadImport.Start();
+        }
+        /// <summary>
+        /// 导入文件夹线程
+        /// </summary>
+        void threadImportFolder()
+        {
+            try
+            {
+                FileTree.copyDirectory(Source, Target);
+                MethodInvoker methodInvoker = new MethodInvoker(closeForm);
+                BeginInvoke(methodInvoker);
+            }
+            catch(Exception e)
+            {
+                Reporter.reportBug(e.ToString());
+            }
+        }
+        private void LoadEncryption_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (ThreadImport != null) ThreadImport.Abort();
+        }
+        void closeForm()
+        {
+            this.Close();
         }
     }
 }

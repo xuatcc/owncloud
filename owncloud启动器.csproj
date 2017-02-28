@@ -69,6 +69,12 @@
     <Compile Include="dialog\FileAttributeDialog.Designer.cs">
       <DependentUpon>FileAttributeDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="loadingForm\LoadDisCryption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loadingForm\LoadDisCryption.Designer.cs">
+      <DependentUpon>LoadDisCryption.cs</DependentUpon>
+    </Compile>
     <Compile Include="loadingForm\LoadEncryption.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dialog\FileAttributeDialog.resx">
       <DependentUpon>FileAttributeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loadingForm\LoadDisCryption.resx">
+      <DependentUpon>LoadDisCryption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loadingForm\LoadEncryption.resx">
       <DependentUpon>LoadEncryption.cs</DependentUpon>
