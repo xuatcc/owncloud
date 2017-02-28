@@ -77,7 +77,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::custom_cloud.Properties.Resources.white_background1;
             this.ClientSize = new System.Drawing.Size(240, 100);
             this.Controls.Add(this.label_status);
             this.Controls.Add(this.button_cancelLogin);

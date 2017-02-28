@@ -3,6 +3,7 @@
     *@in XJTU
     *@in 2017.2
 */
+using custom_cloud.cmdClass;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace custom_cloud
 {
@@ -78,7 +80,8 @@ namespace custom_cloud
             /* 广度优先遍历 */
             foreach (FileInfo fi in fInfo)
             {
-                CurrentDirectoryFileList.Add(fi.Name, new TreeFileInfo(fi.FullName));
+                if (!Path.GetExtension(fi.Name).Equals(MyConfig.EXTEND_NAME_ENCRYP_FILE)) continue;
+                CurrentDirectoryFileList.Add(Path.GetFileNameWithoutExtension(fi.Name), new TreeFileInfo(fi.FullName));
             }
             foreach (DirectoryInfo di in dInfo)
             {
@@ -211,6 +214,7 @@ namespace custom_cloud
             DirectoryInfo directoryInfo = new DirectoryInfo(source);
             DirectoryInfo[] directoryInfos = directoryInfo.GetDirectories();
             string newFolderName = destination;
+            Application.DoEvents();
             /* 防止重名 */
             int counter = 0;
             while (Directory.Exists(newFolderName))
@@ -231,6 +235,9 @@ namespace custom_cloud
             foreach(FileInfo fi in fileInfo)
             {
                 copyFile(fi.FullName, newFolderName + "/" + fi.Name);
+                /* 加密 */
+                CMDComand.encryptFile(newFolderName + "/" + fi.Name, newFolderName + "/" + fi.Name);
+                Application.DoEvents();
             }
             return newFolderName;
         }

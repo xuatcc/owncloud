@@ -5,6 +5,7 @@
 */
 using custom_cloud.cmdClass;
 using custom_cloud.dialog;
+using custom_cloud.loadingForm;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -447,19 +448,19 @@ namespace custom_cloud
 
                 if (lvi_1.Name.Contains(FileTree.FILE_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FILE_IDENTIFY_NAME))
                 {
-                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
-                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE)) return -1;
                     returnVal = string.Compare(lvi_1.Text, lvi_2.Text);
                 }
                 else if (lvi_1.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FILE_IDENTIFY_NAME))
                 {
                     if (!Directory.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
-                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE)) return -1;
                     returnVal = -1;
                 }
                 else if (lvi_1.Name.Contains(FileTree.FILE_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME))
                 {
-                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE)) return -1;
                     if (!Directory.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
                     returnVal = 1;
                 }
@@ -487,25 +488,25 @@ namespace custom_cloud
                 
                 if(lvi_1.Name.Contains(FileTree.FILE_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FILE_IDENTIFY_NAME))
                 {
-                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
-                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
-                    FileTree.TreeFileInfo tfi_1 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_1.Text);
-                    FileTree.TreeFileInfo tfi_2 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_2.Text);
+                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE)) return -1;
+                    FileTree.TreeFileInfo tfi_1 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_1.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE);
+                    FileTree.TreeFileInfo tfi_2 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_2.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE);
                     returnVal = -(int)(tfi_1.ModifyTime - tfi_2.ModifyTime);
                 }
                 else if (lvi_1.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FILE_IDENTIFY_NAME))
                 {
                     if (!Directory.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
-                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE)) return -1;
                     FileTree ft_1 = new FileTree(CurrentPath + "/" + lvi_1.Text);
-                    FileTree.TreeFileInfo tfi_2 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_2.Text);
+                    FileTree.TreeFileInfo tfi_2 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_2.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE);
                     returnVal = -(int)(ft_1.ModifyTime + MyConfig.RefFutureTimeDouble - tfi_2.ModifyTime);
                 }
                 else if (lvi_1.Name.Contains(FileTree.FILE_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME))
                 {
-                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE)) return -1;
                     if (!Directory.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
-                    FileTree.TreeFileInfo tfi_1 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_1.Text);
+                    FileTree.TreeFileInfo tfi_1 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_1.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE);
                     FileTree ft_2 = new FileTree(CurrentPath + "/" + lvi_2.Text);
                     returnVal = -(int)(tfi_1.ModifyTime - (ft_2.ModifyTime + MyConfig.RefFutureTimeDouble));
                 }
@@ -535,23 +536,23 @@ namespace custom_cloud
 
                 if (lvi_1.Name.Contains(FileTree.FILE_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FILE_IDENTIFY_NAME))
                 {
-                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
-                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
-                    FileTree.TreeFileInfo tfi_1 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_1.Text);
-                    FileTree.TreeFileInfo tfi_2 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_2.Text);
+                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE)) return -1;
+                    FileTree.TreeFileInfo tfi_1 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_1.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE);
+                    FileTree.TreeFileInfo tfi_2 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_2.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE);
                     returnVal = tfi_1.Fileinfo.Length > tfi_2.Fileinfo.Length ? -1 : 1;
                 }
                 else if (lvi_1.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FILE_IDENTIFY_NAME))
                 {
                     if (!Directory.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
-                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_2.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE)) return -1;
                     //FileTree ft_1 = new FileTree(CurrentPath + "/" + lvi_1.Text);
                     //FileTree.TreeFileInfo tfi_2 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_2.Text);
                     returnVal = -1;
                 }
                 else if (lvi_1.Name.Contains(FileTree.FILE_IDENTIFY_NAME) && lvi_2.Name.Contains(FileTree.FOLDER_IDENTIFY_NAME))
                 {
-                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text)) return -1;
+                    if (!File.Exists(CurrentPath + "/" + lvi_1.Text + MyConfig.EXTEND_NAME_ENCRYP_FILE)) return -1;
                     if (!Directory.Exists(CurrentPath + "/" + lvi_2.Text)) return -1;
                     //FileTree.TreeFileInfo tfi_1 = new FileTree.TreeFileInfo(CurrentPath + "/" + lvi_1.Text);
                     //FileTree ft_2 = new FileTree(CurrentPath + "/" + lvi_2.Text);
@@ -767,19 +768,15 @@ namespace custom_cloud
             if (openFileDialog_main.ShowDialog() == DialogResult.OK)
             {
                 string[] fileNames = openFileDialog_main.FileNames;
-                for (int i = 0; i < fileNames.Length; i++)
-                {
-                    string newFileName = FileTree.copyFile(openFileDialog_main.FileName,
-                        File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(fileNames[i]));
-                    /* 加密 */
-                    MessageBox.Show(CMDComand.encryptFile(newFileName, newFileName));
-                    //更新文件树
-                    updateFileTree();
-                    //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
-                    addItemToListView(newFileName, FileTree.FILE_IDENTIFY_NAME);
-                    
-                    /* 启动同步 */
-                }
+                
+                //更新文件树
+                updateFileTree();
+                //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                LoadEncryption loadEncryption = new LoadEncryption();
+                loadEncryption.Show();
+                Queue<string> newFileNames = loadEncryption.importItem(fileNames, File_Tree, CurrentPath);
+                loadEncryption.Close();
+                while (newFileNames.Count > 0) addItemToListView(newFileNames.Dequeue(), FileTree.FILE_IDENTIFY_NAME);
             }
         }
         /// <summary>
@@ -789,8 +786,11 @@ namespace custom_cloud
         {
             if (folderBrowserDialog_main.ShowDialog() == DialogResult.OK)
             {
-                string newFolderName = FileTree.copyDirectory(folderBrowserDialog_main.SelectedPath, 
+                LoadEncryption loadEncryption = new LoadEncryption();
+                loadEncryption.Show();
+                string newFolderName = loadEncryption.importFolder(folderBrowserDialog_main.SelectedPath,
                     File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + Path.GetFileName(folderBrowserDialog_main.SelectedPath));
+                loadEncryption.Close();
                 //更新文件树
                 updateFileTree();
                 //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
@@ -835,9 +835,9 @@ namespace custom_cloud
             for (int i = 0; i < listView_explorer.SelectedItems.Count; i++)
             {
                 fileName = listView_explorer.SelectedItems[i].Text;
-                if (File.Exists(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName))
+                if (File.Exists(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName + MyConfig.EXTEND_NAME_ENCRYP_FILE))
                 {
-                    File.Delete(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName);
+                    File.Delete(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName + MyConfig.EXTEND_NAME_ENCRYP_FILE);
                 }
                 if (Directory.Exists(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName))
                 {
@@ -1181,6 +1181,7 @@ namespace custom_cloud
         /// <param name="e"></param>
         private void fileSystemWatcher_main_Changed(object sender, FileSystemEventArgs e)
         {
+            /* 只要文件已发生改变，就进行同步 */
             /*
             updateFileTree();
             FileTree temp = File_Tree;
@@ -1276,6 +1277,7 @@ namespace custom_cloud
                     toolStripMenuItem_listContextRightClickSortRule_bySize.Checked = true;
                     break;
             }
+            listView_explorer.Sort();
             /* 保存排序信息 */
             MyConfig.ConfigFile configFile = MyConfig.readConfig();
             configFile.createOrModifyItem(MyConfig.ConfigFile.TABLE_NAME_SKIN, MyConfig.ConfigFile.Skin.KEY_FILE_SORT_RULE, Sort_Rule);

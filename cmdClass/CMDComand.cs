@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Text;
 
 namespace custom_cloud.cmdClass
@@ -92,18 +93,32 @@ namespace custom_cloud.cmdClass
         /// <param name="user_id"></param>
         /// <param name="password"></param>
         /// <param name="server_url"></param>
-        public static void syncDirectory(string directory, string user_id, string password, string server_url)
+        public static string syncDirectory(string directory, string user_id, string password, string server_url)
         {
             if (!File.Exists(MyConfig.PATH_SYNC_TOOL)) throw new Exception("cann't find sync tool!");
             Process process = new Process();
             process.StartInfo.FileName = MyConfig.PATH_SYNC_TOOL;
-            process.StartInfo.Arguments = " --user  " + user_id + " --password " + password + " " + directory + " " + server_url;
-            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.Arguments = "-u  " + user_id + " -p " + password + " " + directory + " " + server_url;
             process.StartInfo.UseShellExecute = false;
+            process.StartInfo.CreateNoWindow = true;
             process.StartInfo.RedirectStandardInput = true;
             process.StartInfo.RedirectStandardError = true;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.ErrorDataReceived += new DataReceivedEventHandler(msgReceivedManager);
             process.Start();
+            process.BeginErrorReadLine();
             process.WaitForExit();
+            if (process.ExitCode == 0)
+                return "sync sucess !";
+            else return "sync fail!";
+        }
+        static void msgReceivedManager(object obj, DataReceivedEventArgs drea)
+        {
+            if (!string.IsNullOrEmpty(drea.Data))
+            {
+                string temp = drea.Data;
+                Reporter.writeLog("./log/sync_temp.log", temp);
+            }
         }
     }
 }
