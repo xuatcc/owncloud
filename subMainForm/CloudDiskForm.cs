@@ -807,21 +807,17 @@ namespace custom_cloud
         {
             if (folderBrowserDialog_main.ShowDialog() == DialogResult.OK)
             {
-                string fileName;
+                Queue<string> fileNames = new Queue<string>();
+                Queue<string> keyNames = new Queue<string>();
+                string destination = folderBrowserDialog_main.SelectedPath;
                 for(int i = 0; i < listView_explorer.SelectedItems.Count; i++)
                 {
-                    fileName = listView_explorer.SelectedItems[i].Text;
-                    if (File.Exists(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName))
-                    {
-                        FileTree.copyFile(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName,
-                            folderBrowserDialog_main.SelectedPath + "/" + fileName);
-                    }
-                    if(Directory.Exists(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName))
-                    {
-                        FileTree.copyDirectory(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName,
-                            folderBrowserDialog_main.SelectedPath + "/" + fileName);
-                    }
+                    fileNames.Enqueue(CurrentPath + "/" + listView_explorer.SelectedItems[i].Text);
+                    keyNames.Enqueue(listView_explorer.SelectedItems[i].Name);
                 }
+                LoadDisCryption loadDisCryption = new LoadDisCryption();
+                loadDisCryption.exportFiles(fileNames, keyNames, destination);
+                loadDisCryption.ShowDialog();
             }
         }
         /// <summary>

@@ -22,6 +22,7 @@ namespace custom_cloud.loadingForm
         public LoadEncryption()
         {
             InitializeComponent();
+            initializeWidget();
         }
         void initializeWidget()
         {
@@ -133,7 +134,7 @@ namespace custom_cloud.loadingForm
         {
             try
             {
-                FileTree.copyDirectory(Source, Target);
+                FileTree.importDirectory(Source, Target);
                 MethodInvoker methodInvoker = new MethodInvoker(closeForm);
                 BeginInvoke(methodInvoker);
             }

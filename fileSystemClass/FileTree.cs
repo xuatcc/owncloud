@@ -235,9 +235,43 @@ namespace custom_cloud
             foreach(FileInfo fi in fileInfo)
             {
                 copyFile(fi.FullName, newFolderName + "/" + fi.Name);
-                /* 加密 */
-                CMDComand.encryptFile(newFolderName + "/" + fi.Name, newFolderName + "/" + fi.Name);
-                Application.DoEvents();
+            }
+            return newFolderName;
+        }
+        /// <summary>
+        /// 导入文件
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="destination"></param>
+        public static string importDirectory(string source, string destination)
+        {
+            if (!Directory.Exists(source)) return null;
+            /* 遍历source目录下文件夹 */
+            DirectoryInfo directoryInfo = new DirectoryInfo(source);
+            DirectoryInfo[] directoryInfos = directoryInfo.GetDirectories();
+            string newFolderName = destination;
+            Application.DoEvents();
+            /* 防止重名 */
+            int counter = 0;
+            while (Directory.Exists(newFolderName))
+            {
+                ++counter;
+                newFolderName = Path.GetDirectoryName(destination) + "/" + Path.GetFileNameWithoutExtension(destination) + "_" +
+                    counter.ToString();
+                //string a = "";
+            }
+            Directory.CreateDirectory(newFolderName);
+            /* 递归 */
+            foreach (DirectoryInfo di in directoryInfos)
+            {
+                copyDirectory(di.FullName, newFolderName + "/" + di.Name);
+            }
+            /* 复制本目录文件 */
+            FileInfo[] fileInfo = directoryInfo.GetFiles();
+            foreach (FileInfo fi in fileInfo)
+            {
+                /* 加密导入 */
+                CMDComand.encryptFile(fi.FullName, newFolderName + "/" + fi.Name);
             }
             return newFolderName;
         }
@@ -302,6 +336,55 @@ namespace custom_cloud
             }
             /* 删除本目录 */
             Directory.Delete(path);
+        }
+        /// <summary>
+        /// 导出项目
+        /// </summary>
+        /// <param name="itemNames"></param>
+        /// <param name="keyNames"></param>
+        /// <param name="destination"></param>
+        public static void exportItems(Queue<string> itemNames, Queue<string> keyNames, string destination)
+        {
+            if (itemNames.Count != keyNames.Count) return;
+            string itemName;
+            string keyName;
+            string fileName;
+            while (itemNames.Count > 0)
+            {
+                itemName = itemNames.Dequeue();
+                keyName = keyNames.Dequeue();
+                if (keyName.Contains(FileTree.FILE_IDENTIFY_NAME))
+                {
+                    fileName = itemName + MyConfig.EXTEND_NAME_ENCRYP_FILE;
+                    /* 解密输出 */
+                    if (File.Exists(fileName))
+                    CMDComand.discryptFile(fileName, destination + "/" + Path.GetFileNameWithoutExtension(fileName));
+                }
+                else if (keyName.Contains(FileTree.FOLDER_IDENTIFY_NAME))
+                {
+                    if (Directory.Exists(itemName))
+                    {
+                        createFolder(destination + "/" + Path.GetFileName(itemName));
+                        DirectoryInfo directoryInfo = new DirectoryInfo(itemName);
+                        DirectoryInfo[] directory_info = directoryInfo.GetDirectories();
+                        FileInfo[] fileInfo = directoryInfo.GetFiles();
+                        Queue<string> names = new Queue<string>();
+                        Queue<string> keys = new Queue<string>();
+                        for(int i = 0; i < fileInfo.Length; i++)
+                        {
+                            names.Enqueue(fileInfo[i].DirectoryName + "/" + Path.GetFileNameWithoutExtension(fileInfo[i].FullName));
+                            keys.Enqueue(FileTree.FILE_IDENTIFY_NAME);
+                        }
+                        for(int i = 0; i < directory_info.Length; i++)
+                        {
+                            names.Enqueue(directory_info[i].FullName);
+                            keys.Enqueue(FileTree.FOLDER_IDENTIFY_NAME);
+                        }
+                        /* 递归 */
+                        exportItems(names, keys, destination + "/" + Path.GetFileName(itemName));
+                    }
+                }
+            }
         }
         /// <summary>
         /// 新建文件夹

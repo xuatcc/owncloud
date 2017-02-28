@@ -66,6 +66,11 @@
             this.button_cancelExport.TabIndex = 14;
             this.button_cancelExport.Text = "取消导出";
             this.button_cancelExport.UseVisualStyleBackColor = true;
+            this.button_cancelExport.Click += new System.EventHandler(this.btn_Click_Event);
+            this.button_cancelExport.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown_Event);
+            this.button_cancelExport.MouseEnter += new System.EventHandler(this.btn_MouseEnter_Event);
+            this.button_cancelExport.MouseLeave += new System.EventHandler(this.btn_MouseLeave_Event);
+            this.button_cancelExport.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp_Event);
             // 
             // LoadDisCryption
             // 
