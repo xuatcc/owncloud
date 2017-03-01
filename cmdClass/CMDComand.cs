@@ -93,7 +93,7 @@ namespace custom_cloud.cmdClass
         /// <param name="user_id"></param>
         /// <param name="password"></param>
         /// <param name="server_url"></param>
-        public static string syncDirectory(string directory, string user_id, string password, string server_url)
+        public static int syncDirectory(string directory, string user_id, string password, string server_url)
         {
             if (!File.Exists(MyConfig.PATH_SYNC_TOOL)) throw new Exception("cann't find sync tool!");
             Process process = new Process();
@@ -108,9 +108,7 @@ namespace custom_cloud.cmdClass
             process.Start();
             process.BeginErrorReadLine();
             process.WaitForExit();
-            if (process.ExitCode == 0)
-                return "sync sucess !";
-            else return "sync fail!";
+            return process.ExitCode;
         }
         static void msgReceivedManager(object obj, DataReceivedEventArgs drea)
         {

@@ -72,6 +72,7 @@
             this.folderBrowserDialog_main = new System.Windows.Forms.FolderBrowserDialog();
             this.saveFileDialog_main = new System.Windows.Forms.SaveFileDialog();
             this.fileSystemWatcher_main = new System.IO.FileSystemWatcher();
+            this.label_syncStatus = new System.Windows.Forms.Label();
             this.menuStrip_cloudDisk.SuspendLayout();
             this.panel_function.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonRefresh)).BeginInit();
@@ -156,6 +157,7 @@
             // 
             this.panel_function.BackgroundImage = global::custom_cloud.Properties.Resources.white_background1;
             this.panel_function.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_function.Controls.Add(this.label_syncStatus);
             this.panel_function.Controls.Add(this.pictureBox_buttonRefresh);
             this.panel_function.Controls.Add(this.pictureBox_buttonForward);
             this.panel_function.Controls.Add(this.pictureBox_buttonBack);
@@ -445,6 +447,15 @@
             this.fileSystemWatcher_main.SynchronizingObject = this;
             this.fileSystemWatcher_main.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_main_Changed);
             // 
+            // label_syncStatus
+            // 
+            this.label_syncStatus.AutoSize = true;
+            this.label_syncStatus.Location = new System.Drawing.Point(96, 9);
+            this.label_syncStatus.Name = "label_syncStatus";
+            this.label_syncStatus.Size = new System.Drawing.Size(29, 12);
+            this.label_syncStatus.TabIndex = 4;
+            this.label_syncStatus.Text = "sync";
+            // 
             // CloudDiskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -464,6 +475,7 @@
             this.menuStrip_cloudDisk.ResumeLayout(false);
             this.menuStrip_cloudDisk.PerformLayout();
             this.panel_function.ResumeLayout(false);
+            this.panel_function.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonForward)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonBack)).EndInit();
@@ -519,5 +531,6 @@
         private System.IO.FileSystemWatcher fileSystemWatcher_main;
         private System.Windows.Forms.TreeView treeView_directoryTree;
         private System.Windows.Forms.ImageList imageList_treeView;
+        private System.Windows.Forms.Label label_syncStatus;
     }
 }

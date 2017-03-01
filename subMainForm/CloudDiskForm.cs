@@ -231,6 +231,7 @@ namespace custom_cloud
             User_Info.Password = "xjtu2017";
             User_LocalInfo.SyncPath = SyncPath;
             User_Info.ServerURI = "http://192.168.204.130/helo";
+            label_syncStatus.Text = "正在同步";
             /* 测试部分 */
             updateDirectoryTree();
             /* 选项菜单不可见 */
@@ -850,20 +851,17 @@ namespace custom_cloud
         {
             deleteFileDialog = new DeleteFileDialog();
             if (deleteFileDialog.ShowDialog() != DialogResult.OK) return;
-            string fileName;
+            Queue<string> filePaths = new Queue<string>();
+            Queue<string> keyNames = new Queue<string>();
             for (int i = 0; i < listView_explorer.SelectedItems.Count; i++)
             {
-                fileName = listView_explorer.SelectedItems[i].Text;
-                if (File.Exists(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName + MyConfig.EXTEND_NAME_ENCRYP_FILE))
-                {
-                    File.Delete(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName + MyConfig.EXTEND_NAME_ENCRYP_FILE);
-                }
-                if (Directory.Exists(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName))
-                {
-                    FileTree.deleteDirectory(File_Tree.getTargetTree(CurrentPath).RootDirectory.FullName + "/" + fileName);
-                }
-                //listView_explorer.SelectedItems[i].Selected = false;
+                filePaths.Enqueue(CurrentPath + "/" + listView_explorer.SelectedItems[i].Text);
+                keyNames.Enqueue(listView_explorer.SelectedItems[i].Name);
+                
             }
+            LoadDeleteFiles loadDeleteFiles = new LoadDeleteFiles();
+            loadDeleteFiles.deleteItems(filePaths, keyNames);
+            loadDeleteFiles.ShowDialog();
             //更新文件树
             //checkTreeNodeExpandStatus(File_Tree, treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)]);
 
@@ -1413,7 +1411,18 @@ namespace custom_cloud
             {
                 try
                 {
-                    CMDComand.syncDirectory(User_LocalInfo.SyncPath, User_Info.UserID, User_Info.Password, User_Info.ServerURI);
+                    int tempExitCode = CMDComand.syncDirectory(User_LocalInfo.SyncPath, User_Info.UserID, User_Info.Password, User_Info.ServerURI);
+                    label_syncStatus.Invoke(new MethodInvoker(delegate
+                    {
+                        label_syncStatus.Text = "同步完成";
+                        Application.DoEvents();
+                    }));
+                    Thread.Sleep(20000);
+                    label_syncStatus.Invoke(new MethodInvoker(delegate
+                    {
+                        label_syncStatus.Text = "正在同步";
+                        Application.DoEvents();
+                    }));
                 }
                 catch(Exception e)
                 {

@@ -250,7 +250,6 @@ namespace custom_cloud
             DirectoryInfo directoryInfo = new DirectoryInfo(source);
             DirectoryInfo[] directoryInfos = directoryInfo.GetDirectories();
             string newFolderName = destination;
-            Application.DoEvents();
             /* 防止重名 */
             int counter = 0;
             while (Directory.Exists(newFolderName))
@@ -264,14 +263,15 @@ namespace custom_cloud
             /* 递归 */
             foreach (DirectoryInfo di in directoryInfos)
             {
-                copyDirectory(di.FullName, newFolderName + "/" + di.Name);
+                importDirectory(di.FullName, newFolderName + "/" + di.Name);
             }
             /* 复制本目录文件 */
             FileInfo[] fileInfo = directoryInfo.GetFiles();
             foreach (FileInfo fi in fileInfo)
             {
+                File.Copy(fi.FullName, newFolderName + "/" + fi.Name);
                 /* 加密导入 */
-                CMDComand.encryptFile(fi.FullName, newFolderName + "/" + fi.Name);
+                CMDComand.encryptFile(newFolderName + "/" + fi.Name, newFolderName + "/" + fi.Name);
             }
             return newFolderName;
         }

@@ -90,3 +90,4 @@ E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.dialog.FileAttributeDialo
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.subMainForm.UserModifyForm.resources
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.loadingForm.LoadEncryption.resources
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.loadingForm.LoadDisCryption.resources
+E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.loadingForm.LoadDeleteFiles.resources
