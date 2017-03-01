@@ -98,7 +98,7 @@ namespace custom_cloud.cmdClass
             if (!File.Exists(MyConfig.PATH_SYNC_TOOL)) throw new Exception("cann't find sync tool!");
             Process process = new Process();
             process.StartInfo.FileName = MyConfig.PATH_SYNC_TOOL;
-            process.StartInfo.Arguments = "-u  " + user_id + " -p " + password + " " + directory + " " + server_url;
+            process.StartInfo.Arguments = "--user  " + user_id + " --password " + password + " " + Path.GetFullPath(directory) + " " + server_url;
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.RedirectStandardInput = true;

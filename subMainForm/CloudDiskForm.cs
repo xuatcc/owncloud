@@ -792,13 +792,16 @@ namespace custom_cloud
             if (openFileDialog_main.ShowDialog() == DialogResult.OK)
             {
                 string[] fileNames = openFileDialog_main.FileNames;
-                
-                //更新文件树
-                updateFileTree();
-                //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+
                 LoadEncryption loadEncryption = new LoadEncryption();
                 loadEncryption.importItem(fileNames, CurrentPath);
                 loadEncryption.ShowDialog();
+
+                
+                //更新文件树
+                updateFileTree();
+                updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                
                 //while (newFileNames.Count > 0) addItemToListView(newFileNames.Dequeue(), FileTree.FILE_IDENTIFY_NAME);
                 updateListViewItems(FileView, File_Tree, Sort_Rule);
             }
@@ -1414,13 +1417,13 @@ namespace custom_cloud
                     int tempExitCode = CMDComand.syncDirectory(User_LocalInfo.SyncPath, User_Info.UserID, User_Info.Password, User_Info.ServerURI);
                     label_syncStatus.Invoke(new MethodInvoker(delegate
                     {
-                        label_syncStatus.Text = "同步完成";
+                        label_syncStatus.Text = "同步完成_" + tempExitCode.ToString();
                         Application.DoEvents();
                     }));
                     Thread.Sleep(20000);
                     label_syncStatus.Invoke(new MethodInvoker(delegate
                     {
-                        label_syncStatus.Text = "正在同步";
+                        label_syncStatus.Text = "正在同步" ;
                         Application.DoEvents();
                     }));
                 }
