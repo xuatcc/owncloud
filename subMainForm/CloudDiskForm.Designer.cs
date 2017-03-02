@@ -37,6 +37,7 @@
             this.toolStripMenuItem_delete = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_newFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_function = new System.Windows.Forms.Panel();
+            this.label_syncStatus = new System.Windows.Forms.Label();
             this.pictureBox_buttonRefresh = new System.Windows.Forms.PictureBox();
             this.pictureBox_buttonForward = new System.Windows.Forms.PictureBox();
             this.pictureBox_buttonBack = new System.Windows.Forms.PictureBox();
@@ -72,7 +73,7 @@
             this.folderBrowserDialog_main = new System.Windows.Forms.FolderBrowserDialog();
             this.saveFileDialog_main = new System.Windows.Forms.SaveFileDialog();
             this.fileSystemWatcher_main = new System.IO.FileSystemWatcher();
-            this.label_syncStatus = new System.Windows.Forms.Label();
+            this.toolStripMenuItem_title_sync = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_cloudDisk.SuspendLayout();
             this.panel_function.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonRefresh)).BeginInit();
@@ -94,7 +95,8 @@
             this.toolStripMenuItem_export,
             this.toolStripMenuItem_share,
             this.toolStripMenuItem_delete,
-            this.toolStripMenuItem_newFolder});
+            this.toolStripMenuItem_newFolder,
+            this.toolStripMenuItem_title_sync});
             this.menuStrip_cloudDisk.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_cloudDisk.Name = "menuStrip_cloudDisk";
             this.menuStrip_cloudDisk.Size = new System.Drawing.Size(1024, 30);
@@ -165,6 +167,15 @@
             this.panel_function.Name = "panel_function";
             this.panel_function.Size = new System.Drawing.Size(824, 30);
             this.panel_function.TabIndex = 1;
+            // 
+            // label_syncStatus
+            // 
+            this.label_syncStatus.AutoSize = true;
+            this.label_syncStatus.Location = new System.Drawing.Point(96, 9);
+            this.label_syncStatus.Name = "label_syncStatus";
+            this.label_syncStatus.Size = new System.Drawing.Size(29, 12);
+            this.label_syncStatus.TabIndex = 4;
+            this.label_syncStatus.Text = "sync";
             // 
             // pictureBox_buttonRefresh
             // 
@@ -447,14 +458,12 @@
             this.fileSystemWatcher_main.SynchronizingObject = this;
             this.fileSystemWatcher_main.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_main_Changed);
             // 
-            // label_syncStatus
+            // toolStripMenuItem_title_sync
             // 
-            this.label_syncStatus.AutoSize = true;
-            this.label_syncStatus.Location = new System.Drawing.Point(96, 9);
-            this.label_syncStatus.Name = "label_syncStatus";
-            this.label_syncStatus.Size = new System.Drawing.Size(29, 12);
-            this.label_syncStatus.TabIndex = 4;
-            this.label_syncStatus.Text = "sync";
+            this.toolStripMenuItem_title_sync.Image = global::custom_cloud.Properties.Resources.down;
+            this.toolStripMenuItem_title_sync.Name = "toolStripMenuItem_title_sync";
+            this.toolStripMenuItem_title_sync.Size = new System.Drawing.Size(84, 26);
+            this.toolStripMenuItem_title_sync.Text = "同步文件";
             // 
             // CloudDiskForm
             // 
@@ -532,5 +541,6 @@
         private System.Windows.Forms.TreeView treeView_directoryTree;
         private System.Windows.Forms.ImageList imageList_treeView;
         private System.Windows.Forms.Label label_syncStatus;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_title_sync;
     }
 }

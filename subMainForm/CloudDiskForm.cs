@@ -31,6 +31,7 @@ namespace custom_cloud
         /// 同步线程
         /// </summary>
         Thread ThreadSync;
+        bool isAutoSync = false;
         /// <summary>
         /// 当前目录
         /// </summary>
@@ -194,7 +195,9 @@ namespace custom_cloud
             /* 加载排序方式 */
             if (configFile.TableSkin.ContainsKey(MyConfig.ConfigFile.Skin.KEY_FILE_SORT_RULE))
                 Sort_Rule = (MyConfig.SortRule)int.Parse(configFile.TableSkin[MyConfig.ConfigFile.Skin.KEY_FILE_SORT_RULE].ToString());
-           
+            /* 加载自动同步选项 */
+            if (configFile.TableSync.ContainsKey(MyConfig.ConfigFile.Sync.KEY_AUTO_SYNC))
+                isAutoSync = (bool)configFile.TableSync[MyConfig.ConfigFile.Sync.KEY_AUTO_SYNC];
             /* 进入同步目录 */
             File_Tree = new FileTree(SyncPath);
             CurrentPath = File_Tree.RootDirectory.FullName;
@@ -757,6 +760,11 @@ namespace custom_cloud
             if (obj.Equals(pictureBox_buttonRefresh)) list_Refresh();
             if (obj.Equals(pictureBox_buttonBack)) list_Back();
             if (obj.Equals(pictureBox_buttonForward)) list_Forward();
+            if (obj.Equals(toolStripMenuItem_title_sync))
+            {
+                ThreadSync = new Thread(threadSync);
+                ThreadSync.Start();
+            }
 
             /* Context功能 */
             if (obj.Equals(toolStripMenuItem_listContextRightClickImport)) item_Import();
@@ -1427,6 +1435,7 @@ namespace custom_cloud
                         label_syncStatus.Text = "同步完成_" + tempExitCode.ToString();
                         Application.DoEvents();
                     }));
+                    if (!isAutoSync) return;
                     Thread.Sleep(20000);
                     label_syncStatus.Invoke(new MethodInvoker(delegate
                     {
