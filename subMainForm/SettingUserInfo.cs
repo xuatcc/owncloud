@@ -65,6 +65,7 @@ namespace custom_cloud.subMainForm
         {
             if (sender.Equals(button_folderBrowser)) selectSyncPath();
             if (sender.Equals(button_modifyPassword)) modiryPassword();
+            if (sender.Equals(button_confirm)) confirmSave();
         }
         /// <summary>
         /// 光标移入事件
@@ -144,6 +145,16 @@ namespace custom_cloud.subMainForm
                 textBox_password.Text = settingUserPassword.NewPassword;
             }
             settingUserPassword.Close();
+        }
+        /// <summary>
+        /// 确认保存
+        /// </summary>
+        void confirmSave()
+        {
+            commitUserInfo();
+            saveUserLocalInfo();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

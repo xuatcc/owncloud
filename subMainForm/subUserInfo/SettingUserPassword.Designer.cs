@@ -137,6 +137,7 @@
             this.Controls.Add(this.label_originPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SettingUserPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "更改密码";
             this.ResumeLayout(false);
             this.PerformLayout();

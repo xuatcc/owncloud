@@ -20,6 +20,10 @@ namespace custom_cloud
         SyncForm syncForm = new SyncForm();
         SettingForm settingForm = new SettingForm();
         Point offset;
+        /// <summary>
+        /// 父窗体
+        /// </summary>
+        public Form_Login form_ParentLogin;
        /// <summary>
        /// 判断当前选中哪个子窗体
        /// </summary>
@@ -152,7 +156,8 @@ namespace custom_cloud
         /// <param name="ea"></param>
         void btn_formClose_Click(object obj, EventArgs ea)
         {
-            Application.Exit();
+            //Application.Exit();
+            minimizeWindow();
         }
         void btn_formMinimize_Click(object obj, EventArgs ea)
         {
@@ -344,6 +349,9 @@ namespace custom_cloud
         void btn_Click_Event(object sender, EventArgs ea)
         {
             if (sender.Equals(pictureBox_userIcon)) setUserInfo();
+            if (sender.Equals(toolStripMenuItem_showMainWindow)) recoverWindow();
+            if (sender.Equals(toolStripMenuItem_logOut)) closeWindow();
+            if (sender.Equals(toolStripMenuItem_exit)) exitApplication();
         }
         /// <summary>
         /// 设置用户信息
@@ -381,7 +389,48 @@ namespace custom_cloud
             syncForm.Width = panel_mainForm.Width;
             syncForm.Height = panel_mainForm.Height;
         }
-
-        
+        /// <summary>
+        /// 最小化窗体
+        /// </summary>
+        void minimizeWindow()
+        {
+            this.Visible = false;
+            this.WindowState = FormWindowState.Minimized;
+        }
+        /// <summary>
+        /// 最大化窗体
+        /// </summary>
+        void recoverWindow()
+        {
+            if (this.WindowState.Equals(FormWindowState.Minimized) || !this.Visible)
+            {
+                this.Visible = true;
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+        /// <summary>
+        /// 注销窗体
+        /// </summary>
+        void closeWindow()
+        {
+            if (form_ParentLogin != null) form_ParentLogin.Show();
+            this.Close();
+        }
+        /// <summary>
+        /// 退出程序
+        /// </summary>
+        void exitApplication()
+        {
+            System.Environment.Exit(0);
+        }
+        /// <summary>
+        /// 双击图标事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void notifyIconMain_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            recoverWindow();
+        }
     }
 }

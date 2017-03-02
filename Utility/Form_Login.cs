@@ -179,6 +179,7 @@ namespace custom_cloud
             User_Info.Password = "xjtu2017";
             User_Info.SyncServerAddress = "http://192.168.204.130/helo";
             UserLocalInfo User_LocalInfo = new UserLocalInfo();
+            User_LocalInfo.UserId = User_Info.UserID;
             User_LocalInfo.SyncPath = "e://projects/VS2015/custom_cloud/test";
             
             MyConfig.writeUserTrack(comboBox_user.Text);
@@ -196,8 +197,11 @@ namespace custom_cloud
             saveUserLocalInfo();
             mw = new MainWindow();
             mw.setUserInfo(user_info, userLocalInfo);
+            mw.form_ParentLogin = this;
+            this.Hide();
             mw.Show();
             
+            //this.Show();
         }
         /// <summary>
         /// 保存登录配置

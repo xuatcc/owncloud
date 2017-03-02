@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.panel_mainForm = new System.Windows.Forms.Panel();
             this.panel_title = new System.Windows.Forms.Panel();
@@ -44,6 +45,11 @@
             this.pictureBox_buttonMinimize = new System.Windows.Forms.PictureBox();
             this.pictureBox_buttonMaximize = new System.Windows.Forms.PictureBox();
             this.pictureBox_buttonClose = new System.Windows.Forms.PictureBox();
+            this.notifyIcon_main = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip_notify = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem_showMainWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_logOut = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonNet)).BeginInit();
@@ -54,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonClose)).BeginInit();
+            this.contextMenuStrip_notify.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_mainForm
@@ -241,6 +248,44 @@
             this.pictureBox_buttonClose.MouseEnter += new System.EventHandler(this.btn_formClose_MouseEnter);
             this.pictureBox_buttonClose.MouseLeave += new System.EventHandler(this.btn_formClose_MouseLeave);
             // 
+            // notifyIcon_main
+            // 
+            this.notifyIcon_main.ContextMenuStrip = this.contextMenuStrip_notify;
+            this.notifyIcon_main.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon_main.Icon")));
+            this.notifyIcon_main.Text = "custom_cloud";
+            this.notifyIcon_main.Visible = true;
+            this.notifyIcon_main.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconMain_MouseDoubleClick);
+            // 
+            // contextMenuStrip_notify
+            // 
+            this.contextMenuStrip_notify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem_showMainWindow,
+            this.toolStripMenuItem_logOut,
+            this.toolStripMenuItem_exit});
+            this.contextMenuStrip_notify.Name = "contextMenuStrip_notify";
+            this.contextMenuStrip_notify.Size = new System.Drawing.Size(137, 70);
+            // 
+            // toolStripMenuItem_showMainWindow
+            // 
+            this.toolStripMenuItem_showMainWindow.Name = "toolStripMenuItem_showMainWindow";
+            this.toolStripMenuItem_showMainWindow.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_showMainWindow.Text = "显示主界面";
+            this.toolStripMenuItem_showMainWindow.Click += new System.EventHandler(this.btn_Click_Event);
+            // 
+            // toolStripMenuItem_logOut
+            // 
+            this.toolStripMenuItem_logOut.Name = "toolStripMenuItem_logOut";
+            this.toolStripMenuItem_logOut.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_logOut.Text = "注销";
+            this.toolStripMenuItem_logOut.Click += new System.EventHandler(this.btn_Click_Event);
+            // 
+            // toolStripMenuItem_exit
+            // 
+            this.toolStripMenuItem_exit.Name = "toolStripMenuItem_exit";
+            this.toolStripMenuItem_exit.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_exit.Text = "退出";
+            this.toolStripMenuItem_exit.Click += new System.EventHandler(this.btn_Click_Event);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -249,6 +294,7 @@
             this.Controls.Add(this.panel_mainForm);
             this.Controls.Add(this.panel_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";
@@ -264,6 +310,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonClose)).EndInit();
+            this.contextMenuStrip_notify.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -285,5 +332,10 @@
         private System.Windows.Forms.Label label_share;
         private System.Windows.Forms.Panel panel_mainForm;
         private System.Windows.Forms.PictureBox pictureBox_buttonSetting;
+        private System.Windows.Forms.NotifyIcon notifyIcon_main;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip_notify;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_showMainWindow;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_logOut;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_exit;
     }
 }
