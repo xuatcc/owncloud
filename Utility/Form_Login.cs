@@ -173,23 +173,29 @@ namespace custom_cloud
             }
             */
             /* 测试主窗体 */
+
+            User_Info.UserID = comboBox_user.Text;
+            User_Info.UserName = "Doge";
+            User_Info.Password = "xjtu2017";
+            User_Info.SyncServerAddress = "http://192.168.204.130/helo";
+            UserLocalInfo User_LocalInfo = new UserLocalInfo();
+            User_LocalInfo.SyncPath = "e://projects/VS2015/custom_cloud/test";
             
-            User_Info.UserName = "User Name";
             MyConfig.writeUserTrack(comboBox_user.Text);
-            navigateToMainWindow(User_Info);
+            navigateToMainWindow(User_Info, User_LocalInfo);
             
         }
         /// <summary>
         /// 导航去主窗体
         /// </summary>
-        void navigateToMainWindow(UserInfo user_info)
+        void navigateToMainWindow(UserInfo user_info, UserLocalInfo userLocalInfo)
         {
             //UserInfo userManiWindow = new UserInfo();
 
             saveLoginConfig();
             saveUserLocalInfo();
             mw = new MainWindow();
-            mw.setUserInfo(user_info);
+            mw.setUserInfo(user_info, userLocalInfo);
             mw.Show();
             
         }

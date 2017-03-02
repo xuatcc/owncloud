@@ -13,7 +13,7 @@ namespace custom_cloud
     /// <summary>
     /// 用户本地信息
     /// </summary>
-    class UserLocalInfo
+    public class UserLocalInfo
     {
         /// <summary>
         /// 本地同步目录

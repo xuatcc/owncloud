@@ -97,6 +97,18 @@
     <Compile Include="codeClass\CodeAnalysis.cs" />
     <Compile Include="configClass\ErrorCode.cs" />
     <Compile Include="fileSystemClass\FileTree.cs" />
+    <Compile Include="subMainForm\SettingUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subMainForm\SettingUserInfo.Designer.cs">
+      <DependentUpon>SettingUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="subMainForm\subUserInfo\SettingUserPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subMainForm\subUserInfo\SettingUserPassword.Designer.cs">
+      <DependentUpon>SettingUserPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="subMainForm\UserModifyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +202,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="subMainForm\CloudDiskForm.resx">
       <DependentUpon>CloudDiskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subMainForm\SettingUserInfo.resx">
+      <DependentUpon>SettingUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subMainForm\subUserInfo\SettingUserPassword.resx">
+      <DependentUpon>SettingUserPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="subMainForm\UserModifyForm.resx">
       <DependentUpon>UserModifyForm.cs</DependentUpon>

@@ -876,6 +876,7 @@ namespace custom_cloud
             setVisibleOfItemRightClickMenu(false);
             setVisibleOfRightClickMenu(true);
             //updateDirectoryTree();
+            
         }
         /// <summary>
         /// 新建文件夹
@@ -1015,22 +1016,28 @@ namespace custom_cloud
             if (StackForwardDirectory.Count < 1) return;
 
             clearSelectedItems();
+            try {
+                StackBackDirectory.Push(CurrentPath);
+                pictureBox_buttonBack.Enabled = true;
+                pictureBox_buttonBack.Image = Properties.Resources.arrow_back_deep_blue;
+                CurrentPath = StackForwardDirectory.Pop();
 
-            StackBackDirectory.Push(CurrentPath);
-            pictureBox_buttonBack.Enabled = true;
-            pictureBox_buttonBack.Image = Properties.Resources.arrow_back_deep_blue;
-            CurrentPath = StackForwardDirectory.Pop();
-            
 
-            updateFileTree();
-            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
-            if (StackForwardDirectory.Count < 1)
-            {
-                pictureBox_buttonForward.Enabled = false;
-                pictureBox_buttonForward.Image = Properties.Resources.function_arrow_gray_forward_button;
+                updateFileTree();
+                updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                if (StackForwardDirectory.Count < 1)
+                {
+                    pictureBox_buttonForward.Enabled = false;
+                    pictureBox_buttonForward.Image = Properties.Resources.function_arrow_gray_forward_button;
+                }
+                updateSorterPath();
+                sortBySortRule();
             }
-            updateSorterPath();
-            sortBySortRule();
+            catch(Exception e)
+            {
+                Reporter.reportBug(e.ToString());
+                MessageBox.Show("目录不存在!");
+            }
         }
         /// <summary>
         /// 复制多份文件（夹）

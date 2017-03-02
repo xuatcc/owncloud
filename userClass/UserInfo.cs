@@ -20,6 +20,10 @@ namespace custom_cloud
         public string Order;
         public bool login_result;
         public int error_code;
+        /// <summary>
+        /// 同步服务器地址
+        /// </summary>
+        public string SyncServerAddress;
         /* 公用属性名 */
         public static string NAME_USER_ID = "UserID";
         public static string NAME_USER_NAME = "UserName";
@@ -29,6 +33,7 @@ namespace custom_cloud
         public static string NAME_ORDER = "Order";
         public static string NAME_LOGIN_RESULT = "login_result";
         public static string NAME_ERRO_CODE = "error_code";
+        public static string NAME_SYNC_SERVER_ADDRESS = "SyncServerAddress";
         
         public UserInfo()
         {

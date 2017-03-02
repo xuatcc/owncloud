@@ -1,4 +1,5 @@
-﻿using System;
+﻿using custom_cloud.subMainForm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,10 +20,18 @@ namespace custom_cloud
         SyncForm syncForm = new SyncForm();
         SettingForm settingForm = new SettingForm();
         Point offset;
-        /* 判断当前选中那个窗体 */
+       /// <summary>
+       /// 判断当前选中哪个子窗体
+       /// </summary>
         object ButtonSelected = new object();
-        /* 用户信息 */
+        /// <summary>
+        /// 用户信息
+        /// </summary>
         UserInfo userInfo = new UserInfo();
+        /// <summary>
+        /// 用户本地信息
+        /// </summary>
+        UserLocalInfo userLocalInfo = new UserLocalInfo();
         int InitialFormWidth = 1024;
         int InitialFormHeight = 632;
         public MainWindow()
@@ -33,9 +42,10 @@ namespace custom_cloud
         /// 设置用户信息
         /// </summary>
         /// <param name="userInfo"></param>
-        public void setUserInfo(UserInfo userInfo)
+        public void setUserInfo(UserInfo userInfo, UserLocalInfo userLocalInfo)
         {
             this.userInfo = userInfo;
+            this.userLocalInfo = userLocalInfo;
             initializeWidget();
         }
         void initializeWidget()
@@ -326,7 +336,25 @@ namespace custom_cloud
             cloudDiskForm.Show();
             
         }
-
+        /// <summary>
+        /// 按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="ea"></param>
+        void btn_Click_Event(object sender, EventArgs ea)
+        {
+            if (sender.Equals(pictureBox_userIcon)) setUserInfo();
+        }
+        /// <summary>
+        /// 设置用户信息
+        /// </summary>
+        void setUserInfo()
+        {
+            SettingUserInfo settingUserInfo = new SettingUserInfo();
+            // 临时测试
+            settingUserInfo.setUserInfo(userInfo, userLocalInfo);
+            DialogResult dialogResult = settingUserInfo.ShowDialog();
+        }
         private void MainWindow_SizeChanged(object sender, EventArgs e)
         {
             int old_panel_width = panel_title.Width;

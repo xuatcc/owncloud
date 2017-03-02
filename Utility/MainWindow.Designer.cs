@@ -201,6 +201,7 @@
             this.pictureBox_userIcon.Size = new System.Drawing.Size(64, 64);
             this.pictureBox_userIcon.TabIndex = 4;
             this.pictureBox_userIcon.TabStop = false;
+            this.pictureBox_userIcon.Click += new System.EventHandler(this.btn_Click_Event);
             this.pictureBox_userIcon.MouseEnter += new System.EventHandler(this.btn_formuserIcon_MouseEnter);
             this.pictureBox_userIcon.MouseLeave += new System.EventHandler(this.btn_formuserIcon_MouseLeave);
             // 
