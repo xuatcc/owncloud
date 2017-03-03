@@ -93,3 +93,4 @@ E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.loadingForm.LoadDisCrypti
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.loadingForm.LoadDeleteFiles.resources
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.subMainForm.SettingUserInfo.resources
 E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.subMainForm.subUserInfo.SettingUserPassword.resources
+E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.loadingForm.UtilityLoading.resources

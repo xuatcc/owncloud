@@ -246,7 +246,7 @@ namespace custom_cloud
             /* 设置起始默认同步目录 */
             UserLocalInfo temp = getUserLocalInfo(userLocalInfo.UserId);
             if (temp == null) user_localInfo.SyncPath = PATH_USER + "/" + user_localInfo.UserId + "/" + NAME_FOLDER_SYNC;
-            else if (temp.SyncPath == null || (!Directory.Exists(temp.SyncPath))) user_localInfo.SyncPath = PATH_USER + "/" + user_localInfo.UserId + "/" + NAME_FOLDER_SYNC;
+            else if (temp.SyncPath == null || (!Directory.Exists(temp.SyncPath))) user_localInfo.SyncPath = Path.GetFullPath(PATH_USER + "/" + user_localInfo.UserId + "/" + NAME_FOLDER_SYNC);
             StreamWriter infoWriter = new StreamWriter(path + "/" + userLocalInfo.UserId + "/" + NAME_USER_INFO, 
                 false, Encoding.Default);
             infoWriter.Write(JsonHelper.getSerializeString(user_localInfo));
@@ -267,7 +267,7 @@ namespace custom_cloud
             /* 设置起始默认同步目录 */
             UserLocalInfo temp = getUserLocalInfo(userLocalInfo.UserId);
             if (temp == null) user_localInfo.SyncPath = PATH_USER + "/" + user_localInfo.UserId + "/" + NAME_FOLDER_SYNC;
-            else if(temp.SyncPath==null||(!Directory.Exists(temp.SyncPath))) user_localInfo.SyncPath = PATH_USER + "/" + user_localInfo.UserId + "/" + NAME_FOLDER_SYNC;
+            else if (temp.SyncPath == null || (!Directory.Exists(temp.SyncPath))) user_localInfo.SyncPath = Path.GetFullPath(PATH_USER + "/" + user_localInfo.UserId + "/" + NAME_FOLDER_SYNC);
             StreamWriter infoWriter = new StreamWriter(PATH_USER + "/" + userLocalInfo.UserId + "/" + NAME_USER_INFO,
                 false, Encoding.Default);
             infoWriter.Write(JsonHelper.getSerializeString(user_localInfo));

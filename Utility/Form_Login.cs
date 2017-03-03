@@ -31,7 +31,6 @@ namespace custom_cloud
         string userID;
         string Password;
         int serverPort;
-        NetHelper netHelper;
         public Form_Login()
         {
             InitializeComponent();
@@ -138,7 +137,7 @@ namespace custom_cloud
         /// <param name="ea"></param>
         void btn_login_Click(object obj, EventArgs ea)
         {
-            /*
+            
             string user = comboBox_user.Text;
             // matching password
             string password_input = textBox_password.Text;
@@ -160,7 +159,8 @@ namespace custom_cloud
             {
                 MyConfig.writeUserTrack(comboBox_user.Text);
                 userManiWindow = loadingForm.User_Info;
-                navigateToMainWindow(userManiWindow);
+                UserLocalInfo User_LocalInfo = MyConfig.getUserLocalInfo(userManiWindow.UserID);
+                navigateToMainWindow(userManiWindow, User_LocalInfo);
                 this.Hide();
             }
             else if (dialogResult.Equals(DialogResult.No))
@@ -171,19 +171,20 @@ namespace custom_cloud
                 label_errorInfo.Text = "登录失败，错误码：" + userManiWindow.error_code.ToString();
                 label_errorInfo.Visible = true;
             }
-            */
+            
             /* 测试主窗体 */
-
+            /*
             User_Info.UserID = comboBox_user.Text;
             User_Info.UserName = "Doge";
-            User_Info.Password = "xjtu2017";
+            User_Info.Password = textBox_password.Text;
             User_Info.SyncServerAddress = "http://192.168.204.130/helo";
-            UserLocalInfo User_LocalInfo = new UserLocalInfo();
-            User_LocalInfo.UserId = User_Info.UserID;
-            User_LocalInfo.SyncPath = "e://projects/VS2015/custom_cloud/test";
+            
+            //User_LocalInfo.UserId = User_Info.UserID;
+            //User_LocalInfo.SyncPath = "e://projects/VS2015/custom_cloud/test";
             
             MyConfig.writeUserTrack(comboBox_user.Text);
             navigateToMainWindow(User_Info, User_LocalInfo);
+            */
             
         }
         /// <summary>
@@ -227,8 +228,8 @@ namespace custom_cloud
         void saveUserLocalInfo()
         {
             /* 用户本地信息 */
-            UserLocalInfo userLocalInfo = new UserLocalInfo();
-            userLocalInfo.UserId = comboBox_user.Text;
+            UserLocalInfo userLocalInfo = MyConfig.getUserLocalInfo(comboBox_user.Text);
+            if (userLocalInfo == null) return;
             userLocalInfo.IsRemeberPassword = checkBox_rememberPW.Checked;
             if (checkBox_rememberPW.Checked) userLocalInfo.Password = textBox_password.Text;
             else userLocalInfo.Password = "";

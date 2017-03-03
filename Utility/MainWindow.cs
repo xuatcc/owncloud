@@ -1,4 +1,5 @@
-﻿using custom_cloud.subMainForm;
+﻿using custom_cloud.loadingForm;
+using custom_cloud.subMainForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -413,6 +414,20 @@ namespace custom_cloud
         /// </summary>
         void closeWindow()
         {
+            /* 向服务器提交注销请求 */
+            UtilityLoading utilityLoading = new UtilityLoading();
+            utilityLoading.ButtonText = "取消";
+            utilityLoading.StatusText = "正在向服务器发送注销请求";
+            utilityLoading.functionLogout(userInfo);
+            if (utilityLoading.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("注销失败!");
+                return;
+            }
             if (form_ParentLogin != null) form_ParentLogin.Show();
             this.Close();
         }

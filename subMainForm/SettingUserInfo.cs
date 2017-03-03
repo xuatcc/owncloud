@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -94,8 +95,10 @@ namespace custom_cloud.subMainForm
         /// <param name="mea"></param>
         void btn_MouseDown_Event(object sender, MouseEventArgs mea)
         {
+            /*
             if (sender.Equals(button_confirm)) button_confirm.Image = Properties.Resources.down;
             if (sender.Equals(button_cancel)) button_cancel.Image = Properties.Resources.down;
+            */
         }
         /// <summary>
         /// 鼠标抬起事件
@@ -104,17 +107,22 @@ namespace custom_cloud.subMainForm
         /// <param name="mea"></param>
         void btn_MouseUp_Event(object sender, MouseEventArgs mea)
         {
+            /*
             if (sender.Equals(button_confirm)) button_confirm.Image = Properties.Resources.enter;
             if (sender.Equals(button_cancel)) button_cancel.Image = Properties.Resources.enter;
+            */
         }
         /// <summary>
         /// 保存用户本地信息
         /// </summary>
-        void saveUserLocalInfo()
+        bool saveUserLocalInfo()
         {
             User_LocalInfo.SyncPath = textBox_syncPath.Text;
             User_LocalInfo.Password = textBox_password.Text;
+            /*  检查路径是否有效 */
+            if (User_LocalInfo.SyncPath == null || !Directory.Exists(User_LocalInfo.SyncPath)) return false;
             MyConfig.createOrModifyUserLocalInfo(User_LocalInfo);
+            return true;
         }
         /// <summary>
         /// 向服务器提交用户信息
@@ -152,7 +160,12 @@ namespace custom_cloud.subMainForm
         void confirmSave()
         {
             commitUserInfo();
-            saveUserLocalInfo();
+            if (!saveUserLocalInfo())
+            {
+                MessageBox.Show("无效的同步目录!");
+                button_confirm.Image = Properties.Resources.down;
+                return;
+            }
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

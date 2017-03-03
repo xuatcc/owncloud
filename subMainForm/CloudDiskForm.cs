@@ -198,6 +198,12 @@ namespace custom_cloud
             /* 加载自动同步选项 */
             if (configFile.TableSync.ContainsKey(MyConfig.ConfigFile.Sync.KEY_AUTO_SYNC))
                 isAutoSync = (bool)configFile.TableSync[MyConfig.ConfigFile.Sync.KEY_AUTO_SYNC];
+            /* 加载用户本地信息 */
+            /* 测试 */
+            User_Info = new UserInfo();
+            User_Info.UserID = "Doge";
+            User_LocalInfo = MyConfig.getUserLocalInfo(User_Info.UserID);
+            SyncPath = User_LocalInfo.SyncPath;
             /* 进入同步目录 */
             File_Tree = new FileTree(SyncPath);
             CurrentPath = File_Tree.RootDirectory.FullName;

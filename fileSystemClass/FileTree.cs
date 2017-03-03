@@ -67,7 +67,7 @@ namespace custom_cloud
         }
         public FileTree(string root_directory)
         {
-            initializeTree(root_directory);
+            initializeTree(Path.GetFullPath(root_directory));
         }
         void initializeTree(string root_directory)
         {

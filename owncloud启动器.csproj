@@ -87,6 +87,12 @@
     <Compile Include="loadingForm\LoadEncryption.Designer.cs">
       <DependentUpon>LoadEncryption.cs</DependentUpon>
     </Compile>
+    <Compile Include="loadingForm\UtilityLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loadingForm\UtilityLoading.Designer.cs">
+      <DependentUpon>UtilityLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="netClass\SyncStatus.cs" />
     <Compile Include="subMainForm\CloudDiskForm.cs">
       <SubType>Form</SubType>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="loadingForm\LoadEncryption.resx">
       <DependentUpon>LoadEncryption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loadingForm\UtilityLoading.resx">
+      <DependentUpon>UtilityLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="subMainForm\CloudDiskForm.resx">
       <DependentUpon>CloudDiskForm.cs</DependentUpon>
