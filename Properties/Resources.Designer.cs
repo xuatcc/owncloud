@@ -70,6 +70,8 @@ namespace custom_cloud.Properties {
             }
         }
         
+        
+        
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
@@ -86,6 +88,16 @@ namespace custom_cloud.Properties {
         internal static System.Drawing.Bitmap arrow_back_deep_blue {
             get {
                 object obj = ResourceManager.GetObject("arrow_back_deep_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_drop {
+            get {
+                object obj = ResourceManager.GetObject("arrow_drop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -210,6 +222,8 @@ namespace custom_cloud.Properties {
             }
         }
         
+        
+        
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
@@ -219,6 +233,8 @@ namespace custom_cloud.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        
         
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。

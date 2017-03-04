@@ -69,13 +69,13 @@ namespace custom_cloud
             pictureBox_buttonMaximize.Parent = panel_title;
             pictureBox_buttonMinimize.Parent = panel_title;
             pictureBox_buttonRecover.Parent = panel_title;
-            pictureBox_buttonSetting.Parent = panel_title;
+            pictureBox_buttonListSetting.Parent = panel_title;
 
             pictureBox_buttonClose.BackColor = Color.Transparent;
             pictureBox_buttonMaximize.BackColor = Color.Transparent;
             pictureBox_buttonMinimize.BackColor = Color.Transparent;
             pictureBox_buttonRecover.BackColor = Color.Transparent;
-            pictureBox_buttonSetting.BackColor = Color.Transparent;
+            pictureBox_buttonListSetting.BackColor = Color.Transparent;
             /* 左上角背景色 */
             label_userName.Parent = panel_title;
             label_userName.BackColor = Color.Transparent;
@@ -98,6 +98,9 @@ namespace custom_cloud
             label_share.BackColor = Color.Transparent;
             label_sync.Parent = panel_title;
             label_sync.BackColor = Color.Transparent;
+
+            /* Context Menu Setting */
+            //pictureBox_buttonListSetting.ContextMenuStrip = contextMenuStrip_listSetting;
         }
         void doNothing(object obj, EventArgs ea) { }
         /// <summary>
@@ -221,7 +224,18 @@ namespace custom_cloud
             //settingForm.Show();
             //this.Enabled = false;
         }
-        
+        /// <summary>
+        /// 设置按钮按下事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pictureBox_buttonListSetting_Click(object sender, EventArgs e)
+        {
+            /* 变换菜单位置 */
+            
+            //contextMenuStrip_listSetting.SetBounds(pictureBox_buttonListSetting.Location.X, pictureBox_buttonListSetting.Location.Y, contextMenuStrip_listSetting.Width, contextMenuStrip_listSetting.Height);
+            contextMenuStrip_listSetting.Show(pictureBox_buttonListSetting, 0, pictureBox_buttonListSetting.Height);
+        }
         /// <summary>
         /// 鼠标移到关闭按钮上改变颜色
         /// </summary>
@@ -265,12 +279,12 @@ namespace custom_cloud
         }
         private void pictureBox_buttonSetting_MouseEnter(object sender, EventArgs e)
         {
-            pictureBox_buttonSetting.BackColor = SelectedColor;
+            pictureBox_buttonListSetting.BackColor = SelectedColor;
         }
 
         private void pictureBox_buttonSetting_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox_buttonSetting.BackColor = Color.Transparent;
+            pictureBox_buttonListSetting.BackColor = Color.Transparent;
         }
         void btn_formuserIcon_MouseLeave(object obj, EventArgs ea)
         {
@@ -352,7 +366,9 @@ namespace custom_cloud
             if (sender.Equals(pictureBox_userIcon)) setUserInfo();
             if (sender.Equals(toolStripMenuItem_showMainWindow)) recoverWindow();
             if (sender.Equals(toolStripMenuItem_logOut)) closeWindow();
+            if (sender.Equals(toolStripMenuItem_list_logout)) closeWindow();
             if (sender.Equals(toolStripMenuItem_exit)) exitApplication();
+            if (sender.Equals(toolStripMenuItem_list_exit)) exitApplication();
         }
         /// <summary>
         /// 设置用户信息
@@ -377,8 +393,8 @@ namespace custom_cloud
                 pictureBox_buttonMinimize.Location.Y, pictureBox_buttonMinimize.Width, pictureBox_buttonMinimize.Height);
             pictureBox_buttonRecover.SetBounds(panel_title.Width - (old_panel_width - pictureBox_buttonRecover.Location.X),
                 pictureBox_buttonRecover.Location.Y, pictureBox_buttonRecover.Width, pictureBox_buttonRecover.Height);
-            pictureBox_buttonSetting.SetBounds(panel_title.Width - (old_panel_width - pictureBox_buttonSetting.Location.X),
-                pictureBox_buttonSetting.Location.Y, pictureBox_buttonSetting.Width, pictureBox_buttonSetting.Height);
+            pictureBox_buttonListSetting.SetBounds(panel_title.Width - (old_panel_width - pictureBox_buttonListSetting.Location.X),
+                pictureBox_buttonListSetting.Location.Y, pictureBox_buttonListSetting.Width, pictureBox_buttonListSetting.Height);
 
             panel_mainForm.Width = this.Width;
             panel_mainForm.Height = this.Height - panel_title.Height;

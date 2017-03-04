@@ -397,6 +397,18 @@
   <ItemGroup>
     <Folder Include="subLoginForm\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arro_dropDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_drop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
