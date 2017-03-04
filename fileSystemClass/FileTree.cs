@@ -82,6 +82,7 @@ namespace custom_cloud
             {
                 if (!Path.GetExtension(fi.Name).Equals(MyConfig.EXTEND_NAME_ENCRYP_FILE)) continue;
                 CurrentDirectoryFileList.Add(Path.GetFileNameWithoutExtension(fi.Name), new TreeFileInfo(fi.FullName));
+                //CurrentDirectoryFileList.Add(fi.Name, new TreeFileInfo(fi.FullName));
             }
             foreach (DirectoryInfo di in dInfo)
             {
@@ -384,6 +385,7 @@ namespace custom_cloud
                     /* 解密输出 */
                     if (File.Exists(fileName))
                     CMDComand.discryptFile(fileName, destination + "/" + Path.GetFileNameWithoutExtension(fileName));
+                    //CMDComand.discryptFile(fileName, destination + "/" + Path.GetFileName(fileName));
                 }
                 else if (keyName.Contains(FileTree.FOLDER_IDENTIFY_NAME))
                 {
@@ -397,7 +399,7 @@ namespace custom_cloud
                         Queue<string> keys = new Queue<string>();
                         for(int i = 0; i < fileInfo.Length; i++)
                         {
-                            names.Enqueue(fileInfo[i].DirectoryName + "/" + Path.GetFileNameWithoutExtension(fileInfo[i].FullName));
+                            names.Enqueue(fileInfo[i].DirectoryName + "/" + Path.GetFileName(fileInfo[i].FullName));
                             keys.Enqueue(FileTree.FILE_IDENTIFY_NAME);
                         }
                         for(int i = 0; i < directory_info.Length; i++)
@@ -445,11 +447,14 @@ namespace custom_cloud
                 get
                 {
                     return Path.GetFileNameWithoutExtension(Fileinfo.Name);
+                    //return Fileinfo.Name;
                 }
             }
             public string FilePath
             {
-                get { return Path.GetDirectoryName(Fileinfo.FullName) + "/" + Path.GetFileNameWithoutExtension(Fileinfo.Name); }
+                get { return Path.GetDirectoryName(Fileinfo.FullName) + "/" + Path.GetFileNameWithoutExtension(Fileinfo.Name); 
+                    //return Path.GetDirectoryName(Fileinfo.FullName) + "/" + (Fileinfo.Name);
+                }
             }
             /// <summary>
             /// 图标
@@ -460,7 +465,9 @@ namespace custom_cloud
             /// </summary>
             public string ExtendName
             {
-                get { return Path.GetExtension(Path.GetFileNameWithoutExtension(Fileinfo.Name)); }
+                get { return Path.GetExtension(Path.GetFileNameWithoutExtension(Fileinfo.Name)); 
+                    //return Path.GetExtension(Fileinfo.Name);
+                }
             }
             public TreeFileInfo() { }
             public TreeFileInfo(string full_name)
