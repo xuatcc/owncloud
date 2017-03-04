@@ -97,7 +97,7 @@ namespace custom_cloud.loadingForm
         {
             try
             {
-                FileTree.exportItems(FileNames, KeyNames, Destination);
+                FileTree.exportItems(FileNames, KeyNames, Destination, label_fileStatus);
                 MethodInvoker methodInvoker = new MethodInvoker(closeForm);
                 BeginInvoke(methodInvoker);
             }

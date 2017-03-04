@@ -170,7 +170,7 @@
             // 
             // pictureBox_buttonListSetting
             // 
-            this.pictureBox_buttonListSetting.Image = global::custom_cloud.Properties.Resources.arro_dropDown1;
+            this.pictureBox_buttonListSetting.Image = global::custom_cloud.Properties.Resources.arrow_drop;
             this.pictureBox_buttonListSetting.Location = new System.Drawing.Point(886, 0);
             this.pictureBox_buttonListSetting.Name = "pictureBox_buttonListSetting";
             this.pictureBox_buttonListSetting.Size = new System.Drawing.Size(30, 30);
@@ -216,6 +216,7 @@
             // 
             // pictureBox_buttonNet
             // 
+            this.pictureBox_buttonNet.Image = global::custom_cloud.Properties.Resources.function_sync_button;
             this.pictureBox_buttonNet.Location = new System.Drawing.Point(431, 3);
             this.pictureBox_buttonNet.Name = "pictureBox_buttonNet";
             this.pictureBox_buttonNet.Size = new System.Drawing.Size(94, 94);
@@ -227,6 +228,7 @@
             // 
             // pictureBox_buttonShare
             // 
+            this.pictureBox_buttonShare.Image = global::custom_cloud.Properties.Resources.share_2;
             this.pictureBox_buttonShare.Location = new System.Drawing.Point(337, 3);
             this.pictureBox_buttonShare.Name = "pictureBox_buttonShare";
             this.pictureBox_buttonShare.Size = new System.Drawing.Size(94, 94);
@@ -239,6 +241,7 @@
             // pictureBox_buttonSelectDisk
             // 
             this.pictureBox_buttonSelectDisk.BackColor = System.Drawing.Color.Blue;
+            this.pictureBox_buttonSelectDisk.Image = global::custom_cloud.Properties.Resources.cloudDisk2;
             this.pictureBox_buttonSelectDisk.Location = new System.Drawing.Point(243, 3);
             this.pictureBox_buttonSelectDisk.Name = "pictureBox_buttonSelectDisk";
             this.pictureBox_buttonSelectDisk.Size = new System.Drawing.Size(94, 94);
@@ -249,6 +252,7 @@
             // 
             // pictureBox_buttonRecover
             // 
+            this.pictureBox_buttonRecover.Image = global::custom_cloud.Properties.Resources.button_recover;
             this.pictureBox_buttonRecover.Location = new System.Drawing.Point(958, 0);
             this.pictureBox_buttonRecover.Name = "pictureBox_buttonRecover";
             this.pictureBox_buttonRecover.Size = new System.Drawing.Size(30, 30);
@@ -272,6 +276,7 @@
             // pictureBox_userIcon
             // 
             this.pictureBox_userIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_userIcon.Image = global::custom_cloud.Properties.Resources.user_icon;
             this.pictureBox_userIcon.Location = new System.Drawing.Point(12, 33);
             this.pictureBox_userIcon.Name = "pictureBox_userIcon";
             this.pictureBox_userIcon.Size = new System.Drawing.Size(64, 64);
@@ -295,6 +300,7 @@
             // 
             // pictureBox_buttonMaximize
             // 
+            this.pictureBox_buttonMaximize.Image = global::custom_cloud.Properties.Resources.maximize;
             this.pictureBox_buttonMaximize.Location = new System.Drawing.Point(958, 0);
             this.pictureBox_buttonMaximize.Name = "pictureBox_buttonMaximize";
             this.pictureBox_buttonMaximize.Size = new System.Drawing.Size(30, 30);

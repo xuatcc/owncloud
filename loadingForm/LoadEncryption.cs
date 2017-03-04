@@ -87,6 +87,9 @@ namespace custom_cloud.loadingForm
         public void importItem(string[] itemsPath, string currentPath)
         {
             ItemsPath= itemsPath;
+            progressBar_main.Visible = true;
+            label_fileStatus.Visible = false;
+            progressBar_main.Maximum = itemsPath.Length;
             CurrentPath = currentPath;
             ThreadImport = new Thread(threadImportItems);
             ThreadImport.Start();
@@ -105,6 +108,10 @@ namespace custom_cloud.loadingForm
                        CurrentPath + "/" + Path.GetFileName(ItemsPath[i]));
                     /* 加密 */
                     CMDComand.encryptFile(newFileName, newFileName);
+                    progressBar_main.Invoke(new MethodInvoker(delegate
+                    {
+                        progressBar_main.Value = i + 1;
+                    }));
                 }
                 MethodInvoker methodInvoker = new MethodInvoker(closeForm);
                 BeginInvoke(methodInvoker);
@@ -124,6 +131,8 @@ namespace custom_cloud.loadingForm
         {
             Source = source;
             Target = target;
+            progressBar_main.Visible = false;
+            label_fileStatus.Visible = true;
             ThreadImport = new Thread(threadImportFolder);
             ThreadImport.Start();
         }
@@ -134,7 +143,7 @@ namespace custom_cloud.loadingForm
         {
             try
             {
-                FileTree.importDirectory(Source, Target);
+                FileTree.importDirectory(Source, Target, label_fileStatus);
                 MethodInvoker methodInvoker = new MethodInvoker(closeForm);
                 BeginInvoke(methodInvoker);
             }

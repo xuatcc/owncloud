@@ -36,6 +36,7 @@
             this.toolStripMenuItem_share = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_delete = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_newFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_title_sync = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_function = new System.Windows.Forms.Panel();
             this.label_syncStatus = new System.Windows.Forms.Label();
             this.pictureBox_buttonRefresh = new System.Windows.Forms.PictureBox();
@@ -73,7 +74,6 @@
             this.folderBrowserDialog_main = new System.Windows.Forms.FolderBrowserDialog();
             this.saveFileDialog_main = new System.Windows.Forms.SaveFileDialog();
             this.fileSystemWatcher_main = new System.IO.FileSystemWatcher();
-            this.toolStripMenuItem_title_sync = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_cloudDisk.SuspendLayout();
             this.panel_function.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonRefresh)).BeginInit();
@@ -155,6 +155,13 @@
             this.toolStripMenuItem_newFolder.Text = "新建文件夹";
             this.toolStripMenuItem_newFolder.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
+            // toolStripMenuItem_title_sync
+            // 
+            this.toolStripMenuItem_title_sync.Image = global::custom_cloud.Properties.Resources.down;
+            this.toolStripMenuItem_title_sync.Name = "toolStripMenuItem_title_sync";
+            this.toolStripMenuItem_title_sync.Size = new System.Drawing.Size(84, 26);
+            this.toolStripMenuItem_title_sync.Text = "同步文件";
+            // 
             // panel_function
             // 
             this.panel_function.BackgroundImage = global::custom_cloud.Properties.Resources.white_background1;
@@ -234,10 +241,10 @@
             // 
             this.treeView_directoryTree.ImageIndex = 0;
             this.treeView_directoryTree.ImageList = this.imageList_treeView;
-            this.treeView_directoryTree.Location = new System.Drawing.Point(10, 10);
+            this.treeView_directoryTree.Location = new System.Drawing.Point(10, 0);
             this.treeView_directoryTree.Name = "treeView_directoryTree";
             this.treeView_directoryTree.SelectedImageIndex = 0;
-            this.treeView_directoryTree.Size = new System.Drawing.Size(180, 482);
+            this.treeView_directoryTree.Size = new System.Drawing.Size(180, 492);
             this.treeView_directoryTree.TabIndex = 0;
             this.treeView_directoryTree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView_directoryTree_NodeMouseClick);
             // 
@@ -457,13 +464,6 @@
             this.fileSystemWatcher_main.EnableRaisingEvents = true;
             this.fileSystemWatcher_main.SynchronizingObject = this;
             this.fileSystemWatcher_main.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_main_Changed);
-            // 
-            // toolStripMenuItem_title_sync
-            // 
-            this.toolStripMenuItem_title_sync.Image = global::custom_cloud.Properties.Resources.down;
-            this.toolStripMenuItem_title_sync.Name = "toolStripMenuItem_title_sync";
-            this.toolStripMenuItem_title_sync.Size = new System.Drawing.Size(84, 26);
-            this.toolStripMenuItem_title_sync.Text = "同步文件";
             // 
             // CloudDiskForm
             // 

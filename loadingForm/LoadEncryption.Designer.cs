@@ -31,6 +31,8 @@
             this.label_status = new System.Windows.Forms.Label();
             this.button_cancelImport = new System.Windows.Forms.Button();
             this.pictureBox_wait = new System.Windows.Forms.PictureBox();
+            this.progressBar_main = new System.Windows.Forms.ProgressBar();
+            this.label_fileStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_wait)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,7 +40,7 @@
             // 
             this.label_status.AutoSize = true;
             this.label_status.ForeColor = System.Drawing.Color.Blue;
-            this.label_status.Location = new System.Drawing.Point(88, 123);
+            this.label_status.Location = new System.Drawing.Point(88, 69);
             this.label_status.Name = "label_status";
             this.label_status.Size = new System.Drawing.Size(113, 12);
             this.label_status.TabIndex = 12;
@@ -51,7 +53,7 @@
             this.button_cancelImport.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button_cancelImport.ForeColor = System.Drawing.Color.White;
             this.button_cancelImport.Image = global::custom_cloud.Properties.Resources.down;
-            this.button_cancelImport.Location = new System.Drawing.Point(42, 142);
+            this.button_cancelImport.Location = new System.Drawing.Point(42, 117);
             this.button_cancelImport.Name = "button_cancelImport";
             this.button_cancelImport.Size = new System.Drawing.Size(200, 30);
             this.button_cancelImport.TabIndex = 11;
@@ -66,17 +68,35 @@
             // pictureBox_wait
             // 
             this.pictureBox_wait.Image = global::custom_cloud.Properties.Resources.loading_small;
-            this.pictureBox_wait.Location = new System.Drawing.Point(126, 88);
+            this.pictureBox_wait.Location = new System.Drawing.Point(126, 34);
             this.pictureBox_wait.Name = "pictureBox_wait";
             this.pictureBox_wait.Size = new System.Drawing.Size(32, 32);
             this.pictureBox_wait.TabIndex = 10;
             this.pictureBox_wait.TabStop = false;
             // 
+            // progressBar_main
+            // 
+            this.progressBar_main.Location = new System.Drawing.Point(42, 88);
+            this.progressBar_main.Name = "progressBar_main";
+            this.progressBar_main.Size = new System.Drawing.Size(200, 23);
+            this.progressBar_main.TabIndex = 13;
+            // 
+            // label_fileStatus
+            // 
+            this.label_fileStatus.AutoSize = true;
+            this.label_fileStatus.Location = new System.Drawing.Point(40, 88);
+            this.label_fileStatus.Name = "label_fileStatus";
+            this.label_fileStatus.Size = new System.Drawing.Size(59, 12);
+            this.label_fileStatus.TabIndex = 14;
+            this.label_fileStatus.Text = "正在处理:";
+            // 
             // LoadEncryption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 177);
+            this.Controls.Add(this.label_fileStatus);
+            this.Controls.Add(this.progressBar_main);
             this.Controls.Add(this.label_status);
             this.Controls.Add(this.button_cancelImport);
             this.Controls.Add(this.pictureBox_wait);
@@ -95,5 +115,7 @@
         private System.Windows.Forms.Label label_status;
         private System.Windows.Forms.Button button_cancelImport;
         private System.Windows.Forms.PictureBox pictureBox_wait;
+        private System.Windows.Forms.ProgressBar progressBar_main;
+        private System.Windows.Forms.Label label_fileStatus;
     }
 }

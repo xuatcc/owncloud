@@ -243,7 +243,7 @@ namespace custom_cloud
         /// </summary>
         /// <param name="source"></param>
         /// <param name="destination"></param>
-        public static string importDirectory(string source, string destination)
+        public static string importDirectory(string source, string destination, Label labelFileStatus)
         {
             if (!Directory.Exists(source)) return null;
             /* 遍历source目录下文件夹 */
@@ -263,12 +263,18 @@ namespace custom_cloud
             /* 递归 */
             foreach (DirectoryInfo di in directoryInfos)
             {
-                importDirectory(di.FullName, newFolderName + "/" + di.Name);
+                importDirectory(di.FullName, newFolderName + "/" + di.Name, labelFileStatus);
             }
             /* 复制本目录文件 */
             FileInfo[] fileInfo = directoryInfo.GetFiles();
             foreach (FileInfo fi in fileInfo)
             {
+                labelFileStatus.Invoke(new MethodInvoker(delegate
+                {
+                    labelFileStatus.Text = "正在处理: " + fi.Name;
+                    labelFileStatus.SetBounds(142 - (labelFileStatus.Width / 2), labelFileStatus.Location.Y, labelFileStatus.Width, labelFileStatus.Height);
+                }
+                ));
                 File.Copy(fi.FullName, newFolderName + "/" + fi.Name);
                 /* 加密导入 */
                 CMDComand.encryptFile(newFolderName + "/" + fi.Name, newFolderName + "/" + fi.Name);
@@ -318,7 +324,7 @@ namespace custom_cloud
         /// 删除目录
         /// </summary>
         /// <param name="directory"></param>
-        public static void deleteDirectory(string path)
+        public static void deleteDirectory(string path, Label labelFileStatus)
         {
             if (!Directory.Exists(path)) return;
             DirectoryInfo directoryInfo = new DirectoryInfo(path);
@@ -326,12 +332,18 @@ namespace custom_cloud
             /* 递归子目录 */
             foreach(DirectoryInfo di in directory_info)
             {
-                deleteDirectory(di.FullName);
+                deleteDirectory(di.FullName, labelFileStatus);
             }
             /* 删除本目录文件 */
             FileInfo[] fileInfo = directoryInfo.GetFiles();
             foreach(FileInfo fi in fileInfo)
             {
+                labelFileStatus.Invoke(new MethodInvoker(delegate
+                {
+                    labelFileStatus.Text = "正在删除: " + fi.Name;
+                    labelFileStatus.SetBounds(142 - (labelFileStatus.Width / 2), labelFileStatus.Location.Y, labelFileStatus.Width, labelFileStatus.Height);
+                }
+                ));
                 File.Delete(fi.FullName);
             }
             /* 删除本目录 */
@@ -343,7 +355,7 @@ namespace custom_cloud
         /// <param name="itemNames"></param>
         /// <param name="keyNames"></param>
         /// <param name="destination"></param>
-        public static void exportItems(Queue<string> itemNames, Queue<string> keyNames, string destination)
+        public static void exportItems(Queue<string> itemNames, Queue<string> keyNames, string destination, Label labelFileStatus)
         {
             if (itemNames.Count != keyNames.Count) return;
             string itemName;
@@ -356,6 +368,12 @@ namespace custom_cloud
                 if (keyName.Contains(FileTree.FILE_IDENTIFY_NAME))
                 {
                     fileName = itemName + MyConfig.EXTEND_NAME_ENCRYP_FILE;
+                    labelFileStatus.Invoke(new MethodInvoker(delegate
+                    {
+                        labelFileStatus.Text = "正在处理: " + Path.GetFileName(fileName);
+                        labelFileStatus.SetBounds(142 - (labelFileStatus.Width / 2), labelFileStatus.Location.Y, labelFileStatus.Width, labelFileStatus.Height);
+                    }
+                ));
                     /* 解密输出 */
                     if (File.Exists(fileName))
                     CMDComand.discryptFile(fileName, destination + "/" + Path.GetFileNameWithoutExtension(fileName));
@@ -381,7 +399,7 @@ namespace custom_cloud
                             keys.Enqueue(FileTree.FOLDER_IDENTIFY_NAME);
                         }
                         /* 递归 */
-                        exportItems(names, keys, destination + "/" + Path.GetFileName(itemName));
+                        exportItems(names, keys, destination + "/" + Path.GetFileName(itemName), labelFileStatus);
                     }
                 }
             }

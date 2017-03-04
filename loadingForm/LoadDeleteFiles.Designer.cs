@@ -31,13 +31,14 @@
             this.pictureBox_wait = new System.Windows.Forms.PictureBox();
             this.label_status = new System.Windows.Forms.Label();
             this.button_cancel = new System.Windows.Forms.Button();
+            this.label_fileStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_wait)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox_wait
             // 
             this.pictureBox_wait.Image = global::custom_cloud.Properties.Resources.loading_small;
-            this.pictureBox_wait.Location = new System.Drawing.Point(126, 88);
+            this.pictureBox_wait.Location = new System.Drawing.Point(126, 38);
             this.pictureBox_wait.Name = "pictureBox_wait";
             this.pictureBox_wait.Size = new System.Drawing.Size(32, 32);
             this.pictureBox_wait.TabIndex = 12;
@@ -47,7 +48,7 @@
             // 
             this.label_status.AutoSize = true;
             this.label_status.ForeColor = System.Drawing.Color.Blue;
-            this.label_status.Location = new System.Drawing.Point(115, 123);
+            this.label_status.Location = new System.Drawing.Point(115, 73);
             this.label_status.Name = "label_status";
             this.label_status.Size = new System.Drawing.Size(53, 12);
             this.label_status.TabIndex = 14;
@@ -60,7 +61,7 @@
             this.button_cancel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button_cancel.ForeColor = System.Drawing.Color.White;
             this.button_cancel.Image = global::custom_cloud.Properties.Resources.down;
-            this.button_cancel.Location = new System.Drawing.Point(42, 142);
+            this.button_cancel.Location = new System.Drawing.Point(42, 106);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(200, 30);
             this.button_cancel.TabIndex = 15;
@@ -72,11 +73,21 @@
             this.button_cancel.MouseLeave += new System.EventHandler(this.btn_MouseLeave_Event);
             this.button_cancel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp_Event);
             // 
+            // label_fileStatus
+            // 
+            this.label_fileStatus.AutoSize = true;
+            this.label_fileStatus.Location = new System.Drawing.Point(72, 91);
+            this.label_fileStatus.Name = "label_fileStatus";
+            this.label_fileStatus.Size = new System.Drawing.Size(59, 12);
+            this.label_fileStatus.TabIndex = 16;
+            this.label_fileStatus.Text = "正在处理:";
+            // 
             // LoadDeleteFiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 173);
+            this.Controls.Add(this.label_fileStatus);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.label_status);
             this.Controls.Add(this.pictureBox_wait);
@@ -95,5 +106,6 @@
         private System.Windows.Forms.PictureBox pictureBox_wait;
         private System.Windows.Forms.Label label_status;
         private System.Windows.Forms.Button button_cancel;
+        private System.Windows.Forms.Label label_fileStatus;
     }
 }

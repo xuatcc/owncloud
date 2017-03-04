@@ -398,9 +398,6 @@
     <Folder Include="subLoginForm\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arro_dropDown.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\arrow_drop.png" />
   </ItemGroup>
   <ItemGroup>

@@ -119,12 +119,20 @@ namespace custom_cloud.loadingForm
                 key = KeyNames.Dequeue();
                 if (key.Contains(FileTree.FILE_IDENTIFY_NAME))
                 {
+                    
                     fileName += MyConfig.EXTEND_NAME_ENCRYP_FILE;
+                    label_fileStatus.Invoke(new MethodInvoker(delegate
+                    {
+
+                        label_fileStatus.Text = "正在删除: " + Path.GetFileName(fileName);
+                        label_fileStatus.SetBounds(142 - (label_fileStatus.Width / 2), label_fileStatus.Location.Y, label_fileStatus.Width, label_fileStatus.Height);
+                    }
+                   ));
                     File.Delete(fileName);
                 }
                 else if (key.Contains(FileTree.FOLDER_IDENTIFY_NAME))
                 {
-                    FileTree.deleteDirectory(fileName);
+                    FileTree.deleteDirectory(fileName, label_fileStatus);
                 }
             }
         }
