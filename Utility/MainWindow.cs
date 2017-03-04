@@ -212,7 +212,7 @@ namespace custom_cloud
                 cloudDiskForm.BackStack = backStack;
                 cloudDiskForm.ForwardStack = forwardStack;
                 cloudDiskForm.Current_Path = tempPath;
-                
+                cloudDiskForm.setUserInfo(userInfo);
 
 
                 panel_mainForm.Controls.Add(cloudDiskForm);
@@ -353,6 +353,7 @@ namespace custom_cloud
             panel_mainForm.Controls.Add(cloudDiskForm);
             panel_mainForm.Controls.Add(shareForm);
             panel_mainForm.Controls.Add(syncForm);
+            cloudDiskForm.setUserInfo(userInfo);
             cloudDiskForm.Show();
             
         }

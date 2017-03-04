@@ -54,7 +54,7 @@ namespace custom_cloud.subMainForm
             textBox_userName.Text = User_Info.UserName;
             textBox_password.PasswordChar = '*';
             textBox_password.Text = User_Info.Password;
-            textBox_syncPath.Text = User_LocalInfo.SyncPath;
+            if(User_LocalInfo != null)textBox_syncPath.Text = User_LocalInfo.SyncPath;
             textBox_syncServerAddress.Text = User_Info.SyncServerAddress;
         }
         /// <summary>

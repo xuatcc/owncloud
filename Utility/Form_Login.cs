@@ -137,7 +137,7 @@ namespace custom_cloud
         /// <param name="ea"></param>
         void btn_login_Click(object obj, EventArgs ea)
         {
-            /*
+            
             string user = comboBox_user.Text;
             // matching password
             string password_input = textBox_password.Text;
@@ -152,28 +152,27 @@ namespace custom_cloud
             LoadingForm loadingForm = new LoadingForm();
             
             loadingForm.setInfo(userID, Password, serverURI, serverPort);
-            UserInfo userManiWindow = new UserInfo();
             DialogResult dialogResult = loadingForm.ShowDialog();
             DialogResult dr = dialogResult;
             if (dialogResult.Equals(DialogResult.OK))
             {
                 MyConfig.writeUserTrack(comboBox_user.Text);
-                userManiWindow = loadingForm.User_Info;
-                UserLocalInfo User_LocalInfo = MyConfig.getUserLocalInfo(userManiWindow.UserID);
-                navigateToMainWindow(userManiWindow, User_LocalInfo);
+                User_Info = loadingForm.User_Info;
+                UserLocalInfo User_LocalInfo = MyConfig.getUserLocalInfo(User_Info.UserID);
+                navigateToMainWindow(User_Info);
                 this.Hide();
             }
             else if (dialogResult.Equals(DialogResult.No))
             {
-                userManiWindow = loadingForm.User_Info;
+                User_Info = loadingForm.User_Info;
                 ErrorCode errorCode = new ErrorCode();
                 //label_errorInfo.Text = "登录失败，原因: " + errorCode.TableErrorCode[userManiWindow.error_code];
-                label_errorInfo.Text = "登录失败，错误码：" + userManiWindow.error_code.ToString();
+                label_errorInfo.Text = "登录失败，错误码：" + User_Info.error_code.ToString();
                 label_errorInfo.Visible = true;
             }
-            */
-            /* 测试主窗体 */
             
+            /* 测试主窗体 */
+            /*
             User_Info.UserID = comboBox_user.Text;
             User_Info.UserName = "Doge";
             User_Info.Password = textBox_password.Text;
@@ -184,19 +183,20 @@ namespace custom_cloud
 
             MyConfig.writeUserTrack(comboBox_user.Text);
             navigateToMainWindow(User_Info, User_LocalInfo);
-            
+            */
             
         }
         /// <summary>
         /// 导航去主窗体
         /// </summary>
-        void navigateToMainWindow(UserInfo user_info, UserLocalInfo userLocalInfo)
+        void navigateToMainWindow(UserInfo user_info)
         {
             //UserInfo userManiWindow = new UserInfo();
 
             saveLoginConfig();
             saveUserLocalInfo();
             mw = new MainWindow();
+            UserLocalInfo userLocalInfo = MyConfig.getUserLocalInfo(user_info.UserID);
             mw.setUserInfo(user_info, userLocalInfo);
             mw.form_ParentLogin = this;
             this.Hide();
@@ -229,7 +229,13 @@ namespace custom_cloud
         {
             /* 用户本地信息 */
             UserLocalInfo userLocalInfo = MyConfig.getUserLocalInfo(comboBox_user.Text);
-            if (userLocalInfo == null) return;
+            if (userLocalInfo == null)
+            {
+                userLocalInfo = new UserLocalInfo();
+                userLocalInfo.UserId = User_Info.UserID;
+                //MyConfig.createOrModifyUserDirectory(userLocalInfo.UserId, User_Info);
+                //MyConfig.createOrModifyUserLocalInfo(userLocalInfo);
+            }
             userLocalInfo.IsRemeberPassword = checkBox_rememberPW.Checked;
             if (checkBox_rememberPW.Checked) userLocalInfo.Password = textBox_password.Text;
             else userLocalInfo.Password = "";

@@ -191,10 +191,18 @@ namespace custom_cloud.loadingForm
                         {
                             full_content += netHelper.receiveBuffer.Dequeue();
                         }
-                        if (full_content.Contains(Order._ORDER_LOG_OUT))
+                        Hashtable hashtable = JsonHelper.getDeserializeObject<Hashtable>(full_content);
+                        if (hashtable != null)
                         {
-                            MethodInvoker methodInvoker = new MethodInvoker(logOutSuccess);
-                            BeginInvoke(methodInvoker);
+                            if (hashtable.ContainsKey("log_out"))
+                            {
+                                bool result = (bool)hashtable["log_out"];
+                                if (result)
+                                {
+                                    MethodInvoker methodInvoker = new MethodInvoker(logOutSuccess);
+                                    BeginInvoke(methodInvoker);
+                                }
+                            }
                         }
                     }
                     netHelper.beginReceiveCallBack();

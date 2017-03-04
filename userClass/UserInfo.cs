@@ -14,6 +14,9 @@ namespace custom_cloud
         public string UserName;
         public string Password;
         //public string SyncDirectory;
+        /// <summary>
+        /// 登录服务器地址
+        /// </summary>
         public string ServerURI;
         public int ServerPort;
         public string Icon;

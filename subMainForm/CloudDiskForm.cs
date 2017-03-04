@@ -149,7 +149,7 @@ namespace custom_cloud
         /// <summary>
         /// 同步目录
         /// </summary>
-        public string SyncPath = "./test/";
+        public string SyncPath;
         /// <summary>
         /// 删除问询界面
         /// </summary>
@@ -166,9 +166,16 @@ namespace custom_cloud
         public CloudDiskForm()
         {
             InitializeComponent();
+            
+            //testFileTree();
+        }
+        public void setUserInfo(UserInfo userInfo)
+        {
+            User_Info = userInfo;
+            User_LocalInfo = MyConfig.getUserLocalInfo(userInfo.UserID);
+            SyncPath = User_LocalInfo.SyncPath;
             initializeConfig();
             initializeWidget();
-            //testFileTree();
         }
         void initializeConfig()
         {
@@ -200,10 +207,12 @@ namespace custom_cloud
                 isAutoSync = (bool)configFile.TableSync[MyConfig.ConfigFile.Sync.KEY_AUTO_SYNC];
             /* 加载用户本地信息 */
             /* 测试 */
-            User_Info = new UserInfo();
-            User_Info.UserID = "Doge";
-            User_LocalInfo = MyConfig.getUserLocalInfo(User_Info.UserID);
-            SyncPath = User_LocalInfo.SyncPath;
+            /*
+                User_Info = new UserInfo();
+                User_Info.UserID = "Doge";
+                User_LocalInfo = MyConfig.getUserLocalInfo(User_Info.UserID);
+                SyncPath = User_LocalInfo.SyncPath;
+             */
             /* 进入同步目录 */
             File_Tree = new FileTree(SyncPath);
             CurrentPath = File_Tree.RootDirectory.FullName;
@@ -236,10 +245,12 @@ namespace custom_cloud
             //updateDirectoryTree();
 
             /* 测试部分 */
-            User_Info.UserID = "Doge";
-            User_Info.Password = "xjtu2017";
-            User_LocalInfo.SyncPath = SyncPath;
-            User_Info.ServerURI = "http://192.168.204.130/helo";
+            /*
+                User_Info.UserID = "Doge";
+                User_Info.Password = "xjtu2017";
+                User_LocalInfo.SyncPath = SyncPath;
+                User_Info.ServerURI = "http://192.168.204.130/helo";
+                */
             label_syncStatus.Text = "正在同步";
             /* 测试部分 */
             updateDirectoryTree();
@@ -1440,7 +1451,7 @@ namespace custom_cloud
             {
                 try
                 {
-                    int tempExitCode = CMDComand.syncDirectory(User_LocalInfo.SyncPath, User_Info.UserID, User_Info.Password, User_Info.ServerURI);
+                    int tempExitCode = CMDComand.syncDirectory(User_LocalInfo.SyncPath, User_Info.UserID, User_Info.Password, User_Info.SyncServerAddress);
                     label_syncStatus.Invoke(new MethodInvoker(delegate
                     {
                         label_syncStatus.Text = "同步完成_" + tempExitCode.ToString();
