@@ -130,14 +130,14 @@
   <data name="refresh_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh_blue.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="wait_noncolor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wait_noncolor.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sub_backgroud" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sub_backgroud.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loading_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loading_small.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="import_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\import_folder.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\texture\form_login\enter.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,8 +151,11 @@
   <data name="menu_new_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu_new_folder.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wait_noncolor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wait_noncolor.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="import_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\import_folder.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu_sync" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_sync.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_background1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +169,11 @@
   <data name="user_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_icon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow_drop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow_drop.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menu_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_setting.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="function_share_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\function_share_button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="backgroud_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroud_blue.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,9 +184,6 @@
   <data name="arrow_forward_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow_forward_blue.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="title_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\texture\form_login\title_bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="backgroud_blue1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroud_blue1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,8 +193,8 @@
   <data name="setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setting.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="setting_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\setting_button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menu_settin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_settin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lock.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,11 +208,17 @@
   <data name="import_files" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\import_files.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="function_share_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\function_share_button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menu_delete_files" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_delete_files.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting_button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrow_forward_deep_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow_forward_deep_blue.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="function_arrow_back_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\function_arrow_back_button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrow_back_deep_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow_back_deep_blue.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,14 +229,14 @@
   <data name="cloudDisk1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cloudDisk.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="function_arrow_back_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\function_arrow_back_button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow_drop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow_drop.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wait" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wait.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menu_delete_files" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu_delete_files.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="title_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\texture\form_login\title_bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="function_arrow_gray_back_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\function_arrow_gray_back_button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -263,7 +272,7 @@
     <value>..\Resources\function_sync_button.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menu_sync" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu_sync.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menu_exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu_exit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

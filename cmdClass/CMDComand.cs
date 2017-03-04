@@ -3,6 +3,7 @@
     *@in XJTU
     *@in 2017.2
 */
+using custom_cloud.IOClass;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -73,6 +74,7 @@ namespace custom_cloud.cmdClass
         public static string discryptFile(string fileSource, string fileTarget)
         {
             if (!File.Exists(MyConfig.PATH_FILE_ENCRYPTION)) throw new Exception("can't find ecryption!");
+            if (!File.Exists(fileSource)) return "";
             /* 执行语句 */
             string sslComand = (" -k " + MyConfig.PASSWORD_FILE_ENCRYPTION + " -in " + fileSource + " -out " + fileTarget);
             Process process = new Process();
@@ -116,6 +118,7 @@ namespace custom_cloud.cmdClass
             {
                 string temp = drea.Data;
                 Reporter.writeLog("./log/sync_temp.log", temp);
+                Reporter.writeLog(SyncResult.PATH_SYNC_RESULT, temp);
             }
         }
     }

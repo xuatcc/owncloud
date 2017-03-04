@@ -5,6 +5,7 @@
 */
 using custom_cloud.cmdClass;
 using custom_cloud.dialog;
+using custom_cloud.IOClass;
 using custom_cloud.loadingForm;
 using System;
 using System.Collections;
@@ -405,6 +406,9 @@ namespace custom_cloud
             panel_function.Width = this.Width - panel_fileFilter.Width;
             listView_explorer.Width = this.Width - panel_fileFilter.Width;
             listView_explorer.Height = this.Height - menuStrip_cloudDisk.Height - panel_function.Height;
+            
+            panel_fileFilter.Height = listView_explorer.Height + panel_function.Height;
+            treeView_directoryTree.Height = listView_explorer.Height + panel_function.Height;
         }
         /// <summary>
         /// 向listview里添加项目
@@ -452,11 +456,12 @@ namespace custom_cloud
             //listView_explorer.ListViewItemSorter = new ListViewItemComparerByName();
             foreach(FileTree file_tree in fileTree.SubTree.Values)
             {
-                imageList_large.Images.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, file_tree.RootDirectory.Name), 
+                string directoryPath = file_tree.RootDirectory.FullName;
+                imageList_large.Images.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, directoryPath), 
                     Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, LargeFolderIcon));
-                imageList_small.Images.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, file_tree.RootDirectory.Name), 
+                imageList_small.Images.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, directoryPath), 
                     Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallFolderIcon));
-                listView_explorer.Items.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, file_tree.RootDirectory.Name), file_tree.RootDirectory.Name, MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, file_tree.RootDirectory.Name));
+                listView_explorer.Items.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, directoryPath), file_tree.RootDirectory.Name, MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, directoryPath));
                 //listView_explorer.Items[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, file_tree.RootDirectory.Name)].Name = 
                     //FileTree.FOLDER_IDENTIFY_NAME;
             }
@@ -464,7 +469,7 @@ namespace custom_cloud
             //listView_explorer.Sort();
             foreach (FileTree.TreeFileInfo treeFileInfo in fileTree.CurrentDirectoryFileList.Values)
             {
-                string fileName = treeFileInfo.FileName;
+                string fileName = treeFileInfo.FilePath;
                 /* 大图标注意判断文件是否为图片 */
                 if (CodeAnalysis.IsImage(treeFileInfo.FilePath))
                 {
@@ -477,7 +482,7 @@ namespace custom_cloud
                 if (SmallIconDict.ContainsKey(treeFileInfo.ExtendName)) imageList_small.Images.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallIconDict[treeFileInfo.ExtendName]));
                 else imageList_small.Images.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallDefaultFileIcon));
 
-                listView_explorer.Items.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), fileName, MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName));
+                listView_explorer.Items.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), treeFileInfo.FileName, MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName));
                 //listView_explorer.Items[MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName)].Name = FileTree.FILE_IDENTIFY_NAME;
             }
             
@@ -869,7 +874,7 @@ namespace custom_cloud
                 string destination = folderBrowserDialog_main.SelectedPath;
                 for(int i = 0; i < listView_explorer.SelectedItems.Count; i++)
                 {
-                    fileNames.Enqueue(CurrentPath + "/" + listView_explorer.SelectedItems[i].Text);
+                    fileNames.Enqueue(MyConfig.getPathByKey(listView_explorer.SelectedItems[i].Name));
                     keyNames.Enqueue(listView_explorer.SelectedItems[i].Name);
                 }
                 LoadDisCryption loadDisCryption = new LoadDisCryption();
@@ -888,7 +893,7 @@ namespace custom_cloud
             Queue<string> keyNames = new Queue<string>();
             for (int i = 0; i < listView_explorer.SelectedItems.Count; i++)
             {
-                filePaths.Enqueue(CurrentPath + "/" + listView_explorer.SelectedItems[i].Text);
+                filePaths.Enqueue(MyConfig.getPathByKey(listView_explorer.SelectedItems[i].Name));
                 keyNames.Enqueue(listView_explorer.SelectedItems[i].Name);
                 
             }
@@ -955,8 +960,8 @@ namespace custom_cloud
                         StackForwardDirectory.Clear();
                         StackBackDirectory.Push(CurrentPath);
 
-                        CurrentPath += ("/" + listView_explorer.Items[i].Text);
-                        
+                        //CurrentPath += ("/" + listView_explorer.Items[i].Text);
+                        CurrentPath = MyConfig.getPathByKey(listView_explorer.Items[i].Name);
 
                         string a = CurrentPath;
                         updateFileTree();
@@ -977,7 +982,8 @@ namespace custom_cloud
                     {
                         ;
                         //Process.Start(CurrentPath + "/" + listView_explorer.Items[i].Text);
-                        string fileName = CMDComand.discryptFile(CurrentPath + "/" + listView_explorer.Items[i].Text + MyConfig.EXTEND_NAME_ENCRYP_FILE, MyConfig.PATH_FILE_BUFFER + listView_explorer.Items[i].Text);
+                        string path = MyConfig.getPathByKey(listView_explorer.Items[i].Name + MyConfig.EXTEND_NAME_ENCRYP_FILE);
+                        string fileName = CMDComand.discryptFile(path, MyConfig.PATH_FILE_BUFFER + "/" + listView_explorer.Items[i].Text);
                         //while (!File.Exists(fileName)) Application.DoEvents();
                         Process.Start(Path.GetFullPath(fileName));
                         listView_explorer.Items[i].Focused = false;
@@ -1451,19 +1457,26 @@ namespace custom_cloud
             {
                 try
                 {
+                    label_syncStatus.Invoke(new MethodInvoker(delegate
+                    {
+                        label_syncStatus.ForeColor = Color.Black;
+                        label_syncStatus.Text = "同步状态: 正在尝试同步";
+                        Application.DoEvents();
+                    }));
                     int tempExitCode = CMDComand.syncDirectory(User_LocalInfo.SyncPath, User_Info.UserID, User_Info.Password, User_Info.SyncServerAddress);
                     label_syncStatus.Invoke(new MethodInvoker(delegate
                     {
-                        label_syncStatus.Text = "同步完成_" + tempExitCode.ToString();
+                        string syncResult = SyncResult.getSyncResult();
+                        label_syncStatus.Text = "同步状态: " + syncResult;
+                        if (!syncResult.Equals(SyncResult.RESULT_SYNC_SUCCESS))
+                        {
+                            label_syncStatus.ForeColor = Color.Red;
+                        }
                         Application.DoEvents();
                     }));
                     if (!isAutoSync) return;
-                    Thread.Sleep(20000);
-                    label_syncStatus.Invoke(new MethodInvoker(delegate
-                    {
-                        label_syncStatus.Text = "正在同步" ;
-                        Application.DoEvents();
-                    }));
+                    Thread.Sleep(5000);
+                    
                 }
                 catch(Exception e)
                 {
@@ -1479,7 +1492,6 @@ namespace custom_cloud
         private void CloudDiskForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (ThreadSync != null) ThreadSync.Abort();
-            /* 这块以后还要做托盘 */
         }
     }
 }

@@ -182,7 +182,7 @@ namespace custom_cloud
             User_LocalInfo.SyncPath = "e://projects/VS2015/custom_cloud/test";
 
             MyConfig.writeUserTrack(comboBox_user.Text);
-            navigateToMainWindow(User_Info, User_LocalInfo);
+            navigateToMainWindow(User_Info);
             */
             
         }

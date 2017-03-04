@@ -227,7 +227,7 @@
             // 
             // pictureBox_buttonSetting
             // 
-            this.pictureBox_buttonSetting.Image = global::custom_cloud.Properties.Resources.setting_button;
+            this.pictureBox_buttonSetting.Image = global::custom_cloud.Properties.Resources.menu_settin;
             this.pictureBox_buttonSetting.Location = new System.Drawing.Point(507, 0);
             this.pictureBox_buttonSetting.Name = "pictureBox_buttonSetting";
             this.pictureBox_buttonSetting.Size = new System.Drawing.Size(30, 30);

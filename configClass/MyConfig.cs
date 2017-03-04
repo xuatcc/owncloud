@@ -374,6 +374,16 @@ namespace custom_cloud
             return name + STRING_SEPERATER+ text;
         }
         /// <summary>
+        /// 通过项目键来获取文件路径
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static string getPathByKey(string key)
+        {
+            int index_a = key.IndexOf(STRING_SEPERATER);
+            return key.Substring(index_a + STRING_SEPERATER.Length);
+        }
+        /// <summary>
         /// 键与名的分隔字符串
         /// </summary>
         public static string STRING_SEPERATER = "_+_";

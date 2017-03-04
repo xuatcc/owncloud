@@ -60,9 +60,9 @@
             this.label_userName.AutoSize = true;
             this.label_userName.Location = new System.Drawing.Point(12, 84);
             this.label_userName.Name = "label_userName";
-            this.label_userName.Size = new System.Drawing.Size(47, 12);
+            this.label_userName.Size = new System.Drawing.Size(35, 12);
             this.label_userName.TabIndex = 6;
-            this.label_userName.Text = "用户名:";
+            this.label_userName.Text = "昵称:";
             // 
             // label_password
             // 
@@ -93,6 +93,7 @@
             // 
             // textBox_userName
             // 
+            this.textBox_userName.Enabled = false;
             this.textBox_userName.Location = new System.Drawing.Point(110, 81);
             this.textBox_userName.Name = "textBox_userName";
             this.textBox_userName.Size = new System.Drawing.Size(290, 21);
@@ -115,6 +116,7 @@
             // 
             // textBox_syncServerAddress
             // 
+            this.textBox_syncServerAddress.Enabled = false;
             this.textBox_syncServerAddress.Location = new System.Drawing.Point(110, 171);
             this.textBox_syncServerAddress.Name = "textBox_syncServerAddress";
             this.textBox_syncServerAddress.Size = new System.Drawing.Size(290, 21);

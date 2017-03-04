@@ -373,6 +373,8 @@ namespace custom_cloud
             {
                 itemName = itemNames.Dequeue();
                 keyName = keyNames.Dequeue();
+                //调试用
+                Reporter.writeLog("./log/export.log", "export " + itemName);
                 if (keyName.Contains(FileTree.FILE_IDENTIFY_NAME))
                 {
                     fileName = itemName + MyConfig.EXTEND_NAME_ENCRYP_FILE;
@@ -391,7 +393,7 @@ namespace custom_cloud
                 {
                     if (Directory.Exists(itemName))
                     {
-                        createFolder(destination + "/" + Path.GetFileName(itemName));
+                        Directory.CreateDirectory(destination + "/" + Path.GetFileName(itemName));
                         DirectoryInfo directoryInfo = new DirectoryInfo(itemName);
                         DirectoryInfo[] directory_info = directoryInfo.GetDirectories();
                         FileInfo[] fileInfo = directoryInfo.GetFiles();
@@ -399,7 +401,7 @@ namespace custom_cloud
                         Queue<string> keys = new Queue<string>();
                         for(int i = 0; i < fileInfo.Length; i++)
                         {
-                            names.Enqueue(fileInfo[i].DirectoryName + "/" + Path.GetFileName(fileInfo[i].FullName));
+                            names.Enqueue(fileInfo[i].DirectoryName + "/" + Path.GetFileNameWithoutExtension(fileInfo[i].FullName));
                             keys.Enqueue(FileTree.FILE_IDENTIFY_NAME);
                         }
                         for(int i = 0; i < directory_info.Length; i++)

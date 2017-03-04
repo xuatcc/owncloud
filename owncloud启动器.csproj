@@ -69,6 +69,7 @@
     <Compile Include="dialog\FileAttributeDialog.Designer.cs">
       <DependentUpon>FileAttributeDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="IOClass\SyncResult.cs" />
     <Compile Include="loadingForm\LoadDeleteFiles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +109,12 @@
     </Compile>
     <Compile Include="subMainForm\SettingUserInfo.Designer.cs">
       <DependentUpon>SettingUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="subMainForm\subCloudDisk\SearchResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subMainForm\subCloudDisk\SearchResultForm.Designer.cs">
+      <DependentUpon>SearchResultForm.cs</DependentUpon>
     </Compile>
     <Compile Include="subMainForm\subUserInfo\SettingUserPassword.cs">
       <SubType>Form</SubType>
@@ -214,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="subMainForm\SettingUserInfo.resx">
       <DependentUpon>SettingUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subMainForm\subCloudDisk\SearchResultForm.resx">
+      <DependentUpon>SearchResultForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="subMainForm\subUserInfo\SettingUserPassword.resx">
       <DependentUpon>SettingUserPassword.cs</DependentUpon>
@@ -426,6 +436,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menu_sync.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_settin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_exit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
