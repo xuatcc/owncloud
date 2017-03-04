@@ -406,6 +406,27 @@
   <ItemGroup>
     <None Include="Resources\down.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import_files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export_files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_delete_files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_new_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_sync.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

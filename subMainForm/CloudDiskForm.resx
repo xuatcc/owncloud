@@ -144,4 +144,7 @@
   <metadata name="fileSystemWatcher_main.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>396, 42</value>
   </metadata>
+  <metadata name="toolTip_menuButton.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>757, 42</value>
+  </metadata>
 </root>

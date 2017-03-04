@@ -131,7 +131,14 @@ namespace custom_cloud
             Stack<string> pathBlock = getPathBlock(directoryPath);
             if (pathBlock == null) return null;
             FileTree fileTree = this;
-            while (pathBlock.Count > 0) fileTree = fileTree.SubTree[pathBlock.Pop()];
+            try
+            {
+                while (pathBlock.Count > 0) fileTree = fileTree.SubTree[pathBlock.Pop()];
+            }
+            catch(Exception e)
+            {
+                Reporter.reportBug(e.ToString());
+            }
             return fileTree;
         }
         /// <summary>

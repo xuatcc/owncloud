@@ -252,6 +252,11 @@ namespace custom_cloud
             sortBySortRule();
             listView_explorer.LabelEdit = true;
 
+            /* set tool tip */
+            toolTip_menuButton.SetToolTip(pictureBox_buttonBack, "后退");
+            toolTip_menuButton.SetToolTip(pictureBox_buttonForward, "前进");
+            toolTip_menuButton.SetToolTip(pictureBox_buttonRefresh, "刷新");
+
             /* 启动同步线程 */
             ThreadSync = new Thread(threadSync);
             ThreadSync.Start();
@@ -817,7 +822,7 @@ namespace custom_cloud
                 updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
                 
                 //while (newFileNames.Count > 0) addItemToListView(newFileNames.Dequeue(), FileTree.FILE_IDENTIFY_NAME);
-                updateListViewItems(FileView, File_Tree, Sort_Rule);
+                //updateListViewItems(FileView, File_Tree, Sort_Rule);
             }
         }
         /// <summary>

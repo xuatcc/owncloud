@@ -74,6 +74,7 @@
             this.folderBrowserDialog_main = new System.Windows.Forms.FolderBrowserDialog();
             this.saveFileDialog_main = new System.Windows.Forms.SaveFileDialog();
             this.fileSystemWatcher_main = new System.IO.FileSystemWatcher();
+            this.toolTip_menuButton = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip_cloudDisk.SuspendLayout();
             this.panel_function.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonRefresh)).BeginInit();
@@ -106,15 +107,15 @@
             // toolStripMenuItem_import
             // 
             this.toolStripMenuItem_import.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.toolStripMenuItem_import.Image = global::custom_cloud.Properties.Resources.backgroud;
+            this.toolStripMenuItem_import.Image = global::custom_cloud.Properties.Resources.import_files;
             this.toolStripMenuItem_import.Name = "toolStripMenuItem_import";
-            this.toolStripMenuItem_import.Size = new System.Drawing.Size(60, 26);
-            this.toolStripMenuItem_import.Text = "导入";
+            this.toolStripMenuItem_import.Size = new System.Drawing.Size(84, 26);
+            this.toolStripMenuItem_import.Text = "导入文件";
             this.toolStripMenuItem_import.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
             // toolStripMenuItem_title_importFolder
             // 
-            this.toolStripMenuItem_title_importFolder.Image = global::custom_cloud.Properties.Resources.backgroud;
+            this.toolStripMenuItem_title_importFolder.Image = global::custom_cloud.Properties.Resources.import_folder;
             this.toolStripMenuItem_title_importFolder.Name = "toolStripMenuItem_title_importFolder";
             this.toolStripMenuItem_title_importFolder.Size = new System.Drawing.Size(96, 26);
             this.toolStripMenuItem_title_importFolder.Text = "导入文件夹";
@@ -123,7 +124,7 @@
             // toolStripMenuItem_export
             // 
             this.toolStripMenuItem_export.Enabled = false;
-            this.toolStripMenuItem_export.Image = global::custom_cloud.Properties.Resources.backgroud;
+            this.toolStripMenuItem_export.Image = global::custom_cloud.Properties.Resources.export_files;
             this.toolStripMenuItem_export.Name = "toolStripMenuItem_export";
             this.toolStripMenuItem_export.Size = new System.Drawing.Size(60, 26);
             this.toolStripMenuItem_export.Text = "导出";
@@ -132,7 +133,7 @@
             // toolStripMenuItem_share
             // 
             this.toolStripMenuItem_share.Enabled = false;
-            this.toolStripMenuItem_share.Image = global::custom_cloud.Properties.Resources.backgroud;
+            this.toolStripMenuItem_share.Image = global::custom_cloud.Properties.Resources.menu_share;
             this.toolStripMenuItem_share.Name = "toolStripMenuItem_share";
             this.toolStripMenuItem_share.Size = new System.Drawing.Size(60, 26);
             this.toolStripMenuItem_share.Text = "分享";
@@ -141,7 +142,7 @@
             // toolStripMenuItem_delete
             // 
             this.toolStripMenuItem_delete.Enabled = false;
-            this.toolStripMenuItem_delete.Image = global::custom_cloud.Properties.Resources.backgroud;
+            this.toolStripMenuItem_delete.Image = global::custom_cloud.Properties.Resources.menu_delete_files;
             this.toolStripMenuItem_delete.Name = "toolStripMenuItem_delete";
             this.toolStripMenuItem_delete.Size = new System.Drawing.Size(60, 26);
             this.toolStripMenuItem_delete.Text = "删除";
@@ -149,7 +150,7 @@
             // 
             // toolStripMenuItem_newFolder
             // 
-            this.toolStripMenuItem_newFolder.Image = global::custom_cloud.Properties.Resources.backgroud;
+            this.toolStripMenuItem_newFolder.Image = global::custom_cloud.Properties.Resources.menu_new_folder;
             this.toolStripMenuItem_newFolder.Name = "toolStripMenuItem_newFolder";
             this.toolStripMenuItem_newFolder.Size = new System.Drawing.Size(96, 26);
             this.toolStripMenuItem_newFolder.Text = "新建文件夹";
@@ -157,7 +158,7 @@
             // 
             // toolStripMenuItem_title_sync
             // 
-            this.toolStripMenuItem_title_sync.Image = global::custom_cloud.Properties.Resources.down;
+            this.toolStripMenuItem_title_sync.Image = global::custom_cloud.Properties.Resources.menu_sync;
             this.toolStripMenuItem_title_sync.Name = "toolStripMenuItem_title_sync";
             this.toolStripMenuItem_title_sync.Size = new System.Drawing.Size(84, 26);
             this.toolStripMenuItem_title_sync.Text = "同步文件";
@@ -542,5 +543,6 @@
         private System.Windows.Forms.ImageList imageList_treeView;
         private System.Windows.Forms.Label label_syncStatus;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_title_sync;
+        private System.Windows.Forms.ToolTip toolTip_menuButton;
     }
 }

@@ -70,8 +70,6 @@ namespace custom_cloud.Properties {
             }
         }
         
-        
-        
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
@@ -222,8 +220,6 @@ namespace custom_cloud.Properties {
             }
         }
         
-        
-        
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
@@ -234,7 +230,15 @@ namespace custom_cloud.Properties {
             }
         }
         
-        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap export_files {
+            get {
+                object obj = ResourceManager.GetObject("export_files", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
         
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
@@ -329,6 +333,26 @@ namespace custom_cloud.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap import_files {
+            get {
+                object obj = ResourceManager.GetObject("import_files", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap import_folder {
+            get {
+                object obj = ResourceManager.GetObject("import_folder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap loading_small {
             get {
                 object obj = ResourceManager.GetObject("loading_small", resourceCulture);
@@ -342,6 +366,46 @@ namespace custom_cloud.Properties {
         internal static System.Drawing.Bitmap maximize {
             get {
                 object obj = ResourceManager.GetObject("maximize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_delete_files {
+            get {
+                object obj = ResourceManager.GetObject("menu_delete_files", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_new_folder {
+            get {
+                object obj = ResourceManager.GetObject("menu_new_folder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_share {
+            get {
+                object obj = ResourceManager.GetObject("menu_share", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_sync {
+            get {
+                object obj = ResourceManager.GetObject("menu_sync", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
