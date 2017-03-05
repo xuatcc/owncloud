@@ -346,12 +346,15 @@ namespace custom_cloud
             FileInfo[] fileInfo = directoryInfo.GetFiles();
             foreach(FileInfo fi in fileInfo)
             {
-                labelFileStatus.Invoke(new MethodInvoker(delegate
+                if (labelFileStatus != null)
                 {
-                    labelFileStatus.Text = "正在删除: " + fi.Name;
-                    labelFileStatus.SetBounds(142 - (labelFileStatus.Width / 2), labelFileStatus.Location.Y, labelFileStatus.Width, labelFileStatus.Height);
+                    labelFileStatus.Invoke(new MethodInvoker(delegate
+                    {
+                        labelFileStatus.Text = "正在删除: " + fi.Name;
+                        labelFileStatus.SetBounds(142 - (labelFileStatus.Width / 2), labelFileStatus.Location.Y, labelFileStatus.Width, labelFileStatus.Height);
+                    }
+                    ));
                 }
-                ));
                 File.Delete(fi.FullName);
             }
             /* 删除本目录 */

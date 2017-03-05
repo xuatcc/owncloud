@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -453,6 +454,8 @@ namespace custom_cloud
         /// </summary>
         void exitApplication()
         {
+            /* 删除文件缓存目录 */
+            if (Directory.Exists(MyConfig.PATH_FILE_BUFFER)) FileTree.deleteDirectory(MyConfig.PATH_FILE_BUFFER, null);
             System.Environment.Exit(0);
         }
         /// <summary>
@@ -463,6 +466,12 @@ namespace custom_cloud
         private void notifyIconMain_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             recoverWindow();
+        }
+
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            /* 删除文件缓存目录 */
+            if (Directory.Exists(MyConfig.PATH_FILE_BUFFER)) FileTree.deleteDirectory(MyConfig.PATH_FILE_BUFFER, null);
         }
     }
 }

@@ -38,7 +38,9 @@
             this.toolStripMenuItem_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.contextMenuStrip_listSetting = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem_list_setting = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_list_logout = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_list_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_title = new System.Windows.Forms.Panel();
             this.pictureBox_buttonListSetting = new System.Windows.Forms.PictureBox();
             this.label_sync = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@
             this.pictureBox_buttonMinimize = new System.Windows.Forms.PictureBox();
             this.pictureBox_buttonMaximize = new System.Windows.Forms.PictureBox();
             this.pictureBox_buttonClose = new System.Windows.Forms.PictureBox();
-            this.toolStripMenuItem_list_setting = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_list_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip_notify.SuspendLayout();
             this.contextMenuStrip_listSetting.SuspendLayout();
             this.panel_title.SuspendLayout();
@@ -92,19 +92,19 @@
             this.toolStripMenuItem_logOut,
             this.toolStripMenuItem_exit});
             this.contextMenuStrip_notify.Name = "contextMenuStrip_notify";
-            this.contextMenuStrip_notify.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuStrip_notify.Size = new System.Drawing.Size(137, 70);
             // 
             // toolStripMenuItem_showMainWindow
             // 
             this.toolStripMenuItem_showMainWindow.Name = "toolStripMenuItem_showMainWindow";
-            this.toolStripMenuItem_showMainWindow.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_showMainWindow.Size = new System.Drawing.Size(136, 22);
             this.toolStripMenuItem_showMainWindow.Text = "显示主界面";
             this.toolStripMenuItem_showMainWindow.Click += new System.EventHandler(this.btn_Click_Event);
             // 
             // toolStripMenuItem_logOut
             // 
             this.toolStripMenuItem_logOut.Name = "toolStripMenuItem_logOut";
-            this.toolStripMenuItem_logOut.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_logOut.Size = new System.Drawing.Size(136, 22);
             this.toolStripMenuItem_logOut.Text = "注销";
             this.toolStripMenuItem_logOut.Click += new System.EventHandler(this.btn_Click_Event);
             // 
@@ -112,7 +112,7 @@
             // 
             this.toolStripMenuItem_exit.Image = global::custom_cloud.Properties.Resources.menu_exit;
             this.toolStripMenuItem_exit.Name = "toolStripMenuItem_exit";
-            this.toolStripMenuItem_exit.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_exit.Size = new System.Drawing.Size(136, 22);
             this.toolStripMenuItem_exit.Text = "退出";
             this.toolStripMenuItem_exit.Click += new System.EventHandler(this.btn_Click_Event);
             // 
@@ -125,12 +125,28 @@
             this.contextMenuStrip_listSetting.Name = "contextMenuStrip_listSetting";
             this.contextMenuStrip_listSetting.Size = new System.Drawing.Size(101, 70);
             // 
+            // toolStripMenuItem_list_setting
+            // 
+            this.toolStripMenuItem_list_setting.Image = global::custom_cloud.Properties.Resources.menu_setting;
+            this.toolStripMenuItem_list_setting.Name = "toolStripMenuItem_list_setting";
+            this.toolStripMenuItem_list_setting.Size = new System.Drawing.Size(100, 22);
+            this.toolStripMenuItem_list_setting.Text = "设置";
+            this.toolStripMenuItem_list_setting.Click += new System.EventHandler(this.pictureBox_buttonSetting_Click);
+            // 
             // toolStripMenuItem_list_logout
             // 
             this.toolStripMenuItem_list_logout.Name = "toolStripMenuItem_list_logout";
             this.toolStripMenuItem_list_logout.Size = new System.Drawing.Size(100, 22);
             this.toolStripMenuItem_list_logout.Text = "注销";
             this.toolStripMenuItem_list_logout.Click += new System.EventHandler(this.btn_Click_Event);
+            // 
+            // toolStripMenuItem_list_exit
+            // 
+            this.toolStripMenuItem_list_exit.Image = global::custom_cloud.Properties.Resources.menu_exit;
+            this.toolStripMenuItem_list_exit.Name = "toolStripMenuItem_list_exit";
+            this.toolStripMenuItem_list_exit.Size = new System.Drawing.Size(100, 22);
+            this.toolStripMenuItem_list_exit.Text = "退出";
+            this.toolStripMenuItem_list_exit.Click += new System.EventHandler(this.btn_Click_Event);
             // 
             // panel_title
             // 
@@ -309,22 +325,6 @@
             this.pictureBox_buttonClose.MouseEnter += new System.EventHandler(this.btn_formClose_MouseEnter);
             this.pictureBox_buttonClose.MouseLeave += new System.EventHandler(this.btn_formClose_MouseLeave);
             // 
-            // toolStripMenuItem_list_setting
-            // 
-            this.toolStripMenuItem_list_setting.Image = global::custom_cloud.Properties.Resources.menu_setting;
-            this.toolStripMenuItem_list_setting.Name = "toolStripMenuItem_list_setting";
-            this.toolStripMenuItem_list_setting.Size = new System.Drawing.Size(100, 22);
-            this.toolStripMenuItem_list_setting.Text = "设置";
-            this.toolStripMenuItem_list_setting.Click += new System.EventHandler(this.pictureBox_buttonSetting_Click);
-            // 
-            // toolStripMenuItem_list_exit
-            // 
-            this.toolStripMenuItem_list_exit.Image = global::custom_cloud.Properties.Resources.menu_exit;
-            this.toolStripMenuItem_list_exit.Name = "toolStripMenuItem_list_exit";
-            this.toolStripMenuItem_list_exit.Size = new System.Drawing.Size(100, 22);
-            this.toolStripMenuItem_list_exit.Text = "退出";
-            this.toolStripMenuItem_list_exit.Click += new System.EventHandler(this.btn_Click_Event);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -337,6 +337,7 @@
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.SizeChanged += new System.EventHandler(this.MainWindow_SizeChanged);
             this.contextMenuStrip_notify.ResumeLayout(false);
             this.contextMenuStrip_listSetting.ResumeLayout(false);

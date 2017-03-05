@@ -1213,12 +1213,12 @@ namespace custom_cloud
             string name = listView_explorer.SelectedItems[0].Name;
             if (name.Contains(FileTree.FOLDER_IDENTIFY_NAME))
             {
-                FileTree fileTree = File_Tree.getTargetTree(CurrentPath + "/" + text);
+                FileTree fileTree = File_Tree.getTargetTree(MyConfig.getPathByKey(name));
                 fileAttributeDialog.setLabelValue(fileTree.RootDirectory.Name, CodeAnalysis.converSizeToString(fileTree.getByteLength()), fileTree.RootDirectory.CreationTime.ToString(), "unsync");
             }
             else if (name.Contains(FileTree.FILE_IDENTIFY_NAME))
             {
-                FileTree.TreeFileInfo treeFileInfo = File_Tree.getTargetTree(CurrentPath).CurrentDirectoryFileList[text];
+                FileTree.TreeFileInfo treeFileInfo = File_Tree.getTargetTree(Path.GetDirectoryName(MyConfig.getPathByKey(name))).CurrentDirectoryFileList[text];
                 fileAttributeDialog.setLabelValue(treeFileInfo.Fileinfo.Name, CodeAnalysis.converSizeToString(treeFileInfo.Fileinfo.Length), treeFileInfo.Fileinfo.CreationTime.ToString(), "unsync");
             }
             fileAttributeDialog.ShowDialog();
@@ -1514,6 +1514,7 @@ namespace custom_cloud
         private void CloudDiskForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (ThreadSync != null) ThreadSync.Abort();
+            
         }
     }
 }

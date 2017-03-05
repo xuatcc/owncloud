@@ -97,4 +97,3 @@ E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.loadingForm.UtilityLoadin
 E:\projects\VS2015\Backup\custom_cloud\bin\Debug\custom_cloud.exe.config
 E:\projects\VS2015\Backup\custom_cloud\obj\Debug\custom_cloud.exe
 E:\projects\VS2015\Backup\custom_cloud\obj\Debug\custom_cloud.pdb
-E:\projects\VS2015\custom_cloud\obj\Debug\custom_cloud.subMainForm.subCloudDisk.SearchResultForm.resources
