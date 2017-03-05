@@ -29,6 +29,10 @@ namespace custom_cloud
         /// </summary>
         public FileTree File_Tree;
         /// <summary>
+        /// 文件搜索树，用于显示符合搜索条件的文件
+        /// </summary>
+        public FileTree SearchTree;
+        /// <summary>
         /// 同步线程
         /// </summary>
         Thread ThreadSync;
@@ -268,6 +272,7 @@ namespace custom_cloud
             toolTip_menuButton.SetToolTip(pictureBox_buttonBack, "后退");
             toolTip_menuButton.SetToolTip(pictureBox_buttonForward, "前进");
             toolTip_menuButton.SetToolTip(pictureBox_buttonRefresh, "刷新");
+            toolTip_menuButton.SetToolTip(pictureBox_buttonSearchItem, "搜索 文件/文件夹");
 
             /* 启动同步线程 */
             ThreadSync = new Thread(threadSync);
@@ -357,6 +362,7 @@ namespace custom_cloud
                 pictureBox_buttonForward.Image = Properties.Resources.arrow_forward_blue;
             }
             if (sender.Equals(pictureBox_buttonRefresh)) pictureBox_buttonRefresh.Image = Properties.Resources.refresh_blue;
+            if (sender.Equals(pictureBox_buttonSearchItem)) pictureBox_buttonSearchItem.Image = Properties.Resources.menu_search_blue;
         }
 
         private void pictureBox_buttonBack_MouseLeave(object sender, EventArgs e)
@@ -372,10 +378,12 @@ namespace custom_cloud
                 pictureBox_buttonForward.Image = Properties.Resources.arrow_forward_deep_blue;
             }
             if (sender.Equals(pictureBox_buttonRefresh)) pictureBox_buttonRefresh.Image = Properties.Resources.refresh_deep_blue;
+            if (sender.Equals(pictureBox_buttonSearchItem)) pictureBox_buttonSearchItem.Image = Properties.Resources.menu_search_deep_blue;
         }
         void pictureBox_MouseDown_Event(object sender, MouseEventArgs ea)
         {
             if (sender.Equals(pictureBox_buttonRefresh)) pictureBox_buttonRefresh.Image = Properties.Resources.refresh_deep_blue;
+            if (sender.Equals(pictureBox_buttonSearchItem)) pictureBox_buttonSearchItem.Image = Properties.Resources.menu_search_deep_blue;
             if (sender.Equals(pictureBox_buttonBack))
             {
                 if (!pictureBox_buttonBack.Enabled) return;
@@ -390,6 +398,7 @@ namespace custom_cloud
         void pictureBox_MouseUp_Event(object sender, MouseEventArgs ea)
         {
             if (sender.Equals(pictureBox_buttonRefresh)) pictureBox_buttonRefresh.Image = Properties.Resources.refresh_blue;
+            if (sender.Equals(pictureBox_buttonSearchItem)) pictureBox_buttonSearchItem.Image = Properties.Resources.menu_search_blue;
             if (sender.Equals(pictureBox_buttonBack))
             {
                 if (!pictureBox_buttonBack.Enabled) return;
@@ -792,6 +801,7 @@ namespace custom_cloud
                 ThreadSync = new Thread(threadSync);
                 ThreadSync.Start();
             }
+            if (obj.Equals(pictureBox_buttonSearchItem)) items_Search();
 
             /* Context功能 */
             if (obj.Equals(toolStripMenuItem_listContextRightClickImport)) item_Import();
@@ -978,9 +988,8 @@ namespace custom_cloud
                         /* 应该使上方的navigation同步变化，先不做 */
                         break;
                     }
-                    else if (File.Exists(CurrentPath + "/" + listView_explorer.Items[i].Text + MyConfig.EXTEND_NAME_ENCRYP_FILE))
+                    else if (File.Exists(MyConfig.getPathByKey(listView_explorer.Items[i].Name + MyConfig.EXTEND_NAME_ENCRYP_FILE)))
                     {
-                        ;
                         //Process.Start(CurrentPath + "/" + listView_explorer.Items[i].Text);
                         string path = MyConfig.getPathByKey(listView_explorer.Items[i].Name + MyConfig.EXTEND_NAME_ENCRYP_FILE);
                         string fileName = CMDComand.discryptFile(path, MyConfig.PATH_FILE_BUFFER + "/" + listView_explorer.Items[i].Text);
@@ -1228,6 +1237,19 @@ namespace custom_cloud
                 Sort_Rule = MyConfig.SortRule.ByTime;
             updateSortRule();
             //sortBySortRule();
+        }
+        /// <summary>
+        /// 检索操作
+        /// </summary>
+        void items_Search()
+        {
+            if (string.IsNullOrEmpty(textBox_searchKey.Text)) return;
+            UtilityLoading searchLoading = new UtilityLoading();
+            searchLoading.StatusText = "正在搜索 文件/文件夹";
+            searchLoading.ButtonText = "取消";
+            searchLoading.Show();
+            searchLoading.functionSearchItems(File_Tree, textBox_searchKey.Text, ref listView_explorer, ref imageList_large, ref imageList_small, LargeIconDict, SmallIconDict);
+            
         }
         /// <summary>
         /// 根据排序规则自动排序

@@ -47,6 +47,42 @@ namespace custom_cloud.loadingForm
         /// 计时器线程
         /// </summary>
         Thread ThreadTimer;
+        /// <summary>
+        /// 通用线程
+        /// </summary>
+        Thread ThreadUtility;
+        /// <summary>
+        /// 通用列表
+        /// </summary>
+        ListView ListViewUtility;
+        /// <summary>
+        /// 通用文件树
+        /// </summary>
+        FileTree FileTreeUtility;
+        /// <summary>
+        /// 通用关键字
+        /// </summary>
+        string KeyUtility;
+        /// <summary>
+        /// 通用大图标列表
+        /// </summary>
+        ImageList ImageListLargeUtility;
+        /// <summary>
+        /// 通用小图标列表
+        /// </summary>
+        ImageList ImageListSmallUtility;
+        /// <summary>
+        /// 大图标库
+        /// </summary>
+        Dictionary<string, Image> LargeIconDict;
+        /// <summary>
+        /// 小图标库
+        /// </summary>
+        Dictionary<string, Image> SmallIconDict;
+        Image LargeFolderIcon;
+        Image SmallFolderIcon;
+        Image LargeDefaultFileIcon;
+        Image SmallDefaultFileIcon;
         public UtilityLoading()
         {
             InitializeComponent();
@@ -83,7 +119,112 @@ namespace custom_cloud.loadingForm
         {
             if (sender.Equals(button_cancel)) logOutFail();
         }
-        
+        #region search items
+        /// <summary>
+        /// 根据关键字搜索文件
+        /// </summary>
+        /// <param name="totalTree"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public void functionSearchItems(FileTree totalTree, string key, ref ListView listView, ref ImageList imageListLarge, ref ImageList imageListSmall, Dictionary<string, Image> largeIconDict, Dictionary<string, Image> smallIconDict)
+        {
+            /* 传值 */
+            FileTreeUtility = totalTree;
+            KeyUtility = key;
+            LargeIconDict = largeIconDict;
+            SmallIconDict = smallIconDict;
+            /* 传地址 */
+            ListViewUtility = listView;
+            ImageListLargeUtility = imageListLarge;
+            ImageListSmallUtility = imageListSmall;
+            /* 初始化列表和图片列表 */
+            LargeFolderIcon = Image.FromFile(MyConfig.LARGE_FOLDER_ICON_PATH);
+            SmallFolderIcon = Image.FromFile(MyConfig.SMALL_FOLDER_ICON_PATH);
+            LargeDefaultFileIcon = Image.FromFile(MyConfig.LARGE_DEFAULT_FILE_ICON_PATH);
+            SmallDefaultFileIcon = Image.FromFile(MyConfig.SMALL_DEFAULT_FILE_ICON_PATH);
+            ListViewUtility.Items.Clear();
+            ImageListLargeUtility.Images.Clear();
+            ImageListSmallUtility.Images.Clear();
+            /* 开始搜索线程 */
+            ThreadUtility = new Thread(threadSearchItems);
+            ThreadUtility.Start();
+        }
+        /// <summary>
+        /// 递归搜索
+        /// </summary>
+        /// <param name="fileTree"></param>
+        /// <param name="key"></param>
+        /// <param name="listView"></param>
+        void recursiveSearch(FileTree fileTree, string key)
+        {
+            /* 检索文件 */
+            foreach(FileTree.TreeFileInfo tfi in fileTree.CurrentDirectoryFileList.Values)
+            {
+                if (tfi.FileName.ToLower().Contains(key.ToLower()))
+                {
+                    string fileName = tfi.FilePath;
+                    /* 大图标注意判断文件是否为图片 */
+                    ListViewUtility.Invoke(new MethodInvoker(delegate
+                    {
+                        if (CodeAnalysis.IsImage(tfi.FilePath))
+                        {
+                            Image image = Int32Dec64Convert.ConverToSquareBitmap(ImageListLargeUtility.ImageSize.Width, Image.FromFile(tfi.FilePath));
+                            ImageListLargeUtility.Images.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), image);
+                        }
+                        else if (LargeIconDict.ContainsKey(tfi.ExtendName)) ImageListLargeUtility.Images.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), Int32Dec64Convert.ConverToSquareBitmap(ImageListLargeUtility.ImageSize.Width, LargeIconDict[tfi.ExtendName]));
+                        else ImageListLargeUtility.Images.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), Int32Dec64Convert.ConverToSquareBitmap(ImageListLargeUtility.ImageSize.Width, LargeDefaultFileIcon));
+
+                        if (SmallIconDict.ContainsKey(tfi.ExtendName)) ImageListSmallUtility.Images.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), Int32Dec64Convert.ConverToSquareBitmap(ImageListSmallUtility.ImageSize.Width, SmallIconDict[tfi.ExtendName]));
+                        else ImageListSmallUtility.Images.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), Int32Dec64Convert.ConverToSquareBitmap(ImageListSmallUtility.ImageSize.Width, SmallDefaultFileIcon));
+
+                    
+                        ListViewUtility.Items.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), tfi.FileName, MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName));
+                        Application.DoEvents();
+                    }));
+                    
+                }
+            }
+            /* 检索文件夹 */
+            foreach(FileTree ft in fileTree.SubTree.Values)
+            {
+                if (ft.RootDirectory.Name.ToLower().Contains(key.ToLower()))
+                {
+                    string directoryPath = ft.RootDirectory.FullName;
+                    ListViewUtility.Invoke(new MethodInvoker(delegate
+                    {
+                        ImageListLargeUtility.Images.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, directoryPath),
+                        Int32Dec64Convert.ConverToSquareBitmap(ImageListLargeUtility.ImageSize.Width, LargeFolderIcon));
+                        ImageListSmallUtility.Images.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, directoryPath),
+                        Int32Dec64Convert.ConverToSquareBitmap(ImageListSmallUtility.ImageSize.Width, SmallFolderIcon));
+                    
+                        ListViewUtility.Items.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, directoryPath), ft.RootDirectory.Name, MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, directoryPath));
+                        Application.DoEvents();
+                    }));
+                    
+                }
+                /* 递归 */
+                recursiveSearch(ft, key);
+            }
+        }
+        /// <summary>
+        /// 搜索线程
+        /// </summary>
+        void threadSearchItems()
+        {
+            try
+            {
+                Thread.Sleep(200);
+                recursiveSearch(FileTreeUtility, KeyUtility);
+            }
+            catch(Exception e)
+            {
+                Reporter.reportBug(e.ToString());
+            }
+            /* 检索结束 */
+            MethodInvoker methodInvoker = new MethodInvoker(logOutFail);
+            BeginInvoke(methodInvoker);
+        }
+        #endregion
         #region Logout
         /// <summary>
         /// 功能-注销
@@ -215,6 +356,12 @@ namespace custom_cloud.loadingForm
             }
         }
         #endregion
+        #region 更改用户信息
+        public void functionModifyUserInfo(UserInfo userInfo)
+        {
+
+        }
+        #endregion
         /// <summary>
         /// 退出窗体时要注意关闭连接
         /// </summary>
@@ -223,7 +370,11 @@ namespace custom_cloud.loadingForm
         private void UtilityLoading_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (ThreadTimer != null) ThreadTimer.Abort();
-            if (netHelper.SocketClient.Connected) netHelper.stopConnection();
+            if (ThreadUtility != null) ThreadUtility.Abort();
+            if (netHelper != null)
+            {
+                if (netHelper.SocketClient.Connected) netHelper.stopConnection();
+            }
         }
     }
 }

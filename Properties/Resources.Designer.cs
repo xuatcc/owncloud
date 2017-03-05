@@ -403,6 +403,26 @@ namespace custom_cloud.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap menu_search_blue {
+            get {
+                object obj = ResourceManager.GetObject("menu_search_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_search_deep_blue {
+            get {
+                object obj = ResourceManager.GetObject("menu_search_deep_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap menu_settin {
             get {
                 object obj = ResourceManager.GetObject("menu_settin", resourceCulture);

@@ -49,17 +49,17 @@ namespace custom_cloud.subMainForm.subUserInfo
         }
         void btn_MouseDown_Event(object sender, MouseEventArgs ea)
         {
-            /*
+            
             if (sender.Equals(button_confirm)) button_confirm.Image = Properties.Resources.down;
             if (sender.Equals(button_cancel)) button_cancel.Image = Properties.Resources.down;
-            */
+            
         }
         void btn_MouseUp_Event(object sender, MouseEventArgs ea)
         {
-            /*
+            
             if (sender.Equals(button_confirm)) button_confirm.Image = Properties.Resources.enter;
             if (sender.Equals(button_cancel)) button_cancel.Image = Properties.Resources.enter;
-            */
+            
         }
         /// <summary>
         /// 检查新密码是否一致

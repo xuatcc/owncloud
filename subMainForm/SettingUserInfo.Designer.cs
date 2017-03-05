@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox_userIcon = new System.Windows.Forms.PictureBox();
             this.label_userName = new System.Windows.Forms.Label();
             this.label_password = new System.Windows.Forms.Label();
             this.label_syncPath = new System.Windows.Forms.Label();
@@ -39,21 +38,12 @@
             this.textBox_syncServerAddress = new System.Windows.Forms.TextBox();
             this.button_modifyPassword = new System.Windows.Forms.Button();
             this.button_folderBrowser = new System.Windows.Forms.Button();
-            this.button_confirm = new System.Windows.Forms.Button();
-            this.button_cancel = new System.Windows.Forms.Button();
             this.folderBrowserDialog_syncPath = new System.Windows.Forms.FolderBrowserDialog();
+            this.button_cancel = new System.Windows.Forms.Button();
+            this.button_confirm = new System.Windows.Forms.Button();
+            this.pictureBox_userIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_userIcon)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox_userIcon
-            // 
-            this.pictureBox_userIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_userIcon.Image = global::custom_cloud.Properties.Resources.user_icon;
-            this.pictureBox_userIcon.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox_userIcon.Name = "pictureBox_userIcon";
-            this.pictureBox_userIcon.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox_userIcon.TabIndex = 5;
-            this.pictureBox_userIcon.TabStop = false;
             // 
             // label_userName
             // 
@@ -142,24 +132,6 @@
             this.button_folderBrowser.UseVisualStyleBackColor = true;
             this.button_folderBrowser.Click += new System.EventHandler(this.btn_Click_Event);
             // 
-            // button_confirm
-            // 
-            this.button_confirm.BackColor = System.Drawing.SystemColors.Control;
-            this.button_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_confirm.ForeColor = System.Drawing.Color.White;
-            this.button_confirm.Image = global::custom_cloud.Properties.Resources.down;
-            this.button_confirm.Location = new System.Drawing.Point(300, 198);
-            this.button_confirm.Name = "button_confirm";
-            this.button_confirm.Size = new System.Drawing.Size(80, 30);
-            this.button_confirm.TabIndex = 16;
-            this.button_confirm.Text = "保存";
-            this.button_confirm.UseVisualStyleBackColor = false;
-            this.button_confirm.Click += new System.EventHandler(this.btn_Click_Event);
-            this.button_confirm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown_Event);
-            this.button_confirm.MouseEnter += new System.EventHandler(this.btn_MouseEnter_Event);
-            this.button_confirm.MouseLeave += new System.EventHandler(this.btn_MouseLeave_Event);
-            this.button_confirm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp_Event);
-            // 
             // button_cancel
             // 
             this.button_cancel.BackgroundImage = global::custom_cloud.Properties.Resources.down;
@@ -172,11 +144,41 @@
             this.button_cancel.TabIndex = 17;
             this.button_cancel.Text = "取消";
             this.button_cancel.UseVisualStyleBackColor = true;
+            this.button_cancel.Visible = false;
             this.button_cancel.Click += new System.EventHandler(this.btn_Click_Event);
             this.button_cancel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown_Event);
             this.button_cancel.MouseEnter += new System.EventHandler(this.btn_MouseEnter_Event);
             this.button_cancel.MouseLeave += new System.EventHandler(this.btn_MouseLeave_Event);
             this.button_cancel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp_Event);
+            // 
+            // button_confirm
+            // 
+            this.button_confirm.BackColor = System.Drawing.SystemColors.Control;
+            this.button_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_confirm.ForeColor = System.Drawing.Color.White;
+            this.button_confirm.Image = global::custom_cloud.Properties.Resources.down;
+            this.button_confirm.Location = new System.Drawing.Point(300, 198);
+            this.button_confirm.Name = "button_confirm";
+            this.button_confirm.Size = new System.Drawing.Size(80, 30);
+            this.button_confirm.TabIndex = 16;
+            this.button_confirm.Text = "保存";
+            this.button_confirm.UseVisualStyleBackColor = false;
+            this.button_confirm.Visible = false;
+            this.button_confirm.Click += new System.EventHandler(this.btn_Click_Event);
+            this.button_confirm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown_Event);
+            this.button_confirm.MouseEnter += new System.EventHandler(this.btn_MouseEnter_Event);
+            this.button_confirm.MouseLeave += new System.EventHandler(this.btn_MouseLeave_Event);
+            this.button_confirm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_MouseUp_Event);
+            // 
+            // pictureBox_userIcon
+            // 
+            this.pictureBox_userIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_userIcon.Image = global::custom_cloud.Properties.Resources.user_icon;
+            this.pictureBox_userIcon.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox_userIcon.Name = "pictureBox_userIcon";
+            this.pictureBox_userIcon.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox_userIcon.TabIndex = 5;
+            this.pictureBox_userIcon.TabStop = false;
             // 
             // SettingUserInfo
             // 
