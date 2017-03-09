@@ -267,6 +267,8 @@ namespace custom_cloud
             updateSortRule();
             sortBySortRule();
             listView_explorer.LabelEdit = true;
+            listView_explorer.AllowDrop = true;
+            //listView_explorer.InsertionMark.Color = Color.Blue;
 
             /* set tool tip */
             toolTip_menuButton.SetToolTip(pictureBox_buttonBack, "后退");
@@ -473,6 +475,7 @@ namespace custom_cloud
                 listView_explorer.Items.Add(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, directoryPath), file_tree.RootDirectory.Name, MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, directoryPath));
                 //listView_explorer.Items[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, file_tree.RootDirectory.Name)].Name = 
                     //FileTree.FOLDER_IDENTIFY_NAME;
+                
             }
             /* 手动排序 */
             //listView_explorer.Sort();
@@ -494,7 +497,7 @@ namespace custom_cloud
                 listView_explorer.Items.Add(MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName), treeFileInfo.FileName, MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName));
                 //listView_explorer.Items[MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName)].Name = FileTree.FILE_IDENTIFY_NAME;
             }
-            
+            //listView_explorer.AllowDrop = true;
         }
         /// <summary>
         /// 按名字排序接口
@@ -1148,7 +1151,7 @@ namespace custom_cloud
                         newName = FileTree.moveDirectory(fileName, CurrentPath + "/" + Path.GetFileName(fileName));
                     }
                     
-                    addItemToListView(newName, FileTree.FOLDER_IDENTIFY_NAME);
+                    //addItemToListView(newName, FileTree.FOLDER_IDENTIFY_NAME);
                     /*
                     
                     */
@@ -1157,7 +1160,7 @@ namespace custom_cloud
                 {
                     if (!CutTrue_CopyFalse)
                     {
-                        newName = FileTree.copyFile(fileName, CurrentPath + "/" + Path.GetFileName(fileName));
+                        newName = FileTree.copyFile(fileName + MyConfig.EXTEND_NAME_ENCRYP_FILE, CurrentPath + "/" + Path.GetFileName(fileName + MyConfig.EXTEND_NAME_ENCRYP_FILE));
                     }
                     else
                     {
@@ -1173,9 +1176,9 @@ namespace custom_cloud
                                 break;
                             }
                         }
-                        newName = FileTree.moveFile(fileName, CurrentPath + "/" + Path.GetFileName(fileName));
+                        newName = FileTree.moveFile(fileName + MyConfig.EXTEND_NAME_ENCRYP_FILE, CurrentPath + "/" + Path.GetFileName(fileName + MyConfig.EXTEND_NAME_ENCRYP_FILE));
                     }
-                    addItemToListView(newName, FileTree.FILE_IDENTIFY_NAME);
+                    //addItemToListView(newName, FileTree.FILE_IDENTIFY_NAME);
                     /*
                     for (int i = 0; i < listView_explorer.Items.Count; i++)
                     {
@@ -1191,8 +1194,8 @@ namespace custom_cloud
             }
             toolStripMenuItem_listContextRightClick_paste.Enabled = false;
             /* 更新文件树 */
-            //updateFileTree();
-            //updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            updateFileTree();
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
         }
         /// <summary>
         /// 文件（夹）重命名
@@ -1514,6 +1517,84 @@ namespace custom_cloud
         private void CloudDiskForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (ThreadSync != null) ThreadSync.Abort();
+            
+        }
+        /// <summary>
+        /// 拖拽放下事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listView_explorer_DragDrop(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+            if (!sender.Equals(listView_explorer)) return;
+            
+            string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, true);
+            LoadEncryption loadEncryption = new LoadEncryption();
+            loadEncryption.importItem(fileNames, CurrentPath);
+            loadEncryption.ShowDialog();
+
+
+            //更新文件树
+            updateFileTree();
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+        }
+        /// <summary>
+        /// 拖拽进入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listView_explorer_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = e.AllowedEffect;
+        }
+        /// <summary>
+        /// 拖拽结束
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listView_explorer_DragOver(object sender, DragEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// 拖拽离开事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listView_explorer_DragLeave(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// 项目拖拽事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listView_explorer_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            ListViewItem lvi = (ListViewItem)e.Item;
+            /*
+            string[] fileNames = new string[lvi.Length];
+            for(int i = 0; i < lvi.Length; i++)
+            {
+                fileNames[i] = lvi[i].Text;
+            }
+            */
+            DataObject data = new DataObject(DataFormats.FileDrop, lvi.Text);
+            string destination = DoDragDrop(data, DragDropEffects.Copy).ToString();
+            Queue<string> fileNames = new Queue<string>();
+            Queue<string> keyNames = new Queue<string>();
+            
+            for (int i = 0; i < listView_explorer.SelectedItems.Count; i++)
+            {
+                fileNames.Enqueue(MyConfig.getPathByKey(listView_explorer.SelectedItems[i].Name));
+                keyNames.Enqueue(listView_explorer.SelectedItems[i].Name);
+            }
+            LoadDisCryption loadDisCryption = new LoadDisCryption();
+            loadDisCryption.exportFiles(fileNames, keyNames, destination);
+            loadDisCryption.ShowDialog();
             
         }
     }

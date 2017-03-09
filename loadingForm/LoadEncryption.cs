@@ -86,9 +86,10 @@ namespace custom_cloud.loadingForm
         /// <returns></returns>
         public void importItem(string[] itemsPath, string currentPath)
         {
+            if (itemsPath == null) closeForm();
             ItemsPath= itemsPath;
-            progressBar_main.Visible = true;
-            label_fileStatus.Visible = false;
+            progressBar_main.Visible = false;
+            label_fileStatus.Visible = true;
             progressBar_main.Maximum = itemsPath.Length;
             CurrentPath = currentPath;
             ThreadImport = new Thread(threadImportItems);
@@ -104,14 +105,25 @@ namespace custom_cloud.loadingForm
                 string newFileName;
                 for (int i = 0; i < ItemsPath.Length; i++)
                 {
-                    newFileName = FileTree.copyFile(ItemsPath[i],
-                       CurrentPath + "/" + Path.GetFileName(ItemsPath[i]));
-                    /* 加密 */
-                    CMDComand.encryptFile(newFileName, newFileName);
-                    progressBar_main.Invoke(new MethodInvoker(delegate
+                    if (File.Exists(ItemsPath[i]))
                     {
-                        progressBar_main.Value = i + 1;
-                    }));
+                        newFileName = FileTree.importFile(ItemsPath[i],
+                           CurrentPath + "/" + Path.GetFileName(ItemsPath[i]));
+                        /* 加密 */
+                        CMDComand.encryptFile(newFileName, newFileName);
+                        label_fileStatus.Invoke(new MethodInvoker(delegate
+                        {
+                            label_fileStatus.Text = "正在处理: " + Path.GetFileName(ItemsPath[i]);
+                            label_fileStatus.SetBounds(142 - (label_fileStatus.Width / 2), label_fileStatus.Location.Y, label_fileStatus.Width, label_fileStatus.Height);
+                        }
+                    ));
+                    }
+                    else if (Directory.Exists(ItemsPath[i]))
+                    {
+                        FileTree.importDirectory(ItemsPath[i], CurrentPath + "/" + Path.GetFileName(ItemsPath[i]), label_fileStatus);
+                        
+                    }
+                    
                 }
                 MethodInvoker methodInvoker = new MethodInvoker(closeForm);
                 BeginInvoke(methodInvoker);

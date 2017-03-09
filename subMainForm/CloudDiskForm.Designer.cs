@@ -39,8 +39,8 @@
             this.toolStripMenuItem_title_sync = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_function = new System.Windows.Forms.Panel();
             this.pictureBox_buttonSearchItem = new System.Windows.Forms.PictureBox();
-            this.textBox_searchKey = new System.Windows.Forms.TextBox();
             this.label_syncStatus = new System.Windows.Forms.Label();
+            this.textBox_searchKey = new System.Windows.Forms.TextBox();
             this.pictureBox_buttonRefresh = new System.Windows.Forms.PictureBox();
             this.pictureBox_buttonForward = new System.Windows.Forms.PictureBox();
             this.pictureBox_buttonBack = new System.Windows.Forms.PictureBox();
@@ -196,14 +196,6 @@
             this.pictureBox_buttonSearchItem.MouseLeave += new System.EventHandler(this.pictureBox_buttonBack_MouseLeave);
             this.pictureBox_buttonSearchItem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseUp_Event);
             // 
-            // textBox_searchKey
-            // 
-            this.textBox_searchKey.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox_searchKey.Location = new System.Drawing.Point(96, 0);
-            this.textBox_searchKey.Name = "textBox_searchKey";
-            this.textBox_searchKey.Size = new System.Drawing.Size(200, 30);
-            this.textBox_searchKey.TabIndex = 5;
-            // 
             // label_syncStatus
             // 
             this.label_syncStatus.AutoSize = true;
@@ -212,6 +204,14 @@
             this.label_syncStatus.Size = new System.Drawing.Size(29, 12);
             this.label_syncStatus.TabIndex = 4;
             this.label_syncStatus.Text = "sync";
+            // 
+            // textBox_searchKey
+            // 
+            this.textBox_searchKey.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox_searchKey.Location = new System.Drawing.Point(96, 0);
+            this.textBox_searchKey.Name = "textBox_searchKey";
+            this.textBox_searchKey.Size = new System.Drawing.Size(200, 30);
+            this.textBox_searchKey.TabIndex = 5;
             // 
             // pictureBox_buttonRefresh
             // 
@@ -268,12 +268,14 @@
             // 
             // treeView_directoryTree
             // 
+            this.treeView_directoryTree.AllowDrop = true;
+            this.treeView_directoryTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView_directoryTree.ImageIndex = 0;
             this.treeView_directoryTree.ImageList = this.imageList_treeView;
-            this.treeView_directoryTree.Location = new System.Drawing.Point(10, 0);
+            this.treeView_directoryTree.Location = new System.Drawing.Point(0, 0);
             this.treeView_directoryTree.Name = "treeView_directoryTree";
             this.treeView_directoryTree.SelectedImageIndex = 0;
-            this.treeView_directoryTree.Size = new System.Drawing.Size(180, 502);
+            this.treeView_directoryTree.Size = new System.Drawing.Size(200, 502);
             this.treeView_directoryTree.TabIndex = 0;
             this.treeView_directoryTree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView_directoryTree_NodeMouseClick);
             // 
@@ -285,16 +287,25 @@
             // 
             // listView_explorer
             // 
+            this.listView_explorer.AllowColumnReorder = true;
+            this.listView_explorer.AllowDrop = true;
             this.listView_explorer.BackColor = System.Drawing.Color.White;
             this.listView_explorer.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.listView_explorer.LabelEdit = true;
             this.listView_explorer.Location = new System.Drawing.Point(200, 60);
             this.listView_explorer.Name = "listView_explorer";
+            this.listView_explorer.ShowItemToolTips = true;
             this.listView_explorer.Size = new System.Drawing.Size(824, 472);
             this.listView_explorer.TabIndex = 3;
             this.listView_explorer.UseCompatibleStateImageBehavior = false;
             this.listView_explorer.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.listView_explorer_AfterLabelEdit);
             this.listView_explorer.BeforeLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.listView_explorer_BeforeLabelEdit);
+            this.listView_explorer.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.listView_explorer_ItemDrag);
             this.listView_explorer.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView_explorer_ItemSelectionChanged);
+            this.listView_explorer.DragDrop += new System.Windows.Forms.DragEventHandler(this.listView_explorer_DragDrop);
+            this.listView_explorer.DragEnter += new System.Windows.Forms.DragEventHandler(this.listView_explorer_DragEnter);
+            this.listView_explorer.DragOver += new System.Windows.Forms.DragEventHandler(this.listView_explorer_DragOver);
+            this.listView_explorer.DragLeave += new System.EventHandler(this.listView_explorer_DragLeave);
             this.listView_explorer.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.item_Open);
             // 
             // imageList_large
@@ -545,7 +556,6 @@
         private System.Windows.Forms.PictureBox pictureBox_buttonForward;
         private System.Windows.Forms.PictureBox pictureBox_buttonRefresh;
         private System.Windows.Forms.Panel panel_fileFilter;
-        private System.Windows.Forms.ListView listView_explorer;
         private System.Windows.Forms.ImageList imageList_large;
         private System.Windows.Forms.ImageList imageList_small;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip_listRightClick;
@@ -582,5 +592,6 @@
         private System.Windows.Forms.ToolTip toolTip_menuButton;
         private System.Windows.Forms.PictureBox pictureBox_buttonSearchItem;
         private System.Windows.Forms.TextBox textBox_searchKey;
+        protected System.Windows.Forms.ListView listView_explorer;
     }
 }

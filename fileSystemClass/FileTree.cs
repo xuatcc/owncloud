@@ -182,8 +182,31 @@ namespace custom_cloud
             while (File.Exists(newFileName))
             {
                 ++counter;
-                newFileName = Path.GetDirectoryName(destination) + "/" + Path.GetFileNameWithoutExtension(destination)+ "_" +
-                    counter.ToString() + Path.GetExtension(destination);
+                newFileName = Path.GetDirectoryName(destination) + "/" + Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(destination)) + "_" +
+                    counter.ToString() + Path.GetExtension(Path.GetFileNameWithoutExtension(newFileName)) + Path.GetExtension(newFileName);
+                //string a = "";
+            }
+            File.Copy(source, newFileName);
+            return newFileName;
+        }
+        /// <summary>
+        /// 导入文件
+        /// </summary>
+        /// <param name="souce"></param>
+        /// <param name="destination"></param>
+        /// <returns></returns>
+        public static string importFile(string source, string destination)
+        {
+            if (!File.Exists(source)) return null;
+            string newFileName = destination;
+            int counter = 0;
+
+            //防止重名
+            while (File.Exists(newFileName + MyConfig.EXTEND_NAME_ENCRYP_FILE))
+            {
+                ++counter;
+                newFileName = Path.GetDirectoryName(destination) + "/" + Path.GetFileNameWithoutExtension(destination) + "_" +
+                    counter.ToString() + Path.GetExtension(newFileName);
                 //string a = "";
             }
             File.Copy(source, newFileName);
@@ -199,11 +222,12 @@ namespace custom_cloud
             int counter = 0;
             if (source.Equals(destination)) return newFileName;
             //防止重名
+            //防止重名
             while (File.Exists(newFileName))
             {
                 ++counter;
-                newFileName = Path.GetDirectoryName(destination) + "/" + Path.GetFileNameWithoutExtension(destination) + "_" +
-                    counter.ToString() + Path.GetExtension(destination);
+                newFileName = Path.GetDirectoryName(destination) + "/" + Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(destination)) + "_" +
+                    counter.ToString() + Path.GetExtension(Path.GetFileNameWithoutExtension(newFileName)) + Path.GetExtension(newFileName);
                 //string a = "";
             }
             File.Move(source, newFileName);
@@ -277,18 +301,22 @@ namespace custom_cloud
             FileInfo[] fileInfo = directoryInfo.GetFiles();
             foreach (FileInfo fi in fileInfo)
             {
-                labelFileStatus.Invoke(new MethodInvoker(delegate
+                if (labelFileStatus != null)
                 {
-                    labelFileStatus.Text = "正在处理: " + fi.Name;
-                    labelFileStatus.SetBounds(142 - (labelFileStatus.Width / 2), labelFileStatus.Location.Y, labelFileStatus.Width, labelFileStatus.Height);
+                    labelFileStatus.Invoke(new MethodInvoker(delegate
+                    {
+                        labelFileStatus.Text = "正在处理: " + fi.Name;
+                        labelFileStatus.SetBounds(142 - (labelFileStatus.Width / 2), labelFileStatus.Location.Y, labelFileStatus.Width, labelFileStatus.Height);
+                    }
+                    ));
                 }
-                ));
                 File.Copy(fi.FullName, newFolderName + "/" + fi.Name);
                 /* 加密导入 */
                 CMDComand.encryptFile(newFolderName + "/" + fi.Name, newFolderName + "/" + fi.Name);
             }
             return newFolderName;
         }
+        
         /// <summary>
         /// 移动文件夹
         /// </summary>

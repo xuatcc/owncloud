@@ -71,6 +71,7 @@
             // 
             // panel_mainForm
             // 
+            this.panel_mainForm.AllowDrop = true;
             this.panel_mainForm.Location = new System.Drawing.Point(0, 100);
             this.panel_mainForm.Name = "panel_mainForm";
             this.panel_mainForm.Size = new System.Drawing.Size(1024, 632);
@@ -327,6 +328,7 @@
             // 
             // MainWindow
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 632);

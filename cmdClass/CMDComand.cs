@@ -73,8 +73,9 @@ namespace custom_cloud.cmdClass
         /// <param name="fileTarget"></param>
         public static string discryptFile(string fileSource, string fileTarget)
         {
-            if (!File.Exists(MyConfig.PATH_FILE_ENCRYPTION)) throw new Exception("can't find ecryption!");
-            if (!File.Exists(fileSource)) return "";
+            if (!File.Exists(fileSource)) throw new Exception("can't find ecryption!");
+            //if (!File.Exists(fileSource)) return "";
+            if (!Directory.Exists(MyConfig.PATH_FILE_BUFFER)) Directory.CreateDirectory(MyConfig.PATH_FILE_BUFFER);
             /* 执行语句 */
             string sslComand = (" -k " + MyConfig.PASSWORD_FILE_ENCRYPTION + " -in " + fileSource + " -out " + fileTarget);
             Process process = new Process();
