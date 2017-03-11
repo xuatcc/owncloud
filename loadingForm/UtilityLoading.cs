@@ -225,6 +225,114 @@ namespace custom_cloud.loadingForm
             BeginInvoke(methodInvoker);
         }
         #endregion
+        #region Modify User Info
+        public void functionUpdateUserInfo(UserInfo userInfo)
+        {
+            /* 建立与服务器的连接 */
+            initializeNetWork(userInfo.ServerURI, userInfo.ServerPort);
+            UserInfo user_info = userInfo;
+            user_info.Order = Order._ORDER_UPDATE_USER_INFO;
+            /* 发送更改用户信息报文 */
+            netHelper.sendJsonBlock(user_info);
+            /* 启动计时 */
+            ThreadTimer = new Thread(thread_Timer_UpdateUserInfo);
+            ThreadTimer.Start();
+        }
+        /// <summary>
+        /// 修改用户信息成功
+        /// </summary>
+        void updateUserInfoSuccess()
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+        /// <summary>
+        /// 修改用户信息失败
+        /// </summary>
+        void updateUserInfoFail()
+        {
+            this.DialogResult = DialogResult.No;
+            this.Close();
+        }
+        /// <summary>
+        /// 更改用户信息-收到消息后的处理
+        /// </summary>
+        /// <param name="iar"></param>
+        void receiveCallBack_ModifyUserInfo(IAsyncResult iar)
+        {
+            try
+            {
+                int REnd = netHelper.SocketClient.EndReceive(iar);
+                string receive_content = Encoding.UTF8.GetString(netHelper.msgByte, 0, REnd);
+                string full_content = "";
+                if (!string.IsNullOrEmpty(receive_content) && receive_content != "")
+                {
+                    Reporter.writeLog(MyConfig.PATH_NET_LOG, "update_userInfo : " + receive_content);
+                    //Thread.Sleep(2);
+                    if (receive_content.Contains(Order.FLAG_START))
+                    {
+                        netHelper.flag_fullReceive = false;
+                        netHelper.receiveBuffer = new Queue<string>();
+                    }
+                    if (!receive_content.Contains(Order.FLAG_START) && !receive_content.Contains(Order.FLAG_STOP))
+                    {
+                        netHelper.receiveBuffer.Enqueue(receive_content);
+                    }
+                    if (receive_content.Contains(Order.FLAG_STOP))
+                    {
+
+                        while (netHelper.receiveBuffer.Count > 0)
+                        {
+                            full_content += netHelper.receiveBuffer.Dequeue();
+                        }
+                        Hashtable hashtable = JsonHelper.getDeserializeObject<Hashtable>(full_content);
+                        if (hashtable != null)
+                        {
+                            if (hashtable.ContainsKey("update_result"))
+                            {
+                                bool result = (bool)hashtable["update_result"];
+                                if (result)
+                                {
+                                    MethodInvoker methodInvoker = new MethodInvoker(updateUserInfoSuccess);
+                                    BeginInvoke(methodInvoker);
+                                }
+                            }
+                        }
+                    }
+                    netHelper.beginReceiveCallBack();
+                }
+
+            }
+            catch (Exception e)
+            {
+                Reporter.reportBug(e.ToString());
+            }
+        }
+        /// <summary>
+        /// 更新用户信息超时
+        /// </summary>
+        void thread_Timer_UpdateUserInfo()
+        {
+            try
+            {
+                int TimeToLive = 15000;
+                int time_clock = 0;
+                int time_step = 100;
+                while (time_clock < TimeToLive)
+                {
+                    time_clock += time_step;
+                    Thread.Sleep(time_step);
+                }
+                /* 超时操作 */
+                MethodInvoker methodInvoker = new MethodInvoker(updateUserInfoFail);
+                BeginInvoke(methodInvoker);
+            }
+            catch (Exception e)
+            {
+                Reporter.reportBug(e.ToString());
+            }
+        }
+        #endregion
         #region Logout
         /// <summary>
         /// 功能-注销
@@ -238,7 +346,7 @@ namespace custom_cloud.loadingForm
             /* 发送注销报文 */
             netHelper.sendJsonBlock(user_info);
             /* 启动计时 */
-            ThreadTimer = new Thread(thread_Timer);
+            ThreadTimer = new Thread(thread_Timer_Logout);
             ThreadTimer.Start();
         }
         /// <summary>
@@ -265,7 +373,7 @@ namespace custom_cloud.loadingForm
         void initializeNetWork(string serverURI, int port)
         {
             netHelper = new NetHelper();
-            netHelper.setCallBack(receiveCallBack);
+            netHelper.setCallBack(receiveCallBack_Logout);
             netHelper.startConnection(serverURI, port);
             netHelper.beginReceiveCallBack();
             Thread.Sleep(200);
@@ -280,7 +388,7 @@ namespace custom_cloud.loadingForm
         /// <summary>
         /// 计时线程
         /// </summary>
-        void thread_Timer()
+        void thread_Timer_Logout()
         {
             try
             {
@@ -302,10 +410,10 @@ namespace custom_cloud.loadingForm
             }
         }
         /// <summary>
-        /// 收到消息后的处理
+        /// 注销-收到消息后的处理
         /// </summary>
         /// <param name="iar"></param>
-        void receiveCallBack(IAsyncResult iar)
+        void receiveCallBack_Logout(IAsyncResult iar)
         {
             try
             {
@@ -314,7 +422,7 @@ namespace custom_cloud.loadingForm
                 string full_content = "";
                 if (!string.IsNullOrEmpty(receive_content) && receive_content != "")
                 {
-                    Reporter.writeLog(MyConfig.PATH_NET_LOG, "login : " + receive_content);
+                    Reporter.writeLog(MyConfig.PATH_NET_LOG, "logout : " + receive_content);
                     //Thread.Sleep(2);
                     if (receive_content.Contains(Order.FLAG_START))
                     {
@@ -354,12 +462,6 @@ namespace custom_cloud.loadingForm
             {
                 Reporter.reportBug(e.ToString());
             }
-        }
-        #endregion
-        #region 更改用户信息
-        public void functionModifyUserInfo(UserInfo userInfo)
-        {
-
         }
         #endregion
         /// <summary>

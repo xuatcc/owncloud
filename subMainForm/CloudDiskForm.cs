@@ -831,6 +831,14 @@ namespace custom_cloud
                 modifyViewMode(toolStripMenuItem_listContextRightClickView_smallIcon);
             if (obj.Equals(toolStripMenuItem_listContextRightClickView_detail))
                 modifyViewMode(toolStripMenuItem_listContextRightClickView_detail);
+
+            /* treeview context */
+            if (obj.Equals(toolStripMenuItem_treeView_open)) treeView_Open();
+            if (obj.Equals(toolStripMenuItem_treeView_importItems)) treeView_importFiles();
+            if (obj.Equals(toolStripMenuItem_treeView_importFolder)) treeView_ImportFolder();
+            if (obj.Equals(toolStripMenuItem_treeView_exportFolder)) treeView_ExportFolder();
+            if (obj.Equals(toolStripMenuItem_treeView_delete)) treeView_DeleteFolder();
+            if (obj.Equals(toolStripMenuItem_treeView_newFolder)) treeView_newFolder();
         }
         /* 各种详细事件 */
         /// <summary>
@@ -1390,6 +1398,7 @@ namespace custom_cloud
             configFile.createOrModifyItem(MyConfig.ConfigFile.TABLE_NAME_SKIN, MyConfig.ConfigFile.Skin.KEY_FILE_SORT_RULE, Sort_Rule);
             MyConfig.saveConfig(configFile);
         }
+        #region 目录树模块
         /// <summary>
         /// 更新目录树
         /// </summary>
@@ -1494,8 +1503,157 @@ namespace custom_cloud
                 updateListViewItemsWithoutTreeUpdate(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
                 //updateDirectoryTree();
             }
-
+            else if (e.Button == MouseButtons.Right)
+            {
+                /* 右键选中该节点 */
+                treeView_directoryTree.SelectedNode = e.Node;
+            }
         }
+        /// <summary>
+        /// 文件树-打开文件夹
+        /// </summary>
+        void treeView_Open()
+        {
+            if (treeView_directoryTree.SelectedNode == null) return;
+            clearSelectedItems();
+
+            StackForwardDirectory.Clear();
+            StackBackDirectory.Push(CurrentPath);
+
+            //CurrentPath += ("/" + listView_explorer.Items[i].Text);
+            CurrentPath = MyConfig.getPathByKey(treeView_directoryTree.SelectedNode.Name);
+
+            string a = CurrentPath;
+            updateFileTree();
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+
+            /* 调整可返回值 */
+            pictureBox_buttonBack.Enabled = true;
+            pictureBox_buttonBack.Image = Properties.Resources.arrow_back_deep_blue;
+            pictureBox_buttonForward.Enabled = false;
+            pictureBox_buttonForward.Image = Properties.Resources.function_arrow_gray_forward_button;
+
+            updateSorterPath();
+            sortBySortRule();
+        }
+        /// <summary>
+        /// 目录树-导入文件
+        /// </summary>
+        void treeView_importFiles()
+        {
+            if (openFileDialog_main.ShowDialog() == DialogResult.OK)
+            {
+                string[] fileNames = openFileDialog_main.FileNames;
+
+                LoadEncryption loadEncryption = new LoadEncryption();
+                loadEncryption.importItem(fileNames, MyConfig.getPathByKey(treeView_directoryTree.SelectedNode.Name));
+                loadEncryption.ShowDialog();
+
+
+                //更新文件树
+                updateFileTree();
+                updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+
+                //while (newFileNames.Count > 0) addItemToListView(newFileNames.Dequeue(), FileTree.FILE_IDENTIFY_NAME);
+                //updateListViewItems(FileView, File_Tree, Sort_Rule);
+            }
+        }
+        /// <summary>
+        /// 目录树-导入文件夹
+        /// </summary>
+        void treeView_ImportFolder()
+        {
+            if (treeView_directoryTree.SelectedNode == null) return;
+            if (folderBrowserDialog_main.ShowDialog() == DialogResult.OK)
+            {
+                LoadEncryption loadEncryption = new LoadEncryption();
+                //loadEncryption.Show();
+                loadEncryption.importFolder(folderBrowserDialog_main.SelectedPath,
+                    MyConfig.getPathByKey(treeView_directoryTree.SelectedNode.Name) + "/" + Path.GetFileName(folderBrowserDialog_main.SelectedPath));
+                loadEncryption.ShowDialog();
+                //更新文件树
+                updateFileTree();
+                updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                //addItemToListView(newFolderName, FileTree.FOLDER_IDENTIFY_NAME);
+
+                updateDirectoryTree();
+            }
+        }
+        /// <summary>
+        /// 目录树-导出文件夹
+        /// </summary>
+        void treeView_ExportFolder()
+        {
+            if (treeView_directoryTree.SelectedNode == null) return;
+            if (folderBrowserDialog_main.ShowDialog() == DialogResult.OK)
+            {
+                Queue<string> fileNames = new Queue<string>();
+                Queue<string> keyNames = new Queue<string>();
+                string destination = folderBrowserDialog_main.SelectedPath;
+                if (treeView_directoryTree.SelectedNode.Name.Equals(treeView_directoryTree.Nodes[0].Name))
+                {
+                    fileNames.Enqueue(SyncPath);
+                    keyNames.Enqueue(MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, SyncPath));
+                }
+                else
+                {
+                    fileNames.Enqueue(MyConfig.getPathByKey(treeView_directoryTree.SelectedNode.Name));
+                    keyNames.Enqueue(treeView_directoryTree.SelectedNode.Name);
+                }
+                LoadDisCryption loadDisCryption = new LoadDisCryption();
+                loadDisCryption.exportFiles(fileNames, keyNames, destination);
+                loadDisCryption.ShowDialog();
+            }
+        }
+        /// <summary>
+        /// 目录树-删除文件夹
+        /// </summary>
+        void treeView_DeleteFolder()
+        {
+            if (treeView_directoryTree.SelectedNode == null) return;
+            if (treeView_directoryTree.SelectedNode.Name.Equals(treeView_directoryTree.Nodes[0].Name))
+            {
+                MessageBox.Show("根目录不能删除!");
+                return;
+            }
+            deleteFileDialog = new DeleteFileDialog();
+            if (deleteFileDialog.ShowDialog() != DialogResult.OK) return;
+            Queue<string> filePaths = new Queue<string>();
+            Queue<string> keyNames = new Queue<string>();
+            filePaths.Enqueue(MyConfig.getPathByKey(treeView_directoryTree.SelectedNode.Name));
+            keyNames.Enqueue(treeView_directoryTree.SelectedNode.Name);
+            LoadDeleteFiles loadDeleteFiles = new LoadDeleteFiles();
+            loadDeleteFiles.deleteItems(filePaths, keyNames);
+            loadDeleteFiles.ShowDialog();
+            /* 如果删除的是当前目录，则回到根目录 */
+            if (CurrentPath.Equals(MyConfig.getPathByKey(treeView_directoryTree.SelectedNode.Name)))
+            {
+                CurrentPath = SyncPath;
+            }
+            //更新文件树
+            //checkTreeNodeExpandStatus(File_Tree, treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)]);
+
+            updateFileTree();
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+
+            updateDirectoryTree();
+
+            setVisibleOfItemRightClickMenu(false);
+            setVisibleOfRightClickMenu(true);
+            //updateDirectoryTree();
+        }
+        /// <summary>
+        /// 目录树-新建文件夹
+        /// </summary>
+        void treeView_newFolder()
+        {
+            if (treeView_directoryTree.SelectedNode == null) return;
+            string newFolderName = FileTree.createFolder(MyConfig.getPathByKey(treeView_directoryTree.SelectedNode.Name));
+            updateFileTree();
+            updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+            updateDirectoryTree();
+        }
+        #endregion
         /// <summary>
         /// 同步线程方法
         /// </summary>

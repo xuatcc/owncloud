@@ -46,6 +46,13 @@
             this.pictureBox_buttonBack = new System.Windows.Forms.PictureBox();
             this.panel_fileFilter = new System.Windows.Forms.Panel();
             this.treeView_directoryTree = new System.Windows.Forms.TreeView();
+            this.contextMenuStrip_treeView = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem_treeView_open = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_treeView_importItems = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_treeView_importFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_treeView_exportFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_treeView_delete = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_treeView_newFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList_treeView = new System.Windows.Forms.ImageList(this.components);
             this.listView_explorer = new System.Windows.Forms.ListView();
             this.imageList_large = new System.Windows.Forms.ImageList(this.components);
@@ -64,6 +71,7 @@
             this.toolStripMenuItem_listContextRightClickSortRule_byName = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_listContextRightClickSortRule_bySize = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_listContextRightClickSortRule_byTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_listContextRightClick_selectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_listRightClick_Item_open = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_listRightClick_item_export = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_listRightClick_item_share = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,13 +85,6 @@
             this.saveFileDialog_main = new System.Windows.Forms.SaveFileDialog();
             this.fileSystemWatcher_main = new System.IO.FileSystemWatcher();
             this.toolTip_menuButton = new System.Windows.Forms.ToolTip(this.components);
-            this.toolStripMenuItem_listContextRightClick_selectAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip_treeView = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem_treeView_open = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_treeView_importItems = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_treeView_importFolder = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_treeView_exportFolder = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_treeView_delete = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_cloudDisk.SuspendLayout();
             this.panel_function.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonSearchItem)).BeginInit();
@@ -91,9 +92,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonForward)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonBack)).BeginInit();
             this.panel_fileFilter.SuspendLayout();
+            this.contextMenuStrip_treeView.SuspendLayout();
             this.contextMenuStrip_listRightClick.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher_main)).BeginInit();
-            this.contextMenuStrip_treeView.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip_cloudDisk
@@ -288,6 +289,65 @@
             this.treeView_directoryTree.TabIndex = 0;
             this.treeView_directoryTree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView_directoryTree_NodeMouseClick);
             // 
+            // contextMenuStrip_treeView
+            // 
+            this.contextMenuStrip_treeView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem_treeView_open,
+            this.toolStripMenuItem_treeView_importItems,
+            this.toolStripMenuItem_treeView_importFolder,
+            this.toolStripMenuItem_treeView_exportFolder,
+            this.toolStripMenuItem_treeView_delete,
+            this.toolStripMenuItem_treeView_newFolder});
+            this.contextMenuStrip_treeView.Name = "contextMenuStrip_treeView";
+            this.contextMenuStrip_treeView.Size = new System.Drawing.Size(153, 158);
+            // 
+            // toolStripMenuItem_treeView_open
+            // 
+            this.toolStripMenuItem_treeView_open.Name = "toolStripMenuItem_treeView_open";
+            this.toolStripMenuItem_treeView_open.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_treeView_open.Text = "打开";
+            this.toolStripMenuItem_treeView_open.Click += new System.EventHandler(this.menuItem_Click_Event);
+            // 
+            // toolStripMenuItem_treeView_importItems
+            // 
+            this.toolStripMenuItem_treeView_importItems.Image = global::custom_cloud.Properties.Resources.import_files;
+            this.toolStripMenuItem_treeView_importItems.Name = "toolStripMenuItem_treeView_importItems";
+            this.toolStripMenuItem_treeView_importItems.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_treeView_importItems.Text = "导入文件";
+            this.toolStripMenuItem_treeView_importItems.Click += new System.EventHandler(this.menuItem_Click_Event);
+            // 
+            // toolStripMenuItem_treeView_importFolder
+            // 
+            this.toolStripMenuItem_treeView_importFolder.Image = global::custom_cloud.Properties.Resources.import_folder;
+            this.toolStripMenuItem_treeView_importFolder.Name = "toolStripMenuItem_treeView_importFolder";
+            this.toolStripMenuItem_treeView_importFolder.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_treeView_importFolder.Text = "导入文件夹";
+            this.toolStripMenuItem_treeView_importFolder.Click += new System.EventHandler(this.menuItem_Click_Event);
+            // 
+            // toolStripMenuItem_treeView_exportFolder
+            // 
+            this.toolStripMenuItem_treeView_exportFolder.Image = global::custom_cloud.Properties.Resources.export_files;
+            this.toolStripMenuItem_treeView_exportFolder.Name = "toolStripMenuItem_treeView_exportFolder";
+            this.toolStripMenuItem_treeView_exportFolder.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_treeView_exportFolder.Text = "导出";
+            this.toolStripMenuItem_treeView_exportFolder.Click += new System.EventHandler(this.menuItem_Click_Event);
+            // 
+            // toolStripMenuItem_treeView_delete
+            // 
+            this.toolStripMenuItem_treeView_delete.Image = global::custom_cloud.Properties.Resources.menu_delete_files;
+            this.toolStripMenuItem_treeView_delete.Name = "toolStripMenuItem_treeView_delete";
+            this.toolStripMenuItem_treeView_delete.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_treeView_delete.Text = "删除";
+            this.toolStripMenuItem_treeView_delete.Click += new System.EventHandler(this.menuItem_Click_Event);
+            // 
+            // toolStripMenuItem_treeView_newFolder
+            // 
+            this.toolStripMenuItem_treeView_newFolder.Image = global::custom_cloud.Properties.Resources.menu_new_folder;
+            this.toolStripMenuItem_treeView_newFolder.Name = "toolStripMenuItem_treeView_newFolder";
+            this.toolStripMenuItem_treeView_newFolder.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_treeView_newFolder.Text = "新建文件夹";
+            this.toolStripMenuItem_treeView_newFolder.Click += new System.EventHandler(this.menuItem_Click_Event);
+            // 
             // imageList_treeView
             // 
             this.imageList_treeView.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
@@ -453,6 +513,13 @@
             this.toolStripMenuItem_listContextRightClickSortRule_byTime.Text = "修改时间";
             this.toolStripMenuItem_listContextRightClickSortRule_byTime.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
+            // toolStripMenuItem_listContextRightClick_selectAll
+            // 
+            this.toolStripMenuItem_listContextRightClick_selectAll.Name = "toolStripMenuItem_listContextRightClick_selectAll";
+            this.toolStripMenuItem_listContextRightClick_selectAll.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listContextRightClick_selectAll.Text = "全选";
+            this.toolStripMenuItem_listContextRightClick_selectAll.Click += new System.EventHandler(this.menuItem_Click_Event);
+            // 
             // toolStripMenuItem_listRightClick_Item_open
             // 
             this.toolStripMenuItem_listRightClick_Item_open.Name = "toolStripMenuItem_listRightClick_Item_open";
@@ -522,59 +589,6 @@
             this.fileSystemWatcher_main.SynchronizingObject = this;
             this.fileSystemWatcher_main.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_main_Changed);
             // 
-            // toolStripMenuItem_listContextRightClick_selectAll
-            // 
-            this.toolStripMenuItem_listContextRightClick_selectAll.Name = "toolStripMenuItem_listContextRightClick_selectAll";
-            this.toolStripMenuItem_listContextRightClick_selectAll.Size = new System.Drawing.Size(136, 22);
-            this.toolStripMenuItem_listContextRightClick_selectAll.Text = "全选";
-            this.toolStripMenuItem_listContextRightClick_selectAll.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // contextMenuStrip_treeView
-            // 
-            this.contextMenuStrip_treeView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem_treeView_open,
-            this.toolStripMenuItem_treeView_importItems,
-            this.toolStripMenuItem_treeView_importFolder,
-            this.toolStripMenuItem_treeView_exportFolder,
-            this.toolStripMenuItem_treeView_delete});
-            this.contextMenuStrip_treeView.Name = "contextMenuStrip_treeView";
-            this.contextMenuStrip_treeView.Size = new System.Drawing.Size(153, 136);
-            // 
-            // toolStripMenuItem_treeView_open
-            // 
-            this.toolStripMenuItem_treeView_open.Name = "toolStripMenuItem_treeView_open";
-            this.toolStripMenuItem_treeView_open.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem_treeView_open.Text = "打开";
-            this.toolStripMenuItem_treeView_open.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // toolStripMenuItem_treeView_importItems
-            // 
-            this.toolStripMenuItem_treeView_importItems.Name = "toolStripMenuItem_treeView_importItems";
-            this.toolStripMenuItem_treeView_importItems.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem_treeView_importItems.Text = "导入文件";
-            this.toolStripMenuItem_treeView_importItems.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // toolStripMenuItem_treeView_importFolder
-            // 
-            this.toolStripMenuItem_treeView_importFolder.Name = "toolStripMenuItem_treeView_importFolder";
-            this.toolStripMenuItem_treeView_importFolder.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem_treeView_importFolder.Text = "导入文件夹";
-            this.toolStripMenuItem_treeView_importFolder.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // toolStripMenuItem_treeView_exportFolder
-            // 
-            this.toolStripMenuItem_treeView_exportFolder.Name = "toolStripMenuItem_treeView_exportFolder";
-            this.toolStripMenuItem_treeView_exportFolder.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem_treeView_exportFolder.Text = "导出";
-            this.toolStripMenuItem_treeView_exportFolder.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // toolStripMenuItem_treeView_delete
-            // 
-            this.toolStripMenuItem_treeView_delete.Name = "toolStripMenuItem_treeView_delete";
-            this.toolStripMenuItem_treeView_delete.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem_treeView_delete.Text = "删除";
-            this.toolStripMenuItem_treeView_delete.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
             // CloudDiskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -600,9 +614,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonForward)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonBack)).EndInit();
             this.panel_fileFilter.ResumeLayout(false);
+            this.contextMenuStrip_treeView.ResumeLayout(false);
             this.contextMenuStrip_listRightClick.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher_main)).EndInit();
-            this.contextMenuStrip_treeView.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -664,5 +678,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_treeView_importFolder;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_treeView_exportFolder;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_treeView_delete;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_treeView_newFolder;
     }
 }
