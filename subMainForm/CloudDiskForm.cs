@@ -994,10 +994,18 @@ namespace custom_cloud
                     else if (File.Exists(MyConfig.getPathByKey(listView_explorer.Items[i].Name + MyConfig.EXTEND_NAME_ENCRYP_FILE)))
                     {
                         //Process.Start(CurrentPath + "/" + listView_explorer.Items[i].Text);
-                        string path = MyConfig.getPathByKey(listView_explorer.Items[i].Name + MyConfig.EXTEND_NAME_ENCRYP_FILE);
-                        string fileName = CMDComand.discryptFile(path, MyConfig.PATH_FILE_BUFFER + "/" + listView_explorer.Items[i].Text);
+                        string path = MyConfig.getPathByKey(listView_explorer.Items[i].Name);
+                        /* 解密等待框 */
+                        Queue<string> openFileName = new Queue<string>();
+                        Queue<string> openFileKey = new Queue<string>();
+                        openFileName.Enqueue(path);
+                        openFileKey.Enqueue(listView_explorer.Items[i].Name);
+                        LoadDisCryption loadDisCryption = new LoadDisCryption();
+                        loadDisCryption.exportFiles(openFileName, openFileKey, MyConfig.PATH_FILE_BUFFER);
+                        loadDisCryption.ShowDialog();
+                        //string fileName = CMDComand.discryptFile(path, MyConfig.PATH_FILE_BUFFER + "/" + listView_explorer.Items[i].Text);
                         //while (!File.Exists(fileName)) Application.DoEvents();
-                        Process.Start(Path.GetFullPath(fileName));
+                        Process.Start(Path.GetFullPath(MyConfig.PATH_FILE_BUFFER + "/" + Path.GetFileName(path)));
                         listView_explorer.Items[i].Focused = false;
 
                         updateSorterPath();
