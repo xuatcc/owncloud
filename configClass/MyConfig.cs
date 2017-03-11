@@ -254,7 +254,7 @@ namespace custom_cloud
             else if (temp.SyncPath == null || (!Directory.Exists(temp.SyncPath))) user_localInfo.SyncPath = Path.GetFullPath(PATH_USER + "/" + user_localInfo.UserId + "/" + NAME_FOLDER_SYNC);
             StreamWriter infoWriter = new StreamWriter(path + "/" + userLocalInfo.UserId + "/" + NAME_USER_INFO, 
                 false, Encoding.Default);
-            infoWriter.Write(Int32Dec64Convert.encryptSerialToBase64Code(JsonHelper.getSerializeString(user_localInfo), PASSWORD_USER_FILE_ENCRYPTION));
+            infoWriter.Write(Int32Dec64Convert.encryptSerialToBase64Code(JsonHelper.getSerializeString(user_localInfo), PASSWORD_USER_FILE_ENCRYPTION, 0x400));
             infoWriter.Close();
             
         }
@@ -276,7 +276,7 @@ namespace custom_cloud
             else if (temp.SyncPath == null || (!Directory.Exists(temp.SyncPath))) user_localInfo.SyncPath = Path.GetFullPath(PATH_USER + "/" + user_localInfo.UserId + "/" + NAME_FOLDER_SYNC);
             StreamWriter infoWriter = new StreamWriter(PATH_USER + "/" + userLocalInfo.UserId + "/" + NAME_USER_INFO,
                 false, Encoding.Default);
-            infoWriter.Write(Int32Dec64Convert.encryptSerialToBase64Code(JsonHelper.getSerializeString(user_localInfo), PASSWORD_USER_FILE_ENCRYPTION));
+            infoWriter.Write(Int32Dec64Convert.encryptSerialToBase64Code(JsonHelper.getSerializeString(user_localInfo), PASSWORD_USER_FILE_ENCRYPTION, 0x400));
             infoWriter.Close();
         }
         /// <summary>

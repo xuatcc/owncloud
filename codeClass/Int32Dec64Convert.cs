@@ -80,11 +80,11 @@ namespace custom_cloud
         /// 将字符串按特定秘钥转成base64编码
         /// </summary>
         /// <param name="serial"></param>
-        public static string encryptSerialToBase64Code(string serial, string key)
+        public static string encryptSerialToBase64Code(string serial, string key, int length)
         {
             string temp_str = "";
-            if (serial.Length > 0x100 - 2) throw new Exception("serial too long");
-            byte[] b = new byte[0x100];
+            if (serial.Length > length - 2) throw new Exception("serial too long");
+            byte[] b = new byte[length];
             b[0] = Convert.ToByte((2 + key[0 % key.Length]) % 0x100);
             b[1] = Convert.ToByte((serial.Length + key[1 % key.Length]) % 0x100);
             for (int i = 2; i < b.Length; i++)
