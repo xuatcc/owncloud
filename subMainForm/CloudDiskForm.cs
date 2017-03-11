@@ -1482,15 +1482,19 @@ namespace custom_cloud
         /// <param name="e"></param>
         private void treeView_directoryTree_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            int pathIndex = e.Node.Name.IndexOf(MyConfig.STRING_SEPERATER) + MyConfig.STRING_SEPERATER.Length;
-            /* 截取得到文件路径 */
-            string path = e.Node.Name.Substring(pathIndex, e.Node.Name.Length - pathIndex);
-            CurrentPath = path;
-            /* 更新 */
-            //updateFileTree();
-            File_Tree.updateTree(CurrentPath);
-            updateListViewItemsWithoutTreeUpdate(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
-            //updateDirectoryTree();
+            if (e.Button == MouseButtons.Left)
+            {
+                int pathIndex = e.Node.Name.IndexOf(MyConfig.STRING_SEPERATER) + MyConfig.STRING_SEPERATER.Length;
+                /* 截取得到文件路径 */
+                string path = e.Node.Name.Substring(pathIndex, e.Node.Name.Length - pathIndex);
+                CurrentPath = path;
+                /* 更新 */
+                //updateFileTree();
+                File_Tree.updateTree(CurrentPath);
+                updateListViewItemsWithoutTreeUpdate(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
+                //updateDirectoryTree();
+            }
+
         }
         /// <summary>
         /// 同步线程方法
