@@ -76,5 +76,36 @@ namespace custom_cloud
             gp.DrawImage(bitmap2, new Point(x, y));
             return bitmap;
         }
+        /// <summary>
+        /// 将字符串按特定秘钥转成base64编码
+        /// </summary>
+        /// <param name="serial"></param>
+        public static string encryptSerialToBase64Code(string serial, string key)
+        {
+            string temp_str = "";
+            byte[] b = Encoding.Default.GetBytes(serial);
+            for (int i = 0; i < b.Length; i++)
+            {
+                b[i] = Convert.ToByte(b[i] + key[i % key.Length]);
+            }
+            temp_str = Convert.ToBase64String(b);
+            return temp_str;
+        }
+        /// <summary>
+        /// 解密Base64字符串
+        /// </summary>
+        /// <param name="base64Code"></param>
+        /// <param name="key"></param>
+        public static string discryptBase64CodeToSerial(string base64Code, string key)
+        {
+            byte[] b = Convert.FromBase64String(base64Code);
+            /* 利用秘钥修饰源字符串 */
+            for (int i = 0; i < b.Length; i++)
+            {
+                b[i] = Convert.ToByte(b[i] - key[i % key.Length]);
+            }
+            string serial = Encoding.Default.GetString(b);
+            return serial;
+        }
     }
 }

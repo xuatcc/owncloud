@@ -48,11 +48,11 @@
             // 
             this.label_status.AutoSize = true;
             this.label_status.ForeColor = System.Drawing.Color.Blue;
-            this.label_status.Location = new System.Drawing.Point(88, 71);
+            this.label_status.Location = new System.Drawing.Point(104, 71);
             this.label_status.Name = "label_status";
-            this.label_status.Size = new System.Drawing.Size(113, 12);
+            this.label_status.Size = new System.Drawing.Size(77, 12);
             this.label_status.TabIndex = 13;
-            this.label_status.Text = "正在解密并导出文件";
+            this.label_status.Text = "正在解密文件";
             // 
             // button_cancelExport
             // 

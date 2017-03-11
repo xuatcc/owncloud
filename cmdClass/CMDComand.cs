@@ -73,7 +73,7 @@ namespace custom_cloud.cmdClass
         /// <param name="fileTarget"></param>
         public static string discryptFile(string fileSource, string fileTarget)
         {
-            if (!File.Exists(fileSource)) throw new Exception("can't find ecryption!");
+            if (!File.Exists(MyConfig.PATH_ECRYTION)) throw new Exception("can't find ecryption!");
             //if (!File.Exists(fileSource)) return "";
             if (!Directory.Exists(MyConfig.PATH_FILE_BUFFER)) Directory.CreateDirectory(MyConfig.PATH_FILE_BUFFER);
             /* 执行语句 */
@@ -121,6 +121,43 @@ namespace custom_cloud.cmdClass
                 Reporter.writeLog("./log/sync_temp.log", temp);
                 Reporter.writeLog(SyncResult.PATH_SYNC_RESULT, temp);
             }
+        }
+        /// <summary>
+        /// 加密本地用户信息
+        /// </summary>
+        /// <param name="source">用户信息位置</param>
+        public static void encryptUserLocalInfo(string source)
+        {
+            if (!File.Exists(MyConfig.PATH_FILE_ENCRYPTION)) throw new Exception("can't find ecryption!");
+            string sslComand = (" -k " + MyConfig.PASSWORD_USER_FILE_ENCRYPTION + " -in " + source + " -out " + source);
+            Process process = new Process();
+            process.StartInfo.FileName = MyConfig.PATH_ECRYTION;
+            process.StartInfo.Arguments = "enc -e -aes-128-cbc" + sslComand;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardInput = true;
+            process.StartInfo.RedirectStandardError = true;
+            process.Start();
+            process.WaitForExit();
+        }
+        /// <summary>
+        /// 解密用户本地信息
+        /// </summary>
+        /// <param name="source"></param>
+        public static void discryptUserLocalInfo(string source)
+        {
+            if (!File.Exists(MyConfig.PATH_ECRYTION)) throw new Exception("can't find ecryption!");
+            /* 执行语句 */
+            string sslComand = (" -k " + MyConfig.PASSWORD_USER_FILE_ENCRYPTION + " -in " + source + " -out " + source);
+            Process process = new Process();
+            process.StartInfo.FileName = MyConfig.PATH_ECRYTION;
+            process.StartInfo.Arguments = "enc -d -aes-128-cbc" + sslComand;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardInput = true;
+            process.StartInfo.RedirectStandardError = true;
+            process.Start();
+            process.WaitForExit();
         }
     }
 }

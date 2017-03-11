@@ -3,6 +3,7 @@
     *@in XJTU
     *@in 2017.2
 */
+using custom_cloud.cmdClass;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -56,6 +57,10 @@ namespace custom_cloud
         /// 文件加密密码
         /// </summary>
         public static string PASSWORD_FILE_ENCRYPTION = "custom_cloud";
+        /// <summary>
+        /// 本地用户信息加密密码
+        /// </summary>
+        public static string PASSWORD_USER_FILE_ENCRYPTION = "custom_cloud_userLocalInfo";
         /// <summary>
         /// 加密后文件的扩展名
         /// </summary>
@@ -249,8 +254,9 @@ namespace custom_cloud
             else if (temp.SyncPath == null || (!Directory.Exists(temp.SyncPath))) user_localInfo.SyncPath = Path.GetFullPath(PATH_USER + "/" + user_localInfo.UserId + "/" + NAME_FOLDER_SYNC);
             StreamWriter infoWriter = new StreamWriter(path + "/" + userLocalInfo.UserId + "/" + NAME_USER_INFO, 
                 false, Encoding.Default);
-            infoWriter.Write(JsonHelper.getSerializeString(user_localInfo));
+            infoWriter.Write(Int32Dec64Convert.encryptSerialToBase64Code(JsonHelper.getSerializeString(user_localInfo), PASSWORD_USER_FILE_ENCRYPTION));
             infoWriter.Close();
+            
         }
         /// <summary>
         /// 创建或修改用户本地信息
@@ -270,7 +276,7 @@ namespace custom_cloud
             else if (temp.SyncPath == null || (!Directory.Exists(temp.SyncPath))) user_localInfo.SyncPath = Path.GetFullPath(PATH_USER + "/" + user_localInfo.UserId + "/" + NAME_FOLDER_SYNC);
             StreamWriter infoWriter = new StreamWriter(PATH_USER + "/" + userLocalInfo.UserId + "/" + NAME_USER_INFO,
                 false, Encoding.Default);
-            infoWriter.Write(JsonHelper.getSerializeString(user_localInfo));
+            infoWriter.Write(Int32Dec64Convert.encryptSerialToBase64Code(JsonHelper.getSerializeString(user_localInfo), PASSWORD_USER_FILE_ENCRYPTION));
             infoWriter.Close();
         }
         /// <summary>
@@ -285,6 +291,7 @@ namespace custom_cloud
             StreamReader infoReader = new StreamReader(path + "/" + userID + "/" + NAME_USER_INFO, Encoding.Default);
             string serial = infoReader.ReadToEnd();
             infoReader.Close();
+            serial = Int32Dec64Convert.discryptBase64CodeToSerial(serial, PASSWORD_USER_FILE_ENCRYPTION);
             return JsonHelper.getDeserializeObject<UserLocalInfo>(serial);
         }
         /// <summary>
@@ -294,11 +301,11 @@ namespace custom_cloud
         /// <returns></returns>
         public static UserLocalInfo getUserLocalInfo(string userID)
         {
-            string a = "";
             if (!File.Exists(PATH_USER + "/" + userID + "/" + NAME_USER_INFO)) return null;
             StreamReader infoReader = new StreamReader(PATH_USER + "/" + userID + "/" + NAME_USER_INFO, Encoding.Default);
             string serial = infoReader.ReadToEnd();
             infoReader.Close();
+            serial = Int32Dec64Convert.discryptBase64CodeToSerial(serial, PASSWORD_USER_FILE_ENCRYPTION);
             return JsonHelper.getDeserializeObject<UserLocalInfo>(serial);
         }
         /// <summary>
@@ -403,7 +410,7 @@ namespace custom_cloud
             //Hashtable TableAll;
             /* 表名 */
             //public const string TABLE_NAME_ICON = "TABLE_ICON";
-            public const string TABLE_NAME_SKIN = "TABLE_SKIN";
+            public const string TABLE_NAME_SKIN = "TAFBLE_SKIN";
             public const string TABLE_NAME_SYNC = "TABLE_SYNC";
             public const string TABLE_NAME_NOTIFICATION = "TABLE_NOTIFICATION";
             public const string TABLE_NAME_LOGIN = "TABLE_LOGIN";
