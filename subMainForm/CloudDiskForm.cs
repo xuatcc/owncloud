@@ -730,7 +730,7 @@ namespace custom_cloud
             toolStripMenuItem_listContextRightClickView.Visible = visible;
             toolStripMenuItem_listContextRightClick_importFolder.Visible = visible;
             toolStripMenuItem_listContextRightClick_paste.Visible = visible;
-
+            toolStripMenuItem_listContextRightClick_selectAll.Visible = visible;
         }
         void setVisibleOfItemRightClickMenu(bool visible)
         {
@@ -823,6 +823,7 @@ namespace custom_cloud
             if (obj.Equals(toolStripMenuItem_listContextRightClickSortRule_bySize)) list_Sort(obj);
             if (obj.Equals(toolStripMenuItem_listContextRightClickSortRule_byTime)) list_Sort(obj);
             if (obj.Equals(toolStripMenuItem_listRightClick_item_attribute)) item_ShowAttribute();
+            if (obj.Equals(toolStripMenuItem_listContextRightClick_selectAll)) list_SelectAll();
 
             if (obj.Equals(toolStripMenuItem_listContextRightClickView_largeIcon))
                 modifyViewMode(toolStripMenuItem_listContextRightClickView_largeIcon);
@@ -1248,6 +1249,16 @@ namespace custom_cloud
                 Sort_Rule = MyConfig.SortRule.ByTime;
             updateSortRule();
             //sortBySortRule();
+        }
+        /// <summary>
+        /// 全选事件
+        /// </summary>
+        void list_SelectAll()
+        {
+            foreach(ListViewItem item in listView_explorer.Items)
+            {
+                item.Selected = true;
+            }
         }
         /// <summary>
         /// 检索操作
