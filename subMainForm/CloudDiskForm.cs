@@ -1528,12 +1528,17 @@ namespace custom_cloud
         {
             e.Effect = DragDropEffects.Copy;
             if (!sender.Equals(listView_explorer)) return;
-            
-            string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, true);
-            LoadEncryption loadEncryption = new LoadEncryption();
-            loadEncryption.importItem(fileNames, CurrentPath);
-            loadEncryption.ShowDialog();
-
+            try
+            {
+                string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, true);
+                LoadEncryption loadEncryption = new LoadEncryption();
+                loadEncryption.importItem(fileNames, CurrentPath);
+                loadEncryption.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                Reporter.reportBug(ex.ToString());
+            }
 
             //更新文件树
             updateFileTree();
@@ -1574,28 +1579,27 @@ namespace custom_cloud
         private void listView_explorer_ItemDrag(object sender, ItemDragEventArgs e)
         {
             if (e.Button != MouseButtons.Left) return;
-            ListViewItem lvi = (ListViewItem)e.Item;
-            /*
-            string[] fileNames = new string[lvi.Length];
-            for(int i = 0; i < lvi.Length; i++)
-            {
-                fileNames[i] = lvi[i].Text;
-            }
-            */
-            DataObject data = new DataObject(DataFormats.FileDrop, lvi.Text);
-            string destination = DoDragDrop(data, DragDropEffects.Copy).ToString();
+            
+            
             Queue<string> fileNames = new Queue<string>();
             Queue<string> keyNames = new Queue<string>();
-            
+
             for (int i = 0; i < listView_explorer.SelectedItems.Count; i++)
             {
                 fileNames.Enqueue(MyConfig.getPathByKey(listView_explorer.SelectedItems[i].Name));
                 keyNames.Enqueue(listView_explorer.SelectedItems[i].Name);
             }
             LoadDisCryption loadDisCryption = new LoadDisCryption();
-            loadDisCryption.exportFiles(fileNames, keyNames, destination);
-            loadDisCryption.ShowDialog();
-            
+            loadDisCryption.exportFiles(fileNames, keyNames, MyConfig.PATH_FILE_BUFFER);
+            //loadDisCryption.ShowDialog();
+            string[] files = new string[listView_explorer.SelectedItems.Count];
+            for (int i = 0; i < files.Length; i++)
+            {
+                files[i] = Path.GetFullPath(MyConfig.PATH_FILE_BUFFER + "/" + listView_explorer.SelectedItems[i].Text);
+            }
+            DataObject data = new DataObject(DataFormats.FileDrop, files);
+            //data.SetData(DataFormats.StringFormat, files[0]);
+            DoDragDrop(data, DragDropEffects.Copy).ToString();
         }
     }
 }
