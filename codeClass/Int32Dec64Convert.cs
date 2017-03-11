@@ -83,10 +83,13 @@ namespace custom_cloud
         public static string encryptSerialToBase64Code(string serial, string key)
         {
             string temp_str = "";
-            byte[] b = Encoding.Default.GetBytes(serial);
-            for (int i = 0; i < b.Length; i++)
+            if (serial.Length > 0x100 - 2) throw new Exception("serial too long");
+            byte[] b = new byte[0x100];
+            b[0] = Convert.ToByte((2 + key[0 % key.Length]) % 0x100);
+            b[1] = Convert.ToByte((serial.Length + key[1 % key.Length]) % 0x100);
+            for (int i = 2; i < b.Length; i++)
             {
-                b[i] = Convert.ToByte(b[i] + key[i % key.Length]);
+                b[i] = Convert.ToByte((serial[(i - 2) % serial.Length] + key[i % key.Length]) % 0x100);
             }
             temp_str = Convert.ToBase64String(b);
             return temp_str;
@@ -102,9 +105,12 @@ namespace custom_cloud
             /* 利用秘钥修饰源字符串 */
             for (int i = 0; i < b.Length; i++)
             {
-                b[i] = Convert.ToByte(b[i] - key[i % key.Length]);
+                b[i] = Convert.ToByte((b[i] - key[i % key.Length]) % 0x100);
             }
-            string serial = Encoding.Default.GetString(b);
+            string temp_str = Encoding.Default.GetString(b);
+            int index = b[0];
+            int length = b[1];
+            string serial = temp_str.Substring(index, length);
             return serial;
         }
     }
