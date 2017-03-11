@@ -89,7 +89,7 @@ namespace custom_cloud
             b[1] = Convert.ToByte((serial.Length + key[1 % key.Length]) % 0x100);
             for (int i = 2; i < b.Length; i++)
             {
-                b[i] = Convert.ToByte((serial[((i - 2) + ((i - 2) / serial.Length)) % serial.Length] + key[i % key.Length]) % 0x100);
+                b[i] = Convert.ToByte((serial[((i - 2) + ((i - 2) / (serial.Length)) * key[i % key.Length]) % serial.Length] + key[i % key.Length]) % 0x100);
             }
             temp_str = Convert.ToBase64String(b);
             return temp_str;
