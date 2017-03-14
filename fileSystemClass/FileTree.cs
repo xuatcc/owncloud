@@ -417,14 +417,28 @@ namespace custom_cloud
                 ));
                     /* 解密输出 */
                     if (File.Exists(fileName))
-                    CMDComand.discryptFile(fileName, destination + "/" + Path.GetFileNameWithoutExtension(fileName));
+                    {
+                        /* 重名检查 */
+                        string destName = destination + "/" + Path.GetFileNameWithoutExtension(fileName);
+                        string oringinName = destName;
+                        int counter = 0;
+                        while (File.Exists(destName))
+                        {
+                            ++counter;
+                            destName = destination + "/" + Path.GetFileNameWithoutExtension(oringinName) + "_" + counter + Path.GetExtension(oringinName);
+                        }
+                        CMDComand.discryptFile(fileName, destName);
+                    }
                     //CMDComand.discryptFile(fileName, destination + "/" + Path.GetFileName(fileName));
                 }
                 else if (keyName.Contains(FileTree.FOLDER_IDENTIFY_NAME))
                 {
                     if (Directory.Exists(itemName))
                     {
-                        Directory.CreateDirectory(destination + "/" + Path.GetFileName(itemName));
+                       
+                        string destName = destination + "/" + Path.GetFileName(itemName);
+                        
+                        if(!Directory.Exists(destName))Directory.CreateDirectory(destName);
                         DirectoryInfo directoryInfo = new DirectoryInfo(itemName);
                         DirectoryInfo[] directory_info = directoryInfo.GetDirectories();
                         FileInfo[] fileInfo = directoryInfo.GetFiles();
@@ -442,6 +456,67 @@ namespace custom_cloud
                         }
                         /* 递归 */
                         exportItems(names, keys, destination + "/" + Path.GetFileName(itemName), labelFileStatus);
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 不解密导出项目
+        /// </summary>
+        /// <param name="itemNames"></param>
+        /// <param name="keyNames"></param>
+        /// <param name="destination"></param>
+        public static void exportItemsWithoutDiscryption(Queue<string> itemNames, Queue<string> keyNames, string destination, Label labelFileStatus)
+        {
+            if (itemNames.Count != keyNames.Count) return;
+            string itemName;
+            string keyName;
+            string fileName;
+            while (itemNames.Count > 0)
+            {
+                itemName = itemNames.Dequeue();
+                keyName = keyNames.Dequeue();
+                //调试用
+                Reporter.writeLog("./log/export.log", "exportWithoutDiscryption " + itemName);
+                if (keyName.Contains(FileTree.FILE_IDENTIFY_NAME))
+                {
+                    fileName = itemName + MyConfig.EXTEND_NAME_ENCRYP_FILE;
+                    labelFileStatus.Invoke(new MethodInvoker(delegate
+                    {
+                        labelFileStatus.Text = "正在处理: " + Path.GetFileName(fileName);
+                        labelFileStatus.SetBounds(142 - (labelFileStatus.Width / 2), labelFileStatus.Location.Y, labelFileStatus.Width, labelFileStatus.Height);
+                    }
+                ));
+                    /* 直接复制 */
+                    if (File.Exists(fileName))
+                        //CMDComand.discryptFile(fileName, destination + "/" + Path.GetFileNameWithoutExtension(fileName));
+                        copyFile(fileName, destination + "/" + Path.GetFileName(fileName));
+                    //CMDComand.discryptFile(fileName, destination + "/" + Path.GetFileName(fileName));
+                }
+                else if (keyName.Contains(FileTree.FOLDER_IDENTIFY_NAME))
+                {
+                    if (Directory.Exists(itemName))
+                    {
+                        /* 防止重名 */
+                        string destName = destination + "/" + Path.GetFileName(itemName);
+                        if (!Directory.Exists(destName)) Directory.CreateDirectory(destName);
+                        DirectoryInfo directoryInfo = new DirectoryInfo(itemName);
+                        DirectoryInfo[] directory_info = directoryInfo.GetDirectories();
+                        FileInfo[] fileInfo = directoryInfo.GetFiles();
+                        Queue<string> names = new Queue<string>();
+                        Queue<string> keys = new Queue<string>();
+                        for (int i = 0; i < fileInfo.Length; i++)
+                        {
+                            names.Enqueue(fileInfo[i].DirectoryName + "/" + Path.GetFileNameWithoutExtension(fileInfo[i].FullName));
+                            keys.Enqueue(FileTree.FILE_IDENTIFY_NAME);
+                        }
+                        for (int i = 0; i < directory_info.Length; i++)
+                        {
+                            names.Enqueue(directory_info[i].FullName);
+                            keys.Enqueue(FileTree.FOLDER_IDENTIFY_NAME);
+                        }
+                        /* 递归 */
+                        exportItemsWithoutDiscryption(names, keys, destination + "/" + Path.GetFileName(itemName), labelFileStatus);
                     }
                 }
             }

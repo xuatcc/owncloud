@@ -13,6 +13,14 @@ namespace custom_cloud.loadingForm
     public partial class LoadDisCryption : Form
     {
         /// <summary>
+        /// 标签属性
+        /// </summary>
+        public string LabelFunction
+        {
+            get { return label_status.Text; }
+            set { label_status.Text = value; }
+        }
+        /// <summary>
         /// 导出文件线程
         /// </summary>
         Thread ThreadExport;
@@ -84,6 +92,7 @@ namespace custom_cloud.loadingForm
         /// <param name="keyNames"></param>
         public void exportFiles(Queue<string> fileNames, Queue<string> keyNames, string destination)
         {
+            label_status.Text = "正在解密文件";
             FileNames = fileNames;
             KeyNames = keyNames;
             Destination = destination;
@@ -102,6 +111,37 @@ namespace custom_cloud.loadingForm
                 BeginInvoke(methodInvoker);
             }
             catch(Exception e)
+            {
+                Reporter.reportBug(e.ToString());
+            }
+        }
+        /// <summary>
+        /// 不解密导出文件
+        /// </summary>
+        /// <param name="fileNames"></param>
+        /// <param name="keyNames"></param>
+        /// <param name="destination"></param>
+        public void exportFilesWithoutDiscryption(Queue<string> fileNames, Queue<string> keyNames, string destination)
+        {
+            label_status.Text = "正在导出文件";
+            FileNames = fileNames;
+            KeyNames = keyNames;
+            Destination = destination;
+            ThreadExport = new Thread(threadExportWithoutDiscryption);
+            ThreadExport.Start();
+        }
+        /// <summary>
+        /// 不解密导出文件
+        /// </summary>
+        void threadExportWithoutDiscryption()
+        {
+            try
+            {
+                FileTree.exportItemsWithoutDiscryption(FileNames, KeyNames, Destination, label_fileStatus);
+                MethodInvoker methodInvoker = new MethodInvoker(closeForm);
+                BeginInvoke(methodInvoker);
+            }
+            catch (Exception e)
             {
                 Reporter.reportBug(e.ToString());
             }

@@ -739,7 +739,7 @@ namespace custom_cloud
             toolStripMenuItem_listRightClick_item_copy.Visible = visible;
             toolStripMenuItem_listRightClick_item_cut.Visible = visible;
             toolStripMenuItem_listRightClick_item_delete.Visible = visible;
-            toolStripMenuItem_listRightClick_item_export.Visible = visible;
+            toolStripMenuItem_listRightClick_itemExportDiscryption.Visible = visible;
             toolStripMenuItem_listRightClick_item_rename.Visible = visible;
             toolStripMenuItem_listRightClick_item_share.Visible = visible;
             toolStripMenuItem_listRightClick_item_attribute.Visible=visible;
@@ -793,7 +793,8 @@ namespace custom_cloud
             /* 上方功能框 */
             if (obj.Equals(toolStripMenuItem_import)) item_Import();
             if (obj.Equals(toolStripMenuItem_title_importFolder)) item_ImportFolder();
-            if (obj.Equals(toolStripMenuItem_export)) item_ExportFiles();
+            if (obj.Equals(toolStripMenuItem_title_itemExportDiscryption)) item_ExportFiles();
+            if (obj.Equals(toolStripMenuItem_title_itemExportWithoutDiscryption)) item_ExportFilesWithoutDiscryption();
             if (obj.Equals(toolStripMenuItem_delete)) item_Delete();
             if (obj.Equals(toolStripMenuItem_newFolder)) list_NewFolder();
             if (obj.Equals(pictureBox_buttonRefresh)) list_Refresh();
@@ -811,7 +812,8 @@ namespace custom_cloud
             if (obj.Equals(toolStripMenuItem_listContextRightClickNewFolder)) list_NewFolder();
             if (obj.Equals(toolStripMenuItem_listContextRightClickRefresh)) list_Refresh();
             if (obj.Equals(toolStripMenuItem_listRightClick_item_delete)) item_Delete();
-            if (obj.Equals(toolStripMenuItem_listRightClick_item_export)) item_ExportFiles();
+            if (obj.Equals(toolStripMenuItem_listRightClick_itemExportDiscryption)) item_ExportFiles();
+            if (obj.Equals(toolStripMenuItem_listRightClick_itemExportWithoutDiscryption)) item_ExportFilesWithoutDiscryption();
             if (obj.Equals(toolStripMenuItem_listContextRightClick_importFolder)) item_ImportFolder();
             if (obj.Equals(toolStripMenuItem_listRightClick_Item_open)) item_Open(null, null);
             //if (obj.Equals(toolStripMenuItem_listContextRightClick_openMethod)) item_openMethod();
@@ -901,6 +903,26 @@ namespace custom_cloud
                 }
                 LoadDisCryption loadDisCryption = new LoadDisCryption();
                 loadDisCryption.exportFiles(fileNames, keyNames, destination);
+                loadDisCryption.ShowDialog();
+            }
+        }
+        /// <summary>
+        /// 不加密导出
+        /// </summary>
+        void item_ExportFilesWithoutDiscryption()
+        {
+            if (folderBrowserDialog_main.ShowDialog() == DialogResult.OK)
+            {
+                Queue<string> fileNames = new Queue<string>();
+                Queue<string> keyNames = new Queue<string>();
+                string destination = folderBrowserDialog_main.SelectedPath;
+                for (int i = 0; i < listView_explorer.SelectedItems.Count; i++)
+                {
+                    fileNames.Enqueue(MyConfig.getPathByKey(listView_explorer.SelectedItems[i].Name));
+                    keyNames.Enqueue(listView_explorer.SelectedItems[i].Name);
+                }
+                LoadDisCryption loadDisCryption = new LoadDisCryption();
+                loadDisCryption.exportFilesWithoutDiscryption(fileNames, keyNames, destination);
                 loadDisCryption.ShowDialog();
             }
         }
