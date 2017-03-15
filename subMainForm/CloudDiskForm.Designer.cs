@@ -33,6 +33,8 @@
             this.toolStripMenuItem_import = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_title_importFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_export = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_title_itemExportDiscryption = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_title_itemExportWithoutDiscryption = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_share = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_delete = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_newFolder = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,6 +76,8 @@
             this.toolStripMenuItem_listContextRightClick_selectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_listRightClick_Item_open = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_listRightClick_item_export = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_listRightClick_itemExportDiscryption = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_listRightClick_itemExportWithoutDiscryption = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_listRightClick_item_share = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_listRightClick_item_copy = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_listRightClick_item_cut = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,10 +89,6 @@
             this.saveFileDialog_main = new System.Windows.Forms.SaveFileDialog();
             this.fileSystemWatcher_main = new System.IO.FileSystemWatcher();
             this.toolTip_menuButton = new System.Windows.Forms.ToolTip(this.components);
-            this.toolStripMenuItem_listRightClick_itemExportDiscryption = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_listRightClick_itemExportWithoutDiscryption = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_title_itemExportDiscryption = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem_title_itemExportWithoutDiscryption = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_cloudDisk.SuspendLayout();
             this.panel_function.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonSearchItem)).BeginInit();
@@ -147,6 +147,20 @@
             this.toolStripMenuItem_export.Name = "toolStripMenuItem_export";
             this.toolStripMenuItem_export.Size = new System.Drawing.Size(60, 26);
             this.toolStripMenuItem_export.Text = "导出";
+            // 
+            // toolStripMenuItem_title_itemExportDiscryption
+            // 
+            this.toolStripMenuItem_title_itemExportDiscryption.Name = "toolStripMenuItem_title_itemExportDiscryption";
+            this.toolStripMenuItem_title_itemExportDiscryption.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_title_itemExportDiscryption.Text = "解密导出";
+            this.toolStripMenuItem_title_itemExportDiscryption.Click += new System.EventHandler(this.menuItem_Click_Event);
+            // 
+            // toolStripMenuItem_title_itemExportWithoutDiscryption
+            // 
+            this.toolStripMenuItem_title_itemExportWithoutDiscryption.Name = "toolStripMenuItem_title_itemExportWithoutDiscryption";
+            this.toolStripMenuItem_title_itemExportWithoutDiscryption.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_title_itemExportWithoutDiscryption.Text = "不解密导出";
+            this.toolStripMenuItem_title_itemExportWithoutDiscryption.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
             // toolStripMenuItem_share
             // 
@@ -421,7 +435,7 @@
             // 
             this.toolStripMenuItem_listContextRightClickImport.Image = global::custom_cloud.Properties.Resources.import_files;
             this.toolStripMenuItem_listContextRightClickImport.Name = "toolStripMenuItem_listContextRightClickImport";
-            this.toolStripMenuItem_listContextRightClickImport.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listContextRightClickImport.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listContextRightClickImport.Text = "导入文件";
             this.toolStripMenuItem_listContextRightClickImport.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
@@ -429,7 +443,7 @@
             // 
             this.toolStripMenuItem_listContextRightClick_importFolder.Image = global::custom_cloud.Properties.Resources.import_folder;
             this.toolStripMenuItem_listContextRightClick_importFolder.Name = "toolStripMenuItem_listContextRightClick_importFolder";
-            this.toolStripMenuItem_listContextRightClick_importFolder.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listContextRightClick_importFolder.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listContextRightClick_importFolder.Text = "导入文件夹";
             this.toolStripMenuItem_listContextRightClick_importFolder.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
@@ -437,7 +451,7 @@
             // 
             this.toolStripMenuItem_listContextRightClickNewFolder.Image = global::custom_cloud.Properties.Resources.menu_new_folder;
             this.toolStripMenuItem_listContextRightClickNewFolder.Name = "toolStripMenuItem_listContextRightClickNewFolder";
-            this.toolStripMenuItem_listContextRightClickNewFolder.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listContextRightClickNewFolder.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listContextRightClickNewFolder.Text = "新建文件夹";
             this.toolStripMenuItem_listContextRightClickNewFolder.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
@@ -445,7 +459,7 @@
             // 
             this.toolStripMenuItem_listContextRightClick_paste.Enabled = false;
             this.toolStripMenuItem_listContextRightClick_paste.Name = "toolStripMenuItem_listContextRightClick_paste";
-            this.toolStripMenuItem_listContextRightClick_paste.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listContextRightClick_paste.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listContextRightClick_paste.Text = "粘贴";
             this.toolStripMenuItem_listContextRightClick_paste.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
@@ -456,7 +470,7 @@
             this.toolStripMenuItem_listContextRightClickView_smallIcon,
             this.toolStripMenuItem_listContextRightClickView_detail});
             this.toolStripMenuItem_listContextRightClickView.Name = "toolStripMenuItem_listContextRightClickView";
-            this.toolStripMenuItem_listContextRightClickView.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listContextRightClickView.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listContextRightClickView.Text = "查看";
             // 
             // toolStripMenuItem_listContextRightClickView_largeIcon
@@ -484,7 +498,7 @@
             // 
             this.toolStripMenuItem_listContextRightClickRefresh.Image = global::custom_cloud.Properties.Resources.refresh_deep_blue;
             this.toolStripMenuItem_listContextRightClickRefresh.Name = "toolStripMenuItem_listContextRightClickRefresh";
-            this.toolStripMenuItem_listContextRightClickRefresh.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listContextRightClickRefresh.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listContextRightClickRefresh.Text = "刷新";
             this.toolStripMenuItem_listContextRightClickRefresh.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
@@ -495,7 +509,7 @@
             this.toolStripMenuItem_listContextRightClickSortRule_bySize,
             this.toolStripMenuItem_listContextRightClickSortRule_byTime});
             this.toolStripMenuItem_listContextRightClickSortRule.Name = "toolStripMenuItem_listContextRightClickSortRule";
-            this.toolStripMenuItem_listContextRightClickSortRule.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listContextRightClickSortRule.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listContextRightClickSortRule.Text = "排序方式";
             // 
             // toolStripMenuItem_listContextRightClickSortRule_byName
@@ -522,14 +536,14 @@
             // toolStripMenuItem_listContextRightClick_selectAll
             // 
             this.toolStripMenuItem_listContextRightClick_selectAll.Name = "toolStripMenuItem_listContextRightClick_selectAll";
-            this.toolStripMenuItem_listContextRightClick_selectAll.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listContextRightClick_selectAll.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listContextRightClick_selectAll.Text = "全选";
             this.toolStripMenuItem_listContextRightClick_selectAll.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
             // toolStripMenuItem_listRightClick_Item_open
             // 
             this.toolStripMenuItem_listRightClick_Item_open.Name = "toolStripMenuItem_listRightClick_Item_open";
-            this.toolStripMenuItem_listRightClick_Item_open.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listRightClick_Item_open.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listRightClick_Item_open.Text = "打开";
             this.toolStripMenuItem_listRightClick_Item_open.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
@@ -544,32 +558,46 @@
             this.toolStripMenuItem_listRightClick_item_export.Text = "导出";
             this.toolStripMenuItem_listRightClick_item_export.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
+            // toolStripMenuItem_listRightClick_itemExportDiscryption
+            // 
+            this.toolStripMenuItem_listRightClick_itemExportDiscryption.Name = "toolStripMenuItem_listRightClick_itemExportDiscryption";
+            this.toolStripMenuItem_listRightClick_itemExportDiscryption.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_listRightClick_itemExportDiscryption.Text = "解密导出";
+            this.toolStripMenuItem_listRightClick_itemExportDiscryption.Click += new System.EventHandler(this.menuItem_Click_Event);
+            // 
+            // toolStripMenuItem_listRightClick_itemExportWithoutDiscryption
+            // 
+            this.toolStripMenuItem_listRightClick_itemExportWithoutDiscryption.Name = "toolStripMenuItem_listRightClick_itemExportWithoutDiscryption";
+            this.toolStripMenuItem_listRightClick_itemExportWithoutDiscryption.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_listRightClick_itemExportWithoutDiscryption.Text = "不解密导出";
+            this.toolStripMenuItem_listRightClick_itemExportWithoutDiscryption.Click += new System.EventHandler(this.menuItem_Click_Event);
+            // 
             // toolStripMenuItem_listRightClick_item_share
             // 
             this.toolStripMenuItem_listRightClick_item_share.Image = global::custom_cloud.Properties.Resources.menu_share;
             this.toolStripMenuItem_listRightClick_item_share.Name = "toolStripMenuItem_listRightClick_item_share";
-            this.toolStripMenuItem_listRightClick_item_share.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listRightClick_item_share.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listRightClick_item_share.Text = "分享";
             this.toolStripMenuItem_listRightClick_item_share.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
             // toolStripMenuItem_listRightClick_item_copy
             // 
             this.toolStripMenuItem_listRightClick_item_copy.Name = "toolStripMenuItem_listRightClick_item_copy";
-            this.toolStripMenuItem_listRightClick_item_copy.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listRightClick_item_copy.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listRightClick_item_copy.Text = "复制";
             this.toolStripMenuItem_listRightClick_item_copy.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
             // toolStripMenuItem_listRightClick_item_cut
             // 
             this.toolStripMenuItem_listRightClick_item_cut.Name = "toolStripMenuItem_listRightClick_item_cut";
-            this.toolStripMenuItem_listRightClick_item_cut.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listRightClick_item_cut.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listRightClick_item_cut.Text = "剪切";
             this.toolStripMenuItem_listRightClick_item_cut.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
             // toolStripMenuItem_listRightClick_item_rename
             // 
             this.toolStripMenuItem_listRightClick_item_rename.Name = "toolStripMenuItem_listRightClick_item_rename";
-            this.toolStripMenuItem_listRightClick_item_rename.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listRightClick_item_rename.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listRightClick_item_rename.Text = "重命名";
             this.toolStripMenuItem_listRightClick_item_rename.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
@@ -577,14 +605,14 @@
             // 
             this.toolStripMenuItem_listRightClick_item_delete.Image = global::custom_cloud.Properties.Resources.menu_delete_files;
             this.toolStripMenuItem_listRightClick_item_delete.Name = "toolStripMenuItem_listRightClick_item_delete";
-            this.toolStripMenuItem_listRightClick_item_delete.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listRightClick_item_delete.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listRightClick_item_delete.Text = "删除";
             this.toolStripMenuItem_listRightClick_item_delete.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
             // toolStripMenuItem_listRightClick_item_attribute
             // 
             this.toolStripMenuItem_listRightClick_item_attribute.Name = "toolStripMenuItem_listRightClick_item_attribute";
-            this.toolStripMenuItem_listRightClick_item_attribute.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listRightClick_item_attribute.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listRightClick_item_attribute.Text = "属性";
             this.toolStripMenuItem_listRightClick_item_attribute.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
@@ -597,34 +625,6 @@
             this.fileSystemWatcher_main.EnableRaisingEvents = true;
             this.fileSystemWatcher_main.SynchronizingObject = this;
             this.fileSystemWatcher_main.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_main_Changed);
-            // 
-            // toolStripMenuItem_listRightClick_itemExportDiscryption
-            // 
-            this.toolStripMenuItem_listRightClick_itemExportDiscryption.Name = "toolStripMenuItem_listRightClick_itemExportDiscryption";
-            this.toolStripMenuItem_listRightClick_itemExportDiscryption.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem_listRightClick_itemExportDiscryption.Text = "加密导出";
-            this.toolStripMenuItem_listRightClick_itemExportDiscryption.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // toolStripMenuItem_listRightClick_itemExportWithoutDiscryption
-            // 
-            this.toolStripMenuItem_listRightClick_itemExportWithoutDiscryption.Name = "toolStripMenuItem_listRightClick_itemExportWithoutDiscryption";
-            this.toolStripMenuItem_listRightClick_itemExportWithoutDiscryption.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem_listRightClick_itemExportWithoutDiscryption.Text = "不解密导出";
-            this.toolStripMenuItem_listRightClick_itemExportWithoutDiscryption.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // toolStripMenuItem_title_itemExportDiscryption
-            // 
-            this.toolStripMenuItem_title_itemExportDiscryption.Name = "toolStripMenuItem_title_itemExportDiscryption";
-            this.toolStripMenuItem_title_itemExportDiscryption.Size = new System.Drawing.Size(192, 22);
-            this.toolStripMenuItem_title_itemExportDiscryption.Text = "解密导出";
-            this.toolStripMenuItem_title_itemExportDiscryption.Click += new System.EventHandler(this.menuItem_Click_Event);
-            // 
-            // toolStripMenuItem_title_itemExportWithoutDiscryption
-            // 
-            this.toolStripMenuItem_title_itemExportWithoutDiscryption.Name = "toolStripMenuItem_title_itemExportWithoutDiscryption";
-            this.toolStripMenuItem_title_itemExportWithoutDiscryption.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem_title_itemExportWithoutDiscryption.Text = "不解密导出";
-            this.toolStripMenuItem_title_itemExportWithoutDiscryption.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
             // CloudDiskForm
             // 

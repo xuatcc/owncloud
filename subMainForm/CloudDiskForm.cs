@@ -1792,17 +1792,22 @@ namespace custom_cloud
                 fileNames.Enqueue(MyConfig.getPathByKey(listView_explorer.SelectedItems[i].Name));
                 keyNames.Enqueue(listView_explorer.SelectedItems[i].Name);
             }
+            if (!Directory.Exists(MyConfig.PATH_FILE_BUFFER)) Directory.CreateDirectory(MyConfig.PATH_FILE_BUFFER);
             LoadDisCryption loadDisCryption = new LoadDisCryption();
-            loadDisCryption.exportFiles(fileNames, keyNames, MyConfig.PATH_FILE_BUFFER);
-            //loadDisCryption.ShowDialog();
+            loadDisCryption.exportFiles(fileNames, keyNames, Path.GetFullPath(MyConfig.PATH_FILE_BUFFER));
+            loadDisCryption.ShowDialog();
             string[] files = new string[listView_explorer.SelectedItems.Count];
+            //bool temp = false;
             for (int i = 0; i < files.Length; i++)
             {
                 files[i] = Path.GetFullPath(MyConfig.PATH_FILE_BUFFER + "/" + listView_explorer.SelectedItems[i].Text);
+                //temp = File.Exists(files[i]);
             }
+            
             DataObject data = new DataObject(DataFormats.FileDrop, files);
-            //data.SetData(DataFormats.StringFormat, files[0]);
+            data.SetData(DataFormats.StringFormat, files[0]);
             DoDragDrop(data, DragDropEffects.Copy).ToString();
+            //bool a = temp;
         }
     }
 }
