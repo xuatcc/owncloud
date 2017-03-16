@@ -153,9 +153,11 @@ namespace custom_cloud
             
             loadingForm.setInfo(userID, Password, serverURI, serverPort);
             DialogResult dialogResult = loadingForm.ShowDialog();
-            DialogResult dr = dialogResult;
+            
+
             if (dialogResult.Equals(DialogResult.OK))
             {
+                loadingForm.Visible = false;
                 MyConfig.writeUserTrack(comboBox_user.Text);
                 User_Info = loadingForm.User_Info;
                 UserLocalInfo User_LocalInfo = MyConfig.getUserLocalInfo(User_Info.UserID);
@@ -170,7 +172,7 @@ namespace custom_cloud
                 label_errorInfo.Text = "登录失败，错误码：" + User_Info.error_code.ToString();
                 label_errorInfo.Visible = true;
             }
-            */
+            /*
             /* 测试主窗体 */
             
             User_Info.UserID = comboBox_user.Text;
