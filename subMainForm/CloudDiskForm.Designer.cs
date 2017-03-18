@@ -431,7 +431,7 @@
             this.toolStripMenuItem_listRightClick_item_delete,
             this.toolStripMenuItem_listRightClick_item_attribute});
             this.contextMenuStrip_listRightClick.Name = "contextMenuStrip_listRightClick";
-            this.contextMenuStrip_listRightClick.Size = new System.Drawing.Size(137, 356);
+            this.contextMenuStrip_listRightClick.Size = new System.Drawing.Size(153, 378);
             // 
             // toolStripMenuItem_listContextRightClickImport
             // 
@@ -472,7 +472,7 @@
             this.toolStripMenuItem_listContextRightClickView_smallIcon,
             this.toolStripMenuItem_listContextRightClickView_detail});
             this.toolStripMenuItem_listContextRightClickView.Name = "toolStripMenuItem_listContextRightClickView";
-            this.toolStripMenuItem_listContextRightClickView.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem_listContextRightClickView.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem_listContextRightClickView.Text = "查看";
             // 
             // toolStripMenuItem_listContextRightClickView_largeIcon
@@ -492,8 +492,8 @@
             // toolStripMenuItem_listContextRightClickView_detail
             // 
             this.toolStripMenuItem_listContextRightClickView_detail.Name = "toolStripMenuItem_listContextRightClickView_detail";
-            this.toolStripMenuItem_listContextRightClickView_detail.Size = new System.Drawing.Size(124, 22);
-            this.toolStripMenuItem_listContextRightClickView_detail.Text = "详细信息";
+            this.toolStripMenuItem_listContextRightClickView_detail.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_listContextRightClickView_detail.Text = "列表";
             this.toolStripMenuItem_listContextRightClickView_detail.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
             // toolStripMenuItem_listContextRightClickRefresh

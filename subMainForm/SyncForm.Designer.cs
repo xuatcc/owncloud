@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_functionList = new System.Windows.Forms.Panel();
+            this.listView_syncStatus = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // panel_functionList
@@ -39,12 +40,22 @@
             this.panel_functionList.Size = new System.Drawing.Size(1024, 64);
             this.panel_functionList.TabIndex = 1;
             // 
+            // listView_syncStatus
+            // 
+            this.listView_syncStatus.Location = new System.Drawing.Point(0, 64);
+            this.listView_syncStatus.Name = "listView_syncStatus";
+            this.listView_syncStatus.Size = new System.Drawing.Size(1024, 468);
+            this.listView_syncStatus.TabIndex = 2;
+            this.listView_syncStatus.UseCompatibleStateImageBehavior = false;
+            this.listView_syncStatus.View = System.Windows.Forms.View.Details;
+            // 
             // SyncForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::custom_cloud.Properties.Resources.white_background1;
             this.ClientSize = new System.Drawing.Size(1024, 532);
+            this.Controls.Add(this.listView_syncStatus);
             this.Controls.Add(this.panel_functionList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SyncForm";
@@ -57,5 +68,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_functionList;
+        private System.Windows.Forms.ListView listView_syncStatus;
     }
 }
