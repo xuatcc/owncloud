@@ -420,6 +420,9 @@ namespace custom_cloud
             
             panel_fileFilter.Height = listView_explorer.Height + panel_function.Height;
             treeView_directoryTree.Height = listView_explorer.Height + panel_function.Height;
+
+            //textBox_searchKey.SetBounds(textBox_directoryInfo.Location.X + textBox_directoryInfo.Width + 8, textBox_searchKey.Location.Y, textBox_searchKey.Width, textBox_searchKey.Height);
+
         }
         /// <summary>
         /// 向listview里添加项目
@@ -438,6 +441,8 @@ namespace custom_cloud
             //checkTreeNodeExpandStatus(File_Tree, treeView_directoryTree.Nodes[MyConfig.getListKeyName(FileTree.FOLDER_IDENTIFY_NAME, File_Tree.RootDirectory.FullName)]);
             updateListViewItems(fileTree);
             updateDirectoryTree();
+
+            
         }
         /// <summary>
         /// 向listview里添加项目，但不更新文件树
@@ -498,6 +503,8 @@ namespace custom_cloud
                 //listView_explorer.Items[MyConfig.getListKeyName(FileTree.FILE_IDENTIFY_NAME, fileName)].Name = FileTree.FILE_IDENTIFY_NAME;
             }
             //listView_explorer.AllowDrop = true;
+            /* 更改当前目录 */
+            textBox_directoryInfo.Text = "Home:" + CurrentPath.Substring(Path.GetFullPath(SyncPath).Length);
         }
         /// <summary>
         /// 按名字排序接口
@@ -1356,7 +1363,7 @@ namespace custom_cloud
             
             if (name.Contains(FileTree.FILE_IDENTIFY_NAME))
             {
-                FileTree.moveFile(CurrentPath + "/" + itemOldName, CurrentPath + "/" + newText);
+                FileTree.moveFile(CurrentPath + "/" + itemOldName + MyConfig.EXTEND_NAME_ENCRYP_FILE, CurrentPath + "/" + newText + MyConfig.EXTEND_NAME_ENCRYP_FILE);
             }
             else if (name.Contains(FileTree.FOLDER_IDENTIFY_NAME))
             {

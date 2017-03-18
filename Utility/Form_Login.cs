@@ -148,13 +148,12 @@ namespace custom_cloud
             userInfo.Password = password_input;
             Password = password_input;
             userInfo.Order = order.OrderCodes["login"];
-            
+            button_login.Enabled = false;
+
             LoadingForm loadingForm = new LoadingForm();
             
             loadingForm.setInfo(userID, Password, serverURI, serverPort);
             DialogResult dialogResult = loadingForm.ShowDialog();
-            
-
             if (dialogResult.Equals(DialogResult.OK))
             {
                 loadingForm.Visible = false;
@@ -163,6 +162,7 @@ namespace custom_cloud
                 UserLocalInfo User_LocalInfo = MyConfig.getUserLocalInfo(User_Info.UserID);
                 navigateToMainWindow(User_Info);
                 this.Hide();
+                loadingForm.Dispose();
             }
             else if (dialogResult.Equals(DialogResult.No))
             {
@@ -171,8 +171,13 @@ namespace custom_cloud
                 //label_errorInfo.Text = "登录失败，原因: " + errorCode.TableErrorCode[userManiWindow.error_code];
                 label_errorInfo.Text = "登录失败，错误码：" + User_Info.error_code.ToString();
                 label_errorInfo.Visible = true;
+                button_login.Enabled = true;
             }
-            /*
+            else
+            {
+                button_login.Enabled = true;
+            }
+            */
             /* 测试主窗体 */
             
             User_Info.UserID = comboBox_user.Text;
@@ -367,7 +372,7 @@ namespace custom_cloud
         /// <param name="e"></param>
         private void Form_Login_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode.Equals(Keys.Enter)) btn_login_Click(this, null);
+            //if (e.KeyCode.Equals(Keys.Enter)) btn_login_Click(this, null);
         }
         /// <summary>
         /// 改变账户时密码框清空
