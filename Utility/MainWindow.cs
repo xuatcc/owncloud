@@ -356,7 +356,7 @@ namespace custom_cloud
             panel_mainForm.Controls.Add(syncForm);
             cloudDiskForm.setUserInfo(userInfo);
             cloudDiskForm.Show();
-            
+            syncForm.setInfo(userLocalInfo);
         }
         /// <summary>
         /// 按钮点击事件
