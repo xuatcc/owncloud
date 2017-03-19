@@ -32,11 +32,8 @@ namespace custom_cloud
         /// 文件搜索树，用于显示符合搜索条件的文件
         /// </summary>
         public FileTree SearchTree;
-        /// <summary>
-        /// 同步线程
-        /// </summary>
-        Thread ThreadSync;
-        bool isAutoSync = false;
+        
+        
         /// <summary>
         /// 当前目录
         /// </summary>
@@ -168,10 +165,14 @@ namespace custom_cloud
             get { return treeView_directoryTree; }
             set { treeView_directoryTree = value; }
         }
-        public CloudDiskForm()
+        /// <summary>
+        /// 指向父窗体的指针
+        /// </summary>
+        MainWindow mainWindow;
+        public CloudDiskForm(MainWindow mw)
         {
             InitializeComponent();
-            
+            mainWindow = mw;
             //testFileTree();
         }
         public void setUserInfo(UserInfo userInfo)
@@ -207,9 +208,6 @@ namespace custom_cloud
             /* 加载排序方式 */
             if (configFile.TableSkin.ContainsKey(MyConfig.ConfigFile.Skin.KEY_FILE_SORT_RULE))
                 Sort_Rule = (MyConfig.SortRule)int.Parse(configFile.TableSkin[MyConfig.ConfigFile.Skin.KEY_FILE_SORT_RULE].ToString());
-            /* 加载自动同步选项 */
-            if (configFile.TableSync.ContainsKey(MyConfig.ConfigFile.Sync.KEY_AUTO_SYNC))
-                isAutoSync = (bool)configFile.TableSync[MyConfig.ConfigFile.Sync.KEY_AUTO_SYNC];
             /* 加载用户本地信息 */
             /* 测试 */
             /*
@@ -276,9 +274,7 @@ namespace custom_cloud
             toolTip_menuButton.SetToolTip(pictureBox_buttonRefresh, "刷新");
             toolTip_menuButton.SetToolTip(pictureBox_buttonSearchItem, "搜索 文件/文件夹");
 
-            /* 启动同步线程 */
-            ThreadSync = new Thread(threadSync);
-            ThreadSync.Start();
+            
         }
         /// <summary>
         /// 设置显示模式
@@ -809,8 +805,8 @@ namespace custom_cloud
             if (obj.Equals(pictureBox_buttonForward)) list_Forward();
             if (obj.Equals(toolStripMenuItem_title_sync))
             {
-                ThreadSync = new Thread(threadSync);
-                ThreadSync.Start();
+                mainWindow.ThreadSync = new Thread(mainWindow.threadSync);
+                mainWindow.ThreadSync.Start();
             }
             if (obj.Equals(pictureBox_buttonSearchItem)) items_Search();
 
@@ -1683,42 +1679,7 @@ namespace custom_cloud
             updateDirectoryTree();
         }
         #endregion
-        /// <summary>
-        /// 同步线程方法
-        /// </summary>
-        void threadSync()
-        {
-            while (true)
-            {
-                try
-                {
-                    label_syncStatus.Invoke(new MethodInvoker(delegate
-                    {
-                        label_syncStatus.ForeColor = Color.Black;
-                        label_syncStatus.Text = "同步状态: 正在尝试同步";
-                        Application.DoEvents();
-                    }));
-                    int tempExitCode = CMDComand.syncDirectory(User_LocalInfo.SyncPath, User_Info.UserID, User_Info.Password, User_Info.SyncServerAddress);
-                    label_syncStatus.Invoke(new MethodInvoker(delegate
-                    {
-                        string syncResult = SyncResult.getSyncResult();
-                        label_syncStatus.Text = "同步状态: " + syncResult;
-                        if (!syncResult.Equals(SyncResult.RESULT_SYNC_SUCCESS))
-                        {
-                            label_syncStatus.ForeColor = Color.Red;
-                        }
-                        Application.DoEvents();
-                    }));
-                    if (!isAutoSync) return;
-                    Thread.Sleep(5000);
-                    
-                }
-                catch(Exception e)
-                {
-                    Reporter.reportBug(e.ToString());
-                }
-            }
-        }
+        
         /// <summary>
         /// 窗体关闭时的事件
         /// </summary>
@@ -1726,7 +1687,7 @@ namespace custom_cloud
         /// <param name="e"></param>
         private void CloudDiskForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (ThreadSync != null) ThreadSync.Abort();
+            
             
         }
         /// <summary>

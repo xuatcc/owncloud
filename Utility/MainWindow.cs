@@ -1,4 +1,5 @@
-﻿using custom_cloud.loadingForm;
+﻿using custom_cloud.cmdClass;
+using custom_cloud.loadingForm;
 using custom_cloud.subMainForm;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace custom_cloud
     {
         Color SelectedColor = Color.FromArgb(Convert.ToInt32("e93da5fc", 16));
         /* 子窗体 */
-        CloudDiskForm cloudDiskForm = new CloudDiskForm();
+        CloudDiskForm cloudDiskForm;
         ShareForm shareForm = new ShareForm();
         SyncForm syncForm = new SyncForm();
         SettingForm settingForm = new SettingForm();
@@ -40,6 +41,11 @@ namespace custom_cloud
         UserLocalInfo userLocalInfo = new UserLocalInfo();
         int InitialFormWidth = 1024;
         int InitialFormHeight = 632;
+        /// <summary>
+        /// 同步线程
+        /// </summary>
+        public Thread ThreadSync;
+        bool isAutoSync = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -52,12 +58,25 @@ namespace custom_cloud
         {
             this.userInfo = userInfo;
             this.userLocalInfo = userLocalInfo;
+            initializeConfig();
             initializeWidget();
+        }
+        /// <summary>
+        /// 加载配置文件
+        /// </summary>
+        void initializeConfig()
+        {
+            MyConfig.ConfigFile configFile = MyConfig.readConfig();
+            
+            /* 加载自动同步选项 */
+            if (configFile.TableSync.ContainsKey(MyConfig.ConfigFile.Sync.KEY_AUTO_SYNC))
+                isAutoSync = (bool)configFile.TableSync[MyConfig.ConfigFile.Sync.KEY_AUTO_SYNC];
+            
         }
         void initializeWidget()
         {
-            
 
+            cloudDiskForm = new CloudDiskForm(this);
             cloudDiskForm.TopLevel = false;
             shareForm.TopLevel = false;
             syncForm.TopLevel = false;
@@ -102,6 +121,9 @@ namespace custom_cloud
 
             /* Context Menu Setting */
             //pictureBox_buttonListSetting.ContextMenuStrip = contextMenuStrip_listSetting;
+            /* 启动同步线程 */
+            ThreadSync = new Thread(threadSync);
+            ThreadSync.Start();
         }
         void doNothing(object obj, EventArgs ea) { }
         /// <summary>
@@ -206,7 +228,7 @@ namespace custom_cloud
                 FileTree fileTree = cloudDiskForm.File_Tree;
 
 
-                cloudDiskForm = new CloudDiskForm();
+                cloudDiskForm = new CloudDiskForm(this);
                 cloudDiskForm.TopLevel = false;
                 panel_mainForm.Controls.RemoveByKey(cloudDiskForm.Name);
 
@@ -382,6 +404,27 @@ namespace custom_cloud
             settingUserInfo.setUserInfo(userInfo, userLocalInfo);
             DialogResult dialogResult = settingUserInfo.ShowDialog();
         }
+        /// <summary>
+        /// 同步线程方法
+        /// </summary>
+        public void threadSync()
+        {
+            while (true)
+            {
+                try
+                {
+                    int tempExitCode = CMDComand.syncDirectory(userLocalInfo.SyncPath, userInfo.UserID, userInfo.Password, userInfo.SyncServerAddress);
+                    
+                    if (!isAutoSync) return;
+                    Thread.Sleep(5000);
+
+                }
+                catch (Exception e)
+                {
+                    Reporter.reportBug(e.ToString());
+                }
+            }
+        }
         private void MainWindow_SizeChanged(object sender, EventArgs e)
         {
             int old_panel_width = panel_title.Width;
@@ -472,6 +515,8 @@ namespace custom_cloud
         {
             /* 删除文件缓存目录 */
             if (Directory.Exists(MyConfig.PATH_FILE_BUFFER)) FileTree.deleteDirectory(MyConfig.PATH_FILE_BUFFER, null);
+            /* 关闭同步线程 */
+            if (ThreadSync != null) ThreadSync.Abort();
         }
     }
 }
