@@ -77,7 +77,7 @@ namespace custom_cloud
         void initializeWidget()
         {
 
-            cloudDiskForm = new CloudDiskForm(this);
+            cloudDiskForm = new CloudDiskForm(this, syncForm);
             cloudDiskForm.TopLevel = false;
             shareForm.TopLevel = false;
             syncForm.TopLevel = false;
@@ -229,7 +229,7 @@ namespace custom_cloud
                 FileTree fileTree = cloudDiskForm.File_Tree;
 
 
-                cloudDiskForm = new CloudDiskForm(this);
+                cloudDiskForm = new CloudDiskForm(this, syncForm);
                 cloudDiskForm.TopLevel = false;
                 panel_mainForm.Controls.RemoveByKey(cloudDiskForm.Name);
 
@@ -410,25 +410,36 @@ namespace custom_cloud
         /// </summary>
         public void threadSync()
         {
+            //setSyncFormFileStatus(SyncResult.getSyncFileResult(userLocalInfo.SyncPath), SyncResult.FileSyncStatus.Fail);
             while (true)
             {
                 try
                 {
-                    setCloudDiskFormSyncLabel("正在尝试同步");
+                    //setCloudDiskFormSyncLabel("正在尝试同步");
                     int tempExitCode = CMDComand.syncDirectory(userLocalInfo.SyncPath, userInfo.UserID, userInfo.Password, userInfo.SyncServerAddress);
                     string syncResult = SyncResult.getSyncResult();
                     if (tempExitCode==0)
                     {
                         setCloudDiskFormSyncLabel(syncResult);
+                        if (syncResult.Equals(SyncResult.RESULT_SYNC_SUCCESS))
+                        {
+                            setSyncFormFileStatus(SyncResult.getSyncFileResult(userLocalInfo.SyncPath), SyncResult.FileSyncStatus.Success);
+                        }
+                        else
+                        {
+                            setSyncFormFileStatus(SyncResult.getSyncFileResult(userLocalInfo.SyncPath), SyncResult.FileSyncStatus.Fail);
+                        }
                     }
                     else
                     {
                         setCloudDiskFormSyncLabel("同步进程未能正常执行");
+                        setSyncFormFileStatus(SyncResult.getSyncFileResult(userLocalInfo.SyncPath), SyncResult.FileSyncStatus.Fail);
                     }
+                    Thread.Sleep(2000);
                     /* 清除同步记录 */
                     SyncResult.clearSyncResult();
                     if (!isAutoSync) return;
-                    Thread.Sleep(5000);
+                    
 
                 }
                 catch (Exception e)
@@ -461,12 +472,12 @@ namespace custom_cloud
         /// 设置文件同步状态
         /// </summary>
         /// <param name="queue"></param>
-        protected void setSyncFormFileStatus(Queue<string> queue)
+        protected void setSyncFormFileStatus(Queue<string> queue, SyncResult.FileSyncStatus fss)
         {
             if (syncForm == null) return;
             syncForm.Invoke(new MethodInvoker(delegate
             {
-
+                syncForm.setFileStatus(queue, fss);
             }));
         }
         /// <summary>

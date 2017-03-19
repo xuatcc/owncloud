@@ -169,10 +169,15 @@ namespace custom_cloud
         /// 指向父窗体的指针
         /// </summary>
         MainWindow mainWindow;
-        public CloudDiskForm(MainWindow mw)
+        /// <summary>
+        /// 指向同步窗体的指针
+        /// </summary>
+        SyncForm syncForm;
+        public CloudDiskForm(MainWindow mw, SyncForm sf)
         {
             InitializeComponent();
             mainWindow = mw;
+            syncForm = sf;
             //testFileTree();
         }
         public void setUserInfo(UserInfo userInfo)
@@ -254,7 +259,7 @@ namespace custom_cloud
                 User_LocalInfo.SyncPath = SyncPath;
                 User_Info.ServerURI = "http://192.168.204.130/helo";
                 */
-            label_syncStatus.Text = "正在同步";
+            label_syncStatus.Text = "正在尝试同步";
             /* 测试部分 */
             updateDirectoryTree();
             /* 选项菜单不可见 */
@@ -501,6 +506,8 @@ namespace custom_cloud
             //listView_explorer.AllowDrop = true;
             /* 更改当前目录 */
             textBox_directoryInfo.Text = "Home:" + CurrentPath.Substring(Path.GetFullPath(SyncPath).Length);
+            /* 刷新文件同步列表 */
+            if (syncForm != null) syncForm.refreshFileList(SyncPath, SyncPath);
         }
         /// <summary>
         /// 按名字排序接口
@@ -954,6 +961,7 @@ namespace custom_cloud
             updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
 
             updateDirectoryTree();
+            if (syncForm != null) syncForm.refreshFileList(SyncPath, SyncPath);
 
             setVisibleOfItemRightClickMenu(false);
             setVisibleOfRightClickMenu(true);
@@ -980,6 +988,7 @@ namespace custom_cloud
                 }
             }
             updateDirectoryTree();
+
         }
         /// <summary>
         /// 刷新界面

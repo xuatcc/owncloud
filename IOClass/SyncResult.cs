@@ -62,6 +62,14 @@ namespace custom_cloud.IOClass
         }
         const string FileSyncedFlag = "_csync_merge_algorithm_visitor:  INSTRUCTION_NONE     client file: ";
         /// <summary>
+        /// 文件同步状态
+        /// </summary>
+        public enum FileSyncStatus
+        {
+            Success = 0,
+            Fail = 1
+        }
+        /// <summary>
         /// 获取同步文件的同步结果
         /// </summary>
         /// <param name="syncPath"></param>
@@ -76,7 +84,7 @@ namespace custom_cloud.IOClass
             while((line=resultReader.ReadLine())!=null)
             {
                 filePath = catchFilePath(syncPath, line);
-                if(File.Exists(filePath))queue.Enqueue(filePath.Substring(filePath.IndexOf(syncPath),filePath.Length-filePath.IndexOf(syncPath)));
+                if(File.Exists(filePath))queue.Enqueue(@"Home:\" + filePath.Substring(filePath.IndexOf(syncPath),filePath.Length-filePath.IndexOf(syncPath)));
             }
             resultReader.Close();
             
@@ -95,7 +103,7 @@ namespace custom_cloud.IOClass
             if (line == null) return "";
             string result = "";
             int startIndex = line.IndexOf(FileSyncedFlag);
-            result = Path.GetFullPath(syncPath + "/" + line.Substring(startIndex, line.Length - startIndex));
+            if(startIndex >= 0)result = Path.GetFullPath(syncPath + "/" + line.Substring(startIndex, line.Length - startIndex));
             return result;
         }
         /// <summary>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using custom_cloud.IOClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -63,9 +64,7 @@ namespace custom_cloud
             {
                 if (!string.IsNullOrEmpty(User_LocalInfo.SyncPath))
                 {
-                    fileSystemWatcher_sync.Path = Path.GetFullPath(User_LocalInfo.SyncPath);
-                    fileSystemWatcher_sync.IncludeSubdirectories = true;
-                    //fileSystemWatcher_sync.Filter = "*.ssl|(*.ssl)";
+                    
                 }
             }
         }
@@ -76,16 +75,16 @@ namespace custom_cloud
         {
             ListFileNameHeader.Text = "文件路径";
             ListFileNameHeader.Width = (int)(listView_syncStatus.Width * 0.5);
-            ListFileNameHeader.TextAlign = HorizontalAlignment.Left;
+            ListFileNameHeader.TextAlign = HorizontalAlignment.Center;
             ListFileModifyType.Text = "事件";
             ListFileModifyType.Width = (int)(listView_syncStatus.Width * 0.1);
-            ListFileModifyType.TextAlign = HorizontalAlignment.Left;
+            ListFileModifyType.TextAlign = HorizontalAlignment.Center;
             ListFileStatusHeader.Text = "同步状态";
             ListFileStatusHeader.Width = (int)(listView_syncStatus.Width * 0.1);
-            ListFileStatusHeader.TextAlign = HorizontalAlignment.Left;
+            ListFileStatusHeader.TextAlign = HorizontalAlignment.Center;
             ListFileModifyTime.Text = "时间";
             ListFileModifyTime.Width = listView_syncStatus.Width - ListFileModifyType.Width - ListFileNameHeader.Width - ListFileStatusHeader.Width;
-            ListFileModifyTime.TextAlign = HorizontalAlignment.Left;
+            ListFileModifyTime.TextAlign = HorizontalAlignment.Center;
 
             listView_syncStatus.Columns.Add(ListFileNameHeader);
             listView_syncStatus.Columns.Add(ListFileModifyType);
@@ -93,6 +92,66 @@ namespace custom_cloud
             listView_syncStatus.Columns.Add(ListFileModifyTime);
 
             listView_syncStatus.GridLines = true;
+        }
+        /// <summary>
+        /// 刷新文件列表
+        /// </summary>
+        public void refreshFileList(string path, string syncPath)
+        {
+            if (!Directory.Exists(path)) return;
+            if (path.Equals(syncPath)) listView_syncStatus.Items.Clear();
+            DirectoryInfo di = new DirectoryInfo(path);
+            DirectoryInfo[] sub_dia = di.GetDirectories();
+            FileInfo[] fia = di.GetFiles();
+            foreach(FileInfo fi in fia)
+            {
+                if (!Path.GetExtension(fi.Name).Equals(MyConfig.EXTEND_NAME_ENCRYP_FILE)) continue;
+                ListViewItem lvi = new ListViewItem();
+                lvi.Text = (@"Home:\" + fi.FullName.Substring(Path.GetFullPath(syncPath).Length));
+                lvi.Name = lvi.Text;
+                lvi.SubItems.Add("");
+                lvi.SubItems.Add("正在检测");
+                lvi.SubItems[2].ForeColor = Color.Blue;
+                lvi.SubItems.Add(fi.LastWriteTime.ToString());
+                listView_syncStatus.Items.Add(lvi);
+
+            }
+            /* 防止操作系统认为程序无响应 */
+            Application.DoEvents();
+            foreach(DirectoryInfo sub_di in sub_dia)
+            {
+                refreshFileList(sub_di.FullName, syncPath);
+            }
+        }
+        /// <summary>
+        /// 设置文件同步状态
+        /// </summary>
+        /// <param name="queue"></param>
+        public void setFileStatus(Queue<string> queue, SyncResult.FileSyncStatus status)
+        {
+            Reporter.writeLog("./log/file_synced.log", "synced");
+            string fileName;
+            if (status == SyncResult.FileSyncStatus.Success) {
+                while (queue.Count > 0)
+                {
+                    fileName = queue.Dequeue();
+                    if (listView_syncStatus.Items.ContainsKey(fileName))
+                    {
+                        listView_syncStatus.Items[fileName].SubItems[2].Text = "同步完成";
+                        listView_syncStatus.Items[fileName].SubItems[2].ForeColor = Color.Green;
+                        listView_syncStatus.Items[fileName].SubItems[3].Text = DateTime.Now.ToString();
+                    }
+                }
+            }
+            else
+            {
+                foreach (ListViewItem lvi in listView_syncStatus.Items)
+                {
+                    lvi.SubItems[2].Text = "同步失败";
+                    lvi.SubItems[2].ForeColor = Color.Red;
+                    lvi.SubItems[3].Text = DateTime.Now.ToString();
+                }
+            }
         }
         /// <summary>
         /// 更新列表
@@ -151,6 +210,26 @@ namespace custom_cloud
         private void fileSystemWatcher_sync_Renamed(object sender, System.IO.RenamedEventArgs e)
         {
             refreshListFSE(e);
+        }
+
+        private void listView_syncStatus_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.DrawBackground();
+            e.DrawText();
+        }
+
+        private void listView_syncStatus_DrawItem(object sender, DrawListViewItemEventArgs e)
+        {
+            e.DrawBackground();
+            e.DrawFocusRectangle();
+            e.DrawText();
+        }
+
+        private void listView_syncStatus_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawBackground();
+            //e.DrawFocusRectangle();
+            e.DrawText();
         }
     }
 }
