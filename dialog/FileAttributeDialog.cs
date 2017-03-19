@@ -39,11 +39,12 @@ namespace custom_cloud.dialog
             label_fileCreateTime.AutoSize = false;
             label_fileCreateTime.Width = LabelWidth;
             label_fileCreateTime.Height = LabelHeight;
-
+            /*
             label_fileSyncStatus.Dock = DockStyle.Fill;
             label_fileSyncStatus.AutoSize = false;
             label_fileSyncStatus.Width = LabelWidth;
             label_fileSyncStatus.Height = LabelHeight;
+            */
         }
         /// <summary>
         /// 设置标签值
@@ -57,7 +58,7 @@ namespace custom_cloud.dialog
             label_fileName.Text = "名称: " + fileName;
             label_fileSize.Text = "大小: " + fileSize;
             label_fileCreateTime.Text = "修改时间: " + fileCreateTime;
-            label_fileSyncStatus.Text = "同步状态: " + fileSyncStatus;
+            //label_fileSyncStatus.Text = "同步状态: " + fileSyncStatus;
         }
     }
 }
