@@ -40,6 +40,7 @@
             this.toolStripMenuItem_newFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem_title_sync = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_function = new System.Windows.Forms.Panel();
+            this.textBox_directoryInfo = new System.Windows.Forms.TextBox();
             this.pictureBox_buttonSearchItem = new System.Windows.Forms.PictureBox();
             this.label_syncStatus = new System.Windows.Forms.Label();
             this.textBox_searchKey = new System.Windows.Forms.TextBox();
@@ -89,7 +90,6 @@
             this.saveFileDialog_main = new System.Windows.Forms.SaveFileDialog();
             this.fileSystemWatcher_main = new System.IO.FileSystemWatcher();
             this.toolTip_menuButton = new System.Windows.Forms.ToolTip(this.components);
-            this.textBox_directoryInfo = new System.Windows.Forms.TextBox();
             this.menuStrip_cloudDisk.SuspendLayout();
             this.panel_function.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_buttonSearchItem)).BeginInit();
@@ -212,6 +212,14 @@
             this.panel_function.Name = "panel_function";
             this.panel_function.Size = new System.Drawing.Size(824, 30);
             this.panel_function.TabIndex = 1;
+            // 
+            // textBox_directoryInfo
+            // 
+            this.textBox_directoryInfo.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox_directoryInfo.Location = new System.Drawing.Point(96, 0);
+            this.textBox_directoryInfo.Name = "textBox_directoryInfo";
+            this.textBox_directoryInfo.Size = new System.Drawing.Size(300, 29);
+            this.textBox_directoryInfo.TabIndex = 7;
             // 
             // pictureBox_buttonSearchItem
             // 
@@ -431,7 +439,7 @@
             this.toolStripMenuItem_listRightClick_item_delete,
             this.toolStripMenuItem_listRightClick_item_attribute});
             this.contextMenuStrip_listRightClick.Name = "contextMenuStrip_listRightClick";
-            this.contextMenuStrip_listRightClick.Size = new System.Drawing.Size(153, 378);
+            this.contextMenuStrip_listRightClick.Size = new System.Drawing.Size(137, 356);
             // 
             // toolStripMenuItem_listContextRightClickImport
             // 
@@ -472,27 +480,27 @@
             this.toolStripMenuItem_listContextRightClickView_smallIcon,
             this.toolStripMenuItem_listContextRightClickView_detail});
             this.toolStripMenuItem_listContextRightClickView.Name = "toolStripMenuItem_listContextRightClickView";
-            this.toolStripMenuItem_listContextRightClickView.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_listContextRightClickView.Size = new System.Drawing.Size(136, 22);
             this.toolStripMenuItem_listContextRightClickView.Text = "查看";
             // 
             // toolStripMenuItem_listContextRightClickView_largeIcon
             // 
             this.toolStripMenuItem_listContextRightClickView_largeIcon.Name = "toolStripMenuItem_listContextRightClickView_largeIcon";
-            this.toolStripMenuItem_listContextRightClickView_largeIcon.Size = new System.Drawing.Size(124, 22);
+            this.toolStripMenuItem_listContextRightClickView_largeIcon.Size = new System.Drawing.Size(112, 22);
             this.toolStripMenuItem_listContextRightClickView_largeIcon.Text = "大图标";
             this.toolStripMenuItem_listContextRightClickView_largeIcon.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
             // toolStripMenuItem_listContextRightClickView_smallIcon
             // 
             this.toolStripMenuItem_listContextRightClickView_smallIcon.Name = "toolStripMenuItem_listContextRightClickView_smallIcon";
-            this.toolStripMenuItem_listContextRightClickView_smallIcon.Size = new System.Drawing.Size(124, 22);
+            this.toolStripMenuItem_listContextRightClickView_smallIcon.Size = new System.Drawing.Size(112, 22);
             this.toolStripMenuItem_listContextRightClickView_smallIcon.Text = "小图标";
             this.toolStripMenuItem_listContextRightClickView_smallIcon.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
             // toolStripMenuItem_listContextRightClickView_detail
             // 
             this.toolStripMenuItem_listContextRightClickView_detail.Name = "toolStripMenuItem_listContextRightClickView_detail";
-            this.toolStripMenuItem_listContextRightClickView_detail.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_listContextRightClickView_detail.Size = new System.Drawing.Size(112, 22);
             this.toolStripMenuItem_listContextRightClickView_detail.Text = "列表";
             this.toolStripMenuItem_listContextRightClickView_detail.Click += new System.EventHandler(this.menuItem_Click_Event);
             // 
@@ -628,14 +636,6 @@
             this.fileSystemWatcher_main.SynchronizingObject = this;
             this.fileSystemWatcher_main.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_main_Changed);
             // 
-            // textBox_directoryInfo
-            // 
-            this.textBox_directoryInfo.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox_directoryInfo.Location = new System.Drawing.Point(96, 0);
-            this.textBox_directoryInfo.Name = "textBox_directoryInfo";
-            this.textBox_directoryInfo.Size = new System.Drawing.Size(300, 29);
-            this.textBox_directoryInfo.TabIndex = 7;
-            // 
             // CloudDiskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -712,7 +712,6 @@
         private System.IO.FileSystemWatcher fileSystemWatcher_main;
         private System.Windows.Forms.TreeView treeView_directoryTree;
         private System.Windows.Forms.ImageList imageList_treeView;
-        private System.Windows.Forms.Label label_syncStatus;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_title_sync;
         private System.Windows.Forms.ToolTip toolTip_menuButton;
         private System.Windows.Forms.PictureBox pictureBox_buttonSearchItem;
@@ -731,5 +730,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_title_itemExportDiscryption;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_title_itemExportWithoutDiscryption;
         private System.Windows.Forms.TextBox textBox_directoryInfo;
+        public System.Windows.Forms.Label label_syncStatus;
     }
 }

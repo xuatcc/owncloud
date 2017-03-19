@@ -1,4 +1,5 @@
 ﻿using custom_cloud.cmdClass;
+using custom_cloud.IOClass;
 using custom_cloud.loadingForm;
 using custom_cloud.subMainForm;
 using System;
@@ -413,8 +414,19 @@ namespace custom_cloud
             {
                 try
                 {
+                    setCloudDiskFormSyncLabel("正在尝试同步");
                     int tempExitCode = CMDComand.syncDirectory(userLocalInfo.SyncPath, userInfo.UserID, userInfo.Password, userInfo.SyncServerAddress);
-                    
+                    string syncResult = SyncResult.getSyncResult();
+                    if (tempExitCode==0)
+                    {
+                        setCloudDiskFormSyncLabel(syncResult);
+                    }
+                    else
+                    {
+                        setCloudDiskFormSyncLabel("同步进程未能正常执行");
+                    }
+                    /* 清除同步记录 */
+                    SyncResult.clearSyncResult();
                     if (!isAutoSync) return;
                     Thread.Sleep(5000);
 
@@ -425,6 +437,43 @@ namespace custom_cloud
                 }
             }
         }
+        /// <summary>
+        /// 设置云盘界面的同步状态标志
+        /// </summary>
+        /// <param name="str"></param>
+        protected void setCloudDiskFormSyncLabel(string str)
+        {
+            if (cloudDiskForm == null) return;
+            cloudDiskForm.Invoke(new MethodInvoker(delegate
+            {
+                cloudDiskForm.label_syncStatus.Text = str;
+                if (str.Equals(SyncResult.RESULT_SYNC_SUCCESS) || str.Equals("正在尝试同步"))
+                {
+                    cloudDiskForm.label_syncStatus.ForeColor = Color.Black;
+                }
+                else
+                {
+                    cloudDiskForm.label_syncStatus.ForeColor = Color.Red;
+                }
+            }));
+        }
+        /// <summary>
+        /// 设置文件同步状态
+        /// </summary>
+        /// <param name="queue"></param>
+        protected void setSyncFormFileStatus(Queue<string> queue)
+        {
+            if (syncForm == null) return;
+            syncForm.Invoke(new MethodInvoker(delegate
+            {
+
+            }));
+        }
+        /// <summary>
+        /// 窗体大小改变事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainWindow_SizeChanged(object sender, EventArgs e)
         {
             int old_panel_width = panel_title.Width;

@@ -101,12 +101,14 @@ namespace custom_cloud
         {
             listView_syncStatus.Invoke(new MethodInvoker(delegate
             {
+                /*
                 ListViewItem lvi = new ListViewItem();
                 lvi.Text = (@"Home:\" + fse.FullPath.Substring(Path.GetFullPath(User_LocalInfo.SyncPath).Length));
                 lvi.SubItems.Add(fse.ChangeType.ToString());
                 lvi.SubItems.Add("未同步");
                 lvi.SubItems.Add(DateTime.Now.ToString());
                 listView_syncStatus.Items.Add(lvi);
+                */
                 //listView_syncStatus.Items.Add()
             }));
         }
