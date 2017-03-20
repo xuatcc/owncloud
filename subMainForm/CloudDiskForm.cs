@@ -717,6 +717,8 @@ namespace custom_cloud
                 imageList_large.Images[index] = (Int32Dec64Convert.ConverToSquareBitmap(imageList_large.ImageSize.Width, LargeFolderIcon));
                 imageList_small.Images[index] = (Int32Dec64Convert.ConverToSquareBitmap(imageList_small.ImageSize.Width, SmallFolderIcon));
             }
+            /* 刷新文件同步列表 */
+            //if (syncForm != null) syncForm.refreshFileList(SyncPath, SyncPath);
         }
         /// <summary>
         /// 文件树测试
@@ -961,7 +963,7 @@ namespace custom_cloud
             updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);
 
             updateDirectoryTree();
-            if (syncForm != null) syncForm.refreshFileList(SyncPath, SyncPath);
+            //if (syncForm != null) syncForm.refreshFileList(SyncPath, SyncPath);
 
             setVisibleOfItemRightClickMenu(false);
             setVisibleOfRightClickMenu(true);
@@ -1048,6 +1050,9 @@ namespace custom_cloud
                         loadDisCryption.ShowDialog();
                         //string fileName = CMDComand.discryptFile(path, MyConfig.PATH_FILE_BUFFER + "/" + listView_explorer.Items[i].Text);
                         //while (!File.Exists(fileName)) Application.DoEvents();
+                        if (!File.Exists(Path.GetFullPath(MyConfig.PATH_FILE_BUFFER + "/" + Path.GetFileName(path)))) return;
+                        FileInfo temp_fi = new FileInfo(Path.GetFullPath(MyConfig.PATH_FILE_BUFFER + "/" + Path.GetFileName(path)));
+                        temp_fi.IsReadOnly = true;
                         Process.Start(Path.GetFullPath(MyConfig.PATH_FILE_BUFFER + "/" + Path.GetFileName(path)));
                         listView_explorer.Items[i].Focused = false;
 

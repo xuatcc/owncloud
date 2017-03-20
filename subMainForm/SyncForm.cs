@@ -34,6 +34,17 @@ namespace custom_cloud
         /// </summary>
         protected UserLocalInfo User_LocalInfo;
 
+        const string NO_EVENT = "nothing";
+        const string INITIATING = "initiating";
+        const string UNSYNCED = "unsynced";
+        /// <summary>
+        /// 用于标记窗体是否刚刚启动
+        /// </summary>
+        bool Flag_isInitiation = true;
+        /// <summary>
+        /// 文件同步状态哈希表
+        /// </summary>
+        protected Dictionary<string, bool> Dict_FileSynced = new Dictionary<string, bool>();
         public SyncForm()
         {
             InitializeComponent();
@@ -63,8 +74,9 @@ namespace custom_cloud
             if (User_LocalInfo != null)
             {
                 if (!string.IsNullOrEmpty(User_LocalInfo.SyncPath))
-                {
-                    
+                { 
+                    fileSystemWatcher_main.Path = User_LocalInfo.SyncPath;
+                    fileSystemWatcher_main.EnableRaisingEvents = true;
                 }
             }
         }
@@ -99,22 +111,24 @@ namespace custom_cloud
         public void refreshFileList(string path, string syncPath)
         {
             if (!Directory.Exists(path)) return;
-            if (path.Equals(syncPath)) listView_syncStatus.Items.Clear();
+            //if (path.Equals(syncPath)) listView_syncStatus.Items.Clear();
             DirectoryInfo di = new DirectoryInfo(path);
             DirectoryInfo[] sub_dia = di.GetDirectories();
             FileInfo[] fia = di.GetFiles();
             foreach(FileInfo fi in fia)
             {
                 if (!Path.GetExtension(fi.Name).Equals(MyConfig.EXTEND_NAME_ENCRYP_FILE)) continue;
+
                 ListViewItem lvi = new ListViewItem();
                 lvi.Text = (@"Home:\" + fi.FullName.Substring(Path.GetFullPath(syncPath).Length));
+                if (listView_syncStatus.Items.ContainsKey(lvi.Text)) continue;
                 lvi.Name = lvi.Text;
-                lvi.SubItems.Add("");
+                lvi.SubItems.Add(INITIATING);
                 lvi.SubItems.Add("正在检测");
                 lvi.SubItems[2].ForeColor = Color.Blue;
                 lvi.SubItems.Add(fi.LastWriteTime.ToString());
+                /* 增加新项目 */
                 listView_syncStatus.Items.Add(lvi);
-
             }
             /* 防止操作系统认为程序无响应 */
             Application.DoEvents();
@@ -137,6 +151,8 @@ namespace custom_cloud
                     fileName = queue.Dequeue();
                     if (listView_syncStatus.Items.ContainsKey(fileName))
                     {
+                        if (listView_syncStatus.Items[fileName].SubItems[1].Text.Equals(NO_EVENT)) continue;
+                        listView_syncStatus.Items[fileName].SubItems[1].Text = NO_EVENT;
                         listView_syncStatus.Items[fileName].SubItems[2].Text = "同步完成";
                         listView_syncStatus.Items[fileName].SubItems[2].ForeColor = Color.Green;
                         listView_syncStatus.Items[fileName].SubItems[3].Text = DateTime.Now.ToString();
@@ -147,6 +163,8 @@ namespace custom_cloud
             {
                 foreach (ListViewItem lvi in listView_syncStatus.Items)
                 {
+                    if (lvi.SubItems[1].Text.Equals(NO_EVENT)) continue;
+                    lvi.SubItems[1].Text = UNSYNCED;
                     lvi.SubItems[2].Text = "同步失败";
                     lvi.SubItems[2].ForeColor = Color.Red;
                     lvi.SubItems[3].Text = DateTime.Now.ToString();
@@ -160,15 +178,20 @@ namespace custom_cloud
         {
             listView_syncStatus.Invoke(new MethodInvoker(delegate
             {
-                /*
-                ListViewItem lvi = new ListViewItem();
-                lvi.Text = (@"Home:\" + fse.FullPath.Substring(Path.GetFullPath(User_LocalInfo.SyncPath).Length));
-                lvi.SubItems.Add(fse.ChangeType.ToString());
-                lvi.SubItems.Add("未同步");
-                lvi.SubItems.Add(DateTime.Now.ToString());
-                listView_syncStatus.Items.Add(lvi);
-                */
-                //listView_syncStatus.Items.Add()
+                if (User_LocalInfo == null) return;
+                string itemText = (@"Home:\" + Path.GetFullPath(fse.FullPath).Substring(Path.GetFullPath(User_LocalInfo.SyncPath).Length));
+                if (!listView_syncStatus.Items.ContainsKey(itemText)) return;
+                if (!fse.ChangeType.Equals(WatcherChangeTypes.Deleted))
+                {
+                    listView_syncStatus.Items[itemText].SubItems[1].Text = fse.ChangeType.ToString();
+                    listView_syncStatus.Items[itemText].SubItems[2].Text = "正在检测";
+                    listView_syncStatus.Items[itemText].SubItems[2].ForeColor = Color.Blue;
+                }
+                else
+                {
+                    /* 删除项目 */
+                    if(listView_syncStatus.Items.ContainsKey(itemText))listView_syncStatus.Items.RemoveByKey(itemText);
+                }
             }));
         }
         /// <summary>
@@ -178,13 +201,14 @@ namespace custom_cloud
         {
             listView_syncStatus.Invoke(new MethodInvoker(delegate
             {
-                ListViewItem lvi = new ListViewItem();
-                lvi.Text = (@"Home:\" + re.FullPath.Substring(Path.GetFullPath(User_LocalInfo.SyncPath).Length));
-                lvi.SubItems.Add(re.ChangeType.ToString());
-                lvi.SubItems.Add("未同步");
-                lvi.SubItems.Add(DateTime.Now.ToString());
-                listView_syncStatus.Items.Add(lvi);
-                //listView_syncStatus.Items.Add()
+                if (User_LocalInfo == null) return;
+                string itemText = (@"Home:\" + Path.GetFullPath(re.OldFullPath).Substring(Path.GetFullPath(User_LocalInfo.SyncPath).Length));
+                if (!listView_syncStatus.Items.ContainsKey(itemText)) return;
+                listView_syncStatus.Items[itemText].SubItems[1].Text = re.ChangeType.ToString();
+                listView_syncStatus.Items[itemText].SubItems[2].Text = "正在检测";
+                listView_syncStatus.Items[itemText].SubItems[2].ForeColor = Color.Blue;
+                listView_syncStatus.Items[itemText].Text= (@"Home:\" + Path.GetFullPath(re.FullPath).Substring(Path.GetFullPath(User_LocalInfo.SyncPath).Length));
+                listView_syncStatus.Items[itemText].Name = listView_syncStatus.Items[itemText].Text;
             }));
         }
         /// <summary>
@@ -199,7 +223,7 @@ namespace custom_cloud
 
         private void fileSystemWatcher_sync_Created(object sender, System.IO.FileSystemEventArgs e)
         {
-            refreshListFSE(e);
+            //refreshListFSE(e);
         }
 
         private void fileSystemWatcher_sync_Deleted(object sender, System.IO.FileSystemEventArgs e)

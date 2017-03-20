@@ -372,7 +372,7 @@ namespace custom_cloud
         /// <param name="e"></param>
         private void Form_Login_KeyDown(object sender, KeyEventArgs e)
         {
-            //if (e.KeyCode.Equals(Keys.Enter)) btn_login_Click(this, null);
+            if (e.KeyCode.Equals(Keys.Enter)) btn_login_Click(this, null);
         }
         /// <summary>
         /// 改变账户时密码框清空

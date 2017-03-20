@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.listView_syncStatus = new System.Windows.Forms.ListView();
+            this.fileSystemWatcher_main = new System.IO.FileSystemWatcher();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher_main)).BeginInit();
             this.SuspendLayout();
             // 
             // listView_syncStatus
@@ -44,6 +46,17 @@
             this.listView_syncStatus.DrawItem += new System.Windows.Forms.DrawListViewItemEventHandler(this.listView_syncStatus_DrawItem);
             this.listView_syncStatus.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listView_syncStatus_DrawSubItem);
             // 
+            // fileSystemWatcher_main
+            // 
+            this.fileSystemWatcher_main.EnableRaisingEvents = true;
+            this.fileSystemWatcher_main.Filter = "*.ssl*";
+            this.fileSystemWatcher_main.IncludeSubdirectories = true;
+            this.fileSystemWatcher_main.SynchronizingObject = this;
+            this.fileSystemWatcher_main.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_sync_Changed);
+            this.fileSystemWatcher_main.Created += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_sync_Created);
+            this.fileSystemWatcher_main.Deleted += new System.IO.FileSystemEventHandler(this.fileSystemWatcher_sync_Deleted);
+            this.fileSystemWatcher_main.Renamed += new System.IO.RenamedEventHandler(this.fileSystemWatcher_sync_Renamed);
+            // 
             // SyncForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -55,11 +68,13 @@
             this.Name = "SyncForm";
             this.Text = "SyncForm";
             this.SizeChanged += new System.EventHandler(this.SyncForm_SizeChanged);
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher_main)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.ListView listView_syncStatus;
+        private System.IO.FileSystemWatcher fileSystemWatcher_main;
     }
 }

@@ -14,7 +14,7 @@ namespace custom_cloud
         /* 错误码 */
         public static int ERROR_CODE_CONNECT_TIMEOUT = 1;
         /* 错误信息 */
-        public static string ERROR_INFO_CONNECT_TIMEOUT = "连接超时，请检查网络连接\n或服务器地址是否正确";
+        public static string ERROR_INFO_CONNECT_TIMEOUT = "连接超时";
         /* 错误信息表 */
         public Hashtable TableErrorCode = new Hashtable();
         public ErrorCode()

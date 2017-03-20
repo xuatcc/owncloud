@@ -98,9 +98,11 @@ namespace custom_cloud.IOClass
         /// <param name="syncPath"></param>
         /// <param name="line"></param>
         /// <returns></returns>
-        public static string catchFilePath(string syncPath, string line)
+        public static string catchFilePath(string syncPath, string line_str)
         {
-            if (line == null) return "";
+            if (line_str == null) return "";
+            /* 转换成UTF编码 */
+            string line = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(line_str));
             string result = "";
             int startIndex = line.IndexOf(FileSyncedFlag);
             if(startIndex >= 0)result = Path.GetFullPath(syncPath + "/" + line.Substring(startIndex, line.Length - startIndex));
