@@ -167,17 +167,18 @@ namespace custom_cloud
                     }
                     if (!receive_content.Contains(Order.FLAG_START) && !receive_content.Contains(Order.FLAG_STOP))
                     {
+                        Reporter.writeLog(MyConfig.PATH_NET_LOG, "login: enqueue");
                         netHelper.receiveBuffer.Enqueue(receive_content);
                     }
                     if (receive_content.Contains(Order.FLAG_STOP))
                     {
-
+                        Reporter.writeLog(MyConfig.PATH_NET_LOG, "login: fullcontent");
                         while (netHelper.receiveBuffer.Count > 0)
                         {
                             full_content += netHelper.receiveBuffer.Dequeue();
                         }
                         UserInfo userInfo = new UserInfo();
-                        userInfo = JsonHelper.getDeserializeObject<UserInfo>(full_content);
+                        //userInfo = JsonHelper.getDeserializeObject<UserInfo>(full_content);
                         userInfo.UserID = userID;
                         userInfo.Password = Password;
                         userInfo.ServerPort = serverPort;
@@ -187,10 +188,11 @@ namespace custom_cloud
                         //userInfo.login_result = true;
                         
                         Hashtable ht = JsonHelper.getDeserializeObject<Hashtable>(full_content);
-                        if (ht.ContainsKey(UserInfo.NAME_USER_NAME)) userInfo.UserName = ht[UserInfo.NAME_USER_NAME].ToString();
-                        if (ht.ContainsKey(UserInfo.NAME_ICON)) userInfo.Icon = ht[UserInfo.NAME_ICON].ToString();
+                        if (ht.ContainsKey(UserInfo.NAME_USER_NAME))if(ht[UserInfo.NAME_USER_NAME]!=null) userInfo.UserName = ht[UserInfo.NAME_USER_NAME].ToString();
+                        if (ht.ContainsKey(UserInfo.NAME_ICON))if(ht[UserInfo.NAME_ICON]!=null) userInfo.Icon = ht[UserInfo.NAME_ICON].ToString();
                         if (ht.ContainsKey(UserInfo.NAME_LOGIN_RESULT)) userInfo.login_result = (bool)ht[UserInfo.NAME_LOGIN_RESULT];
                         if (ht.ContainsKey(UserInfo.NAME_ERRO_CODE)) userInfo.error_code = int.Parse(ht[UserInfo.NAME_ERRO_CODE].ToString());
+                        if (ht.ContainsKey(UserInfo.NAME_SYNC_SERVER_ADDRESS)) if (ht[UserInfo.NAME_SYNC_SERVER_ADDRESS] != null) userInfo.SyncServerAddress = ht[UserInfo.NAME_SYNC_SERVER_ADDRESS].ToString();
                         
 
                         User_Info = userInfo;

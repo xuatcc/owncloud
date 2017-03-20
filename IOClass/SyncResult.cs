@@ -60,7 +60,7 @@ namespace custom_cloud.IOClass
             else if (content.Contains(KEY_SYNC_SUCCESS)) return RESULT_SYNC_SUCCESS;
             return RESULT_CANNT_ASSESS_SERVER;
         }
-        const string FileSyncedFlag = "_csync_merge_algorithm_visitor:  INSTRUCTION_NONE     client file: ";
+        const string FileSyncedFlag = "client file: ";
         /// <summary>
         /// 文件同步状态
         /// </summary>
@@ -101,11 +101,15 @@ namespace custom_cloud.IOClass
         public static string catchFilePath(string syncPath, string line_str)
         {
             if (line_str == null) return "";
-            /* 转换成UTF编码 */
+            
+            /* 转换成UTF8编码 */
             string line = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(line_str));
+            //Reporter.writeLog("./log/file_line_str.log", line_str);
             string result = "";
-            int startIndex = line.IndexOf(FileSyncedFlag);
-            if(startIndex >= 0)result = Path.GetFullPath(syncPath + "/" + line.Substring(startIndex, line.Length - startIndex));
+            int startIndex = line.IndexOf(Encoding.UTF8.GetString(Encoding.UTF8.GetBytes("csync_walker:  file: "))) + "csync_walker:  file: ".Length;
+            int endIndex = line.IndexOf(Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(" [inode=")));
+            if (startIndex >= 0 && endIndex >= startIndex)result = Path.GetFullPath(syncPath + "/" + line.Substring(startIndex, endIndex - startIndex));
+            //Reporter.writeLog("./log/file_synced_detail.log", result);
             return result;
         }
         /// <summary>

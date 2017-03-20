@@ -383,6 +383,7 @@ namespace custom_cloud
                     }
                     ));
                 }
+                fi.IsReadOnly = false;
                 File.Delete(fi.FullName);
             }
             /* 删除本目录 */

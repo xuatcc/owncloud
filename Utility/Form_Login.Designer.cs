@@ -294,7 +294,6 @@
 
         private System.Windows.Forms.ComboBox comboBox_user;
         private System.Windows.Forms.TextBox textBox_password;
-        private System.Windows.Forms.Button button_login;
         private System.Windows.Forms.Panel panel_loginPanel;
         private System.Windows.Forms.CheckBox checkBox_rememberPW;
         private System.Windows.Forms.Panel panel_title;
@@ -309,5 +308,6 @@
         private System.Windows.Forms.Button button_register;
         private System.Windows.Forms.PictureBox pictureBox_buttonSetting;
         private System.Windows.Forms.Label label_errorInfo;
+        public System.Windows.Forms.Button button_login;
     }
 }

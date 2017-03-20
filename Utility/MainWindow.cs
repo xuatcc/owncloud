@@ -549,7 +549,11 @@ namespace custom_cloud
                 MessageBox.Show("注销失败!");
                 return;
             }
-            if (form_ParentLogin != null) form_ParentLogin.Show();
+            if (form_ParentLogin != null)
+            {
+                form_ParentLogin.Show();
+                form_ParentLogin.button_login.Enabled = true;
+            }
             this.Close();
         }
         /// <summary>
