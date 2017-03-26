@@ -10,19 +10,47 @@ namespace custom_cloud
 {
     public class UserInfo
     {
+        /// <summary>
+        /// 用户ID
+        /// </summary>
         public string UserID;
+        /// <summary>
+        /// 登录用户名
+        /// </summary>
         public string UserName;
+        /// <summary>
+        /// 登录密码
+        /// </summary>
         public string Password;
         //public string SyncDirectory;
         /// <summary>
         /// 登录服务器地址
         /// </summary>
         public string ServerURI;
+        /// <summary>
+        /// 登录服务器端口
+        /// </summary>
         public int ServerPort;
+        /// <summary>
+        /// 用户头像编码
+        /// </summary>
         public string Icon;
+        /// <summary>
+        /// 请求命令
+        /// </summary>
         public string Order;
+        /// <summary>
+        /// 登录结果
+        /// </summary>
         public bool login_result;
+        /// <summary>
+        /// 登录错误码
+        /// </summary>
         public int error_code;
+        /// <summary>
+        /// 文件密钥
+        /// </summary>
+        public String FileKey;
         /// <summary>
         /// 同步服务器地址
         /// </summary>
@@ -37,13 +65,14 @@ namespace custom_cloud
         public static string NAME_LOGIN_RESULT = "login_result";
         public static string NAME_ERRO_CODE = "error_code";
         public static string NAME_SYNC_SERVER_ADDRESS = "SyncServerAddress";
+        public static string NAME_SYNC_FILE_KEY = "FileKey";
         
         public UserInfo()
         {
 
         }
         /// <summary>
-        /// 从服务器获取用户信息
+        /// 从服务器获取用户信息（这个方法废掉了）
         /// </summary>
         /// <returns></returns>
         public static UserInfo getUserInfoFromServer(string ip, int port, string order, string id, string password)

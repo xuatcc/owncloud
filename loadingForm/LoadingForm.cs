@@ -81,11 +81,11 @@ namespace custom_cloud
         /// <param name="obj"></param>
         /// <param name="mea"></param>
         /// 
-        void btn_Any_MouseEnter(object obj, EventArgs ea)
+        protected void btn_Any_MouseEnter(object obj, EventArgs ea)
         {
             if (obj.Equals(button_cancelLogin)) button_cancelLogin.Image = Properties.Resources.enter;
         }
-        void btn_Any_MouseLeave(object obj, EventArgs ea)
+        protected void btn_Any_MouseLeave(object obj, EventArgs ea)
         {
             if (obj.Equals(button_cancelLogin)) button_cancelLogin.Image = Properties.Resources.down;
         }
@@ -94,11 +94,11 @@ namespace custom_cloud
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="ea"></param>
-        void btn_MouseDownEvent(object obj, MouseEventArgs ea)
+        protected void btn_MouseDownEvent(object obj, MouseEventArgs ea)
         {
             if (obj.Equals(button_cancelLogin)) button_cancelLogin.Image = Properties.Resources.down;
         }
-        void btn_MouseUpEvent(object obj, MouseEventArgs ea)
+        protected void btn_MouseUpEvent(object obj, MouseEventArgs ea)
         {
             if (obj.Equals(button_cancelLogin)) button_cancelLogin.Image = Properties.Resources.enter;
         }
@@ -107,7 +107,7 @@ namespace custom_cloud
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="ea"></param>
-        void btn_Click_Event(object obj, EventArgs ea)
+        protected void btn_Click_Event(object obj, EventArgs ea)
         {
             if (netHelper == null) return;
             netHelper.stopConnection();
@@ -118,7 +118,7 @@ namespace custom_cloud
         /// <summary>
         /// 建立通讯
         /// </summary>
-        void initializeConnection()
+        protected void initializeConnection()
         {
             Order order = new Order();
             UserInfo userInfo = new UserInfo();
