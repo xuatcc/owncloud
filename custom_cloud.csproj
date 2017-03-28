@@ -128,10 +128,10 @@
     <Compile Include="Utility\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="myWidget\GlassButton.cs">
+    <Compile Include="Resources\myWidget\GlassButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="myWidget\GlassButton.Designer.cs">
+    <Compile Include="Resources\myWidget\GlassButton.Designer.cs">
       <DependentUpon>GlassButton.cs</DependentUpon>
     </Compile>
     <Compile Include="codeClass\Int32Dec64Convert.cs" />
