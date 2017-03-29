@@ -36,8 +36,9 @@
             this.treeView_contact.CheckBoxes = true;
             this.treeView_contact.Location = new System.Drawing.Point(0, 0);
             this.treeView_contact.Name = "treeView_contact";
-            this.treeView_contact.Size = new System.Drawing.Size(783, 560);
+            this.treeView_contact.Size = new System.Drawing.Size(783, 511);
             this.treeView_contact.TabIndex = 0;
+            this.treeView_contact.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.treeView_contact_AfterCheck);
             // 
             // ContactListForm
             // 
@@ -48,7 +49,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ContactListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "选择分享给好友";
+            this.Text = "选择分享的联系人";
             this.ResumeLayout(false);
 
         }

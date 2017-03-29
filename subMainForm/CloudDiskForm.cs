@@ -7,6 +7,7 @@ using custom_cloud.cmdClass;
 using custom_cloud.dialog;
 using custom_cloud.IOClass;
 using custom_cloud.loadingForm;
+using custom_cloud.subMainForm.subCloudDisk;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -818,6 +819,7 @@ namespace custom_cloud
                 mainWindow.ThreadSync.Start();
             }
             if (obj.Equals(pictureBox_buttonSearchItem)) items_Search();
+            if (obj.Equals(toolStripMenuItem_share)) items_share();
 
             /* Context功能 */
             if (obj.Equals(toolStripMenuItem_listContextRightClickImport)) item_Import();
@@ -845,6 +847,7 @@ namespace custom_cloud
                 modifyViewMode(toolStripMenuItem_listContextRightClickView_smallIcon);
             if (obj.Equals(toolStripMenuItem_listContextRightClickView_detail))
                 modifyViewMode(toolStripMenuItem_listContextRightClickView_detail);
+            if (obj.Equals(toolStripMenuItem_listRightClick_item_share)) items_share();
 
             /* treeview context */
             if (obj.Equals(toolStripMenuItem_treeView_open)) treeView_Open();
@@ -1111,6 +1114,18 @@ namespace custom_cloud
 
             updateSorterPath();
             sortBySortRule();
+        }
+        /// <summary>
+        /// 分享文件
+        /// </summary>
+        void items_share()
+        {
+            ContactListForm clf = new ContactListForm();
+            if(clf.ShowDialog()==DialogResult.OK)
+            {
+
+            }
+            clf.Close();
         }
         /// <summary>
         /// 目录前进

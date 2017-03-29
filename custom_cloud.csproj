@@ -110,6 +110,12 @@
     <Compile Include="subMainForm\SettingUserInfo.Designer.cs">
       <DependentUpon>SettingUserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="subMainForm\subCloudDisk\ContactListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subMainForm\subCloudDisk\ContactListForm.Designer.cs">
+      <DependentUpon>ContactListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="subMainForm\subUserInfo\SettingUserPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,7 @@
     <Compile Include="subMainForm\UserModifyForm.Designer.cs">
       <DependentUpon>UserModifyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="userClass\ContactList.cs" />
     <Compile Include="Utility\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="subMainForm\SettingUserInfo.resx">
       <DependentUpon>SettingUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subMainForm\subCloudDisk\ContactListForm.resx">
+      <DependentUpon>ContactListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="subMainForm\subUserInfo\SettingUserPassword.resx">
       <DependentUpon>SettingUserPassword.cs</DependentUpon>
@@ -397,7 +407,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="subLoginForm\" />
-    <Folder Include="subMainForm\subCloudDisk\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow_drop.png" />

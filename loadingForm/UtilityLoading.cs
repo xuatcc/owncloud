@@ -333,6 +333,76 @@ namespace custom_cloud.loadingForm
             }
         }
         #endregion
+        #region Get contact tree
+        /// <summary>
+        /// 获取联系人信息
+        /// </summary>
+        public void functionGetContactList()
+        {
+
+        }
+        /// <summary>
+        /// 更改用户信息-收到消息后的处理
+        /// </summary>
+        /// <param name="iar"></param>
+        void receiveCallBack_GetContactList(IAsyncResult iar)
+        {
+            try
+            {
+                int REnd = netHelper.SocketClient.EndReceive(iar);
+                string receive_content = Encoding.UTF8.GetString(netHelper.msgByte, 0, REnd);
+                string full_content = "";
+                if (!string.IsNullOrEmpty(receive_content) && receive_content != "")
+                {
+                    Reporter.writeLog(MyConfig.PATH_NET_LOG, "getContactList : " + receive_content);
+                    //Thread.Sleep(2);
+                    if (receive_content.Contains(Order.FLAG_START))
+                    {
+                        netHelper.flag_fullReceive = false;
+                        netHelper.receiveBuffer = new Queue<string>();
+                    }
+                    if (!receive_content.Contains(Order.FLAG_START) && !receive_content.Contains(Order.FLAG_STOP))
+                    {
+                        netHelper.receiveBuffer.Enqueue(receive_content);
+                    }
+                    if (receive_content.Contains(Order.FLAG_STOP))
+                    {
+
+                        while (netHelper.receiveBuffer.Count > 0)
+                        {
+                            full_content += netHelper.receiveBuffer.Dequeue();
+                        }
+                        Hashtable hashtable = JsonHelper.getDeserializeObject<Hashtable>(full_content);
+                        if (hashtable != null)
+                        {
+                            if (hashtable.ContainsKey("contact_result"))
+                            {
+                                bool result = (bool)hashtable["contact_result"];
+                                if (result)
+                                {
+                                    MethodInvoker methodInvoker = new MethodInvoker(updateUserInfoSuccess);
+                                    BeginInvoke(methodInvoker);
+                                }
+                            }
+                        }
+                    }
+                    netHelper.beginReceiveCallBack();
+                }
+
+            }
+            catch (Exception e)
+            {
+                Reporter.reportBug(e.ToString());
+            }
+        }
+        /// <summary>
+        /// 获取联系人操作计时器
+        /// </summary>
+        void thread_Timer_GetContactList()
+        {
+
+        }
+        #endregion
         #region Logout
         /// <summary>
         /// 功能-注销

@@ -140,24 +140,6 @@ namespace custom_cloud.cmdClass
             process.Start();
             process.WaitForExit();
         }
-        /// <summary>
-        /// 解密用户本地信息
-        /// </summary>
-        /// <param name="source"></param>
-        public static void discryptUserLocalInfo(string source)
-        {
-            if (!File.Exists(MyConfig.PATH_ECRYTION)) throw new Exception("can't find ecryption!");
-            /* 执行语句 */
-            string sslComand = (" -k " + MyConfig.PASSWORD_USER_FILE_ENCRYPTION + " -in " + source + " -out " + source);
-            Process process = new Process();
-            process.StartInfo.FileName = MyConfig.PATH_ECRYTION;
-            process.StartInfo.Arguments = "enc -d -aes-128-cbc" + sslComand;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardInput = true;
-            process.StartInfo.RedirectStandardError = true;
-            process.Start();
-            process.WaitForExit();
-        }
+        
     }
 }
