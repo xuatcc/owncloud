@@ -40,8 +40,8 @@ namespace custom_cloud
         /// 用户本地信息
         /// </summary>
         UserLocalInfo userLocalInfo = new UserLocalInfo();
-        int InitialFormWidth = 1024;
-        int InitialFormHeight = 632;
+        //int InitialFormWidth = 1024;
+        //int InitialFormHeight = 632;
         /// <summary>
         /// 同步线程
         /// </summary>

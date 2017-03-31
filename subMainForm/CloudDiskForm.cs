@@ -60,7 +60,7 @@ namespace custom_cloud
             {
                 CurrentPath = value;
                 //initializeConfig();
-                initializeWidget();
+                //initializeWidget();
             }
         }
         /// <summary>
