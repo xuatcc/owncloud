@@ -72,7 +72,7 @@ namespace custom_cloud
         /// <summary>
         /// 加密工具的位置
         /// </summary>
-        public static string PATH_ECRYTION = @"./tool/AESHelper.exe";
+        public static string PATH_ECRYTION = @"./tool/openssl.exe";
         /// <summary>
         /// 解密文件缓冲目录
         /// </summary>

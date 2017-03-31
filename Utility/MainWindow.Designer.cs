@@ -226,6 +226,7 @@
             this.pictureBox_buttonNet.Size = new System.Drawing.Size(94, 94);
             this.pictureBox_buttonNet.TabIndex = 9;
             this.pictureBox_buttonNet.TabStop = false;
+            this.pictureBox_buttonNet.Visible = false;
             this.pictureBox_buttonNet.Click += new System.EventHandler(this.btn_function_Click);
             this.pictureBox_buttonNet.MouseEnter += new System.EventHandler(this.btn_function_MouseEnter);
             this.pictureBox_buttonNet.MouseLeave += new System.EventHandler(this.btn_function_MouseLeave);

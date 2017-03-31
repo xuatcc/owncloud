@@ -21,7 +21,7 @@ namespace custom_cloud
         /* 子窗体 */
         CloudDiskForm cloudDiskForm;
         ShareForm shareForm = new ShareForm();
-        SyncForm syncForm = new SyncForm();
+        //SyncForm syncForm = new SyncForm();
         SettingForm settingForm = new SettingForm();
         Point offset;
         /// <summary>
@@ -77,10 +77,10 @@ namespace custom_cloud
         void initializeWidget()
         {
 
-            cloudDiskForm = new CloudDiskForm(this, syncForm);
+            cloudDiskForm = new CloudDiskForm(this, null);
             cloudDiskForm.TopLevel = false;
             shareForm.TopLevel = false;
-            syncForm.TopLevel = false;
+            //syncForm.TopLevel = false;
             //settingForm.TopLevel = false;
             selectFormToShow();
             
@@ -137,7 +137,7 @@ namespace custom_cloud
             if (obj.Equals(pictureBox_buttonSelectDisk))
             {
                 shareForm.Hide();
-                syncForm.Hide();
+                //syncForm.Hide();
                 cloudDiskForm.Show();
 
                 ButtonSelected = pictureBox_buttonSelectDisk;
@@ -150,7 +150,7 @@ namespace custom_cloud
             }
             if (obj.Equals(pictureBox_buttonShare))
             {
-                syncForm.Hide();
+                //syncForm.Hide();
                 cloudDiskForm.Hide();
                 shareForm.Show();
 
@@ -166,7 +166,7 @@ namespace custom_cloud
             {
                 cloudDiskForm.Hide();
                 shareForm.Hide();
-                syncForm.Show();
+                //syncForm.Show();
 
                 ButtonSelected = pictureBox_buttonNet;
 
@@ -229,7 +229,7 @@ namespace custom_cloud
                 FileTree fileTree = cloudDiskForm.File_Tree;
 
 
-                cloudDiskForm = new CloudDiskForm(this, syncForm);
+                cloudDiskForm = new CloudDiskForm(this, null);
                 cloudDiskForm.TopLevel = false;
                 panel_mainForm.Controls.RemoveByKey(cloudDiskForm.Name);
 
@@ -376,10 +376,10 @@ namespace custom_cloud
             
             panel_mainForm.Controls.Add(cloudDiskForm);
             panel_mainForm.Controls.Add(shareForm);
-            panel_mainForm.Controls.Add(syncForm);
+            //panel_mainForm.Controls.Add(syncForm);
             cloudDiskForm.setUserInfo(userInfo);
             cloudDiskForm.Show();
-            syncForm.setInfo(userLocalInfo);
+            //syncForm.setInfo(userLocalInfo);
         }
         /// <summary>
         /// 按钮点击事件
@@ -421,19 +421,21 @@ namespace custom_cloud
                     if (tempExitCode==0)
                     {
                         setCloudDiskFormSyncLabel(syncResult);
+                        /*
                         if (syncResult.Equals(SyncResult.RESULT_SYNC_SUCCESS))
                         {
-                            setSyncFormFileStatus(SyncResult.getSyncFileResult(userLocalInfo.SyncPath), SyncResult.FileSyncStatus.Success);
+                            //setSyncFormFileStatus(SyncResult.getSyncFileResult(userLocalInfo.SyncPath), SyncResult.FileSyncStatus.Success);
                         }
                         else
                         {
-                            setSyncFormFileStatus(SyncResult.getSyncFileResult(userLocalInfo.SyncPath), SyncResult.FileSyncStatus.Fail);
+                            //setSyncFormFileStatus(SyncResult.getSyncFileResult(userLocalInfo.SyncPath), SyncResult.FileSyncStatus.Fail);
                         }
+                        */
                     }
                     else
                     {
                         setCloudDiskFormSyncLabel("同步进程未能正常执行");
-                        setSyncFormFileStatus(SyncResult.getSyncFileResult(userLocalInfo.SyncPath), SyncResult.FileSyncStatus.Fail);
+                        //setSyncFormFileStatus(SyncResult.getSyncFileResult(userLocalInfo.SyncPath), SyncResult.FileSyncStatus.Fail);
                     }
                     Thread.Sleep(2000);
                     /* 清除同步记录 */
@@ -474,11 +476,11 @@ namespace custom_cloud
         /// <param name="queue"></param>
         protected void setSyncFormFileStatus(Queue<string> queue, SyncResult.FileSyncStatus fss)
         {
-            if (syncForm == null) return;
-            syncForm.Invoke(new MethodInvoker(delegate
-            {
-                syncForm.setFileStatus(queue, fss);
-            }));
+            //if (syncForm == null) return;
+           // syncForm.Invoke(new MethodInvoker(delegate
+            //{
+           //     syncForm.setFileStatus(queue, fss);
+           // }));
         }
         /// <summary>
         /// 窗体大小改变事件
@@ -508,8 +510,8 @@ namespace custom_cloud
             cloudDiskForm.Height = panel_mainForm.Height;
             shareForm.Width = panel_mainForm.Width;
             shareForm.Height = panel_mainForm.Height;
-            syncForm.Width = panel_mainForm.Width;
-            syncForm.Height = panel_mainForm.Height;
+            //syncForm.Width = panel_mainForm.Width;
+            //syncForm.Height = panel_mainForm.Height;
         }
         /// <summary>
         /// 最小化窗体

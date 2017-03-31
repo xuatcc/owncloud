@@ -173,12 +173,12 @@ namespace custom_cloud
         /// <summary>
         /// 指向同步窗体的指针
         /// </summary>
-        SyncForm syncForm;
+        //SyncForm syncForm;
         public CloudDiskForm(MainWindow mw, SyncForm sf)
         {
             InitializeComponent();
             mainWindow = mw;
-            syncForm = sf;
+            //syncForm = sf;
             //testFileTree();
         }
         public void setUserInfo(UserInfo userInfo)
@@ -508,7 +508,7 @@ namespace custom_cloud
             /* 更改当前目录 */
             textBox_directoryInfo.Text = "Home:" + CurrentPath.Substring(Path.GetFullPath(SyncPath).Length);
             /* 刷新文件同步列表 */
-            if (syncForm != null) syncForm.refreshFileList(SyncPath, SyncPath);
+            //if (syncForm != null) syncForm.refreshFileList(SyncPath, SyncPath);
         }
         /// <summary>
         /// 按名字排序接口
