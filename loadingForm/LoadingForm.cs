@@ -19,7 +19,7 @@ namespace custom_cloud
         public int serverPort;
         public string serverURI;
         public UserInfo User_Info = new UserInfo();
-        int TimeToLive = 15000;
+        int TimeToLive = 10000;
         Thread Timer;
         public LoadingForm()
         {
