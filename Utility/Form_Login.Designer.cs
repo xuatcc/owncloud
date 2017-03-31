@@ -200,6 +200,7 @@
             this.checkBox_autoLogin.TabIndex = 3;
             this.checkBox_autoLogin.Text = "自动登录";
             this.checkBox_autoLogin.UseVisualStyleBackColor = true;
+            this.checkBox_autoLogin.Visible = false;
             // 
             // checkBox_rememberPW
             // 
