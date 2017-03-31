@@ -868,7 +868,7 @@ namespace custom_cloud
                 string[] fileNames = openFileDialog_main.FileNames;
 
                 LoadEncryption loadEncryption = new LoadEncryption();
-                loadEncryption.importItem(fileNames, CurrentPath);
+                loadEncryption.importItem(fileNames, CurrentPath, User_Info.FileKey);
                 loadEncryption.ShowDialog();
 
                 
@@ -917,7 +917,7 @@ namespace custom_cloud
                     keyNames.Enqueue(listView_explorer.SelectedItems[i].Name);
                 }
                 LoadDisCryption loadDisCryption = new LoadDisCryption();
-                loadDisCryption.exportFiles(fileNames, keyNames, destination);
+                loadDisCryption.exportFiles(fileNames, keyNames, destination, User_Info.FileKey);
                 loadDisCryption.ShowDialog();
             }
         }
@@ -1049,7 +1049,7 @@ namespace custom_cloud
                         openFileName.Enqueue(path);
                         openFileKey.Enqueue(listView_explorer.Items[i].Name);
                         LoadDisCryption loadDisCryption = new LoadDisCryption();
-                        loadDisCryption.exportFiles(openFileName, openFileKey, MyConfig.PATH_FILE_BUFFER);
+                        loadDisCryption.exportFiles(openFileName, openFileKey, MyConfig.PATH_FILE_BUFFER, User_Info.FileKey);
                         loadDisCryption.ShowDialog();
                         //string fileName = CMDComand.discryptFile(path, MyConfig.PATH_FILE_BUFFER + "/" + listView_explorer.Items[i].Text);
                         //while (!File.Exists(fileName)) Application.DoEvents();
@@ -1600,7 +1600,7 @@ namespace custom_cloud
                 string[] fileNames = openFileDialog_main.FileNames;
 
                 LoadEncryption loadEncryption = new LoadEncryption();
-                loadEncryption.importItem(fileNames, MyConfig.getPathByKey(treeView_directoryTree.SelectedNode.Name));
+                loadEncryption.importItem(fileNames, MyConfig.getPathByKey(treeView_directoryTree.SelectedNode.Name), User_Info.FileKey);
                 loadEncryption.ShowDialog();
 
 
@@ -1655,7 +1655,7 @@ namespace custom_cloud
                     keyNames.Enqueue(treeView_directoryTree.SelectedNode.Name);
                 }
                 LoadDisCryption loadDisCryption = new LoadDisCryption();
-                loadDisCryption.exportFiles(fileNames, keyNames, destination);
+                loadDisCryption.exportFiles(fileNames, keyNames, destination, User_Info.FileKey);
                 loadDisCryption.ShowDialog();
             }
         }
@@ -1732,7 +1732,7 @@ namespace custom_cloud
             {
                 string[] fileNames = (string[])e.Data.GetData(DataFormats.FileDrop, true);
                 LoadEncryption loadEncryption = new LoadEncryption();
-                loadEncryption.importItem(fileNames, CurrentPath);
+                loadEncryption.importItem(fileNames, CurrentPath, User_Info.FileKey);
                 loadEncryption.ShowDialog();
             }
             catch(Exception ex)
@@ -1791,7 +1791,7 @@ namespace custom_cloud
             }
             if (!Directory.Exists(MyConfig.PATH_FILE_BUFFER)) Directory.CreateDirectory(MyConfig.PATH_FILE_BUFFER);
             LoadDisCryption loadDisCryption = new LoadDisCryption();
-            loadDisCryption.exportFiles(fileNames, keyNames, Path.GetFullPath(MyConfig.PATH_FILE_BUFFER));
+            loadDisCryption.exportFiles(fileNames, keyNames, Path.GetFullPath(MyConfig.PATH_FILE_BUFFER), User_Info.FileKey);
             loadDisCryption.ShowDialog();
             string[] files = new string[listView_explorer.SelectedItems.Count];
             //bool temp = false;

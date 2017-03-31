@@ -275,7 +275,7 @@ namespace custom_cloud
         /// </summary>
         /// <param name="source"></param>
         /// <param name="destination"></param>
-        public static string importDirectory(string source, string destination, Label labelFileStatus)
+        public static string importDirectory(string source, string destination, Label labelFileStatus, string fileKey)
         {
             if (!Directory.Exists(source)) return null;
             /* 遍历source目录下文件夹 */
@@ -295,7 +295,7 @@ namespace custom_cloud
             /* 递归 */
             foreach (DirectoryInfo di in directoryInfos)
             {
-                importDirectory(di.FullName, newFolderName + "/" + di.Name, labelFileStatus);
+                importDirectory(di.FullName, newFolderName + "/" + di.Name, labelFileStatus, fileKey);
             }
             /* 复制本目录文件 */
             FileInfo[] fileInfo = directoryInfo.GetFiles();
@@ -312,7 +312,7 @@ namespace custom_cloud
                 }
                 File.Copy(fi.FullName, newFolderName + "/" + fi.Name);
                 /* 加密导入 */
-                CMDComand.encryptFile(newFolderName + "/" + fi.Name, newFolderName + "/" + fi.Name);
+                CMDComand.encryptFile(newFolderName + "/" + fi.Name, newFolderName + "/" + fi.Name, fileKey);
             }
             return newFolderName;
         }
@@ -395,7 +395,7 @@ namespace custom_cloud
         /// <param name="itemNames"></param>
         /// <param name="keyNames"></param>
         /// <param name="destination"></param>
-        public static void exportItems(Queue<string> itemNames, Queue<string> keyNames, string destination, Label labelFileStatus)
+        public static void exportItems(Queue<string> itemNames, Queue<string> keyNames, string destination, Label labelFileStatus, string fileKey)
         {
             if (itemNames.Count != keyNames.Count) return;
             string itemName;
@@ -428,7 +428,7 @@ namespace custom_cloud
                             ++counter;
                             destName = destination + "/" + Path.GetFileNameWithoutExtension(oringinName) + "_" + counter + Path.GetExtension(oringinName);
                         }
-                        CMDComand.discryptFile(fileName, destName);
+                        CMDComand.discryptFile(fileName, destName, fileKey);
                     }
                     //CMDComand.discryptFile(fileName, destination + "/" + Path.GetFileName(fileName));
                 }
@@ -456,7 +456,7 @@ namespace custom_cloud
                             keys.Enqueue(FileTree.FOLDER_IDENTIFY_NAME);
                         }
                         /* 递归 */
-                        exportItems(names, keys, destination + "/" + Path.GetFileName(itemName), labelFileStatus);
+                        exportItems(names, keys, destination + "/" + Path.GetFileName(itemName), labelFileStatus, fileKey);
                     }
                 }
             }

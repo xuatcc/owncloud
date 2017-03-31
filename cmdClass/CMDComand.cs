@@ -50,10 +50,10 @@ namespace custom_cloud.cmdClass
         /// </summary>
         /// <param name="fileSource"></param>
         /// <param name="fileTarget"></param>
-        public static string encryptFile(string fileSource, string fileTarget)
+        public static string encryptFile(string fileSource, string fileTarget, string fileKey)
         {
             if (!File.Exists(MyConfig.PATH_FILE_ENCRYPTION)) throw new Exception("can't find ecryption!");
-            string sslComand = (" -k " + MyConfig.PASSWORD_FILE_ENCRYPTION + " -in " + fileSource + " -out " + fileTarget + MyConfig.EXTEND_NAME_ENCRYP_FILE);
+            string sslComand = (" -k " + fileKey + " -in " + fileSource + " -out " + fileTarget + MyConfig.EXTEND_NAME_ENCRYP_FILE);
             Process process = new Process();
             process.StartInfo.FileName = MyConfig.PATH_ECRYTION;
             process.StartInfo.Arguments = "enc -e -aes-128-cbc" + sslComand;
@@ -71,13 +71,13 @@ namespace custom_cloud.cmdClass
         /// </summary>
         /// <param name="fileSource"></param>
         /// <param name="fileTarget"></param>
-        public static string discryptFile(string fileSource, string fileTarget)
+        public static string discryptFile(string fileSource, string fileTarget, string fileKey)
         {
             if (!File.Exists(MyConfig.PATH_ECRYTION)) throw new Exception("can't find ecryption!");
             //if (!File.Exists(fileSource)) return "";
             if (!Directory.Exists(MyConfig.PATH_FILE_BUFFER)) Directory.CreateDirectory(MyConfig.PATH_FILE_BUFFER);
             /* 执行语句 */
-            string sslComand = (" -k " + MyConfig.PASSWORD_FILE_ENCRYPTION + " -in " + fileSource + " -out " + fileTarget);
+            string sslComand = (" -k " + fileKey + " -in " + fileSource + " -out " + fileTarget);
             Process process = new Process();
             process.StartInfo.FileName = MyConfig.PATH_ECRYTION;
             process.StartInfo.Arguments = "enc -d -aes-128-cbc" + sslComand;

@@ -194,6 +194,7 @@
             this.label_sync.Size = new System.Drawing.Size(40, 16);
             this.label_sync.TabIndex = 12;
             this.label_sync.Text = "同步";
+            this.label_sync.Visible = false;
             // 
             // label_share
             // 

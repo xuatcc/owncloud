@@ -26,6 +26,10 @@ namespace custom_cloud.loadingForm
         Thread ThreadExport;
         Queue<string> FileNames = new Queue<string>();
         Queue<string> KeyNames = new Queue<string>();
+        /// <summary>
+        /// 文件密钥
+        /// </summary>
+        string fileKey;
         string Destination;
         public LoadDisCryption()
         {
@@ -90,8 +94,13 @@ namespace custom_cloud.loadingForm
         /// </summary>
         /// <param name="fileNames"></param>
         /// <param name="keyNames"></param>
-        public void exportFiles(Queue<string> fileNames, Queue<string> keyNames, string destination)
+        public void exportFiles(Queue<string> fileNames, Queue<string> keyNames, string destination, string fileKey)
         {
+            if(fileKey == null)
+            {
+                closeForm();
+            }
+            this.fileKey = fileKey;
             label_status.Text = "正在解密文件";
             FileNames = fileNames;
             KeyNames = keyNames;
@@ -106,7 +115,7 @@ namespace custom_cloud.loadingForm
         {
             try
             {
-                FileTree.exportItems(FileNames, KeyNames, Destination, label_fileStatus);
+                FileTree.exportItems(FileNames, KeyNames, Destination, label_fileStatus, fileKey);
                 MethodInvoker methodInvoker = new MethodInvoker(closeForm);
                 BeginInvoke(methodInvoker);
             }
@@ -150,6 +159,7 @@ namespace custom_cloud.loadingForm
         {
             if (ThreadExport != null)
             {
+                ThreadExport.Abort();
                 this.Close();
             }
         }

@@ -19,6 +19,10 @@ namespace custom_cloud.loadingForm
         string CurrentPath;
         string Source;
         string Target;
+        /// <summary>
+        /// 用户文件密钥
+        /// </summary>
+        string fileKey;
         public LoadEncryption()
         {
             InitializeComponent();
@@ -84,9 +88,14 @@ namespace custom_cloud.loadingForm
         /// <param name="fileTree"></param>
         /// <param name="currentPath"></param>
         /// <returns></returns>
-        public void importItem(string[] itemsPath, string currentPath)
+        public void importItem(string[] itemsPath, string currentPath, string fileKey)
         {
             if (itemsPath == null) closeForm();
+            if (fileKey == null)
+            {
+                closeForm();
+            }
+            this.fileKey = fileKey;
             ItemsPath= itemsPath;
             progressBar_main.Visible = false;
             label_fileStatus.Visible = true;
@@ -110,7 +119,7 @@ namespace custom_cloud.loadingForm
                         newFileName = FileTree.importFile(ItemsPath[i],
                            CurrentPath + "/" + Path.GetFileName(ItemsPath[i]));
                         /* 加密 */
-                        CMDComand.encryptFile(newFileName, newFileName);
+                        CMDComand.encryptFile(newFileName, newFileName, fileKey);
                         label_fileStatus.Invoke(new MethodInvoker(delegate
                         {
                             label_fileStatus.Text = "正在处理: " + Path.GetFileName(ItemsPath[i]);
@@ -120,7 +129,7 @@ namespace custom_cloud.loadingForm
                     }
                     else if (Directory.Exists(ItemsPath[i]))
                     {
-                        FileTree.importDirectory(ItemsPath[i], CurrentPath + "/" + Path.GetFileName(ItemsPath[i]), label_fileStatus);
+                        FileTree.importDirectory(ItemsPath[i], CurrentPath + "/" + Path.GetFileName(ItemsPath[i]), label_fileStatus, fileKey);
                         
                     }
                     
@@ -155,7 +164,7 @@ namespace custom_cloud.loadingForm
         {
             try
             {
-                FileTree.importDirectory(Source, Target, label_fileStatus);
+                FileTree.importDirectory(Source, Target, label_fileStatus, fileKey);
                 MethodInvoker methodInvoker = new MethodInvoker(closeForm);
                 BeginInvoke(methodInvoker);
             }
