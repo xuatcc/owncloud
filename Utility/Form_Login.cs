@@ -138,7 +138,7 @@ namespace custom_cloud
         /// <param name="ea"></param>
         void btn_login_Click(object obj, EventArgs ea)
         {
-            
+            /*
             string user = comboBox_user.Text;
             // matching password
             string password_input = textBox_password.Text;
@@ -178,9 +178,9 @@ namespace custom_cloud
             {
                 button_login.Enabled = true;
             }
-            
+            */
             /* 测试主窗体 */
-            /*
+            
             User_Info.UserID = comboBox_user.Text;
             User_Info.UserName = "Doge";
             User_Info.Password = textBox_password.Text;
@@ -192,7 +192,7 @@ namespace custom_cloud
 
             MyConfig.writeUserTrack(comboBox_user.Text);
             navigateToMainWindow(User_Info);
-            */
+            
             
         }
         /// <summary>

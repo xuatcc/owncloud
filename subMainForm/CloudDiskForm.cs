@@ -890,7 +890,7 @@ namespace custom_cloud
                 LoadEncryption loadEncryption = new LoadEncryption();
                 //loadEncryption.Show();
                 loadEncryption.importFolder(folderBrowserDialog_main.SelectedPath,
-                    CurrentPath + "/" + Path.GetFileName(folderBrowserDialog_main.SelectedPath));
+                    CurrentPath + "/" + Path.GetFileName(folderBrowserDialog_main.SelectedPath), User_Info.FileKey);
                 loadEncryption.ShowDialog();
                 //更新文件树
                 updateFileTree();
@@ -1623,7 +1623,7 @@ namespace custom_cloud
                 LoadEncryption loadEncryption = new LoadEncryption();
                 //loadEncryption.Show();
                 loadEncryption.importFolder(folderBrowserDialog_main.SelectedPath,
-                    MyConfig.getPathByKey(treeView_directoryTree.SelectedNode.Name) + "/" + Path.GetFileName(folderBrowserDialog_main.SelectedPath));
+                    MyConfig.getPathByKey(treeView_directoryTree.SelectedNode.Name) + "/" + Path.GetFileName(folderBrowserDialog_main.SelectedPath), User_Info.FileKey);
                 loadEncryption.ShowDialog();
                 //更新文件树
                 updateFileTree();

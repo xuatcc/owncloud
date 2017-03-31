@@ -400,9 +400,26 @@ namespace custom_cloud.loadingForm
         /// </summary>
         void thread_Timer_GetContactList()
         {
-
+            try
+            {
+                int TimeToLive = 10000;
+                int time_clock = 0;
+                int time_step = 100;
+                while (time_clock < TimeToLive)
+                {
+                    time_clock += time_step;
+                    Thread.Sleep(time_step);
+                }
+                /* 超时操作 */
+                MethodInvoker methodInvoker = new MethodInvoker(logOutFail);
+                BeginInvoke(methodInvoker);
+            }
+            catch (Exception e)
+            {
+                Reporter.reportBug(e.ToString());
+            }
         }
-        #endregion
+        #endregion Get Contact Tree
         #region Logout
         /// <summary>
         /// 功能-注销
@@ -436,6 +453,7 @@ namespace custom_cloud.loadingForm
             this.Close();
         }
         #endregion
+        
         #region NetWork
         /// <summary>
         /// 初始化网络

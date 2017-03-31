@@ -148,8 +148,13 @@ namespace custom_cloud.loadingForm
         /// <param name="source"></param>
         /// <param name="target"></param>
         /// <returns></returns>
-        public void importFolder(string source, string target)
+        public void importFolder(string source, string target, string fileKey)
         {
+            if(fileKey == null)
+            {
+                closeForm();
+            }
+            this.fileKey = fileKey;
             Source = source;
             Target = target;
             progressBar_main.Visible = false;

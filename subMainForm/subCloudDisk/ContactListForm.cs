@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace custom_cloud.subMainForm.subCloudDisk
@@ -15,6 +16,7 @@ namespace custom_cloud.subMainForm.subCloudDisk
     /// </summary>
     public partial class ContactListForm : Form
     {
+
         public ContactListForm()
         {
             InitializeComponent();
@@ -100,5 +102,36 @@ namespace custom_cloud.subMainForm.subCloudDisk
                 }
             }
         }
+
+        private void button_confirm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_confirm_MouseEnter(object sender, EventArgs e)
+        {
+            button_confirm.Image = Properties.Resources.enter;
+        }
+
+        private void button_confirm_MouseLeave(object sender, EventArgs e)
+        {
+            button_confirm.Image = Properties.Resources.down;
+        }
+
+        private void button_confirm_MouseDown(object sender, MouseEventArgs e)
+        {
+            button_confirm.Image = Properties.Resources.down;
+        }
+
+        private void button_confirm_MouseUp(object sender, MouseEventArgs e)
+        {
+            button_confirm.Image = Properties.Resources.enter;
+        }
+        #region function
+        protected void getContactListFromServer()
+        {
+
+        }
+        #endregion function
     }
 }
