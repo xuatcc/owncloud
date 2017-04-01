@@ -1122,11 +1122,12 @@ namespace custom_cloud
         {
             ContactListForm clf = new ContactListForm(User_Info);
             clf.setShareFilePath(null);
+            if (clf.IsDisposed) return;
             if(clf.ShowDialog()==DialogResult.OK)
             {
 
             }
-            clf.Close();
+            if(clf != null)clf.Close();
         }
         /// <summary>
         /// 目录前进

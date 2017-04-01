@@ -87,6 +87,10 @@ namespace custom_cloud.loadingForm
         /// 回调消息列表
         /// </summary>
         public Hashtable CallBackTable;
+        /// <summary>
+        /// 回调消息
+        /// </summary>
+        public string CallBackMessage;
 
         public UtilityLoading()
         {
@@ -388,15 +392,16 @@ namespace custom_cloud.loadingForm
                         {
                             full_content += netHelper.receiveBuffer.Dequeue();
                         }
-                        Hashtable hashtable = JsonHelper.getDeserializeObject<Hashtable>(full_content);
-                        if (hashtable != null)
+                        //Hashtable hashtable = JsonHelper.getDeserializeObject<Hashtable>(full_content);
+                        //if (hashtable != null)
                         {
-                            if (hashtable.ContainsKey("contact_result"))
+                            //if (hashtable.ContainsKey("contact_result"))
                             {
-                                bool result = (bool)hashtable["contact_result"];
-                                if (result)
+                                //bool result = (bool)hashtable["contact_result"];
+                                //if (result)
                                 {
-                                    CallBackTable = hashtable;
+                                    //CallBackTable = hashtable;
+                                    CallBackMessage = full_content;
                                     MethodInvoker methodInvoker = new MethodInvoker(updateUserInfoSuccess);
                                     BeginInvoke(methodInvoker);
                                 }

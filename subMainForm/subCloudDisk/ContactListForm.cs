@@ -158,14 +158,18 @@ namespace custom_cloud.subMainForm.subCloudDisk
             if (userInfo != null) utilityLoading.functionGetContactList(userInfo);
             if (utilityLoading.ShowDialog() == DialogResult.OK)
             {
-                hashtable = utilityLoading.CallBackTable;
+                //hashtable = utilityLoading.CallBackTable;
+                string callback = utilityLoading.CallBackMessage;
+                ContactList cl = JsonHelper.getDeserializeObject<ContactList>(callback);
                 /* 创建联系人树 */
-                setContactTree(hashtable);
+                //setContactTree(hashtable);
             }
             else
             {
                 MessageBox.Show("无法获取联系人信息!");
+                
                 this.DialogResult = DialogResult.No;
+                this.Close();
             }
         }
         /// <summary>

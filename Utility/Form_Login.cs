@@ -88,13 +88,13 @@ namespace custom_cloud
         {
             addItemToCombox();
 
-            button_login.Click += new EventHandler(btn_login_Click);
+            //button_login.Click += new EventHandler(btn_login_Click);
             /* 标题框 */
             label_errorInfo.Visible = false;
 
             pictureBox_buttonClose.BackColor = Color.Transparent;
             pictureBox_buttonClose.Parent = panel_title;
-            pictureBox_buttonClose.Click += new EventHandler(btn_formClose_Click);
+            //pictureBox_buttonClose.Click += new EventHandler(btn_formClose_Click);
             
             pictureBox_buttonMinimize.BackColor = Color.Transparent;
             pictureBox_buttonMinimize.Parent = panel_title;
@@ -138,7 +138,7 @@ namespace custom_cloud
         /// <param name="ea"></param>
         void btn_login_Click(object obj, EventArgs ea)
         {
-            /*
+            
             string user = comboBox_user.Text;
             // matching password
             string password_input = textBox_password.Text;
@@ -178,9 +178,9 @@ namespace custom_cloud
             {
                 button_login.Enabled = true;
             }
-            */
+            if (loadingForm != null) loadingForm.Close();
             /* 测试主窗体 */
-            
+            /*
             User_Info.UserID = comboBox_user.Text;
             User_Info.UserName = "Doge";
             User_Info.Password = textBox_password.Text;
@@ -192,7 +192,7 @@ namespace custom_cloud
 
             MyConfig.writeUserTrack(comboBox_user.Text);
             navigateToMainWindow(User_Info);
-            
+            */
             
         }
         /// <summary>

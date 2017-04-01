@@ -91,6 +91,7 @@
             this.button_login.TabIndex = 2;
             this.button_login.Text = "登录";
             this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.Click += new System.EventHandler(this.btn_login_Click);
             this.button_login.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDownEvent);
             this.button_login.MouseEnter += new System.EventHandler(this.btn_Any_MouseEnter);
             this.button_login.MouseLeave += new System.EventHandler(this.btn_Any_MouseLeave);
@@ -258,6 +259,7 @@
             this.pictureBox_buttonClose.Size = new System.Drawing.Size(30, 30);
             this.pictureBox_buttonClose.TabIndex = 0;
             this.pictureBox_buttonClose.TabStop = false;
+            this.pictureBox_buttonClose.Click += new System.EventHandler(this.btn_formClose_Click);
             this.pictureBox_buttonClose.MouseEnter += new System.EventHandler(this.btn_Any_MouseEnter);
             this.pictureBox_buttonClose.MouseLeave += new System.EventHandler(this.btn_Any_MouseLeave);
             // 
