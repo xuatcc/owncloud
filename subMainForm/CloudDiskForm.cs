@@ -1120,7 +1120,8 @@ namespace custom_cloud
         /// </summary>
         void items_share()
         {
-            ContactListForm clf = new ContactListForm();
+            ContactListForm clf = new ContactListForm(User_Info);
+            clf.setShareFilePath(null);
             if(clf.ShowDialog()==DialogResult.OK)
             {
 

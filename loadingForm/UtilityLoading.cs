@@ -83,6 +83,11 @@ namespace custom_cloud.loadingForm
         Image SmallFolderIcon;
         Image LargeDefaultFileIcon;
         Image SmallDefaultFileIcon;
+        /// <summary>
+        /// 回调消息列表
+        /// </summary>
+        public Hashtable CallBackTable;
+
         public UtilityLoading()
         {
             InitializeComponent();
@@ -228,10 +233,11 @@ namespace custom_cloud.loadingForm
         #region Modify User Info
         public void functionUpdateUserInfo(UserInfo userInfo)
         {
-            /* 建立与服务器的连接 */
-            initializeNetWork(userInfo.ServerURI, userInfo.ServerPort);
+            if (userInfo == null) return;
             UserInfo user_info = userInfo;
             user_info.Order = Order._ORDER_UPDATE_USER_INFO;
+            /* 建立与服务器的连接 */
+            initializeNetWork(userInfo.ServerURI, userInfo.ServerPort, receiveCallBack_ModifyUserInfo);
             /* 发送更改用户信息报文 */
             netHelper.sendJsonBlock(user_info);
             /* 启动计时 */
@@ -293,6 +299,7 @@ namespace custom_cloud.loadingForm
                                 bool result = (bool)hashtable["update_result"];
                                 if (result)
                                 {
+                                    CallBackTable = hashtable;
                                     MethodInvoker methodInvoker = new MethodInvoker(updateUserInfoSuccess);
                                     BeginInvoke(methodInvoker);
                                 }
@@ -337,12 +344,21 @@ namespace custom_cloud.loadingForm
         /// <summary>
         /// 获取联系人信息
         /// </summary>
-        public void functionGetContactList()
+        public void functionGetContactList(UserInfo userInfo)
         {
-
+            if (userInfo == null) return;
+            UserInfo user_info = userInfo;
+            user_info.Order = Order._ORDER_GET_CONTACT;
+            /* 建立与服务器的连接 */
+            initializeNetWork(userInfo.ServerURI, userInfo.ServerPort, receiveCallBack_GetContactList);
+            /* 发送获取联系人列表的报文 */
+            netHelper.sendJsonBlock(user_info);
+            /* 启动计时 */
+            ThreadUtility = new Thread(thread_Timer_GetContactList);
+            ThreadUtility.Start();
         }
         /// <summary>
-        /// 更改用户信息-收到消息后的处理
+        /// 获取联系人列表后-收到消息后的处理
         /// </summary>
         /// <param name="iar"></param>
         void receiveCallBack_GetContactList(IAsyncResult iar)
@@ -380,6 +396,7 @@ namespace custom_cloud.loadingForm
                                 bool result = (bool)hashtable["contact_result"];
                                 if (result)
                                 {
+                                    CallBackTable = hashtable;
                                     MethodInvoker methodInvoker = new MethodInvoker(updateUserInfoSuccess);
                                     BeginInvoke(methodInvoker);
                                 }
@@ -427,7 +444,7 @@ namespace custom_cloud.loadingForm
         public void functionLogout(UserInfo userInfo)
         {
             /* 建立与服务器的连接 */
-            initializeNetWork(userInfo.ServerURI, userInfo.ServerPort);
+            initializeNetWork(userInfo.ServerURI, userInfo.ServerPort, receiveCallBack_Logout);
             UserInfo user_info = userInfo;
             user_info.Order = Order._ORDER_LOG_OUT;
             /* 发送注销报文 */
@@ -458,10 +475,10 @@ namespace custom_cloud.loadingForm
         /// <summary>
         /// 初始化网络
         /// </summary>
-        void initializeNetWork(string serverURI, int port)
+        void initializeNetWork(string serverURI, int port, AsyncCallback acb)
         {
             netHelper = new NetHelper();
-            netHelper.setCallBack(receiveCallBack_Logout);
+            netHelper.setCallBack(acb);
             netHelper.startConnection(serverURI, port);
             netHelper.beginReceiveCallBack();
             Thread.Sleep(200);

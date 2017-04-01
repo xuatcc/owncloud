@@ -1,5 +1,7 @@
-﻿using custom_cloud.userClass;
+﻿using custom_cloud.loadingForm;
+using custom_cloud.userClass;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,19 +18,35 @@ namespace custom_cloud.subMainForm.subCloudDisk
     /// </summary>
     public partial class ContactListForm : Form
     {
-
-        public ContactListForm()
+        UserInfo userInfo;
+        /// <summary>
+        /// 被分享文件的相对路径
+        /// </summary>
+        Queue<string> RelativeFilePath;
+        public ContactListForm(UserInfo userInfo)
         {
             InitializeComponent();
-            testContact();
+            //testContact();
+            this.userInfo = userInfo;
+            //initializeWidget();
         }
         void initializeConfig()
         {
 
         }
+        /// <summary>
+        /// 设置文件分享路径
+        /// </summary>
+        public void setShareFilePath(Queue<string> relativeFilePath)
+        {
+            RelativeFilePath = relativeFilePath;
+            initializeWidget();
+        }
         void initializeWidget()
         {
-
+            Application.DoEvents();
+            Thread.Sleep(10);
+            getContactListFromServer();
         }
         /// <summary>
         /// 添加联系人到Tree视图
@@ -46,6 +64,7 @@ namespace custom_cloud.subMainForm.subCloudDisk
                 }
             }
         }
+
         /// <summary>
         /// 测试添加联系人
         /// </summary>
@@ -128,7 +147,32 @@ namespace custom_cloud.subMainForm.subCloudDisk
             button_confirm.Image = Properties.Resources.enter;
         }
         #region function
+        /// <summary>
+        /// 从服务器获取联系人列表
+        /// </summary>
         protected void getContactListFromServer()
+        {
+            Hashtable hashtable = new Hashtable();
+            UtilityLoading utilityLoading = new UtilityLoading();
+            utilityLoading.StatusText = "正在获取联系人列表";
+            if (userInfo != null) utilityLoading.functionGetContactList(userInfo);
+            if (utilityLoading.ShowDialog() == DialogResult.OK)
+            {
+                hashtable = utilityLoading.CallBackTable;
+                /* 创建联系人树 */
+                setContactTree(hashtable);
+            }
+            else
+            {
+                MessageBox.Show("无法获取联系人信息!");
+                this.DialogResult = DialogResult.No;
+            }
+        }
+        /// <summary>
+        /// 根据哈希表创建联系人树
+        /// </summary>
+        /// <param name="hashtable"></param>
+        protected void setContactTree(Hashtable hashtable)
         {
 
         }
