@@ -26,7 +26,7 @@ namespace custom_cloud.subMainForm.subCloudDisk
         public ContactListForm(UserInfo userInfo)
         {
             InitializeComponent();
-            //testContact();
+            testContact();
             this.userInfo = userInfo;
             //initializeWidget();
         }
@@ -40,7 +40,7 @@ namespace custom_cloud.subMainForm.subCloudDisk
         public void setShareFilePath(Queue<string> relativeFilePath)
         {
             RelativeFilePath = relativeFilePath;
-            initializeWidget();
+            //initializeWidget();
         }
         void initializeWidget()
         {
@@ -48,28 +48,14 @@ namespace custom_cloud.subMainForm.subCloudDisk
             Thread.Sleep(10);
             getContactListFromServer();
         }
-        /// <summary>
-        /// 添加联系人到Tree视图
-        /// <param name="contactList">联系人列表</param>
-        /// </summary>
-        protected void addContactItemsToTreeView(ContactList contactList)
-        {
-            treeView_contact.Nodes.Clear();
-            foreach(ContactList.Group clg in contactList.Groups.Values)
-            {
-                treeView_contact.Nodes.Add(clg.Name, clg.Name);
-                foreach(ContactList.Group.GroupMember cggm in clg.Members.Values)
-                {
-                    treeView_contact.Nodes[clg.Name].Nodes.Add(cggm.Name + "(" + cggm.ID + ")");
-                }
-            }
-        }
+        
 
         /// <summary>
         /// 测试添加联系人
         /// </summary>
         void testContact()
         {
+            /*
             ContactList contactList = new ContactList();
             contactList.Groups.Add("animals", new ContactList.Group("animals"));
             contactList.Groups["animals"].Members.Add("elephant", new ContactList.Group.GroupMember("elephant", "大象"));
@@ -81,6 +67,10 @@ namespace custom_cloud.subMainForm.subCloudDisk
             contactList.Groups["fruits"].Members.Add("melon", new ContactList.Group.GroupMember("melon", "西瓜"));
 
             addContactItemsToTreeView(contactList);
+            */
+            string callback = "[{ \"--\":[{\"uid\":\"1234\",\"username\":\"res\"},{\"uid\":\"test\",\"username\":\"??\"},{\"uid\":\"test99\",\"username\":\"??\"}]},{\"2\":[{\"uid\":\"1234\",\"username\":\"res\"},{\"uid\":\"test22\",\"username\":\"test22\"},{\"uid\":\"test3\",\"username\":\"test3\"}]},{\"fa\":[{\"uid\":\"1234\",\"username\":\"res\"},{\"uid\":\"test11\",\"username\":\"test11\"},{\"uid\":\"test22\",\"username\":\"test22\"},{\"uid\":\"test3\",\"username\":\"test3\"},{\"uid\":\"test44\",\"username\":\"test44\"}]},{\"group\":[{\"uid\":\"1234\",\"username\":\"res\"},{\"uid\":\"bigbigqi\",\"username\":\"??????\"},{\"uid\":\"test3\",\"username\":\"test3\"}]},{\"testg\":[{\"uid\":\"1234\",\"username\":\"res\"},{\"uid\":\"bigbigqi\",\"username\":\"??????\"},{\"uid\":\"test3\",\"username\":\"test3\"}]}]";
+            Dictionary<string, ContactList.Group.GroupMember[]>[] contactDic = JsonHelper.getDeserializeObject<Dictionary<string, ContactList.Group.GroupMember[]>[]>(callback);
+            setContactTree(contactDic);
         }
         /// <summary>
         /// 选中节点事件
@@ -160,9 +150,10 @@ namespace custom_cloud.subMainForm.subCloudDisk
             {
                 //hashtable = utilityLoading.CallBackTable;
                 string callback = utilityLoading.CallBackMessage;
-                ContactList cl = JsonHelper.getDeserializeObject<ContactList>(callback);
+                //ContactList cl = JsonHelper.getDeserializeObject<ContactList>(callback);
                 /* 创建联系人树 */
-                //setContactTree(hashtable);
+                Dictionary<string, ContactList.Group.GroupMember[]>[] contactDic = JsonHelper.getDeserializeObject<Dictionary<string, ContactList.Group.GroupMember[]>[]>(callback);
+                setContactTree(contactDic);
             }
             else
             {
@@ -176,9 +167,20 @@ namespace custom_cloud.subMainForm.subCloudDisk
         /// 根据哈希表创建联系人树
         /// </summary>
         /// <param name="hashtable"></param>
-        protected void setContactTree(Hashtable hashtable)
+        protected void setContactTree(Dictionary<string, ContactList.Group.GroupMember[]>[] contactDic)
         {
-
+            treeView_contact.Nodes.Clear();
+            foreach(Dictionary<string, ContactList.Group.GroupMember[]> cdic in contactDic)
+            {
+                if (cdic.Keys.Count > 0) treeView_contact.Nodes.Add(cdic.Keys.ElementAt(0), cdic.Keys.ElementAt(0));
+                if (cdic.Values.Count > 0)
+                {
+                    foreach (ContactList.Group.GroupMember member in cdic.Values.ElementAt(0))
+                    {
+                        treeView_contact.Nodes[cdic.Keys.ElementAt(0)].Nodes.Add(member.uid, member.username + "(" + member.uid + ")");
+                    }
+                }
+            }
         }
         #endregion function
     }

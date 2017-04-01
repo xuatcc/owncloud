@@ -38,14 +38,15 @@ namespace custom_cloud.userClass
                 /// <summary>
                 /// 成员ID
                 /// </summary>
-                public string ID;
+                public string uid;
+
                 /// <summary>
                 /// 成员名
                 /// </summary>
-                public string Name;
+                public string username;
                 public GroupMember() { }
-                public GroupMember(string id) { ID = id; }
-                public GroupMember(string id, string name) { ID = id; Name = name; }
+                public GroupMember(string id) { uid = id; }
+                public GroupMember(string id, string name) { uid = id; username = name; }
             }
         }
     }
