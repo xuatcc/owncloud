@@ -55,6 +55,10 @@ namespace custom_cloud
         /// 同步服务器地址
         /// </summary>
         public string SyncServerAddress;
+        /// <summary>
+        /// 分享文件列表
+        /// </summary>
+        public ShareList FileShareList = new ShareList();
         /* 公用属性名 */
         public static string NAME_USER_ID = "UserID";
         public static string NAME_USER_NAME = "UserName";
@@ -70,6 +74,25 @@ namespace custom_cloud
         public UserInfo()
         {
 
+        }
+        /// <summary>
+        /// 分享列表
+        /// </summary>
+        public class ShareList
+        {
+            /// <summary>
+            /// 文件列表
+            /// </summary>
+            public LinkedList<string> FileList = new LinkedList<string>();
+            /// <summary>
+            /// 用户列表
+            /// </summary>
+            public LinkedList<string> IDList = new LinkedList<string>();
+            
+            public ShareList()
+            {
+
+            }
         }
         /// <summary>
         /// 从服务器获取用户信息（这个方法废掉了）

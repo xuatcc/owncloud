@@ -442,6 +442,104 @@ namespace custom_cloud.loadingForm
             }
         }
         #endregion Get Contact Tree
+        #region Share Files
+        /// <summary>
+        /// 获取联系人信息
+        /// </summary>
+        public void functionShareFiles(UserInfo userInfo)
+        {
+            if (userInfo == null) return;
+            UserInfo user_info = userInfo;
+            user_info.Order = Order._ORDER_SHARE_FILES;
+            /* 建立与服务器的连接 */
+            initializeNetWork(userInfo.ServerURI, userInfo.ServerPort, receiveCallBack_ShareFiles);
+            /* 发送分享文件请求的报文 */
+            netHelper.sendJsonBlock(user_info);
+            /* 启动计时 */
+            ThreadUtility = new Thread(thread_Timer_ShareFiles);
+            ThreadUtility.Start();
+        }
+        /// <summary>
+        /// 获取联系人列表后-收到消息后的处理
+        /// </summary>
+        /// <param name="iar"></param>
+        void receiveCallBack_ShareFiles(IAsyncResult iar)
+        {
+            try
+            {
+                int REnd = netHelper.SocketClient.EndReceive(iar);
+                string receive_content = Encoding.UTF8.GetString(netHelper.msgByte, 0, REnd);
+                string full_content = "";
+                if (!string.IsNullOrEmpty(receive_content) && receive_content != "")
+                {
+                    Reporter.writeLog(MyConfig.PATH_NET_LOG, "shareFiles : " + receive_content);
+                    //Thread.Sleep(2);
+                    if (receive_content.Contains(Order.FLAG_START))
+                    {
+                        netHelper.flag_fullReceive = false;
+                        netHelper.receiveBuffer = new Queue<string>();
+                    }
+                    if (!receive_content.Contains(Order.FLAG_START) && !receive_content.Contains(Order.FLAG_STOP))
+                    {
+                        netHelper.receiveBuffer.Enqueue(receive_content);
+                    }
+                    if (receive_content.Contains(Order.FLAG_STOP))
+                    {
+
+                        while (netHelper.receiveBuffer.Count > 0)
+                        {
+                            full_content += netHelper.receiveBuffer.Dequeue();
+                        }
+                        Hashtable hashtable = JsonHelper.getDeserializeObject<Hashtable>(full_content);
+                        if (hashtable != null)
+                        {
+                            if (hashtable.ContainsKey("share_result"))
+                            {
+                                bool result = (bool)hashtable["share_result"];
+                                if (result)
+                                {
+                                    //CallBackTable = hashtable;
+                                    CallBackMessage = full_content;
+                                    MethodInvoker methodInvoker = new MethodInvoker(updateUserInfoSuccess);
+                                    BeginInvoke(methodInvoker);
+                                }
+                            }
+                        }
+                    }
+                    netHelper.beginReceiveCallBack();
+                }
+
+            }
+            catch (Exception e)
+            {
+                Reporter.reportBug(e.ToString());
+            }
+        }
+        /// <summary>
+        /// 获取联系人操作计时器
+        /// </summary>
+        void thread_Timer_ShareFiles()
+        {
+            try
+            {
+                int TimeToLive = 10000;
+                int time_clock = 0;
+                int time_step = 100;
+                while (time_clock < TimeToLive)
+                {
+                    time_clock += time_step;
+                    Thread.Sleep(time_step);
+                }
+                /* 超时操作 */
+                MethodInvoker methodInvoker = new MethodInvoker(logOutFail);
+                BeginInvoke(methodInvoker);
+            }
+            catch (Exception e)
+            {
+                Reporter.reportBug(e.ToString());
+            }
+        }
+        #endregion Share Files
         #region Logout
         /// <summary>
         /// 功能-注销

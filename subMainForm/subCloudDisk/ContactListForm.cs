@@ -26,8 +26,9 @@ namespace custom_cloud.subMainForm.subCloudDisk
         public ContactListForm(UserInfo userInfo)
         {
             InitializeComponent();
-            testContact();
+            
             this.userInfo = userInfo;
+            testContact();
             //initializeWidget();
         }
         void initializeConfig()
@@ -44,6 +45,7 @@ namespace custom_cloud.subMainForm.subCloudDisk
         }
         void initializeWidget()
         {
+            //button_confirm.Enabled = false;
             Application.DoEvents();
             Thread.Sleep(10);
             getContactListFromServer();
@@ -97,7 +99,8 @@ namespace custom_cloud.subMainForm.subCloudDisk
                             break;
                         }
                     }
-                    if (isAllSelected) e.Node.Parent.Checked = true;                }
+                    if (isAllSelected) e.Node.Parent.Checked = true;
+                }
             }
             else
             {
@@ -114,7 +117,45 @@ namespace custom_cloud.subMainForm.subCloudDisk
 
         private void button_confirm_Click(object sender, EventArgs e)
         {
-
+            if (RelativeFilePath == null) return;
+            UserInfo uiToSend = userInfo;
+            string filePath;
+            uiToSend.FileShareList = new UserInfo.ShareList();
+            for(int i = 0;i < RelativeFilePath.Count;i++)
+            {
+                filePath = RelativeFilePath.ElementAt(i);
+                foreach (TreeNode node in treeView_contact.Nodes)
+                {
+                    foreach (TreeNode contact_node in node.Nodes)
+                    {
+                        if (!contact_node.Checked) continue;
+                        if(!(uiToSend.FileShareList.IDList.Contains(contact_node.Name) && uiToSend.FileShareList.FileList.Contains(filePath)))
+                        {
+                            uiToSend.FileShareList.IDList.AddLast(contact_node.Name);
+                            uiToSend.FileShareList.FileList.AddLast(filePath);
+                        }
+                    }
+                }
+            }
+            if (uiToSend.FileShareList.IDList.Count > 0)
+            {
+                UtilityLoading utL = new UtilityLoading();
+                utL.StatusText = "正在分享";
+                utL.ButtonText = "取消";
+                utL.functionShareFiles(uiToSend);
+                if (utL.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("分享成功");
+                }
+                else
+                {
+                    MessageBox.Show("分享失败!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("请选择联系人!");
+            }
         }
 
         private void button_confirm_MouseEnter(object sender, EventArgs e)
@@ -169,6 +210,7 @@ namespace custom_cloud.subMainForm.subCloudDisk
         /// <param name="hashtable"></param>
         protected void setContactTree(Dictionary<string, ContactList.Group.GroupMember[]>[] contactDic)
         {
+            if (userInfo == null) return;
             treeView_contact.Nodes.Clear();
             foreach(Dictionary<string, ContactList.Group.GroupMember[]> cdic in contactDic)
             {
@@ -177,7 +219,7 @@ namespace custom_cloud.subMainForm.subCloudDisk
                 {
                     foreach (ContactList.Group.GroupMember member in cdic.Values.ElementAt(0))
                     {
-                        treeView_contact.Nodes[cdic.Keys.ElementAt(0)].Nodes.Add(member.uid, member.username + "(" + member.uid + ")");
+                        if(member.uid != userInfo.UserID)treeView_contact.Nodes[cdic.Keys.ElementAt(0)].Nodes.Add(member.uid, member.username + "(" + member.uid + ")");
                     }
                 }
             }

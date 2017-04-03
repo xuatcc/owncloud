@@ -1121,7 +1121,12 @@ namespace custom_cloud
         void items_share()
         {
             ContactListForm clf = new ContactListForm(User_Info);
-            clf.setShareFilePath(null);
+            Queue<string> relativeFilePath = new Queue<string>();
+            for (int i = 0; i < listView_explorer.SelectedItems.Count; i++)
+            {
+                relativeFilePath.Enqueue(Path.GetFullPath(MyConfig.getPathByKey(listView_explorer.SelectedItems[i].Name).Substring(SyncPath.Length)));
+            }
+            clf.setShareFilePath(relativeFilePath);
             if (clf.IsDisposed) return;
             if(clf.ShowDialog()==DialogResult.OK)
             {
