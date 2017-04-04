@@ -14,30 +14,99 @@ using System.Text;
 
 namespace custom_cloud
 {
+    /// <summary>
+    /// 配置文件管理类
+    /// </summary>
     class MyConfig
     {
+        /// <summary>
+        /// 配置文件路径
+        /// </summary>
         public static string CONFIG_FILE_PATH = @"./config/config.conf";
+        /// <summary>
+        /// （已作废）
+        /// </summary>
         public static string WORK_SPACE_ID = "work_space";
+        /// <summary>
+        /// 初始生成文件路径
+        /// </summary>
         public static string FIRST_USE_FILE = @"./config/init";
+        /// <summary>
+        /// （已作废）
+        /// </summary>
         public static string OWNCLOUD_LOCATION_ID = "owncloud_location";
+        /// <summary>
+        /// 未知类型文件图标路径（已作废）
+        /// </summary>
         public static string FILE_ICON_PATH = @"./icon/file/File.png";
+        /// <summary>
+        /// 文件夹图标路径（已作废）
+        /// </summary>
         public static string FOLDER_ICON_PATH = @"./icon/file/Folder.png";
+        /// <summary>
+        /// 同步配置文件路径
+        /// </summary>
         public static string SYNC_CONF_PATH = @"./config/sync.conf";
+        /// <summary>
+        /// 文件图标配置文件路径
+        /// </summary>
         public static string ICON_CONF_PATH = @"./config/icon.conf";
+        /// <summary>
+        /// （已作废）
+        /// </summary>
         public static string ICON_LIB_PATH = @"./icon/file/";
+        /// <summary>
+        /// 用户登录记录文件路径
+        /// </summary>
         public static string PATH_USER_TRACK = @"./log/user_track.log";
+        /// <summary>
+        /// （已作废）
+        /// </summary>
         public static string KEY_WORD_TIME_STAMP = "time_stamp";
+        /// <summary>
+        /// 用户信息文件夹路径
+        /// </summary>
         public static string PATH_USER = @"./user/";
+        /// <summary>
+        /// 用户信息文件名
+        /// </summary>
         public static string NAME_USER_INFO = "info.conf";
+        /// <summary>
+        /// 网络记录文件路径
+        /// </summary>
         public static string PATH_NET_LOG = @"./log/net.log";
+        /// <summary>
+        /// 默认同步目录名
+        /// </summary>
         public static string NAME_FOLDER_SYNC = "sync";
+        /// <summary>
+        /// 文件大图标目录
+        /// </summary>
         public static string LARGE_ICON_PATH = @"./icon/Large";
+        /// <summary>
+        /// 文件小图标目录
+        /// </summary>
         public static string SMALL_ICON_PATH = @"./icon/Small";
+        /// <summary>
+        /// 大文件夹图标路径
+        /// </summary>
         public static string LARGE_FOLDER_ICON_PATH = @"./icon/Large/Folder.png";
+        /// <summary>
+        /// 小文件夹图标路径
+        /// </summary>
         public static string SMALL_FOLDER_ICON_PATH = @"./icon/Small/Folder.png";
+        /// <summary>
+        /// 大文件图标路径
+        /// </summary>
         public static string LARGE_DEFAULT_FILE_ICON_PATH = @"./icon/Large/File.png";
+        /// <summary>
+        /// 小文件图标路径
+        /// </summary>
         public static string SMALL_DEFAULT_FILE_ICON_PATH = @"./icon/Small/File.png";
         public static UTF8Encoding ENCODE;
+        /// <summary>
+        /// 主题色
+        /// </summary>
         public static Color SelectedColor = Color.FromArgb(Convert.ToInt32("e93da5fc", 16));
         /// <summary>
         /// 参考时间
