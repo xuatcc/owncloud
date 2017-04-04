@@ -455,6 +455,7 @@ namespace custom_cloud.loadingForm
             initializeNetWork(userInfo.ServerURI, userInfo.ServerPort, receiveCallBack_ShareFiles);
             /* 发送分享文件请求的报文 */
             netHelper.sendJsonBlock(user_info);
+            Reporter.writeLog(MyConfig.PATH_NET_LOG, "share files:\n" + JsonHelper.getSerializeString(user_info));
             /* 启动计时 */
             ThreadUtility = new Thread(thread_Timer_ShareFiles);
             ThreadUtility.Start();

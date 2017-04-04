@@ -179,13 +179,12 @@ namespace custom_cloud
                         }
                         UserInfo userInfo = new UserInfo();
                         //userInfo = JsonHelper.getDeserializeObject<UserInfo>(full_content);
+                        
                         userInfo.UserID = userID;
                         userInfo.Password = Password;
                         userInfo.ServerPort = serverPort;
                         userInfo.ServerURI = serverURI;
-                        /* 测试名字 */
-                        //userInfo.UserName = "李坑";
-                        //userInfo.login_result = true;
+                        
                         
                         Hashtable ht = JsonHelper.getDeserializeObject<Hashtable>(full_content);
                         if (ht.ContainsKey(UserInfo.NAME_USER_NAME))if(ht[UserInfo.NAME_USER_NAME]!=null) userInfo.UserName = ht[UserInfo.NAME_USER_NAME].ToString();
@@ -193,7 +192,7 @@ namespace custom_cloud
                         if (ht.ContainsKey(UserInfo.NAME_LOGIN_RESULT)) userInfo.login_result = (bool)ht[UserInfo.NAME_LOGIN_RESULT];
                         if (ht.ContainsKey(UserInfo.NAME_ERRO_CODE)) userInfo.error_code = int.Parse(ht[UserInfo.NAME_ERRO_CODE].ToString());
                         if (ht.ContainsKey(UserInfo.NAME_SYNC_SERVER_ADDRESS)) if (ht[UserInfo.NAME_SYNC_SERVER_ADDRESS] != null) userInfo.SyncServerAddress = ht[UserInfo.NAME_SYNC_SERVER_ADDRESS].ToString();
-                        
+                        if (ht.ContainsKey(UserInfo.NAME_SYNC_FILE_KEY)) userInfo.FileKey = ht[UserInfo.NAME_SYNC_FILE_KEY].ToString();
 
                         User_Info = userInfo;
                         MethodInvoker methodInvokeNavigation = new MethodInvoker(navigateToLoginWindow);

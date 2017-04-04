@@ -869,7 +869,7 @@ namespace custom_cloud
 
                 LoadEncryption loadEncryption = new LoadEncryption();
                 loadEncryption.importItem(fileNames, CurrentPath, User_Info.FileKey);
-                loadEncryption.ShowDialog();
+                if(!loadEncryption.IsDisposed)loadEncryption.ShowDialog();// 注意判断加载窗体资源是否已释放
 
                 
                 //更新文件树
@@ -1124,7 +1124,8 @@ namespace custom_cloud
             Queue<string> relativeFilePath = new Queue<string>();
             for (int i = 0; i < listView_explorer.SelectedItems.Count; i++)
             {
-                relativeFilePath.Enqueue(Path.GetFullPath(MyConfig.getPathByKey(listView_explorer.SelectedItems[i].Name).Substring(SyncPath.Length)));
+                relativeFilePath.Enqueue(Path.GetFullPath(MyConfig.getPathByKey(listView_explorer.SelectedItems[i].Name)).Substring(
+                    Path.GetFullPath(User_LocalInfo.SyncPath).Length));
             }
             clf.setShareFilePath(relativeFilePath);
             if (clf.IsDisposed) return;
