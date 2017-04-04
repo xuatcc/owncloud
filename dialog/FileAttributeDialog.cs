@@ -14,6 +14,9 @@ using System.Windows.Forms;
 
 namespace custom_cloud.dialog
 {
+    /// <summary>
+    /// 显示文件属性的窗体
+    /// </summary>
     public partial class FileAttributeDialog : Form
     {
         const int LabelWidth = 200;

@@ -14,6 +14,9 @@ using System.Windows.Forms;
 
 namespace custom_cloud.dialog
 {
+    /// <summary>
+    /// 用于通知用户并执行删除文件操作的窗体
+    /// </summary>
     public partial class DeleteFileDialog : Form
     {
         public DeleteFileDialog()

@@ -1,6 +1,17 @@
 var searchData=
 [
-  ['user_5finfo',['User_Info',['../classcustom__cloud_1_1_loading_form.html#a8bbd3d30c46d9c4f9bd2fa2c66e0a8b6',1,'custom_cloud::LoadingForm']]],
-  ['userid',['userID',['../classcustom__cloud_1_1_loading_form.html#a244c742a2300460159f9a2ef2d1e27a5',1,'custom_cloud.LoadingForm.userID()'],['../classcustom__cloud_1_1_user_info.html#a9fb6bf440f5ad480249e735f06aa37cc',1,'custom_cloud.UserInfo.UserID()'],['../classcustom__cloud_1_1_user_local_info.html#a88a5abace43fab405e5b54d5b8548f96',1,'custom_cloud.UserLocalInfo.UserId()']]],
-  ['username',['UserName',['../classcustom__cloud_1_1_user_info.html#acfcb55c21c660ad74b52aa339783855d',1,'custom_cloud::UserInfo']]]
+  ['searchtree',['SearchTree',['../de/d1a/classcustom__cloud_1_1_cloud_disk_form.html#a3254af0f9a185cf51191e52e1a5146b9',1,'custom_cloud::CloudDiskForm']]],
+  ['selectedcolor',['SelectedColor',['../d8/db2/classcustom__cloud_1_1_my_config.html#ad5858d5294a8c3802911f95219efc954',1,'custom_cloud::MyConfig']]],
+  ['serverip',['ServerIP',['../d1/d59/classcustom__cloud_1_1_net_helper.html#afacd28fbe040a6c8f23f9ca63c4417a5',1,'custom_cloud::NetHelper']]],
+  ['serverport',['serverPort',['../d7/d61/classcustom__cloud_1_1_loading_form.html#a44041cab60415d722862d9f569f2d6a0',1,'custom_cloud.LoadingForm.serverPort()'],['../d1/d59/classcustom__cloud_1_1_net_helper.html#ad4cb3bbc4fa803160957e8d2543448b8',1,'custom_cloud.NetHelper.ServerPort()'],['../d5/d8c/classcustom__cloud_1_1_user_info.html#a71064162f675b332d4b0f8a51e8c3faa',1,'custom_cloud.UserInfo.ServerPort()']]],
+  ['serveruri',['ServerURI',['../d5/d8c/classcustom__cloud_1_1_user_info.html#a49e15946f290e21e33a8dca356d55b85',1,'custom_cloud.UserInfo.ServerURI()'],['../d7/d61/classcustom__cloud_1_1_loading_form.html#a08eb641da0c7b75f01ea0342fa3505c3',1,'custom_cloud.LoadingForm.serverURI()']]],
+  ['small_5fdefault_5ffile_5ficon_5fpath',['SMALL_DEFAULT_FILE_ICON_PATH',['../d8/db2/classcustom__cloud_1_1_my_config.html#a71e2f1312aaf4c83b1d4f36f034262ad',1,'custom_cloud::MyConfig']]],
+  ['small_5ffolder_5ficon_5fpath',['SMALL_FOLDER_ICON_PATH',['../d8/db2/classcustom__cloud_1_1_my_config.html#acaa2b3508412e1e319cc1e752a0565f3',1,'custom_cloud::MyConfig']]],
+  ['small_5ficon_5fpath',['SMALL_ICON_PATH',['../d8/db2/classcustom__cloud_1_1_my_config.html#a033411e08af032078b621b22f046234e',1,'custom_cloud::MyConfig']]],
+  ['socketclient',['SocketClient',['../d1/d59/classcustom__cloud_1_1_net_helper.html#a3a3ac000b75ac4a7a1a280cffe454bf3',1,'custom_cloud::NetHelper']]],
+  ['string_5fseperater',['STRING_SEPERATER',['../d8/db2/classcustom__cloud_1_1_my_config.html#a1e028d4b74e671a2471955afd5320214',1,'custom_cloud::MyConfig']]],
+  ['subtree',['SubTree',['../de/d3c/classcustom__cloud_1_1_file_tree.html#a1be62d0d5cf1e81f75e00d4ad3b6d127',1,'custom_cloud::FileTree']]],
+  ['sync_5fconf_5fpath',['SYNC_CONF_PATH',['../d8/db2/classcustom__cloud_1_1_my_config.html#a265d6dfcd394817323163a2f622752a0',1,'custom_cloud::MyConfig']]],
+  ['syncpath',['SyncPath',['../de/d1a/classcustom__cloud_1_1_cloud_disk_form.html#a0c264c17ab23f32d5dbb86348abf5ef3',1,'custom_cloud.CloudDiskForm.SyncPath()'],['../df/d82/classcustom__cloud_1_1_user_local_info.html#aad9b5bfe1626ad91d82cd324c6a59d8c',1,'custom_cloud.UserLocalInfo.SyncPath()']]],
+  ['syncserveraddress',['SyncServerAddress',['../d5/d8c/classcustom__cloud_1_1_user_info.html#a2f05b7b55a04989e305690ff998358ac',1,'custom_cloud::UserInfo']]]
 ];

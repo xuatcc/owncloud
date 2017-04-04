@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['receiveinfo',['ReceiveInfo',['../classcustom__cloud_1_1_net_helper.html#af8ff618b2e04688c47e2a706bab175e8',1,'custom_cloud::NetHelper']]]
+  ['ordercode',['OrderCode',['../db/d3d/classcustom__cloud_1_1_order.html#afea2b9669cfbec3d1c98aa7db6ffaa49',1,'custom_cloud::Order']]]
 ];

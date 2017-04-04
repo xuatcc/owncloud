@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['httpcredentials_2ecpp',['httpcredentials.cpp',['../httpcredentials_8cpp.html',1,'']]],
-  ['httpcredentials_2eh',['httpcredentials.h',['../httpcredentials_8h.html',1,'']]]
+  ['jsonhelper_2ecs',['JsonHelper.cs',['../d4/deb/_json_helper_8cs.html',1,'']]]
 ];

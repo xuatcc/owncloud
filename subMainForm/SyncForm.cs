@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace custom_cloud
 {
+    /// <summary>
+    /// 显示单文件同步状态的窗体（已作废）
+    /// </summary>
     public partial class SyncForm : Form
     {
         /// <summary>

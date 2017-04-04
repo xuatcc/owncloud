@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace custom_cloud.subMainForm.subUserInfo
 {
+    /// <summary>
+    /// 设置用户密码的窗体
+    /// </summary>
     public partial class SettingUserPassword : Form
     {
         /// <summary>

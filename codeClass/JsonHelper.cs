@@ -7,6 +7,9 @@ using System.Collections;
 
 namespace custom_cloud
 {
+    /// <summary>
+    /// 协助处理Json报文的接口
+    /// </summary>
     class JsonHelper
     {
        

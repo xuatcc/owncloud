@@ -13,6 +13,9 @@ using System.Text.RegularExpressions;
 
 namespace custom_cloud
 {//代码分析器
+    /// <summary>
+    /// 字符串分析类
+    /// </summary>
     class CodeAnalysis
     {
         public CodeAnalysis() { }

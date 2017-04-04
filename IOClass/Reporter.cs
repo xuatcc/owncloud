@@ -6,6 +6,9 @@ using System.Text;
 
 namespace custom_cloud
 {
+    /// <summary>
+    /// 用于生成BUG报告和程序运行记录的接口
+    /// </summary>
     class Reporter
     {
         public const string BUG_REPORT_LOG_PATH = @"./log/bug_report.log";

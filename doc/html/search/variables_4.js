@@ -1,12 +1,20 @@
 var searchData=
 [
-  ['file_5ficon_5fpath',['FILE_ICON_PATH',['../classcustom__cloud_1_1_my_config.html#ad69521d730067e24ebba5a63e64ce894',1,'custom_cloud::MyConfig']]],
-  ['file_5fidentify_5fname',['FILE_IDENTIFY_NAME',['../classcustom__cloud_1_1_file_tree.html#aa2ff1d4def348ca6bf1da97babd3db73',1,'custom_cloud::FileTree']]],
-  ['fileinfo',['Fileinfo',['../classcustom__cloud_1_1_file_tree_1_1_tree_file_info.html#aaccc160373508673bc22f323fd867498',1,'custom_cloud::FileTree::TreeFileInfo']]],
-  ['first_5fuse_5ffile',['FIRST_USE_FILE',['../classcustom__cloud_1_1_my_config.html#a891dc46b237c247c7a1abd32ef6aa80c',1,'custom_cloud::MyConfig']]],
-  ['flag_5ffullreceive',['flag_fullReceive',['../classcustom__cloud_1_1_net_helper.html#ae2f924830737bf8ef53acda3de6ccc30',1,'custom_cloud::NetHelper']]],
-  ['flag_5fstart',['FLAG_START',['../classcustom__cloud_1_1_order.html#a042ce67931003622dce36c5d9393c636',1,'custom_cloud::Order']]],
-  ['flag_5fstop',['FLAG_STOP',['../classcustom__cloud_1_1_order.html#a5d43ee5b82c48ca0030a37fa0aae9806',1,'custom_cloud::Order']]],
-  ['folder_5ficon_5fpath',['FOLDER_ICON_PATH',['../classcustom__cloud_1_1_my_config.html#a33daf2a59d1aa83c6962cb06c5df3398',1,'custom_cloud::MyConfig']]],
-  ['folder_5fidentify_5fname',['FOLDER_IDENTIFY_NAME',['../classcustom__cloud_1_1_file_tree.html#afe3147788fbe68099fe169c365c593ad',1,'custom_cloud::FileTree']]]
+  ['encode',['ENCODE',['../d8/db2/classcustom__cloud_1_1_my_config.html#a7375e0108a1e2f18482f302fb907cbb8',1,'custom_cloud::MyConfig']]],
+  ['error_5fcode',['error_code',['../d5/d8c/classcustom__cloud_1_1_user_info.html#a7f124ad0b2c5eb287a943df489bbeb7b',1,'custom_cloud::UserInfo']]],
+  ['error_5fcode_5fconnect_5ftimeout',['ERROR_CODE_CONNECT_TIMEOUT',['../d9/d13/classcustom__cloud_1_1_error_code.html#ada610647d2cd6418dadbf06b6fa3c6c6',1,'custom_cloud::ErrorCode']]],
+  ['error_5fcode_5fid_5fexist',['ERROR_CODE_ID_EXIST',['../d9/d13/classcustom__cloud_1_1_error_code.html#a0e98f8e51ccf6c8c858983f95491d504',1,'custom_cloud::ErrorCode']]],
+  ['error_5fcode_5fpassword_5ferror',['ERROR_CODE_PASSWORD_ERROR',['../d9/d13/classcustom__cloud_1_1_error_code.html#a4cdc63ac352060b7fcc598e126b3d411',1,'custom_cloud::ErrorCode']]],
+  ['error_5fcode_5frequest_5fgroup_5finfo_5ffail',['ERROR_CODE_REQUEST_GROUP_INFO_FAIL',['../d9/d13/classcustom__cloud_1_1_error_code.html#a61bf47833d87599d49b5f75d892a4733',1,'custom_cloud::ErrorCode']]],
+  ['error_5fcode_5fserver_5ferror',['ERROR_CODE_SERVER_ERROR',['../d9/d13/classcustom__cloud_1_1_error_code.html#a69be45b9f3fba8a8c3daca3b4c4f4533',1,'custom_cloud::ErrorCode']]],
+  ['error_5fcode_5fshare_5ffiles_5ffail',['ERROR_CODE_SHARE_FILES_FAIL',['../d9/d13/classcustom__cloud_1_1_error_code.html#a1b681cf4319daa166b5785f34ee31351',1,'custom_cloud::ErrorCode']]],
+  ['error_5fcode_5fupdate_5fuser_5finfo_5ffail',['ERROR_CODE_UPDATE_USER_INFO_FAIL',['../d9/d13/classcustom__cloud_1_1_error_code.html#acc16c5dbc6d1da0a0b2399de73576b19',1,'custom_cloud::ErrorCode']]],
+  ['error_5fcode_5fuser_5falready_5fonline',['ERROR_CODE_USER_ALREADY_ONLINE',['../d9/d13/classcustom__cloud_1_1_error_code.html#a77bfe8da05e88ce80a3ca072d157f572',1,'custom_cloud::ErrorCode']]],
+  ['error_5fcode_5fuser_5fnot_5ffound',['ERROR_CODE_USER_NOT_FOUND',['../d9/d13/classcustom__cloud_1_1_error_code.html#a088bad39305eb02457cfaed910c1de5d',1,'custom_cloud::ErrorCode']]],
+  ['error_5finfo_5fconnect_5ftimeout',['ERROR_INFO_CONNECT_TIMEOUT',['../d9/d13/classcustom__cloud_1_1_error_code.html#a9931216a423c62a9dd17574f8cdbe20d',1,'custom_cloud::ErrorCode']]],
+  ['error_5finfo_5fpassword_5ferror',['ERROR_INFO_PASSWORD_ERROR',['../d9/d13/classcustom__cloud_1_1_error_code.html#aa727e7903507238e1d1aed8904b13f29',1,'custom_cloud::ErrorCode']]],
+  ['error_5finfo_5fserver_5ferror',['ERROR_INFO_SERVER_ERROR',['../d9/d13/classcustom__cloud_1_1_error_code.html#aca4323589362922faab334ad93b10049',1,'custom_cloud::ErrorCode']]],
+  ['error_5finfo_5fuser_5falready_5fonline',['ERROR_INFO_USER_ALREADY_ONLINE',['../d9/d13/classcustom__cloud_1_1_error_code.html#a4e4206de143e8915f6b7d184c4bfb977',1,'custom_cloud::ErrorCode']]],
+  ['error_5finfo_5fuser_5fnot_5ffound',['ERROR_INFO_USER_NOT_FOUND',['../d9/d13/classcustom__cloud_1_1_error_code.html#a79655b73acb445dc7c21e3741b6f95e7',1,'custom_cloud::ErrorCode']]],
+  ['extend_5fname_5fencryp_5ffile',['EXTEND_NAME_ENCRYP_FILE',['../d8/db2/classcustom__cloud_1_1_my_config.html#ac0b2b00975340bc86bae5f08d6b4f64f',1,'custom_cloud::MyConfig']]]
 ];

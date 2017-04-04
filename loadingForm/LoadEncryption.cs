@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace custom_cloud.loadingForm
 {
+    /// <summary>
+    /// 加密文件时弹出的交互窗体
+    /// </summary>
     public partial class LoadEncryption : Form
     {
         Thread ThreadImport;

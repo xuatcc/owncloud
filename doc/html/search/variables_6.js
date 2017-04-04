@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['key_5fword_5ftime_5fstamp',['KEY_WORD_TIME_STAMP',['../classcustom__cloud_1_1_my_config.html#a94f5074f7b164c53ca2403c8c9438411',1,'custom_cloud::MyConfig']]]
+  ['groups',['Groups',['../dc/de9/classcustom__cloud_1_1user_class_1_1_contact_list.html#adfcdd172682c3e9993d3bb2234bb0426',1,'custom_cloud::userClass::ContactList']]]
 ];

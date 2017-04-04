@@ -1,21 +1,5 @@
 var searchData=
 [
-  ['capabilities_2ecpp',['capabilities.cpp',['../capabilities_8cpp.html',1,'']]],
-  ['capabilities_2eh',['capabilities.h',['../capabilities_8h.html',1,'']]],
-  ['checksums_2ecpp',['checksums.cpp',['../checksums_8cpp.html',1,'']]],
-  ['checksums_2eh',['checksums.h',['../checksums_8h.html',1,'']]],
-  ['clientproxy_2ecpp',['clientproxy.cpp',['../clientproxy_8cpp.html',1,'']]],
-  ['clientproxy_2eh',['clientproxy.h',['../clientproxy_8h.html',1,'']]],
-  ['clouddiskform_2ecs',['CloudDiskForm.cs',['../_cloud_disk_form_8cs.html',1,'']]],
-  ['clouddiskform_2edesigner_2ecs',['CloudDiskForm.Designer.cs',['../_cloud_disk_form_8_designer_8cs.html',1,'']]],
-  ['cmdcomand_2ecs',['CMDComand.cs',['../_c_m_d_comand_8cs.html',1,'']]],
-  ['codeanalysis_2ecs',['CodeAnalysis.cs',['../_code_analysis_8cs.html',1,'']]],
-  ['configfile_2ecpp',['configfile.cpp',['../configfile_8cpp.html',1,'']]],
-  ['configfile_2eh',['configfile.h',['../configfile_8h.html',1,'']]],
-  ['connectionvalidator_2ecpp',['connectionvalidator.cpp',['../connectionvalidator_8cpp.html',1,'']]],
-  ['connectionvalidator_2eh',['connectionvalidator.h',['../connectionvalidator_8h.html',1,'']]],
-  ['cookiejar_2ecpp',['cookiejar.cpp',['../cookiejar_8cpp.html',1,'']]],
-  ['cookiejar_2eh',['cookiejar.h',['../cookiejar_8h.html',1,'']]],
-  ['credentialscommon_2ecpp',['credentialscommon.cpp',['../credentialscommon_8cpp.html',1,'']]],
-  ['credentialscommon_2eh',['credentialscommon.h',['../credentialscommon_8h.html',1,'']]]
+  ['deletefiledialog_2ecs',['DeleteFileDialog.cs',['../d5/d84/_delete_file_dialog_8cs.html',1,'']]],
+  ['deletefiledialog_2edesigner_2ecs',['DeleteFileDialog.Designer.cs',['../d4/ddd/_delete_file_dialog_8_designer_8cs.html',1,'']]]
 ];

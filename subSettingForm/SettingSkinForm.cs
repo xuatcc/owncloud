@@ -14,6 +14,9 @@ using System.Windows.Forms;
 
 namespace custom_cloud.subSettingForm
 {
+    /// <summary>
+    /// 设置皮肤的窗体
+    /// </summary>
     public partial class SettingSkinForm : Form
     {
         /// <summary>

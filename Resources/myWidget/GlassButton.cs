@@ -10,6 +10,9 @@ using System.Drawing.Drawing2D;
 
 namespace custom_cloud
 {
+    /// <summary>
+    /// 自定义玻璃按钮控件（已废弃）
+    /// </summary>
     public partial class GlassButton : UserControl
     {
         public GlassButton()

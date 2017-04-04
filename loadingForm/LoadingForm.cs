@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace custom_cloud
 {
+    /// <summary>
+    /// 登录等待对话框
+    /// </summary>
     public partial class LoadingForm : Form
     {
         NetHelper netHelper = new NetHelper();

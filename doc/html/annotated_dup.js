@@ -1,5 +1,5 @@
 var annotated_dup =
 [
-    [ "custom_cloud", "namespacecustom__cloud.html", "namespacecustom__cloud" ],
-    [ "OCC", "namespace_o_c_c.html", "namespace_o_c_c" ]
+    [ "custom_cloud", "d8/d6e/namespacecustom__cloud.html", "d8/d6e/namespacecustom__cloud" ],
+    [ "Account", "d6/db3/struct_account.html", "d6/db3/struct_account" ]
 ];

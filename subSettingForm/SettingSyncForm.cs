@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace custom_cloud
 {
+    /// <summary>
+    /// 同步设置窗体
+    /// </summary>
     public partial class SettingSyncForm : Form
     {
         /// <summary>

@@ -15,6 +15,9 @@ using System.Windows.Forms;
 
 namespace custom_cloud
 {
+    /// <summary>
+    /// 主窗体
+    /// </summary>
     public partial class MainWindow : Form
     {
         Color SelectedColor = Color.FromArgb(Convert.ToInt32("e93da5fc", 16));

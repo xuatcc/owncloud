@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['httpcredentials',['HttpCredentials',['../class_o_c_c_1_1_http_credentials.html',1,'OCC']]],
-  ['httpcredentialsaccessmanager',['HttpCredentialsAccessManager',['../class_o_c_c_1_1_http_credentials_access_manager.html',1,'OCC']]]
+  ['jsonhelper',['JsonHelper',['../d3/d74/classcustom__cloud_1_1_json_helper.html',1,'custom_cloud']]]
 ];

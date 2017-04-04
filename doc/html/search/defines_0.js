@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['bitfield',['BITFIELD',['../syncfileitem_8h.html#aeaedcadd8491773e1cfcb1294dc10219',1,'syncfileitem.h']]],
-  ['bufsize',['BUFSIZE',['../filesystem_8cpp.html#aeca034f67218340ecb2261a22c2f3dcd',1,'filesystem.cpp']]]
+  ['auth_5ffile',['AUTH_FILE',['../dc/dcd/local__auth_8c.html#afc84454f7cf56f6aac1f245edb075709',1,'local_auth.c']]]
 ];

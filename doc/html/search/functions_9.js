@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['journal',['journal',['../class_o_c_c_1_1_sync_engine.html#af598f7fc3361738ca90890d277708b3c',1,'OCC::SyncEngine']]]
+  ['nethelper',['NetHelper',['../d1/d59/classcustom__cloud_1_1_net_helper.html#a19693e7d58749390dcfd6a702cc6874a',1,'custom_cloud::NetHelper']]]
 ];

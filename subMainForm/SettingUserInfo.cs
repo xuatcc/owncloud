@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace custom_cloud.subMainForm
 {
+    /// <summary>
+    /// 显示用户信息的窗体
+    /// </summary>
     public partial class SettingUserInfo : Form
     {
         /// <summary>

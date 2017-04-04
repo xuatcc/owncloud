@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace custom_cloud
 {
+    /// <summary>
+    /// 分享记录窗体
+    /// </summary>
     public partial class ShareForm : Form
     {
         public ShareForm()

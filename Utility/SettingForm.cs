@@ -16,6 +16,9 @@ using System.Windows.Forms;
 
 namespace custom_cloud
 {
+    /// <summary>
+    /// 设置主交互对话框
+    /// </summary>
     public partial class SettingForm : Form
     {
         Point offset;

@@ -1,15 +1,10 @@
 var searchData=
 [
-  ['lastmodified',['lastModified',['../class_o_c_c_1_1_g_e_t_file_job.html#ad9f7d91356e7e3fb74c3f4fede6ffde8',1,'OCC::GETFileJob']]],
-  ['lastquery',['lastQuery',['../class_o_c_c_1_1_sql_query.html#ab140efcb95c4142e7aa12363c5f9b561',1,'OCC::SqlQuery']]],
-  ['lendcookiejarto',['lendCookieJarTo',['../class_o_c_c_1_1_account.html#ab51f897fa5e5ecc46a8d87098736f161',1,'OCC::Account']]],
-  ['linksharing',['linkSharing',['../class_o_c_c_1_1_theme.html#a4860bc1081f2e9c0ea8c1ad02be80927',1,'OCC::Theme']]],
-  ['loadingform',['LoadingForm',['../classcustom__cloud_1_1_loading_form.html#a5610d280cbd01e6c2cb528775082e7e6',1,'custom_cloud.LoadingForm.LoadingForm()'],['../classcustom__cloud_1_1_loading_form.html#a5610d280cbd01e6c2cb528775082e7e6',1,'custom_cloud.LoadingForm.LoadingForm()']]],
-  ['localfilenameclash',['localFileNameClash',['../class_o_c_c_1_1_owncloud_propagator.html#a788e9ca335f086bca57798bf637cadb6',1,'OCC::OwncloudPropagator']]],
-  ['localpath',['localPath',['../class_o_c_c_1_1_sync_engine.html#acc63fae6a51d4321a46365477d8f657f',1,'OCC::SyncEngine']]],
-  ['log',['log',['../class_o_c_c_1_1_logger.html#a63b911b609af1a4d550219661be6ca5b',1,'OCC::Logger']]],
-  ['logs',['logs',['../class_o_c_c_1_1_logger.html#a20cd402d4dde88f8d26384638ada722c',1,'OCC::Logger']]],
-  ['logwindowlog',['logWindowLog',['../class_o_c_c_1_1_logger.html#ae0252486f9745a0232f9ff8630c19293',1,'OCC::Logger']]],
-  ['longwinpath',['longWinPath',['../namespace_o_c_c_1_1_file_system.html#a71e7eb587b2d6502e9d4b46746afb4b1',1,'OCC::FileSystem']]],
-  ['lookupsystemproxyasync',['lookupSystemProxyAsync',['../class_o_c_c_1_1_client_proxy.html#aecedffefc443606bc8565ad3b95b176b',1,'OCC::ClientProxy']]]
+  ['readconfig',['readConfig',['../d8/db2/classcustom__cloud_1_1_my_config.html#a2353b96c780635238ee19ba5d24f218e',1,'custom_cloud.MyConfig.readConfig(string path)'],['../d8/db2/classcustom__cloud_1_1_my_config.html#a4f795561b0573449254c7c3e1946ae1d',1,'custom_cloud.MyConfig.readConfig()']]],
+  ['readuserinfo',['readUserInfo',['../d8/db2/classcustom__cloud_1_1_my_config.html#a699557050983d928c0014ac372a0eb2f',1,'custom_cloud::MyConfig']]],
+  ['readuserinfobyjson',['readUserInfoByJson',['../d5/d8c/classcustom__cloud_1_1_user_info.html#ae6ff14e98ef2b7b35cbe26f66dc7793e',1,'custom_cloud::UserInfo']]],
+  ['receivecallbackdonothing',['receiveCallBackDoNothing',['../d1/d59/classcustom__cloud_1_1_net_helper.html#a71e4dbcc7b20b4c593b41ebd462f62b9',1,'custom_cloud::NetHelper']]],
+  ['refreshfilelist',['refreshFileList',['../d6/d9d/classcustom__cloud_1_1_sync_form.html#a0dbee28ed2dc9eb948d8f709a6a2752a',1,'custom_cloud::SyncForm']]],
+  ['refreshlistfse',['refreshListFSE',['../d6/d9d/classcustom__cloud_1_1_sync_form.html#a62324e6c4f3eb5c6b1aa38d221f26340',1,'custom_cloud.SyncForm.refreshListFSE(System.IO.FileSystemEventArgs fse)'],['../d6/d9d/classcustom__cloud_1_1_sync_form.html#ad31d53405ec19cb7198d73b41255a236',1,'custom_cloud.SyncForm.refreshListFSE(System.IO.RenamedEventArgs re)']]],
+  ['reportbug',['reportBug',['../da/dcb/classcustom__cloud_1_1_reporter.html#ab44d30e36526c47f21889d4df1e3851b',1,'custom_cloud.Reporter.reportBug(string content)'],['../da/dcb/classcustom__cloud_1_1_reporter.html#ab44d30e36526c47f21889d4df1e3851b',1,'custom_cloud.Reporter.reportBug(string content)']]]
 ];
