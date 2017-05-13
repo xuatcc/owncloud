@@ -1,15 +1,16 @@
 var searchData=
 [
-  ['table_5fname_5flogin',['TABLE_NAME_LOGIN',['../dc/d87/classcustom__cloud_1_1_my_config_1_1_config_file.html#a9a060425d4093164b54bcb932ca02d59',1,'custom_cloud::MyConfig::ConfigFile']]],
-  ['table_5fname_5fnotification',['TABLE_NAME_NOTIFICATION',['../dc/d87/classcustom__cloud_1_1_my_config_1_1_config_file.html#a8a2f8be0b8e9afbad85983040e838988',1,'custom_cloud::MyConfig::ConfigFile']]],
-  ['table_5fname_5fprimary',['TABLE_NAME_PRIMARY',['../dc/d87/classcustom__cloud_1_1_my_config_1_1_config_file.html#aa4ef6eb0b3333680028130c8acf49542',1,'custom_cloud::MyConfig::ConfigFile']]],
-  ['table_5fname_5fskin',['TABLE_NAME_SKIN',['../dc/d87/classcustom__cloud_1_1_my_config_1_1_config_file.html#a9b56d5ff54b56f79ddb19bead5cfb8fd',1,'custom_cloud::MyConfig::ConfigFile']]],
-  ['table_5fname_5fsync',['TABLE_NAME_SYNC',['../dc/d87/classcustom__cloud_1_1_my_config_1_1_config_file.html#aa97db019e2934feb570c35cf772d7357',1,'custom_cloud::MyConfig::ConfigFile']]],
-  ['tableerrorcode',['TableErrorCode',['../d9/d13/classcustom__cloud_1_1_error_code.html#a9de683228e313da416bb8232b987c09f',1,'custom_cloud::ErrorCode']]],
-  ['tablelogin',['TableLogin',['../dc/d87/classcustom__cloud_1_1_my_config_1_1_config_file.html#a026665805f6dfa799564fc49cd3ff97b',1,'custom_cloud::MyConfig::ConfigFile']]],
-  ['tablenotification',['TableNotification',['../dc/d87/classcustom__cloud_1_1_my_config_1_1_config_file.html#a2265fa5cfed3f0380800ba50bb955974',1,'custom_cloud::MyConfig::ConfigFile']]],
-  ['tableprimary',['TablePrimary',['../dc/d87/classcustom__cloud_1_1_my_config_1_1_config_file.html#a39176fb9c4540ac499b49112bef5fe73',1,'custom_cloud::MyConfig::ConfigFile']]],
-  ['tableskin',['TableSkin',['../dc/d87/classcustom__cloud_1_1_my_config_1_1_config_file.html#a26b76ced6a65d96d2f355681c16a4ec7',1,'custom_cloud::MyConfig::ConfigFile']]],
-  ['tablesync',['TableSync',['../dc/d87/classcustom__cloud_1_1_my_config_1_1_config_file.html#a2fbd02f1222a0e986b70b7d47ebc0071',1,'custom_cloud::MyConfig::ConfigFile']]],
-  ['threadsync',['ThreadSync',['../dc/dc4/classcustom__cloud_1_1_main_window.html#aa421749c38f9a4813118b77c5f695106',1,'custom_cloud::MainWindow']]]
+  ['receivebuffer',['receiveBuffer',['../d5/db3/classcustom__cloud_1_1NetHelper.html#af96d9d1b323ab730f47c62e732ec008c',1,'custom_cloud::NetHelper']]],
+  ['receiveinfo',['receiveInfo',['../d5/db3/classcustom__cloud_1_1NetHelper.html#a2a33952e72f7cd575f8ee5bffc019dca',1,'custom_cloud::NetHelper']]],
+  ['reffuturetime',['RefFutureTime',['../d2/de4/classcustom__cloud_1_1MyConfig.html#a65f4a5abd058760d8c3608863259782f',1,'custom_cloud::MyConfig']]],
+  ['reffuturetimedouble',['RefFutureTimeDouble',['../d2/de4/classcustom__cloud_1_1MyConfig.html#a3dc3296798403187fdff59eabe286008',1,'custom_cloud::MyConfig']]],
+  ['reftime',['RefTime',['../d2/de4/classcustom__cloud_1_1MyConfig.html#a023d9553fbcff541c0c0bdfdd6903160',1,'custom_cloud::MyConfig']]],
+  ['relativefilepath',['RelativeFilePath',['../d4/dfb/classcustom__cloud_1_1subMainForm_1_1subCloudDisk_1_1ContactListForm.html#a7b1c53e72ca06937f6205e07da4ac84d',1,'custom_cloud::subMainForm::subCloudDisk::ContactListForm']]],
+  ['resourceculture',['resourceCulture',['../d7/d98/classcustom__cloud_1_1Properties_1_1Resources.html#a87058a34a8b44628f03942ac02c08560',1,'custom_cloud::Properties::Resources']]],
+  ['resourceman',['resourceMan',['../d7/d98/classcustom__cloud_1_1Properties_1_1Resources.html#a5a5d416265010ce4273651e495fda152',1,'custom_cloud::Properties::Resources']]],
+  ['result_5fcannt_5fassess_5fserver',['RESULT_CANNT_ASSESS_SERVER',['../d6/d95/classcustom__cloud_1_1IOClass_1_1SyncResult.html#a5ab6c0cded2c186bde04ec19ccc13ce7',1,'custom_cloud::IOClass::SyncResult']]],
+  ['result_5fcannt_5fassess_5fsync_5fresult',['RESULT_CANNT_ASSESS_SYNC_RESULT',['../d6/d95/classcustom__cloud_1_1IOClass_1_1SyncResult.html#aabf8e950495143892ecb0fdaf797dec9',1,'custom_cloud::IOClass::SyncResult']]],
+  ['result_5fdirectory_5fnot_5fexist',['RESULT_DIRECTORY_NOT_EXIST',['../d6/d95/classcustom__cloud_1_1IOClass_1_1SyncResult.html#abbf208007f475f0608b3e852dd6e933f',1,'custom_cloud::IOClass::SyncResult']]],
+  ['result_5fsync_5fsuccess',['RESULT_SYNC_SUCCESS',['../d6/d95/classcustom__cloud_1_1IOClass_1_1SyncResult.html#a7d6f117e97ee063de396006cf95fcb50',1,'custom_cloud::IOClass::SyncResult']]],
+  ['rootdirectory',['RootDirectory',['../d2/d7d/classcustom__cloud_1_1FileTree.html#a53ec714230a0bfd8ed008c4b59534c2e',1,'custom_cloud::FileTree']]]
 ];

@@ -137,12 +137,14 @@ namespace custom_cloud
                 /* 可能不合法的配置 */
                 string sync_ip = settingSyncForm.ServerAddress;
                 //string a = "";
+                /*
                 if (!CodeAnalysis.IsValidIP(sync_ip))
                 {
                     label_error.Visible = true;
                     label_error.Text = "服务器地址不合法";
                     return;
                 }
+                 */
                 string sync_port_str = settingSyncForm.Port;
                 if (!CodeAnalysis.IsInteger(sync_port_str))
                 {

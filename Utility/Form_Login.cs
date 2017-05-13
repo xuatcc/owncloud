@@ -142,11 +142,12 @@ namespace custom_cloud
         void btn_login_Click(object obj, EventArgs ea)
         {
             
-            string user = comboBox_user.Text;
+           string user = comboBox_user.Text;
             // matching password
             string password_input = textBox_password.Text;
             Order order = new Order();
             UserInfo userInfo = new UserInfo();
+         
             userInfo.UserID = user;
             userID = user;
             userInfo.Password = password_input;
@@ -165,6 +166,7 @@ namespace custom_cloud
                 MyConfig.writeUserTrack(comboBox_user.Text);
                 User_Info = loadingForm.User_Info;
                 UserLocalInfo User_LocalInfo = MyConfig.getUserLocalInfo(User_Info.UserID);
+                if(!Directory.Exists(User_LocalInfo.SyncPath))User_LocalInfo.SyncPath = MyConfig.PATH_USER + "/" + User_Info.UserID + "/" + MyConfig.NAME_FOLDER_SYNC;
                 navigateToMainWindow(User_Info);
                 this.Hide();
                 loadingForm.Dispose();
@@ -183,21 +185,26 @@ namespace custom_cloud
                 button_login.Enabled = true;
             }
             if (loadingForm != null) loadingForm.Close();
+             
+
+            /* 测试主窗体  
             
-            /* 测试主窗体 */
-            /*
             User_Info.UserID = comboBox_user.Text;
             User_Info.UserName = "Doge";
             User_Info.Password = textBox_password.Text;
-            User_Info.SyncServerAddress = "http://192.168.204.130/helo";
+            User_Info.SyncServerAddress = "http://192.168.222.128/helo";
             User_Info.FileKey = MyConfig.PASSWORD_FILE_ENCRYPTION;
             UserLocalInfo User_LocalInfo = MyConfig.getUserLocalInfo(User_Info.UserID);
-            if (User_LocalInfo == null) User_LocalInfo = new UserLocalInfo();
+            if (User_LocalInfo == null)
+            {
+                User_LocalInfo = new UserLocalInfo();
+                User_LocalInfo.SyncPath = @"./sync/";
+            }
             User_LocalInfo.UserId = User_Info.UserID;
-
+       */
             MyConfig.writeUserTrack(comboBox_user.Text);
             navigateToMainWindow(User_Info);
-            */
+          
             
         }
         /// <summary>
@@ -264,7 +271,7 @@ namespace custom_cloud
         /// <param name="ea"></param>
         void btn_register_Click(object obj, EventArgs ea)
         {
-            Process.Start("http://192.168.204.129/owncloud");
+            Process.Start("http://192.168.204.129/owncloud");//网站的路径 写一个配置文件
         }
         /// <summary>
         /// 关闭窗体

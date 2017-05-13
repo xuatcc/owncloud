@@ -391,6 +391,7 @@ namespace custom_cloud
         /// <param name="ea"></param>
         void btn_Click_Event(object sender, EventArgs ea)
         {
+            //pictureBox_buttonClose.Click += new EventHandler(btn_Click_Event);
             if (sender.Equals(pictureBox_userIcon)) setUserInfo();
             if (sender.Equals(toolStripMenuItem_showMainWindow)) recoverWindow();
             if (sender.Equals(toolStripMenuItem_logOut)) closeWindow();

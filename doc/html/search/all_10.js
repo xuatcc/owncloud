@@ -1,25 +1,5 @@
 var searchData=
 [
-  ['readme',['README',['../d3/dcc/md__r_e_a_d_m_e.html',1,'']]],
-  ['readconfig',['readConfig',['../d8/db2/classcustom__cloud_1_1_my_config.html#a2353b96c780635238ee19ba5d24f218e',1,'custom_cloud.MyConfig.readConfig(string path)'],['../d8/db2/classcustom__cloud_1_1_my_config.html#a4f795561b0573449254c7c3e1946ae1d',1,'custom_cloud.MyConfig.readConfig()']]],
-  ['readme_2emd',['README.md',['../d9/dd6/_r_e_a_d_m_e_8md.html',1,'']]],
-  ['readuserinfo',['readUserInfo',['../d8/db2/classcustom__cloud_1_1_my_config.html#a699557050983d928c0014ac372a0eb2f',1,'custom_cloud::MyConfig']]],
-  ['readuserinfobyjson',['readUserInfoByJson',['../d5/d8c/classcustom__cloud_1_1_user_info.html#ae6ff14e98ef2b7b35cbe26f66dc7793e',1,'custom_cloud::UserInfo']]],
-  ['receivebuffer',['receiveBuffer',['../d1/d59/classcustom__cloud_1_1_net_helper.html#a651681dc0f11b2d31f606ca49ade97d3',1,'custom_cloud::NetHelper']]],
-  ['receivecallbackdonothing',['receiveCallBackDoNothing',['../d1/d59/classcustom__cloud_1_1_net_helper.html#a71e4dbcc7b20b4c593b41ebd462f62b9',1,'custom_cloud::NetHelper']]],
-  ['receiveinfo',['ReceiveInfo',['../d1/d59/classcustom__cloud_1_1_net_helper.html#af8ff618b2e04688c47e2a706bab175e8',1,'custom_cloud::NetHelper']]],
-  ['reffuturetime',['RefFutureTime',['../d8/db2/classcustom__cloud_1_1_my_config.html#a8c33948c6b87971bf988155c62eb01b5',1,'custom_cloud::MyConfig']]],
-  ['reffuturetimedouble',['RefFutureTimeDouble',['../d8/db2/classcustom__cloud_1_1_my_config.html#a38c4a263baeb06c4674ee4f44e84c9fd',1,'custom_cloud::MyConfig']]],
-  ['refreshfilelist',['refreshFileList',['../d6/d9d/classcustom__cloud_1_1_sync_form.html#a0dbee28ed2dc9eb948d8f709a6a2752a',1,'custom_cloud::SyncForm']]],
-  ['refreshlistfse',['refreshListFSE',['../d6/d9d/classcustom__cloud_1_1_sync_form.html#a62324e6c4f3eb5c6b1aa38d221f26340',1,'custom_cloud.SyncForm.refreshListFSE(System.IO.FileSystemEventArgs fse)'],['../d6/d9d/classcustom__cloud_1_1_sync_form.html#ad31d53405ec19cb7198d73b41255a236',1,'custom_cloud.SyncForm.refreshListFSE(System.IO.RenamedEventArgs re)']]],
-  ['reftime',['RefTime',['../d8/db2/classcustom__cloud_1_1_my_config.html#a4d8a94a3e8337ae1f7440b115db53f2c',1,'custom_cloud::MyConfig']]],
-  ['reportbug',['reportBug',['../da/dcb/classcustom__cloud_1_1_reporter.html#ab44d30e36526c47f21889d4df1e3851b',1,'custom_cloud.Reporter.reportBug(string content)'],['../da/dcb/classcustom__cloud_1_1_reporter.html#ab44d30e36526c47f21889d4df1e3851b',1,'custom_cloud.Reporter.reportBug(string content)']]],
-  ['reporter',['Reporter',['../da/dcb/classcustom__cloud_1_1_reporter.html',1,'custom_cloud']]],
-  ['reporter_2ecs',['Reporter.cs',['../d1/d0c/_i_o_class_2_reporter_8cs.html',1,'(全局命名空间)'],['../dc/d68/_reporter_8cs.html',1,'(全局命名空间)']]],
-  ['resources_2edesigner_2ecs',['Resources.Designer.cs',['../d6/d0e/_resources_8_designer_8cs.html',1,'']]],
-  ['result_5fcannt_5fassess_5fserver',['RESULT_CANNT_ASSESS_SERVER',['../d9/dd4/classcustom__cloud_1_1_i_o_class_1_1_sync_result.html#a88c418eea7bb4adf2b8b9430c694dcfe',1,'custom_cloud::IOClass::SyncResult']]],
-  ['result_5fcannt_5fassess_5fsync_5fresult',['RESULT_CANNT_ASSESS_SYNC_RESULT',['../d9/dd4/classcustom__cloud_1_1_i_o_class_1_1_sync_result.html#ab39f93925a4a00e34b93909b3f872cf6',1,'custom_cloud::IOClass::SyncResult']]],
-  ['result_5fdirectory_5fnot_5fexist',['RESULT_DIRECTORY_NOT_EXIST',['../d9/dd4/classcustom__cloud_1_1_i_o_class_1_1_sync_result.html#a2e0ee8ad4409718127bbd94ad0fda386',1,'custom_cloud::IOClass::SyncResult']]],
-  ['result_5fsync_5fsuccess',['RESULT_SYNC_SUCCESS',['../d9/dd4/classcustom__cloud_1_1_i_o_class_1_1_sync_result.html#ae287aea92e4cefa60c725c4dcad533ec',1,'custom_cloud::IOClass::SyncResult']]],
-  ['rootdirectory',['RootDirectory',['../de/d3c/classcustom__cloud_1_1_file_tree.html#a9d128e90b1322df9b7eb7b054021ef63',1,'custom_cloud::FileTree']]]
+  ['queuecopyattribute',['QueueCopyAttribute',['../d6/d5c/classcustom__cloud_1_1CloudDiskForm.html#a3413ab6e5548d016191b811ce6091533',1,'custom_cloud::CloudDiskForm']]],
+  ['queuecopydirectory',['QueueCopyDirectory',['../d6/d5c/classcustom__cloud_1_1CloudDiskForm.html#a9825770888fdae409b5b2df2b3f251e5',1,'custom_cloud::CloudDiskForm']]]
 ];

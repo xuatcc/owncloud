@@ -48,75 +48,84 @@
             // label_userName
             // 
             this.label_userName.AutoSize = true;
-            this.label_userName.Location = new System.Drawing.Point(12, 84);
+            this.label_userName.Location = new System.Drawing.Point(18, 126);
+            this.label_userName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_userName.Name = "label_userName";
-            this.label_userName.Size = new System.Drawing.Size(35, 12);
+            this.label_userName.Size = new System.Drawing.Size(53, 18);
             this.label_userName.TabIndex = 6;
             this.label_userName.Text = "昵称:";
             // 
             // label_password
             // 
             this.label_password.AutoSize = true;
-            this.label_password.Location = new System.Drawing.Point(12, 114);
+            this.label_password.Location = new System.Drawing.Point(18, 171);
+            this.label_password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_password.Name = "label_password";
-            this.label_password.Size = new System.Drawing.Size(35, 12);
+            this.label_password.Size = new System.Drawing.Size(53, 18);
             this.label_password.TabIndex = 7;
             this.label_password.Text = "密码:";
             // 
             // label_syncPath
             // 
             this.label_syncPath.AutoSize = true;
-            this.label_syncPath.Location = new System.Drawing.Point(12, 144);
+            this.label_syncPath.Location = new System.Drawing.Point(18, 216);
+            this.label_syncPath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_syncPath.Name = "label_syncPath";
-            this.label_syncPath.Size = new System.Drawing.Size(83, 12);
+            this.label_syncPath.Size = new System.Drawing.Size(125, 18);
             this.label_syncPath.TabIndex = 8;
             this.label_syncPath.Text = "本地同步目录:";
             // 
             // label_syncServerAddress
             // 
             this.label_syncServerAddress.AutoSize = true;
-            this.label_syncServerAddress.Location = new System.Drawing.Point(12, 174);
+            this.label_syncServerAddress.Location = new System.Drawing.Point(18, 261);
+            this.label_syncServerAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_syncServerAddress.Name = "label_syncServerAddress";
-            this.label_syncServerAddress.Size = new System.Drawing.Size(95, 12);
+            this.label_syncServerAddress.Size = new System.Drawing.Size(143, 18);
             this.label_syncServerAddress.TabIndex = 9;
             this.label_syncServerAddress.Text = "同步服务器地址:";
             // 
             // textBox_userName
             // 
             this.textBox_userName.Enabled = false;
-            this.textBox_userName.Location = new System.Drawing.Point(110, 81);
+            this.textBox_userName.Location = new System.Drawing.Point(165, 122);
+            this.textBox_userName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_userName.Name = "textBox_userName";
-            this.textBox_userName.Size = new System.Drawing.Size(290, 21);
+            this.textBox_userName.Size = new System.Drawing.Size(433, 28);
             this.textBox_userName.TabIndex = 10;
             // 
             // textBox_password
             // 
             this.textBox_password.Enabled = false;
-            this.textBox_password.Location = new System.Drawing.Point(110, 111);
+            this.textBox_password.Location = new System.Drawing.Point(165, 166);
+            this.textBox_password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_password.Name = "textBox_password";
-            this.textBox_password.Size = new System.Drawing.Size(290, 21);
+            this.textBox_password.Size = new System.Drawing.Size(433, 28);
             this.textBox_password.TabIndex = 11;
             // 
             // textBox_syncPath
             // 
-            this.textBox_syncPath.Location = new System.Drawing.Point(110, 141);
+            this.textBox_syncPath.Location = new System.Drawing.Point(165, 212);
+            this.textBox_syncPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_syncPath.Name = "textBox_syncPath";
-            this.textBox_syncPath.Size = new System.Drawing.Size(290, 21);
+            this.textBox_syncPath.Size = new System.Drawing.Size(433, 28);
             this.textBox_syncPath.TabIndex = 12;
             // 
             // textBox_syncServerAddress
             // 
             this.textBox_syncServerAddress.Enabled = false;
-            this.textBox_syncServerAddress.Location = new System.Drawing.Point(110, 171);
+            this.textBox_syncServerAddress.Location = new System.Drawing.Point(165, 256);
+            this.textBox_syncServerAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_syncServerAddress.Name = "textBox_syncServerAddress";
-            this.textBox_syncServerAddress.Size = new System.Drawing.Size(290, 21);
+            this.textBox_syncServerAddress.Size = new System.Drawing.Size(433, 28);
             this.textBox_syncServerAddress.TabIndex = 13;
             // 
             // button_modifyPassword
             // 
-            this.button_modifyPassword.Location = new System.Drawing.Point(406, 109);
+            this.button_modifyPassword.Location = new System.Drawing.Point(609, 164);
+            this.button_modifyPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_modifyPassword.Name = "button_modifyPassword";
-            this.button_modifyPassword.Size = new System.Drawing.Size(60, 23);
+            this.button_modifyPassword.Size = new System.Drawing.Size(90, 34);
             this.button_modifyPassword.TabIndex = 14;
             this.button_modifyPassword.Text = "更改";
             this.button_modifyPassword.UseVisualStyleBackColor = true;
@@ -124,9 +133,10 @@
             // 
             // button_folderBrowser
             // 
-            this.button_folderBrowser.Location = new System.Drawing.Point(406, 139);
+            this.button_folderBrowser.Location = new System.Drawing.Point(609, 208);
+            this.button_folderBrowser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_folderBrowser.Name = "button_folderBrowser";
-            this.button_folderBrowser.Size = new System.Drawing.Size(60, 23);
+            this.button_folderBrowser.Size = new System.Drawing.Size(90, 34);
             this.button_folderBrowser.TabIndex = 15;
             this.button_folderBrowser.Text = "浏览...";
             this.button_folderBrowser.UseVisualStyleBackColor = true;
@@ -138,13 +148,13 @@
             this.button_cancel.DialogResult = System.Windows.Forms.DialogResult.No;
             this.button_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_cancel.ForeColor = System.Drawing.Color.White;
-            this.button_cancel.Location = new System.Drawing.Point(386, 198);
+            this.button_cancel.Location = new System.Drawing.Point(579, 297);
+            this.button_cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_cancel.Name = "button_cancel";
-            this.button_cancel.Size = new System.Drawing.Size(80, 30);
+            this.button_cancel.Size = new System.Drawing.Size(120, 45);
             this.button_cancel.TabIndex = 17;
             this.button_cancel.Text = "取消";
             this.button_cancel.UseVisualStyleBackColor = true;
-            this.button_cancel.Visible = false;
             this.button_cancel.Click += new System.EventHandler(this.btn_Click_Event);
             this.button_cancel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown_Event);
             this.button_cancel.MouseEnter += new System.EventHandler(this.btn_MouseEnter_Event);
@@ -157,13 +167,13 @@
             this.button_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_confirm.ForeColor = System.Drawing.Color.White;
             this.button_confirm.Image = global::custom_cloud.Properties.Resources.down;
-            this.button_confirm.Location = new System.Drawing.Point(300, 198);
+            this.button_confirm.Location = new System.Drawing.Point(450, 297);
+            this.button_confirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_confirm.Name = "button_confirm";
-            this.button_confirm.Size = new System.Drawing.Size(80, 30);
+            this.button_confirm.Size = new System.Drawing.Size(120, 45);
             this.button_confirm.TabIndex = 16;
             this.button_confirm.Text = "保存";
             this.button_confirm.UseVisualStyleBackColor = false;
-            this.button_confirm.Visible = false;
             this.button_confirm.Click += new System.EventHandler(this.btn_Click_Event);
             this.button_confirm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_MouseDown_Event);
             this.button_confirm.MouseEnter += new System.EventHandler(this.btn_MouseEnter_Event);
@@ -174,17 +184,18 @@
             // 
             this.pictureBox_userIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_userIcon.Image = global::custom_cloud.Properties.Resources.user_icon;
-            this.pictureBox_userIcon.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox_userIcon.Location = new System.Drawing.Point(18, 18);
+            this.pictureBox_userIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox_userIcon.Name = "pictureBox_userIcon";
-            this.pictureBox_userIcon.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox_userIcon.Size = new System.Drawing.Size(96, 96);
             this.pictureBox_userIcon.TabIndex = 5;
             this.pictureBox_userIcon.TabStop = false;
             // 
             // SettingUserInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 233);
+            this.ClientSize = new System.Drawing.Size(704, 350);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_confirm);
             this.Controls.Add(this.button_folderBrowser);
@@ -199,6 +210,7 @@
             this.Controls.Add(this.label_userName);
             this.Controls.Add(this.pictureBox_userIcon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SettingUserInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "个人信息";

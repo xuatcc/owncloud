@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="custom_cloud.CodeAnalysis" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAQAABQAQAABAAAAAABAAAAAAAIAAAAQAAQAAAAA=</HashCode>
+      <FileName>codeClass\CodeAnalysis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.Int32Dec64Convert" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAgAAACAIAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>codeClass\Int32Dec64Convert.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.JsonHelper" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAICAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>codeClass\JsonHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.ErrorCode" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAgCAACAABAEAAAAAAACAAAAAABAAAAAwQAAQAEA=</HashCode>
+      <FileName>configClass\ErrorCode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.MyConfig" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAKAKMQBBC0gSABYKQCFAABAYAIACNEBilAACwoAAA=</HashCode>
+      <FileName>configClass\MyConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.Order" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAQAACAAACACAIAAICAIAAAAEgBQAICAAQAgAgAgA=</HashCode>
+      <FileName>configClass\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.FileTree" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgACAAAABAAAAAQAUgJAQABAiAABAAEgAIAwAADAwIQ=</HashCode>
+      <FileName>fileSystemClass\FileTree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.Reporter" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAIAAAAAIAAAAAA=</HashCode>
+      <FileName>IOClass\Reporter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.LoadingForm" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACCAAEAAAGCAAEgACACAAAJGAAAAAgACEAFgAQIECAA=</HashCode>
+      <FileName>loadingForm\LoadingForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.NetHelper" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCAAAAAAAEAAIAAQAIBCEAAgAAAAAQIBEAAEABAEAAQ=</HashCode>
+      <FileName>netClass\NetHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.Program" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.GlassButton" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABDQAACJBGAAgAAAQAjAABACAAAAAAAEAKAAAIAAAIA=</HashCode>
+      <FileName>Resources\myWidget\GlassButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.CloudDiskForm" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="custom_cloud.CloudDiskForm.ListViewItemComparerByName" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>subMainForm\CloudDiskForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="custom_cloud.CloudDiskForm.ListViewItemComparerByTime" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>subMainForm\CloudDiskForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="custom_cloud.CloudDiskForm.ListViewItemComparerBySize" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>subMainForm\CloudDiskForm.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>e1+Qij7aOmRxK1IVum7AN2lT7KSviYZSQDGT54orMYE=</HashCode>
+      <FileName>subMainForm\CloudDiskForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.ShareForm" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>subMainForm\ShareForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.SyncForm" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JMAgAAAAACAgBACAaDCAAACGAAAMhQAAYAGAAQAAAAI=</HashCode>
+      <FileName>subMainForm\SyncForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.SettingPrimaryForm" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAAAACAAAAAgAAAAAAAQQAAAA=</HashCode>
+      <FileName>subSettingForm\SettingPrimaryForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.SettingSyncForm" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAEAAAACgAAASCAAAAAAgAIAEAQCAAAA=</HashCode>
+      <FileName>subSettingForm\SettingSyncForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.UserInfo">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="custom_cloud.UserInfo.ShareList" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>userClass\UserInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AkEEAAAFIgACAAAABABAACgAAAAAAYADAQAIAAEAAJ0=</HashCode>
+      <FileName>userClass\UserInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.UserLocalInfo" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAAAAAAAAAAAAAAAAgAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>userClass\UserLocalInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.Form_Login" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GBCAQAgA0iCAAFBADAG0ACACCGBMABASFEFIAVZAABA=</HashCode>
+      <FileName>Utility\Form_Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.MainWindow" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIKBwAp0ASVBCgmREGmACAAqEoxGEgUQAMEIQRSgORE=</HashCode>
+      <FileName>Utility\MainWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.SettingForm" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IhCAQIAAACCCAAIAAECgIAEiECAEEAAQEAIAARQCiRA=</HashCode>
+      <FileName>Utility\SettingForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.cmdClass.CMDComand" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAABAAAEAAAAAIAAAAAAAAAAAAAAKAAAAA=</HashCode>
+      <FileName>cmdClass\CMDComand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.dialog.DeleteFileDialog" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAABAAACAAABAAAACAAAACACIAAAAAAAAAAQACCCA=</HashCode>
+      <FileName>dialog\DeleteFileDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.dialog.FileAttributeDialog" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQAAACAAAAAAABCAAAACAAABAIAAAAAAARAAAAA=</HashCode>
+      <FileName>dialog\FileAttributeDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.IOClass.SyncResult" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQQAAAABAADAAAEACAIAAAQABAAEAAAAAAAFAA=</HashCode>
+      <FileName>IOClass\SyncResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.loadingForm.LoadDeleteFiles" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQIABAAAGAAAAEAAgCAAAACAAIgAACAAAAABQBiCCA=</HashCode>
+      <FileName>loadingForm\LoadDeleteFiles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.loadingForm.LoadDisCryption" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAABAABGAEAAEAAACgABAiAAIgAACEAAAAATBACCA=</HashCode>
+      <FileName>loadingForm\LoadDisCryption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.loadingForm.LoadEncryption" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEBAABAAImAEAAEAAICIAiACCAIgAAAQAAAABQAACCA=</HashCode>
+      <FileName>loadingForm\LoadEncryption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.loadingForm.UtilityLoading" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IRABAIQAAGBAgJwaBCCAAAgq0EAABAAABQEEAQITaCA=</HashCode>
+      <FileName>loadingForm\UtilityLoading.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.netClass.SyncStatus" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>netClass\SyncStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.Properties.Resources" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAADYQAgAkCBCugQQBDXgRABYREAhAMBIEIQBAqEJI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.Properties.Settings" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.subMainForm.SettingUserInfo" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IhCAQBAFAiABAAAACECAhAACQCIECABAAoAACQACKDA=</HashCode>
+      <FileName>subMainForm\SettingUserInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.subMainForm.UserModifyForm" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAACABAAAACACAAAACAAAEAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>subMainForm\UserModifyForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.subMainForm.subCloudDisk.ContactListForm" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgABAAAACAAgAAgAQCAQAAiECAEAAAAAAAAAUAEgMA=</HashCode>
+      <FileName>subMainForm\subCloudDisk\ContactListForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.subMainForm.subUserInfo.SettingUserPassword" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IABAABEBAiAAQAAAEFiAAAACACIAAAAAQAAAAQACCCA=</HashCode>
+      <FileName>subMainForm\subUserInfo\SettingUserPassword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.subSettingForm.SettingSkinForm" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAABCAEAAABAACABAACABAQAAAAAAAACUABAAA=</HashCode>
+      <FileName>subSettingForm\SettingSkinForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="custom_cloud.userClass.ContactList" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>userClass\ContactList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

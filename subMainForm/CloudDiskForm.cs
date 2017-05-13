@@ -891,7 +891,8 @@ namespace custom_cloud
                 //loadEncryption.Show();
                 loadEncryption.importFolder(folderBrowserDialog_main.SelectedPath,
                     CurrentPath + "/" + Path.GetFileName(folderBrowserDialog_main.SelectedPath), User_Info.FileKey);
-                loadEncryption.ShowDialog();
+                if(loadEncryption != null && !loadEncryption.IsDisposed)
+                    loadEncryption.ShowDialog();
                 //更新文件树
                 updateFileTree();
                 updateListViewItems(FileView, File_Tree.getTargetTree(CurrentPath), Sort_Rule);

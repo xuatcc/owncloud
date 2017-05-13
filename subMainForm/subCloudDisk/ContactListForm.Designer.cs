@@ -36,8 +36,9 @@
             // 
             this.treeView_contact.CheckBoxes = true;
             this.treeView_contact.Location = new System.Drawing.Point(0, 0);
+            this.treeView_contact.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.treeView_contact.Name = "treeView_contact";
-            this.treeView_contact.Size = new System.Drawing.Size(783, 511);
+            this.treeView_contact.Size = new System.Drawing.Size(1172, 764);
             this.treeView_contact.TabIndex = 0;
             this.treeView_contact.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.treeView_contact_AfterCheck);
             // 
@@ -48,9 +49,10 @@
             this.button_confirm.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button_confirm.ForeColor = System.Drawing.Color.White;
             this.button_confirm.Image = global::custom_cloud.Properties.Resources.down;
-            this.button_confirm.Location = new System.Drawing.Point(585, 519);
+            this.button_confirm.Location = new System.Drawing.Point(878, 778);
+            this.button_confirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_confirm.Name = "button_confirm";
-            this.button_confirm.Size = new System.Drawing.Size(187, 30);
+            this.button_confirm.Size = new System.Drawing.Size(280, 45);
             this.button_confirm.TabIndex = 8;
             this.button_confirm.Text = "确定分享";
             this.button_confirm.UseVisualStyleBackColor = true;
@@ -62,12 +64,13 @@
             // 
             // ContactListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(1176, 842);
             this.Controls.Add(this.button_confirm);
             this.Controls.Add(this.treeView_contact);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ContactListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "分享给";
